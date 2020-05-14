@@ -1,0 +1,38 @@
+th {
+    background-color: #0099DE;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td:first-child {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container {}
+
+/* .bs-sidebar.hidden-print a{color: #fff;} */
+/* .col-md-3 a{color: #fff;} */
+/* .nav {color: #fff;} */
+.add-sidenav {
+    height: 60%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    left: 70%;
+    background-color: #0099DE;
+    overflow-x: hidden;
+
+    /* padding-top: 20px; */
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.add-sidenav a {
+    font-size: 16px;
+    color: #fff;
+}
+
+.add-sidenav a:hover {
+    color: #f1f1f1;
+}

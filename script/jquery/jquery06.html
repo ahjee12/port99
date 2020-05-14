@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        *{margin: 0;padding: 0;text-align: center;}
+        li{list-style: none;}
+        a{text-decoration: none; color:rgb(0, 0, 0);}
+        #tab-menu{ width:350px; margin:50px auto; background-color:rgb(84, 83, 141);}
+        .tab-btn{}
+        .tab-btn ul{ overflow: hidden;}
+        .tab-btn li{float:left; width:20%;}
+        .tab-btn li a{padding:10px; display:block; background:#1e88e5; color :#fff;}
+        .tab-cont img{display: block;}
+    </style>
+</head>
+<body>
+    <div id="tab-menu">
+        <div class="tab-btn">
+            <!-- ul>li*5>a[#] -->
+            <ul>
+                <li><a href="#" class="tab1">Tab1</a></li>
+                <li><a href="#" class="tab2">Tab2</a></li>
+                <li><a href="#" class="tab3">Tab3</a></li>
+                <li><a href="#" class="tab4">Tab4</a></li>
+                <li><a href="#" class="tab5">Tab5</a></li>
+            </ul>        
+        </div>
+
+        <div class="tab-cont">
+            <img src="../../assets/img/svg-carrot.svg" alt="">
+        </div>
+    </div>
+    
+
+    <script src="../jquery/assets/js/jquery.min_1.12.4.js"></script>
+    <script>
+
+
+        //글씨를 클릭하면 글씨 색을 빨간색으로 변경하세요
+        // $(".tab-btn ul li a").click(function(){
+        //     $(".tab-btn ul li a").css("color","red");
+        // });
+
+        //글씨(선택자)를 클릭하면 클릭한 글씨 색(선택자)만 빨간색으로 변경하세요
+        // $(".tab-btn ul li a").click(function(){
+        //     $(this).css("color","red");
+        // });
+
+        //글씨를 클릭하면 tab-> menu로 변경하세요
+        // $(".tab-btn ul li a").click(function(){
+        //     $(".tab-btn ul li a").text("menu");
+        // });
+
+        //글씨를 클릭하면 tab2-> menu2, tab3-> menu2로 변경하세요
+        //li a 로 하면 li 안에 a 태그 1개라서모든 탭 index는 0이 됨 
+            $(".tab-btn ul li").click(function(){
+                //this 각 탭 선택자 
+                let target = $(this);
+                let index = target.index() + 1;
+                //alert(index);
+                target.find("a").text("Menu"+index);
+            });
+
+            $(".tab-btn ul li:eq(0)").click(function(){
+                $(".tab-cont img").attr({"src":"../../assets/img/svg-carrot.svg","alt":"당근"})
+            })
+
+            $(".tab-btn ul li:eq(1)").click(function(){
+                $(".tab-cont img").attr({"src":"../../assets/img/svg-cheeseburger.svg","alt":"치즈버거"})
+            })
+
+            $(".tab-btn ul li:eq(2)").click(function(){
+                $(".tab-cont img").attr({"src":"../../assets/img/svg-apple.svg","alt":"사과"})
+            })
+
+            $(".tab-btn ul li:eq(3)").click(function(){
+                $(".tab-cont img").attr({"src":"../../assets/img/svg-grapes.svg","alt":"포도"})
+            })
+
+            $(".tab-btn ul li:eq(4)").click(function(){
+                $(".tab-cont img").attr({"src":"../../assets/img/svg-pear.svg","alt":"배"})
+            })
+
+
+    </script>
+</body>
+</html>

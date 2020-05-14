@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko"> <!---->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout27</title>
+    <style>
+     #wrap{}
+    .container{width: 1200px; margin: 0 auto;}
+    #wrap{background-color: #e3f2fd;}
+    #header{width: 100%; height: 100; background-color: #badefb;}
+    #banner{width: 100%; height: 300px; background-color: #8ecbf9;}
+    #content1{overflow: hidden;} /*☆☆☆큰 박스 안에 작은 박스들 넣을 때!!!!!!!☆☆☆*/
+    #content1 .content1-side{width: 30%; height: 400px; background-color: #61b6f6; float: left;}
+    #content1 .content1-box1{width: 70%; height: 200px; background-color: #3da7f5; float: left;}
+    #content1 .content1-box2{width: 70%; height: 200px; background-color: #1799f3; float: left;}
+    #content2 {overflow: hidden;}/*☆☆☆큰 박스 안에 작은 박스들 넣을 때!!!!!!!☆☆☆*/
+    #content2 .content2-box1{width: 33.333%; height: 300px; background-color: #168be5; float: left;}
+    #content2 .content2-box2{width: 33.333%; height: 300px; background-color: #127ad2; float: left;}
+    #content2 .content2-box3{width: 33.333%; height: 300px; background-color: #0f69c0; float: left;}
+    #content3{padding: 5%; overflow: hidden; background-color: #3da7f5;}
+    #content3 >article{width: 23%; margin: 2%; height: 200px; background-color: #127ad2; border-radius: 10px; float: left;}
+    #footer{width: 100%; height: 100px; background-color: #61b6f6;}
+
+    @media(max-width: 1220px){
+        .container{width: 100%;}
+        #content2 .content2-box1{width: 50%;}
+        #content2 .content2-box2{width: 50%;}
+        #content2 .content2-box3{display: none;}
+
+        #content3 >article{width: 29%;}
+        #content3 >article.content3-box4{display: none;}
+    }
+
+    @media(max-width: 1024px){
+        #content2 .content2-box1{width: 100%; height: 200px;}
+        #content2 .content2-box2{width: 100%; height: 200px;}
+    }
+
+    @media(max-width: 768px){
+        #content1 .content1-side{width: 100%; height: 200px;}
+        #content1 .content1-box1{width: 100%;}
+        #content1 .content1-box2{width: 100%;}
+
+    }
+
+    @media(max-width: 480px){
+        
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header id="header"></header>
+            <section id="banner"></section>
+            <section id="content1">
+                <aside class="content1-side"></aside>
+                <article class="content1-box1"></article>
+                <article class="content1-box2"></article>
+            </section>
+            <section id="content2">
+                <section class="content2-box1"></section>
+                <section class="content2-box2"></section>
+                <section class="content2-box3"></section>
+            </section>
+            <section id="content3">
+                <article></article>
+                <article></article>
+                <article></article>
+                <article class="content3-box4"></article>
+            </section>
+            <footer id="footer"></footer>
+        </div>
+    </div>
+</body>
+</html>

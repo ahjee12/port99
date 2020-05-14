@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ahjee12" content="webdiary">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webdiary, publisher, css3, html, markup, design, Webdiary">
+    <title>웹다이어리 | Webdiary | CSS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon_114.png">
+    <link rel="icon" href="../assets/ico/icon.png">
+    <link rel="icon" href="../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs1" id="content">
+        <div class="container">
+            <h1>CSS Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="http://ahjee12.dothome.co.kr" target="_blank">ahjee12.dothome.co.kr</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">CSS</h2>
+                    <p class="bs-callout bs-callout-info">CSS는 HTML로 작성된 문서를 쓰기 위한 스타일 시트 언어입니다.</p>
+                    <p>HTML이 문서의 골격을 이룬다면, CSS는 그 골격에 맞는 디자인 작업 언어라고 생각하면 됩니다.</p>
+
+                </div>
+                <!-- //Intro1 -->
+
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">CSS선택자(selector)</h2>
+                    <p class="bs-callout bs-callout-info">CSS 선택자를 통해 요소를 선택하고 속성을 줄 수 있습니다.</p>
+                    <img src="img/css.gif" style="width: 70%">
+                    <h3>id 선택자와 class선택자</h3>
+                    <ul>
+                        <li>id 선택자
+                            <ol>
+                                <li>하나의 태그만 식별하기 위한 선택자입니다.</li>
+                                <li>하나의 태그에서 하나만 사용할 수 있습니다.</li>
+                                <li><code>'#'</code>으로 표시합니다</li>
+                            </ol>
+                        </li>
+                        <li>class 선택자
+                            <ol>
+                                <li>여러개의 태그를 식별하기 위한 선택자입니다.</li>
+                                <li>하나의 태그에서 여러개를 사용할 수 있습니다.</li>
+                                <li><code>'.'</code>으로 표시합니다</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <h3>기본 선택자</h3>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                                <th>이름</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>태그 선택자</td>
+                                <td>p {color:#fff;}</td>
+                                <td>p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>클래스 선택자</td>
+                                <td>.class {color:#fff;}</td>
+                                <td>class 클래스를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>아이디 선택자</td>
+                                <td>#id {color:#fff;}</td>
+                                <td>id 아이드를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>그룹 선택자</td>
+                                <td>p, div {color:#fff;}</td>
+                                <td>p 태그와 div 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>전체 선택자</td>
+                                <td>* {color:#fff;}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>계층 선택자</h3>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                                <th>이름</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>하위 선택자(Descendant Selector)</td>
+                                <td>div p {color:#fff;}</td>
+                                <td>div 태그의 모든 자식 중 p 태그를 모두 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>자식 선택자(Child Selector)</td>
+                                <td>div &gt; p {color:#fff;}</td>
+                                <td>div 태그의 모든 자식 중 첫번째 자식 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>형제 선택자(sibling Selector)</td>
+                                <td>div ~ p {color:#fff;}</td>
+                                <td>div 태그의 인접한 형제 p 태그를 모두 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>인접 형제 선택자(Adjacent Sibling Selector)</td>
+                                <td>div + p {color:#fff;}</td>
+                                <td>div 태그의 인접한 형제 첫번째 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>속성 선택자</h3>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                                <th>이름</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>[name]</td>
+                                <td>a[href]</td>
+                                <td>a 태그 속성 중에 href가 있으면 선택합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>[name="value"]</td>
+                                <td>a[href="#header"]</td>
+                                <td>a 태그 href 속성의 값이 '#header'이면 선택합니다. </td>
+                            </tr>
+                            <tr>
+                                <td>[name~="value"]</td>
+                                <td>a[href~="web"]</td>
+                                <td>a 태그 href 속성의 값이 'web'을 포함한 요소를 선택합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>[name|="value"]</td>
+                                <td>a[href|="web"]</td>
+                                <td>a 태그 href 속성의 값이 'web'이거나 'web'으로 시작하는 요소를 선택합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>[name^="value"]</td>
+                                <td>a[href^="web"]</td>
+                                <td>a 태그 href 속성의 값이 'web'으로 시작하는 태그를 선택합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>[name*="value"]</td>
+                                <td>a[href*="web"]</td>
+                                <td>a 태그 href 속성의 값이 'web'이 포함되어 있는 태그를 선택합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>[name$="value"]</td>
+                                <td>a[href$="com"]</td>
+                                <td>a 태그 href 속성의 값이 'com'으로 끝나는 태그를 선택합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>가상 요소</h3>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                                <th>이름</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>::first-line</td>
+                                <td>p:first-line {color:#fff;}</td>
+                                <td>문단의 첫 줄에 컬러색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>::first-letter</td>
+                                <td>p:first-letter {color:#fff;}</td>
+                                <td>문단의 첫 글자에 컬러색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>::before</td>
+                                <td>p:before {content:"시작"}</td>
+                                <td>문단 시작 부분에 '시작'이라는 요소를 추가합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>::after</td>
+                                <td>p:after {content:"끝"}</td>
+                                <td>문단 끝 부분에 '끝'이라는 요소를 추가합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>::selection</td>
+                                <td>p:selection {color:#fff;}</td>
+                                <td>드래그로 선택하였을 경우 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>가상 클래스</h3>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                                <th>이름</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>:first-child</td>
+                                <td>li:first-line {color:#fff;}</td>
+                                <td>li 자식 요소 중 첫 번째 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:last-child</td>
+                                <td>li:last-line {color:#fff;}</td>
+                                <td>li 자식 요소 중 마지막 번째 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:first-of-type</td>
+                                <td>p:first-of-type {color:#fff;}</td>
+                                <td>자식 요소 중 p 태그 첫 번째 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:last-of-type</td>
+                                <td>p:last-of-type {color:#fff;}</td>
+                                <td>자식 요소 중 p 태그 마지막 번째 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:nth-child()</td>
+                                <td>li:nth-child(2) {color:#fff;}</td>
+                                <td>li 자식 요소 중 2번째 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:nth-last-child()</td>
+                                <td>li:nth-last-child(2) {color:#fff;}</td>
+                                <td>li 자식 요소 중 뒤에서 2번째 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:nth-of-type()</td>
+                                <td>p:nth-of-type(2) {color:#fff;}</td>
+                                <td>자식 요소 중 p 태그 2번째 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:nth-last-of-type()</td>
+                                <td>p:nth-last-of-type(2) {color:#fff;}</td>
+                                <td>자식 요소 중 p 태그 뒤에서 2번째 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:only-child</td>
+                                <td>:only-child {color:#fff;}</td>
+                                <td>자식 요소 중 유일한 태그 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                                <td class="ce">CSS3</td>
+                            </tr>
+                            <tr>
+                                <td>:only-of-type</td>
+                                <td>p:only-of-type {color:#fff;}</td>
+                                <td>자식 요소 중 유일한 p 태그 자식 요소에게 컬러를 하얀색으로 변경합니다.</td>
+                                <td class="ce">CSS3</td>
+                            </tr>
+                            <tr>
+                                <td>:not()</td>
+                                <td>li:not(:nth-child(2)) {color:#fff;}</td>
+                                <td>li 자식 요소 중 2번째 자식 요소를 제외하고 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:root</td>
+                                <td>:root {color:#fff;}</td>
+                                <td>기본 루트 요소의 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:empty</td>
+                                <td>:empty {color:#fff;}</td>
+                                <td>컨텐츠 요소가 없는 요소의 컬러를 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>링크 가상클래스</h3>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                                <th>이름</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>:link</td>
+                                <td>a:link {color:#fff;}</td>
+                                <td>방문하지 않는 링크의 글씨 색을 하얀색으로 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:visited</td>
+                                <td>a:visited {color:#fff;}</td>
+                                <td>방문한 링크의 글씨 색을 하얀색으로 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:hover</td>
+                                <td>a:hover {color:#fff;}</td>
+                                <td>링크 위에 마우스를 올려 놓았을 경우 글씨 색을 하얀색으로 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:active</td>
+                                <td>a:active {color:#fff;}</td>
+                                <td>링크가 활성화되었을 경우 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>폼 관련 선택자</h3>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>예시</th>
+                                <th>이름</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>:checked</td>
+                                <td>input:checked {color:#fff;}</td>
+                                <td>input 태그가 체크되었을 때 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:focus</td>
+                                <td>input:link {color:#fff;}</td>
+                                <td>input 태그에 초점이 맞추어졌을 때 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:enabled</td>
+                                <td>input:enabled {color:#fff;}</td>
+                                <td>input 태그가 사용 가능하면 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>:disabled</td>
+                                <td>input:disabled {color:#fff;}</td>
+                                <td>input 태그가 사용 가능하지 않으면 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //Intro2 -->
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">CSS속성(property)</h2>
+                    <p class="bs-callout bs-callout-info"> 속성의 종류로는 박스, 텍스트 꾸미기, 색상, 배경, 여백, 테두리, 페이지 레이아웃, 정렬 등이 있습니다.</p>
+                    <p>속성명 바로 뒤에 콜론(:) 을 붙인 후 그 값을 적습니다. </p>
+                </div>
+                <!-- //Intro3 -->
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">CSS속성 값(value)</h2>
+                    <p class="bs-callout bs-callout-info">속성 값은 수치 지정방식과 키워드 지정방식으로 나뉩니다.</p>
+                    <p>속성값이 여러개일 경우 단축형으로 표현할 수 있습니다.</p>
+                </div>
+                <!-- //Intro4 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">CSS색상</h2>
+                    <p class="bs-callout bs-callout-info">css에서 색상은 주로 hexa값으로 설정합니다.</p>
+                    <h3>RGB모드</h3>
+                    <p>RGB Color모드는 빛의 삼원색인 '빨강(Red)', '초록(Green)', '파랑(Blue)'을 섞어 색을 만듭니다. 색을 섞을수록 점점 밝아지므로 '가산 혼합'이라고 부릅니다. 모니터 화면용 작업(프레젠테이션, 웹디자인 등)에서 기본적으로 사용하는 색상 모드입니다.</p>
+
+                    <h3>CMYK모드</h3>
+                    <p>CMYK Color모드는 '시안(Cyan)', '마젠타(Magenta)','노랑(Yellow)','검정(Black)'의 원색을 섞어서 색상을 만듭니다. 물감처럼 색을 섞을수록 점점 어두워지므로 '감산 혼합'이라고 부릅니다. 출력용 이미지르르 작업할 때는 CMYK색상 모드에서 작업합니다.</p>
+
+                    <h3>16진수 표기법</h3>
+                    <p>웹 문서에서 색상은 16진수로 표현합니다. 두자리씩 묶어서 #RRGGBB형식으로 표현하며, RR은 빨강, GG는 초록, BB는 파란색의 양을 표현합니다. 각 색상이 전혀 섞이지 않은 00부터 가득 섞여 있는 FF까지 사용할 수 있습니다.</p>
+                    <ul>
+                        <li>색상코드를 지정할 수 있는 16진수(헥사)코드 값은 #과 6자리수로 이루어져있습니다.(참고- https://materializecss.com/color.html)</li>
+                        <li>헥사코드: RR(red), GG(green), BB(blue)로 각각 두자리 정수로 구성되어 있습니다. 헥사코드는 16진수 값을 나타내는 00~FF 사이의 값으로 설정할 수 있습니다.</li>
+                    </ul>
+
+                    <h3>색상이름 표기법</h3>
+                    <p>색상 이름을 이용하여 색을 표현할 수 있습니다. 가장 기본적인 16가지를 포함하여 216가지의 색상 이름 표기법이 있습니다.</p>
+
+                    <h3>RGB와 RGBA표기법</h3>
+                    <p>웹 문서에서 색상을 표현하는 RGB(255,255,255)는 십진수를 이용하여 표현합니다. 색이 전혀 섞이지 않았을 때에는 0으로 표시하고, 가득 섞였을 때는 255로 표현합니다. 숫자는 색상을 양을 나타내고 a는 투명도(Alpha)를 나타냅니다. 투명도는 0과 1사이로 표현합니다.</p>
+
+                    <h3>HSL과 HSLA표기법</h3>
+                    <p>웹 문서에서 색상을 표현하는 HSL은 색상(HUE), 채도(saturation), 밝기(lightness)를 나타냅니다. 색상은 둥글게 배치한 색상환으로 표시하고 0과 360도에는 빨간색, 120도에는 초록색, 240도에는 파란색이 배치됩니다. 채도가 0%이면 회색톤, 100%이면 순색으로 표시됩니다. 밝기는 0%에서 가장 어둡고 100%에서 가장 밝습니다.</p>
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro -->
+                <div class="bs-docs-section">
+                    <h2 id="intro" class="page-header"></h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- //Intro -->
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">CSS선언</h2>
+                    <p class="bs-callout bs-callout-info">HTML 문서에 스타일을 선언하는 방법은 3가지가 있습니다.</p>
+                    <p>css는 선택자, 선언구간의 시작과 끝({}), 속성, 값으로 구성되어 있는 구문입니다. 선언문은 속성, 값으로 이루어진 짝을 말하며 속성, 값을 구분할 대는 콜론(:)을 사용하고 선언문끼리 구분할 때는 세미콜론(;)을 사용합니다.</p>
+                    <ul>
+                        <li>내부 스타일(Internal Style Sheet): head태그 내부에 작성하는 방법. body태그 내부에서 사용하지 않아야 함.</li>
+                        <li>외부 스타일(External Style Sheet): 외부 파일로 연결하는 방법</li>
+                        <li>인라인 스타일(Inline Style Sheet): 태그에 직접 연결하는 방법. 한 라인으로 요소 내부에 스타일 속성을 이용하여 작성</li>
+                    </ul>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    
+    &lt;!-- 내부 스타일 --&gt;
+    &lt;style&gt;
+        h1 {color: #fff;}
+    &lt;/style&gt;
+    
+    &lt;!-- 외부 스타일 --&gt;
+    &lt;link rel="stylesheet" href="경로"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 인라인 스타일 --&gt;
+    &lt;h1 style="color: #fff"&gt;&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <!-- //Intro6 -->
+
+                <!-- Intro6-1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-1" class="page-header">상대주소 절대주소</h2>
+                    <p class="bs-callout bs-callout-info">한 예로, 웹 사이트를 제작할 때에는 일반적으로 HTML파일과 그림 파일을 따로 보관하는데 그림 파일의 경로를 입력하는 방식에 따라 절대주소와 상대주소로 나뉩니다.</p>
+                    <ul>
+                        <li>절대주소: 웹사이트나 파일이 가지고 있는 고유한 경로로, 절대적으로 변하지 않는 경로
+                            <ul>
+                                <li><code>img src="http://"</code>http://가 포함되어 있는 웹브라우저 주소로 연결</li>
+                                <li><code>img src="C:\Users\603-18\OneDrive\webs\coding\html\site-webstandard\img\header_bg.jpg"</code>로컬디스크(C:)에서 603-18->원드라이브->webs->coding->html->site-webstandard->img 폴더에 있는 header_bg.jpg파일 연결</li>
+                                <li>다른 웹사이트에 있는 그림을 내 웹사이트에 연결할 때 주로 사용합니다.</li>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>상대주소: '내 위치 기준'에서 사용하는 경로
+                            <ul>
+                                <li><code>img scr="1.jpg"</code>현재 html파일과 같은 폴더에 있는 이미지 파일1을 연결</li>
+                                <li><code>img scr="img/1.jpg"</code>현재 html파일이 있는 폴더를 기준으로 하위 폴더img에 있는 이미지 파일1을 연결</li>
+                                <li><code>img scr="../img/1.jpg"</code>현재 html파일이 있는 폴더를 기준으로 상위 폴더img에 있는 이미지 파일1을 연결</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //Intro6-1 -->
+
+              
+                <!-- Intro6-2-->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-2" class="page-header">이미지 표현방법</h2>
+                    <p class="bs-callout bs-callout-info">웹 문서에 이미지를 표현하는 방법은 html의 img태그와 css의 background를 통해 할 수 있습니다.</p>
+                    <ul>
+                        <li>html 태그 img로 표현하는 방법: 이미지에 의미가 있는 경우(로고, 배너)</li>
+                        <li>css 속성 background로 표현하는 방법: 이미지에 의미가 없는 경우(배경 장식)</li>
+                    </ul>
+                    <h4>img 태그로 이미지 표현하기</h4>
+                    <div>
+                        <img src="../assets/img/a.png" alt="a">
+                        <img src="../assets/img/b.png" alt="b">
+                        <img src="../assets/img/c.png" alt="c">
+                        <img src="../assets/img/abc.png" alt="c">
+                    </div>
+                    <h4>속성 background로 이미지 표현하기(속성 alt 못 씀, 대체 문자 표현 불가)</h4>
+                    <!--span은 lnline구조이기 때문에 width, height설정 못 함-> display: block 설정하면 세로로 정렬-> display: inline-block-->
+                    <span style="display: inline-block; width: 60px; height: 60px; background: url(../assets/img/a.png)"></span>
+                    <span style="display: inline-block; width: 60px; height: 60px; background: url(../assets/img/b.png)"></span>
+                    <span style="display: inline-block; width: 60px; height: 60px; background: url(../assets/img/c.png)"></span>
+                    <span style="display: inline-block; width: 60px; height: 60px; background: url(../assets/img/abc.png)"></span>
+                    <h4>이미지 스프라이트를 이용한 이미지 표현하기(속성 alt 못 씀, 대체 문자 표현 불가)</h4>
+                    <span style="display: inline-block; width: 60px; height: 60px; background: url(../assets/img/abc.png); "></span>
+                    <span style="display: inline-block; width: 60px; height: 60px; background: url(../assets/img/abc.png); background-position: 0 -60px"></span>
+                    <span style="display: inline-block; width: 60px; height: 60px; background: url(../assets/img/abc.png); background-position: 0 -120px"></span>
+
+                </div>
+                <!-- //Intro6-2 -->
+
+
+                <!-- Intr6-3-->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-3" class="page-header">이미지 스프라이트</h2>
+                    <p class="bs-callout bs-callout-info">아이콘 또는 장식을 위한 이미지 요소들은 스프라이트 기법을 활용하여 파일의 사이즈를 최소화하고 표율성을 높일 수 있습니다.</p>
+                    <ul>
+                        <li>여러번의 서버 요청을 한번으로 줄일 수 있음</li>
+                        <li>이미지 수정이나 관리가 간편함</li>
+                        <li>웹 접근성을 준수하기 위해서는 IR효과를 설정해야 함</li>
+                    </ul>
+                </div>
+                <!-- //Intro6-3-->
+
+
+
+                <!-- Intro6-4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-4" class="page-header">IR 효과</h2>
+                    <p class="bs-callout bs-callout-info">IR(Image Replacment)효과는 이미지 대체 텍스트를 제공하기 위한 css 기법입니다.</p>
+                    <h3>Phark Method</h3>
+                    <p>의미 있는 이미지의 대체 텍스트를 제공하는 경우: 이미지로 대체할 요소에 배경이미지를 설정하고 글자는 <code>text-indent</code>를 이용하여 화면 바깥으로 빼내어 보이지 않게 함</p>
+                    <h3>PWA IR</h3>
+                    <p>의미 있는 이미지의 대체 텍스트로 이미지를 off시에도 대체 텍스트를 보여주고자 하는 경우: 이미지로 대체할 요소에 배경 이미지를 설정하고 글자는 <code>span</code>으로 감싼 후 <code>z-index: -1</code>을 이용하여 화면에 안보이게 함</p>
+                    <h3>Screen Out</h3>
+                    <p>대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공하고자 하는 경우 사용</p>
+                </div>
+                <!-- //Intro6-4 -->
+                
+                
+                <!-- Intro6-5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-5" class="page-header">float</h2>
+                    <p class="bs-callout bs-callout-danger">속성 float은 이미지를 텍스트와 어떻게 배치할지를 설정합니다.</p>
+                    <ul>
+                        <li><code>float: left;</code>왼쪽에 부유하는 블록 박스를 생성하고 페이지 내용은 박스 오른쪽에 위치하도록 함</li>
+                        <li><code>float: right;</code>오른쪽에 부유하는 블록 박스를 생성하고 페이지 내용은 박스 왼쪽에 위치하도록 함</li>
+                    </ul>
+                </div>
+                <!-- //Intro6-5 -->
+
+                <!-- Intro6-6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-6" class="page-header">float으로 인한 깨짐 현상</h2>
+                    <p class="bs-callout bs-callout-info">float을 쓰게 되면 영역의 높이 값이 0으로 줄어들기 때문에 영역을 유지하는 방법이 필요합니다.</p>
+                    <ol>
+                        <li>깨지는 영역에 똑같이<code>float: left</code>를 사용합니다. but> 모든 영역에 float을 사용하는 한편, 레이아웃이 복잡하면 정확히 어디가 깨지는지 알기 어려워짐.</li>
+                        <li>float의 성질을 차단하는<code>clear: both</code>를 사용합니다. but> 레이아웃이 복잡해지면 어디가 깨지는지 알기 어려워짐.</li>
+                        <li><code>float</code>을 사용한 부모 박스 영역에 <code>overflow: hidden</code>을 사용함</li>
+                        <li></li>
+                    </ol>
+                </div>
+                <!-- //Intro6-6 -->
+
+                <!-- Intro6-7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-7" class="page-header">clear</h2>
+                    <p class="bs-callout bs-callout-danger">속성 clear는 이전 부유 박스와 인접하지 말아야 할 요소 박스 측면을 설정합니다.</p>
+                    <ul>
+                        <li><code>clear: both;</code>생성된 박스 전부를 이전 부유 요소 아래로 배치함</li>
+                    </ul>
+                </div>
+                <!-- //Intro16 -->
+
+                
+
+                <!-- Intr6-8-->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-8" class="page-header">컨텐츠 요소를 보이지 않게 하는 방법</h2>
+                    <p class="bs-callout bs-callout-info">컨텐츠 요소를 보이지 않게 하는 방법은 <code>display</code><code>opacity</code><code>visibility</code>등이 있습니다.</p>
+                    <div class="table-responsive">
+                       
+                        <table class="table table-bordered table-striped table-hover table-condensed">
+                           <colgroup>
+                               <col style="width: 25%">
+                               <col style="width: 25%">
+                               <col style="width: 25%">
+                               <col style="width: 25%">
+                           </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="warning ce">종류</th>
+                                    <th class="ce">반대</th>
+                                    <th  class="ce">영역</th>
+                                    <th  class="ce">애니메이션</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="warning ce">display: none;</td>
+                                    <td  class="ce"><code>display: block</code></td>
+                                    <td  class="ce">영역 사라짐</td>
+                                    <td  class="ce"></td>
+                                </tr>
+                                <tr>
+                                    <td class="warning ce">visibility: hidden;</td>
+                                    <td class="ce"><code>visibility: visible</code></td>
+                                    <td class="ce">영역 유지</td>
+                                    <td class="ce"></td>
+                                </tr>
+                                <tr>
+                                    <td class="warning ce">opacity: 0;</td>
+                                    <td><code></code></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //Intro6-8-->
+
+                   <!-- Intr6-9-->
+                   <div class="bs-docs-section">
+                    <h2 id="intro6-9" class="page-header"> GIF, JPG, PNG, SVG</h2>
+                    <p class="bs-callout bs-callout-info">프로젝트 종류에 따라 여러가지 이미지 타입을 사용할 수 있습니다.</p>
+                    <ul>
+                        <li>GIF: GIF 는 이미지를 저장해도 데이터가 손실 되지 않는 무손실 압축을 사용합니다. 파일 사이즈는 BMP보다 적은데, 좋은 압축 알고리즘을 사용하기 때문입니다. 하지만 Indexed color 속성을 가지고 있어서 최대 256가지의 컬러로만 저장 할 수 있습니다.</li>
+                        <li>JPG: JPEG 이미지는 인간의 눈으로 확인 할 수 없는 정보를 제거하는 방법으로 디테일한 사진 이미지를 가능한한 작게 만들도록 디자인 되었습니다. 이런 이유 때문에 손실 압축이고, 같은 파일을 JPEG로 변환하여 저장할 수록 시간이 지남에 따라 데이터를 손실하는 결과가 나오게 됩니다. 수천가지의 Color Palette를 가지고 있어서 사진 이미지에 적합하고 로고나 라인 그리기에는 부족합니다. 그라데이션이 표현된 이미지가 있다고 가정하면 GIF 타입 보다 JPEG 타입으로 된 이미지가 더 적은 파일 사이즈와 좋은 퀄리티를 가지고 있습니다. 사진이나 그라데이션이 표현된 이미지에 적합합니다</li>
+                        <li>PNG-8:  GIF같이 에니메이션을 지원하지 않는점입니다.(파이어폭스에서는 지원되는 데, 거의 모든 브라우저에서 해당 포맷의 에니메이션이 지원되지 않습니다.) 두번째는 IE6같은 오래된 브라우저에서 지원 문제가 있습니다. 세번째는, 포토샵같은 중요한 소프트웨어에서 이 포맷을 구현하기가 어렵다는 점입니다. PNG-8은 GIF와 같이 256 색상으로만 저장이 되고, PNG-8이 GIF보다 더 나은 점은 Alpha Transparency를 지원하는 점</li>
+                        <li>PNG-24:  JPEG처럼 수천가지의 컬러를 가지면서 무손실 압축인 훌륭한 포맷입니다. 이미지를 압축하는 면을 제외하면 BMP와 유사한데, 파일을 좀 더 작게 만드는 것입니다. 하지만, JPEG ,GIF,PNG-8보다 파일사이즈가 커서 이 포맷을 사용하길 원한다면 좀 더 고려해봐야 할 것. 물론 파일사이즈 염두해 두지 않고, 퀄리티 좋은 이미지를 원한다면 제격입니다. 보통 회사 서비스에서는 간단한 배너이미지에 이 이미지 포맷을 씁니다</li>
+                        <li>SVG: 앞에서 설명한 이미지 타입과는 다른 vector 파일 포맷입니다.  Retina screens 이나 사이즈가 변경되어도 모양을 유지 하고 싶을때, 즉 로고나 아이콘에 알맛습니다. 또한 작은 SVG 로고를 훨씬 더 큰 크기로 사용할 수 있는데요, 래스터 이미지같은 경우에는 이를 위해 별도의 파일이 필요합니다.</li>
+                    </ul>
+                    <div class="table-responsive">     
+                        <table class="table table-bordered table-striped table-hover table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="warning ce">종류</th>
+                                    <th class="ce">PC Web</th>
+                                    <th  class="ce">Mobile Web</th>
+                                    <th  class="ce">Mobile App</th>
+                                    <th  class="ce">투명효과</th>
+                                    <th  class="ce">애니메이션</th>
+                                    <th  class="ce">용량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="warning ce">GIF</td>
+                                    <td  class="ce">O(기본)</td>
+                                    <td  class="ce">O</td>
+                                    <td  class="ce">X</td>
+                                    <td  class="ce">△</td>
+                                    <td  class="ce">O</td>
+                                    <td  class="ce">작음</td>
+                                </tr>
+                                <tr>
+                                    <td class="warning ce">JPG</td>
+                                    <td class="ce">O(컬러수가 많을 때)</td>
+                                    <td class="ce">O(운영성 이미지일 때))</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">중간</td>
+                                </tr>
+                                 <tr>
+                                    <td class="warning ce">PNG-8</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">O(기본)</td>
+                                    <td class="ce">△(반투명 효과가 없고 컬러가 적을 때)</td>
+                                    <td class="ce">△</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">작음</td>
+                                </tr>
+                                 <tr>
+                                    <td class="warning ce">PNG-24</td>
+                                    <td class="ce">△(반투명 효과가 있을 때)</td>
+                                    <td class="ce">O(컬러가 많거나 반투명 효과가 있을 때)</td>
+                                    <td class="ce">O(기본)</td>
+                                    <td class="ce">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">큼</td>
+                                </tr>
+                                <tr>
+                                    <td class="warning ce">SVG</td>
+                                    <td class="ce">O</td>
+                                    <td class="ce">O</td>
+                                    <td class="ce">O</td>
+                                    <td class="ce">O</td>
+                                    <td class="ce">O</td>
+                                    <td class="ce">O</td>
+                                    <td class="ce">작음</td>
+                                </tr>    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //Intro6-9-->
+     
+                <!-- Intro6-10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6-10" class="page-header">@media</h2>
+                    <p class="bs-callout bs-callout-danger">미디어 쿼리를 사용하면 콘텐츠(content)를 별도로 변경하지 않아도 웹 페이지에 접속하고 있는 기기에 알맞은 형태로 스타일이 조정됩니다.</p>
+                    <ul>
+                        <li>CSS2
+                            <ul>
+                                <li>@media 규칙을 통해 서로 다른 매체 유형(media type)을 위한 맞춤식 스타일 시트(style sheet)를 지원</li>
+                                <li>HTML 문서가 스크린에 표현될 때와 프린트할 때 서로 다른 스타일을 적용할 수 있d음</li>
+                            </ul>
+                        </li>
+                        <li>CSS3
+                            <ul>
+                                <li>@media 규칙을 더욱 발전시켜 매체 유형(media type)과 하나 이상의 표현식(expression)으로 구성된 미디어 쿼리(media query)를 사용할 수 있음</li>
+                                <li>미디어 쿼리(media query)는 width, height, color 속성과 같은 미디어 관련 속성을 이용한 표현식을 통해 스타일이 적용되는 범위를 조절할 수 있음</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //Intro6-10 -->
+
+
+
+
+
+
+
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">margin</h2>
+                    <p class="bs-callout bs-callout-danger">속성 margin은 요소의 바깥쪽 여백을 설정합니다. </p>
+                    <ul>
+                        <li><code>margin-top: 10px;</code> 요소의 위쪽 바깥 여백을 설정</li>
+                        <li><code>margin-right: 11px;</code> 요소의 오른쪽 바깥 여백을 설정</li>
+                        <li><code>margin-bottom: 12px;</code> 요소의 아래쪽 바깥 여백을 설정</li>
+                        <li><code>margin-left: 13px;</code> 요소의 왼쪽 바깥 여백을 설정</li>
+                        <li><code>margin: 10px 11px 12px 13px;</code>요소의 위쪽/오른쪽/아래쪽/왼쪽 바깥 여백을 설정</li>
+                        <li><code>margin: 10px 11px 12px;</code>요소의 위쪽(10px)/왼쪽 오른쪽(11px)/아래쪽(12px)</li>
+                        <li><code>margin: 10px 11px;</code>요소의 위쪽 아래쪽(10px)/오른쪽 왼쪽(11px)</li>
+                        <li><code>margin: 10px;</code>요소의 위쪽/오른쪽/아래쪽/왼쪽(10px)</li>
+                        <li><code>margin: auto;</code>자동값 또는 기본값 또는 초기값</li>
+                        <li><code>margin: 0 auto;</code>블록 구조를 가운데 정렬할 때 사용</li>
+                    </ul>
+                </div>
+                <!-- //Intro7 -->
+
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">padding</h2>
+                    <p class="bs-callout bs-callout-danger">속성 padding은 요소의 안쪽 여백을 설정합니다. </p>
+                    <ul>
+                        <li><code>padding-top: 10px;</code> 요소의 위쪽 내부 여백을 설정</li>
+                        <li><code>padding-right: 11px;</code> 요소의 오른쪽 내부 여백을 설정</li>
+                        <li><code>padding-bottom: 12px;</code> 요소의 아래쪽 내부 여백을 설정</li>
+                        <li><code>padding-left: 13px;</code> 요소의 왼쪽 내부 여백을 설정</li>
+                        <li><code>padding: 10px 11px 12px 13px;</code>요소의 위쪽/오른쪽/아래쪽/왼쪽 내부 여백을 설정</li>
+                        <li><code>padding: 10px 11px 12px</code>요소의 위쪽(10px)/왼쪽 오른쪽(11px)/아래쪽(12px)</li>
+                        <li><code>padding: 10px 11px</code>요소의 위쪽 아래쪽(10px)/오른쪽 왼쪽(11px)</li>
+                        <li><code>padding: 10px </code>요소의 위쪽/오른쪽/아래쪽/왼쪽(10px)</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- //Intro8 -->
+
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">width</h2>
+                    <p class="bs-callout bs-callout-danger">속성 witdth는 요소의 가로 값을 설정합니다.</p>
+                    <ul>
+                        <li><code>width: 10px;</code></li>
+                        <li><code>width: auto;</code>자동값 또는 초기값</li>
+                    </ul>
+                </div>
+                <!-- //Intro9 -->
+
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header">height</h2>
+                    <p class="bs-callout bs-callout-danger">속성 height은 요소의 세로 값을 설정합니다.</p>
+                    <ul>
+                        <li><code>height: 10px;</code></li>
+                        <li><code>height: auto;</code>자동값 또는 초기값</li>
+                    </ul>
+                </div>
+                <!-- //Intro10 -->
+
+                <!-- Intro11 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro11" class="page-header">text-align</h2>
+                    <p class="bs-callout bs-callout-danger">속성 text-align은 요소의 세로 값을 설정합니다.</p>
+                    <ul>
+                        <li><code>text-align: left;</code>왼쪽 정렬</li>
+                        <li><code>text-align: right;</code>오른쪽 정렬</li>
+                        <li><code>text-align: center;</code>가운데 정렬</li>
+                        <li><code>text-align: justify;</code>양쪽 정렬</li>
+                    </ul>
+                </div>
+                <!-- //Intro11 -->
+
+                <!-- Intro12 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro12" class="page-header">font</h2>
+                    <p class="bs-callout bs-callout-danger">속성 font는 폰트의 속성을 설정합니다.</p>
+                    <ul>
+                        <li>font</li>
+                        <li>font-family</li>
+                        <li>font-size
+                            <ul>
+                                <li><code>font-size: 10px;</code>글씨 크기 10픽셀(fz10px+tab)</li>
+                            </ul>
+                        </li>
+                        <li>font-size-adjust</li>
+                        <li>font-size-stretch</li>
+                        <li>font-size-style</li>
+                        <li>font-size-variant</li>
+                        <li>font-weight</li>
+                        <li>@font-face</li>
+                    </ul>
+                </div>
+                <!-- //Intro12 -->
+
+                <!-- Intro13 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro13" class="page-header">line-height</h2>
+                    <p class="bs-callout bs-callout-danger">속성 line-height는 줄간격을 설정합니다.</p>
+                    <ul>
+                        <li><code>line-height: 10px;</code>줄간격 10픽셀</li>
+                    </ul>
+                </div>
+                <!-- //Intro13 -->
+
+                <!-- Intro14 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro14" class="page-header">text-transform</h2>
+                    <p class="bs-callout bs-callout-danger">속성 text-transform은 텍스트의 대/소문자를 설정합니다.</p>
+                    <ul>
+                        <li><code>text-transform: capitalize;</code> 단어의 첫번째 글자를 대문자로 설정</li>
+                        <li><code>text-transform: uppercase;</code>모든 글자를 대문자로 설정</li>
+                        <li><code>text-transform: lowercase;</code>모든 글자를 소문자로 설정</li>
+                        <!-- <li><code>text-transform: inherit;</code>상위 요소의 속성을 상속받음</li> -->
+                    </ul>
+                </div>
+                <!-- //Intro14 -->
+
+
+                <!-- Intro17 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro17" class="page-header">background-color</h2>
+                    <p class="bs-callout bs-callout-danger">속성 background-color는 배경색을 설정합니다.</p>
+                    <ul>
+                        <li><code>background-color: #fff;</code>배경색을 헥사코드#fff에 해당하는 색으로 바꿈(=bcgfff+tab) </li>
+                        <li><code>background-color: rgba(0,0,0,0.1)</code>배경색 r은 0, g는 0, b는 0, 투명도는 0.1로 설정</li>
+                    </ul>
+                </div>
+                <!-- //Intro17 -->
+
+                <!-- Intro18 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro18" class="page-header">text-decoration</h2>
+                    <p class="bs-callout bs-callout-danger">글자에 줄을 그을 때 사용합니다.</p>
+                    <ul>
+                        <li><code>text-decoration: line-underline;</code>글자 아래에 줄 그음</li>
+                        <li><code>text-decoration: line-through;</code>글자 위에 줄 그음</li>
+                        <li><code>text-decoration: line-through;</code>글자 중간에 줄 그음</li>
+                        <li><code>text-decoration: none;</code>a 태그는 기본적으로 text-decoration속성이 line-underline;속성값을 갖도록 설정되어 있는데 속성값을 none으로 설정해서 글자만 나타나도록 할 수 있음</li>
+                    </ul>
+                </div>
+                <!-- //Intro18 -->
+
+                <!-- Intro19 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro19" class="page-header">background</h2>
+                    <p class="bs-callout bs-callout-danger">속성 background는 배경 이미지 속성 값을 설정합니다.</p>
+                    <ul>
+                        <li>background-attachment: 배경 이미지 고정여부를 설정합니다
+                            <ul>
+                                <li><code>background-attachment: scroll</code></li>
+                                <li><code>background-attachment: fixed</code></li>
+                                <li><code>background-attachment: local</code></li>
+                            </ul>
+                        </li>
+                        <li>background-blend-mode: 배경을 혼합했을 때의 상태를 설정합니다.
+                            <ul>
+                                <li><code>background-blend-mode: normal</code></li>
+                                <li><code>background-blend-mode: multiply</code></li>
+                                <li><code>background-blend-mode: screen</code></li>
+                                <li><code>background-blend-mode: overlay</code></li>
+                                <li><code>background-blend-mode: darken</code></li>
+                                <li><code>background-blend-mode: lighten</code></li>
+                                <li><code>background-blend-mode: color-dodge</code></li>
+                                <li><code>background-blend-mode: saturation</code></li>
+                                <li><code>background-blend-mode: color</code></li>
+                                <li><code>background-blend-mode: saturation</code></li>
+                            </ul>
+                        </li>
+                        <li>background-clip: 배경 이미지 영역 속성을 설정합니다.
+                            <ul>
+                                <li><code>background-clip: border-box</code></li>
+                                <li><code>background-clip: padding-box</code></li>
+                                <li><code>background-clip: content-box</code></li>
+                            </ul>
+                        </li>
+
+                        <li>background-color: 배경 색상을 설정합니다.
+                            <ul>
+                                <li><code>background-color: color값</code></li>
+                                <li><code>background-color: transparent</code></li>
+                            </ul>
+                        </li>
+
+                        <li>background-image: 배경 이미지를 설정합니다.
+                            <ul>
+                                <li><code>background-image: url()</code></li>
+                                <li><code>background-image: none</code></li>
+
+                            </ul>
+                        </li>
+                        <li>background-origin: 배경의 방향을 설정합니다.
+                            <ul>
+                                <li><code>background-origin: border-box</code></li>
+                                <li><code>background-origin: padding-box</code></li>
+                                <li><code>background-origin: content-box</code></li>
+                            </ul>
+                        </li>
+                        <li>background-position: 배경의 위치를 설정합니다.
+                            <ul>
+                                <li><code>background-position: a% b%</code>x축 기준 a%, y축 기준 b%에 위치 </li>
+                                <li><code>background-position: 10px 10px</code>x축으로 10px이동, y축으로 10px이동</li>
+                                <li><code>background-position: top | right | bottom | left</code>
+                                    <ul>
+                                        <li><code>background-position: left top | left center | left bottom | right top | right center | right bottom | center top | center center | center bottom</code></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>background-repeat: 배경의 반복 여부를 설정합니다.
+                            <ul>
+                                <li><code>background-repeat: repeat;</code>기본값(x축, y축 반복)</li>
+                                <li><code>background-repeat: repeat-x;</code>이미지가 x축으로 반복</li>
+                                <li><code>background-repeat: repeat-y;</code>이미지가 y축으로 반복</li>
+                                <li><code>background-repeat: no-repeat;</code>이미지를 하나만 나오게 설정</li>
+                            </ul>
+                        </li>
+                        <li>background-size: 배경의 사이즈를 설정합니다.
+                            <ul>
+                                <li><code>background-size: auto;</code></li>
+                                <li><code>background-size: contain;</code></li>
+                                <li><code>background-size: cover;</code></li>
+                                <li><code>background-size: percentage;</code></li>
+                                <li><code>background-size: length;</code></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //Intro19 -->
+
+                <!-- Intro20 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro20" class="page-header">border</h2>
+                    <p class="bs-callout bs-callout-danger">속성 border은 테두리를 설정합니다.</p>
+                    <ul>
+                        <li><code>border-color</code>
+                            <ul>
+                                <li><code>border-top-color</code></li>
+                                <li><code>border-right-color</code></li>
+                                <li><code>border-bottom-color</code></li>
+                                <li><code>border-left-color</code></li>
+                            </ul>
+                        </li>
+                        <li><code>border-width</code>
+                            <ul>
+                                <li><code>border-top-width</code></li>
+                                <li><code>border-right-width</code></li>
+                                <li><code>border-bottom-width</code></li>
+                                <li><code>border-left-width</code></li>
+                            </ul>
+                        </li>
+                        <li><code>border-style</code>
+                            <ul>
+                                <li><code>border-top-style</code></li>
+                                <li><code>border-right-style</code></li>
+                                <li><code>border-bottom-style</code></li>
+                                <li><code>border-left-style</code></li>
+                            </ul>
+                        </li>
+                        <li><code>border-image</code>
+                            <ul>
+                                <li><code>border-image-outset</code></li>
+                                <li><code>border-image-repeat</code></li>
+                                <li><code>border-image-slice</code></li>
+                                <li><code>border-image-source</code></li>
+                                <li><code>border-image-width</code></li>
+                            </ul>
+                        </li>
+                        <li><code>border-radius</code>
+                            <ul>
+                                <li><code>border-top-left-radius</code></li>
+                                <li><code>border-top-right-radius</code></li>
+                                <li><code>border-bottom-left-radius</code></li>
+                                <li><code>border-bottom-right-radius</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //Intro20 -->
+
+                <!-- Intro21 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro21" class="page-header">position</h2>
+                    <p class="bs-callout bs-callout-danger">속성 position은 레이아웃이나 객체를 위치시킬 때 사용합니다.</p>
+                    <ul>
+                        <li><code>position: static;</code>초기값. static 속성 값으로 설정하면 웹 브라우저에서 자연스럽게 해당 요소의 위치를 결정해줌.</li>
+                        <li><code>position: relative; top:; right:; bottom:; left:;</code>해당 요소가 'static이었을 때 배치되는 위치를 기준'으로 상대적 위치를 설정할 수 있음. top, right, bottom, left 속성을 사용해 위치 조절을 할 수 있음</li>
+                        <li><code>position: absolute;</code>웹 브라우저 내의 흐름과 상관없이 요소의 위치를 조절할 수 있음. 기준점이 웹브라우저 왼쪽 상단 또는 가장 가까운 부모요소 중 속성이 positive: relative인 것</li>
+                        <li><code>position: fixed;</code>웹 브라우저 내의 흐름과 상관없이 요소의 위치를 조절할 수 있음. 기준점이 웹브라우저 왼쪽 상단으로 고정</li>
+                    </ul>
+                </div>
+                <!-- //Intro21 -->
+
+                <!--// Intro22 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro22" class="page-header">display</h2>
+                    <p class="bs-callout bs-callout-danger">속성 display는 웹 페이지 상에서 요소들이 어떻게 다른 요소들과 상호 배치되는지를 결정합니다.</p>
+                    <ul>
+                        <li><code>display: inline;</code>
+                            <ul>
+                                <li>해당요소는 한 줄에 다른 요소들과 나란이 배치됨</li>
+                                <li>속성 width와 height을 지정해도 무시됨</li>
+                                <li>속성 margin과 padding은 오른쪽, 왼쪽 간격만 반영되고 위쪽, 아래쪽 간격은 반영되지 않음</li>
+                                <li><code>&lt;span&gt;</code> <code>&lt;a&gt;</code> <code>em</code> <code>img</code> <code>strong</code></li>
+                            </ul>
+                        </li>
+                        <li><code>display: block;</code>
+                            <ul>
+                                <li>해당 요소는 한 줄을 모두 차지하고 다른 요소들은 다음 줄로 밀려남.</li>
+                                <li>속성 width, height, margin, padding 모두 반영됨</li>
+                                <li><code>block</code> <code>div</code> <code>p</code> <code>h1-h6</code>
+                                <li>
+                            </ul>
+                        </li>
+                        <li><code>display: inline-block;</code>
+                            <ul>
+                                <li>해당요소는 한 줄에 다른 요소들과 나란이 배치됨</li>
+                                <li>속성 width, height, margin, padding 모두 반영됨</li>
+                                <li><code>button</code><code>select</code></li>
+                            </ul>
+                        </li>
+                        <li><code>display: none;</code>
+                            <ul>
+                                <li>해당요소를 보이게 하지 않음</li>
+                                <li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //Intro22 -->
+
+                <!-- Intro22-1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro22-1" class="page-header">display: -브라우저 태그-box;</h2>
+                    <p class="bs-callout bs-callout-danger">속성 display: -브라우저 태그-box;는 블록요소에서 float 대신 사용할 수 있습니다. 또한 블록을 수직, 수평으로
+                    배치하거나 역순으로 배열하거나 임의로 배치 순서를 바꿔줄 수도 있습니다. 반응형 웹을 위한 구성에는 단순히 float를 사용하는 것보다 많은 
+                    장점들이 있기 때문에 많이 사용하는 속성입니다. 특히 iOS나 안드로이드 같은 모바일 환경에서 지원되고 있기 때문에 모바일 웹 사이트를 제작할 때 유용합니다.</p>
+                    <p> 각 브라우저별 태그 지정 방법</p>
+                    <ul>
+                        <li>IE : -ms-</li>
+                        <li>Firefox : -moz-</li>
+                        <li>Safari, Chrome : -webkit-</li>
+                        <li>Opera: -o-</li>
+                    </ul>
+                </div>
+                <!-- //Intro22-1 -->
+
+                <!-- Intro22-2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro22-2" class="page-header">line-clamp</h2>
+                    <p class="bs-callout bs-callout-danger">속성 line-clamp는 블록요소의 콘텐츠를 지정한 줄 수만큼으로 제한합니다.</p>
+                   
+                    <p>display 속성을 -webkit-box 또는 -webkit-inline-box로 설정하고, -webkit-box-orient 속성을 vertical로 설정한 경우에만 동작합니다.
+                    -webkit-line-clamp만 사용하는 경우, 말줄임표는 노출되나 넘친 콘텐츠가 숨겨지지 않으므로 대개 <code>overflow: hidden;</code>을 추가로 설정해야 합니다.</p>
+                    <ul>
+                        <li>원하는 줄에서 말줄임표 나타내기
+                            <ul>
+                                <li>속성 설정:</li>
+                                <li><code>text-overflow: ellipsis; overflow: hidden;  <br>
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-line-clamp: 2; (지정한 n번째 줄에서 말줄임표 나타남!)
+                                    max-height: 36px; (li요소 속성으로 지성하면 li요소 높이)</code></li>
+                            </ul>
+                        </li>
+                        <li><code>white-space: pre-line;</code> 속성과의 차이점: 속성을 <code> text-overflow: ellipsis; overflow: hidden; white-space: pre-line; </code>으로 설정 ->
+                        해당 요소에 높이가 따로 설정되어 있지 않으면 요소의 너비를 초과할 때 줄바꿈하고 요소 내용에 말줄임표가 안 나타남.</li>
+                    </ul>
+                </div>
+                <!-- //Intro22-2 -->
+
+
+                <!-- Intro22-3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro22-3" class="page-header">box-orient</h2>
+                    <p class="bs-callout bs-callout-danger">속성 box-orient는 박스의 흐르는 방향을  지정합니다.</p>
+                    <ul>
+                        <li><code>box-orient: horizontal;</code> : 가로로 지정</li>
+                        <li><code>box-orient: vertical;</code> : 세로로 지정</li>
+                        <li><code>box-orient: inline-axis;</code> : 인라인축으로 지정(수평방향) </li>
+                        <li><code>box-orient: block-axis;</code> : 블럭축으로 지정(수직방향)</li>                       
+                    </ul>
+                </div>
+                <!-- //Intro22-3 -->
+
+                <!-- Intro23 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro23" class="page-header">text-indent</h2>
+                    <p class="bs-callout bs-callout-danger">속성 text-indent는 텍스트의 들여쓰기를 설정할 때 사용합니다.</p>
+                    <ul>
+                        <li><code> text-indent: -9999px;</code>텍스트를 안 보이게 할 경우에도 사용함. 속성 display의 값을 none으로 준 것 같은 효과를 줌. 속성 background 이미지의 경우 img태그 이미지와 달리 속성 alt가 없는데, 속성 alt를 지정한 것 같은 효과를 주는 셈</li>
+                    </ul>
+                </div>
+                <!-- //Intro23 -->
+
+                <!-- Intro24 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro24" class="page-header">z-index</h2>
+                    <p class="bs-callout bs-callout-danger">속성 z-index는 요소들의 위치가 겹칠 경우 순서를 정의합니다.</p>
+                    <ul>
+                        <li>속성 z-index는 속성 position: relative|absolute|fixed가 적용된 요소에만 적용됨(position값이 설정되어 있지 않으면 z-index는 0임!)</li>
+                        <li>속성  z-index는 같은 depth의 요소끼지 비교하는 것이 원칙임</li>
+                        <li>z-index의 기본 속성값은 auto임! z-index값이 auto로 설정된 요소는 z-index가 0으로 설정된 것처럼 작동함. 그리고 z-index 비교대상을 자식 요소에게 넘겨줌</li>
+                    </ul>
+                </div>
+                <!-- //Intro24 -->
+
+                <!-- Intro25 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro25" class="page-header">vertical-align</h2>
+                    <p class="bs-callout bs-callout-danger">속성 vertical-align은 텍스트의 상하 정렬 방식을 설정합니다.</p>
+                    <ul>
+                        <li>vertical-align은 오직 inline과 table-cell 엘리먼트에만 적용됨</li>
+                        <li><code>vertical-align: baseline;</code>기본값. </li>
+                        <li><code>vertical-align: middle;</code>요소의 인라인박스의 수직 중앙 지점(콘텐츠 영역의 높이/2)을, 부모요소의 중앙 지점에 정렬 </li>
+                        <li><code>vertical-align: text-top;</code>요소의 인라인박스의 상단을, 부모요소 콘텐츠영역의 상단에 정렬​</li>
+                        <li><code>vertical-align: text-bottom;</code>요소의 인라인박스의 하단을, 부모요소 콘텐츠영역의 하단에 정렬​​</li>
+                        <li><code>vertical-align: top;</code>요소의 인라인박스의 상단을, 라인박스의 상단에 정렬​​​</li>
+                        <li><code>vertical-align: bottom;</code>요소의 인라인박스의 하단을, 라인박스의 하단에 정렬</li>
+                        <li><code>vertical-align: sub;</code>요소의 인라인박스의 baseline을 부모박스의 아래첨자의 적절한 위치로 내림</li>
+                        <li><code>vertical-align: super;</code>요소의 인라인박스의 baseline을 부모박스의 윗첨자의 적절한 위치로 올림</li>
+                    </ul>
+                </div>
+                <!-- //Intro25 -->
+
+                <!-- Intro26 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro26" class="page-header">white-space</h2>
+                    <p class="bs-callout bs-callout-danger">속성 white-space는 HTML 요소 내의 여백을 설정합니다</p>
+                    <ul>
+                        <li><code>white-space: normal;</code>연속 공백은 하나의 공백으로 나타냄. 요소 내용이 컨테이너 밖으로 넘치는 경우 줄바꿈</li>
+                        <li><code>☆white-space: nowrap;</code>연속 공백은 하나의 공백으로 나타냄. 요소 내용이 컨테이너 밖으로 넘치는 경우 넘치는 그대로 나타남</li>
+                        <li><code>white-space: pre;</code>연속 공백을 그대로 나타냄. 요소 내용이 컨테이너 밖으로 넘치는 경우 넘치는 그대로 나타남</li>
+                        <li><code>white-space: pre-wrap;</code>연속 공백을 그대로 나타냄. 요소 내용이 컨테이너 밖으로 넘치는 경우 줄바꿈</li>
+                        <li><code>white-space: pre-line;</code>연속 공백은 하나의 공백으로 나타냄. 요소 내용이 컨테이너 밖으로 넘치는 경우 줄바꿈</li>
+                    </ul>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>줄바꿈</th>
+                                <th>연속공백</th>
+                                <th>enter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>normal</th>
+                                <td>O</td>
+                                <td>X</td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <th>nowrap </th>
+                                <td>X</td>
+                                <td>X</td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <th>pre </th>
+                                <td>X</td>
+                                <td>O</td>
+                                <td>O</td>
+                            </tr>
+                            <tr>
+                                <th>pre-line</th>
+                                <td>O</td>
+                                <td>X</td>
+                                <td>O</td>
+                            </tr>
+                            <tr>
+                                <th>pre-wrap</th>
+                                <td>O</td>
+                                <td>O</td>
+                                <td>O</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //Intro26 -->
+
+                 <!-- Intro26-1 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro26-1" class="page-header">text-overflow</h2>
+                    <p class="bs-callout bs-callout-danger">속성 text-overflow는 요소의 내용에 있는 문자열이 넘칠 때 그것을 어떻게 나타낼지를 설정합니다.</p>
+                    <ul>
+                        <li><code>text-overflow: clip;</code>문자열이 넘칠 경우 컨테이너 밖으로 보이는 부분은 잘려서 안 보임</li>
+                        <li><code>text-overflow: ellipsis;</code>문자열이 넘칠 경우 말줄임표(...)를 표시</li>
+                        <li><code>text-overflow: string;</code>문자열이 넘칠 경우 지정된 문자열을 나타냄</li>
+                    </ul>
+                </div>
+                <!-- //Intro26-1 -->
+
+                <!-- Intro26-2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro26-2" class="page-header">overflow</h2>
+                    <p class="bs-callout bs-callout-danger">속성 overflow는 요소의 내용이 컨테이너의 크기에 비에 클 때 그것을 어떻게 나타낼지를 설정합니다.</p>
+                    <ul>
+                        <li><code>overflow: visible;</code>기본값임. 내용이 넘칠 경우 넘치는 그대로 나타남</li>
+                        <li><code>overflow: hidden;</code>내용이 넘칠 경우 컨테이너 밖으로 보이는 부분은 잘려서 안 보임</li>
+                        <li><code>overflow: scroll;</code>스크롤바 추가돼서 넘치는 내용도 볼 수 있음</li>
+                        <li><code>overflow: auto;</code>내용의 크기에 따라 스크롤바 추가됨</li>
+                    </ul>
+                </div>
+                <!-- //Intro26-2 -->
+
+                <!-- Intro27 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro27" class="page-header">visibility</h2>
+                    <p class="bs-callout bs-callout-danger">속성 visibility은 요소를 보이지 않게 합니다.</p>
+                    <ul>
+                        <li><code>visibility: visible;</code>요소를 나타냄</li>
+                        <li><code>visibility: hidden;</code>요소가 보이지 않음. 영역은 유지됨</li>
+                        <li><code>visibility: collapse;</code>테이블 요소를 나타내지 않음</li>
+                    </ul>
+                </div>
+                <!-- //Intro27 -->
+
+                 <!-- Intro28 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro28" class="page-header">box-sizing</h2>
+                    <ul>
+                        <li><code>box-sizing: content-box;</code>콘텐트 영역을 기준으로 크기를 정함</li>
+                        <li><code>box-sizing: border-box;</code> 테두리를 기준으로 크기를 정함
+                            <ul>
+                                <li>속성 값 border-box는 해당 요소의 너비(width)와 높이(height)에 패딩(padding)과 테두리(border)의 크기를 포함시켜 따로 더해주지 않습니다.</li>
+                                <li>일반적으로 요소의 너비 구하는 식: width + left padding + right padding + left border + right border + left margin + right margin</li>
+                                <li><code>box-sizing: border-box;</code> 설정 시 너비 구하는 식: width + left margin + right margin</li>
+                            </ul>
+                        </li>
+                        <li><code>box-sizing: initial;</code>기본값으로 설정함</li>
+                        <li><code>box-sizing: inherit;</code>부모 요소의 속성값을 상속받음</li>
+                    </ul>
+                </div>
+                <!-- //Intro28 -->
+
+                 <!-- Intro29 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro29" class="page-header">cursor</h2>
+                    <p class="bs-callout bs-callout-danger">속성cursor를 이용하면 해당 태그 위에 위치하는 마우스 커서의 모양을 바꿀 수 있습니다.</p>
+                    <ul>
+                        <li><code>cursor: pointer;</code>손가락 모양</li>
+                        <li><code>cursor: auto;</code>자동</li>
+                        <li><code>cursor: default;</code>기본 화살표</li>
+                        <li><code>cursor: wait;</code>로딩</li>
+                    </ul>
+
+                    <h5>속성 cursor <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_cursor&preval=alias">PLAY</a></h5>
+                </div>
+                <!-- //Intro29 -->
+                
+                 <!-- Intro30 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro30" class="page-header">상대 단위</h2>
+                    <ul>
+                        <li>em
+                            <ul>
+                                <li>상위 요소의 폰트 사이즈를 기준으로 함</li>
+                                <li>html에 10px, 상위 요소 header에 20px 설정돼 있으면 header 설정값 기준임</li>
+                                <li><code>font-size: 1em;</code>상위요소 폰트 사이즈* 1</li>
+                            </ul>
+                        </li>
+                        <li>rem
+                            <ul>
+                                <li>루트 요소의 폰트 사이즈를 기준으로 함</li>
+                                <li>html에 10px, 상위 요소 header에 20px 설정돼 있으면 html 설정값 기준임</li>
+                                <li><code>font-size: 1rem;</code>루트 요소 폰트 사이즈* 1</li>
+                            </ul>
+                        </li>
+                        <li>vh
+                            <ul>
+                                <li>viewport(브라우저 창의 크기)의 높이를 기준으로 함</li>
+                                <li><code>height: 100vh;</code>뷰포트의 높이* 100% </li>
+                            </ul>
+                        </li>
+                        <li>vw
+                            <ul>
+                                <li>viewport(브라우저 창의 크기)의 너비를 기준으로 함</li>
+                                <li><code>width: 100vw</code>뷰포트의 너비* 100%</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //Intro30 -->
+
+                 <!-- Intro31 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro31" class="page-header"></h2>
+
+                </div>
+                <!-- //Intro32 -->
+
+                <!-- Intro32 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro32" class="page-header"></h2>
+
+                </div>
+                <!-- //Intro32 -->
+
+                 <!-- Intro33 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro33" class="page-header"></h2>
+
+                </div>
+                <!-- //Intro33 -->
+
+
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">CSS</a></li>
+                        <li><a href="#intro2">CSS선택자(selector)</a></li>
+                        <li><a href="#intro3">CSS속성(property)</a></li>
+                        <li><a href="#intro4">CSS속성 값(value)</a></li>
+                        <li><a href="#intro5">CSS색상</a></li>
+                        <li><a href="#intro6">CSS선언</a></li>
+                    
+                        <li><a href="#intro6-1">상대주소 절대주소</a></li>
+                        <li><a href="#intro6-2">이미지 표현방법</a></li>
+                        <li><a href="#intro6-3">이미지 스트라이트</a></li>
+                        <li><a href="#intro6-4">IR효과</a></li>
+                        <li><a href="#intro6-5">float</a></li>
+                        <li><a href="#intro6-6">float으로 인한 깨짐 현상</a></li>
+                        <li><a href="#intro6-7">clear</a></li>
+                        <li><a href="#intro6-8">컨텐츠 요소를 보이지 않게 하는 방법</a></li>
+                        <li><a href="#intro6-9">GIF, JPG, PNG, SVG</a></li>
+                    
+                        <li><a href="#intro6-10">@media</a></li>
+                    
+                        <li><a href="#intro7">margin</a></li>
+                        <li><a href="#intro8">padding</a></li>
+                        <li><a href="#intro9">width</a></li>
+                        <li><a href="#intro10">height</a></li>
+                        <li><a href="#intro11">text-align</a></li>
+                        <li><a href="#intro12">font</a></li>
+                        <li><a href="#intro13">line-height</a></li>
+                        <li><a href="#intro14">text-transform</a></li>
+                        <li><a href="#intro17">background-color</a></li>
+                        <li><a href="#intro18">text-decoration</a></li>
+                        <li><a href="#intro19">background</a></li>
+                        <li><a href="#intro20">border</a></li>
+                        <li><a href="#intro21">position</a></li>
+                        <li><a href="#intro22">display</a></li>
+                        <li><a href="#intro22-1">display: -브라우저 태그-box</a></li>
+                        <li><a href="#intro22-2">line-clamp</a></li>
+                        <li><a href="#intro22-3">box-orient</a></li>
+                        <li><a href="#intro23">text-indent</a></li>
+                        <li><a href="#intro24">z-index</a></li>
+                        <li><a href="#intro25">vertical-align</a></li>
+                        <li><a href="#intro26">white-space</a></li>
+                        <li><a href="#intro26-1">text-overflow</a></li>
+                        <li><a href="#intro26-2">overflow</a></li>
+                        <li><a href="#intro27">visibility</a></li>
+                        <li><a href="#intro27">visibility</a></li>
+                        <li><a href="#intro28">box-sizing</a></li>
+                        <li><a href="#intro29">cursor</a></li>
+                        <li><a href="#intro30">cursor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/docs.min.js"></script>
+    <script src="../assets/js/prism.js"></script>
+</body></html>

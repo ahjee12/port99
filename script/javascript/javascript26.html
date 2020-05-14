@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let table = "<table border = '1'>";
+        let num = 1;
+        // let table2 = "</table>";
+        //     for(let i= )
+        // table += "</table>";
+        // for(let i = 0; i<100; i++){
+        //     table += "<tr>"
+        // }
+        for(let i=1; i<=10; i++){
+            table += "<tr>";
+            for(let j =1; j<=10; j++){
+                table += "<td>"+num+"</td>";
+                num++;
+            }
+            table +="</tr>";
+        }
+        document.write(table);
+    </script>
+</head>
+<body>
+    <!-- <table border="1">
+        <thead>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+        </tbody>
+    </table> -->
+</body>
+</html>

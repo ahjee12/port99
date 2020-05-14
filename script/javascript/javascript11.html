@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <script>
+        //num값에 숫자 100을 넣고 출력
+        let num = 100;
+        document.write(num);
+        document.write("<br><br>");
+        //num2값에 숫자 201을 넣고 200보다 크면 실행
+        let num2 = 201;
+        if(num2 > 200){
+            document.write(num2);
+            document.write("<br><br>");
+        }
+        //조건값이 true이면 무조건 실행
+        if(true){
+            document.write(num2);
+            document.write("<br><br>");
+        }
+        //if문 약식
+        if(true) document.write(num2);
+        document.write("<br><br>");
+        
+        //prompt이용
+        let num3 = prompt("숫자를 입력해주세요!")
+        if(num3 %2 ==0 ){
+            document.write("당신이 입력한 숫자는 짝수입니다.");
+            document.write("<br><br>");
+        }
+
+        //방문자 이름
+        let userName = prompt("당신의 이름은 무엇입니까?")
+
+        if(userName){
+            document.write(userName+"님 반갑습니다! 방문을 환영합니다")
+            document.write("<br><br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,232 @@
+/* 리셋 */
+*{margin: 0; padding: 0;}
+body{font-family:'Nanum Gothic', AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;}
+a{color: #000; text-decoration: none; font-style: normal;}
+ul, li{list-style: none;}
+em{font-style: normal;}
+.clearfix::before, .clearfix::after{content: ''; display: block; clear: both;}
+
+/* 레이아웃 */
+#wrap{width: 100%}
+
+header{}
+
+section .banner{}
+section .content1{}
+section .content2{}
+
+footer{height: 200px; background-color: #ccc;}
+.footer{height: 200px; background-color: rgb(77, 160, 255);}
+
+.container{width: 1000px; height: inherit; margin: 0 auto;}
+
+
+/* 헤더 */
+/* header{}
+
+header img{width: 200px; float: left;}
+header nav{float: right; padding-top: 60px; }
+header nav ul{display: inline;}
+header nav ul li{display: inline-block; padding-right: 18px;
+    font-size: 20px; font-weight: bold;
+    position: relative;
+}
+header nav ul li:last-child{padding-right: 0;}
+header nav ul li a{}
+header nav ul li ul.submenu{position: absolute; left: 0; top: 30px;
+}
+header nav ul li ul.submenu a{font-size: 15px;} */
+
+
+/* header{}
+header h1{ float: left; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 1px;
+} 
+header img{width: 200px; 
+    vertical-align: middle;
+    
+}
+header nav{float: right; margin-top: 60px; background-color: rgb(207, 207, 207);
+    text-align: center;
+} */
+
+/*--------- li에 float: left 넣고 ul에 clearfix쓰기----------- */
+
+/* header nav ul{}
+header nav ul li{float: left; padding-right: 18px;
+    font-size: 20px; font-weight: bold;
+    position: relative;
+    height: 50px; width: 120px; line-height: 50px;
+}
+
+header nav ul li:last-child {padding-right: 0;}
+header nav ul li a{}
+
+header nav ul li ul.submenu{position: absolute; left: 0; top: 49.5px;
+}
+header nav ul li ul.submenu li{padding-right: 18px; background-color: rgb(82, 82, 82); }
+header nav ul li:last-child ul li{padding-right: 0px;}
+header nav ul li ul.submenu li a{} */
+
+/* 헤더 다시 */
+header{}
+header h1{
+    float: left; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 1px;
+} 
+header img{width: 200px; 
+    vertical-align: middle;  
+}
+header nav{float: right; margin-top: 49px; background-color: rgb(128, 128, 128);
+    text-align: center;
+}
+header nav ul{}
+header nav ul li{float: left;
+    padding: 0 0;
+    font-size: 20px; font-weight: bold;
+    position: relative;
+    height: 50px; width: 120px; line-height: 50px;
+}
+
+header nav ul li a{display: block;}
+header nav ul li:hover{background-color: rgb(81, 92, 245);}
+
+header nav ul li.nav-intro { width: 170px;}
+header nav ul li.nav-menu {width: 170px;}
+header nav ul li.nav-review {}
+header nav ul li.nav-event {}
+header nav ul li.nav-my {}
+/*header nav ul li.nav-intro { padding: 0 25px 0;}
+header nav ul li.nav-menu {padding:0 20px 0;}
+header nav ul li.nav-review {padding:0 3px 0px;}
+header nav ul li.nav-event {padding-right: 0px;}
+header nav ul li.nav-my {padding-right: 0px;} */
+/*text-align: right;*/
+/*a 태그 너비가 li안에서만 조정됨, li너비 벗어나면 줄바꿔짐, a태그는 block으로 설정한 다음 li 너비 px자체를 넓히기 */
+/* header nav ul li.nav-intro a{display: block; padding: 0 50px 0;} 
+header nav ul li.nav-menu a{padding:0 20px 0;}
+header nav ul li.nav-review a{padding:0 3px 0px;}
+header nav ul li.nav-event a{padding-right: 0px;}
+header nav ul li.nav-my a{padding-right: 0px;} */
+
+/*절대값으로 위치를 설정했기 때문에 자바스크립스 슬라이드 만들고 나서 사라짐
+-> zindex 값을 절대값 위치 설정한 ul에 지정하고 slideList에도 지정해야 나타남!!*/
+header nav ul li ul.submenu{position: absolute; left: 0; top: 56px; display: none; z-index: 100;} 
+header nav ul li ul.submenu li{padding: 0 0; background-color: rgb(231, 137, 137);}
+header nav ul li ul.submenu li a{}
+header nav ul li ul.submenu li:hover{background-color: rgb(179, 255, 0);}
+header nav ul li ul.submenu.menu1 li { width: 170px;}
+header nav ul li ul.submenu.menu2 li { width: 170px;}
+header nav ul li ul.submenu.menu3 li {padding:0 0px 0px;}
+header nav ul li ul.submenu.menu4 li {padding-right: 0px;}
+header nav ul li ul.submenu.menu5 li {padding-right: 0px;}
+
+/* 배너 */
+.banner{height: 387px; overflow: hidden;} /*슬라이드 이미지 3개 상위 배너, 각 이미지 상위 list 너비 높이 크기 맞추기*/
+.banner img{width: 100%; display: block;} /*이미지가 인라인 요소라 이미지 사이에 간격이 생김*/
+
+/*세로 슬라이드*/
+/* .banner .slideList{width: 1000px; height: 387px;
+    position: relative;
+}
+.banner .slideList .slideImg{position: relative;}
+.banner .slideList .slideImg h2{
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    border-radius: 20px;
+} */
+
+/*가로 슬라이드*/
+.banner .slideList{width: 3000px; position: relative; z-index: 10;}
+.banner .slideList .slideImg{position: relative; width: 1000px; float: left;} /*list 너비 3000, 각 이미지 너비 1000으로 고정*/ 
+.banner .slideList .slideImg h2{
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+/* 콘텐츠1 - box1 */
+.content1{margin-top: 20px;}
+.content1 article.content1-box1{float: left; margin-right: 2%; width: 49%; 
+    border: 1px solid #f2f2f2; height: 155px; box-sizing: border-box;
+    padding: 20px;
+    /* position: relative; */
+    background: url(../img/content1-3.jpg) no-repeat right top;
+    background-color: #f2f2f2;
+    background-size: 150px;
+    font-weight: bold;
+}
+.content1 .content1-box1 h2{font-size: 20px; font-weight: bold;
+    padding-bottom: 5px;
+}
+.content1 .content1-box1 ul{padding-bottom: 30px;}
+.content1 .content1-box1 ul li{}
+.content1 .content1-box1 a img{vertical-align: middle; padding-bottom: 7px; padding-right: 9px;}
+.content1 .content1-box1 a span{font-weight: bold; font-size: 20px;}
+/* .content1 .content1-box1 img{position: absolute; right: 0; top: 0px; height: 150px;} */
+
+/* 콘텐츠1 - box2 */
+.content1 article.content1-box2{float: left; margin-right: 0; width: 49%;
+    border: 1px solid #f2f2f2; height: 155px; box-sizing: border-box;
+    padding: 20px;
+     /* position: relative; */
+     background: url(../img/content1-4.jpg) no-repeat right top;
+     background-color: #f2f2f2;
+     background-size: 150px;
+     font-weight: bold;
+}
+.content1 .content1-box2 h2{font-size: 20px; font-weight: bold;
+    padding-bottom: 5px;
+}
+.content1 .content1-box2 ul{padding-bottom: 30px;}
+.content1 .content1-box2 ul li{}
+.content1 .content1-box2 a{font-size: 20px;}
+.content1 .content1-box2 a img{vertical-align: middle; padding-bottom: 7px; padding-right: 9px;}
+.content1 .content1-box2 a em{font-weight: bold; font-size: 15px; color: grey;}
+/* .content1 .content1-box1 img{position: absolute; right: 0; top: 0px; height: 150px;} */
+
+/* 콘텐츠2 */
+.content2{margin-top: 20px;}
+.content2 h2{margin-bottom: 20px;}
+.content2 h2 em{color: rgb(148, 148, 148);}
+/* .content2 ul{overflow: hidden;} */
+.content2 ul li{padding-right: 5%; width: 30%; float: left; 
+ position: relative; 
+}
+.content2 img{width: 100%;}
+.content2 ul li:last-child{padding-right: 0;}
+.content2 .basket1{position: absolute; right: 50px; bottom: 0px; width: 30px; height: 30px;}
+.content2 .basket2{position: absolute; right: 50px; bottom: 0px; width: 30px; height: 30px;}
+.content2 .basket3{position: absolute; right: 0px; bottom: 0px; width: 30px; height: 30px;}
+
+.content2 em{font-weight: bold;}
+.content2 em span.menu{font-size: 14px;}
+.content2 em span.quantity{font-size: 12px; color: rgb(114, 114, 114);}
+
+/* 푸터 */
+.footer{margin-top: 20px; color: #fff; overflow: hidden; height: 200px;}
+.footer h1{font-size: 50px; padding-top: 15px; width: 50%; float: left;}
+.footer h1 img{ height: 100px;}
+.footer ul{width: 50%; float: left; padding-top: 30px;}
+.footer ul li{display: inline; position: relative; padding: 0 10px;}
+.footer ul.footer0{font-size: 13px; font-weight: bold;}
+.footer ul.footer0 li{padding: 0 22px;}
+.footer ul.footer1{font-size: 10px; color: #ccc;}
+.footer ul.footer2{font-size: 10px; color: #ccc;}
+.footer ul.footer3{font-size: 10px; color: #ccc;}
+
+.footer ul li:before{content: ""; width: 1px; height: 10px; background: #ccc; position: absolute; left: 0; top: 4px;}
+.footer ul li:first-child:before{width: 0px; height: 0px; }
+
+
+

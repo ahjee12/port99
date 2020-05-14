@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="../jquery/assets/js/jquery.min_1.12.4.js">
+
+    </script>
+
+    <style>
+        .choice a {
+            border: 1px solid #ff9100;
+            padding: 7px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .choice:hover {
+            text-decoration: none;
+        }
+
+        .on {
+            background-color: rgb(255, 136, 0);
+            border: 1px dashed #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="choice">
+        <a href="#" class="reset">Reset</a>
+        <a href="#" class="btn1">.children()</a>
+        <a href="#" class="btn2">.find()</a>
+        <a href="#" class="btn3">.next()</a>
+        <a href="#" class="btn4">.nextAll()</a>
+        <a href="#" class="btn5">.parent()</a>
+        <a href="#" class="btn6">.parents()</a>
+        <a href="#" class="btn7">.parentsUntil()</a>
+        <a href="#" class="btn8">.prev()</a>
+        <a href="#" class="btn9">.prevAll()</a>
+        <a href="#" class="btn10">.prevUntil()</a>
+    </div>
+    <div class="choice">
+        <a href="#" class="sbtn1">.eq(index)</a>
+        <a href="#" class="sbtn2">.filter()</a>
+        <a href="#" class="sbtn3">.first()</a>
+        <a href="#" class="sbtn4">.last()</a>
+        <a href="#" class="sbtn5">.has()</a>
+        <a href="#" class="sbtn6">.not()</a>
+        <a href="#" class="sbtn7">.slice()</a>
+    </div>
+    <div class="list">
+        <ul>
+            <li>첫 번째 리스트1입니다.</li>
+            <li>첫 번째 리스트2입니다.</li>
+            <li>첫 번째 리스트3입니다.
+                <ul>
+                    <li>첫 번째 리스트3-1입니다.</li>
+                    <li>첫 번째 리스트3-2입니다.</li>
+                    <li>첫 번째 리스트3-3입니다.
+                        <ul>
+                            <li>첫 번째 리스트3-3-1입니다.</li>
+                            <li class="select">첫 번째 리스트3-3-2입니다.</li>
+                            <li>첫 번째 리스트3-3-3입니다.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="slist">
+            <li class="list1">두 번째 리스트1입니다.</li>
+            <li class="list2">두 번째 리스트2입니다.</li>
+            <li class="list3">두 번째 리스트3입니다.</li>
+            <li class="list3">두 번째 리스트4입니다.</li>
+            <li class="list3">두 번째 리스트5입니다.</li>
+            <li class="list3">두 번째 리스트6입니다.</li>
+            <li class="list3">두 번째 리스트7입니다.</li>
+        </ul>
+    </div>
+    <script src="../jquery/assets/js/jquery.min_1.12.4.js"></script>
+    <script>
+        //reset을 클릭하면 모든 태그에 on클래스를 삭제
+        $(".reset").click(function () {
+            $("*").removeClass("on");
+        });
+
+        //children()을 클릭하면  태그에 on클래스를 추가
+        $(".btn1").click(function () {
+            $(".list li").children().addClass("on");
+        });
+
+        //find()을 클릭하면 모든 태그에 on클래스를 삭제
+        $(".btn2").click(function () {
+            $(".list li").find("li").addClass("on");
+        });
+
+        $(".btn3").click(function () {
+            $(".list li li:first").next().addClass("on");
+        });
+
+        $(".btn4").click(function () {
+            $(".list li li:first").nextAll().addClass("on");
+        });
+
+        $(".btn5").click(function () {
+            $(".list2").parent().addClass("on");
+        });
+
+        $(".btn6").click(function () {
+            $(".list2").parents().addClass("on");
+        });
+
+        $(".btn7").click(function () {
+            $(".list2").parentsUntil(".list").addClass("on");
+        });
+
+        $(".btn8").click(function () {
+            $(".list3").prev().addClass("on");
+        });
+
+        $(".btn9").click(function () {
+            $(".list3").prevAll().addClass("on");
+        });
+
+        $(".btn10").click(function () {
+            $(".list3").prevUntil().addClass("on");
+        });
+
+        $(".sbtn1").click(function () {
+            $(".list li").eq(1).addClass("on");
+        });
+
+        $(".sbtn2").click(function () {
+            // $(".list li").filter(":even").addClass("on");
+            $(".list li").filter(".select").addClass("on");
+        });
+
+        $(".sbtn3").click(function () {
+            $(".list li").first().addClass("on");
+        });
+
+        $(".sbtn4").click(function () {
+            $(".list li").last().addClass("on");
+        });
+
+        //select 있으면 true가 돼서 작동함
+        $(".sbtn5").click(function () {
+            $(".list li").has("select").addClass("on");
+        });
+
+        $(".sbtn6").click(function () {
+            $(".list li").not("select").addClass("on");
+        });
+
+        //원하는 부분만 슬라이스 하기!!
+        $(".sbtn7").click(function () {
+            //$(".list li").slice(2).addClass("on");
+            //$(".slist li").slice(2,4).addClass("on");
+            $(".slist li").slice(-4,-1).addClass("on");
+        });
+    </script>
+</body>
+
+</html>

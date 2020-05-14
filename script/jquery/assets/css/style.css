@@ -1,0 +1,10 @@
+th {
+    background-color: #0099DE;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td:first-child {
+    text-align: center;
+    vertical-align: middle;
+}

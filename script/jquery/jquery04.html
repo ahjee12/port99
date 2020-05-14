@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+         li {margin: 8px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    </style>
+</head>
+<body>
+    <div class="choice">
+        <a href="#" class="reset">reset()</a>
+        <a href="#" class="btn1">addClass()</a>
+        <a href="#" class="btn2">each()</a>
+        <a href="#" class="btn3">setTimeout()</a>
+    </div>
+
+    <div class="list">
+        <ul>
+            <li>.children(): 선택한 요소의 바로 아래 자식 요소만 선택합니다.</li>
+            <li>.closest(): 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.</li>
+            <li>.find()♥: 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.</li>
+            <li>.next(): 선택한 요소를 다음 형제 요소를 선택합니다.</li>
+            <li>.nextAll():	선택한 요소의 다음 모든 형제 요소를 선택합니다.</li>
+        </ul>  
+    </div>
+
+    <script src="../jquery/assets/js/jquery.min_1.12.4.js"></script>
+    <script>
+        //리셋
+        $(".reset").click(function(){
+            $("*").removeClass("onRed");
+            $("*").removeClass("onBlue");
+        });
+
+        //버튼 1(선택자)을 클릭(이벤트)하면 리스트(선택자)에 있는 글씨 색을 빨간색으로 변경(메서드)
+        // $(".btn1").click(function(){
+        //     $(".list li").css("color","red");
+        // });
+
+        $(".btn1").click(function(){
+            $(".list li").addClass("onRed");
+        });
+        // $(".btn1").click(function(){
+        //     $(".list li").removeClass("onRed");
+        // });
+
+        //버튼 2(선택자)를 클릭(이벤트)하면 리스트(선택자)에 있는 글씨 색을 검정색으로 변경(메서드)
+        $(".btn2").click(function(){
+            $(".list li").each(function(){
+                $(".list li").addClass("onBlue");
+            })
+        });
+
+        //each+setTimeout: 같은 요소가 여러 개 있을 때 순차적으로 메서드를 실행시키기
+        $(".btn3").click(function(){
+            $(".list li").each(function(index){
+                setTimeout(function(){
+                    $(".list li").eq(index).addClass("onRed");
+                },(index+1)*1000); 
+            });
+        });
+    </script>
+
+</body>
+</html>

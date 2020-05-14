@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        li {margin: 8px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 7px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px; }
+    </style>
+</head>
+<body>
+    <div class="choice">
+        <a href="#" class="btn1">이미지 크기를 100px</a>
+        <a href="#" class="btn2">주소값 가져오기</a>
+        <a href="#" class="btn3">alt값 가져오기</a>
+        <a href="#" class="btn4">이미지 주소값 변경</a>
+    </div>
+    <div class="list">
+        <p class="text"></p>
+        <img src="../../illustrator/img/illustrator01.jpg" alt="이미지1">
+    </div>
+
+    <script src="../jquery/assets/js/jquery.min_1.12.4.js"></script>
+    <script>
+        //버튼 1을 클릭하면 이미지 사이즈를 100px로 변경하세요
+        $(".btn1").click(function(){
+            $(".list img").css("width","100px");
+        })
+
+        $(".btn2").click(function(){
+            let text = $(".list img").attr("src");
+            $(".list .text").text(text);
+        })
+
+        $(".btn3").click(function(){
+            let text = $(".list img").attr("alt");
+            $(".list .text").text(text); 
+        })
+
+        $(".btn4").click(function(){
+            $(".list img").attr("src","../../photoshop/img/sample01.jpg")
+        })
+    </script>
+</body>
+</html>

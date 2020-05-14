@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        *{margin: 0;}
+        #wrap{background-color: #e3f2fd;}
+        .container{width: 1200px; margin: 0 auto;}
+        header{width: 100%; height: 100px; background-color: #badefb;}
+        .section1{width: 100%; height: 300px; background-color: #8ecbf9;}
+        .section2 .article1{width: 30%; height: 400px; background-color: #61b6f6; float: left;}
+        .section2 .article2{width: 70%; height: 200px; background-color: #3da7f5; float: left;}
+        .section2 .article3{width: 70%; height: 200px; background-color: #1799f3; float: left;}
+        .section3 .article1{width: 33%; height: 300px; background-color: #168be5; float: left;}
+        .section3 .article2{width: 33%; height: 300px; background-color: #127ad2; float: left;}
+        .section3 .article3{width: 34%; height: 300px; background-color: #0f69c0; float: left;}
+        .section4{width: 90%; padding: 5%; height: 300px; background-color: #3da7f5; overflow: hidden;}
+        .section4 >article{width: 23%; margin: 1%; height: 250px; background-color: #127ad2; border-radius: 10px; float: left;}
+        footer{width: 100%; height: 100px; background-color: #61b6f6;} 
+
+        @media(max-width: 1220px){
+            .container{width: 100%;}
+            .section3 .article1{width: 50%;}
+            .section3 .article2{width: 50%;}
+            .section3 .article3{display: none;}
+
+            .section4 >article{width: 31%;}
+        }
+
+        @media(max-width: 1024px){
+            .section3 .article1{width: 100%;}
+            .section3 .article2{width: 100%;}
+        }
+
+        @media(max-width: 768px){
+            .section2 .article1{width: 100%;}
+            .section2 .article2{width: 100%;}
+            .section2 .article3{width: 100%;}
+
+            .section4{height: 1200px;}
+            .section4 >article{width: 98%;}
+        }
+
+        @media(max-width: 480px){
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+            <section class="section1"></section>
+            <section class="section2">
+                <article class="article1"></article>
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </section>
+            <section class="section3">
+                <article class="article1"></article>
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </section>
+            <section class="section4">
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+            </section>
+            <footer></footer>
+        </div> 
+    </div>
+</body>
+</html>

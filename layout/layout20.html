@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Layout20</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #wrap{width: 100%; height: 1500px; text-align: center; font-size: 42px; text-transform: uppercase;} /*container없이 하려면 wrap{width: 1000px height:1500px에 margin:0 auto}*/
+        #header{width: 1000px; height: 150px; background-color: cornflowerblue;}
+        #nav{width: 1000px; height: 150px; background-color: deepskyblue;}
+        #side{width: 400px; height: 1050px; background-color: dodgerblue; float: left;}
+        #content{width: 600px; height: 1050px; background-color: darkturquoise; float: left;}
+        #footer{width: 1000px; height: 150px; background-color: aquamarine; float: left;}/*float을 side, content에만 쓰면 side, content의 height값이 0이 돼서 footer가 nav아래로 내려감*/
+        .container{width: 1000px; height: 1500px; margin: 0 auto;}
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div id="header">
+                header
+            </div>
+            <div id="nav">
+                nav
+            </div>
+            <div id="side">
+                side
+            </div>
+            <div id="content">
+                content
+            </div>
+            <div id="footer">
+                footer
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

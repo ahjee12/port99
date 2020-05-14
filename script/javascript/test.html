@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-Test</title>
+    <script>
+        // 변수 a를 만들어서 "자바스크립트"를 저장하고 출력하세요!
+        let a = "자바스크립트";
+        document.write(a,"<br><br>");
+
+        //배열을 만들어서 첫 번째 저장소에는 "자바", 두 번째 저장소에는 "스크립트"를 저장하고 출력하세요!
+        const arr1 = [];
+        arr1[0] = "자바";
+        arr1[1] = "스크립트";
+
+        document.write(arr1[0],arr1[1],"<br><br>");
+    
+        //
+        let b = ["자바","스크립트"];
+        document.write(b[0],b[1],"<br><br>");
+
+        //배열 c를 만들어서 숫자 1,2,3,4,5를 저장하고 출력하세요!
+        let c = [1,2,3,4,5];
+        document.write(c[0],c[1],c[2],c[3],c[4],"<br><br>");
+    </script>
+</head>
+<body>
+    
+    <li><a href="#intro1">CSS</a></li>
+    <li><a href="#intro2">CSS선택자(selector)</a></li>
+    <li><a href="#intro3">CSS속성(property)</a></li>
+    <li><a href="#intro4">CSS속성 값(value)</a></li>
+    <li><a href="#intro5">CSS색상</a></li>
+    <li><a href="#intro6">CSS선언</a></li>
+
+    <li><a href="#intro6-1">상대주소 절대주소</a></li>
+    <li><a href="#intro6-2">이미지 표현방법</a></li>
+    <li><a href="#intro6-3">이미지 스트라이트</a></li>
+    <li><a href="#intro6-4">IR효과</a></li>
+    <li><a href="#intro6-5">float</a></li>
+    <li><a href="#intro6-6">float으로 인한 깨짐 현상</a></li>
+    <li><a href="#intro6-7">clear</a></li>
+    <li><a href="#intro6-8">컨텐츠 요소를 보이지 않게 하는 방법</a></li>
+    <li><a href="#intro6-9">GIF, JPG, PNG, SVG</a></li>
+
+    <li><a href="#intro6-10">@media</a></li>
+
+    <li><a href="#intro7">margin</a></li>
+    <li><a href="#intro8">padding</a></li>
+    <li><a href="#intro9">width</a></li>
+    <li><a href="#intro10">height</a></li>
+    <li><a href="#intro11">text-align</a></li>
+    <li><a href="#intro12">font</a></li>
+    <li><a href="#intro13">line-height</a></li>
+    <li><a href="#intro14">text-transform</a></li>
+    <li><a href="#intro17">background-color</a></li>
+    <li><a href="#intro18">text-decoration</a></li>
+    <li><a href="#intro19">background</a></li>
+    <li><a href="#intro20">border</a></li>
+    <li><a href="#intro21">position</a></li>
+    <li><a href="#intro22">display</a></li>
+    <li><a href="#intro22-1">display: -브라우저 태그-box</a></li>
+    <li><a href="#intro22-2">box-orient</a></li>
+    <li><a href="#intro22-3">line-clamp</a></li>
+    <li><a href="#intro23">text-indent</a></li>
+    <li><a href="#intro24">z-index</a></li>
+    <li><a href="#intro25">vertical-align</a></li>
+    <li><a href="#intro26">white-space</a></li>
+    <li><a href="#intro26-1">text-overflow</a></li>
+    <li><a href="#intro26-2">overflow</a></li>
+    <li><a href="#intro27">visibility</a></li>
+    <li><a href="#intro27">visibility</a></li>
+    <li><a href="#intro28">box-sizing</a></li>
+    <li><a href="#intro29">cursor</a></li>
+
+    <li><a href="#intro1">HTML</a></li>
+                        <li><a href="#intro2">태그(tag)</a></li>
+                        <li><a href="#intro3">속성(attribute)</a></li>
+                        <li><a href="#intro4">요소(element)</a></li>
+                        <li><a href="#intro5">주석(annotation))</a></li>
+                        <li><a href="#intro6">블록요소/인라인요소</a></li>
+                        <li><a href="#intro7">DTD선언</a></li>
+                        <li><a href="#intro8">언어 속성 설정</a></li>
+                        <li><a href="#intro9">문서 구조</a></li>
+                        <li><a href="#intro10">웹 표준과 웹 접근성</a></li>
+
+                        <li><a href="#intro10-1">HTML5에 새롭게 추가된 태그</a></li>
+                        <li><a href="#intro10-2">HTML5에 없어진 태그</a></li>
+                        <li><a href="#intro10-3">시멘틱 태그</a></li>
+
+                        <li><a href="#intro11-1">div</a></li>
+                        <li><a href="#intro11-2">section</a></li>
+                        <li><a href="#intro11-3">nav</a></li>
+                        <li><a href="#intro11-4">main</a></li>
+                        <li><a href="#intro11-5">aside</a></li>
+                        <li><a href="#intro11-6">header</a></li>
+                        <li><a href="#intro11-7">footer</a></li>
+                        <li><a href="#intro11-8">article</a></li>
+
+
+                        <li><a href="#intro12">p</a></li>
+                        <li><a href="#intro13">ul</a></li>
+                        <li><a href="#intro14">li</a></li>
+                        <li><a href="#intro14-1">ol</a></li>
+                        <li><a href="#intro15">a</a></li>
+
+                        <li><a href="#intro16">table</a></li>
+                        <li><a href="#intro17">tr</a></li>
+                        <li><a href="#intro18">th</a></li>
+                        <li><a href="#intro19">td</a></li>
+                        <li><a href="#intro20">thead</a></li>
+                        <li><a href="#intro21">tbody</a></li>
+                        <li><a href="#intro22">tfoot</a></li>
+                        <li><a href="#intro23">caption</a></li>
+                        <li><a href="#intro24">colgroup</a></li>
+                        <li><a href="#intro25">col</a></li>
+                        <li><a href="#intro26">row</a></li>
+                        <li><a href="#intro27">colspan</a></li>
+                        <li><a href="#intro28">rowspan</a></li>
+
+                        <li><a href="#intro29">meta</a></li>
+                        <li><a href="#intro30">title</a></li>
+
+                        <li><a href="#intro31">br</a></li>
+                        <li><a href="#intro32">hr</a></li>
+                        <li><a href="#intro33">pre</a></li>
+                        <li><a href="#intro34">h1-h6</a></li>
+
+                        <li><a href="#intro35">span</a></li>
+                        <li><a href="#intro36">em</a></li>
+                        <li><a href="#intro37">strong</a></li>
+
+                        <li><a href="#intro38">dl</a></li>
+                        <li><a href="#intro39">dd</a></li>
+                        <li><a href="#intro40">dt</a></li>
+
+                        <li><a href="#intro41">address</a></li>
+                        <li><a href="#intro42">form</a></li>
+                        <li><a href="#intro43">fieldset</a></li>
+                        <li><a href="#intro44">input</a></li>
+                        <li><a href="#intro45">legend</a></li>
+                        <li><a href="#intro46">label</a></li>
+
+                        <li><a href="#intro47">html5shiv</a></li>
+                        <li><a href="#intro48">조건식 주석</a></li>
+
+                        <li><a href="#intro49">i</a></li>
+                        <li><a href="#intro49">figure</a></li>
+                        <li><a href="#intro49">figcaption</a></li>
+
+
+
+
+
+
+</body>
+</html>

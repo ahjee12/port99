@@ -1,0 +1,5 @@
+*{margin: 0; padding: 0;}
+a{color: #000; text-decoration: none; font-style: normal;}
+ul, li{list-style-type: none;}
+.clearfix::before, .clearfix::after{content: ''; display: block; clear: both;}
+em{font-style: normal;}

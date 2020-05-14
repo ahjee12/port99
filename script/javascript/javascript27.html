@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <script>
+        //"이것은 빨간색입니다." 문자열을 출력하세요♡
+        let a = "이것은 빨간색입니다. "
+
+        document.write(a,"<br>");
+
+         //"이것은 빨간색입니다." X10 문자열을 출력하세요♡
+         for(i=0; i<10; i++){
+             document.write(a);
+         }
+         document.write("<br>");
+
+         i = 0;
+         while(i<10){
+            document.write(a);
+            i++;
+         }
+         document.write("<br>");
+
+         i = 0;
+         do{
+            document.write(a);
+            i++;
+         }while(i<10)
+         document.write("<br>");
+
+
+         //"1. 이것은 빨간색입니다 2. 이것은 빨간색입니다 3. 이것은 빨간색입니다........." 문자열을 출력해주세요 ♡
+         for(i=0; i<10; i++){
+             document.write(i+1,". ",a);
+         }
+         document.write("<br>");
+
+         //"이것은 검은색입니다." X10 문자열을 출력하세요♡
+         let b = "이것은 검은색입니다. "
+         for(i=0; i<10; i++){
+             document.write(i+1,". ",b);
+         }
+         document.write("<br>");
+
+          //"이것은 파란색입니다." X10 문자열을 출력하세요♡
+          let c = "이것은 파란색입니다. "
+         for(i=0; i<10; i++){
+             document.write(i+1,". ",c);
+         }
+         document.write("<br><br>");
+
+         //☆ 함수를 사용하는 이유 ☆
+         function colorName(color){
+            for(i=0; i<10; i++){
+                document.write(i+1,". ","이것은" +color+"입니다. ");
+            }
+         document.write("<br>");
+         }
+
+         colorName("빨간색")
+         colorName("검정색")
+         colorName("파란색")
+         colorName("노랑색")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

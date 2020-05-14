@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+</head>
+
+<body>
+    <div class="info">
+        <ul>
+            <li>#section1 Offset().top : <span class="s1Offset">0</span></li>
+            <li>#section2 Offset().top : <span class="s2Offset">0</span></li>
+            <li>#section3 Offset().top : <span class="s3Offset">0</span></li>
+            <li>#section4 Offset().top : <span class="s4Offset">0</span></li>
+            <li>#section5 Offset().top : <span class="s5Offset">0</span></li>
+            <li>#section6 Offset().top : <span class="s6Offset">0</span></li>
+        </ul>
+    </div>
+
+    <div class="info2">
+        <ul>
+            <li>scrollTop : <span class="st">0</span>px</li>
+        </ul>
+    </div>
+
+    <nav id="nav">
+        <h1>WebDiary</h1>
+        <ul>
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+            <li><a href="#">menu5</a></li>
+            <li><a href="#">menu6</a></li>
+        </ul>
+    </nav>
+
+    <div id="contents">
+        <div id="section1">
+            <h2>Time is <strong>gold</strong></h2>
+        </div>
+        <div id="section2">
+            <h2>Seeing is <strong>believing</strong></h2>
+        </div>
+        <div id="section3">
+            <h2>Asking costs <strong>nothing</strong></h2>
+        </div>
+        <div id="section4">
+            <h2><strong>Better</strong> is to bow than break</h2>
+        </div>
+        <div id="section5">
+            <h2><strong>Habit</strong> is second nature</h2>
+        </div>
+        <div id="section6">
+            <h2>Pain past is <strong>pleasure</strong></h2>
+        </div>
+    </div>
+<script src="assets/js/jquery.min_1.12.4.js"></script>
+<script>
+    //첫 번째 박스의 높이 값을 구하세요
+// let height = $("#section1").height();
+// alert(height);
+
+for(i=0; i<6; i++){
+  let s = $("#section"+(i+1)).offset().top;
+  $(".info ul li").eq(i).find("span").text(s+"px");
+}
+
+let s1 = $("#section1").offset().top;
+let s2 = $("#section2").offset().top;
+let s3 = $("#section3").offset().top;
+let s4 = $("#section4").offset().top;
+let s5 = $("#section5").offset().top;
+let s6 = $("#section6").offset().top;
+
+// $(".info ul li .s1Offset").text(s1);
+// $(".info ul li .s2Offset").text(s2);
+// $(".info ul li .s3Offset").text(s3);
+// $(".info ul li .s4Offset").text(s4);
+// $(".info ul li .s5Offset").text(s5);
+// $(".info ul li .s6Offset").text(s6);
+
+//srollTop
+$(window).scroll(function(){
+  let scroll = $(window).scrollTop();
+  $(".st").text(scroll);
+})
+
+$("html, body").animate({scrollTop:s1},1000)
+
+//parallax
+let nav = $("#nav ul li");
+let cont = $("#contents > div");
+
+nav.click(function(){
+  let target = $(this);
+  let index = target.index();
+  //alert(index)
+  let section = cont.eq(this);
+});
+
+</script>
+</body>
+
+</html>
