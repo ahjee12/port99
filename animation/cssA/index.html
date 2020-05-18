@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="webstoryboy">
     <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
-    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
+    <meta name="keywords"
+        content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
     <title>웹다이어리 | Webdiary | cssA</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../../assets/css/docs.min.css" rel="stylesheet">
     <link href="../../assets/css/prism.css" rel="stylesheet">
- 
+
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="../../assets/ico/favicon_114.png">
@@ -96,7 +97,8 @@
 
                     <h3 class="pt30">Animation</h3>
                     <p class="bs-callout bs-callout-info">
-                        animation : name | duration | timing-fuction | delay | iteration | direction | fill-mode | play-state
+                        animation : name | duration | timing-fuction | delay | iteration | direction | fill-mode |
+                        play-state
                     </p>
                     <div class="table-reponsive">
                         <table class="table table-bordered table-striped table-hover">
@@ -227,46 +229,73 @@
                     </div>
                 </div>
                 <!-- //Intro1 -->
-                
+
                 <style>
-                    .sBox > div {
-                        width: 60px; height: 60px; 
+                    .sBox>div {
+                        width: 60px;
+                        height: 60px;
                         background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
-                        text-align: center; color:#fff;
+                        text-align: center;
+                        color: #fff;
                         line-height: 60px;
                         border-radius: 50%;
                         margin: 10px;
                         position: relative;
                     }
-                    .btn { 
+
+                    .btn {
                         color: #fff;
-                        background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%); 
+                        background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
                     }
                 </style>
 
                 <style>
-                    .circle1.show{animation: move 2s 1 linear;}
-                    .circle2.show{animation: move 2s 1 ease;}
-                    .circle3.show{animation: move 2s 1 ease-in;}
-                    .circle4.show{animation: move 2s 1 ease-out;}
-                    .circle5.show{animation: move 2s 1 ease-in-out;}
-                    @keyframes move{
-                        0%{left: 0%;}
-                        50%{left: calc(100% - 80px);}
-                        100%{left: 0%;}
+                    .circle1.show {
+                        animation: move 2s 1 linear;
+                    }
+
+                    .circle2.show {
+                        animation: move 2s 1 ease;
+                    }
+
+                    .circle3.show {
+                        animation: move 2s 1 ease-in;
+                    }
+
+                    .circle4.show {
+                        animation: move 2s 1 ease-out;
+                    }
+
+                    .circle5.show {
+                        animation: move 2s 1 ease-in-out;
+                    }
+
+                    @keyframes move {
+                        0% {
+                            left: 0%;
+                        }
+
+                        50% {
+                            left: calc(100% - 80px);
+                        }
+
+                        100% {
+                            left: 0%;
+                        }
                     }
                 </style>
                 <!-- Intro2 -->
                 <div class="bs-docs-section">
-					<h2 id="intro2" class="page-header">Animation-timing-function1<span class="btn" id="btn1">Click</span></h2>
-					<div class="sBox s1">
+                    <h2 id="intro2" class="page-header">Animation-timing-function2<span class="btn"
+                            id="btn1">Click</span></h2>
+                    <div class="sBox s1">
                         <div class="circle1">linear</div>
                         <div class="circle2">ease</div>
                         <div class="circle3">ease-in</div>
                         <div class="circle4">ease-out</div>
                         <div class="circle5">ease-in-out</div>
                     </div>
-<pre class="line-numbers language-css">
+                    <pre class="line-numbers language-css">
 <code>.circle1.show{animation: move 2s 1 linear;}
 .circle2.show{animation: move 2s 1 ease;}
 .circle3.show{animation: move 2s 1 ease-in;}
@@ -279,21 +308,39 @@
 }
 </code>
 </pre>
-				</div>
-				<!-- //Intro2 -->
-                
+                </div>
+                <!-- //Intro2 -->
+
                 <style>
-                    .circle6.show{animation: move 3s 1 step-start;}
-                    .circle7.show{animation: move 3s 1 step-end}
-                    .circle8.show{animation: move 3s 1 steps(4, start);}
-                    .circle9.show{animation: move 3s 1 steps(4, end);}
-                    .circle10.show{animation: move 3s 1 steps(10, start);}
-                    .circle11.show{animation: move 3s 1 steps(10, end);}
+                    .circle6.show {
+                        animation: move 3s 1 step-start;
+                    }
+
+                    .circle7.show {
+                        animation: move 3s 1 step-end
+                    }
+
+                    .circle8.show {
+                        animation: move 3s 1 steps(4, start);
+                    }
+
+                    .circle9.show {
+                        animation: move 3s 1 steps(4, end);
+                    }
+
+                    .circle10.show {
+                        animation: move 3s 1 steps(10, start);
+                    }
+
+                    .circle11.show {
+                        animation: move 3s 1 steps(10, end);
+                    }
                 </style>
                 <!-- Intro3 -->
                 <div class="bs-docs-section">
-					<h2 id="intro3" class="page-header">Animation-timing-function2<span class="btn" id="btn2">Click</span></h2>
-					<div class="sBox s2">
+                    <h2 id="intro3" class="page-header">Animation-timing-function2<span class="btn"
+                            id="btn2">Click</span></h2>
+                    <div class="sBox s2">
                         <div class="circle6">step-start</div>
                         <div class="circle7">step-end</div>
                         <div class="circle8">steps</div>
@@ -302,7 +349,7 @@
                         <div class="circle11">steps</div>
                     </div>
                 </div>
-<pre class="line-numbers language-css">
+                <pre class="line-numbers language-css">
 <code>.circle6.show{animation: move 3s 1 step-start;}
 .circle7.show{animation: move 3s 1 step-end}
 .circle8.show{animation: move 3s 1 steps(4, start);}
@@ -311,111 +358,520 @@
 .circle11.show{animation: move 3s 1 steps(10, end);}
 </code>
 </pre>
-                <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="gOadbKK" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="gOadbKK">
+                <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="ahjee12"
+                    data-slug-hash="gOadbKK"
+                    style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+                    data-pen-title="gOadbKK">
                     <span>See the Pen <a href="https://codepen.io/ahjee12/pen/gOadbKK">
-                    gOadbKK</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                    on <a href="https://codepen.io">CodePen</a>.</span>
-                  </p>
-                  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-				<!-- //Intro3 -->
-                
+                            gOadbKK</a> by HyunJi (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                <!-- //Intro3 -->
+
+                <style>
+                    .circle12.show {
+                        animation: move 3s 10 cubic-bezier(0, .54, .08, 1.05);
+                    }
+
+                    .circle13.show {
+                        animation: move 3s 10 cubic-bezier(0, .54, 1, 1.59);
+                    }
+
+                    .circle14.show {
+                        animation: move 3s 10 cubic-bezier(0, .78, 1, .19);
+                    }
+
+                    .circle15.show {
+                        animation: move 3s 10 cubic-bezier(0, 1.66, .32, .75);
+                    }
+
+                    .circle16.show {
+                        animation: move 3s 10 cubic-bezier(0, 1.66, .28, -0.49);
+                    }
+
+                    .circle17.show {
+                        animation: move 3s 10 cubic-bezier(.8, -0.01, 1, .19);
+                    }
+                </style>
                 <!-- Intro4 -->
                 <div class="bs-docs-section">
-					<h2 id="intro4" class="page-header">Square Animaiton</h2>
-					<p class="codepen" data-height="700" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="VwveGea" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Square Animation">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/VwveGea">
-                        Square Animation</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                      </p>
-                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-				</div>
-				<!-- //Intro4 -->
-                
+                    <h2 id="intro4" class="page-header">Animation-timing-function : cubic-bezier<span class="btn"
+                            id="btn3">Click</span></h2>
+                    <div class="sBox s3">
+                        <div class="circle12">cubic-bezier(0,.54,.08,1.05)</div>
+                        <div class="circle13">cubic-bezier(0,.54,1,1.59)</div>
+                        <div class="circle14">cubic-bezier(0,.78,1,.19)</div>
+                        <div class="circle15">cubic-bezier(0,1.66,.32,.75)</div>
+                        <div class="circle16">cubic-bezier(0,1.66,.28,-0.49)</div>
+                        <div class="circle17">cubic-bezier(.8,-0.01,1,.19)</div>
+                    </div>
+                </div>
+                <pre class="line-numbers language-css">
+<code>.circle12.show{animation: move 3s 10 cubic-bezier(0,.54,.08,1.05);}
+.circle13.show{animation: move 3s 10 cubic-bezier(0,.54,1,1.59);}
+.circle14.show{animation: move 3s 10 cubic-bezier(0,.78,1,.19);}
+.circle15.show{animation: move 3s 10 cubic-bezier(0,1.66,.32,.75);}
+.circle16.show{animation: move 3s 10 cubic-bezier(0,1.66,.28,-0.49);}
+.circle17.show{animation: move 3s 10 cubic-bezier(.8,-0.01,1,.19);}
+</code></pre>
+                <!-- //Intro4 -->
+
+                <style>
+                    .circle18.show {
+                        animation: move 3s 10 cubic-bezier(0, .54, .08, 1.05) 0.1s;
+                    }
+
+                    .circle19.show {
+                        animation: move 3s 10 cubic-bezier(0, .54, 1, 1.59) 0.2s;
+                    }
+
+                    .circle20.show {
+                        animation: move 3s 10 cubic-bezier(0, .78, 1, .19) 0.3s;
+                    }
+
+                    .circle21.show {
+                        animation: move 3s 10 cubic-bezier(0, 1.66, .32, .75) 0.4s;
+                    }
+
+                    .circle22.show {
+                        animation: move 3s 10 cubic-bezier(0, 1.66, .28, -0.49) 0.5s;
+                    }
+
+                    .circle23.show {
+                        animation: move 3s 10 cubic-bezier(.8, -0.01, 1, .19) 0.6s;
+                    }
+                    @keyframes move {
+                        0%{left : 0;}
+                        50%{left : calc(100% - 80px);}
+                        100%{left : 0;}
+                    }
+                </style>
                 <!-- Intro5 -->
                 <div class="bs-docs-section">
-					<h2 id="intro5" class="page-header">Cube Animation</h2>
-					<p class="codepen" data-height="700" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="VwveGpK" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Cube Animation">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/VwveGpK">
-                        Cube Animation</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                      </p>
-                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-				</div>
+                    <h2 id="intro5" class="page-header">Animation-delay<span class="btn" id="btn4">Click</span></h2>
+                    <div class="sBox s4">
+                        <div class="circle18">cubic-bezier(0,.54,.08,1.05)</div>
+                        <div class="circle19">cubic-bezier(0,.54,1,1.59)</div>
+                        <div class="circle20">cubic-bezier(0,.78,1,.19)</div>
+                        <div class="circle21">cubic-bezier(0,1.66,.32,.75)</div>
+                        <div class="circle22">cubic-bezier(0,1.66,.28,-0.49)</div>
+                        <div class="circle23">cubic-bezier(.8,-0.01,1,.19)</div>
+                    </div>
+                </div>
+                <pre class="line-numbers language-css">
+<code>.circle18.show{animation: move 3s 10 cubic-bezier(0,.54,.08,1.05) 0.1s;}
+.circle19.show{animation: move 3s 10 cubic-bezier(0,.54,1,1.59) 0.2s;}
+.circle20.show{animation: move 3s 10 cubic-bezier(0,.78,1,.19) 0.3s;}
+.circle21.show{animation: move 3s 10 cubic-bezier(0,1.66,.32,.75) 0.4s;}
+.circle22.show{animation: move 3s 10 cubic-bezier(0,1.66,.28,-0.49) 0.5s;}
+.circle23.show{animation: move 3s 10 cubic-bezier(.8,-0.01,1,.19) 0.6s;}
+</code></pre>
                 <!-- //Intro5 -->
-                
-                   <!-- Intro6 -->
-                   <div class="bs-docs-section">
-					<h2 id="intro6" class="page-header">Minion</h2>
-					<p class="codepen" data-height="700" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="PoPGwGN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Minion">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/PoPGwGN">
-                        Minion</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                      </p>
-                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-				</div>
+                <style>
+                    .sBox {
+                        height: 500px;
+                    }
+
+                    .circle24.normal {
+                        animation: move2 3s 10 cubic-bezier(.8, -0.01, 1, .19) normal;
+                    }
+
+                    .circle24.reverse {
+                        animation: move2 3s 10 cubic-bezier(.8, -0.01, 1, .19) reverse;
+                    }
+
+                    .circle24.alternate {
+                        animation: move2 3s 10 cubic-bezier(.8, -0.01, 1, .19) alternate;
+                    }
+
+                    .circle24.alternate-reverse {
+                        animation: move2 3s 10 cubic-bezier(.8, -0.01, 1, .19) alternate-reverse;
+                    }
+
+                    @keyframes move2{
+                        0%{left:0; top:0;}
+
+                        25%{
+                            left: calc(100% - 80px);
+                            top: 0;
+                        }
+
+                        50%{
+                            left: calc(100% - 80px);
+                            top: calc(100% - 80px);
+                        }
+
+                        75%{
+                            left: 0;
+                            top: calc(100% - 80px);
+                        }
+
+                        100%{
+                            left: 0;
+                            top: 0;
+                        }
+                    }
+                </style>
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Animation-direction
+                        <span class="btn" id="btn5-1">normal</span>
+                        <span class="btn" id="btn5-2">reverse</span>
+                        <span class="btn" id="btn5-3">alternate</span>
+                        <span class="btn" id="btn5-4">alternate-reverse</span>
+                    </h2>
+
+                    <div class="sBox s5">
+                        <div class="circle24">circle24</div>
+                    </div>
+                </div>
                 <!-- //Intro6 -->
-                
-                   <!-- Intro7 -->
-                   <div class="bs-docs-section">
-					<h2 id="intro7" class="page-header">Tentacle Animation</h2>
-					<p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="qBOaJoN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Tentacle Animation">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/qBOaJoN">
-                        Tentacle Animation</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                      </p>
-                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-				</div>
+
+                <style>
+                    .circle25.show {
+                        animation: move 2s ease 1;
+                    }
+
+                    .circle26.show {
+                        animation: move 2s ease 2;
+                    }
+
+                    .circle27.show {
+                        animation: move 2s ease 3;
+                    }
+
+                    .circle28.show {
+                        animation: move 2s ease infinite;
+                    }
+                </style>
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">Animation-iteration-count<span class="btn" id="btn6">Click</span></h2>
+                    <div class="sBox s6">
+                        <div class="circle25"></div>
+                        <div class="circle26"></div>
+                        <div class="circle27"></div>
+                        <div class="circle28"></div>
+                    </div>
+                </div>
                 <!-- //Intro7 -->
 
-                          <!-- Intro5 -->
-                   <div class="bs-docs-section">
-					<h2 id="intro5" class="page-header"></h2>
-					<p class="bs-callout bs-callout-info"></p>
-                    <p></p>
-				</div>
-                <!-- //Intro5 -->
-                
-                      <!-- Intro5 -->
-                      <div class="bs-docs-section">
-                        <h2 id="intro5" class="page-header"></h2>
-                        <p class="bs-callout bs-callout-info"></p>
-                        <p></p>
-                    </div>
-                    <!-- //Intro5 -->
+                <style>
+                    .sBox.s7 {
+                        height: 500px;
+                    }
 
-                          <!-- Intro5 -->
-                   <div class="bs-docs-section">
-					<h2 id="intro5" class="page-header"></h2>
-					<p class="bs-callout bs-callout-info"></p>
-                    <p></p>
-				</div>
-                <!-- //Intro5 -->
-                
-                      <!-- Intro5 -->
-                      <div class="bs-docs-section">
-                        <h2 id="intro5" class="page-header"></h2>
-                        <p class="bs-callout bs-callout-info"></p>
-                        <p></p>
-                    </div>
-                    <!-- //Intro5 -->
+                    .sBox.s7>div.running {
+                        animation: move 2s 10 ease;
+                        animation-play-state: running;
+                    }
 
-                          <!-- Intro5 -->
-                   <div class="bs-docs-section">
-					<h2 id="intro5" class="page-header"></h2>
-					<p class="bs-callout bs-callout-info"></p>
-                    <p></p>
-				</div>
-                <!-- //Intro5 -->
-                
-                      <!-- Intro5 -->
-                      <div class="bs-docs-section">
-                        <h2 id="intro5" class="page-header"></h2>
-                        <p class="bs-callout bs-callout-info"></p>
-                        <p></p>
+                    .sBox.s7>div.paused {
+                        animation: move 2s 10 ease;
+                        animation-play-state: paused;
+                    }
+                </style>
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">Animation-iteration-state
+                        <span class="btn" id="btn7-1">running</span>
+                        <span class="btn" id="btn7-2">paused</span>
+                    </h2>
+                    <div class="sBox s7">
+                        <div class="circle29">circle26</div>
                     </div>
-                    <!-- //Intro5 -->
+                </div>
+                <!-- //Intro8 -->
 
-                
+                <style>
+                    .sBox.s8>div.bounce {
+                        animation: bounce 1s 10 ease;
+                    }
+
+                    @keyframes bounce {
+
+                        from,
+                        11.1%,
+                        to {
+
+                            transform: translate3d(0, 0, 0);
+                        }
+
+                        22.2% {
+
+                            transform: skewX(-12.5deg) skewY(-12.5deg);
+                        }
+
+                        33.3% {
+
+                            transform: skewX(6.25deg) skewY(6.25deg);
+                        }
+
+                        44.4% {
+
+                            transform: skewX(-3.125deg) skewY(-3.125deg);
+                        }
+
+                        55.5% {
+
+                            transform: skewX(1.5625deg) skewY(1.5625deg);
+                        }
+
+                        66.6% {
+
+                            transform: skewX(-0.78125deg) skewY(-0.78125deg);
+                        }
+
+                        77.7% {
+
+                            transform: skewX(0.390625deg) skewY(0.390625deg);
+                        }
+
+                        88.8% {
+
+                            transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+                        }
+                    }
+
+                    .sBox.s8>div.rubberband {
+                        animation: rubberBand 1s 10 ease;
+                    }
+
+                    @keyframes rubberBand {
+                        from {
+                            -webkit-transform: scale3d(1, 1, 1);
+                            transform: scale3d(1, 1, 1);
+                        }
+
+                        30% {
+                            -webkit-transform: scale3d(1.25, 0.75, 1);
+                            transform: scale3d(1.25, 0.75, 1);
+                        }
+
+                        40% {
+                            -webkit-transform: scale3d(0.75, 1.25, 1);
+                            transform: scale3d(0.75, 1.25, 1);
+                        }
+
+                        50% {
+                            -webkit-transform: scale3d(1.15, 0.85, 1);
+                            transform: scale3d(1.15, 0.85, 1);
+                        }
+
+                        65% {
+                            -webkit-transform: scale3d(0.95, 1.05, 1);
+                            transform: scale3d(0.95, 1.05, 1);
+                        }
+
+                        75% {
+                            -webkit-transform: scale3d(1.05, 0.95, 1);
+                            transform: scale3d(1.05, 0.95, 1);
+                        }
+
+                        to {
+                            -webkit-transform: scale3d(1, 1, 1);
+                            transform: scale3d(1, 1, 1);
+                        }
+                    }
+
+                    .sBox.s8>div.wobble {
+                        animation: wobble 1s 10 ease;
+                    }
+
+                    @keyframes wobble {
+                        from {
+                            -webkit-transform: translate3d(0, 0, 0);
+                            transform: translate3d(0, 0, 0);
+                        }
+
+                        15% {
+                            -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+                            transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+                        }
+
+                        30% {
+                            -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+                            transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+                        }
+
+                        45% {
+                            -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+                            transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+                        }
+
+                        60% {
+                            -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+                            transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+                        }
+
+                        75% {
+                            -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+                            transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+                        }
+
+                        to {
+                            -webkit-transform: translate3d(0, 0, 0);
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+
+                    .sBox.s8>div.backInDown {
+                        animation: backInDown 1s 10 ease;
+                    }
+
+                    @keyframes backInDown {
+                        0% {
+                            -webkit-transform: translateY(-1200px) scale(0.7);
+                            transform: translateY(-1200px) scale(0.7);
+                            opacity: 0.7;
+                        }
+
+                        80% {
+                            -webkit-transform: translateY(0px) scale(0.7);
+                            transform: translateY(0px) scale(0.7);
+                            opacity: 0.7;
+                        }
+
+                        100% {
+                            -webkit-transform: scale(1);
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+                    }
+
+                    .sBox.s8>div.backOutDown {
+                        animation: backInDown 1s 10 ease;
+                    }
+
+                    @keyframes backOutDown {
+                        0% {
+                            -webkit-transform: scale(1);
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+
+                        20% {
+                            -webkit-transform: translateY(0px) scale(0.7);
+                            transform: translateY(0px) scale(0.7);
+                            opacity: 0.7;
+                        }
+
+                        100% {
+                            -webkit-transform: translateY(700px) scale(0.7);
+                            transform: translateY(700px) scale(0.7);
+                            opacity: 0.7;
+                        }
+                    }
+
+                    .sBox.s8>div.fadeIn {
+                        animation: fadeIn 1s 10 ease;
+                    }
+
+                    @keyframes fadeIn {
+                        from {
+                            opacity: 0;
+                        }
+
+                        to {
+                            opacity: 1;
+                        }
+                    }
+
+                    .sBox.s8>div.fadeInDown {
+                        animation: fadeInDown 1s 10 ease;
+                    }
+
+                    @keyframes fadeInDown {
+                        from {
+                            opacity: 0;
+                            -webkit-transform: translate3d(0, -100%, 0);
+                            transform: translate3d(0, -100%, 0);
+                        }
+
+                        to {
+                            opacity: 1;
+                            -webkit-transform: translate3d(0, 0, 0);
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+
+                    .sBox.s8>div.fadeOutTopRight {
+                        animation: fadeOutTopRight 1s 10 ease;
+                    }
+
+                    @keyframes fadeOutTopRight {
+                        from {
+                            opacity: 1;
+                            -webkit-transform: translate3d(0, 0, 0);
+                            transform: translate3d(0, 0, 0);
+                        }
+
+                        to {
+                            opacity: 0;
+                            -webkit-transform: translate3d(100%, -100%, 0);
+                            transform: translate3d(100%, -100%, 0);
+                        }
+                    }
+                </style>
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">Animation-play-state
+                        <span class="btn" id="btn8-1">bounce</span>
+                        <span class="btn" id="btn8-2">rubberband</span>
+                        <span class="btn" id="btn8-3">wobble</span>
+                        <span class="btn" id="btn8-4">backInDown</span>
+                        <span class="btn" id="btn8-5">backOutDown</span>
+                        <span class="btn" id="btn8-6">fadeIn</span>
+                        <span class="btn" id="btn8-7">fadeInDown</span>
+                        <span class="btn" id="btn8-8">fadeOutTopRight</span>
+                    </h2>
+                    <div class="sBox s8">
+                        <div class="circle30">circle30</div>
+                        <div class="circle30">circle30</div>
+                        <div class="circle30">circle30</div>
+                        <div class="circle30">circle30</div>
+                        <div class="circle30">circle30</div>
+                        <div class="circle30">circle30</div>
+                        <div class="circle30">circle30</div>
+                        <div class="circle30">circle30</div>
+                    </div>
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header"></h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                    <p></p>
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header"></h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                    <p></p>
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header"></h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                    <p></p>
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header"></h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                    <p></p>
+                </div>
+                <!-- //Intro5 -->
+
+
             </div>
             <!-- //col-md-9 -->
 
@@ -424,15 +880,15 @@
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
-                        <li><a href="#intro1">Bar Animation</a></li>
-                        <li><a href="#intro2">Circle Animation</a></li>                        
-                        <li><a href="#intro3">Wave Animation</a></li>
-                        <li><a href="#intro4">Square Animaiton</a></li>
-                        <li><a href="#intro5">Cube Animation</a></li>
-                        <li><a href="#intro6">Minion</a></li>
-                        <li><a href="#intro7">Tentacle Animation</a></li>
-                        <li><a href="#intro8"></a></li>
-                        <li><a href="#intro9"></a></li>
+                        <li><a href="#intro1">Animation</a></li>
+                        <li><a href="#intro2">Animation-timing-function2</a></li>
+                        <li><a href="#intro3">Animation-timing-function3</a></li>
+                        <li><a href="#intro4">Animation-timing-function : cubic-bezier</a></li>
+                        <li><a href="#intro5">Animation-delay</a></li>
+                        <li><a href="#intro6">Animation-direction</a></li>
+                        <li><a href="#intro7">Animation-iteration-count</a></li>
+                        <li><a href="#intro8">Animation-play-state</a></li>
+                        <li><a href="#intro9">Animation</a></li>
                         <li><a href="#intro10"></a></li>
                         <li><a href="#intro10"></a></li>
                         <li><a href="#intro10"></a></li>
@@ -477,12 +933,50 @@
     <script src="../../assets/js/docs.min.js"></script>
     <script src="../../assets/js/prism.js"></script>
     <script>
-        $("#btn1").click(function(){
+        $("#btn1").click(function () {
             $(".sBox.s1>div").addClass("show");
         })
 
-        $("#btn2").click(function(){
+        $("#btn2").click(function () {
             $(".sBox.s2>div").addClass("show");
+        })
+
+        $("#btn3").click(function () {
+            $(".sBox.s3>div").addClass("show");
+        })
+
+        $("#btn4").click(function () {
+            $(".sBox.s4>div").addClass("show");
+        })
+
+        //btn5-1을 클릭하면 글씨 색을 빨간색으로 변경하세요
+        // $("#btn5-1").click(function(){
+        //     $(this).css("color","red");
+        // })
+        //btn5-1을 클릭하면 콘텐츠 요소(텍스트)를 alert로 표현하세요
+        $("#intro6 > span").click(function () {
+            let target = $(this).text();
+            // alert(target);
+            console.log(target);
+            // $(".sBox.s5 > div").removeClass();
+            // $(this).addClass(target);
+            let a = $(".sBox.s5>div");
+            console.log(a);
+            $(".sBox.s5>div").removeClass("normal reverse alternate alternate-reverse").addClass(target);
+        })
+
+        $("#btn6").click(function () {
+            $(".sBox.s6>div").addClass("show");
+        })
+
+        $("#intro8 > span").click(function () {
+            let text = $(this).text();
+            $(".sBox.s7>div").removeClass().addClass(text);
+        })
+
+        $("#intro9 > span").click(function () {
+            let text2 = $(this).text();
+            $(".sBox.s8>div").removeClass().addClass(text2);
         })
     </script>
 </body>

@@ -1,5 +1,6 @@
+/**********************main**************************/
 // 레이아웃
-#header {
+#header {    
     position: fixed;
     left: 0;
     top: 0;
@@ -12,13 +13,28 @@
 // 헤더
 //float: left쓰면 text-align: center 못 씀
 .header {
-
     display: flex;
     justify-content: space-between;
 
     h1 {
         width: 140px;
         margin: 18px 0 0 64px;
+
+        span {
+            position: relative;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 10px;
+                height: 0;
+                border-top: 2px solid #d83832;
+                transform: translateX(-50%, -50%);
+            }
+        }
 
         svg {
             fill: #fff;
@@ -31,14 +47,13 @@
     }
 
     .nav {
-
         li {
             display: inline;
 
             a {
 
                 display: inline-block;
-                padding: 26px 20px;
+                padding: 30px 20px;
                 font-size: 16px;
                 color: #fff;
                 font-style: 'Noto Sans KR';
@@ -66,7 +81,7 @@
             a {
                 display: inline-block;
                 width: 27px;
-                padding: 28px 13px 20px 13px;
+                padding: 30px 13px 20px 13px;
 
                 img {}
             }
@@ -94,7 +109,6 @@
     }
 
     .btn-quick {
-
         a {
             position: absolute;
             left: 50%;
@@ -588,7 +602,7 @@ footer {
     background: rgb(151, 252, 255);
     width: 1200px;
     margin: 0 auto;
-    
+
     .f-list {
         display: flex;
         justify-content: space-between;
@@ -596,8 +610,9 @@ footer {
         .f-item {
             flex-basis: 33.33%;
             text-align: center;
-            border-left: 5px solid rgba(242,242,242,1);
+            border-left: 5px solid rgba(242, 242, 242, 1);
             box-sizing: border-box;
+
             a {
                 display: block;
                 padding: 50px 0;
@@ -613,37 +628,50 @@ footer {
                     margin: 0 auto;
                     border-radius: 50%;
                     background: #494949;
-                    
+
                     img {
                         width: 40px;
                         height: 40px;
                     }
                 }
+
                 //icon
                 .info {
                     font-weight: bold;
                     font-size: 20px;
                     margin-top: 10px;
-                    strong{
+
+                    strong {
                         text-transform: uppercase;
-                    }//strong
-                    p{
+                    }
+
+                    //strong
+                    p {
                         margin-top: 5px;
                         font-size: 15px;
 
-                    }//p
-                }//info
-            }//a  
-            
-            &:nth-child(1){
+                    }
+
+                    //p
+                }
+
+                //info
+            }
+
+            //a  
+
+            &:nth-child(1) {
                 border-left: 0;
             }
-        }//f-item
-        
+        }
+
+        //f-item
+
 
         .f-item.stock {
             text-align: left;
             padding-left: 60px;
+
             h3 {
                 font-size: 20px;
                 font-weight: bold;
@@ -656,12 +684,14 @@ footer {
                 color: #fff;
                 margin-bottom: 35px;
             }
-            ul{ 
-               display: inline;
-                li{
-                   display: inline-block;
-                   font-size: 20px;
-                   font-weight: bold;
+
+            ul {
+                display: inline;
+
+                li {
+                    display: inline-block;
+                    font-size: 20px;
+                    font-weight: bold;
                 }
             }
         }
@@ -672,82 +702,210 @@ footer {
 }
 
 /*푸터블럭*/
-#footer-block{
-    
-}
+#footer-block {}
 
-.container2{
-    padding: 40px 0;
-    width: 1200px; 
-    margin: 0 auto; 
-    
-    .container-left{
-        width: 70%; float: left;
-        .links{
-            ul{ 
-                li{
+.container2 {
+    padding: 20px 0 40px 0;
+    width: 1200px;
+    margin: 0 auto;
+
+    .container-left {
+        width: 70%;
+        float: left;
+
+        .links {
+            ul {
+                li {
                     display: inline;
                     padding: 0 5px;
-                    font-size: 16px;
-                    line-height: 30px;
+                    font-size: 15px;
+                    line-height: 50px;
                     position: relative;
-                    &::before{ 
-                        content: ''; width: 1px; height: 20px;
+
+                    &::before {
+                        content: '';
+                        width: 1px;
+                        height: 12px;
                         background: #ccc;
-                        position: absolute; left: 0; top: 5px;
+                        position: absolute;
+                        left: 5px;
+                        top: 5px;
+                    }
+
+                    &:first-child::before {
+                        width: 0;
+                        height: 0;
+                    }
+
+                    &:nth-child(6)::before {
+                        width: 0;
+                        height: 0;
                     }
                 }
+
             }
-        }  
-        .info{
-            margin-top: 40px;
-            ul{
-               
-                li{
+        }
+
+        .info {
+            margin-top: 20px;
+
+            ul {
+
+                li {
                     display: inline;
                     // padding: 0 5px;
                     font-size: 15px;
                     line-height: 30px;
                     position: relative;
-                    // &::before{ 
-                    //     content: ''; width: 1px; height: 20px;
-                    //     background: #ccc;
-                    //     position: absolute; left: 0; top: 5px;
-                    // }
-                    a{
-                     
+
+                    &::before {
+                        content: '';
+                        width: 1px;
+                        height: 20px;
+                        background: #ccc;
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                    }
+
+                    a {}
+
+                    &:first-child::before {
+                        width: 0;
+                        height: 0;
+                    }
+
+                    &:nth-child(5)::before {
+                        width: 0;
+                        height: 0;
                     }
                 }
             }
         }
-        .copyright{
-            margin-top: 40px;
-            ul{
-                li{}
+
+        .copyright {
+            margin-top: 30px;
+
+            ul {
+                li {}
             }
         }
     }
-    .container-right{
-        width: 30%; float: left;
+
+    .container-right {
+        width: 30%;
+        float: left;
         text-align: right;
-        .family-site{
-                float: right;
-            h3{
+
+        .family-site {
+            float: right;
+            text-align: left;
+
+            h3 {
                 border: 1px solid #000;
-                width: 240px;
+                width: 200px;
                 border-radius: 30px;
+                padding: 15px;
             }
         }
-        .socials{
+
+        .socials {
+            float: right;
+
             // margin-top: 40px;
-            ul{
-                margin-top: 40px;
-                li{
+            ul {
+                margin-top: 30px;
+
+                li {
                     display: inline-block;
+                    padding-left: 10px;
                 }
             }
         }
 
+    }
+}
+
+/*******************CS(고객지원)**********************/
+
+#header.white {
+    background-color: #fff;
+
+    .header {
+        h1 {
+            svg {
+                width: 120px;
+                fill: #000;
+            }
+        }
+        .nav{
+            ul{
+                li{
+                    a{
+                        span{
+                            color: #000;
+                        }
+                    }
+                }
+            }
+           
+        }
+        .side-nav{
+            li{
+                a{
+                    svg{
+                        fill: #000; 
+                        width: 27px; height: 27px;
+                    }
+                }
+            }
+        }
+        //.side-nav
+
+    }
+}
+
+#bannerCS {
+    position: relative;
+    height: 670px;
+    background: url(../img/imgCs/main_visual.png) no-repeat center center;
+    background-size: cover;
+    
+    h2 {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        font-size: 64px;
+        color: #fff;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    // img{
+    // width: 110%;
+    // height: 110%;
+  
+    // }
+    .btn-quick {
+        a {
+            position: absolute;
+            left: 50%;
+            bottom: -25px;
+            width: 50px;
+            height: 50px;
+            width: 50px;
+            height: 50px;
+            background: #96c120;
+
+            margin-left: -25px;
+            // transform: translate(-50%,0);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+            img {
+                width: 30px;
+                padding: 10px 0 0 10px;
+            }
+        }
     }
 
 }
