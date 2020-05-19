@@ -75,15 +75,15 @@
   border-radius: 20px;
 }
 
-.nav .side-nav {
+.side-nav {
   margin-right: 51px;
 }
 
-.nav .side-nav li {
+.side-nav li {
   display: inline;
 }
 
-.nav .side-nav li a {
+.side-nav li a {
   display: inline-block;
   width: 27px;
   padding: 30px 13px 20px 13px;
@@ -1180,5 +1180,135 @@ footer {
 
 #customerVoice .customerVoice-container .customerVoice-list-container .list-col:last-child .desc-box:before {
   width: 0;
+}
+
+#counsel {
+  background: url(../img/imgCs/cont_01.png);
+  background-size: cover;
+  padding: 80px 0;
+  margin-bottom: 100px;
+}
+
+#counsel .counsel-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#counsel .counsel-container .list-col {
+  background-color: rgba(255, 255, 255, 0.7);
+  -ms-flex-preferred-size: 28%;
+      flex-basis: 28%;
+  padding: 45px 20px 42px;
+}
+
+#counsel .counsel-container .list-col .list-col-box {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-1 {
+  padding-bottom: 60px;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-1 img {
+  width: 61px;
+  padding-bottom: 25px;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-2 {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-2 a {
+  font-size: 28px;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-2 a.box-2-2 {
+  position: relative;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-2 a.box-2-2::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 30px;
+  height: 1px;
+  background-color: #000;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-2 p {
+  font-size: 16px;
+  padding: 0 60px;
+  font-weight: normal;
+  line-height: 1.75;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-2::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #96c11f;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-3 p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-3 p.box-3-1 {
+  font-weight: normal;
+}
+
+#counsel .counsel-container .list-col .list-col-box .box-3 a {
+  display: inline-block;
+  border: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px 25px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+#dispute .dispute-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#dispute .dispute-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 45px 0 0 0;
+}
+
+#dispute .dispute-container p {
+  font-size: 22px;
+  margin: 30px 0 45px 0;
+  font-weight: 400;
+}
+
+#dispute .dispute-container .dispute-img-container img {
+  float: right;
+  width: 700px;
 }
 /*# sourceMappingURL=style.css.map */
