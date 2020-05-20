@@ -138,7 +138,10 @@
                         vertical-align: middle;
                         margin: 0 10px;
                     }
-
+                    .svg.width-160{
+                        width: 160px;
+                        height: 160px;
+                    }
                     .svg.over {
                         margin-top: 20px;
                     }
@@ -278,18 +281,18 @@
                 <div class="bs-docs-section">
                     <h2 id="intro3" class="page-header">polygon</h2>
                     <div class="svgBox">
-                        <svg class="svg">
+                        <svg class="svg width-160">
                             <polygon fill="#376993" points="137.429,146.452 8.545,107.076 107.086,15.147 " />
                         </svg>
-                        <svg class="svg">
+                        <svg class="svg width-160">
                             <polygon fill="#376993"
                                 points="104.314,145.458 24.204,126.031 17.926,43.837 94.157,12.467 147.548,75.272 " />
                         </svg>
-                        <svg class="svg">
+                        <svg class="svg width-160">
                             <polygon fill="#376993"
                                 points="130,130.5 61.516,148.118 12.016,97.618 31,29.5 99.484,11.882 148.984,62.382 " />
                         </svg>
-                        <svg class="svg">
+                        <svg class="svg width-160">
                             <polygon fill="#376993" points="131,135.5 85.951,117.744 45.785,144.789 48.75,96.457 10.618,66.615 57.5,54.5 74.099,9.012 
                             100.107,49.855 148.499,51.585 117.691,88.942 " />
                         </svg>
@@ -684,9 +687,148 @@ C126.569,95.365,116.494,110.697,97.609,93.057z"/&gt;
                 </div>
                 <!-- //Intro7 -->
 
+                <style>
+                    .aniRect1{ stroke: #ffc2e2; stroke-width: 2; 
+                    animation: rect1 4s infinite ease-in-out;
+                    }
+                    @keyframes rect1{
+                        0%{stroke: #880e4f;}
+                        35%{stroke: #311b92;}
+                        70%{stroke: #1b7092;}
+                        100%{stroke: #1b926a;}
+                    }
+
+                    .aniRect2{ stroke: #ffc2e2; stroke-width: 2; 
+                    animation: rect2 4s infinite linear; transform-origin: center center;
+                    }
+                    @keyframes rect2{
+                        0%{stroke: #880e4f; stroke-width: 18; transform: rotate(0deg);}
+                        35%{stroke: #311b92; stroke-width: 1; transform: rotate(360deg);}
+                        70%{stroke: #1b7092; transform: rotate(360deg);}
+                        100%{stroke: #1b926a; transform: rotate(0deg);}
+                    }
+
+                    .aniRect3{ stroke: #dbc5d0; stroke-width: 4; 
+                    animation: rect3 4s infinite ease-in-out;
+                    stroke-dasharray: 50;
+                    stroke-dashoffset: 50;
+                    stroke-linecap: round;
+                    }
+                    @keyframes rect3{
+                        0%{stroke: #880e4f;  stroke-dashoffset: 50;}
+                        35%{stroke: #311b92;}
+                        70%{stroke: #1b7092;}
+                        100%{stroke: #1b926a;  stroke-dashoffset: 0;}
+                    }
+
+                    .aniRect4{ stroke: #dbc5d0; stroke-width: 4; 
+                    animation: rect4 4s infinite ease-in-out alternate;
+                    stroke-dasharray: 50;
+                    stroke-dashoffset: 50;
+                    stroke-linecap: round;
+                    }
+                    @keyframes rect4{
+                        0%{stroke: #880e4f;  stroke-dashoffset: 50;}
+                        35%{stroke: #311b92;}
+                        70%{stroke: #1b7092;}
+                        100%{stroke: #1b926a;  stroke-dashoffset: 0;}
+                    }
+
+                    .aniRect5{ stroke: #dbc5d0; stroke-width: 4; 
+                    animation: rect5 4s infinite ease-in-out ;
+                    stroke-dasharray: 100;
+                    stroke-dashoffset: 200;
+                    stroke-linecap: round;
+                    }
+                    @keyframes rect5{
+                        0%{stroke: #880e4f;  stroke-dashoffset: 50;}
+                        35%{stroke: #311b92;}
+                        70%{stroke: #1b7092;}
+                        100%{stroke: #1b926a;  stroke-dashoffset: 0;}
+                    }
+
+                    .aniRect6{ stroke: #dbc5d0; stroke-width: 4; 
+                    animation: rect6 4s infinite ease-in-out alternate;
+                    stroke-dasharray: 400;
+                    stroke-dashoffset: 400;
+                    stroke-linecap: round;
+                    }
+                    @keyframes rect6{
+                        0%{stroke: #880e4f;  stroke-dashoffset: 50;}
+                        35%{stroke: #311b92;}
+                        70%{stroke: #1b7092;}
+                        100%{stroke: #1b926a;  stroke-dashoffset: 0;}
+                    }
+
+                    .aniPath1{
+                        fill: none; stroke: rgb(0, 0, 0); stroke-width: 2; stroke-linecap: round;
+                        animation: path1 2s infinite linear alternate-reverse;
+                        stroke-dasharray: 100; stroke-dashoffset: 0;
+                    }
+                    @keyframes path1{
+                        0%{stroke-dashoffset: 800;}
+                        100%{stroke-dashoffset: 0;}
+                    }
+
+                    .aniPath2{
+                        fill: none; stroke: rgb(0, 0, 0); stroke-width: 2; stroke-linecap: round;
+                        animation: path2 5s infinite linear ;
+                        stroke-dasharray: 2522.052978515625; stroke-dashoffset: 0;
+                    }
+                    @keyframes path2{
+                        0%{stroke-dashoffset: 2522.052978515625;}
+                        100%{stroke-dashoffset: 0;}
+                    }
+
+
+                </style>
                 <!-- Intro8 -->
                 <div class="bs-docs-section">
                     <h2 id="intro8" class="page-header"></h2>
+                    <div class="svgBox">
+                       <svg class="svg">
+                           <rect class="aniRect1" fill="none"  width="100" height="100" x="25" y="25"/>
+                       </svg>
+                       <svg class="svg">
+                        <rect class="aniRect2" fill="none" width="100" height="100" x="25" y="25"/>
+                        </svg>
+                        <svg class="svg">
+                            <rect class="aniRect3" fill="none" width="100" height="100" x="25" y="25"/>
+                        </svg>
+                        <svg class="svg">
+                            <rect class="aniRect4" fill="none" width="100" height="100" x="25" y="25"/>
+                        </svg>
+                        <svg class="svg over">
+                            <rect class="aniRect5" fill="none" width="100" height="100" x="25" y="25"/>
+                        </svg>
+                        <svg class="svg over">
+                            <rect class="aniRect5" fill="none" width="100" height="100" x="25" y="25"/>
+                        </svg>
+                   </div>
+                   <div class="svgBox">
+                       <svg class="svg">
+                        <path class="aniPath1" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M80.812,77.276
+                        c74.086,48.105,53.502,70.513-1.314,1.431c54.816,69.082,27.901,83.434-1.718,0.916c29.619,82.518-0.715,87.257-1.936,0.302
+                        c1.221,86.955-29.243,81.571-1.944-0.343c-27.299,81.914-54.593,66.982-1.742-0.953c-52.851,67.936-74.017,45.084-1.351-1.459
+                        c-72.666,46.543-85.41,18.244-0.813-1.806c-84.597,20.05-87.536-10.63-0.188-1.958c-87.349-8.672-80.168-38.409,0.458-1.898
+                        c-80.626-36.511-64.102-62.081,1.055-1.632C6.161,9.427,30.239-9.208,72.854,68.686c-42.615-77.894-13.595-87.572,1.852-0.618
+                        c-15.447-86.954,15.372-86.626,1.967,0.021c13.404-86.647,42.684-76.351,1.869,0.657c40.814-77.008,65.381-57.857,1.568,1.222
+                        c63.813-59.079,81.003-33.149,1.097,1.655c79.906-34.805,87.855-4.906,0.508,1.909c87.348-6.814,85.196,23.812-0.138,1.955
+                        C166.912,97.344,154.897,125.382,80.812,77.276z"/>
+                            </svg>
+                       </svg>
+                       <svg class="svg">
+                        <path class="aniPath2" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M80.812,77.276
+                        c74.086,48.105,53.502,70.513-1.314,1.431c54.816,69.082,27.901,83.434-1.718,0.916c29.619,82.518-0.715,87.257-1.936,0.302
+                        c1.221,86.955-29.243,81.571-1.944-0.343c-27.299,81.914-54.593,66.982-1.742-0.953c-52.851,67.936-74.017,45.084-1.351-1.459
+                        c-72.666,46.543-85.41,18.244-0.813-1.806c-84.597,20.05-87.536-10.63-0.188-1.958c-87.349-8.672-80.168-38.409,0.458-1.898
+                        c-80.626-36.511-64.102-62.081,1.055-1.632C6.161,9.427,30.239-9.208,72.854,68.686c-42.615-77.894-13.595-87.572,1.852-0.618
+                        c-15.447-86.954,15.372-86.626,1.967,0.021c13.404-86.647,42.684-76.351,1.869,0.657c40.814-77.008,65.381-57.857,1.568,1.222
+                        c63.813-59.079,81.003-33.149,1.097,1.655c79.906-34.805,87.855-4.906,0.508,1.909c87.348-6.814,85.196,23.812-0.138,1.955
+                        C166.912,97.344,154.897,125.382,80.812,77.276z"/>
+                            </svg>
+                       </svg>
+                   </div>
                    
                     <pre class="line-numbers language-css">
 <code>
@@ -696,9 +838,48 @@ C126.569,95.365,116.494,110.697,97.609,93.057z"/&gt;
 
                 <!-- //Intro8 -->
 
-                <!-- Intro4 -->
+                <!-- Intro9 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro8" class="page-header"></h2>
+                    <h2 id="intro9" class="page-header">SVG-Text Animation1</h2>
+                    <p class="codepen" data-height="400" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="YzydVZZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="SVG-Text Animation">
+                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/YzydVZZ">
+                        SVG-Text Animation</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </div>
+
+                <!-- //Intro9 -->
+
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header">SVG-Text Animation2</h2>
+                    <p class="codepen" data-height="400" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="yLYGbxm" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="SVG-Text Animation2">
+                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/yLYGbxm">
+                        SVG-Text Animation2</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </div>
+
+                <!-- //Intro10 -->
+
+                        <!-- Intro11 -->
+                        <div class="bs-docs-section">
+                            <h2 id="intro11" class="page-header">SVG-Text Animation3</h2>
+                            <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="OJyrmKa" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="OJyrmKa">
+                                <span>See the Pen <a href="https://codepen.io/ahjee12/pen/OJyrmKa">
+                                OJyrmKa</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </div>
+        
+                        <!-- //Intro11 -->
+
+                                <!-- Intro12 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro12" class="page-header"></h2>
                     
                     <pre class="line-numbers language-css">
 <code>
@@ -706,19 +887,19 @@ C126.569,95.365,116.494,110.697,97.609,93.057z"/&gt;
 </pre>
                 </div>
 
-                <!-- //Intro8 -->
+                <!-- //Intro12 -->
 
-                <!-- Intro8 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro9" class="page-header"></h2>
-                    
-                    <pre class="line-numbers language-css">
-<code>
-</code>
-</pre>
-                </div>
-
-                <!-- //Intro8 -->
+                        <!-- Intro13 -->
+                        <div class="bs-docs-section">
+                            <h2 id="intro13" class="page-header"></h2>
+                            
+                            <pre class="line-numbers language-css">
+        <code>
+        </code>
+        </pre>
+                        </div>
+        
+                        <!-- //Intro13 -->
             </div>
             <!-- //col-md-9 -->
 
@@ -736,9 +917,9 @@ C126.569,95.365,116.494,110.697,97.609,93.057z"/&gt;
                         <li><a href="#intro6">clip-path</a></li>
                         <li><a href="#intro7">pattern</a></li>
                         <li><a href="#intro8"></a></li>
-                        <li><a href="#intro9"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
+                        <li><a href="#intro9">SVG-Text Animation3</a></li>
+                        <li><a href="#intro10">SVG-Text Animation3</a></li>
+                        <li><a href="#intro10">SVG-Text Animation3</a></li>
                         <li><a href="#intro10"></a></li>
                         <li><a href="#intro10"></a></li>
                         <li><a href="#intro10"></a></li>
@@ -780,6 +961,12 @@ C126.569,95.365,116.494,110.697,97.609,93.057z"/&gt;
     <script src="../../assets/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
     <script src="../../assets/js/prism.js"></script>
+    <script>
+        // let path = $(".aniPath2");
+        let path = document.querySelector(".aniPath2");
+        let length = path.getTotalLength();
+        // alert(length);
+    </script>
 
 </body>
 

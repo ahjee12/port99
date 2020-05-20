@@ -830,7 +830,6 @@ footer {
         .family-site {
             float: right;
             text-align: left;
-
             h3 {
 
                 a {
@@ -858,7 +857,6 @@ footer {
 
         .socials {
             float: right;
-
             // margin-top: 40px;
             ul {
                 margin-top: 30px;
@@ -877,7 +875,6 @@ footer {
 /*CS(고객지원)*******************************************************************************************/
 /*헤더 화이트*/
 #header.white {
-
     // background-color: #fff;
     .header {
         background-color: #fff;
@@ -916,10 +913,8 @@ footer {
                 }
             }
         }
-
         //.side-nav
     }
-
     //.header
 
     .header2-wrap {
@@ -1395,7 +1390,6 @@ footer {
                 background-color: #ffdd1f;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
 
-
             }
 
             &::before {
@@ -1413,10 +1407,8 @@ footer {
 
         //..swiper-scrollbar
     }
-
     //.footerNav
 }
-
 //#footerNav
 
 /*Introduction-WAY(소개)*************************************************************************************/
@@ -1495,8 +1487,6 @@ footer {
             bottom: -25px;
             width: 50px;
             height: 50px;
-            width: 50px;
-            height: 50px;
             background: #96c120;
 
             margin-left: -25px;
@@ -1509,7 +1499,6 @@ footer {
             }
         }
     }
-
 }
 
 #farmer {
@@ -1517,7 +1506,7 @@ footer {
         margin: 0 auto;
         max-width: 1200px;
         text-align: left;
-        margin-bottom: 50px;
+        // margin-bottom: 50px;
         h1 {
             font-size: 2rem;
             font-weight: bold;
@@ -1528,16 +1517,24 @@ footer {
     .farmer-container-2{
         margin: 0 auto;
         max-width: 1300px;
+        position: relative;
+        .farmer-box{
+            
+        }
         p {
             width: 750px; height: 300px;
             background-color: rgb(214, 110, 110);
             box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
             font-size: 20px;
             font-weight: 400;
-         
         }
     
         .farmer {
+            z-index: -100;
+            width: 80%; height: 80%;
+            position: absolute;
+            left: 530px; top: 0px;
+            // z-index: 1;
             .swiper-slide{
                 a{
                     figure{

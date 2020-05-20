@@ -1483,8 +1483,6 @@ footer {
   bottom: -25px;
   width: 50px;
   height: 50px;
-  width: 50px;
-  height: 50px;
   background: #96c120;
   margin-left: -25px;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
@@ -1500,7 +1498,6 @@ footer {
   margin: 0 auto;
   max-width: 1200px;
   text-align: left;
-  margin-bottom: 50px;
 }
 
 #farmer .farmer-container-1 h1 {
@@ -1512,6 +1509,7 @@ footer {
 #farmer .farmer-container-2 {
   margin: 0 auto;
   max-width: 1300px;
+  position: relative;
 }
 
 #farmer .farmer-container-2 p {
@@ -1522,6 +1520,15 @@ footer {
           box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
   font-size: 20px;
   font-weight: 400;
+}
+
+#farmer .farmer-container-2 .farmer {
+  z-index: -100;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 530px;
+  top: 0px;
 }
 
 #farmer .farmer-container-2 .farmer .swiper-slide a figure img {
