@@ -1,11 +1,17 @@
 @charset "UTF-8";
-/**********************main**************************/
+/*main****************************************************************************************/
+/*main****************************************************************************************/
 #header {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 10;
+}
+
+#header.on {
+  position: fixed;
+  top: -200px;
 }
 
 .header {
@@ -735,7 +741,6 @@ footer {
 }
 
 .container {
-  background: #97fcff;
   width: 1200px;
   margin: 0 auto;
 }
@@ -753,7 +758,7 @@ footer {
   -ms-flex-preferred-size: 33.33%;
       flex-basis: 33.33%;
   text-align: center;
-  border-left: 5px solid #f2f2f2;
+  border-left: 1px solid #f2f2f2;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -861,18 +866,28 @@ footer {
   height: 12px;
   background: #ccc;
   position: absolute;
-  left: 5px;
+  left: 0px;
   top: 5px;
 }
 
 .container2 .container-left .links ul li:first-child::before {
   width: 0;
-  height: 0;
 }
 
 .container2 .container-left .links ul li:nth-child(6)::before {
   width: 0;
-  height: 0;
+}
+
+.container2 .container-left .links ul li a em {
+  font-weight: 600;
+}
+
+.container2 .container-left .links ul li a em.num1 {
+  color: #539a00;
+}
+
+.container2 .container-left .links ul li a em.num2 {
+  color: orangered;
 }
 
 .container2 .container-left .info {
@@ -881,15 +896,18 @@ footer {
 
 .container2 .container-left .info ul li {
   display: inline;
+  padding: 0 5px;
   font-size: 15px;
   line-height: 30px;
   position: relative;
+  font-weight: 300;
+  color: #666;
 }
 
 .container2 .container-left .info ul li::before {
   content: '';
   width: 1px;
-  height: 20px;
+  height: 12px;
   background: #ccc;
   position: absolute;
   left: 0;
@@ -921,11 +939,22 @@ footer {
   text-align: left;
 }
 
-.container2 .container-right .family-site h3 {
-  border: 1px solid #000;
-  width: 200px;
+.container2 .container-right .family-site h3 a {
+  display: block;
+  border: 2px solid #e8e8e8;
   border-radius: 30px;
-  padding: 15px;
+  padding: 10px 140px 10px 20px;
+  position: relative;
+  font-weight: 600;
+  color: #666;
+}
+
+.container2 .container-right .family-site h3 a svg {
+  position: absolute;
+  right: 20px;
+  top: 15%;
+  width: 20px;
+  height: 20px;
 }
 
 .container2 .container-right .socials {
@@ -941,7 +970,9 @@ footer {
   padding-left: 10px;
 }
 
-/*******************CS(고객지원)**********************/
+/*CS(고객지원)*******************************************************************************************/
+/*CS(고객지원)*******************************************************************************************/
+/*헤더 화이트*/
 #header.white .header {
   background-color: #fff;
 }
@@ -975,7 +1006,7 @@ footer {
 
 #header.white .header2-wrap .header2-left .header2-left-btn1 {
   float: left;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1028,7 +1059,7 @@ footer {
   width: -moz-fit-content;
   width: fit-content;
   float: right;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1047,6 +1078,7 @@ footer {
   height: 40px;
 }
 
+/*배너*/
 #bannerCS {
   position: relative;
   height: 670px;
@@ -1086,6 +1118,7 @@ footer {
   padding: 10px 0 0 10px;
 }
 
+/*다이어그램*/
 #diagram {
   margin: 0 auto;
   margin-bottom: 100px;
@@ -1116,6 +1149,7 @@ footer {
   height: auto;
 }
 
+/*소비자 목소리*/
 #customerVoice {
   margin-bottom: 100px;
 }
@@ -1178,10 +1212,17 @@ footer {
   background-color: #e5e5e5;
 }
 
+#customerVoice .customerVoice-container .customerVoice-list-container .list-col .list-col-box .desc-box span {
+  display: block;
+  margin-top: 60px;
+  font-size: 16px;
+}
+
 #customerVoice .customerVoice-container .customerVoice-list-container .list-col:last-child .desc-box:before {
   width: 0;
 }
 
+/*상담*/
 #counsel {
   background: url(../img/imgCs/cont_01.png);
   background-size: cover;
@@ -1290,6 +1331,11 @@ footer {
   font-weight: normal;
 }
 
+/*분쟁*/
+#dispute {
+  margin-bottom: 100px;
+}
+
 #dispute .dispute-container {
   margin: 0 auto;
   max-width: 1200px;
@@ -1310,5 +1356,175 @@ footer {
 #dispute .dispute-container .dispute-img-container img {
   float: right;
   width: 700px;
+}
+
+/*푸터 네비게이션*/
+#footerNav {
+  padding: 60px 0 100px 0;
+  background-color: #f2f1de;
+  position: relative;
+}
+
+#footerNav .footerNav .swiper-wrapper .swiper-slide a span {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#footerNav .footerNav .swiper-wrapper .swiper-slide a figure img {
+  height: 314px;
+}
+
+#footerNav .footerNav .swiper-scrollbar {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  right: 30px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0);
+}
+
+#footerNav .footerNav .swiper-scrollbar .swiper-scrollbar-drag {
+  width: 160px !important;
+  background-color: #ffdd1f;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+#footerNav .footerNav .swiper-scrollbar::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #d8d7c6;
+}
+
+/*Introduction-WAY(소개)*************************************************************************************/
+/*Introduction-WAY(소개)*************************************************************************************/
+#bannerWay {
+  position: relative;
+  height: 670px;
+  background: url(../img/imgIntroduction/main_visual_way.png) no-repeat center center;
+  background-size: cover;
+  margin-bottom: 100px;
+}
+
+#bannerWay h2 {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 64px;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+#bannerWay .line-container {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  position: relative;
+  width: 660px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: seagreen;
+}
+
+#bannerWay .line-container .line-1 {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 580px;
+  height: 120px;
+  background-color: orchid;
+}
+
+#bannerWay .line-container .line-2 {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 580px;
+  height: 120px;
+  background-color: #0e11d6;
+}
+
+#bannerWay .line-container p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+}
+
+#bannerWay .btn-quick a {
+  position: absolute;
+  left: 50%;
+  bottom: -25px;
+  width: 50px;
+  height: 50px;
+  width: 50px;
+  height: 50px;
+  background: #96c120;
+  margin-left: -25px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+#bannerWay .btn-quick a img {
+  width: 30px;
+  padding: 10px 0 0 10px;
+}
+
+#farmer .farmer-container-1 {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+#farmer .farmer-container-1 h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 45px 0;
+}
+
+#farmer .farmer-container-2 {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+#farmer .farmer-container-2 p {
+  width: 750px;
+  height: 300px;
+  background-color: #d66e6e;
+  -webkit-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#farmer .farmer-container-2 .farmer .swiper-slide a figure img {
+  height: 550px;
 }
 /*# sourceMappingURL=style.css.map */

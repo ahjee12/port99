@@ -19,7 +19,7 @@ img {border: 0 none; vertical-align: top;}
 video{width: 100%;}
 
 /*폰트 스타일 초기화*/
-em {font-style: 'Noto Sans KR', sans-serif;}
+em {font-style: 'Noto Sans KR', sans-serif; font-style: normal;}
 
 /*테두리 초기화*/
 fieldset{border: 0 none;}
