@@ -1344,10 +1344,12 @@ footer {
 
         .swiper-wrapper {
             .swiper-slide {
-
+                // width: 33.3%;
+                // text-align: center;
                 // position: relative;
                 // z-index: -1000;
                 a {
+                    width: 100%;
                     span {
                         font-size: 24px;
                         font-weight: 400;
@@ -1363,19 +1365,13 @@ footer {
                     figure {
                         img {
                             height: 314px;
+                            width: 100%;
                         }
-                    }
+                    }//figure 
+                }//a
+            }//.swiper-slide 
+        }//.swiper-wrapper
 
-                    //figure
-                }
-
-                //a
-            }
-
-            //.swiper-slide
-        }
-
-        //.swiper-wrapper
         .swiper-scrollbar {
             position: absolute;
             bottom: 50px;
@@ -1394,9 +1390,7 @@ footer {
                 width: 160px !important;
                 background-color: #ffdd1f;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-
             }
-
             &::before {
                 content: '';
                 display: block;
@@ -1408,15 +1402,11 @@ footer {
                 background-color: #d8d7c6;
                 ;
             }
-        }
+        } //..swiper-scrollbar  
+    }//.footerNav   
+}//#footerNav
 
-        //..swiper-scrollbar
-    }
 
-    //.footerNav
-}
-
-//#footerNav
 
 /*Introduction-WAY(소개)*************************************************************************************/
 /*Introduction-WAY(소개)*************************************************************************************/
@@ -1620,7 +1610,7 @@ footer {
                         justify-content: center;
                         align-items: center;
                         p{
-                            font-size: 20px;
+                            font-size: 22px;
                             font-weight: bold;
                             width: fit-content;
                             float: left;
@@ -1632,7 +1622,7 @@ footer {
                     }
                     .value-item-box2{
                         p{
-                            font-size: 20px;
+                            font-size: 22px;
                             font-weight: bold;
                             color: #539a00;
                             padding: 45px 10px 15px;
@@ -1647,7 +1637,7 @@ footer {
                     }
                     .value-item-box3{
                         p{
-                            font-size: 16px;
+                            font-size: 20px;
                             color: #666666;
                             padding: 0 10px;
                             margin-top: 20px;
@@ -1665,6 +1655,7 @@ footer {
 
 
 #behavior{
+    margin-bottom: 100px;
     .behavior-container1{
         margin: 0 auto;
         max-width: 1200px;
@@ -1677,7 +1668,8 @@ footer {
 
     .behaviorAni{
         height: 680px;
-        background-image: url(../img/imgIntroduction/way_conduct.png);
+        background-image: url(../img/imgIntroduction/way_conduct.png); 
+        background-size: cover;
         margin-bottom: 100px;
     }//behaviorAni
 
@@ -1685,18 +1677,33 @@ footer {
         margin: 0 auto;
         max-width: 1200px;
         .behavior-list{
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             .behavior-col{
+                flex-basis: 32%;
+               
                 .behavior-item{
                     .behavior-box1{
-                        img{height: 90px;}
-                        p{}
-
-                    }
-                   
-                }
-            }
-        }
+                        margin-bottom: 40px;
+                        border-right: 2px solid #e4e4e4;
+                        img{
+                            height: 90px;
+                            display: inline-block;
+                            margin-bottom: 20px;
+                        }
+                        p{
+                            font-size: 20px;
+                            padding: 0 80px 10px;
+                            color: #212529;
+                            font-weight: 400;
+                            border-bottom: 2px solid #e4e4e4;
+                            line-height: 1.75;
+                        }
+                    }//.behavior-box1     
+                }//.behavior-item
+            }//.behavior-col
+        }//.behavior-list
     }//behavior-container2
-
-
-}
+}//#behavior

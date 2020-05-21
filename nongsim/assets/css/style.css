@@ -1365,6 +1365,10 @@ footer {
   position: relative;
 }
 
+#footerNav .footerNav .swiper-wrapper .swiper-slide a {
+  width: 100%;
+}
+
 #footerNav .footerNav .swiper-wrapper .swiper-slide a span {
   font-size: 24px;
   font-weight: 400;
@@ -1379,6 +1383,7 @@ footer {
 
 #footerNav .footerNav .swiper-wrapper .swiper-slide a figure img {
   height: 314px;
+  width: 100%;
 }
 
 #footerNav .footerNav .swiper-scrollbar {
@@ -1608,7 +1613,7 @@ footer {
 }
 
 #value .value-container .value-list .value-col .value-item .value-item-box1 p {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1636,7 +1641,7 @@ footer {
 }
 
 #value .value-container .value-list .value-col .value-item .value-item-box2 p {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   color: #539a00;
   padding: 45px 10px 15px;
@@ -1656,10 +1661,14 @@ footer {
 }
 
 #value .value-container .value-list .value-col .value-item .value-item-box3 p {
-  font-size: 16px;
+  font-size: 20px;
   color: #666666;
   padding: 0 10px;
   margin-top: 20px;
+}
+
+#behavior {
+  margin-bottom: 100px;
 }
 
 #behavior .behavior-container1 {
@@ -1676,6 +1685,7 @@ footer {
 #behavior .behaviorAni {
   height: 680px;
   background-image: url(../img/imgIntroduction/way_conduct.png);
+  background-size: cover;
   margin-bottom: 100px;
 }
 
@@ -1684,7 +1694,40 @@ footer {
   max-width: 1200px;
 }
 
+#behavior .behavior-container2 .behavior-list {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#behavior .behavior-container2 .behavior-list .behavior-col {
+  -ms-flex-preferred-size: 32%;
+      flex-basis: 32%;
+}
+
+#behavior .behavior-container2 .behavior-list .behavior-col .behavior-item .behavior-box1 {
+  margin-bottom: 40px;
+  border-right: 2px solid #e4e4e4;
+}
+
 #behavior .behavior-container2 .behavior-list .behavior-col .behavior-item .behavior-box1 img {
   height: 90px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+#behavior .behavior-container2 .behavior-list .behavior-col .behavior-item .behavior-box1 p {
+  font-size: 20px;
+  padding: 0 80px 10px;
+  color: #212529;
+  font-weight: 400;
+  border-bottom: 2px solid #e4e4e4;
+  line-height: 1.75;
 }
 /*# sourceMappingURL=style.css.map */
