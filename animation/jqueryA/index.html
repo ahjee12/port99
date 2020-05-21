@@ -223,6 +223,18 @@
                         position: relative;
                     }
 
+                    .well.delay {
+                        height: 1000px;
+                    }
+
+                    .well.slide {
+                        height: 1200px;
+                    }
+
+                    .well.move {
+                        height: 700px;
+                    }
+
                     .circle {
                         width: 200px;
                         height: 200px;
@@ -230,16 +242,23 @@
                         border-radius: 50%;
                         position: absolute;
                     }
+
+                    .circle.delay {
+                        width: 150px;
+                        height: 150px;
+                    }
                 </style>
+
                 <!-- Intro2 -->
                 <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header"></h2>
                     <h3>Animation <span class="btn btn1">Start</span></h3>
                     <div class="well">
                         <div class="box">
                             <div class="circle circle1"></div>
                         </div>
                     </div>
-<pre class="line-numbers language-css">
+                    <pre class="line-numbers language-css">
 <code>&lt;script&gt;
     let button = $(".btn.btn1");
     let circle = $(".circle.circle1");
@@ -260,7 +279,13 @@
 &lt;script&gt;
 </code>
 </pre>
+                </div>
 
+                <!-- //Intro2 -->
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header"></h2>
                     <h3>Animation
                         <span class="btn btn2">swing</span>
                         <span class="btn btn2">easeInExpo</span>
@@ -273,7 +298,7 @@
                             <div class="circle circle2"></div>
                         </div>
                     </div>
-        <pre class="line-numbers language-css">
+                    <pre class="line-numbers language-css">
 <code>&lt;script&gt;
     //두 번째 버튼을 클릭했을 때 클릭한 글씨를 출력하세요
     let button2 = $(".btn.btn2");
@@ -288,8 +313,143 @@
 </code>
 </pre>
                 </div>
+                <!-- //Intro3 -->
 
-                <!-- //Intro2 -->
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header"></h2>
+                    <h3>Animation
+                        <span class="btn btn3">delay</span>
+                    </h3>
+                    <div class="well delay">
+                        <div class="box">
+                            <div class="circle circle3 delay"></div>
+                            <div class="circle circle3 delay"></div>
+                            <div class="circle circle3 delay"></div>
+                            <div class="circle circle3 delay"></div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers language-css">
+<code>&lt;script&gt;
+
+&lt;script&gt;
+</code>
+</pre>
+
+                </div>
+                <!-- //Intro4 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header"></h2>
+
+                    <h3>Animation
+                        <span class="btn btn4">버튼4</span>
+                    </h3>
+                    <div class="well slide">
+                        <div class="box">
+                            <div class="circle circle4"></div>
+                            <div class="circle circle4"></div>
+                            <div class="circle circle4"></div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers language-css">
+<code>&lt;script&gt;
+
+&lt;script&gt;
+</code>
+</pre>
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header"></h2>
+
+                    <h3>Animation
+                        <span class="btn btn5-1">right</span>
+                        <span class="btn btn5-2">left</span>
+                        <span class="btn btn5-3">bottom</span>
+                        <span class="btn btn5-4">top</span>
+                    </h3>
+                    <div class="well move">
+                        <div class="box">
+                            <div class="circle circle5"></div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers language-css">
+<code>&lt;script&gt;
+
+&lt;script&gt;
+</code>
+</pre>
+                </div>
+                <!-- //Intro6 -->
+
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">loop</h2>
+
+                    <h3>Animation
+                        <span class="btn btn6">start</span>
+                    </h3>
+                    <div class="well">
+                        <div class="box">
+                            <div class="circle circle6"></div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers language-css">
+<code>&lt;script&gt;
+
+&lt;script&gt;
+</code>
+</pre>
+                </div>
+                <!-- //Intro6 -->
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">setInterval</h2>
+
+                    <h3>Animation
+                        <span class="btn btn7">start</span>
+                    </h3>
+                    <div class="well">
+                        <div class="box">
+                            <div class="circle circle7"></div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers language-css">
+<code>&lt;script&gt;
+
+&lt;script&gt;
+</code>
+</pre>
+                </div>
+                <!-- //Intro6 -->
+
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">사라지는 애니메이션</h2>
+                    <h3>Animation
+                        <span class="btn btn8">start</span>
+                    </h3>
+                    <div class="well">
+                        <div class="box">
+                            <div class="circle circle8"></div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers language-css">
+<code>&lt;script&gt;
+
+&lt;script&gt;
+</code>
+</pre>
+                </div>
+                <!-- //Intro7 -->
+
+
             </div>
             <!-- //col-md-9 -->
 
@@ -373,21 +533,255 @@
 
         let calcW = boxW - circleW;
         let calcH = boxH - circleH;
+
+
+        $(window).resize(function () {
+            boxW = $(".box").width();
+            boxH = $(".box").height();
+            console.log(boxW);
+
+            calcW = boxW - circleW;
+            calcH = boxH - circleH;
+        })
         button.click(function () {
             let target = circle;
-            target.animate({ left: calcW }, 1000).animate({ top: calcH}, 1000).animate({left: "0"}, 1000).animate({top: "0"}, 1000);
+            target.animate({
+                left: calcW
+            }, 1000).animate({
+                top: calcH
+            }, 1000).animate({
+                left: "0"
+            }, 1000).animate({
+                top: "0"
+            }, 1000);
         })
-
-        let circle2 = $(".circle.circle2");
         //두 번째 버튼을 클릭했을 때 클릭한 글씨를 출력하세요
+        let circle2 = $(".circle.circle2");
         let button2 = $(".btn.btn2");
         button2.click(function () {
             let target = $(this).text();
             // alert(target);
             console.log(target);
-            
-           circle2.animate({left:calcW},1000,target).animate({top:calcH},1000,target).animate({left:"0"},1000,target).animate({top:"0"},1000,target);
+
+            circle2.animate({
+                left: calcW
+            }, 1000, target).animate({
+                top: calcH
+            }, 1000, target).animate({
+                left: "0"
+            }, 1000, target).animate({
+                top: "0"
+            }, 1000, target);
         })
+
+        //cicrlce3의 position값을 relative로 변경하세요
+        let ease = "easeOutElastic";
+        let circle3 = $(".circle.circle3");
+        console.log(circle3);
+        let button3 = $(".btn.btn3")
+
+        circle3.css({
+            "position": "relative",
+            "margin-bottom": "30px"
+        });
+        $(button3).click(function () {
+            circle3.eq(0).delay(100).animate({
+                left: calcW
+            }, 1000, ease).animate({
+                top: calcH
+            }, 1000, ease).animate({
+                left: "0"
+            }, 1000, ease).animate({
+                top: "0"
+            }, 1000, ease);
+
+            circle3.eq(1).delay(200).animate({
+                left: calcW
+            }, 1000, ease).animate({
+                top: calcH
+            }, 1000, ease).animate({
+                left: "0"
+            }, 1000, ease).animate({
+                top: "0"
+            }, 1000, ease);
+
+            circle3.eq(2).delay(300).animate({
+                left: calcW
+            }, 1000, ease).animate({
+                top: calcH
+            }, 1000, ease).animate({
+                left: "0"
+            }, 1000, ease).animate({
+                top: "0"
+            }, 1000, ease);
+
+            circle3.eq(3).delay(400).animate({
+                left: calcW
+            }, 1000, ease).animate({
+                top: calcH
+            }, 1000, ease).animate({
+                left: "0"
+            }, 1000, ease).animate({
+                top: "0"
+            }, 1000, ease);
+
+            circle3.eq(4).delay(500).animate({
+                left: calcW
+            }, 1000, ease).animate({
+                top: calcH
+            }, 1000, ease).animate({
+                left: "0"
+            }, 1000, ease).animate({
+                top: "0"
+            }, 1000, ease);
+        })
+
+
+        let circle4 = $(".circle.circle4");
+        let button4 = $(".btn.btn4")
+        // circle4.eq(0).css({
+        //     "position": "relative",
+        //     "margin-bottom": "200px"
+        // });
+        circle4.eq(1).css({
+            "position": "absolute",
+            "top": "500px",
+            "left": "10px"
+        });
+        circle4.eq(2).css({
+            "position": "absolute",
+            "top": "800px",
+            "left": "10px"
+        });
+        circle4.eq(0).css({
+            width: "50px",
+            height: "50px"
+        });
+        // circle4.eq(1).css({width:"50px",height:"50px"});
+
+        $(button4).click(function () {
+            circle4.eq(0).animate({
+                left: calcW,
+                width: "100px",
+                height: "100px"
+            }, 1000, ease).animate({
+                top: calcH,
+                width: "200px",
+                height: "200px"
+            }, 1000, ease).animate({
+                left: "0",
+                width: "50px",
+                height: "50px"
+            }, 1000, ease).animate({
+                top: "0",
+                width: "200px",
+                height: "200px"
+            }, 1000, ease);
+
+            circle4.eq(1).animate({
+                left: calcW
+            }, 1000, ease).slideUp().slideDown().animate({
+                left: "0"
+            }, 1000, ease);
+
+            circle4.eq(2).animate({
+                    left: "70%",
+                    borderRadius: "0%"
+                }, 2000, "easeOutQuint")
+                .animate({
+                    height: 300,
+                    opacity: 0.5
+                }, "slow", "easeOutQuint")
+                .animate({
+                    width: 300,
+                    opacity: 1,
+                    borderRadius: "30%"
+                }, "normal", "easeOutQuint")
+                .animate({
+                    width: 50,
+                    height: 50,
+                    borderRadius: "50%"
+                }, 2000, "easeOutQuint")
+                .animate({
+                    left: 0
+                }, 1000, "easeOutQuint");
+
+        })
+
+        let circle5 = $(".circle.circle5");
+        let button5_1 = $(".btn.btn5-1");
+        let button5_2 = $(".btn.btn5-2");
+        let button5_3 = $(".btn.btn5-3");
+        let button5_4 = $(".btn.btn5-4");
+        $(button5_1).click(function () {
+            circle5.animate({
+                left: "+=100"
+            }, "slow", "easeOutQuint");
+        })
+        $(button5_2).click(function () {
+            circle5.animate({
+                left: "-=100"
+            }, "slow", "easeOutQuint");
+        });
+        $(button5_3).click(function () {
+            circle5.animate({
+                top: "+=100"
+            }, "slow", "easeOutQuint");
+        });
+        $(button5_4).click(function () {
+            circle5.animate({
+                top: "-=100"
+            }, "slow", "easeOutQuint");
+        });
+
+
+        let circle6 = $(".circle.circle6");
+        let button6 = $(".btn.btn6");
+        $(button6).click(function () {
+            loop();
+        })
+
+        function loop() {
+            circle6.animate({
+                    left: calcW
+                }, 1000, "easeOutQuint")
+                .animate({
+                    left: 0
+                }, 1000, "easeOutQuint", loop);
+
+        }
+
+        let circle7 = $(".circle.circle7");
+        let button7 = $(".btn.btn7");
+        button7.click(function () {
+            setInterval(time, 5000);
+        })
+
+        function time() {
+            circle7.animate({
+                    left: calcW
+                }, 1000, "easeOutQuint")
+                .animate({
+                    left: 0
+                }, 1000, "easeOutQuint");
+        }
+
+        let circle8 = $(".circle.circle8");
+        let button8 = $(".btn.btn8");
+        button8.click(function () {
+            circle8.animate({
+                    left: calcW
+                }, 1000, "easeOutQuint")
+                .animate({
+                    left: 0
+                }, 1000, "easeOutQuint");
+
+            setTimeout(out, 2000)
+        })
+
+        function out() {
+            circle8.hide()
+        }
     </script>
 
 </body>

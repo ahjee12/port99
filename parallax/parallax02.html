@@ -6,58 +6,81 @@
     <title>Parallax01</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        *{margin: 0 auto; box-sizing: border-box;}
+        *{margin:0; padding:0; box-sizing: border-box;}
         li{list-style: none;}
-        a{text-decoration: none; color: #fff; font-family: 'Lato', sans-serif;}
+        a{text-decoration: none; color:#fff; }
+        
+        :root{
+            font-size:12px;
+        }
         body{
-            background: #111;
-            color: #fff;
-            font-family: 'Lato', sans-serif;
+            --color-h1: #dc6e25;
+            --color-title: #fff;
+            --color-sub: #999;
+            --color-link: #000;
+            --color-bg: #111;
+            --font-family:'lato',sans-serif;
+            --aspect-ratio : 32/17;
+
+            --image-width-max: 500px;
+            background-color: var(--color-bg);
+            font-family: var(--font-family);
+            color: var(--color-title);
+
         }
         #wrap h1{
-            font-size: 135px;
-            padding: 20px;
-            color: #dc6e25;
+            font-size: 7vw;
+            color : var(--color-h1);
+            padding:3vw;
             text-transform: uppercase;
             font-weight: 700;
         }
         #wrap h1 em{
             display: block;
             font-weight: 100;
-            padding-left: 330px;
+            padding-left:18vw;
         }
+
         .contents{
-            /* width: 1600px; */
-            /* width: 1903px; */
-            margin: 300px auto 400px;
+            margin:35vh auto 35vh;
         }
         .content-item{
-            position: relative;
-            width: 1000px;
-            /* background: rgba(255,255,255,0.3); */
-            margin: 200px 0 300px;
-
+            position : relative;
+            --image-width: calc(var(--image-width-max) * (var(--aspect-ratio)));
+            width : var(--image-width);
+            max-width: 90vw;
+            margin : 10vh 0 40vh;
         }
+
+        .content-item-imgWrap{
+            --width: 100%;
+            width: var(--width);
+            position:relative;
+            padding-bottom: calc(100% / var(--aspect-ratio));
+            overflow: hidden;
+            /* background: #ccc; */
+        }
+        
+        
         .content-item:nth-child(even){
             margin-left: auto;
         }
-
         .content-item-num{
-            font-size: 350px;
+            font-size: 20vw;
             font-weight: 100;
             position:absolute;
-            right: -100px; top: -200px;
+            right: -8vw; top: -10vw;
             opacity: 0.8;
          }
          .content-item:nth-child(even) .content-item-num{
-            right: auto; left: -100px;
+            right: auto; left: -8vw;
          }
-        .content-item-title{
+         .content-item-title{
             text-align: right;
-            font-size: 24px;
+            font-size: 2em;
             font-weight: 300;
             color: #999;
-            padding-bottom: 10px;
+            padding-bottom: 1vh;
             text-transform: capitalize;
 
         }
@@ -71,27 +94,28 @@
             overflow: hidden;
         }
         .content-item-img{
-            height: 550px;
-            position: absolute; top: 0;
-            /*width넣어야 나옴*/
-            width: 100%;
+            --overflow: 40px; 
+            width: var(--width);
+            height: calc(var(--width)/ var(--aspect-ratio));
+            position:absolute; top:calc(-1 * overflow);
+            height: calc(100% + (2 * var(--overflow)));
+            width:100%;
             background-size: cover;
-            /*q*/
             background-position: 50% 0;
-
         }
+
         .content-item-desc{
-            font-size: 80px;
+            font-size: 4.5vw;
             line-height:1.2;
             font-weight: 600;
             text-align: right;
             /* margin-top: -100px; */
             word-break:keep-all;
         }
+
         .content-item:nth-child(even) .content-item-desc{
             text-align: left;
         }
-
         #section1 .content-item-img{background-image: url(img/1.jpg);}
         #section2 .content-item-img{background-image: url(img/2.jpg);}
         #section3 .content-item-img{background-image: url(img/3.jpg);}
@@ -101,6 +125,8 @@
         #section7 .content-item-img{background-image: url(img/7.jpg);}
         #section8 .content-item-img{background-image: url(img/8.jpg);}
         #section9 .content-item-img{background-image: url(img/9.jpg);}
+    
+    </style>
     </style>
 </head>
 

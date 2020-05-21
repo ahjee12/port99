@@ -40,4 +40,4 @@ fieldset{border: 0 none;}
 .ir_so {overflow: hidden; position: absolute; width: 0; height: 0; line-height: 0; text-indent: -9999px;}
 
 /* 이미지 초기화 */
-img{border: 0 none; vertical-align: top; width: 100%;} 
+img{border: 0 none; vertical-align: top;} 
