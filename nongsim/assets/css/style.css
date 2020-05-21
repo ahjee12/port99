@@ -1494,6 +1494,11 @@ footer {
   padding: 10px 0 0 10px;
 }
 
+#farmer {
+  margin-bottom: 100px;
+  position: relative;
+}
+
 #farmer .farmer-container-1 {
   margin: 0 auto;
   max-width: 1200px;
@@ -1507,31 +1512,179 @@ footer {
 }
 
 #farmer .farmer-container-2 {
+  height: 760px;
   margin: 0 auto;
   max-width: 1300px;
   position: relative;
 }
 
-#farmer .farmer-container-2 p {
+#farmer .farmer-container-2 .farmer-box {
   width: 750px;
-  height: 300px;
-  background-color: #d66e6e;
+  height: 360px;
+  background-color: rgba(255, 255, 255, 0.7);
   -webkit-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
   font-size: 20px;
   font-weight: 400;
+  padding: 40px 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  top: 40px;
+  z-index: 2;
+}
+
+#farmer .farmer-container-2 .farmer-box p {
+  line-height: 35px;
 }
 
 #farmer .farmer-container-2 .farmer {
-  z-index: -100;
-  width: 80%;
+  width: 70%;
   height: 80%;
   position: absolute;
   left: 530px;
   top: 0px;
 }
 
-#farmer .farmer-container-2 .farmer .swiper-slide a figure img {
+#farmer .farmer-container-2 .farmer .swiper-container {
+  padding-bottom: 30px;
+}
+
+#farmer .farmer-container-2 .farmer .swiper-container .swiper-slide a figure img {
   height: 550px;
+}
+
+#farmer .farmer-container-2 .farmer .swiper-pagination .swiper-pagination-bullet {
+  background-color: #000;
+}
+
+#farmer .farmer-container-2 .farmer .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #fff;
+  border-color: #000;
+}
+
+#value {
+  margin-bottom: 100px;
+}
+
+#value .value-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#value .value-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 45px 0;
+}
+
+#value .value-container .value-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: left;
+}
+
+#value .value-container .value-list .value-col {
+  -ms-flex-preferred-size: 31%;
+      flex-basis: 31%;
+  line-height: 1.75;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box1 {
+  height: 190px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box1 p {
+  font-size: 20px;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: left;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box1 img {
+  float: left;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box1 img.img-box-1-1 {
+  width: 110px;
+  height: 184px;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box1 img.img-box-1-2 {
+  width: 114px;
+  height: 165px;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box1 img.img-box-1-3 {
+  width: 155px;
+  height: 160px;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box2 p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #539a00;
+  padding: 45px 10px 15px;
+  border-bottom: 2px solid #e4e4e4;
+  position: relative;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box2 p::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #e4e4e4;
+}
+
+#value .value-container .value-list .value-col .value-item .value-item-box3 p {
+  font-size: 16px;
+  color: #666666;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+#behavior .behavior-container1 {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#behavior .behavior-container1 h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 45px 0;
+}
+
+#behavior .behaviorAni {
+  height: 680px;
+  background-image: url(../img/imgIntroduction/way_conduct.png);
+  margin-bottom: 100px;
+}
+
+#behavior .behavior-container2 {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#behavior .behavior-container2 .behavior-list .behavior-col .behavior-item .behavior-box1 img {
+  height: 90px;
 }
 /*# sourceMappingURL=style.css.map */
