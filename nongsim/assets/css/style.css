@@ -1718,6 +1718,7 @@ footer {
 
 #behavior .behavior-container2 .behavior-list .behavior-col .behavior-item .behavior-box1 img {
   height: 90px;
+  width: auto;
   display: inline-block;
   margin-bottom: 20px;
 }
