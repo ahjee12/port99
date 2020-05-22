@@ -449,6 +449,26 @@
                 </div>
                 <!-- //Intro7 -->
 
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">사라지는 애니메이션</h2>
+                    <h3>Animation
+                        <span class="btn btn9">start</span>
+                    </h3>
+                    <div class="well">
+                        <div class="box">
+                            <div class="circle circle9"></div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers language-css">
+<code>&lt;script&gt;
+
+&lt;script&gt;
+</code>
+</pre>
+                </div>
+                <!-- //Intro8 -->
+
 
             </div>
             <!-- //col-md-9 -->
@@ -782,6 +802,27 @@
         function out() {
             circle8.hide()
         }
+
+        //속성 애니메이션 2바퀴 무한 움직임 10분 뒤 사라지기
+        let circle9 = $(".circle.circle9");
+        let button9 = $(".btn.btn9");
+        $(button9).click(function () {
+            function loop() {
+                circle9.animate({
+                        left: calcW
+                    }, 1000, "easeOutQuint")
+                    .animate({
+                        left: 0
+                    }, 1000, "easeOutQuint", loop);
+
+            }
+
+            function out() {
+                circle9.hide()
+            }
+
+            loop()
+        })
     </script>
 
 </body>
