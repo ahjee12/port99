@@ -619,14 +619,15 @@
       $(window).scroll(function () {
         const scrollTop = $(window).scrollTop();
         console.log(scrollTop);
-        const scrollTop2 = $(window).scrollTop() + $(window).height();
+        const scrollTop2 = $(window).scrollTop() + $(window).height()/2;
 
         $("#contents section").each(function () {
-          if (scrollTop > $(this).offset().top) {
+          if (scrollTop2 > $(this).offset().top) {
             $(this).addClass("show");
-          }else{
-            $(this).removeClass("show");
           }
+          // else{
+          //   $(this).removeClass("show");
+          // }
         })
 
       })

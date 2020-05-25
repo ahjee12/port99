@@ -313,6 +313,7 @@
           transform: translateY(100px);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  z-index: 10;
 }
 
 #intro .intro-img {
@@ -743,6 +744,16 @@
 .brand-view .brand-visual {
   background: url(../img/main_brand.png) no-repeat center top;
   padding: 350px 0;
+}
+
+.brand-view .brand-visual h3 {
+  font-size: 96px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: left;
+  line-height: 50px;
+  color: #fff;
+  margin-left: 50px;
 }
 
 .brand-view .brands {
