@@ -307,6 +307,32 @@
   color: #fff;
 }
 
+#intro h2 {
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#intro .intro-img {
+  opacity: 0;
+  -webkit-transition: all 0.4s 0.2s ease;
+  transition: all 0.4s 0.2s ease;
+}
+
+#intro.show h2 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+#intro.show .intro-img {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 /*스토리*/
 #story {
   background: #f6f6f6;
@@ -575,8 +601,8 @@
 /*경영*/
 #management {
   padding: 100px 0 0 0;
-  margin-bottom: 100px;
-  height: 900px;
+  margin-bottom: 200px;
+  height: 950px;
   background: url(../img/main_management.png) no-repeat center top 220px;
 }
 
@@ -588,6 +614,31 @@
   text-align: center;
   position: relative;
   z-index: 10px;
+}
+
+#management #management-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#management #management-btn .management-btn {
+  font-size: 18px;
+  color: #ca0202;
+  border-radius: 30px;
+  border: 1px solid #ca0202;
+  padding: 10px 80px;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#management #management-btn .management-btn:hover {
+  background: #ca0202;
+  color: #fff;
 }
 
 .management {
@@ -642,6 +693,34 @@
   letter-spacing: -3px;
   color: #fff;
   font-weight: bold;
+}
+
+#management h2 {
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#management .management {
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 0.4s 0.2s ease;
+  transition: all 0.4s 0.2s ease;
+}
+
+#management.show h2 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+#management.show .management {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 /*브랜드*/

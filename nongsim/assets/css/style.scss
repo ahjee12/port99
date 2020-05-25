@@ -335,6 +335,29 @@
     }
 }
 
+#intro h2 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.4s ease;
+}
+
+;
+
+#intro .intro-img {
+    opacity: 0;
+    transition: all 0.4s 0.2s ease;
+}
+
+#intro.show h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#intro.show .intro-img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /*스토리*/
 #story {
     background: #f6f6f6;
@@ -461,8 +484,8 @@
 /*경영*/
 #management {
     padding: 100px 0 0 0;
-    margin-bottom: 100px;
-    height: 900px;
+    margin-bottom: 200px;
+    height: 950px;
     background: url(../img/main_management.png) no-repeat center top 220px;
 
     h2 {
@@ -474,6 +497,31 @@
         position: relative;
         z-index: 10px;
     }
+
+    #management-btn {
+        display: flex;
+        justify-content: center;
+        // padding-top: 30px;
+
+        .management-btn {
+            font-size: 18px;
+            color: #ca0202;
+            border-radius: 30px;
+            border: 1px solid #ca0202;
+            padding: 10px 80px;
+            // margin-top: 80px;
+            display: inline-block;
+            transition: all 0.3s;
+
+            &:hover {
+                background: #ca0202;
+                color: #fff;
+            }
+        }
+    }
+
+    //#story-btn 
+
 }
 
 .management {
@@ -520,6 +568,30 @@
             font-weight: bold;
         }
     }
+
+
+}
+
+#management h2 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.4s ease;
+}
+
+#management .management {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.4s 0.2s ease;
+}
+
+#management.show h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#management.show .management {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /*브랜드*/
@@ -1344,12 +1416,14 @@ footer {
 
         .swiper-wrapper {
             .swiper-slide {
+
                 // width: 33.3%;
                 // text-align: center;
                 // position: relative;
                 // z-index: -1000;
                 a {
                     width: 100%;
+
                     span {
                         font-size: 24px;
                         font-weight: 400;
@@ -1367,10 +1441,18 @@ footer {
                             height: 314px;
                             width: 100%;
                         }
-                    }//figure 
-                }//a
-            }//.swiper-slide 
-        }//.swiper-wrapper
+                    }
+
+                    //figure 
+                }
+
+                //a
+            }
+
+            //.swiper-slide 
+        }
+
+        //.swiper-wrapper
 
         .swiper-scrollbar {
             position: absolute;
@@ -1391,6 +1473,7 @@ footer {
                 background-color: #ffdd1f;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
             }
+
             &::before {
                 content: '';
                 display: block;
@@ -1400,11 +1483,17 @@ footer {
                 width: 100%;
                 height: 2px;
                 background-color: #d8d7c6;
-             
+
             }
-        } //..swiper-scrollbar  
-    }//.footerNav   
-}//#footerNav
+        }
+
+        //..swiper-scrollbar  
+    }
+
+    //.footerNav   
+}
+
+//#footerNav
 
 
 
@@ -1521,7 +1610,7 @@ footer {
         margin: 0 auto;
         max-width: 1300px;
         position: relative;
-    
+
         .farmer-box {
             // width: 750px; height: 300px;
             width: 750px;
@@ -1534,8 +1623,9 @@ footer {
             box-sizing: border-box;
             // margin-top: 100px;
             position: relative; //q
-            top: 40px; 
+            top: 40px;
             z-index: 2; //q
+
             p {
                 line-height: 35px;
             }
@@ -1549,9 +1639,11 @@ footer {
             position: absolute;
             left: 530px;
             top: 0px;
+
             // z-index: 1;
             .swiper-container {
                 padding-bottom: 30px;
+
                 .swiper-slide {
                     a {
                         figure {
@@ -1566,12 +1658,13 @@ footer {
             }
 
             .swiper-pagination {
-               
+
                 // background-color: #000;
                 .swiper-pagination-bullet {
                     background-color: #000;
                 }
-                .swiper-pagination-bullet.swiper-pagination-bullet-active{
+
+                .swiper-pagination-bullet.swiper-pagination-bullet-active {
                     background-color: #fff;
                     border-color: #000;
                 }
@@ -1584,44 +1677,67 @@ footer {
     //.farmer-container-2
 }
 
-#value{
-    margin-bottom: 100px;;
-    .value-container{
+#value {
+    margin-bottom: 100px;
+    ;
+
+    .value-container {
         margin: 0 auto;
         max-width: 1200px;
-        h1{
+
+        h1 {
             font-size: 2rem;
             font-weight: bold;
             padding: 45px 0;
         }
-        .value-list{
+
+        .value-list {
             display: flex;
             justify-content: space-between;
             text-align: left;
-            .value-col{
+
+            .value-col {
                 flex-basis: 31%;
                 // background-color: #ccc;
                 line-height: 1.75;
+
                 // width: ; padding-right: 2%;
-                .value-item{
-                    .value-item-box1{
+                .value-item {
+                    .value-item-box1 {
                         height: 190px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        p{
+
+                        p {
                             font-size: 22px;
                             font-weight: bold;
                             width: fit-content;
                             float: left;
                         }
-                        img{float: left;}
-                        img.img-box-1-1{width: 110px; height: 184px;}
-                        img.img-box-1-2{width: 114px; height: 165px;}
-                        img.img-box-1-3{ width: 155px; height: 160px;}
+
+                        img {
+                            float: left;
+                        }
+
+                        img.img-box-1-1 {
+                            width: 110px;
+                            height: 184px;
+                        }
+
+                        img.img-box-1-2 {
+                            width: 114px;
+                            height: 165px;
+                        }
+
+                        img.img-box-1-3 {
+                            width: 155px;
+                            height: 160px;
+                        }
                     }
-                    .value-item-box2{
-                        p{
+
+                    .value-item-box2 {
+                        p {
                             font-size: 22px;
                             font-weight: bold;
                             color: #539a00;
@@ -1629,14 +1745,21 @@ footer {
                             border-bottom: 2px solid #e4e4e4;
                             position: relative;
 
-                            &::after{
-                                content: ''; display: block; position: absolute; right: 0; top: 0;
-                                width: 2px; height: 100%; background-color: #e4e4e4; 
+                            &::after {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 2px;
+                                height: 100%;
+                                background-color: #e4e4e4;
                             }
                         }
                     }
-                    .value-item-box3{
-                        p{
+
+                    .value-item-box3 {
+                        p {
                             font-size: 20px;
                             color: #666666;
                             padding: 0 10px;
@@ -1644,56 +1767,71 @@ footer {
                         }
                     }
                 }
+
                 //value-item
             }
+
             // .value-col
         }
-         //.value-list
+
+        //.value-list
     }
+
     //.value-container
 }
 
 
-#behavior{
+#behavior {
     margin-bottom: 100px;
-    .behavior-container1{
+
+    .behavior-container1 {
         margin: 0 auto;
         max-width: 1200px;
-        h1{
+
+        h1 {
             font-size: 2rem;
             font-weight: bold;
             padding: 45px 0;
         }
-    }//behavior-container1
+    }
 
-    .behaviorAni{
+    //behavior-container1
+
+    .behaviorAni {
         height: 680px;
-        background-image: url(../img/imgIntroduction/way_conduct.png); 
+        background-image: url(../img/imgIntroduction/way_conduct.png);
         background-size: cover;
         margin-bottom: 100px;
-    }//behaviorAni
+    }
 
-    .behavior-container2{
+    //behaviorAni
+
+    .behavior-container2 {
         margin: 0 auto;
         max-width: 1200px;
-        .behavior-list{
+
+        .behavior-list {
             text-align: center;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            .behavior-col{
+
+            .behavior-col {
                 flex-basis: 32%;
-               
-                .behavior-item{
-                    .behavior-box1{
+
+                .behavior-item {
+                    .behavior-box1 {
                         margin-bottom: 40px;
                         border-right: 2px solid #e4e4e4;
-                        img{
-                            height: 90px; width: auto;
+
+                        img {
+                            height: 90px;
+                            width: auto;
                             display: inline-block;
                             margin-bottom: 20px;
                         }
-                        p{
+
+                        p {
                             font-size: 20px;
                             padding: 0 80px 10px;
                             color: #212529;
@@ -1701,9 +1839,21 @@ footer {
                             border-bottom: 2px solid #e4e4e4;
                             line-height: 1.75;
                         }
-                    }//.behavior-box1     
-                }//.behavior-item
-            }//.behavior-col
-        }//.behavior-list
-    }//behavior-container2
-}//#behavior
+                    }
+
+                    //.behavior-box1     
+                }
+
+                //.behavior-item
+            }
+
+            //.behavior-col
+        }
+
+        //.behavior-list
+    }
+
+    //behavior-container2
+}
+
+//#behavior
