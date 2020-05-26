@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        /* .button{border: 1px solid #000;} */
+        .button a{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button">
+        <a href="#" class="button1">click</a>
+    </div>
+
+    <div class="selector" id="selector">
+        <div class="box">jQuery vs JavaScript</div>
+        <div class="box">jQuery vs JavaScript</div>
+        <div class="box add">jQuery vs JavaScript</div>
+        <div class="box">jQuery vs JavaScript</div>
+        <div class="box">jQuery vs JavaScript</div>
+    </div>
+
+    <div>
+        <ul id="list">
+            <li>list01</li>
+            <li>list02</li>
+            <li>list03</li>
+            <li>list04</li>
+            <li>list05</li>
+            <li>list06</li>
+            <li>list07</li>
+            <li>list08</li>
+            <li>list09</li>
+            <li>list10</li>
+        </ul>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        //for문이 실행되었습니다.
+        // for(let i=0; i<10; i++){
+        //     document.write(i+". for문이 실행되었습니다.<br>" );
+        // }
+        // selector = $(".selector");
+        // console.log(selector);
+        // selector.css("color", "red");
+        // box = $(".box");
+        // box.css("color", "red");
+
+        // document.querySelector(".selector").style.color = "red";
+        // document.querySelector(".box").style.color = "red";
+
+        // //ID선택자
+        // let list = document.getElementById("list"); 
+        // //자식 li 선택
+        // let listLi = list.getElementsByTagName("li"); 
+        // for (let i = 0; i < listLi.length; i++) {
+        //     let liArray = listLi[i];
+        //     liArray.style.color = "red";
+        // }
+
+        // 다중 선택
+        // //다중 선택 됨
+        // document.querySelector(".box").style.color = "red";
+        // //다중 선택 안됨!!
+        // document.querySelectorAll(".box").style.color = "red";
+        // let box = document.querySelectorAll(".box");
+        // for(i=0; i<box.length; i++){
+        //     box[i].style.color = "red";
+        // }
+
+        // // foreach(콘텐츠/ 인덱스/ array)
+        // document.querySelector(".box").forEach(box => {
+        //     box.style.color
+        // })
+
+        //태그 선택자
+        // document.getElementsByTagName("div").style.color = "blue"
+
+        // 다중 선택
+        // const selector = $("#selector");
+        // console.log(selector);
+        // const box = selector.find("box");
+        // box.css("color","blue");
+
+        // sol#1 javascript  
+        // const selector = document.getElementById("selector");
+        // const box = selector.querySelector(".box");
+        // box.style.css = "blue";
+
+        // sol#2 javascript
+        // const boxAll = document.querySelectorAll(".box");
+        // console.log(boxAll);
+        // boxAll.forEach(element => {
+        //     element.style.color = "blue"
+        // });
+
+        // //hide
+        // $(".box").hide();
+        // document.querySelectorAll(".box").forEach(element => {
+        //     element.style.display = "hidden"
+        // });
+
+        // //show
+        // $(".box").show();
+        // document.querySelectorAll(".box").forEach(element => {
+        //     element.style.display = "block"
+        // });
+
+        // //show클래스 추가
+        // $(".box").addClass("show");
+        // document.querySelectorAll(".box").forEach(element =>{
+        //     element.classList.add("show");
+        // });
+
+        // //show클래스 삭제
+        // $(".box").removeClass("show");
+        // document.querySelectorAll(".box").forEach(element => {
+        //     element.classList.remove("show");
+        // });
+
+        // // 버튼 클릭하면 글씨 색을 빨간색으로 바꾸기
+        // $(".button1").click(function () {
+        //     $(".selector").css("color", "red");
+        //     $("#list").css("color", "red");
+        // });
+
+        // document.querySelector(".button1").addEventListener("click", function(){
+        //     document.querySelectorAll(".selector").forEach(element => {
+        //         element.style.color = "red";
+        //     });
+        //     document.querySelectorAll("#list").forEach(element => {
+        //         element.style.color = "red";
+        //     });
+        // })
+
+        //토글
+        // $(".button1").click(function(){
+        //     $(".box").toggleClass("add");
+        // });
+        
+        // document.querySelector(".button1").addEventListener("click",function(){
+        //     document.querySelectorAll(".box").forEach(element=>{
+        //         element.classList.toggle("add");
+        //     })
+        // });
+
+        //마우스엔터
+        // $(".box").on("mouseenter",function(){
+        //     $(".box").css("color","red");
+        // })
+        // document.querySelectorAll(".selector").addEventListener
+
+        // document.querySelector(".selector").addEventListener("mouseenter",function(){
+        //     this.style.color = "red";
+        // })
+
+        // document.querySelectorAll(".box").forEach(element=>{
+        //     element.addEventListener("mouseenter",function(){
+        //         this.style.color = "red";
+        //     })
+        // });
+
+        // document.querySelectorAll(".box").forEach(element=>{
+        //     element.addEventListener("mouseleave",function(){
+        //         this.style.color = "black";
+        //     })
+        // });
+
+        //헤즈클래스
+        // if($(".box").hasClass("add")){
+        //     $(".add").css("color","blue");
+        // }
+
+        // document.querySelectorAll(".box").forEach(element=>{
+        //     if(element.classList.contains("add")){
+        //         element.style.color = "blue";
+        //     }
+        // });
+
+        // if(document.getElementById("selector").classList.contains("add")){
+        //     document.querySelector(".selector").style.color = "blue";
+        // }
+
+        //append    
+        $(".button1").click(function(){
+            $(".selector").append("<div class='box'>jQuery vs JavaScript</div>");
+            $(".selector").prepend("<div class='box'>jQuery vs JavaScript</div>");
+        })
+        //appendChild
+        document.querySelector(".button1").addEventListener("click",function(){
+            let elem = document.getElementById("selector");
+            let docu = document.createElement("div");
+            elem.appendChild(docu);
+        })
+
+
+    </script>
+</body>
+
+</html>

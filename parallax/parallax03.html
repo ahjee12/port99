@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax01</title>
+    <title>Parallax03</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -332,45 +332,64 @@
 
             const scrollTop2 = $(window).scrollTop() + $(window).height();
 
+            //each함수
+            info2SectionOffsetTop = $(".info2 span strong");
+            info2SectionOffsetTop.each(function (i) {
+                sectionOffsetTop = $("#section" + (i + 1)).offset().top;
+                $(this).text(parseInt(sectionOffsetTop));
+            })
+
             for (i = 0; i < 9; i++) {
                 sectionOffsetTop = $("#section" + (i + 1)).offset().top;
                 info2SectionOffsetTop = $(".info2 span strong");
                 // info2SectionOffsetTop.eq(i).text(parseInt(sectionOffsetTop));
 
-
-                if (scrollTop > sectionOffsetTop) {
+                //for문 css
+                if (scrollTop > parseInt(sectionOffsetTop)) {
                     info2SectionOffsetTop.eq(i).css("color", "red");
                 } else {
                     info2SectionOffsetTop.eq(i).css("color", "black");
                 }
 
-                //each함수 
-                // $(".content-item").each(function () {
-                //     if (scrollTop > $(this).offset().top) {
-                //         $(this).addClass("show");
-                //     }
-                // })
+                //for문 show클래스
                 section = $("#section" + (i + 1))
                 if (scrollTop2 > parseInt(sectionOffsetTop)) {
                     section.addClass("show");
-                }else{
+                } else {
                     section.removeClass("show");
                 }
-            }
+            }// for문
+
+            //each함수 css
+            section = $(".content-item");
+            section.each(function (i) {
+                if(scrollTop > section.offset().top){
+
+                }
+            })
+
+            //each함수 show클래스
+            // section = $(".content-item");
+            // section.each(function () {
+            //     if (scrollTop > $(this).offset().top) {
+            //         $(this).addClass("show");
+            //     }
+            // })
 
         })
 
-        for (i = 0; i < 9; i++) {
+        //each함수 text
+        info2SectionOffsetTop = $(".info2 span strong");
+        info2SectionOffsetTop.each(function (i) {
             sectionOffsetTop = $("#section" + (i + 1)).offset().top;
-            info2SectionOffsetTop = $(".info2 span strong");
-            info2SectionOffsetTop.eq(i).text(parseInt(sectionOffsetTop));
-        }
-
-        // setInterval(function(){
-        //     for(i=0; i<9; i++){
-        //         sectionOffsetTop
-        //     }
-        // },250)
+            $(this).text(parseInt(sectionOffsetTop));
+        })
+        //for문 text
+        // for (i = 0; i < 9; i++) {
+        //     sectionOffsetTop = $("#section" + (i + 1)).offset().top;
+        //     info2SectionOffsetTop = $(".info2 span strong");
+        //     info2SectionOffsetTop.eq(i).text(parseInt(sectionOffsetTop));
+        // }
     </script>
 </body>
 

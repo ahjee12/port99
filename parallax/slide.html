@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;0,800;1,200;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Slider01 - 페이드 효과 이미지 슬라이드</title>
+    <style>
+        @font-face { font-family: 'DWImpactamin'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff') format('woff'); font-weight: normal; font-style: normal; }
+        *{margin:0; padding:0; box-sizing: 0;}
+        a{text-decoration: none; color:#666;}
+        img{width:100%; vertical-align: top;}
+
+        body{
+            background: url(img/1.jpg) no-repeat;
+            background-size: cover;
+            font-family: 'Poppins','DWImpactamin';
+            /* padding: 20px; */
+            color: #fff;
+            height:100vh;
+        }
+        body::before{
+            content: '';
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(255, 255, 255, 0.7);
+            /* z-index: -1; */
+        }
+        .slide-wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+        }
+
+        .slide-img{
+            position: relative;
+            width:1000px; height:600px;
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .slide-img .slides{
+            position: absolute; left:0; top:0;
+        }
+        .info{
+            position: absolute; left: 0; top: 0; z-index: 1000;
+        }
+        h1{ padding: 20px; font-size: 3vw;}
+        p{padding: 0 20px; font-size: 3vw;}
+
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Image Slider01</h1>
+        <p>페이드 효과 이미지 슬라이드</p>
+    </div>
+    
+    <div class="slide-wrap">
+        <div class="slide-img">
+            <div class="slides"><img src="img/1.jpg" alt="이미지1"></div>
+            <div class="slides"><img src="img/2.jpg" alt="이미지2"></div>
+            <div class="slides"><img src="img/3.jpg" alt="이미지3"></div>
+            <div class="slides"><img src="img/4.jpg" alt="이미지4"></div>
+            <div class="slides"><img src="img/5.jpg" alt="이미지5"></div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        let slideWrap = $(".slide-wrap");
+        let slideImg = $(".slide-img");
+        let slides = $(".slides");
+
+        slides.each(function(i){
+            $(this).hide();
+        });
+        slides.eq(0).show();
+        //현재 첫 번째로 보이는 이미지
+        let currentIndex = 0;
+        //이미지 갯수
+        let slideCount = slides.length;
+        //첫 번째 이미지를 선택해서 사라지게 slides.eq(0).hide();
+
+        //sol#1
+        // function showNext(){
+        //     let index = (currentIndex + 1);
+
+        //     document.write(index);
+        //     currentIndex++;
+        //     if(currentIndex ==5 ){
+        //         currentIndex = 0;
+        //     }
+        // }
+        // sol#2
+        function showNext(){
+            let nextIndex = (currentIndex + 1)%slideCount;
+            // console.log(slides)
+            slides.eq(currentIndex).fadeOut(500);
+            slides.eq(nextIndex).fadeIn(500);
+            // document.write(nextIndex);
+            console.log(currentIndex);
+            console.log(nextIndex);
+            currentIndex = nextIndex;
+        }
+        setInterval(showNext,3000);
+    </script>
+</body>
+</html>
