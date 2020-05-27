@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax03</title>
+    <title>Parallax06</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -89,6 +89,8 @@
             right: -10vw;
             top: -15vw;
             opacity: 0.8;
+            will-change: transform;
+            /* transition: 1s transform cubic-bezier(0.84, 0.46, 0.12, 0.45); */
         }
 
         .content-item:nth-child(even) .content-item-num {
@@ -127,6 +129,8 @@
             width: 100%;
             background-size: cover;
             background-position: 50% 0;
+            will-change: transform;
+            /* transition: 0.5s transform cubic-bezier(0.84, 0.46, 0.12, 0.45); */
         }
 
         .content-item-desc {
@@ -136,6 +140,8 @@
             text-align: right;
             /* margin-top: -100px; */
             word-break: keep-all;
+            will-change: transform;
+            transition: 1s transform cubic-bezier(0.84, 0.46, 0.12, 0.45);
         }
 
         .content-item:nth-child(even) .content-item-desc {
@@ -182,8 +188,8 @@
         .info {
             position: fixed;
             top: 20px;
-            right: 20px;
-            background: rgb(255, 255, 255, 1);
+            right: 1%;
+            background: rgb(255, 255, 255, 0.7);
             color: #000;
             padding: 10px;
             font-size: 70px;
@@ -195,8 +201,8 @@
         .info2 {
             position: fixed;
             top: 150px;
-            right: 20px;
-            background: rgb(255, 255, 255, 1);
+            right: 1%;
+            background: rgb(255, 255, 255, 0.7);
             color: #000;
             padding: 10px;
             font-size: 30px;
@@ -209,24 +215,42 @@
             display: block;
         }
 
-        .contents>section {
+        .info3 {
+            position: fixed;
+            top: 280px;
+            left: 6%;
+            transform: translateX(-50%);
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info3 ul {}
+
+        .info3 ul li {}
+
+        .info3 ul li a {
+            color: #000;
+            font-size: 25px;
+        }
+
+        /* .contents>section {
             opacity: 0;
             transform: translateY(100px);
-            transition: all 0.5s ease;
+            transition: all 0.2s ease;
         }
 
         .contents>section.show {
             opacity: 1;
             transform: translateY(0);
-        }
+        } */
     </style>
 
 </head>
 
 <body>
     <div class="info">
-        <span>scrollTop(): <strong class="scrollTop">0</strong>px</span>
-
+        <span>scrollTop(): <strong class="pageYOffset">0</strong>px</span>
     </div>
     <div class="info2">
         <span>#section1 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
@@ -238,6 +262,20 @@
         <span>#section7 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
         <span>#section8 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
         <span>#section9 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
+    </div>
+    <div class="info3">
+        <ul>
+            <li><a href="#">Parallax01</a></li>
+            <li><a href="#">Parallax02</a></li>
+            <li><a href="#">Parallax03</a></li>
+            <li><a href="#">Parallax04</a></li>
+            <li><a href="#">Parallax05</a></li>
+            <li><a href="#">Parallax06</a></li>
+            <li><a href="#">Parallax07</a></li>
+            <li><a href="#">Parallax08</a></li>
+            <li><a href="#">Parallax09</a></li>
+            <li><a href="#">Parallax10</a></li>
+        </ul>
     </div>
     <div id="wrap">
         <h1>Parallax <em>Scrolling</em></h1>
@@ -324,77 +362,35 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script>
-        infoScrollTop = $(".info strong");
-        $(window).scroll(function () {
-            const scrollTop = $(window).scrollTop();
-            console.log(scrollTop);
-            infoScrollTop.text(parseInt(scrollTop));
+        // info2OffsetTop = $(".info2 span strong");
+        // info2OffsetTop.each(function(i){
+        //     sectionOffsetTop = $(".content-item").eq(i).offset().top;
+        //     $(this).text(parseInt(sectionOffsetTop));
+        // })
 
-            const scrollTop2 = $(window).scrollTop() + $(window).height();
-
-            //each함수 info2 text
-            info2SectionOffsetTop = $(".info2 span strong");
-            info2SectionOffsetTop.each(function (i) {
-                sectionOffsetTop = $("#section" + (i + 1)).offset().top;
-                $(this).text(parseInt(sectionOffsetTop));
-            })
-
-            //each함수 css
-            section = $(".content-item");
-            info2SectionOffsetTop = $(".info2 span strong");
-            section.each(function (i) {
-                if(scrollTop > $(this).offset().top){
-                    info2SectionOffsetTop.eq(i).css("color", "red");
-                }else{
-                    info2SectionOffsetTop.eq(i).css("color", "black");
+        window.addEventListener("scroll", () => {
+            let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height / 2;
+            // console.log(pageYOffset);
+            document.querySelector(".pageYOffset").textContent = parseInt(pageYOffset);
+            let section = document.querySelectorAll(".content-item")
+            section.forEach(element => {
+                // console.log(pageYOffset);
+                // console.log("0번째"+element.childNodes[0]);
+                // console.log("1번째"+element.childNodes[1]);
+                // console.log("2번째"+element.childNodes[2]);
+                // console.log("3번째"+element.childNodes[3]);
+                // console.log("4번째"+element.childNodes[4]);
+                // console.log("5번째"+element.childNodes[5]);
+                // console.log("6번째"+element.childNodes[6]);
+                // console.log(element.childNodes);
+                let target = element.childNodes[7];
+                if (pageYOffset > this.pageYOffset) {
+                    let offset = (pageYOffset - element.offsetTop) * 0.5;
+                    console.log(offset);
+                    target.style.transform = "translateY(" + offset + "px)";
                 }
             })
-
-            //each함수 show클래스
-            section = $(".content-item");
-            section.each(function () {
-                if (scrollTop2 > $(this).offset().top) {
-                    $(this).addClass("show");
-                }else{
-                    $(this).removeClass("show");
-                }
-            })
-
-            // for (i = 0; i < 9; i++) {
-            //     sectionOffsetTop = $("#section" + (i + 1)).offset().top;
-            //     info2SectionOffsetTop = $(".info2 span strong");
-            //     // info2SectionOffsetTop.eq(i).text(parseInt(sectionOffsetTop));
-
-            //     //for문 css
-            //     if (scrollTop > parseInt(sectionOffsetTop)) {
-            //         info2SectionOffsetTop.eq(i).css("color", "red");
-            //     } else {
-            //         info2SectionOffsetTop.eq(i).css("color", "black");
-            //     }
-
-            //     //for문 show클래스
-            //     section = $("#section" + (i + 1))
-            //     if (scrollTop2 > parseInt(sectionOffsetTop)) {
-            //         section.addClass("show");
-            //     } else {
-            //         section.removeClass("show");
-            //     }
-            // }// for문
-
         })
-
-        //each함수 text
-        info2SectionOffsetTop = $(".info2 span strong");
-        info2SectionOffsetTop.each(function (i) {
-            sectionOffsetTop = $("#section" + (i + 1)).offset().top;
-            $(this).text(parseInt(sectionOffsetTop));
-        })
-        //for문 text
-        // for (i = 0; i < 9; i++) {
-        //     sectionOffsetTop = $("#section" + (i + 1)).offset().top;
-        //     info2SectionOffsetTop = $(".info2 span strong");
-        //     info2SectionOffsetTop.eq(i).text(parseInt(sectionOffsetTop));
-        // }
     </script>
 </body>
 
