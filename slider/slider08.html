@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;0,800;1,200;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>Slider08 - 좌우로 움직이기</title>
+    <style>
+        @font-face {
+            font-family: 'DWImpactamin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        body {
+            background: url(img/1.jpg) no-repeat;
+            background-size: cover;
+            font-family: 'Poppins', 'DWImpactamin';
+            /* padding: 20px; */
+            color: #fff;
+            height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.7);
+            /* z-index: -1; */
+        }
+
+        .slider-wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 600px;
+            /* width: 1200px; */
+            overflow: hidden;
+        }
+
+        .slider-img {
+            position: relative;
+            width: 5000px;
+            height: 600px;
+            /* width: 10000px; */
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .slider-img .slides {
+            float: left;
+            height: 600px;
+            width: 1000px;
+            /* width: 400px;
+            padding: 10px; */
+            position: relative;
+        }
+
+        .slider-img .slides span {
+            color: #fff;
+            font-size: 12vw;
+            /* font-weight: bold; */
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+
+        h1 {
+            padding: 20px;
+            font-size: 3vw;
+        }
+
+        p {
+            padding: 0 20px;
+            font-size: 3vw;
+        }
+
+        .info ul {
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        .info ul li {
+            list-style: none;
+        }
+
+        .info2 {
+            position: absolute;
+            right: 10vw;
+            top: 50%;
+            z-index: 1001;
+            transform: translateY(-50%);
+        }
+
+        .info2 ul {
+            list-style: none;
+        }
+
+        .info2 ul li {}
+
+        .info2 ul li a {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        .slider-btn a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            z-index: 1000;
+            font-size: 20px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .slider-btn a.prev {
+            left: 0;
+        }
+
+        .slider-btn a.next {
+            right: 0;
+        }
+
+        .slider-dot{
+            position: absolute; left: 50%; bottom: 0;
+            transform: translateX(-50%);
+        }
+        .slider-dot a{
+            width: 20px; height: 20px;
+            background: rgba(97, 255, 255, 0.5);
+            display: inline-block;
+            border-radius: 50%;
+            margin: 5px;
+            text-indent: -9999px;
+            transition: background 0.3s;
+
+        }
+        .slider-dot a.active{
+            background: rgba(0, 195, 255, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">
+        <h1>Image Slider08</h1>
+        <p>좌우로 움직이기</p>
+        <ul>
+            <li>연속적으로 움직임</li>
+            <li>왼쪽, 오른쪽 버튼 만듦</li>
+            <li>이미지 dot버튼 만듦</li>
+        </ul>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="slider01.html">slider01</a></li>
+            <li><a href="slider02.html">slider02</a></li>
+            <li><a href="slider03.html">slider03</a></li>
+            <li><a href="slider04.html">slider04</a></li>
+            <li><a href="slider05.html">slider05</a></li>
+            <li><a href="slider06.html">slider06</a></li>
+            <li><a href="slider07.html">slider07</a></li>
+            <li><a href="#">slider08</a></li>
+            <li><a href="#">slider09</a></li>
+            <li><a href="#">slider10</a></li>
+        </ul>
+    </div>
+    <div class="slider-wrap">
+        <div class="slider-img">
+            <div class="slides s1"><img src="img/1.jpg" alt="이미지1"><span>1</span></div>
+            <div class="slides s2"><img src="img/2.jpg" alt="이미지2"><span>2</span></div>
+            <div class="slides s3"><img src="img/3.jpg" alt="이미지3"><span>3</span></div>
+            <div class="slides s4"><img src="img/4.jpg" alt="이미지4"><span>4</span></div>
+            <div class="slides s5"><img src="img/5.jpg" alt="이미지5"><span>5</span></div>
+        </div>
+        <div class="slider-dot">
+            <!-- <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a> -->
+        </div>
+    </div>
+    <div class="slider-btn">
+        <a class="prev" href="#">left</a>
+        <a class="next" href="#">right</a>
+    </div>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        const sliderWrap = $(".slider-wrap");
+        const sliderImg = $(".slider-img");
+        const slides = $(".slides");
+        const sliderBtn = $(".slider-btn")
+        const sliderDot = $(".slider-dot")
+
+        let slideCount = slides.length;
+        // innerWidth(): border제외 안쪽 outerWidth(): border포함
+        let slideWidth = slides.innerWidth();
+        let slideHeight = slides.height();
+        let slideTotalWidth = slideCount * slideWidth;
+
+        let slideCopy = slides.clone();
+        sliderImg.append(slideCopy);
+
+        console.log(slideCount);
+        console.log(slideWidth);
+        console.log(slideHeight);
+        console.log(slideTotalWidth);
+
+        let currentIndex =0;
+        let dotIndex = "";
+        //H.W.
+        //버튼 클릭
+        //active 있는지 확인
+        //active 없을 때 닷 메뉴 순서 번호 추출
+        //gotoSlide(index)
+
+        //dot
+        slides.each(function(index){
+            // console.log(index);
+            dotIndex += "<a href='#'></a>";
+            console.log(dotIndex);
+        })
+        sliderDot.html(dotIndex);
+        sliderDot.find("a").eq(0).addClass("active");
+
+        //goto
+        function gotoSlider(index){
+            console.log("index:"+index);
+
+        sliderImg.animate({left: -index*slideWidth+"px"},400);
+           currentIndex = index;
+          updateDot();
+        }
+        function updateDot(){
+            sliderDot.find("a").removeClass().eq(currentIndex).addClass("active");
+        }
+        //버튼 클릭하기
+        sliderBtn.on("click", "a", function (e) {
+            e.preventDefault();
+
+            let nextIndex = (currentIndex + 1)%slideCount;
+            let prevIndex = (currentIndex - 1)%slideCount;
+            if(currentIndex ==0) prevIndex = slideCount-1;
+            if ($(this).hasClass("prev")) {
+                gotoSlider(prevIndex);
+            } else {
+                gotoSlider(nextIndex);
+            }
+        });
+
+        //오른쪽 버튼을 클릭하면 currentIndex
+
+
+        //slide07
+        // currentIndex = 0;
+        // function moveLeft(){
+        //     // alert("왼쪽");
+        //     console.log(currentIndex);
+        //     if(currentIndex == 0){
+        //         currentIndex = slideCount;
+        //         sliderImg.css({"margin-left":-currentIndex*slideWidth+"px"},400)
+        //     }
+        //     currentIndex --;
+        //     sliderImg.animate({"margin-left":-currentIndex*slideWidth+"px"},400);
+        // }
+
+        // currentIndex = 0;
+        // function moveRight(){
+        //     // alert("오른쪽");
+        //     console.log(currentIndex);
+        //     if(currentIndex == slideCount){
+        //         currentIndex = 0;
+        //         sliderImg.css({"margin-left":-currentIndex*slideWidth+"px"},400)
+        //     }
+        //     currentIndex ++;
+        //     sliderImg.animate({"margin-left":-currentIndex*slideWidth+"px"},400);
+        // }
+
+        // //버튼 클릭하기
+        // sliderBtn.on("click","a",function(){
+        //     if($(this).hasClass("prev")){
+        //         moveLeft();
+        //     }else{
+        //         moveRight();
+        //     }
+        // });
+
+
+        //Slider06
+        // slides.css({width:slideWidth, height:slideHeight});
+        // sliderImg.css({width: slideTotalWidth, height: slideHeight, marginLeft :-slideWidth });
+        // //왼쪽으로 이동시킴 
+        // // sliderImg.css({
+        // //     marginLeft: -slideWidth
+        // // })
+        // $(".slides:last-child").prependTo(sliderImg);
+
+        // function moveLeft() {
+        //     // alert("왼쪽으로 이동하기")
+        //     sliderImg.animate({
+        //         left: slideWidth
+        //     }, 400, function () {
+        //         $(".slides:last-child").prependTo(sliderImg);
+        //         sliderImg.css("left","");
+        //     })
+        // }
+
+        // function moveRight() {
+        //     // alert("오른쪽으로 이동하기")
+        //     sliderImg.animate({
+        //         left: -slideWidth
+        //     }, 400, function () {
+        //         $(".slides:first-child").appendTo(sliderImg);
+        //         sliderImg.css("left", "");
+        //     })
+        // }
+        // sliderBtn.find(".prev").click(function () {
+        //     moveLeft();
+        // })
+        // sliderBtn.find(".next").click(function () {
+        //     moveRight();
+        // })
+
+        //Slider02
+        // let currentIndex = 0;
+        // setInterval(function(){
+        //     console.log(currentIndex);
+        //     if(currentIndex<4){ 
+        //         currentIndex++;
+        //     }else{
+        //         currentIndex = 0; 
+        //     }
+        //     console.log(currentIndex);
+        //     sliderImg.animate({left: currentIndex*(-1000)+"px"},400);
+        // },3000)
+
+        // setInterval(function(){
+        //     currentIndex < 4? currentIndex++: currentIndex = 0;
+        //     sliderImg.animate({left: currentIndex*(-1000)+"px"},400);
+        // },3000)
+
+        //Slider04
+        // setInterval(function () {
+        //     sliderImg.animate({
+        //         left: "-1000px"
+        //     }, 400, function () {
+        //         $(".slides:first-child").appendTo(sliderImg); 
+        //         sliderImg.css("left", "");
+        //     });
+        // }, 3000);
+    </script>
+</body>
+
+</html>
