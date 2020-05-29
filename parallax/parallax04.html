@@ -181,8 +181,8 @@
         /*info*/
         .info {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 2vh;
+            right: 1vw;
             background: rgb(255, 255, 255, 1);
             color: #000;
             padding: 10px;
@@ -194,8 +194,8 @@
 
         .info2 {
             position: fixed;
-            top: 150px;
-            right: 20px;
+            top: 15vh;
+            right: 1vw;
             background: rgb(255, 255, 255, 1);
             color: #000;
             padding: 10px;
@@ -219,6 +219,34 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .info3 {
+            position: fixed;
+            top: 50%;
+            left: 1vw;
+            transform: translateY(-50%);
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info3 ul li a {
+            color: #000;
+            font-size: 25px;
+        }
+        .info4{
+            position: fixed;
+            top: 2vh; left: 1vw;
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info4 ul li{
+            display: inline-block;
+            padding: 0 5px;
+            color: #000;
+            font-size: 20px;
+        }
     </style>
 
 </head>
@@ -226,7 +254,6 @@
 <body>
     <div class="info">
         <span>pageYOffset(): <strong class="pageYOffset">0</strong>px</span>
-
     </div>
     <div class="info2">
         <span>#section1 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
@@ -238,6 +265,31 @@
         <span>#section7 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
         <span>#section8 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
         <span>#section9 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
+    </div>
+    <div class="info3">
+        <ul>
+            <li><a href="parallax01.html">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="#">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="#">Parallax09</a></li>
+            <li><a href="#">Parallax10</a></li>
+        </ul>
+    </div>
+    <div class="info4">
+        <ul>
+            <li>반응형</li>
+            <li>/</li>
+            <li>JQUERY -> JAVASCRIPT로 변경</li>
+            <li>/</li>
+            <li>window의 scrollTop값 구함</li>
+            <li>/</li>
+            <li>section1부터 9까지의 scrollTop값구하고 show클래스 추가</li>
+        </ul>
     </div>
     <div id="wrap">
         <h1>Parallax <em>Scrolling</em></h1>
@@ -324,20 +376,21 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script>
+         //jqery
         // $(window).scroll(function(){   
         // });
-
+        //javascript
         // window.addEventListener("scroll",function(){});
         // window.addEventListener("scroll",()=>{});
 
         //jqery
         // const scrollTop = $(window).scrollTop();
-        //java
+        //javascript
         // const pageYOffset = window.pageYOffset;
 
         //jqery
         // $(".scrollTop").text(scrollTop); 
-        //java
+        //javascript
         // document.querySelector(".scrollTop").textContent = pageYOffset;
 
         window.addEventListener("scroll", () => {

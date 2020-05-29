@@ -181,8 +181,9 @@
         /*info*/
         .info {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            /* top: 2%; */
+            top: 2vh;
+            right: 1vw;
             background: rgb(255, 255, 255, 1);
             color: #000;
             padding: 10px;
@@ -194,8 +195,9 @@
 
         .info2 {
             position: fixed;
-            top: 150px;
-            right: 20px;
+            /* top: 15%; */
+            top: 15vh;
+            right: 1vw;
             background: rgb(255, 255, 255, 1);
             color: #000;
             padding: 10px;
@@ -219,6 +221,36 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .info3 {
+            position: fixed;
+            top: 50%;
+            left: 1vw;
+            transform: translateY(-50%);
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info3 ul li a {
+            color: #000;
+            font-size: 25px;
+        }
+
+        .info4{
+            position: fixed;
+            top: 2vh; left: 1vw;
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info4 ul li{
+            display: inline-block;
+            padding: 0 5px;
+            color: #000;
+            font-size: 20px;
+        }
     </style>
 
 </head>
@@ -226,7 +258,6 @@
 <body>
     <div class="info">
         <span>scrollTop(): <strong class="scrollTop">0</strong>px</span>
-
     </div>
     <div class="info2">
         <span>#section1 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
@@ -238,6 +269,31 @@
         <span>#section7 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
         <span>#section8 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
         <span>#section9 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
+    </div>
+    <div class="info3">
+        <ul>
+            <li><a href="parallax01.html">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="#">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="#">Parallax09</a></li>
+            <li><a href="#">Parallax10</a></li>
+        </ul>
+    </div>
+    <div class="info4">
+        <ul>
+            <li>반응형</li>
+            <li>/</li>
+            <li>window의 scrollTop값</li>
+            <li>/</li>
+            <li>section1부터 9까지의 scrollTop값 구함</li>
+            <li>/</li>
+            <li>section1부터 9까지에 show클래스 추가</li>
+        </ul>
     </div>
     <div id="wrap">
         <h1>Parallax <em>Scrolling</em></h1>
@@ -328,6 +384,8 @@
         $(window).scroll(function () {
             const scrollTop = $(window).scrollTop();
             console.log(scrollTop);
+
+            //info
             infoScrollTop.text(parseInt(scrollTop));
 
             const scrollTop2 = $(window).scrollTop() + $(window).height();
@@ -339,7 +397,7 @@
                 $(this).text(parseInt(sectionOffsetTop));
             })
 
-            //each함수 css
+            //each함수 info2 css
             section = $(".content-item");
             info2SectionOffsetTop = $(".info2 span strong");
             section.each(function (i) {
@@ -350,7 +408,8 @@
                 }
             })
 
-            //each함수 show클래스
+            //each함수 section1~9 show클래스 
+            //빨리 나오게 하려면 scrollTop값이 커지거나  section의 offsetTop값이 작아커야 함
             section = $(".content-item");
             section.each(function () {
                 if (scrollTop2 > $(this).offset().top) {
@@ -380,10 +439,9 @@
             //         section.removeClass("show");
             //     }
             // }// for문
-
         })
 
-        //each함수 text
+        //each함수 info2 text
         info2SectionOffsetTop = $(".info2 span strong");
         info2SectionOffsetTop.each(function (i) {
             sectionOffsetTop = $("#section" + (i + 1)).offset().top;

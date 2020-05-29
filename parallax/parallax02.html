@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax01</title>
+    <title>Parallax02</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         *{margin:0; padding:0; box-sizing: border-box;}
@@ -125,12 +125,59 @@
         #section7 .content-item-img{background-image: url(img/7.jpg);}
         #section8 .content-item-img{background-image: url(img/8.jpg);}
         #section9 .content-item-img{background-image: url(img/9.jpg);}
+
+        .info3 {
+            position: fixed;
+            top: 50%;
+            left: 3%;
+            transform: translateY(-50%);
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info3 ul li a {
+            color: #000;
+            font-size: 25px;
+        }
+
+        .info4{
+            position: fixed;
+            top: 2%; left: 3%;
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info4 ul li{
+            color: #000;
+            font-size: 20px;
+        }
     
     </style>
     </style>
 </head>
 
 <body>
+    <div class="info3">
+        <ul>
+            <li><a href="parallax01.html">Parallax01</a></li>
+            <li><a href="#">Parallax02</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="#">Parallax09</a></li>
+            <li><a href="#">Parallax10</a></li>
+        </ul>
+    </div>
+    <div class="info4">
+        <ul>
+            <li>반응형</li>
+        </ul>
+    </div>
     <div id="wrap">
         <h1>Parallax <em>Scrolling</em></h1>
 

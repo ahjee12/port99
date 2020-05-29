@@ -6,7 +6,7 @@
     <title>Parallax01</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        *{margin: 0 auto; box-sizing: border-box;}
+        *{margin: 0 auto; padding: 0; box-sizing: border-box;}
         li{list-style: none;}
         a{text-decoration: none; color: #fff; font-family: 'Lato', sans-serif;}
         body{
@@ -101,10 +101,40 @@
         #section7 .content-item-img{background-image: url(img/7.jpg);}
         #section8 .content-item-img{background-image: url(img/8.jpg);}
         #section9 .content-item-img{background-image: url(img/9.jpg);}
+
+        .info3 {
+            position: fixed;
+            top: 50%;
+            left: 3%;
+            transform: translateY(-50%);
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info3 ul li a {
+            color: #000;
+            font-size: 25px;
+        }
     </style>
 </head>
 
 <body>
+    
+    <div class="info3">
+        <ul>
+            <li><a href="#">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="#">Parallax09</a></li>
+            <li><a href="#">Parallax10</a></li>
+        </ul>
+    </div>
     <div id="wrap">
         <h1>Parallax <em>Scrolling</em></h1>
 

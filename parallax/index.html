@@ -1,238 +1,224 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="webstoryboy">
-    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
-    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
-    <title>웹다이어리 | Webdiary | Illustrator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax01</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin: 0 auto; padding: 0; box-sizing: border-box;}
+        ul,li{list-style: none;}
+        a{text-decoration: none; color: #fff; font-family: 'Lato', sans-serif;}
+        body{
+            background: #111;
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+        #wrap h1{
+            font-size: 135px;
+            padding: 20px;
+            color: #dc6e25;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        #wrap h1 em{
+            display: block;
+            font-weight: 100;
+            padding-left: 330px;
+        }
+        .contents{
+            /* width: 1600px; */
+            /* width: 1903px; */
+            margin: 300px auto 400px;
+        }
+        .content-item{
+            position: relative;
+            width: 1000px;
+            /* background: rgba(255,255,255,0.3); */
+            margin: 200px 0 300px;
 
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/css/docs.min.css" rel="stylesheet">
-    <link href="../assets/css/prism.css" rel="stylesheet">
+        }
+        .content-item:nth-child(even){
+            margin-left: auto;
+        }
 
-    <!-- 파비콘 -->
-    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon_114.png">
-    <link rel="icon" href="../assets/ico/icon.png">
-    <link rel="icon" href="../assets/ico/favicon_57.png" sizes="16x16">
-    <link rel="icon" href="../assets/ico/favicon_72.png" sizes="32x32">
-    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="48x48">
-    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="64x64">
-    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="128x128">
+        .content-item-num{
+            font-size: 350px;
+            font-weight: 100;
+            position:absolute;
+            right: -100px; top: -200px;
+            opacity: 0.8;
+         }
+         .content-item:nth-child(even) .content-item-num{
+            right: auto; left: -100px;
+         }
+        .content-item-title{
+            text-align: right;
+            font-size: 24px;
+            font-weight: 300;
+            color: #999;
+            padding-bottom: 10px;
+            text-transform: capitalize;
 
-    <!-- Facebook meta tags -->
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="웹스토리보이" />
-    <meta property="og:url" content="https://webstoryboy.co.kr/" />
-    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
-    <meta property="og:site_name" content="웹스토리보이" />
-    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+        }
+        .content-item:nth-child(even) .content-item-title{
+            text-align: left;
+        }
+        .content-item-imgWrap{
+            /*가상 영역*/
+            padding-bottom: 57%;
+            position: relative;
+            overflow: hidden;
+        }
+        .content-item-img{
+            height: 550px;
+            position: absolute; top: 0;
+            /*width넣어야 나옴*/
+            width: 100%;
+            background-size: cover;
+            /*q*/
+            background-position: 50% 0;
 
-    <!-- twitter meta tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@webstoryboy" />
-    <meta name="twitter:title" content="웹스토리보이" />
-    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
-    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+        }
+        .content-item-desc{
+            font-size: 80px;
+            line-height:1.2;
+            font-weight: 600;
+            text-align: right;
+            /* margin-top: -100px; */
+            word-break:keep-all;
+        }
+        .content-item:nth-child(even) .content-item-desc{
+            text-align: left;
+        }
 
-    <!-- 웹 폰트 -->
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+        #section1 .content-item-img{background-image: url(img/1.jpg);}
+        #section2 .content-item-img{background-image: url(img/2.jpg);}
+        #section3 .content-item-img{background-image: url(img/3.jpg);}
+        #section4 .content-item-img{background-image: url(img/4.jpg);}
+        #section5 .content-item-img{background-image: url(img/5.jpg);}
+        #section6 .content-item-img{background-image: url(img/6.jpg);}
+        #section7 .content-item-img{background-image: url(img/7.jpg);}
+        #section8 .content-item-img{background-image: url(img/8.jpg);}
+        #section9 .content-item-img{background-image: url(img/9.jpg);}
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
-	<![endif]-->
+        .info3 {
+            position: fixed;
+            top: 280px;
+            left: 1%;
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info3 ul {
+            
+        }
+
+        .info3 ul li {}
+
+        .info3 ul li a {
+            color: #000;
+            font-size: 25px;
+        }
+    </style>
 </head>
 
 <body>
-    <a class="sr-only" href="#content">Skip to main content</a>
-
-    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
-            </div>
-            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
-                <ul class="nav navbar-nav">
-                    <li><a href="https://wiss.tistory.com/">Design</a></li>
-                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
-                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
-                    <li><a href="https://wess.tistory.com/">Edu</a></li>
-                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="bs-header bgs3" id="content">
-        <div class="container">
-            <h1>Illustrator Reference v1.0 &lt;/doc&gt;</h1>
-            <p><a href="https://webstoryboy.co.kr" target="_blank">webstoryboy.co.kr</a></p>
-        </div>
+    <div class="info3">
+        <ul>
+            <li><a href="#">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="#">Parallax09</a></li>
+            <li><a href="#">Parallax10</a></li>
+        </ul>
     </div>
+    <div id="wrap">
+        <h1>Parallax <em>Scrolling</em></h1>
 
-    <div class="container bs-docs-container">
-        <div class="row">
-            <div class="col-md-9" role="main">
+        <!-- .contents>section#section$*9 -->
 
-                <!-- Intro1 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro1" class="page-header">Parallax1 - Responsive + BurgerMenu</h2>
-                    <p class="codepen" data-height="700" data-theme-id="light" data-default-tab="result"
-                        data-user="ahjee12" data-slug-hash="RwWydej"
-                        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
-                        data-pen-title="Parallax02-Basic + BurgerMenu">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/RwWydej">
-                                Parallax02-Basic + BurgerMenu</a> by HyunJi (<a
-                                href="https://codepen.io/ahjee12">@ahjee12</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                    </p>
-                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                </div>
-                <!-- //Intro1 -->
-
-                <!-- Intro2 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">MenuStyle - Burger</h2>
-                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result"
-                        data-user="ahjee12" data-slug-hash="bGVKvNr"
-                        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
-                        data-pen-title="Menu-Hamberger Style1">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/bGVKvNr">
-                                Menu-Hamberger Style1</a> by HyunJi (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                    </p>
-                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                </div>
-                <!-- //Intro2 -->
-
-                <!-- Intro3 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro3" class="page-header">Parallax2 - sideMenu</h2>
-                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result"
-                        data-user="ahjee12" data-slug-hash="NWGBrMy"
-                        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
-                        data-pen-title="Parallax04 - sideMenu">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/NWGBrMy">
-                                Parallax04 - sideMenu</a> by HyunJi (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                    </p>
-                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                </div>
-                <!-- //Intro3 -->
-
-                <!-- Intro4 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro4" class="page-header">Parallax3 - stickyMenu</h2>
-                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result"
-                        data-user="ahjee12" data-slug-hash="pojZEwM"
-                        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
-                        data-pen-title="Parallax05 -stickyMenu">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/pojZEwM">
-                                Parallax05 -stickyMenu</a> by HyunJi (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                    </p>
-                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                </div>
-                <!-- //Intro4 -->
-
-                <!-- Intro5 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro5" class="page-header">Parallax4 - hiddenMenu</h2>
-                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result"
-                        data-user="ahjee12" data-slug-hash="pojZEXg"
-                        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
-                        data-pen-title="Parallax06-hiddenMenu">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/pojZEXg">
-                                Parallax06-hiddenMenu</a> by HyunJi (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                    </p>
-                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                </div>
-                <!-- //Intro5 -->
-
-                <!-- Intro6 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro6" class="page-header">Parallax5 - dotMenu</h2>
-                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="LYpBwpN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Parallax07-Dot Menu">
-                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/LYpBwpN">
-                        Parallax07-Dot Menu</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                      </p>
-                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                </div>
-                <!-- //Intro6 -->
-
-                
-                <!-- Intro4.3 -->
-                <div class="bs-docs-section">
-					<h2 id="intro4.3" class="page-header">Illustrator04.3</h2>
-					<img src="img/illustrator04_3.jpg" style="width: 100%;" alt="캐릭터03">
-				</div>
-				<!-- //Intro4.3 -->
-
-                
-            </div>
-            <!-- //col-md-9 -->
-
-
-            <!-- //col-md-3 -->
-            <div class="col-md-3">
-                <div class="bs-sidebar hidden-print" role="complementary">
-                    <ul class="nav bs-sidenav">
-                        <li><a href="#intro1">Parallax1 - Responsive + BurgerMenu</a></li>
-                        <li><a href="#intro2">MenuStyle - Burger</a></li>
-                        <li><a href="#intro3">Parallax2 - sideMenu</a></li>
-                        <li><a href="#intro4">Parallax3 - stickyMenu</a></li>
-                        <li><a href="#intro5">Parallax4 - hiddenMenu</a></li>
-                        <li><a href="#intro6">Parallax5 - dotMenu</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--//col-md-3 -->
+        <div class="contents">
+            <section id="section1" class="content-item">
+               <span class="content-item-num">01</span>
+               <h2 class="content-item-title">Basic Coding</h2>
+               <figure class="content-item-imgWrap">
+                   <div class="content-item-img"></div>
+               </figure>
+               <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+            </section>
+            <section id="section2" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+             </section>
+             <section id="section3" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+             </section>
+             <section id="section4" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+             </section>
+             <section id="section5" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+             </section>
+             <section id="section6" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+             </section>
+             <section id="section7" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+             </section>
+             <section id="section8" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+             </section>
+             <section id="section9" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 계획대로 하자.</p>
+             </section>
         </div>
-        <!-- //row -->
+        <!--contents-->
     </div>
-    <!-- //container -->
-
-
-    <!-- Footer -->
-    <footer class="bs-footer" role="contentinfo">
-        <div class="container">
-            <ul class="footer-links muted">
-                <li>Currently v2.0</li>
-                <li>&middot;</li>
-                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
-                <li>&middot;</li>
-                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
-                <li>&middot;</li>
-                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
-            </ul>
-        </div>
-    </footer>
-    <!-- //Footer -->
-
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="../assets/js/jquery-1.9.1.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/docs.min.js"></script>
-    <script src="../assets/js/prism.js"></script>
 </body>
-
 </html>
