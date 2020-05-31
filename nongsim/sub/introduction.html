@@ -177,21 +177,18 @@
 
 
     <section id="bannerWay">
-        <h2>농심way</h2>
-        <!-- <img src="../assets/img/imgCs/main_visual.png" alt="상담처리절차"> -->
+        <h2><p>농심way</p></h2>
         <div class="line-container">
-            <div class="line-1">
-
-            </div>
-            <div class="line-2">
-
-            </div>
-            <p>농심인이 항상 지켜야 할 생각과<br>행동의 기준입니다</p>
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <p>----농심인이 항상 지켜야 할 생각과<br>행동의 기준입니다----</p>
         </div>
+         <!--//line-container-->
         <div class="btn-quick">
             <a href="#"><img src="../assets/img/keyboard_arrow_down-white-48dp.svg" alt="다음 섹션 가기"></a>
         </div>
     </section>
+    <!--//bannerWay-->
 
     <section id="farmer">
         <div class="farmer-container-1">
@@ -202,15 +199,15 @@
             <div class="farmer-box">
                 <p>우리는 농부의 마음으로 오늘의 한 길을 걸어왔습니다.<br>
                     우직하고, 성실하게, 땀의 숭고함을 믿어왔습니다.<br><br>
-    
+
                     우리는 농부의 마음으로 오늘의 한 길을 걸어왔습니다.<br>
                     우직하고, 성실하게, 땀의 숭고함을 믿어왔습니다.<br><br>
-    
+
                     농부가 어떤 상황에도 땅을 포기하지 않는 것처럼<br>
                     부단한 기다림과 뜨거운 열정으로 최고를 향해 나아왔습니다.
                 </p>
             </div>
-            
+
             <div class="farmer ">
                 <!-- Slider main container -->
                 <div class="swiper-container">
@@ -274,7 +271,8 @@
                             <p> 창의&middot;전문성</p>
                         </div>
                         <div class="value-item-box3">
-                            <p>--------------------끊임없는 연구와 새로운 사고로 가치 있는 일을 찾아 반드시 성취하는 자세--------------------------------------------------------------------------------</p>
+                            <p>--------------------끊임없는 연구와 새로운 사고로 가치 있는 일을 찾아 반드시 성취하는
+                                자세--------------------------------------------------------------------------------</p>
                         </div>
                     </div>
                 </div>
@@ -312,7 +310,7 @@
                             <img src="../assets/img/imgIntroduction/1.png" alt="">
                             <p>고객이 믿을 수 있는 제품과 서비스를 제공한다.</p>
                         </div>
-                 
+
                     </div>
                 </div>
                 <div class="behavior-col">
@@ -321,7 +319,7 @@
                             <img src="../assets/img/imgIntroduction/2.png" alt="">
                             <p>고객이 믿을 수 있는 제품과 서비스를 제공한다.</p>
                         </div>
-                 
+
                     </div>
                 </div>
                 <div class="behavior-col">
@@ -330,7 +328,7 @@
                             <img src="../assets/img/imgIntroduction/3.png" alt="">
                             <p>고객이 믿을 수 있는 제품과 서비스를 제공한다.</p>
                         </div>
-                   
+
                     </div>
                 </div>
                 <div class="behavior-col">
@@ -339,7 +337,7 @@
                             <img src="../assets/img/imgIntroduction/4.png" alt="">
                             <p>고객이 믿을 수 있는 제품과 서비스를 제공한다.</p>
                         </div>
-                   
+
                     </div>
                 </div>
                 <div class="behavior-col">
@@ -348,7 +346,7 @@
                             <img src="../assets/img/imgIntroduction/5.png" alt="">
                             <p>고객이 믿을 수 있는 제품과 서비스를 제공한다.</p>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="behavior-col">
@@ -357,7 +355,7 @@
                             <img src="../assets/img/imgIntroduction/6.png" alt="">
                             <p>고객이 믿을 수 있는 제품과 서비스를 제공한다.</p>
                         </div>
-                       
+
                     </div>
                 </div>
                 <div class="behavior-col">
@@ -366,12 +364,12 @@
                             <img src="../assets/img/imgIntroduction/7.png" alt="">
                             <p>고객이 믿을 수 있는 제품과 서비스를 제공한다.</p>
                         </div>
-                        
+
                     </div>
                 </div>
 
             </div>
-           <!--//behavior-list-->
+            <!--//behavior-list-->
         </div>
         <!--//behavior-container2-->
     </section>
@@ -537,12 +535,28 @@
         //     }
         //   });
         // });
+        bannerH2 = $("#bannerWay >h2>p")
+        bannerCLine1 = $("#bannerWay >.line-container >.line-1");
+        bannerCLine2 = $("#bannerWay >.line-container >.line-2");
+        bannerCP = $("#bannerWay > .line-container > p")
+        
+        bannerH2.addClass("active");
+        bannerCLine1.addClass("active");
+        bannerCLine2.addClass("active");
+        bannerCP.addClass("active");
+        
+        console.log("bannerH2:"+bannerH2);
+        console.log("bannerCLine1:"+bannerCLine1);
+        console.log("bannerCLine2:"+bannerCLine2);
+        console.log("bannerCP:"+bannerCP);
 
         let wHeight = $(window).height(); // 브라우저 높이
         let dHeight = $(document).height(); // 콘텐츠 높이
         let hHeight = $("#header").outerHeight(); // 헤더 높이
         let moveScroll = 0;
         let lastScrollTop = 0;
+        console.log(wHeight);
+        console.log(dHeight);
 
         $(window).scroll(function () {
             moveScroll = true;
@@ -555,20 +569,28 @@
                 moveScroll = false; //Q
             }
             moveScroll = 0;
-            console.log(moveScroll);
+            // console.log(moveScroll);
         }, 500);
 
         function hasScroll() {
+            let wHeight = $(window).height(); // 브라우저 높이
+            let dHeight = $(document).height(); // 콘텐츠 높이
             let wScroll = $(this).scrollTop();
-
+            console.log(wScroll);
+            //스크롤을 내렸을 때
             if (wScroll > lastScrollTop) {
-                //스크롤을 내렸을 때
+                let wHeight = $(window).height();
                 $("#header").addClass("on");
+                if (Math.ceil(wScroll) + wHeight == dHeight || parseInt(wScroll) + wHeight == dHeight) {
+                    $("#header").removeClass("on");
+                    console.log(wScroll);
+                    // console.log(wHeight);
+                    // console.log(dHeight);
+                }
+
             } else {
                 //스크롤을 올렸을 때
-                if (wScroll + wHeight < dHeight) {
-                    $("#header").removeClass("on");
-                }
+                $("#header").removeClass("on");
             }
             lastScrollTop = wScroll
         }
