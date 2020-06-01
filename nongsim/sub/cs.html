@@ -462,40 +462,65 @@
     //   });
     // });
 
-    let wHeight = $(window).height(); // 브라우저 높이
-    let dHeight = $(document).height(); // 콘텐츠 높이
-    let hHeight = $("#header").outerHeight(); // 헤더 높이
-    let moveScroll = 0;
-    let lastScrollTop = 0;
+        bannerH2 = $("#bannerCS >h2>p")
+        bannerCLine1 = $("#bannerCS >.line-container >.line-1");
+        bannerCLine2 = $("#bannerCS >.line-container >.line-2");
+        bannerCP = $("#bannerCS > .line-container > p")
+        
+        bannerH2.addClass("active");
+        bannerCLine1.addClass("active");
+        bannerCLine2.addClass("active");
+        bannerCP.addClass("active");
+        
+        console.log("bannerH2:"+bannerH2);
+        console.log("bannerCLine1:"+bannerCLine1);
+        console.log("bannerCLine2:"+bannerCLine2);
+        console.log("bannerCP:"+bannerCP);
 
-    $(window).scroll(function () {
-      moveScroll = true;
-      console.log(moveScroll);
-    });
+        let wHeight = $(window).height(); // 브라우저 높이
+        let dHeight = $(document).height(); // 콘텐츠 높이
+        let hHeight = $("#header").outerHeight(); // 헤더 높이
+        let moveScroll = 0;
+        let lastScrollTop = 0;
+        console.log(wHeight);
+        console.log(dHeight);
 
-    setInterval(function () {
-      if (moveScroll) {
-        hasScroll(); // hasScroll 함수로
-        moveScroll = false; //Q
-      }
-      moveScroll = 0;
-      console.log(moveScroll);
-    }, 500);
+        $(window).scroll(function () {
+            moveScroll = true;
+            console.log(moveScroll);
+        });
 
-    function hasScroll() {
-      let wScroll = $(this).scrollTop();
+        setInterval(function () {
+            if (moveScroll) {
+                hasScroll(); // hasScroll 함수로
+                moveScroll = false; //Q
+            }
+            moveScroll = 0;
+            // console.log(moveScroll);
+        }, 500);
 
-      if (wScroll > lastScrollTop) {
-        //스크롤을 내렸을 때
-        $("#header").addClass("on");
-      } else {
-        //스크롤을 올렸을 때
-        if (wScroll + wHeight < dHeight) {
-          $("#header").removeClass("on");
+        function hasScroll() {
+            let wHeight = $(window).height(); // 브라우저 높이
+            let dHeight = $(document).height(); // 콘텐츠 높이
+            let wScroll = $(this).scrollTop();
+            console.log(wScroll);
+            //스크롤을 내렸을 때
+            if (wScroll > lastScrollTop) {
+                let wHeight = $(window).height();
+                $("#header").addClass("on");
+                if (Math.ceil(wScroll) + wHeight == dHeight || parseInt(wScroll) + wHeight == dHeight) {
+                    $("#header").removeClass("on");
+                    console.log(wScroll);
+                    // console.log(wHeight);
+                    // console.log(dHeight);
+                }
+
+            } else {
+                //스크롤을 올렸을 때
+                $("#header").removeClass("on");
+            }
+            lastScrollTop = wScroll
         }
-      }
-      lastScrollTop = wScroll
-    }
   </script>
 
 </body>
