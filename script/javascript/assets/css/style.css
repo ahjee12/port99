@@ -14,7 +14,8 @@ td:first-child {
 /* .bs-sidebar.hidden-print a{color: #fff;} */
 /* .col-md-3 a{color: #fff;} */
 /* .nav {color: #fff;} */
-.add-sidenav {
+ /* padding-top: 20px; */
+/* .add-sidenav {
     height: 60%;
     width: 300px;
     position: fixed;
@@ -22,8 +23,6 @@ td:first-child {
     left: 70%;
     background-color: #0099DE;
     overflow-x: hidden;
-
-    /* padding-top: 20px; */
     color: #fff;
     padding-bottom: 20px;
 }
@@ -35,4 +34,4 @@ td:first-child {
 
 .add-sidenav a:hover {
     color: #f1f1f1;
-}
+} */
