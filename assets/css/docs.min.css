@@ -196,6 +196,12 @@ pre {
 .bgs3{background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);}
 .bgs4{background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);}
 .bgs5{background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);}
+.bgs6{background-image: linear-gradient(90deg, rgba(124,0,255,1) 0%, rgba(160,64,204,1) 100%);}
+.bgs7{background-image: linear-gradient(90deg, rgba(88, 255, 183, 1) 0%, rgba(64, 78, 204, 1) 100%);}
+.bgs8{background-image: linear-gradient(90deg, rgba(243, 255, 88, 1) 0%, rgba(64, 204, 101, 1) 100%);}
+.bgs9{background-image: linear-gradient(90deg, rgba(98,55,17,1) 0%, rgba(255,239,0,1) 100%);}
+.bgs10{background-image: linear-gradient(90deg, rgba(17,88,98,1) 0%, rgba(172,47,47,1) 18%, rgba(208,255,239,1) 100%);}
+.bgs11{background-image: linear-gradient(90deg, rgba(17,88,98,1) 0%, rgba(29,166,120,1) 18%, rgba(255,242,208,1) 100%);}
 
 .sBox {background: #f4f8fa; padding: 10px; overflow: hidden; border: 0px solid #dae1e4}
 .sBox > .box {width: 110px; height: 110px; text-align: center; border: 1px solid #ccc; cursor: pointer; color: #fff; float: left; margin: 26px; background: #f1f1f1; line-height: 110px; font-family: 'abel'; box-sizing: content-box;}

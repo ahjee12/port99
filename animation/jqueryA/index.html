@@ -15,6 +15,10 @@
     <link href="../../assets/css/docs.min.css" rel="stylesheet">
     <link href="../../assets/css/prism.css" rel="stylesheet">
 
+    <!--style-table CSS-->
+    <link rel="stylesheet" href="../../assets/css/style2.css">
+
+
     <!-- 파비콘 -->
     <!--500*500/128*128-->
     <link rel="shortcut icon" href="../../assets/ico/favicon_circle_128.svg">
@@ -82,10 +86,10 @@
         </div>
     </header>
 
-    <div class="bs-header bgs3" id="content">
+    <div class="bs-header bgs8" id="content">
         <div class="container">
-            <h1>Illustrator Reference v1.0 &lt;/doc&gt;</h1>
-            <p><a href="https://ahjee12.dothome.co.kr" target="_blank">ahjee12.dothome.co.kr</a></p>
+            <h1>JQuery ANIMATION v1.0 &lt;/doc&gt;</h1>
+            <p><a href="https://ahjee12.github.io/port99/index.html" target="_blank">ahjee12.github.io/port99/index.html</a></p>
         </div>
     </div>
 
@@ -108,7 +112,7 @@
                             <tbody>
                                 <tr>
                                     <td class="ce va" rowspan="3">Basic</td>
-                                    <td>.hide()</td>
+                                    <td class="ce va">.hide()</td>
                                     <td>선택한 요소를 숨깁니다.</td>
                                 </tr>
                                 <tr>
@@ -121,7 +125,7 @@
                                 </tr>
                                 <tr>
                                     <td class="ce va" rowspan="4">Fading</td>
-                                    <td>.fadeIn()</td>
+                                    <td class="ce va">.fadeIn()</td>
                                     <td>선택한 요소를 천천히 보여줍니다.</td>
                                 </tr>
                                 <tr>
@@ -138,7 +142,7 @@
                                 </tr>
                                 <tr>
                                     <td class="ce va" rowspan="3">Sliding</td>
-                                    <td>.slideDown()</td>
+                                    <td class="ce va">.slideDown()</td>
                                     <td>선택한 요소를 슬라이딩으로 보여줍니다.</td>
                                 </tr>
                                 <tr>
@@ -151,7 +155,7 @@
                                 </tr>
                                 <tr>
                                     <td class="ce va" rowspan="7">custom</td>
-                                    <td>.animate() <span style="color:red">♥</span></td>
+                                    <td class="ce va">.animate() <span style="color:red">♥</span></td>
                                     <td>선택한 요소에 애니메이션을 적용합니다.</td>
                                 </tr>
                                 <tr>
@@ -187,7 +191,7 @@
 
                 <!-- Intro1 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro1" class="page-header"></h2>
+                    <h2 id="intro1" class="page-header">문법</h2>
                     <p class="bs-callout bs-callout-info">
                         $("selector").animate(properties);<br>
                         $("selector").animate(properties,duration);<br>
@@ -252,7 +256,7 @@
 
                 <!-- Intro2 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header"></h2>
+                    <h2 id="intro2" class="page-header">Basic</h2>
                     <h3>Animation <span class="btn btn1">Start</span></h3>
                     <div class="well">
                         <div class="box">
@@ -286,7 +290,7 @@
 
                 <!-- Intro3 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro3" class="page-header"></h2>
+                    <h2 id="intro3" class="page-header">Timing-function</h2>
                     <h3>Animation
                         <span class="btn btn2">swing</span>
                         <span class="btn btn2">easeInExpo</span>
@@ -318,9 +322,9 @@
 
                 <!-- Intro4 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro4" class="page-header"></h2>
+                    <h2 id="intro4" class="page-header">Delay</h2>
                     <h3>Animation
-                        <span class="btn btn3">delay</span>
+                        <span class="btn btn3">start</span>
                     </h3>
                     <div class="well delay">
                         <div class="box">
@@ -342,10 +346,10 @@
 
                 <!-- Intro5 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro5" class="page-header"></h2>
+                    <h2 id="intro5" class="page-header">Width</h2>
 
                     <h3>Animation
-                        <span class="btn btn4">버튼4</span>
+                        <span class="btn btn4">start</span>
                     </h3>
                     <div class="well slide">
                         <div class="box">
@@ -365,7 +369,7 @@
 
                 <!-- Intro6 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro6" class="page-header"></h2>
+                    <h2 id="intro6" class="page-header">Direction</h2>
 
                     <h3>Animation
                         <span class="btn btn5-1">right</span>
@@ -388,9 +392,9 @@
                 <!-- //Intro6 -->
 
 
-                <!-- Intro6 -->
+                <!-- Intro7 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro6" class="page-header">loop</h2>
+                    <h2 id="intro7" class="page-header">Loop</h2>
 
                     <h3>Animation
                         <span class="btn btn6">start</span>
@@ -407,11 +411,11 @@
 </code>
 </pre>
                 </div>
-                <!-- //Intro6 -->
+                <!-- //Intro7 -->
 
-                <!-- Intro6 -->
+                <!-- Intro8 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro6" class="page-header">setInterval</h2>
+                    <h2 id="intro8" class="page-header">SetInterval</h2>
 
                     <h3>Animation
                         <span class="btn btn7">start</span>
@@ -428,11 +432,11 @@
 </code>
 </pre>
                 </div>
-                <!-- //Intro6 -->
+                <!-- //Intro8 -->
 
-                <!-- Intro7 -->
+                <!-- Intro9 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro7" class="page-header">사라지는 애니메이션</h2>
+                    <h2 id="intro9" class="page-header">Disappear</h2>
                     <h3>Animation
                         <span class="btn btn8">start</span>
                     </h3>
@@ -448,11 +452,11 @@
 </code>
 </pre>
                 </div>
-                <!-- //Intro7 -->
+                <!-- //Intro9 -->
 
                 <!-- Intro8 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro8" class="page-header">사라지는 애니메이션</h2>
+                    <h2 id="intro8" class="page-header">H.W</h2>
                     <h3>Animation
                         <span class="btn btn9">start</span>
                     </h3>
@@ -480,26 +484,16 @@
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
                         <li><a href="#intro0">Jquery Animation</a></li>
-                        <li><a href="#intro1"></a></li>
-                        <li><a href="#intro2"></a></li>
-                        <li><a href="#intro3"></a></li>
-                        <li><a href="#intro4"></a></li>
-                        <li><a href="#intro5"></a></li>
-                        <li><a href="#intro6"></a></li>
-                        <li><a href="#intro7"></a></li>
-                        <li><a href="#intro8"></a></li>
-                        <li><a href="#intro9"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
+                        <li><a href="#intro1">문법</a></li>
+                        <li><a href="#intro2">Basic</a></li>
+                        <li><a href="#intro3">Timing-function</a></li>
+                        <li><a href="#intro4">Delay</a></li>
+                        <li><a href="#intro5">Width</a></li>
+                        <li><a href="#intro6">Direction</a></li>
+                        <li><a href="#intro7">Loop</a></li>
+                        <li><a href="#intro8">SetInterval</a></li>
+                        <li><a href="#intro9">Disappear</a></li>
+                        <li><a href="#intro10">Homework</a></li>
                     </ul>
                 </div>
             </div>

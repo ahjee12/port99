@@ -8,12 +8,15 @@
     <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
     <meta name="keywords"
         content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
-    <title>웹다이어리 | Webdiary | cssA</title>
+    <title>웹다이어리 | Webdiary | gaspA</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../../assets/css/docs.min.css" rel="stylesheet">
     <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!--style-table CSS-->
+    <!-- <link rel="stylesheet" href="../../assets/css/style2.css"> -->
 
     <!-- 파비콘 -->
     <!--500*500/128*128-->
@@ -28,7 +31,7 @@
 
     <!-- Facebook meta tags -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:title" content="웹다이어리" />
     <meta property="og:url" content="https://webstoryboy.co.kr/" />
     <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
     <meta property="og:site_name" content="웹스토리보이" />
@@ -37,7 +40,7 @@
     <!-- twitter meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@webstoryboy" />
-    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:title" content="웹다이어리" />
     <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
     <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
 
@@ -68,7 +71,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+                <a href="../../index.html" class="navbar-brand">WEBDIARY &lt;/doc&gt;</a>
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
                 <ul class="nav navbar-nav">
@@ -82,10 +85,10 @@
         </div>
     </header>
 
-    <div class="bs-header bgs3" id="content">
+    <div class="bs-header bgs7" id="content">
         <div class="container">
-            <h1>Illustrator Reference v1.0 &lt;/doc&gt;</h1>
-            <p><a href="https://ahjee12.dothome.co.kr" target="_blank">ahjee12.dothome.co.kr</a></p>
+            <h1>GSAP ANIMATION v1.0 &lt;/doc&gt;</h1>
+            <p><a href="https://ahjee12.github.io/port99/index.html" target="_blank">ahjee12.github.io/port99/index.html</a></p>
         </div>
     </div>
 
@@ -95,19 +98,10 @@
             <div class="col-md-9" role="main">
                 <!-- Intro0 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro1" class="page-header">Jquery Animation</h2>
-
+                    <h2 id="intro1" class="page-header">GSAP</h2>
+                    <p>웹 브라우저에서 애니메이션을 구현하기 위한 자바스크립트 라이브러리!! 기존 CSS Animation이나 jQuery Animation보다 탁월한 퍼포먼스를 발휘할 수 있도록 최적화된 애니메이션 전용 라이브러리입니다.</p>
                 </div>
                 <!-- //Intro0 -->
-
-
-                <!-- Intro1 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro1" class="page-header"></h2>
-
-                </div>
-                <!-- //Intro1 -->
-
 
                 <style>
                     .btn {
@@ -190,26 +184,49 @@
                 <!-- Intro2 -->
                 <div class="bs-docs-section">
                     <h2 id="intro2" class="page-header"></h2>
-                    <h3>Animation <span class="btn btn1">Star1</span></h3>
+                    <h3>Move(to) <span class="btn btn1">Star1</span></h3>
                     <div class="well h2200">
                         <div class="box">
-                            <div class="circle circle1"></div>
-                            <div class="circle circle1"></div>
-                            <div class="circle circle1"></div>
-                            <div class="circle circle1"></div>
+                            <div class="circle circle1">left:"75%"</div>
+                            <div class="circle circle1">left:"75%",borderRadius:"0"</div>
+                            <div class="circle circle1">left:"75%",rotationY:"300deg"</div>
+                            <div class="circle circle1">left:"75%",background: "linear-gradient(90deg, rgba(204,255,88,1) 0%, rgba(64,78,204,1) 100%)"</div>
                             <div class="circle circle1">색변경</div>
-                            <div class="circle circle1"></div>
-                            <div class="circle circle1"></div>
-                            <div class="circle circle1"></div>
-                            <div class="circle circle1"></div>
+                            <div class="circle circle1">left:"75%",scale:"2",rotationX: "100deg"</div>
+                            <div class="circle circle1">left:"75%",scale:"2",rotationY: "100deg"</div>
+                            <div class="circle circle1">left:"75%",scale:"0.5"</div>
+                            <div class="circle circle1">left:"75%",skew:"30deg"</div>
                         </div>
                     </div>
-                    <pre class="line-numbers language-css">
+<pre class="line-numbers language-markup">
 <code>&lt;script&gt;
+    let circle1 = $(".circle.circle1");
+    let button1 = $(".btn.btn1");
+    circle1.css({
+        "position": "relative",
+        marginBottom: "30px"
+    });
+    circle1.eq(4).css({
+        background:"linear-gradient(90deg, rgba(88,255,183,1) 0%, rgba(64,78,204,1) 100%)"
+    });
 
-&lt;script&gt;
-</code>
-</pre>
+    button1.click(function () {
+        // TweenMax.to(circle1, 1, {
+        //     left: "90%"
+        // });
+        gsap.to(circle1.eq(0), 1, {left:"75%"});
+        gsap.to(circle1.eq(1), 1, {left:"75%",borderRadius:"0"});
+        gsap.to(circle1.eq(2), 1, {left:"75%",rotationY:"300deg"});
+        gsap.to(circle1.eq(3), 1, {left:"75%",rotationX:"700deg"});
+        gsap.to(circle1.eq(4), 1, {left:"75%",background: "linear-gradient(90deg, rgba(204,255,88,1) 0%, rgba(64,78,204,1) 100%)"});
+        gsap.to(circle1.eq(5), 1, {left:"75%",scale:"2",rotationX: "100deg"});
+        gsap.to(circle1.eq(6), 1, {left:"75%",scale:"2",rotationY: "100deg"});
+        gsap.to(circle1.eq(7), 1, {left:"75%",scale:"0.5"});
+        gsap.to(circle1.eq(8), 1, {left:"75%",skew:"30deg"});
+    })
+
+&lt;/script&gt;
+</code></pre>
                 </div>
 
                 <!-- //Intro2 -->
@@ -217,27 +234,43 @@
                 <!-- Intro3 -->
                 <div class="bs-docs-section">
                     <h2 id="intro3" class="page-header"></h2>
-                    <h3>Animation
+                    <h3>Move(from)
                         <span class="btn btn2">Start2</span>
 
                     </h3>
                     <div class="well h2200">
                         <div class="box">
-                            <div class="circle circle2"></div>
-                            <div class="circle circle2"></div>
-                            <div class="circle circle2"></div>
-                            <div class="circle circle2"></div>
-                            <div class="circle circle2"></div>
-                            <div class="circle circle2"></div>
-                            <div class="circle circle2"></div>
-                            <div class="circle circle2"></div>
-                            <div class="circle circle2"></div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"1"</div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"2"</div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"3"</div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"4"</div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"5"</div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"6"</div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"7"</div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"8"</div>
+                            <div class="circle circle2">left:"75%",rotationY:"300deg",duration:"9"</div>
                         </div>
                     </div>
-                    <pre class="line-numbers language-css">
+<pre class="line-numbers language-markup">
 <code>&lt;script&gt;
-   
-&lt;script&gt;
+    let circle2 = $(".circle.circle2");
+    let button2 = $(".btn.btn2");
+    circle2.css({
+        "position": "relative",
+        "margin-bottom": "30px"
+    });
+    button2.click(function(){
+        gsap.to(circle2.eq(0), {left:"75%",rotationY:"300deg",duration:"1"});
+        gsap.to(circle2.eq(1), {left:"75%",rotationY:"300deg",duration:"2"});
+        gsap.to(circle2.eq(2), {left:"75%",rotationY:"300deg",duration:"3"});
+        gsap.to(circle2.eq(3), {left:"75%",rotationY:"300deg",duration:"4"});
+        gsap.to(circle2.eq(4), {left:"75%",rotationY:"300deg",duration:"5"});
+        gsap.to(circle2.eq(5), {left:"75%",rotationY:"300deg",duration:"6"});
+        gsap.to(circle2.eq(6), {left:"75%",rotationY:"300deg",duration:"7"});
+        gsap.to(circle2.eq(7), {left:"75%",rotationY:"300deg",duration:"8"});
+        gsap.to(circle2.eq(8), {left:"75%",rotationY:"300deg",duration:"9"});
+    })
+&lt;/script&gt;
 </code>
 </pre>
                 </div>
@@ -246,25 +279,45 @@
                 <!-- Intro4 -->
                 <div class="bs-docs-section">
                     <h2 id="intro4" class="page-header"></h2>
-                    <h3>Animation
+                    <h3>Move(easing)
                         <span class="btn btn3">Start3</span>
                     </h3>
-                    <div class="well h1100">
+                    <div class="well h1200">
                         <div class="box">
-                            <div class="circle circle3"></div>
-                            <div class="circle circle3"></div>
-                            <div class="circle circle3"></div>
-                            <div class="circle circle3"></div>
-                            <div class="circle circle3"></div>
-                            <div class="circle circle3"></div>
-                            <div class="circle circle3"></div>
-                            <div class="circle circle3"></div>
+                            <div class="circle circle3">ease:"power1.out"</div>
+                            <div class="circle circle3">ease:"power2.out"</div>
+                            <div class="circle circle3">ease:"power3.out"</div>
+                            <div class="circle circle3">ease:"power4.out"</div>
+                            <div class="circle circle3">ease:"back.out(1.7)"</div>
+                            <div class="circle circle3">ease:"elastic.out(1. 0.3)"</div>
+                            <div class="circle circle3">ease:"bounce.out"</div>
+                            <div class="circle circle3">ease:"rough({ template: ------})"</div>
+                            <div class="circle circle3">ease:"steps(10)"</div>
                         </div>
                     </div>
-                    <pre class="line-numbers language-css">
+<pre class="line-numbers language-markup">
 <code>&lt;script&gt;
+    let circle3 = $(".circle.circle3");
+        let button3 = $(".btn.btn3");
+        circle3.css({
+            "position": "relative",
+            "margin-bottom": "30px",
+            width: "100px",
+            height: "100px"
+        });
 
-&lt;script&gt;
+        button3.click(function(){
+            gsap.to(circle3.eq(0), {left:"85%",rotationY:"300deg",duration:"4", ease:"power1.out"});
+            gsap.to(circle3.eq(1), {left:"85%",rotationY:"300deg",duration:"4", ease:"power2.out"});
+            gsap.to(circle3.eq(2), {left:"85%",rotationY:"300deg",duration:"4", ease:"power3.out"});
+            gsap.to(circle3.eq(3), {left:"85%",rotationY:"300deg",duration:"4", ease:"power4.out"});
+            gsap.to(circle3.eq(4), {left:"85%",rotationY:"300deg",duration:"4", ease:"back.out(1.7)"});
+            gsap.to(circle3.eq(5), {left:"85%",rotationY:"300deg",duration:"4", ease:"elastic.out(1. 0.3)"});
+            gsap.to(circle3.eq(6), {left:"85%",rotationY:"300deg",duration:"4", ease:"bounce.out"});
+            gsap.to(circle3.eq(7), {left:"85%",rotationY:"300deg",duration:"4", ease:"rough({ template: none.out, strength:  1, points: 20, taper: 'none', randomize: true, clamp: false})"});
+            gsap.to(circle3.eq(8), {left:"85%",rotationY:"300deg",duration:"4", ease:"steps(10)"});
+        })
+&lt;/script&gt;
 </code>
 </pre>
 
@@ -275,7 +328,7 @@
                 <div class="bs-docs-section">
                     <h2 id="intro5" class="page-header"></h2>
 
-                    <h3>Animation
+                    <h3>Move(repeat)
                         <span class="btn btn4">Start4</span>
                     </h3>
                     <div class="well h700">
@@ -284,13 +337,28 @@
                             <div class="circle circle4"></div>
                             <div class="circle circle4"></div>
                             <div class="circle circle4"></div>
-                            <div class="circle circle4"></div>
+                            <div class="circle circle4">repeat:"-1"</div>
                         </div>
                     </div>
-                    <pre class="line-numbers language-css">
+                    <pre class="line-numbers language-markup">
 <code>&lt;script&gt;
+    let circle4 = $(".circle.circle4");
+    let button4 = $(".btn.btn4");
+    circle4.css({
+        "position": "relative",
+        "margin-bottom": "30px",
+        width: "100px",
+        height: "100px"
+    });
 
-&lt;script&gt;
+    button4.click(function(){
+        gsap.to(circle4.eq(0), {left:"85%",rotation:"700deg",duration:"3", ease:"power1.out", repeat:"1"});
+        gsap.to(circle4.eq(1), {left:"85%",rotation:"700deg",duration:"3", ease:"power2.out", repeat:"2"});
+        gsap.to(circle4.eq(2), {left:"85%",rotation:"700deg",duration:"3", ease:"power3.out", repeat:"3"});
+        gsap.to(circle4.eq(3), {left:"85%",rotation:"700deg",duration:"3", ease:"power4.out", repeat:"4"});
+        gsap.to(circle4.eq(4), {left:"85%",rotation:"700deg",duration:"3", ease:"back.out(1.7)", repeat:"-1"});
+    })
+&lt;/script&gt;
 </code>
 </pre>
                 </div>
@@ -300,7 +368,7 @@
                 <div class="bs-docs-section">
                     <h2 id="intro6" class="page-header"></h2>
 
-                    <h3>Animation
+                    <h3>Timeline
                         <span class="btn btn5">Start5</span>
                     </h3>
                     <div class="well h700">
@@ -308,10 +376,26 @@
                             <div class="circle circle5"></div>
                         </div>
                     </div>
-                    <pre class="line-numbers language-css">
+                    <pre class="line-numbers language-markup">
 <code>&lt;script&gt;
+    let circle5 = $(".circle.circle5");
+    let button5 = $(".btn.btn5");
+    circle5.css({
+        "position": "relative",
+        "margin-bottom": "30px",
+        width: "200px",
+        height: "200px"
+    });
 
-&lt;script&gt;
+    button5.click(function(){
+       let tLine = new TimelineMax();
+       tLine
+       .to(circle5,{left: "78%", duration: 1})
+       .to(circle5,{top: "120%", duration: 1})
+       .to(circle5,{left: "0%", duration: 1})
+       .to(circle5,{top: "0", duration: 1});
+    })
+&lt;/script&gt;
 </code>
 </pre>
                 </div>
@@ -322,7 +406,7 @@
                 <div class="bs-docs-section">
                     <h2 id="intro7" class="page-header">H.W 3바퀴</h2>
 
-                    <h3>Animation
+                    <h3>
                         <span class="btn btn6">start6</span>
                     </h3>
                     <div class="well h700">
@@ -330,10 +414,26 @@
                             <div class="circle circle6"></div>
                         </div>
                     </div>
-                    <pre class="line-numbers language-css">
+                    <pre class="line-numbers language-markup">
 <code>&lt;script&gt;
+    let circle6 = $(".circle.circle6");
+    let button6 = $(".btn.btn6");
+    circle6.css({
+        "position": "relative",
+        "margin-bottom": "30px",
+        width: "200px",
+        height: "200px"
+    });
 
-&lt;script&gt;
+    button6.click(function(){
+       let tLine = new TimelineMax({repeat:3, repeatDelay:1});
+       tLine
+       .to(circle6,{left: "78%", duration: 1})
+       .to(circle6,{top: "120%", duration: 1})
+       .to(circle6,{left: "0%", duration: 1})
+       .to(circle6,{top: "0", duration: 1});
+    })
+&lt;/script&gt;
 </code>
 </pre>
                 </div>
@@ -343,7 +443,7 @@
                 <div class="bs-docs-section">
                     <h2 id="intro8" class="page-header"></h2>
 
-                    <h3>Animation
+                    <h3>Controlling
                         <span class="btn btn7">play</span>
                         <span class="btn btn7">pause</span>
                         <span class="btn btn7">resume</span>
@@ -359,10 +459,32 @@
                             <div class="circle circle7"></div>
                         </div>
                     </div>
-                    <pre class="line-numbers language-css">
+                    <pre class="line-numbers language-markup">
 <code>&lt;script&gt;
+    let circle7 = $(".circle.circle7");
+        let button7 = $(".btn.btn7");
+        circle7.css({
+            "position": "relative",
+            "margin-bottom": "30px",
+            width: "150px",
+            height: "150px"
+        });
+        const tw = gsap.to(circle7,{duration:20, left:"78%",borderRadius:"0%",rotation:"720deg"});
+        tw.pause();
 
-&lt;script&gt;
+        // button7.click(function(){
+        //     gsap.to(circle7,{duration:10, left:"78%",borderRadius:"0%",rotation:"720deg"});
+        // });
+        button7.eq(0).click(function(){tw.play()});
+        button7.eq(1).click(function(){tw.pause()});
+        button7.eq(2).click(function(){tw.resume()});
+        button7.eq(3).click(function(){tw.reverse()});
+        button7.eq(4).click(function(){tw.seek(15)});
+        button7.eq(5).click(function(){tw.timeScale(0.5)});
+        button7.eq(6).click(function(){tw.timeScale(2)});
+        button7.eq(7).click(function(){tw.kill()});
+        button7.eq(8).click(function(){tw.restart()});
+&lt;/script&gt;
 </code>
 </pre>
                 </div>
@@ -390,10 +512,29 @@
                             <div class="circle circle8"></div>
                         </div>
                     </div>
-                    <pre class="line-numbers language-css">
+                    <pre class="line-numbers language-markup">
 <code>&lt;script&gt;
+    let circle8 = $(".circle.circle8");
+    let button8 = $(".btn.btn8");
+    circle8.css({
+        "position": "relative",
+        "margin-bottom": "30px",
+        width: "150px",
+        height: "150px"
+    });
+    button8.eq(0).click(function(){
+        $(circle8).animate({left: "90%"},1000,function(){
+            $(circle8).animate({left:"0%"},1000);
+        });
+    });
+    button8.eq(1).click(function(){
+        gsap.to(circle8,{duration:1,left:"90%",onComplete : com});
+    });
 
-&lt;script&gt;
+    function com(){
+        gsap.to(circle8,{duration:1,left:"0%"});
+    }
+&lt;/script&gt;
 </code>
 </pre>
                 </div>
@@ -403,24 +544,22 @@
                 <!-- Intro10 -->
                 <div class="bs-docs-section">
                     <h2 id="intro10" class="page-header"></h2>
-                    <h3>Animation
-                        <span class="btn btn9">start</span>
-                    </h3>
-                    <div class="well">
-                        <div class="box">
-                            <div class="circle circle9"></div>
-                        </div>
-                    </div>
-                    <pre class="line-numbers language-css">
-<code>&lt;script&gt;
+                    <h3>Gsap Animaiton</h3>
+                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="BaoMxwj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="gsap Animation01">
+                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/BaoMxwj">
+                        gsap Animation01</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-&lt;script&gt;
-</code>
-</pre>
+                      <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="ahjee12" data-slug-hash="oNjmyLg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="gsap Animation02">
+                        <span>See the Pen <a href="https://codepen.io/ahjee12/pen/oNjmyLg">
+                        gsap Animation02</a> by HyunJi  (<a href="https://codepen.io/ahjee12">@ahjee12</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
                 </div>
                 <!-- //Intro10 -->
-
-
             </div>
             <!-- //col-md-9 -->
 
@@ -429,27 +568,16 @@
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
-                        <li><a href="#intro0">Jquery Animation</a></li>
-                        <li><a href="#intro1"></a></li>
-                        <li><a href="#intro2"></a></li>
-                        <li><a href="#intro3"></a></li>
-                        <li><a href="#intro4"></a></li>
-                        <li><a href="#intro5"></a></li>
-                        <li><a href="#intro6"></a></li>
-                        <li><a href="#intro7"></a></li>
-                        <li><a href="#intro8"></a></li>
-                        <li><a href="#intro9"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
-                        <li><a href="#intro10"></a></li>
+                        <li><a href="#intro0">GSAP</a></li>
+                        <li><a href="#intro2">Move(to)</a></li>
+                        <li><a href="#intro3">Move(from)</a></li>
+                        <li><a href="#intro4">Move(easing)</a></li>
+                        <li><a href="#intro5">Move(repeat)</a></li>
+                        <li><a href="#intro6">Timeline</a></li>
+                        <li><a href="#intro7">Homework</a></li>
+                        <li><a href="#intro8">Controlling</a></li>
+                        <li><a href="#intro9">CallBacks</a></li>
+                        <li><a href="#intro10">Gsap Animaiton</a></li>
                     </ul>
                 </div>
             </div>
@@ -496,16 +624,7 @@
         circle1.eq(4).css({
             background:"linear-gradient(90deg, rgba(88,255,183,1) 0%, rgba(64,78,204,1) 100%)"
         });
-        // circle1.eq(1).css({
-        //     "position": "absolute",
-        //     "top": "500px",
-        //     "left": "10px"
-        // });
-        // circle1.eq(2).css({
-        //     "position": "absolute",
-        //     "top": "800px",
-        //     "left": "10px"
-        // });
+
         button1.click(function () {
             // TweenMax.to(circle1, 1, {
             //     left: "90%"
@@ -576,6 +695,7 @@
             gsap.to(circle4.eq(3), {left:"85%",rotation:"700deg",duration:"3", ease:"power4.out", repeat:"4"});
             gsap.to(circle4.eq(4), {left:"85%",rotation:"700deg",duration:"3", ease:"back.out(1.7)", repeat:"-1"});
         })
+
         //timeline
         let circle5 = $(".circle.circle5");
         let button5 = $(".btn.btn5");
