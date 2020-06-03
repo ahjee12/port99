@@ -14,7 +14,7 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="48x48">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
-    
+
     <title>Parallax07</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -240,15 +240,17 @@
             color: #000;
             font-size: 25px;
         }
-        .info4{
+
+        .info4 {
             position: fixed;
-            top: 2vh; left: 1vw;
+            top: 2vh;
+            left: 1vw;
             padding: 10px;
             z-index: 1000;
             background: rgb(255, 255, 255, 0.7);
         }
 
-        .info4 ul li{
+        .info4 ul li {
             display: inline-block;
             padding: 0 5px;
             color: #000;
@@ -299,9 +301,9 @@
         <ul>
             <li>반응형</li>
             <li>/</li>
-            <li>content-item-desc</li>
+            <li>gsap.to(".content-item-imgWrap",{duration: 0.3, ease: Power1.ease, rotation: difference*0.5})</li>
             <li>/</li>
-            <li>transform":"skewY("+difference+"deg)</li>
+            <li>gsap.to(".content-item-desc",{duration: 0.3, ease: Power2.ease, skewY: difference*0.1})</li>
         </ul>
     </div>
     <div id="wrap">
@@ -392,22 +394,73 @@
     <script>
         //08
         // function scroll에 있는 scrollTop 인식이 좀 더 느림
-        let scrollTop = $(window).scrollTop();
+        // let scrollTop = $(window).scrollTop();
 
-        function scroll(){
-            let newScrollTop = $(window).scrollTop();
-            let difference = newScrollTop - scrollTop;
+        // function scroll(){
+        //     let newScrollTop = $(window).scrollTop();
+        //     let difference = newScrollTop - scrollTop;
 
-            console.log("scrollTop:"+scrollTop);
-            console.log("newScrollTop:"+newScrollTop);
-            console.log("difference:"+difference);
+        //     console.log("scrollTop:"+scrollTop);
+        //     console.log("newScrollTop:"+newScrollTop);
+        //     console.log("difference:"+difference);
 
-            $(".content-item-desc").css({"transform":"skewY("+difference+"deg)"});
-            scrollTop = newScrollTop;
+        //     $(".content-item-desc").css({"transform":"skewY("+difference+"deg)"});
+        //     scrollTop = newScrollTop;
 
+        //     requestAnimationFrame(scroll);
+        // }
+        // scroll()
+
+        //07 JAVASCRIPT
+        let pageYOffset = window.pageYOffset;
+        //익명 함수
+        // const scroll = function{
+        // }
+        // scroll();
+        //화살표 함수
+        const scroll = () => {
+            const newPageYOffset = window.pageYOffset;
+            const difference = newPageYOffset - pageYOffset;
+
+            console.log("pageYOffset:" + pageYOffset);
+            console.log("newPageYOffset:" + newPageYOffset);
+            console.log("difference:" + difference);
+            //JQUERY
+            //  $(".content-item-desc").css({"transform":"skewY("+difference+"deg)"});
+            //JAVASCRIPT 안 됨
+            // document.querySelectorAll(".content-item-imgWrap").style.transform =  "skewY("+difference+"deg)";
+            //JAVSCRIPT foreach문 써야 함!!
+            // let imgWrap = document.querySelectorAll(".content-item-imgWrap");
+            // imgWrap.forEach(element => {
+            //     element.style.transform = "skewY(" + difference*0.01 + "deg)";
+            // })
+            //gsap
+            gsap.to(".content-item-imgWrap",{duration: 0.3, ease: Power1.ease, rotation: difference*0.5})
+            gsap.to(".content-item-desc",{duration: 0.3, ease: Power2.ease, skewY: difference*0.1})
+           
             requestAnimationFrame(scroll);
         }
-        scroll()
+        scroll();
+
+
+
+        //자바스크립트
+        // window.addEventListener("scroll", () => {
+        //     let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height / 2;
+
+        //     document.querySelector(".scrollTop").textContent = pageYOffset;
+        //     document.querySelectorAll(".content-item").forEach(elem => {
+
+        //         let target = elem.childNodes[7];
+
+        //         let offset = (pageYOffset - elem.offsetTop) * 0.2;
+
+        //         // console.log("페이지 YOffset : " + pageYOffset);
+        //         // console.log("offsettop : " + elem.offsetTop);
+        //         // console.log("offset" + (pageYOffset - elem.offsetTop)*0.2);
+        //         target.style.transform = "translateY(" + -offset + "px)";
+        //     });
+        // });
 
         //일정한 시간 동안 반복적 함수 실행
         // setInterval(render, 10);
@@ -420,7 +473,7 @@
         //     // render();
         // }
         // render();
-        
+
         //07
         // // info2OffsetTop = $(".info2 span strong");
         // // info2OffsetTop.each(function(i){

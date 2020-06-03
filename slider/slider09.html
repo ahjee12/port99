@@ -265,6 +265,10 @@
             //Q
             currentIndex = index;
             //prev 1 = -1000
+            updateDot();
+        }
+        function updateDot(){
+            sliderDot.find("a").removeClass().eq(currentIndex).addClass("active");
         }
         
         sliderBtn.on("click","a",function(){

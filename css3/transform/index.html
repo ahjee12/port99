@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="webDiary">
     <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
-    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
+    <meta name="keywords" content="웹다이어리, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
     <title>웹다이어리 | WebDiary | transform</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../../assets/css/docs.min.css" rel="stylesheet">
     <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!--style-table CSS-->
+    <link rel="stylesheet" href="../../assets/css/style2.css">
 
     <!-- 파비콘 -->
     <!--500*500/128*128-->
@@ -27,16 +30,16 @@
 
     <!-- Facebook meta tags -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:title" content="웹다이어리" />
     <meta property="og:url" content="https://webstoryboy.co.kr/" />
     <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
-    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:site_name" content="웹다이어리" />
     <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
 
     <!-- twitter meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@webstoryboy" />
-    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:title" content="웹다이어리" />
     <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
     <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
 
@@ -66,7 +69,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="../index.html" class="navbar-brand">WEBDIARY &lt;/doc&gt;</a>
+                <a href="../index.html" class="navbar-brand">WEBDIARY</a>
             </div>
             <!-- <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
                 <ul class="nav navbar-nav">
@@ -82,7 +85,7 @@
 
     <div class="bs-header bgs10" id="content">
         <div class="container">
-            <h1>transform Reference v1.0 &lt;/doc&gt;</h1>
+            <h1>transform</h1>
             <p><a href="https://ahjee12.github.io/port99/index.html" target="_blank">ahjee12.github.io/port99/index.html</a></p>
         </div>
     </div>
@@ -93,7 +96,7 @@
             <div class="col-md-9" role="main">
                 <!-- Intro1 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro1" class="page-header">Transform</h2>
+                    <h2 id="intro1" class="page-header">Transform 문법</h2>
 
                     <h3 class="pt30">Transform</h3>
                     <p>변환(Transform)은 요소의 좌표를 조작하여, 위치나 크기, 회전, 각도 등을 변경하는 속성입니다. 이동(translate), 확대(scale), 회전(rotate), 기울기(skew), 행렬변환(matrix)가 있습니다.</p>
@@ -103,7 +106,7 @@
                     <div class="table-reponsive">
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
-                                <tr class="warning">
+                                <tr>
                                     <th>종류</th>
                                     <th>문법</th>
                                     <th>예시</th>
@@ -113,7 +116,7 @@
                             <tbody>
                                 <tr>
                                     <td rowspan="5" class="va">translate</td>
-                                    <td>translate()</td>
+                                    <td class="ce va">translate()</td>
                                     <td>transform: translate(10px, 20px)</td>
                                     <td>X좌표, Y좌표 이동을 나타냅니다.</td>
                                 </tr>
@@ -140,7 +143,7 @@
 
                                 <tr>
                                     <td rowspan="5" class="va">scale</td>
-                                    <td>scale()</td>
+                                    <td class="ce va">scale()</td>
                                     <td>transform: scale(2, 2)</td>
                                     <td>선택한 요소의 X축과 Y축 확대를 설정합니다.</td>
                                 </tr>
@@ -166,7 +169,7 @@
                                 </tr>
                                 <tr>
                                     <td rowspan="5" class="va">rotate</td>
-                                    <td>rotate()</td>
+                                    <td class="ce va">rotate()</td>
                                     <td>transform: rotate(10deg, 20deg)</td>
                                     <td>선택한 요소의 X축, Y축 회전을 설정합니다.</td>
                                 </tr>
@@ -193,7 +196,7 @@
 
                                 <tr>
                                     <td rowspan="3" class="va">skew</td>
-                                    <td>skew()</td>
+                                    <td class="ce va">skew()</td>
                                     <td>transform: skew(10deg, 20deg)</td>
                                     <td>선택한 요소의 X축, Y축 기울기를 설정합니다.</td>
                                 </tr>
@@ -210,7 +213,7 @@
 
                                 <tr>
                                     <td rowspan="5" class="va">etc</td>
-                                    <td>transform-origin</td>
+                                    <td class="ce va">transform-origin</td>
                                     <td>transform-origin: 20%, 30%</td>
                                     <td>선택한 요소의 X축, Y축 기준점을 설정합니다.</td>
                                 </tr>
@@ -298,10 +301,8 @@
 .translate03 {transform: translate(30px, 30px);}
 .translate04 {transform: translate(40px, 40px);}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro2 -->
-
-
 
                 <style>
                     .translate05 {transform: translateX(10px);}
@@ -333,7 +334,7 @@
 .translate07 {transform: translateX(30px);}
 .translate08 {transform: translateX(40px);}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro3 -->
 
                 <style>
@@ -342,9 +343,9 @@
                     .translate11 {transform: translateY(30px);}
                     .translate12 {transform: translateY(40px);}
                 </style>
-                <!-- Intro4 -->
+                <!-- Intro3-1 -->
                 <div class="bs-docs-section">
-               <h2 id="intro1" class="page-header">Sample03 - translateY</h2>
+               <h2 id="intro3-1" class="page-header">Sample03 - translateY</h2>
                     <div class="sBox">
                         <div class="box tra1">
                             <div class="translate09">translate09</div>
@@ -365,8 +366,8 @@
 .translate11 {transform: translateY(30px);}
 .translate12 {transform: translateY(40px);}
 </code></pre>
-            </div>
-                <!-- //Intro4 -->
+                </div>
+                <!-- //Intro3-1 -->
 
                 <style>
                     .translate13 {transform: translateZ(10px); opacity: .6;}
@@ -397,7 +398,7 @@
 .translate15 {transform: translateZ(70px); opacity: .6;}
 .translate16 {transform: translateZ(80px); opacity: .6;}
 </code></pre>
-            </div>
+               </div>
                 <!-- //Intro4 -->
 
                 <style>
@@ -429,7 +430,7 @@
 .scale3{transform: scale(1.3, 1.3); opacity: .6;}
 .scale4{transform: scale(1.4, 1.4); opacity: .6;}
 </code></pre>
-            </div>
+               </div>
                 <!-- //Intro5 -->
 
                 <style>
@@ -461,7 +462,7 @@
 .scale7{transform: scale(0.7, 0.7); opacity: .6;}
 .scale8{transform: scale(0.6, 0.6); opacity: .6;}
 </code></pre>
-            </div>
+               </div>
                 <!-- //Intro6 -->
 
                 <style>
@@ -493,7 +494,7 @@
 .scale11{transform: scaleX(1.3); opacity: .6;}
 .scale12{transform: scaleX(1.4); opacity: .6;}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro7 -->
 
                 <style>
@@ -525,7 +526,7 @@
 .scale11{transform: scaleY(1.3),; opacity: .6;}
 .scale12{transform: scaleY(1.4); opacity: .6;}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro4 -->
 
                 <style>
@@ -557,7 +558,7 @@
 .scale11{transform: scaleY(1.3),; opacity: .6;}
 .scale12{transform: scaleY(1.4); opacity: .6;}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro9 -->
 
                 <style>
@@ -589,7 +590,7 @@
 .rotate7{transform: rotateX(30deg); opacity: .6;}
 .rotate8{transform: rotateX(40deg); opacity: .6;}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro10 -->
 
                 <style>
@@ -621,7 +622,7 @@
 .scale11{transform: scaleY(1.3),; opacity: .6;}
 .scale12{transform: scaleY(1.4); opacity: .6;}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro11 -->
 
                 <style>
@@ -653,7 +654,7 @@
 .rotate15{transform: rotate3d(0,1,1,50deg);}
 .rotate16{transform: rotate3d(0,1,1,70deg);}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro12 -->
 
                 <style>
@@ -685,7 +686,7 @@
 .skew3{transform: skew(30deg, 30deg); opacity: .6;}
 .skew4{transform: skew(40deg, 40deg); opacity: .6;}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro13 -->
 
                 <style>
@@ -717,7 +718,7 @@
 .skew7{transform: skewX(30deg);}
 .skew8{transform: skewX(40deg);}
 </code></pre>
-            </div>
+                 </div>
                 <!-- //Intro14 -->
 
                 <style>
@@ -749,7 +750,7 @@
 .skew11{transform: skewY(30deg);}
 .skew12{transform: skewY(40deg);}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro15 -->
 
                     <style>
@@ -760,7 +761,7 @@
                 </style>
                 <!-- Intro16 -->
                 <div class="bs-docs-section">
-               <h2 id="intro16" class="page-header">Sample16 - origin X100%</h2>
+               <h2 id="intro16" class="page-header">Sample16 - transform-origin X100%</h2>
                     <div class="sBox" padding: 50px 50px>
                         <div class="box origin1">
                             <div class="origin1">origin1</div>
@@ -781,7 +782,7 @@
 .origin3{transform: rotate(10deg); transform-origin: 100% 0}
 .origin4{transform: rotate(10deg); transform-origin: 100% 0}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro16 -->
 
                    <style>
@@ -792,7 +793,7 @@
                 </style>
                 <!-- Intro17 -->
                 <div class="bs-docs-section">
-               <h2 id="intro17" class="page-header">Sample17 - origin Y100%</h2>
+               <h2 id="intro17" class="page-header">Sample17 - transform-origin Y100%</h2>
                     <div class="sBox" >
                         <div class="box origin1">
                             <div class="origin5">origin5</div>
@@ -813,7 +814,7 @@
 .origin7{transform: rotate(10deg); transform-origin:0 100%}
 .origin8{transform: rotate(10deg); transform-origin:0 100%}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro17 -->
 
                      <style>
@@ -824,7 +825,7 @@
                 </style>
                 <!-- Intro18 -->
                 <div class="bs-docs-section">
-               <h2 id="intro18" class="page-header">Sample18 - origin</h2>
+               <h2 id="intro18" class="page-header">Sample18 - originX,Y</h2>
                     <div class="sBox" >
                         <div class="box origin1">
                             <div class="origin9">origin9</div>
@@ -845,7 +846,7 @@
 .origin11{transform: rotate3d(1, 0, 0, 60deg); transform-origin: 20% 60%;}
 .origin12{transform: rotate3d(1, 0, 0, 60deg); transform-origin: 20% 100%;}
 </code></pre>
-            </div>
+                </div>
                 <!-- //Intro18 -->
 
                     <style>
@@ -856,7 +857,7 @@
                 </style>
                 <!-- Intro19 -->
                 <div class="bs-docs-section">
-               <h2 id="intro19" class="page-header">Sample19 - origin right</h2>
+               <h2 id="intro19" class="page-header">Sample19 - transform-rotate3d+origin right</h2>
                     <div class="sBox" >
                         <div class="box origin1">
                             <div class="origin13">origin13</div>
@@ -877,18 +878,18 @@
 .origin15{transform: rotate3d(0, 1, 0, 30deg); transform-origin: right;}
 .origin16{transform: rotate3d(0, 1, 0, 40deg); transform-origin: right;}
 </code></pre>
-            </div>
+               </div>
                 <!-- //Intro19 -->
 
                     <style>
-                   .origin17{transform: rotate3d(0 ,1, 0, -10deg); transform-origin: right;}
-                   .origin18{transform: rotate3d(0, 1, 0, -20deg); transform-origin: right;}
-                   .origin19{transform: rotate3d(0, 1, 0, -30deg); transform-origin: right;}
-                   .origin20{transform: rotate3d(0, 1, 0, -40deg); transform-origin: right;}
+                   .origin17{transform: rotate3d(0 ,1, 0, -10deg); transform-origin: left;}
+                   .origin18{transform: rotate3d(0, 1, 0, -20deg); transform-origin: left;}
+                   .origin19{transform: rotate3d(0, 1, 0, -30deg); transform-origin: left;}
+                   .origin20{transform: rotate3d(0, 1, 0, -40deg); transform-origin: left;}
                 </style>
                 <!-- Intro20 -->
                 <div class="bs-docs-section">
-               <h2 id="intro20" class="page-header">Sample20 - origin right</h2>
+               <h2 id="intro20" class="page-header">Sample20 - transform-rotate3d+origin left</h2>
                     <div class="sBox" >
                         <div class="box origin1">
                             <div class="origin17">origin17</div>
@@ -904,16 +905,13 @@
                         </div>
                     </div> 
 <pre class="line-numbers language-css">
-<code>.origin17{transform: rotate3d(0 ,1, 0, -10deg); transform-origin: right;}
-.origin18{transform: rotate3d(0, 1, 0, -20deg); transform-origin: right;}
-.origin19{transform: rotate3d(0, 1, 0, -30deg); transform-origin: right;}
-.origin20{transform: rotate3d(0, 1, 0, -40deg); transform-origin: right;}
+<code>.origin17{transform: rotate3d(0 ,1, 0, -10deg); transform-origin: left;}
+.origin18{transform: rotate3d(0, 1, 0, -20deg); transform-origin: left;}
+.origin19{transform: rotate3d(0, 1, 0, -30deg); transform-origin: left;}
+.origin20{transform: rotate3d(0, 1, 0, -40deg); transform-origin: left;}
 </code></pre>
-            </div>
+               </div>
                 <!-- //Intro20 -->
-
-
-
                 
             </div>
             <!-- //col-md-9 -->
@@ -923,27 +921,27 @@
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
-                        <li><a href="#intro1">Transform</a></li>
+                        <li><a href="#intro1">문법</a></li>
                         <li><a href="#intro2">Sample01 - translate</a></li>
                         <li><a href="#intro3">Sample02 - translateX</a></li>
-                        <li><a href="#intro4">Sample03 - translateY</a></li>
-                        <li><a href="#intro5">Sample04 - translateZ</a></li>
-                        <li><a href="#intro6">Sample05 - scale확대</a></li>
-                        <li><a href="#intro7">Sample06 - scale축소</a></li>
-                        <li><a href="#intro8">Sample07 - scaleX</a></li>
-                        <li><a href="#intro9">Sample08 - scaleY</a></li>
-                        <li><a href="#intro10">Sample09 - rotate</a></li>
+                        <li><a href="#intro3-1">Sample03 - translateY</a></li>
+                        <li><a href="#intro4">Sample04 - translateZ</a></li>
+                        <li><a href="#intro5">Sample05 - scale확대</a></li>
+                        <li><a href="#intro6">Sample06 - scale축소</a></li>
+                        <li><a href="#intro7">Sample07 - scaleX</a></li>
+                        <li><a href="#intro8">Sample08 - scaleY</a></li>
+                        <li><a href="#intro9">Sample09 - rotate</a></li>
                         <li><a href="#intro10">Sample10 - rotateX</a></li>
                         <li><a href="#intro11">Sample11 - rotateY</a></li>
                         <li><a href="#intro12">Sample12 - rotate3d</a></li>
                         <li><a href="#intro13">Sample13 - skew</a></li>
                         <li><a href="#intro14">Sample14 - skewX</a></li>
                         <li><a href="#intro15">Sample15 - skewY</a></li>
-                        <li><a href="#intro16">Sample16 - transform-origin</a></li>
-                        <li><a href="#intro17">Sample17 - transform-origin</a></li>
+                        <li><a href="#intro16">Sample16 - transform-origin X100%</a></li>
+                        <li><a href="#intro17">Sample17 - transform-origin Y100%</a></li>
                         <li><a href="#intro18">Sample18 - transform-origin</a></li>
-                        <li><a href="#intro19">Sample18 - transform-rotate3d+origin right</a></li>
-                        <li><a href="#intro20">Sample18 - transform-rotate3d+origin right</a></li>
+                        <li><a href="#intro19">Sample19 - transform-rotate3d+origin right</a></li>
+                        <li><a href="#intro20">Sample20 - transform-rotate3d+origin left</a></li>
                     </ul>
                 </div>
             </div>
