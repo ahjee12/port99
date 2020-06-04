@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;0,800;1,200;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- 파비콘 -->
+    <!--500*500/128*128-->
+    <link rel="shortcut icon" href="../assets/ico/favicon_circle_128.svg">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon_circle_128.svg">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="16x16">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="32x32">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="48x48">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
+
+    <title>Mouse-Effect01</title>
+    <style>
+        @font-face { font-family: 'DWImpactamin'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff') format('woff'); font-weight: normal; font-style: normal; }
+        *{margin:0; padding:0; box-sizing: 0;}
+        a{text-decoration: none; color:#666;}
+        img{width:100%; vertical-align: top;}
+
+        body{
+            background: url(img/1.jpg) no-repeat;
+            background-size: cover;
+            font-family: 'Poppins','DWImpactamin';
+            /* padding: 20px; */
+            color: #fff;
+            height:100vh;
+        }
+        body::before{
+            content: '';
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: -1;
+        }
+        .info{
+            position: absolute; left: 0; top: 0; z-index: 1000;
+        }
+        .info h1{ padding: 20px; font-size: 3vw;}
+        .info p{padding: 0 20px; font-size: 3vw;}
+        .info ul{padding: 0 20px; font-size: 20px;}
+        .info ul li{
+            list-style: none;
+        }
+        .info2{
+            position: absolute; right: 2vw; top: 50%; z-index: 1001;
+            transform: translateY(-50%);
+        }
+        .info2 ul{
+            list-style: none;
+        }
+        .info2 ul li{
+           
+        }
+        .info2 ul li a{
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+        .info2 ul li.active a{
+            /* border-bottom: 2px dashed #fff; */
+            color: #000;
+        }
+        /* q */
+        .info3 {
+            position: absolute; left:2vw; top: 50%; transform: translateY(-50%);
+           z-index: 1002;
+        }
+        .info3 ul{
+            list-style: none; 
+        }
+        .info3 ul li{
+            font-size: 35px;
+            font-weight: bold;
+            /* position: relative; */
+        }
+        /* .info3 ul li::before{
+            content: ''; position: absolute; left: 0; top: -20%;
+        } */
+        .contents{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%; height: 100vh; 
+        }
+        .contents p{
+            max-width: 80vw; font-size: 3vw; line-height: 1.5;  
+
+        }
+        .contents p a{
+           color: orange;  border-bottom: 4px dashed orange;
+
+        }
+        .cursor{
+            position: absolute; 
+            left:0; top:0;
+            width:50px; height:50px;
+            border-radius: 50%;
+            border:3px solid #fff;
+            background-color : rgba(255,255,255,0.1);
+            z-index:1000;
+            user-select: none;
+            pointer-events: none;
+        }
+
+    </style> 
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse-Effect01</h1>
+        <p>마우스 따라다니기</p>
+        <ul>
+            <li>----------</li>
+        </ul>
+    </div>
+    <div class="info2">
+        <ul>
+            <li  class="active"><a href="#">mouse-effect01</a></li>
+            <li><a href="mouse-effect02.html">mouse-effect02</a></li>
+            <li><a href="mouse-effect03.html">mouse-effect03</a></li>
+            <li><a href="mouse-effect04.html">mouse-effect04</a></li>
+            <li><a href="mouse-effect05.html">mouse-effect05</a></li>
+            <li><a href="mouse-effect06.html">mouse-effect06</a></li>
+            <li><a href="mouse-effect07.html">mouse-effect07</a></li>
+            <li><a href="mouse-effect08.html">mouse-effect08</a></li>
+            <li><a href="mouse-effect09.html">mouse-effect09</a></li>
+            <li><a href="mouse-effect10.html">mouse-effect10</a></li>
+        </ul>
+    </div>
+    
+    <div class="info3">
+        <ul>
+            <li>clientX <span class="clientX">0</span>
+                <ul>
+                    <!-- <li>브라우저 페이지에서의 X좌표 위치를 반환, 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.</li> -->
+                </ul>
+            </li>
+            <li>clientY <span class="clientY">0</span>
+                <ul>
+                    <!-- <li>: 브라우저 페이지에서의 Y좌표 위치를 반환, 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.</li> -->
+                </ul>
+            </li>
+            <li>offsetX <span class="offsetX">0</span>
+            
+            </li>
+            <li>offsetY <span class="offsetY">0</span>
+            
+            </li>
+            <li>pageX <span class="pageX">0</span>
+            
+            </li>
+            <li>pageY <span class="pageY">0</span>
+            
+            </li>
+            <li>screenX <span class="screenX">0</span>
+            
+            </li>
+            <li>screenY <span class="screenY">0</span>
+            
+            </li>
+        </ul>
+    </div>
+      <!--
+        clientX : 브라우저 페이지에서의 X좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+        clientY : 브라우저 페이지에서의 Y좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+
+        offsetX : 이벤트 대상 객체에서의 상대적 마우스 x좌표 위치를 반환합니다.
+        offsetY : 이벤트 대상 객체에서의 상대적 마우스 y좌표 위치를 반환합니다.
+
+        pageX : 브라우저 페이지에서의 x좌표 위치를 반환합니다.
+        pageY : 브라우저 페이지에서의 Y좌표 위치를 반환합니다.
+
+        screenX : 전체 모니터 스크린에서의 x좌표 위치를 반환합니다.
+        screenY : 전체 모니터 스크린에서의 y좌표 위치를 반환합니다.
+    -->
+
+    <!--contents-->
+    <div class="cursor">
+
+    </div>
+    <div class="contents">
+       <p>To climb steep hills requires <a>slow</a> pace at first</p> 
+       <p>험준한 산을 오르기 위해선 먼저 <a>천천히</a> 걸어야 한다</p>
+    </div>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        // $("body, html").mousemove(function(event){
+        //     $(".clientX").text(event.clientX);
+        //     $(".clientY").text(event.clientY);
+        //     $(".offsetX").text(event.offsetX);
+        //     $(".offsetY").text(event.offsetY);
+        //     $(".pageX").text(event.pageX);
+        //     $(".pageY").text(event.pageY);
+        //     $(".screenX").text(event.screenX);
+        //     $(".screenY").text(event.screenY);
+        // })
+        
+        // let info3 = document.querySelectorAll(".info3 > ul > li")
+        // body.array.forEach(element => {
+        //     this.addEventListener("mousemove",function(){
+        //         info3[i].textContent = 같은 내용이면 가능!!
+        //     })
+        // });
+        let body = document.querySelector("body, html");
+        body.addEventListener("mousemove",function(event){
+            document.querySelector(".clientX").textContent = event.clientX;
+            document.querySelector(".clientY").textContent = event.clientY;
+            document.querySelector(".offsetX").textContent = event.offsetX;
+            document.querySelector(".offsetY").textContent = event.offsetY;
+            document.querySelector(".pageX").textContent = event.pageX;
+            document.querySelector(".pageY").textContent = event.pageY;
+            document.querySelector(".screenX").textContent = event.screenX;
+            document.querySelector(".screenY").textContent = event.screenY;
+
+            $(".cursor").css({"left": event.clientX-$(".cursor").width()/2, "top": event.clientY-$(".cursor").height()/2});
+
+            // if($(".contents a").hover()){
+            //     $(".cursor").css({bordercolor : "orange"});
+            // }else{
+            //     $(".cursor").css({bordercolor : "white"});
+            // }
+            // console.log($(".contents a").hover());
+
+            $(".contents a").hover(function(){
+                // console.log("eeee");
+                $(".cursor").css({borderColor : "orange"});
+            },function(){
+                $(".cursor").css({borderColor : "white"});
+            });
+
+        })
+
+        
+        
+    </script>
+</body>
+</html>

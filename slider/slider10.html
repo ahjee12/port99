@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- 파비콘 -->
+    <!-- 파비콘 -->
     <!--500*500/128*128-->
     <link rel="shortcut icon" href="../assets/ico/favicon_circle_128.svg">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon_circle_128.svg">
@@ -13,59 +14,99 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="48x48">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
-    
+
     <title>Slider Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <style>
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-        a {text-decoration: none; color: #fff;}
-        img {width: 100%; vertical-align: top;}
-        li {list-style: none;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+        }
 
         body {}
 
         #nav {
-            position: fixed; left: 0; top: 0; width: 100%; background: #fff; z-index: 1000;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 1000;
             display: flex;
             font-family: "Roboto";
             padding: 0 7vw;
         }
+
         #nav .menu {
             flex: 1 1 0;
         }
+
         #nav .menu li {
-            display: inline-block; 
-            margin:  2.5vw 1vw 2.5vw 0;
+            display: inline-block;
+            margin: 2.5vw 1vw 2.5vw 0;
             /* height: 100px; line-height: 100px; */
             /* padding-right: 10px; */
         }
-        #nav .menu li.active a {font-weight: bold;} 
-        #nav .menu a {color: #000; font-size: 14px;}
 
-        #nav h1 { 
+        #nav .menu li.active a {
+            font-weight: bold;
+        }
+
+        #nav .menu a {
+            color: #000;
+            font-size: 14px;
+        }
+
+        #nav h1 {
             flex: 1 1 0;
             /* height: 100px; line-height: 100px;  */
-            font-weight: 700; 
-            letter-spacing: 10px; font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 10px;
+            font-size: 14px;
             text-transform: uppercase;
             text-align: center;
             margin: 2.5vw 1vw;
         }
+
         #nav .ham {
-            flex: 1 1 0; position: relative;
+            flex: 1 1 0;
+            position: relative;
         }
-        #nav .ham .bar { 
-            position: absolute; right: 0; top: 50%; transform: translateY(-50%);
-            width: 50px; height: 50px; 
+
+        #nav .ham .bar {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
             cursor: pointer;
             /* padding-top: 23px; */
             /* padding-left: 10px; */
             /* margin-left: auto; */
             /* margin-top: 23px; */
         }
+
         #nav .ham .bar span {
             width: 30px;
             height: 3px;
@@ -77,29 +118,46 @@
             margin-left: 10px;
 
         }
+
         #nav .ham .bar span::before {
             content: '';
             width: 50%;
             height: 3px;
             background: #000;
-            position: absolute; top: -10px; left: 0;
+            position: absolute;
+            top: -10px;
+            left: 0;
             transform-origin: left;
             transition: all 0.5s ease;
         }
+
         #nav .ham .bar span::after {
             content: '';
             width: 50%;
             height: 3px;
             background: #000;
-            position: absolute; bottom: -10px; right: 0;
+            position: absolute;
+            bottom: -10px;
+            right: 0;
             transform-origin: right;
             transition: all 0.5s ease;
         }
-        #nav .ham .bar.on span {transform: rotate(135deg);}
-        #nav .ham .bar.on span::before {top:0; transform: translateX(100%) rotate(-90deg);}
-        #nav .ham .bar.on span::after {bottom:0; transform:  translateX(-100%) rotate(-90deg);}
 
-        
+        #nav .ham .bar.on span {
+            transform: rotate(135deg);
+        }
+
+        #nav .ham .bar.on span::before {
+            top: 0;
+            transform: translateX(100%) rotate(-90deg);
+        }
+
+        #nav .ham .bar.on span::after {
+            bottom: 0;
+            transform: translateX(-100%) rotate(-90deg);
+        }
+
+
         /*slider-wrap*/
         /* .slide-wrap{position: relative; height: 100vh;}
         .side-img{width: 100%; height: 100%;}
@@ -115,31 +173,182 @@
 
         .slide-img .slide.s1{background: #fcefe9;} */
 
-         /* slide-wrap */
-        .slide-wrap {position:relative; height:100vh; overflow: hidden;}
-        .slide-img {width:100%; height:100%; position: relative;}
-        .slide-img .slide{position:absolute; width:100%; height:100%; overflow: hidden;}
-        .slide-img .slide .stext{
+        /* slide-wrap */
+        .slide-wrap {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide-img .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slide-img .slide .stext {
             font-family: 'Roboto';
             text-transform: uppercase;
-            position:absolute; left: 50%;top: 50%;transform: translate(-50%,-50%) scale(0.8);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
             /* letter-spacing: 0.2em;
             font-weight: 700;
             font-size: 7vw; color:#fff; */
         }
+
         /* 텍스트 효과 */
-        .slide-img .slide .stext h2{
-            font-size: 11vw; color:#fff; line-height: 8vw; padding-top: 0.1vw;
+        .slide-img .slide .stext h2 {
+            font-size: 11vw;
+            color: #fff;
+            line-height: 8vw;
+            padding-top: 0.1vw;
             font-family: 'Roboto';
             letter-spacing: 0.1em;
             overflow: hidden;
             display: flex;
         }
-        .slide-img .slide .stext h2 span{
-            transform: translateY(200px);
+
+        .slide-img .slide .stext h2 span {
+            /* transform: translateY(102%); */
+            opacity: 0;
+            transform: translate(150px, 350px);
+            transform-origin: bottom left;
+            transition: all 1s ease;
         }
-        .slide-img .slide .simg{position: absolute; left: 50%;top: 50%; transform: translate(-50%, -50%);}
-        .slide-img .slide .simg img{max-width : 500px;}
+
+        .slide-img .slide.active .stext h2 span {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(2) {
+            transition-delay: 0.10s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(3) {
+            transition-delay: 0.15s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(4) {
+            transition-delay: 0.20s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(5) {
+            transition-delay: 0.25s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(6) {
+            transition-delay: 0.30s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(8) {
+            transition-delay: 0.35s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(9) {
+            transition-delay: 0.40s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(10) {
+            transition-delay: 0.45s;
+        }
+
+        .slide-img .slide.active .stext h2 span:nth-child(11) {
+            transition-delay: 0.50s;
+        }
+
+
+        .slide-img .slide .simg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* top: -100%; */
+            transform: translate(-50%, -50%);
+        }
+        .slide-img .slide.active .simg{
+            /* top: 50%; */
+        }
+        .slide-img .slide .simg img {
+            max-width: 500px;
+        }
+        .slide-img .slide.active .simg img {
+            animation: bounce 1s;
+            /* transform: translateY(0%); */
+        }
+        /* @keyframes bounce {
+
+            from,
+            20%,
+            53%,
+            to {
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform: translateY(-200%)  translate3d(0, 0, 0);
+            }
+
+            40%,
+            43% {
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                transform: translateY(50%) translate3d(0, -100px, 0) scaleY(1);
+            }
+
+            70% {
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                transform: translate3d(0, -50px, 0) scaleY(1.05);
+            }
+
+            80% {
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform: translate3d(0, 0, 0) scaleY(0.95);
+            }
+
+            90% {
+                transform:  translate3d(0, -20px, 0) scaleY(1.02);
+            }
+        } */
+        @keyframes bounce {
+
+            from,
+            20%,
+            53%,
+            to {
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform:   translate3d(0, 0, 0);
+            }
+
+            40%,
+            43% {
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                transform: translate3d(0, -100px, 0) scaleY(1.5);
+            }
+
+            70% {
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                transform: translate3d(0, -50px, 0) scaleY(1.05);
+            }
+
+            80% {
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform: translate3d(0, 0, 0) scaleY(0.95);
+            }
+
+            90% {
+                transform:  translate3d(0, -20px, 0) scaleY(1.02);
+            }
+            100%{}
+        }
 
         /* .slide-img .slide.s1 {background : #fcefe9;}
         .slide-img .slide.s2 {background: #e9effd;}
@@ -148,70 +357,152 @@
         .slide-img .slide.s5 {background: #ccebea;}
         .slide-img .slide.s6 {background: #e9effd;}
         .slide-img .slide.s7 {background: #f4f2ec;} */
-  
-        .slide-img .slide .snum{
-            position: absolute; left: 7.5vw; top: 11vh;
-            font-size: 5vw; color: #000;
+        
+
+        .slide-img .slide .snum {
+            position: absolute;
+            left: 7.5vw;
+            top: 11vh;
+            font-size: 5vw;
+            color: #000;
             font-family: "Playfair Display";
-            font-style: italic; 
+            font-style: italic;
+            /* position: relative; */
         }
-        .slide-img .slide .snum .currentIndex{
-            margin-right: 4.5vw; position: relative;
+        .slide-img .slide .snum::before{
+            content: '';  position: absolute; left: 0; top: 1.8vw;
+            background: #fff; width: 100%; height: 3.5vw; padding: 10px; z-index: 1;
+            transform: scaleX(0);
         }
-        .slide-img .slide .snum .currentIndex::before{
-            content: ''; width: 4vw; height: 2px; background: #000; position: absolute; right: -5.3vw; bottom: 2.5vw;
+        .slide-img .slide.active .snum::before{
+            animation: number 0.7s 0.6s ease;
+        }
+        @keyframes number{
+            0%{transform-origin: left; transform : scaleX(0);}
+            50%{transform-origin: left; transform : scaleX(1);}
+            51%{transform-origin: right; transform : scaleX(1);}
+            100%{transform-origin: right; transform : scaleX(0);}
+        }
+        .slide-img .slide .snum span{
+            opacity: 0;
+            transition: opacity 0.1s 1.2s ease;
+        }
+        .slide-img .slide.active .snum span{
+            opacity: 1;
+        }
+        .slide-img .slide .snum .currentIndex {
+            margin-right: 4.5vw;
+            position: relative;
+        }
+
+        .slide-img .slide .snum .currentIndex::before {
+            content: '';
+            width: 4vw;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            right: -5.3vw;
+            bottom: 2.5vw;
         }
 
         /*slide-dot*/
-        .slide-dot{
-            position: absolute; left: 50%; transform: translateX(-50%);
-            bottom: 0; width: 100%; background: #fff; text-align: center; 
+        .slide-dot {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100%;
+            background: #fff;
+            text-align: center;
             /* height: 100px; line-height: 100px; */
         }
-        .slide-dot a{
-            color: #000; display: inline-block; width: 25px; height: 25px; border-radius: 50%;
-            margin: 50px 20px; border: 1px solid #ccc; text-indent: -9999px; transform: all 0.3s ease; 
-            line-height: 25px;
-          
-        }
-        .slide-dot a.active{ 
-            
-            border: 3px  solid #ccc; 
-            /* box-sizing: border-box; */
-            text-indent: 0; 
-            color: #000; font-family: "Playfair Display";
-            font-style: italic; font-size: 20px; text-align: center;
-            }
 
+        .slide-dot a {
+
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin: 50px 20px;
+            border: 1px solid #ccc;
+            text-indent: -9999px;
+            transform: all 0.3s ease;
+            overflow: hidden;
+
+        }
+        .slide-dot a.active {
+            border: 3px solid #ccc;
+            /* box-sizing: border-box; */
+            text-indent: 0;
+            color: #000;
+            font-family: "Playfair Display";
+            font-style: italic;
+            font-size: 20px;
+            text-align: center;
+        }
+        .slide-dot a span{
+
+        }
         /*slide-btn*/
         /* .slide-btn{};
         .slide-btn a{position: absolute; top: 0; z-index: 2000;}
         .slide-btn a.prev{left: 0; width: 100px; height: 100vh; background: #ccc;}
         .slide-btn a.next{right: 0; width: 100px; height: 100vh; background: #ccc;} */
-        .slide-btn { }
-        .slide-btn a {position: absolute; top: 0; z-index: 2000;}
-        .slide-btn a.prev {left: 0; width: 5.2vw; height: 100vh; background: #fff;}
-        .slide-btn a.next {right: 0; width: 5.2vw; height: 100vh; background: #fff;}
+        .slide-btn {}
+
+        .slide-btn a {
+            position: absolute;
+            top: 0;
+            z-index: 2000;
+        }
+
+        .slide-btn a.prev {
+            left: 0;
+            width: 5.2vw;
+            height: 100vh;
+            background: #fff;
+        }
+
+        .slide-btn a.next {
+            right: 0;
+            width: 5.2vw;
+            height: 100vh;
+            background: #fff;
+        }
 
         .slide-btn a.prev::before {
             content: '';
-            width: 10px; height: 2px; background: #000;
-            position: absolute; bottom: 3vw; left: 2.4vw;
+            width: 10px;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            bottom: 3vw;
+            left: 2.4vw;
             border-radius: 10px;
             transform: rotate(-45deg);
             transform-origin: left;
         }
+
         .slide-btn a.prev::after {
             content: '';
-            width: 10px; height: 2px; background: #000;
-            position: absolute; bottom: 3vw; left: 2.4vw;
+            width: 10px;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            bottom: 3vw;
+            left: 2.4vw;
             border-radius: 10px;
             transform: rotate(45deg);
             transform-origin: left;
         }
-
     </style>
 </head>
+
 <body>
     <nav id="nav">
         <ul class="menu">
@@ -227,7 +518,7 @@
         </div>
     </nav>
     <!-- //nav -->
-    
+
     <section id="contents">
         <div class="slide-wrap">
             <div class="slide-img">
@@ -328,12 +619,12 @@
         </div>
     </section>
 
-
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script>
-          $(".slide-wrap").append("<div class='slide-dot'></div>");
-          $(".slide-wrap").append("<div class='slide-btn'><a href = '#' class='prev'></a><a href = '#' class='next'></a></div>");
+        $(".slide-wrap").append("<div class='slide-dot'></div>");
+        $(".slide-wrap").append(
+            "<div class='slide-btn'><a href = '#' class='prev'></a><a href = '#' class='next'></a></div>");
         const slideWrap = $(".slide-wrap");
         const slideImg = $(".slide-img");
         const slide = $(".slide");
@@ -346,55 +637,62 @@
         let dotIndex = "";
         let duration = 1000;
         let easing = "easeOutExpo";
-        slideBg = ["#fcefe9","#e9effd"," #fae3f5"," #fbe368"," #ccebea","#e9effd","f4f2ec"];
-        
+        slideBg = ["#fcefe9", "#e9effd", " #fae3f5", " #fbe368", " #ccebea", "#e9effd", "#f4f2ec"];
+
         //햄버거 메뉴
-        $("#nav .ham .bar").click(function(){
+        $("#nav .ham .bar").click(function () {
             $(this).toggleClass("on")
         });
 
         //이미지 움직이기
-        function gotoSlide(num){
-            slideImg.animate({left: -100*num+"%"},400,easing);
+        function gotoSlide(num) {
+            slideImg.animate({
+                left: -100 * num + "%"
+            }, 400, easing);
             currentIndex = num;
             updateDot()
         }
         // slideDot.find("a").eq(0).addClass("active");
-        function updateDot(){
+        function updateDot() {
             slideDot.find("a").removeClass().eq(currentIndex).addClass("active");
             slide.removeClass("active").eq(currentIndex).addClass("active");
-        }   
+        }
 
         // gotoSlide(0);
-         //버튼 클릭하기
-         slideBtn.on("click","a",function(){
+        //버튼 클릭하기
+        slideBtn.on("click", "a", function () {
             //1,2,3,4,
-            let nextIndex = (currentIndex + 1)%slideCount; 
-            let prevIndex = (currentIndex - 1)%slideCount;
+            let nextIndex = (currentIndex + 1) % slideCount;
+            let prevIndex = (currentIndex - 1) % slideCount;
             // console.log("nextIndex:"+nextIndex);
-            if(currentIndex == 0) prevIndex = slideCount -1;
+            if (currentIndex == 0) prevIndex = slideCount - 1;
             // const prevIndex = ;
-            if($(this).hasClass("prev")){
+            if ($(this).hasClass("prev")) {
                 //왼쪽 버튼
                 gotoSlide(prevIndex);
-            }else{
+            } else {
                 //오른쪽 버튼
                 gotoSlide(nextIndex);
             }
         })
 
+      
         //슬라이드에 배경색 설정
-        slide.each(function(i){
-            $(this).css({background:slideBg[i]});
+        slide.each(function (i) {
+            $(this).css({
+                background: slideBg[i]
+            });
         })
 
-    
+
         //각 이미지 absolute left 0 left 100% left 200%;
         //슬라이드 닷버튼 생성
-        slide.each(function(i){
-            $(this).css({left:i*100+"%"});
-           
-            dotIndex +="<a href ='#'></a>";
+        slide.each(function (i) {
+            $(this).css({
+                left: i * 100 + "%"
+            });
+
+            dotIndex += "<a href ='#'><span>"+0+(i+1)+"</span></a>";
             slideDot.html(dotIndex);
         });
 
@@ -407,11 +705,7 @@
             split = "<span aria-hidden='true'>" + split + "</span>";
             $(this).find(".stext > h2").html(split).attr("aria-label", text);
         })
-
-          
-       
-      
-
     </script>
 </body>
+
 </html>
