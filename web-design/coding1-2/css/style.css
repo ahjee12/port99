@@ -1,0 +1,101 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; font-style: normal; color: black;}
+ul, li{list-style: none;}
+em{font-style: normal;}
+.clearfix::before, .clearfix::after{content: ''; display: block; clear: both;}
+
+#wrap{position: relative;}
+.wrap-container{ width: 1200px; margin: 0 auto;}
+
+/*헤더*/
+header{display: flex; justify-content: space-between; height:100px;}
+header .logo{width:160px;}
+header .logo img{width:100%;}
+header ul.mainmenu{width: 900px; display: flex;}
+header ul.mainmenu > li{
+    flex-basis: 20%;
+    margin-top: 60px;font-weight: bold; 
+    font-size: 23px; background-color: rgb(229, 240, 202); text-align: center;
+}
+header ul.mainmenu > li:hover{background-color: rgb(255, 255, 255);}
+header ul li a{display: block; height: 100%; display: flex; justify-content: center; align-items: center;}
+header ul li a:hover{}
+header ul li ul{position: relative; z-index: 1; width: 100%; top: 10px;}
+header ul li ul li{background-color: rgb(245, 38, 159); font-size: 23px; font-weight: bold;}
+header ul li ul li:hover{background-color: rgb(241, 243, 129);}
+header ul li ul a{ display: block;}
+
+/*배너*/
+.banner{margin-bottom: 20px; overflow: hidden;}
+.banner .slider-img{display: flex; position: relative;}
+.banner img{width: 1200px;}
+
+/*뉴스*/
+section.news{}
+section.news{}
+section.news .news-list{height: 300px;}
+
+section.news .news-list .col1{width: 49%; margin-right: 2%; float: left;}
+section.news .news-list .col1 .col1-box{border: 1px solid #000; height: 266.64px; box-sizing: border-box; padding: 30px;}
+
+.news-list .col1 .col1-box { position: relative;}
+
+.news-list .col1 .col1-box ul{}
+.news-list .col1 .col1-box ul li{display: inline; padding-bottom: 10px;}
+.news-list .col1 .col1-box ul li a{  font-weight: bold; font-size: 1.5em; padding: 20px 0; }
+/* .news-list .col1 .col1-box ul li ul{ display: none;} */
+
+.news-list .col1 .col1-box ul li ul{
+    position: absolute; left: 0; bottom: 0; width: 100%; padding: 0 30px 30px 30px; box-sizing: border-box;
+}
+.news-list .col1 .col1-box ul li ul div{line-height: 4vh;}
+.news-list .col1 .col1-box ul li ul div a{width: 70%; font-weight: unset; font-size: 20px;}
+.news-list .col1 .col1-box ul li ul div span{width: 30%; float: right; text-align: right; font-size: 20px;}
+
+.news-list .col1 .col1-box .more span{position: absolute; right: 75px; top: 35px;}
+.news-list .col1 .col1-box .more img{position: absolute; right: 25px; top: 25px;}
+
+/*뉴스-광고*/
+.news-list .col2{width: 49%; float: left;}
+.news-list .col2 .col2-box{border: 1px solid #000;}
+.news-list .col2 .col2-box:hover{cursor: pointer;}
+.news-list .col2 .col2-box img{width: 100%;}
+.news-list .col2 .col2-box.popup{
+    position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 700px; display: none;
+}
+.news-list .col2 .col2-box.popup:hover{cursor: pointer;}
+
+/*스폐셜 프로그램*/
+section.special-program{ margin-bottom: 50px;}
+section.special-program h2{padding-bottom: 20px;}
+section.special-program .special-program{}
+.special-program-list{height: 350px;}
+.special-program-list .col{width: 23.5%; float: left; margin-right: 2%;}
+.special-program-list .col:last-child{margin-right: 0;}
+.special-program-list .col .col-box{ border: 1px solid #000;}
+.special-program-list .col .col-box img{width: 100%;}
+.special-program-list .col .col-box p{padding: 20px 0; font-size: 20px;}
+
+/*콘텐츠2*/
+/* .content2{margin-bottom: 20px;}
+.content2 h3{padding-bottom: 10px;}
+.content2 ul{overflow: hidden;}
+.content2 li{float: left; width: 24.25%; height: 350px; margin-right: 1%;}
+.content2 li img{width:100%;}
+.content2 li:last-child{margin-right: 0;} */
+
+.content2 li a{}
+.content2 li a em{padding: 10px;}
+
+footer{margin-bottom: 50px;}
+footer ul{text-transform: uppercase;}
+footer ul.info2{margin-top: 20px;}
+footer ul li{ display: inline; position: relative; color: rgb(112, 112, 112); padding: 10px;}
+footer ul.info1 li{line-height: 25px;}
+footer ul li:nth-of-type(1){ padding-left: 0;}
+footer ul li:nth-of-type(3){ padding-left: 0;}
+footer ul li::before{ content: ''; position: absolute; left: 0; top: 13px; width: 1px; height: 17px; background-color: rgb(112, 112, 112);}
+footer ul li:nth-child(1)::before{width: 0; height: 0;}
+footer ul li:nth-of-type(3)::before{width: 0; height: 0;}
+/* footer ul li:nth-child(4)::before{width: 0; height: 0;} */
+

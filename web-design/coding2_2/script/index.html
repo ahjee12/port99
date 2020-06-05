@@ -154,11 +154,11 @@
     <script src="../assets/js/jquery.min_1.12.4.js"></script>
     <script>
         //네비게이션
-        $("nav > ul > li").mouseover(function(){
+        $("nav > ul > li> a").mouseover(function(){
             $(this).find(".submenu").stop().slideDown(300);
 
         })
-        $("nav > ul > li").mouseout(function(){
+        $("nav > ul > li> a").mouseout(function(){
             $(this).find(".submenu").stop().slideUp(300);
 
         })
