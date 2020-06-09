@@ -19,7 +19,7 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
 
-    <title>Mouse-Effect01</title>
+    <title>Mouse-Effect03</title>
     <style>
         @font-face {
             font-family: 'DWImpactamin';
@@ -87,8 +87,11 @@
         .info p {
             padding: 0 20px;
             font-size: 3vw;
+            /* font-weight: bold; */
         }
-
+        .info p span{
+            font-weight: bold;
+        }
         .info ul {
             padding: 0 20px;
             font-size: 20px;
@@ -145,6 +148,7 @@
         /* .info3 ul li::before{
             content: ''; position: absolute; left: 0; top: -20%;
         } */
+        /*-----------------------------contents-----------------------------*/
         .contents {
             display: flex;
             justify-content: center;
@@ -153,41 +157,101 @@
             width: 100%;
             height: 100vh;
         }
-
-        .contents p {
+        /* .contents p {
             max-width: 80vw;
             font-size: 6vw;
             line-height: 1.5;
             font-family: 'ghanachoco'
-
         }
-
         .contents p a {
-            color: rgb(146, 49, 25);
+            color: rgb(158, 79, 60);
             border-bottom: 4px dashed rgb(146, 49, 25);
-
         }
-
+        .contents p a.contents-1{
+            color: rgb(26, 44, 31);
+            border-bottom: 4px dashed rgb(26, 44, 31);
+        } */
+        .move-image{
+            position: absolute; left: 50%; top: 50%; 
+            /* transform: translate(-50%,-50%)perspective(600px) rotateX(10deg) rotateY(10deg); */
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+        .mtext{
+            font-family: 'ghanachoco';
+            font-size: 5vw;
+            position: absolute; left: 50%; top: 50%;
+            transform: translate3d(-50%,-50%,100px);
+            /* transform: translate3d(-50%, 50%, 100px); */
+            padding: 20px;
+            background: rgb(70, 6, 112);
+            text-align: center;
+        }
+        .mimg{
+            border-radius: 5px;
+            position:relative;
+        }
+        .mimg::before{
+            content : '';
+            position:absolute;
+            left: 0px; bottom: -450px;
+            width: 100%; height:400px;
+            /* Q */
+            z-index: -1;
+            background : url(img/12.jpg) no-repeat;
+            background-size: 100% 400px;
+            filter : blur(10px);
+        }
+         /*---------------------------cursor-----------------------*/
         .cursor {
             position: absolute;
             left: 0;
             top: 0;
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            border: 3px solid #fff;
-            background-color: rgba(255, 255, 255, 0.1);
-            z-index: 1000;
+            /* border: 3px solid #fff; */
+            background-color: rgba(255, 255, 255, 1);
+            mix-blend-mode: difference;
+            z-index: 20000;
             user-select: none;
             pointer-events: none;
+            transform: scale(1);
+            transition:transform 0.3s ease-in-out, opacity 0.2s ease-in-out;  
         }
 
         .cursor.active {
-            border-color: rgb(146, 49, 25);
-            background-color: rgba(96, 80, 151, 0.63);
+            /* border-color: rgb(146, 49, 25); */
+            /* background-color: rgba(96, 80, 151, 0.63); */
             /* background-color : */
+            /* opacity: .5; */
+            transform: scale(5);
+        }
+        .cursor .mouse{
+            position: absolute; top: 100%;
+            color: rgb(255, 0, 0);
+        }
+        .cursor.active .mouse{  
+            position: absolute; top: -40%; 
+            transform: scale(0.2);
         }
 
+        /* .cursor-follower{
+            position: absolute;
+            width: 30px; height: 30px;
+            background : rgba(255,255,255,0.3);
+            border-radius : 50%;
+            user-select : none;
+            pointer-events: none;
+            transition:transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+        }
+        .cursor-follower.active{
+            opacity: .7;
+            transform:scale(4);
+        } */
+        .cursor .mouse{
+            color: #fff;
+        }
         /*---------------------------modal---------------------*/
         .info4 {
             position: absolute;
@@ -225,6 +289,7 @@
             top: 0;
             width: 100%;
             height: 100%;
+            z-index: 10000;
             /* z-index: -1; */
         }
 
@@ -253,18 +318,18 @@
 
 <body>
     <div class="info">
-        <h1>Mouse-Effect01</h1>
-        <p>마우스 따라다니기</p>
+        <h1>Mouse-Effect04</h1>
+        <p><span></span>효과</p>
         <ul>
             <li>----------</li>
         </ul>
     </div>
     <div class="info2">
         <ul>
-            <li class="active"><a href="#">mouse-effect01</a></li>
+            <li><a href="mouse-effect01.html">mouse-effect01</a></li>
             <li><a href="mouse-effect02.html">mouse-effect02</a></li>
-            <li><a href="mouse-effect03.html">mouse-effect03</a></li>
-            <li><a href="mouse-effect04.html">mouse-effect04</a></li>
+            <li><a href="mouse-effect3.html">mouse-effect03</a></li>
+            <li class="active"><a href="#">mouse-effect04</a></li>
             <li><a href="mouse-effect05.html">mouse-effect05</a></li>
             <li><a href="mouse-effect06.html">mouse-effect06</a></li>
             <li><a href="mouse-effect07.html">mouse-effect07</a></li>
@@ -304,6 +369,18 @@
             <li>screenY <span class="screenY">0</span>
 
             </li>
+            <li>mouseX <span class="mouseX">0</span>
+
+            </li>
+            <li>mouseY <span class="mouseY">0</span>
+
+            </li>
+            <li>angleX <span class="angleX">0</span>
+
+            </li>
+            <li>angleY <span class="angleY">0</span>
+
+            </li>
         </ul>
     </div>
 
@@ -319,24 +396,62 @@
             <pre class="line-numbers">
                 <code class="language-markup">
 &lt;script&gt;
-//jquery
-// $("body, html").mousemove(function(event){
-//     $(".clientX").text(event.clientX);
-//     $(".clientY").text(event.clientY);
-//     $(".offsetX").text(event.offsetX);
-//     $(".offsetY").text(event.offsetY);
-//     $(".pageX").text(event.pageX);
-//     $(".pageY").text(event.pageY);
-//     $(".screenX").text(event.screenX);
-//     $(".screenY").text(event.screenY);
-// })
+const cursor = $(".cursor");
+const follwer = $(".cursor-follower");
+let x = 0;
+let y = 0;
+let newX = 0;
+let newY = 0;
+let newX2 = 0;
+let newY2 = 0;
+let fmouseX = 0;
+let fmouseY = 0;
+//gsap 애니메이션으로 원형 커서 움직이기
+$(document).mousemove(function(e){
+    x = e.pageX;
+    y = e.pageY;
+    //move-image클래스 이미지 가운데
+    newX = x - $(window).width()/2;
+    newY = y - $(window).height()/2;
 
-// let info3 = document.querySelectorAll(".info3 > ul > li")
-// body.array.forEach(element => {
-//     this.addEventListener("mousemove",function(){
-//         info3[i].textContent = 같은 내용이면 가능!!
-//     })
-// });
+    //최대 최저
+    //let max = Math .max(100,200);
+    //let arr = [100,200,300];
+    //let max = Math.ceil(0.95);
+
+    //move-image클래스 이미지 가운데
+    newX2 = Math.max(-100,Math.min(100,$(window).width()/2 - x));
+    newY2 = Math.max(-100,Math.min(100,$(window).height()/2 - y));
+
+    //부드럽게
+    angleX = (12*newX2)/100;
+    angleY = (12*newY2)/100;
+    fmouseX += (angleX - fmouseX)*1/8;
+    fmouseY += (angleY - fmouseY)*1/8;
+
+    //원형 커서 움직임
+    gsap.to(cursor,0.4,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
+    // gsap.to(follwer,0.8,{left :e.pageX-(follwer.width()/2), top:e.pageY - (follwer.height()/2)})    
+
+    //move-image클래스 이미지 가운데 마우스 x, y 값이 각 각 0이 되도록 함
+    document.querySelectorAll(".mouseX").forEach(function(element){
+        element.textContent = newX;
+    })
+    document.querySelectorAll(".mouseY").forEach(function(element){
+        element.textContent = newY;
+    })
+    //anglex, angley
+
+
+    //move-image클래스 이미지 회전 newX, newY이용
+    $(".move-image").css({"transform": "translate(-50%,-50%) perspective(600px) rotateX("+fmouseY+"deg) rotateY("+-fmouseX+"deg)"});
+});
+
+// 출력용
+$(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
+    $(".pageX").text(e.pageX);  //이벤트 pageX값을 화면에 출력
+    $(".pageY").text(e.pageY);  //이벤트 pageX값을 화면에 출력
+});
 
 //javascript
 let body = document.querySelector("body, html");
@@ -349,19 +464,20 @@ body.addEventListener("mousemove", function (event) {
     document.querySelector(".pageY").textContent = event.pageY;
     document.querySelector(".screenX").textContent = event.screenX;
     document.querySelector(".screenY").textContent = event.screenY;
-
-    //jquery
+   
+    // document.querySelector(".mouseX").textContent = event.pageX -
+    //jquery 원형 커서 움직이기
     // $(".cursor").css({"left": event.clientX-$(".cursor").width()/2, "top": event.clientY-$(".cursor").height()/2});
 
-    //javascript
+    //javascript 원형 커서 움직이기
     // document.querySelector(".cursor").style.left = event.clientX -25 +"px";
     // document.querySelector(".cursor").style.top = event.clientY -25 +"px";
+     //javascript #2 원형 커서 움직이기
+    // let x = event.clientX - 25 + "px";
+    // let y = event.clientY - 25 + "px";
+    // document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y + "";
 
-    let x = event.clientX - 25 + "px";
-    let y = event.clientY - 25 + "px";
-    document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y + "";
-
-    //jquery
+    //jquery 원형 커서에 active클래스 추가, 삭제
     // $(".contents a").hover(function(){
     //     // console.log("eeee");
     //     $(".cursor").addClass("active");
@@ -369,7 +485,7 @@ body.addEventListener("mousemove", function (event) {
     //     $(".cursor").removeClass("active");
     // });
 
-    //javascript
+    //javascript 원형 커서에 active클래스 추가, 삭제
     // document.querySelector(".contents a").addEventListener("mouseenter", ()=>{
     //     document.querySelector(".cursor").classList.add("active");
     // })
@@ -377,17 +493,19 @@ body.addEventListener("mousemove", function (event) {
     //     document.querySelector(".cursor").classList.remove("active");
     // })
 
-    //javescript2 모든 a태그에 적용
+    //javescript#2 원형 커서에 active클래스 추가, 삭제 & 모든 a태그에 적용!!!
     document.querySelectorAll("a").forEach(element => {
         element.addEventListener("mouseenter", () => {
             document.querySelector(".cursor").classList.add("active");
+            document.querySelector(".cursor-follower").classList.add("active");
         })
         element.addEventListener("mouseleave", () => {
             document.querySelector(".cursor").classList.remove("active");
+            document.querySelector(".cursor-follower").classList.remove("active");
         })
     })
 })
-
+//modal 버튼, close버튼 클릭
 $(".btn").click(function () {
     $("#modal").slideDown();
 })
@@ -395,7 +513,6 @@ $(".close").click(function () {
     $("#modal").slideUp();
 })
 &lt;/script&gt;
-
 </code></pre>
         </div>
         <a href="#" class="close">
@@ -422,34 +539,92 @@ $(".close").click(function () {
 
     <!--contents-->
     <div class="cursor">
+        <div class="mouse">
+            <div>mouseX <span class="mouseX">0</span>
 
+            </div>
+            <div>mouseY <span class="mouseY">0</span>
+    
+            </div>
+        </div>
     </div>
+    <div class="cursor-follower"></div>
+
     <div class="contents">
-        <p>Love <a>Yourself</a></p>
-        <p><a href="">자신을</a> 사랑하자</p>
+        <!-- <p>Love <a>Yourself</a></p> -->
+        <!-- <p><a class="contents-1">자신을</a> 사랑하자</p> -->
+        <div class="move-image">
+            <div class="mimg"><img src="img/12.jpg" alt=""></div>
+            <div class="mtext">Love Yourself</div>
+        </div>
+      
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
     <script>
-        //jquery
-        // $("body, html").mousemove(function(event){
-        //     $(".clientX").text(event.clientX);
-        //     $(".clientY").text(event.clientY);
-        //     $(".offsetX").text(event.offsetX);
-        //     $(".offsetY").text(event.offsetY);
-        //     $(".pageX").text(event.pageX);
-        //     $(".pageY").text(event.pageY);
-        //     $(".screenX").text(event.screenX);
-        //     $(".screenY").text(event.screenY);
-        // })
+        const cursor = $(".cursor");
+        const follwer = $(".cursor-follower");
+        let x = 0;
+        let y = 0;
+        let newX = 0;
+        let newY = 0;
+        let newX2 = 0;
+        let newY2 = 0;
+        let fmouseX = 0;
+        let fmouseY = 0;
+        //gsap 애니메이션으로 원형 커서 움직이기
+        $(document).mousemove(function(e){
+            x = e.pageX;
+            y = e.pageY;
+            //move-image클래스 이미지 가운데
+            newX = x - $(window).width()/2;
+            newY = y - $(window).height()/2;
 
-        // let info3 = document.querySelectorAll(".info3 > ul > li")
-        // body.array.forEach(element => {
-        //     this.addEventListener("mousemove",function(){
-        //         info3[i].textContent = 같은 내용이면 가능!!
-        //     })
-        // });
+            //최대 최저
+            //let max = Math .max(100,200);
+            //let arr = [100,200,300];
+            //let max = Math.ceil(0.95);
+
+            //move-image클래스 이미지 가운데
+            newX2 = Math.max(-100,Math.min(100,$(window).width()/2 - x));
+            newY2 = Math.max(-100,Math.min(100,$(window).height()/2 - y));
+
+            //부드럽게
+            angleX = (12*newX2)/100;
+            angleY = (12*newY2)/100;
+            fmouseX += (angleX - fmouseX)*1/8;
+            fmouseY += (angleY - fmouseY)*1/8;
+
+            //원형 커서 움직임
+            gsap.to(cursor,0.4,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
+            // gsap.to(follwer,0.8,{left :e.pageX-(follwer.width()/2), top:e.pageY - (follwer.height()/2)})    
+
+            //move-image클래스 이미지 가운데 마우스 x, y 값이 각 각 0이 되도록 함
+            document.querySelectorAll(".mouseX").forEach(function(element){
+                element.textContent = newX;
+            })
+            document.querySelectorAll(".mouseY").forEach(function(element){
+                element.textContent = newY;
+            })
+            //anglex, angley
+            document.querySelectorAll(".angleX").forEach(function(element){
+                element.textContent = angleX;
+            })
+            document.querySelectorAll(".angleY").forEach(function(element){
+                element.textContent = angleY;
+            })
+
+            //move-image클래스 이미지 회전 newX, newY이용
+            $(".move-image").css({"transform": "translate(-50%,-50%) perspective(600px) rotateX("+fmouseY+"deg) rotateY("+-fmouseX+"deg)"});
+        });
+
+        // 출력용
+        $(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
+            $(".pageX").text(e.pageX);  //이벤트 pageX값을 화면에 출력
+            $(".pageY").text(e.pageY);  //이벤트 pageX값을 화면에 출력
+        });
 
         //javascript
         let body = document.querySelector("body, html");
@@ -462,19 +637,20 @@ $(".close").click(function () {
             document.querySelector(".pageY").textContent = event.pageY;
             document.querySelector(".screenX").textContent = event.screenX;
             document.querySelector(".screenY").textContent = event.screenY;
-
-            //jquery
+           
+            // document.querySelector(".mouseX").textContent = event.pageX -
+            //jquery 원형 커서 움직이기
             // $(".cursor").css({"left": event.clientX-$(".cursor").width()/2, "top": event.clientY-$(".cursor").height()/2});
 
-            //javascript
+            //javascript 원형 커서 움직이기
             // document.querySelector(".cursor").style.left = event.clientX -25 +"px";
             // document.querySelector(".cursor").style.top = event.clientY -25 +"px";
+             //javascript #2 원형 커서 움직이기
+            // let x = event.clientX - 25 + "px";
+            // let y = event.clientY - 25 + "px";
+            // document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y + "";
 
-            let x = event.clientX - 25 + "px";
-            let y = event.clientY - 25 + "px";
-            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y + "";
-
-            //jquery
+            //jquery 원형 커서에 active클래스 추가, 삭제
             // $(".contents a").hover(function(){
             //     // console.log("eeee");
             //     $(".cursor").addClass("active");
@@ -482,7 +658,7 @@ $(".close").click(function () {
             //     $(".cursor").removeClass("active");
             // });
 
-            //javascript
+            //javascript 원형 커서에 active클래스 추가, 삭제
             // document.querySelector(".contents a").addEventListener("mouseenter", ()=>{
             //     document.querySelector(".cursor").classList.add("active");
             // })
@@ -490,17 +666,19 @@ $(".close").click(function () {
             //     document.querySelector(".cursor").classList.remove("active");
             // })
 
-            //javescript2 모든 a태그에 적용
+            //javescript#2 원형 커서에 active클래스 추가, 삭제 & 모든 a태그에 적용!!!
             document.querySelectorAll("a").forEach(element => {
                 element.addEventListener("mouseenter", () => {
                     document.querySelector(".cursor").classList.add("active");
+                    document.querySelector(".cursor-follower").classList.add("active");
                 })
                 element.addEventListener("mouseleave", () => {
                     document.querySelector(".cursor").classList.remove("active");
+                    document.querySelector(".cursor-follower").classList.remove("active");
                 })
             })
         })
-
+        //modal 버튼, close버튼 클릭
         $(".btn").click(function () {
             $("#modal").slideDown();
         })

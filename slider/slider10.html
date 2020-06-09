@@ -500,10 +500,46 @@
             transform: rotate(45deg);
             transform-origin: left;
         }
+        /*----------------------cursor-------------------*/
+        .cursor{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            /* border: 3px solid #fff; */
+            background-color: rgba(133, 133, 133, 0.6);
+            z-index: 20000;
+            user-select: none;
+            pointer-events: none;
+            transform: scale(1);
+            transition:transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        }
+        .cursor.active {
+            opacity: .5;
+            transform: scale(4);
+        }
+        /* .cursor-follower{
+            position: absolute;
+            width: 30px; height: 30px;
+            background : rgba(255,255,255,0.3);
+            border-radius : 50%;
+            user-select : none;
+            pointer-events: none;
+            transition:transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+        } */
+        /* .cursor-follower.active{
+            opacity: .7;
+            transform:scale(4);
+        } */
     </style>
 </head>
 
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <nav id="nav">
         <ul class="menu">
             <li class="active"><a href="#">Work</a></li>
@@ -630,7 +666,7 @@
         const slide = $(".slide");
         const slideDot = $(".slide-dot");
         const slideBtn = $(".slide-btn");
-
+        const cursor = $(".cursor");
 
         let slideCount = slide.length;
         let currentIndex = 0;
@@ -639,6 +675,17 @@
         let easing = "easeOutExpo";
         slideBg = ["#fcefe9", "#e9effd", " #fae3f5", " #fbe368", " #ccebea", "#e9effd", "#f4f2ec"];
 
+        //원형 커서 움직이기
+        let cursorWidth = document.querySelector(".cursor").offsetWidth;
+        let cursorHeight = document.querySelector(".cursor").offsetHeight;
+        console.log("cursorWidth:"+cursorWidth);
+        console.log("cursorHeight:"+cursorHeight);
+        let body = document.querySelector("body, html")
+        body.addEventListener("mousemove",function(event){
+            document.querySelector(".cursor").style.left = event.clientX - cursorWidth/2 +"px";
+            document.querySelector(".cursor").style.top = event.clientY - cursorHeight/2 +"px";
+        })
+    
         //햄버거 메뉴
         $("#nav .ham .bar").click(function () {
             $(this).toggleClass("on")
@@ -676,14 +723,12 @@
             }
         })
 
-      
         //슬라이드에 배경색 설정
         slide.each(function (i) {
             $(this).css({
                 background: slideBg[i]
             });
         })
-
 
         //각 이미지 absolute left 0 left 100% left 200%;
         //슬라이드 닷버튼 생성
