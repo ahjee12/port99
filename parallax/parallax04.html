@@ -15,6 +15,10 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
 
+     <!--style-->
+     <link rel="stylesheet" href="assets/css/style1.css">
+
+
     <title>Parallax04</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -244,6 +248,9 @@
             color: #000;
             font-size: 25px;
         }
+        .info3 ul li.active a {
+            color: #dc6e25
+        }
         .info4{
             position: fixed;
             top: 2vh; left: 1vw;
@@ -258,11 +265,154 @@
             color: #000;
             font-size: 20px;
         }
+         /*-------------------------modal------------------------------*/
+         .modal-button {
+            position: fixed;
+            left: 0%;
+            top: 22%;
+            /* transform: translateX(-50%); */
+            z-index: 1000;
+            /*display:flex;
+            justify-content:center;
+            align-items:center; */
+            /* margin: 25vh; */
+            /* height: 100vh; */
+        }
+
+        .modal-button a {
+            font-size: 50px;
+            font-weight: bold;
+            background: #dc6e25;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            position: relative;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            /* position: relative; */
+            background: rgba(0, 0, 0, 0.5);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            /* z-index: -1; */
+        }
+
+        #modal .close {
+            position: absolute;
+            left: 50%; top: 10%; transform: translateX(-50%);
+            /* right: -20px; */
+            /* left: 80%; */
+            /* z-index: -1000; */
+            background: #dc6e25;
+            padding: 30px;
+            border-radius: 50%;
+        }
+
+        #modal .close:hover {
+            background: #e2ba9f;
+        }
+
+        #modal .close svg {
+            width: 30px;
+            fill: #fff;
+            vertical-align: top;
+        }
     </style>
 
 </head>
 
 <body>
+     <!--modal-->
+     <div class="modal-button">
+        <a href="#" class="btn">script보기</a>
+    </div>
+    <div id="modal">
+        <div class="code-editor">
+            <span class="control"></span>
+            <span class="control"></span>
+            <span class="control"></span>
+<pre class="line-numbers">
+<code class="language-markup">&lt;script&gt;
+    //jqery
+    // $(window).scroll(function(){   
+    // });
+    //javascript
+    // window.addEventListener("scroll",function(){});
+    // window.addEventListener("scroll",()=>{});
+
+    //jqery
+    // const scrollTop = $(window).scrollTop();
+    //javascript
+    // const pageYOffset = window.pageYOffset;
+
+    //jqery
+    // $(".scrollTop").text(scrollTop); 
+    //javascript
+    // document.querySelector(".scrollTop").textContent = pageYOffset;
+
+    window.addEventListener("scroll", () => {
+        let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop);
+        let pageYOffset2 = (window.pageYOffset || document.documentElement.scrollTop) + screen.height;
+        console.log("1:" + screen.height / 2);
+        console.log("2:" + document.documentElement.scrollTop);
+        console.log("3:" + window.pageYOffset);
+
+        let infoPageYOffset = document.querySelector(".pageYOffset");
+        infoPageYOffset.textContent = pageYOffset;
+        // document.querySelector(".pageYOffset").textContent = pageYOffset;
+        // document.querySelector(".pageYOffset").innerHTMLContent = pageYOffset;
+
+        strongOffset.forEach(function (cont, index) {
+            if (pageYOffset > document.querySelector("#section" + (index + 1)).offsetTop) {
+                console.log("4:" + pageYOffset);
+                cont.style.color = 'red';
+                console.log("4:" + cont.style.color);
+            } else{
+                cont.style.color = 'black';
+            }
+        })
+        
+        let sectionOffset = document.querySelectorAll(".content-item");
+        sectionOffset.forEach(function(element){
+            if(pageYOffset2 > element.offsetTop){
+                element.classList.add("show");
+            }else{
+                element.classList.remove("show");
+            }
+        })
+        
+    });
+
+    let strongOffset = document.querySelectorAll(".info2 span strong");
+    console.log(strongOffset);
+
+    strongOffset.forEach(function (element, index) {
+        element.textContent = document.querySelector("#section" + (index + 1)).offsetTop;
+        // console.log(document.querySelector("#section"+(index+1)).offsetTop);
+        // console.log(element);
+        // console.log(index);
+    })
+
+&lt;/script&gt;
+</code></pre>
+        </div>
+        <a href="#" class="close">
+            <svg viewBox="0 0 24 24">
+                <path d="M14.1,12L22,4.1c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0L12,9.9L4.1,2C3.5,1.4,2.5,1.4,2,2C1.4,2.5,1.4,3.5,2,4.1
+        L9.9,12L2,19.9c-0.6,0.6-0.6,1.5,0,2.1c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l7.9-7.9l7.9,7.9c0.3,0.3,0.7,0.4,1.1,0.4
+        s0.8-0.1,1.1-0.4c0.6-0.6,0.6-1.5,0-2.1L14.1,12z" />
+            </svg>
+        </a>
+    </div>
+    <!--//modal-->
+
     <div class="info">
         <span>pageYOffset(): <strong class="pageYOffset">0</strong>px</span>
     </div>
@@ -281,11 +431,14 @@
         <ul>
             <li><a href="parallax01.html">Parallax01</a></li>
             <li><a href="parallax02.html">Parallax02</a></li>
-            <li><a href="#">Parallax03</a></li>
-            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li class="active"><a href="#">Parallax04</a></li>
             <li><a href="parallax05.html">Parallax05</a></li>
             <li><a href="parallax06.html">Parallax06</a></li>
             <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="parallax09.html">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
         </ul>
     </div>
     <div class="info4">
@@ -383,6 +536,7 @@
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/custom.js"></script>
     <script>
          //jqery
         // $(window).scroll(function(){   
@@ -448,6 +602,13 @@
         // if(pageYOffset> document.getElementById("section1").offsetTop){
         //     document.getElementById("section1").classList.add("show");
         // }
+        //modal 버튼, close버튼 클릭
+        $(".btn").click(function () {
+            $("#modal").slideDown();
+        })
+        $(".close").click(function () {
+            $("#modal").slideUp();
+        })
     </script>
 </body>
 

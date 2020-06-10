@@ -15,7 +15,10 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
 
-    <title>Parallax08</title>
+    <!--style-->
+    <link rel="stylesheet" href="assets/css/style1.css">
+
+    <title>Parallax09</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -213,6 +216,9 @@
         .info3 ul li a {
             color: #000;
             font-size: 25px;
+        }
+        .info3 ul li.active a {
+            color: #dc6e25
         }
 
         .info4 {
@@ -471,11 +477,108 @@
             65%{width: 100%; height:100%; bottom:0;}
             100%{width: 100%; height:0; bottom:100%;}
         }
+
+         /*-------------------------modal------------------------------*/
+         .modal-button {
+            position: fixed;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            z-index: 1000;
+            /*display:flex;
+            justify-content:center;
+            align-items:center; */
+            /* margin: 25vh; */
+            /* height: 100vh; */
+        }
+
+        .modal-button a {
+            font-size: 50px;
+            font-weight: bold;
+            background: #dc6e25;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            position: relative;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            /* position: relative; */
+            background: rgba(0, 0, 0, 0.5);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            /* z-index: -1; */
+        }
+
+        #modal .close {
+            position: absolute;
+            left: 50%; top: 10%; transform: translateX(-50%);
+            /* right: -20px; */
+            /* left: 80%; */
+            /* z-index: -1000; */
+            background: #dc6e25;
+            padding: 30px;
+            border-radius: 50%;
+        }
+
+        #modal .close:hover {
+            background: #e2ba9f;
+        }
+
+        #modal .close svg {
+            width: 30px;
+            fill: #fff;
+            vertical-align: top;
+        }
     </style>
 
 </head>
 
 <body>
+    <!--modal-->
+    <div class="modal-button">
+        <a href="#" class="btn">script보기</a>
+    </div>
+    <div id="modal">
+        <div class="code-editor">
+
+            <span class="control"></span>
+            <span class="control"></span>
+            <span class="control"></span>
+<pre class="line-numbers">
+<code class="language-markup">&lt;script&gt;
+//09
+$(window).scroll(function(){
+    $(".reveal").each(function(){
+        console.log(".reveal"+$(".reveal"));
+        if($(window).scrollTop() + $(window).height()/2>$(this).offset().top){
+            $(this).delay($(this).data("delay")).queue(function(){
+                $(this).addClass("show");
+            }) 
+        }
+    })
+})
+&lt;/script&gt;
+
+
+</code></pre>
+        </div>
+        <a href="#" class="close">
+            <svg viewBox="0 0 24 24">
+                <path d="M14.1,12L22,4.1c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0L12,9.9L4.1,2C3.5,1.4,2.5,1.4,2,2C1.4,2.5,1.4,3.5,2,4.1
+        L9.9,12L2,19.9c-0.6,0.6-0.6,1.5,0,2.1c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l7.9-7.9l7.9,7.9c0.3,0.3,0.7,0.4,1.1,0.4
+        s0.8-0.1,1.1-0.4c0.6-0.6,0.6-1.5,0-2.1L14.1,12z" />
+            </svg>
+        </a>
+    </div>
+    <!--//modal-->
     <div class="info">
         <span>scrollTop(): <strong class="pageYOffset">0</strong>px</span>
     </div>
@@ -500,14 +603,15 @@
             <li><a href="parallax06.html">Parallax06</a></li>
             <li><a href="parallax07.html">Parallax07</a></li>
             <li><a href="parallax08.html">Parallax08</a></li>
-            <li><a href="#">Parallax09</a></li>
+            <li class="active"><a href="#">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
         </ul>
     </div>
     <div class="info4">
         <ul>
             <li>반응형</li>
             <li>/</li>
-            <li>텍스트 효과</li>
+            <li>애니메이션 - 키프레임+SCRIPT</li>
         </ul>
     </div>
     <div id="wrap">
@@ -607,6 +711,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
     <script>
         //09
         $(window).scroll(function(){
@@ -788,6 +893,14 @@
         //         }
         //     })
         // })
+
+        //modal 버튼, close버튼 클릭
+        $(".btn").click(function () {
+            $("#modal").slideDown();
+        })
+        $(".close").click(function () {
+            $("#modal").slideUp();
+        })
     </script>
 </body>
 

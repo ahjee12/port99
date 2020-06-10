@@ -15,6 +15,9 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
 
+    <!--style-->
+    <link rel="stylesheet" href="assets/css/style1.css">
+
     <title>Parallax08</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -240,6 +243,9 @@
             color: #000;
             font-size: 25px;
         }
+        .info3 ul li.active a {
+            color: #dc6e25
+        }
 
         .info4 {
             position: fixed;
@@ -422,12 +428,147 @@
                 animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
             }
         }
+         /*-------------------------modal------------------------------*/
+         .modal-button {
+            position: fixed;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            z-index: 1000;
+            /*display:flex;
+            justify-content:center;
+            align-items:center; */
+            /* margin: 25vh; */
+            /* height: 100vh; */
+        }
+
+        .modal-button a {
+            font-size: 50px;
+            font-weight: bold;
+            background: #dc6e25;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            position: relative;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            /* position: relative; */
+            background: rgba(0, 0, 0, 0.5);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            /* z-index: -1; */
+        }
+
+        #modal .close {
+            position: absolute;
+            left: 50%; top: 10%; transform: translateX(-50%);
+            /* right: -20px; */
+            /* left: 80%; */
+            /* z-index: -1000; */
+            background: #dc6e25;
+            padding: 30px;
+            border-radius: 50%;
+        }
+
+        #modal .close:hover {
+            background: #e2ba9f;
+        }
+
+        #modal .close svg {
+            width: 30px;
+            fill: #fff;
+            vertical-align: top;
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="info">
+    <!--modal-->
+    <div class="modal-button">
+        <a href="#" class="btn">script보기</a>
+    </div>
+    <div id="modal">
+        <div class="code-editor">
+            <span class="control"></span>
+            <span class="control"></span>
+            <span class="control"></span>
+<pre class="line-numbers">
+<code class="language-markup">&lt;script&gt;
+//08각 섹션 텍스트 넣기
+// let txt = $("#section1 .content-item-desc").text();
+// let split = txt.split("").join("</span><span aria-hidden='true'>");
+// // let split = txt.split("").join("-");
+// split ="<span aria-hidden='true'>" + split + "</span>"
+
+// $("#section1 .content-item-desc").html(split).attr("aria-label",txt)
+
+//08각 섹션 텍스트 넣기 반복
+let txt = $(".content-item-desc")
+txt.each(function () {
+    let text = $(this).text();
+    console.log(text);
+    let split = text.split("").join("</span><span aria-hidden='true'>");
+    split = "<span aria-hidden='true'>" + split + "</span>";
+    $(this).html(split).attr("aria-label", txt);
+})
+
+//각 섹션 텍스트 자바스크립트
+
+//08텍스트 효과
+// $(window).scroll(function(){
+//     if($(window).scrollTop() > $("#section1").offset().top){
+//         $("#section1 .content-item-desc").addClass("show");
+//     }else{
+//         $("#section1 .content-item-desc").removeClass("show");
+//     }
+// })
+//08텍스트 효과 반복
+// $(window).scroll(function(){
+//     $(".content-item").each(function(){
+//         if($(window).scrollTop() > $(this).offset().top){
+//           $(this).find(".content-item-desc").addClass("show");
+//         }else{
+//           $(this).find(".content-item-desc").removeClass("show");
+//         }
+//     })
+// })
+
+//순서대로 나타내기
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= $("#section1").offset().top) {
+        // $("#section1 .content-item-desc span").addClass("show");
+        $("#section1 .content-item-desc span").each(function (index) {
+            setInterval(function () {
+                $("#section1 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index)
+        })
+    } else {
+        $("#section1 .content-item-desc span").eq(index).removeClass("show");
+    }
+})
+&lt;/script&gt;
+</code></pre>
+        </div>
+        <a href="#" class="close">
+            <svg viewBox="0 0 24 24">
+                <path d="M14.1,12L22,4.1c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0L12,9.9L4.1,2C3.5,1.4,2.5,1.4,2,2C1.4,2.5,1.4,3.5,2,4.1
+        L9.9,12L2,19.9c-0.6,0.6-0.6,1.5,0,2.1c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l7.9-7.9l7.9,7.9c0.3,0.3,0.7,0.4,1.1,0.4
+        s0.8-0.1,1.1-0.4c0.6-0.6,0.6-1.5,0-2.1L14.1,12z" />
+            </svg>
+        </a>
+    </div>
+    <!--//modal-->
+
+    <!-- <div class="info">
         <span>scrollTop(): <strong class="pageYOffset">0</strong>px</span>
     </div>
     <div class="info2">
@@ -440,7 +581,7 @@
         <span>#section7 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
         <span>#section8 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
         <span>#section9 offsetTop: <strong class="s1offsetTop">0</strong>px</span>
-    </div>
+    </div> -->
     <div class="info3">
         <ul>
             <li><a href="parallax01.html">Parallax01</a></li>
@@ -449,7 +590,10 @@
             <li><a href="parallax04.html">Parallax04</a></li>
             <li><a href="parallax05.html">Parallax05</a></li>
             <li><a href="parallax06.html">Parallax06</a></li>
-            <li><a href="#">Parallax07</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li class="active"><a href="#">Parallax08</a></li>
+            <li><a href="parallax09.html">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
         </ul>
     </div>
     <div class="info4">
@@ -544,6 +688,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
     <script>
         //08각 섹션 텍스트 넣기
         // let txt = $("#section1 .content-item-desc").text();
@@ -713,6 +858,14 @@
         //         }
         //     })
         // })
+        
+        //modal 버튼, close버튼 클릭
+        $(".btn").click(function () {
+            $("#modal").slideDown();
+        })
+        $(".close").click(function () {
+            $("#modal").slideUp();
+        })
     </script>
 </body>
 

@@ -15,6 +15,7 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
 
+    <!--style-->
     <link rel="stylesheet" href="assets/css/style1.css">
 
     <title>Parallax10</title>
@@ -410,7 +411,7 @@
             }
         }
 
-        /*-------------------------reveal--------------------------------------------------*/
+        /*-------------------------reveal------------------------------*/
         .reveal span, 
         .reveal img{opacity: 0;}
 
@@ -538,8 +539,7 @@
             border-radius: 50%;
         }
         /*-------------------------modal------------------------------*/
-        /* modal */
-        .info5 {
+        .modal-button {
             position: fixed;
             left: 80%;
             top: 0;
@@ -552,7 +552,7 @@
             /* height: 100vh; */
         }
 
-        .info5 a {
+        .modal-button a {
             font-size: 50px;
             font-weight: bold;
             background: #dc6e25;
@@ -602,7 +602,7 @@
 </head>
 
 <body>
-    <div class="info5">
+    <div class="modal-button">
         <a href="#" class="btn">script보기</a>
     </div>
     <div id="modal">
@@ -611,8 +611,8 @@
             <span class="control"></span>
             <span class="control"></span>
             <span class="control"></span>
-<pre class="line-numbers"><code class="language-markup">
-&lt;script&gt;
+<pre class="line-numbers">
+<code class="language-markup">&lt;script&gt;
 //10
 //jquery 네비 버튼 클릭 시 모든 글씨를 빨간색으로 
 $("#nav> ul> li > a").click(function(){
@@ -630,7 +630,6 @@ $("#nav> ul> li > a").click(function(){
 //     // let offset = $(target).
 //     $("html, body").animate({scrollTop: $(target).offset().top}, 600, "easeInOutExpo");
 // })
-//javascript a태그 선택[href= "#"]
 
 //javascript a태그 선택[href= "#"]
 document.querySelectorAll("a[href^='#']").forEach(elem =>{
@@ -710,7 +709,7 @@ $(window).scroll(function(){
         <ul>
             <li>반응형</li>
             <li>/</li>
-            <li>텍스트 효과</li>
+            <li>네비게이션-탭 메뉴</li>
         </ul>
     </div>
     <div id="wrap">
@@ -836,7 +835,6 @@ $(window).scroll(function(){
         //     // let offset = $(target).
         //     $("html, body").animate({scrollTop: $(target).offset().top}, 600, "easeInOutExpo");
         // })
-        //javascript a태그 선택[href= "#"]
 
         //javascript a태그 선택[href= "#"]
         document.querySelectorAll("a[href^='#']").forEach(elem =>{
