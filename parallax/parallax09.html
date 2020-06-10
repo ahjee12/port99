@@ -451,6 +451,39 @@
         #section4 .reveal.reveal-ltr.show::after{
             animation: revealLTR4 1s 0.6s ease-in-out;
         }
+        /*-------------------------------------*/
+        #section5 .reveal.reveal-ltr.show:before{
+            animation: revealLTR 1.8s ease-in-out;
+        }
+        #section5 .reveal.reveal-ltr.show:after{
+            animation: revealLTR 1s 0.6s ease-in-out;
+        }
+        #section6 .reveal.reveal-ltr.show::before{
+            animation: revealLTR2 1.8s ease-in-out;
+        }
+        #section6 .reveal.reveal-ltr.show::after{
+            animation: revealLTR2 1s 0.6s ease-in-out;
+        }
+
+        #section7 .reveal.reveal-ltr.show::before{
+            animation: revealLTR3 1.8s ease-in-out;
+        }
+        #section7 .reveal.reveal-ltr.show::after{
+            animation: revealLTR3 1s 0.6s ease-in-out;
+        }
+        #section8 .reveal.reveal-ltr.show::before{
+            animation: revealLTR4 1.8s ease-in-out;
+        }
+        #section8 .reveal.reveal-ltr.show::after{
+            animation: revealLTR4 1s 0.6s ease-in-out;
+        }
+        #section9 .reveal.reveal-ltr.show:before{
+            animation: revealLTR 1.8s ease-in-out;
+        }
+        #section9 .reveal.reveal-ltr.show:after{
+            animation: revealLTR 1s 0.6s ease-in-out;
+        }
+        
         .reveal.reveal-rtl.show:before{}
         .reveal.reveal-rtl.show:after{}
 
@@ -684,25 +717,31 @@ $(window).scroll(function(){
                 <span class="content-item-num">07</span>
                 <h2 class="content-item-title">Basic Coding</h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img reveal reveal-ltr">
+                        <img src="img/7.jpg" alt="이미지6">
+                    </div>
                 </figure>
-                <p class="content-item-desc">스크립트로 텍스트 효과 넣기.</p>
+                <p class="content-item-desc reveal reveal-ltr"><span> 스크립트로 텍스트 효과 넣기.</span></p>
             </section>
             <section id="section8" class="content-item">
                 <span class="content-item-num">08</span>
                 <h2 class="content-item-title">Basic Coding</h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img reveal reveal-ltr">
+                        <img src="img/8.jpg" alt="이미지6">
+                    </div>
                 </figure>
-                <p class="content-item-desc">스크립트로 텍스트 효과 넣기.</p>
+                <p class="content-item-desc reveal reveal-ltr"><span> 스크립트로 텍스트 효과 넣기.</span></p>
             </section>
             <section id="section9" class="content-item">
                 <span class="content-item-num">09</span>
                 <h2 class="content-item-title">Basic Coding</h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img reveal reveal-ltr">
+                        <img src="img/9.jpg" alt="이미지6">
+                    </div>
                 </figure>
-                <p class="content-item-desc">스크립트로 텍스트 효과 넣기.</p>
+                <p class="content-item-desc reveal reveal-ltr"><span> 스크립트로 텍스트 효과 넣기.</span></p>
             </section>
         </div>
         <!--contents-->
@@ -717,7 +756,7 @@ $(window).scroll(function(){
         $(window).scroll(function(){
             $(".reveal").each(function(){
                 console.log(".reveal"+$(".reveal"));
-                if($(window).scrollTop() + $(window).height()/2>$(this).offset().top){
+                if($(window).scrollTop() + $(window).height()>$(this).offset().top){
                     $(this).delay($(this).data("delay")).queue(function(){
                         $(this).addClass("show");
                     }) 
