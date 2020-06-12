@@ -598,14 +598,18 @@ $(".close").click(function () {
             this.style.setProperty("--x",e.clientX - ((rect.width/2)+rect.left));
             this.style.setProperty("--y",e.clientY - ((rect.height/2)+rect.top));
 
-            console.log("e.clientX"+e.clientX);
-            console.log("e.clientY"+e.clientY);
+            // console.log("e.clientX"+e.clientX);
+            // console.log("e.clientY"+e.clientY);
+            console.log(e.clientX);
+            console.log(e.clientY);
 
             a = e.clientX - ((rect.width/2)+rect.left);
             b = e.clientY - ((rect.height/2)+rect.top);
-            
-            console.log("결과x:"+ a);
-            console.log("결과y:"+ b);
+
+            // console.log("결과x:"+ a);
+            // console.log("결과y:"+ b);
+            console.log( a);
+            console.log( b);
 
             gsap.to(".cursor", {duration: .2, left: e.pageX - 10, top: e.pageY - 10});
 
