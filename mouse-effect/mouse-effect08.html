@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;0,800;1,200;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style1.css">
+    <!-- 파비콘 -->
+    <!--500*500/128*128-->
+    <link rel="shortcut icon" href="../assets/ico/favicon_circle_128.svg">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon_circle_128.svg">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="16x16">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="32x32">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="48x48">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
+    <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
+
+    <title>Mouse-Effect08</title>
+    <style>
+        @font-face {
+            font-family: 'DWImpactamin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ghanachoco';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face { font-family: 'MaplestoryOTFBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: '양진체'; src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: '국립박물관문화재단클래식B'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff'); font-weight: normal; font-style: normal; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        body {
+            position: relative;
+            background: url(img/10.jpg) no-repeat;
+            background-size: cover;
+            font-family: 'Poppins', 'DWImpactamin';
+            /* padding: 20px; */
+            color: #fff;
+            height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(47, 73, 94, 0.9);
+            z-index: -1;
+        }
+
+        .info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .info h1 {
+            padding: 2vh 2vw 0vh;
+            font-size: 3vw;
+        }
+
+        .info p {
+            padding: 0 2vw;
+            font-size: 3vw;
+            /* font-weight: bold; */
+        }
+        .info p span{
+            font-weight: bold;
+        }
+        .info ul {
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        .info ul li {
+            list-style: none;
+        }
+
+        .info2 {
+            position: absolute;
+            right: 2vw;
+            top: 50%;
+            z-index: 1001;
+            transform: translateY(-50%);
+        }
+
+        .info2 ul {
+            list-style: none;
+        }
+
+        .info2 ul li {}
+
+        .info2 ul li a {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        .info2 ul li.active a {
+            /* border-bottom: 2px dashed #fff; */
+            color: #000;
+        }
+
+        /* q */
+        .info3 {
+            position: absolute;
+            left: 2vw;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1002;
+        }
+
+        .info3 ul {
+            list-style: none;
+        }
+
+        .info3 ul li {
+            font-size: 35px;
+            font-weight: bold;
+            /* position: relative; */
+        }
+
+        /* .info3 ul li::before{
+            content: ''; position: absolute; left: 0; top: -20%;
+        } */
+        /*------------------------contents----------------------------*/
+        .contents {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .textWrap{ padding-top: 20vh;}
+        .textWrap .line{
+            width: 100vw;
+            display: flex;
+            /* background: rgba(0, 0, 0, 0.8); */
+        }
+        .textWrap .line .left{ width: 50vw; background: rgb(8, 112, 116); transform: skew(0deg, -15deg); overflow: hidden;}
+        .textWrap .line .left .spanWrap{width: 100vw; text-align: center;}
+        .textWrap .line .left .spanWrap span{font-size: 7vw; color: rgb(174, 199, 36);}
+        .textWrap .line .right{ width: 50vw; background: rgb(251, 255, 0); transform: skew(0deg, 15deg); overflow: hidden;}
+        .textWrap .line .right .spanWrap{width: 100vw; text-align: center; transform: translate(-50vw);}
+        .textWrap .line .right .spanWrap span{font-size: 7vw; color: rgb(179, 133, 133);}
+
+
+         /*---------------------------cursor---------------------*/
+        .cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: url(img/10.jpg) no-repeat center center fixed;
+            background-size: cover; 
+            /* mix-blend-mode:hard-light; */
+            /* z-index: 20000; */
+            z-index: -1;
+            user-select: none;
+            pointer-events: none;
+            /* transform: scale(1);
+            transition:transform 0.3s ease-in-out, opacity 0.2s ease-in-out; */
+        }
+
+        .cursor.active {
+            /* border-color: rgb(146, 49, 25); */
+            /* background-color: rgba(96, 80, 151, 0.63); */
+            /* background-color : */
+            /* opacity: .5; */
+            transform: scale(5);
+        }
+        /* .cursor-follower{
+            position: absolute;
+            width: 30px; height: 30px;
+            background : rgba(255,255,255,0.3);
+            border-radius : 50%;
+            user-select : none;
+            pointer-events: none;
+            transition:transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+        }
+        .cursor-follower.active{
+            opacity: .7;
+            transform:scale(4);
+        } */
+
+        /*---------------------------modal---------------------*/
+        .info4 {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            /* z-index: 1000; */
+            /*display:flex;
+            justify-content:center;
+            align-items:center; */
+            /* margin: 25vh; */
+            /* height: 100vh; */
+        }
+
+        .info4 a {
+            font-size: 50px;
+            font-weight: bold;
+            background: #6493af;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            position: relative;
+        }
+
+        /* modal */
+        #modal {
+            display: none;
+            position: fixed;
+            /* position: relative; */
+            background: rgba(0, 0, 0, 0.5);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            /* z-index: -1; */
+        }
+
+        #modal .close {
+            position: absolute;
+            left: 50%; top: 10%; transform: translateX(-50%);
+            /* right: -20px; */
+            /* left: 80%; */
+            /* z-index: -1000; */
+            background: #000;
+            padding: 30px;
+            border-radius: 50%;
+        }
+
+        #modal .close:hover {
+            background: #6493af;
+        }
+
+        #modal .close svg {
+            width: 30px;
+            fill: #fff;
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">
+        <h1>Mouse-Effect08</h1>
+        <p><span></span></p>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="mouse-effect01.html">mouse-effect01</a></li>
+            <li><a href="mouse-effect02.html">mouse-effect02</a></li>
+            <li><a href="mouse-effect3.html">mouse-effect03</a></li>
+            <li><a href="mouse-effect04.html">mouse-effect04</a></li>
+            <li><a href="mouse-effect05.html">mouse-effect05</a></li>
+            <li><a href="mouse-effect05.html">mouse-effect06</a></li>
+            <li><a href="mouse-effect07.html">mouse-effect07</a></li>
+            <li class="active"><a href="mouse-effect08.html">mouse-effect08</a></li>
+            <li><a href="mouse-effect09.html">mouse-effect09</a></li>
+            <li><a href="mouse-effect10.html">mouse-effect10</a></li>
+        </ul>
+    </div>
+
+    <div class="info4">
+        <a href="#" class="btn">script보기</a>
+    </div>
+    <div id="modal">
+        <div class="code-editor">
+
+            <span class="control"></span>
+            <span class="control"></span>
+            <span class="control"></span>
+            <pre class="line-numbers">
+                <code class="language-markup">
+&lt;script&gt;
+//gsap 애니메이션으로 원형 커서 움직이기
+$(document).mousemove(function(e){
+    gsap.to(cursor,0.4,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
+    // gsap.to(follwer,0.8,{left :e.pageX-(follwer.width()/2), top:e.pageY - (follwer.height()/2)})    
+});
+// 출력용
+$(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
+    $(".pageX").text(e.pageX);  //이벤트 pageX값을 화면에 출력
+    $(".pageY").text(e.pageY);  //이벤트 pageX값을 화면에 출력
+});
+
+//javascript
+let body = document.querySelector("body, html");
+body.addEventListener("mousemove", function (event) {
+    document.querySelector(".clientX").textContent = event.clientX;
+    document.querySelector(".clientY").textContent = event.clientY;
+    document.querySelector(".offsetX").textContent = event.offsetX;
+    document.querySelector(".offsetY").textContent = event.offsetY;
+    document.querySelector(".pageX").textContent = event.pageX;
+    document.querySelector(".pageY").textContent = event.pageY;
+    document.querySelector(".screenX").textContent = event.screenX;
+    document.querySelector(".screenY").textContent = event.screenY;
+
+    //jquery 원형 커서 움직이기
+    // $(".cursor").css({"left": event.clientX-$(".cursor").width()/2, "top": event.clientY-$(".cursor").height()/2});
+
+    //javascript 원형 커서 움직이기
+    // document.querySelector(".cursor").style.left = event.clientX -25 +"px";
+    // document.querySelector(".cursor").style.top = event.clientY -25 +"px";
+     //javascript #2 원형 커서 움직이기
+    // let x = event.clientX - 25 + "px";
+    // let y = event.clientY - 25 + "px";
+    // document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y + "";
+
+    //jquery 원형 커서에 active클래스 추가, 삭제
+    // $(".contents a").hover(function(){
+    //     // console.log("eeee");
+    //     $(".cursor").addClass("active");
+    // },function(){
+    //     $(".cursor").removeClass("active");
+    // });
+
+    //javascript 원형 커서에 active클래스 추가, 삭제
+    // document.querySelector(".contents a").addEventListener("mouseenter", ()=>{
+    //     document.querySelector(".cursor").classList.add("active");
+    // })
+    // document.querySelector(".contents a").addEventListener("mouseleave", ()=>{
+    //     document.querySelector(".cursor").classList.remove("active");
+    // })
+
+    //javescript#2 원형 커서에 active클래스 추가, 삭제 & 모든 a태그에 적용!!!
+    document.querySelectorAll("a").forEach(element => {
+        element.addEventListener("mouseenter", () => {
+            document.querySelector(".cursor").classList.add("active");
+            document.querySelector(".cursor-follower").classList.add("active");
+        })
+        element.addEventListener("mouseleave", () => {
+            document.querySelector(".cursor").classList.remove("active");
+            document.querySelector(".cursor-follower").classList.remove("active");
+        })
+    })
+})
+//modal 버튼, close버튼 클릭
+$(".btn").click(function () {
+    $("#modal").slideDown();
+})
+$(".close").click(function () {
+    $("#modal").slideUp();
+})
+&lt;/script&gt;
+</code></pre>
+        </div>
+        <a href="#" class="close">
+            <svg viewBox="0 0 24 24">
+                <path d="M14.1,12L22,4.1c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0L12,9.9L4.1,2C3.5,1.4,2.5,1.4,2,2C1.4,2.5,1.4,3.5,2,4.1
+        L9.9,12L2,19.9c-0.6,0.6-0.6,1.5,0,2.1c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l7.9-7.9l7.9,7.9c0.3,0.3,0.7,0.4,1.1,0.4
+        s0.8-0.1,1.1-0.4c0.6-0.6,0.6-1.5,0-2.1L14.1,12z" />
+            </svg>
+        </a>
+    </div>
+    <!--
+        clientX : 브라우저 페이지에서의 X좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+        clientY : 브라우저 페이지에서의 Y좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+
+        offsetX : 이벤트 대상 객체에서의 상대적 마우스 x좌표 위치를 반환합니다.
+        offsetY : 이벤트 대상 객체에서의 상대적 마우스 y좌표 위치를 반환합니다.
+
+        pageX : 브라우저 페이지에서의 x좌표 위치를 반환합니다.
+        pageY : 브라우저 페이지에서의 Y좌표 위치를 반환합니다.
+
+        screenX : 전체 모니터 스크린에서의 x좌표 위치를 반환합니다.
+        screenY : 전체 모니터 스크린에서의 y좌표 위치를 반환합니다.
+    -->
+
+    <!--contents-->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="contents">
+        <div class="move-image">
+            <div class="textWrap">
+                <div class="line">
+                    <div class="left">
+                        <div class="spanWrap">
+                            <span class="spanSlow">So bounce</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="spanWrap">
+                            <span class="spanSlow">So bounce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="left">
+                        <div class="spanWrap">
+                            <span class="spanFast">if you've</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="spanWrap">
+                            <span class="spanFast">if you've</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="left">
+                        <div class="spanWrap">
+                            <span class="spanSlow">had enough</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="spanWrap">
+                            <span class="spanSlow">had enough</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script>
+        const spanSlow = document.querySelectorAll(".spanWrap");
+        const spanFast = document.querySelectorAll(".spanFast");
+
+        window.addEventListener("mousemove", mouseMove);
+        
+        function mouseMove(e){
+            let speedSlow = e.pageX;
+            let speedFast = e.pageX;
+            spanSlow.forEach((span) =>{
+                span.style.transform = `translate(${speedSlow}px)`;
+            })
+            spanFast.forEach((span)=>{
+                span.style.trnasform = `translate(${speedFast}px)`
+            })
+        }
+        mouseMove();
+
+        // const word = document.querySelectorAll(".word");
+        // const cursor = document.querySelector(".cursor");
+        // let rect = cursor.getBoundingClientRect();
+        // let width = cursor.offsetWidth;
+        // let height = cursor.offsetHeight;
+        // console.log(width);
+        // console.log(height);
+
+        // //jquery 원형마우스 움직이기
+        // // $(document).mousemove(function(e){
+        // //     x = e.pageX;
+        // //     y = e.pageY;
+
+        // //     gsap.to(cursor,0.4,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
+        // // })
+
+        // //javascript 원형마우스 움직이기
+        // document.addEventListener("mousemove",function(e){
+        //     gsap.to(cursor, 0.4,{left: e.pageX - (width/2), top: e.pageY - (height/2)});
+        // })
+
+        //modal 버튼, close버튼 클릭
+        $(".btn").click(function () {
+            $("#modal").slideDown();
+        })
+        $(".close").click(function () {
+            $("#modal").slideUp();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,45 +1,37 @@
 @font-face{ 
     font-family: "SF Pro";
     font-weight: 100;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
+    src: url(../fonts/SFProDisplay-Ultralight.ttf);
 }
 @font-face{ 
     font-family: "SF Pro";
     font-weight: 200;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
+    src: url(../fonts/SFProText-Light.ttf);
 }
 @font-face{ 
     font-family: "SF Pro";
     font-weight: 300;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
+    src: url(../fonts/SFProText-Regular.ttf);
 }
 @font-face{ 
     font-family: "SF Pro";
     font-weight: 400;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
+    src: url(../fonts/SFProText-Medium.ttf);
 }
 @font-face{ 
     font-family: "SF Pro";
     font-weight: 500;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
-}
-@font-face{ 
-    font-family: "SF Pro";
-    font-weight: 600;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
+    src: url(../fonts/SFProText-Semibold.ttf);
 }
 @font-face{ 
     font-family: "SF Pro";
     font-weight: 700;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
+    src: url(../fonts/SFProText-Bold.ttf);
 }
-@font-face{ 
-    font-family: "SF Pro";
-    font-weight: 800;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
-}
+
 @font-face{ 
     font-family: "SF Pro";
     font-weight: 900;
-    src: url(../fonts/SFproTTF/SF-Pro-Rounded-Black.ttf);
+    src: url(../fonts/SFProText-Heavy.ttf);
 }
+
