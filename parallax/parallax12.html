@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax12</title>
+    <style>
+        @font-face { font-family: 'NEXON Lv2 Gothic Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: 'MaplestoryOTFBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+         .info {
+            position: fixed;
+            top: 20px;
+            left: 1%;
+            background: rgb(255, 255, 255, 0.7);
+            color: #000;
+            padding: 10px;
+            font-size: 70px;
+            font-weight: 400;
+            z-index: 1000;
+            font-style: normal;
+        }
+        .info3 {
+            position: fixed;
+            top: 50%;
+            left: 1vw;
+            transform: translateY(-50%);
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info3 ul li a {
+            color: #000;
+            font-size: 25px;
+        }
+        .info3 ul li.active a {
+            color: #188cda
+        }
+
+        #section1{height: 5000px; background:  rgb(63, 233, 255); }
+        #section1 h1{
+            font-family: 'MaplestoryOTFBold' ,'NEXON Lv2 Gothic Bold';
+            font-size: 8vw; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); 
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="info3">
+        <ul>
+            <li><a href="parallax01.html">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="parallax09.html">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
+            <li><a href="parallax10.html">Parallax11</a></li>
+            <li class="active"><a href="#">Parallax12</a></li>
+        </ul>
+    </div>
+    <!-- data-0="transform: translate(-50%,-50%) rotate(0deg)"
+    data-1000="transform: translate(-250%,-50%) rotate(0deg)"
+    data-2000="transform: translate(-50%,-50%) rotate(0deg)"
+    data-3000="transform: translate(-50%,-50%) rotate(360deg)" -->
+    <div class="info">
+        <span>pageYOffset(): <strong class="pageYOffset">0</strong>px</span>
+    </div>
+    <section id="contents">
+        <section id="section1" data-0="background: rgb(255, 220, 63)" data-1000="background: rgb(63, 217, 255)" data-2000="background:  rgb(255, 166, 0)" data-3000="background:  rgb(63, 233, 255)">
+            <h1
+            data-0 = "transform: translate(-50%,-50%) rotate(0deg) scale(1)"
+            data-1000 = "transform: translate(-50%, 80%) rotate(0deg) scale(1)"
+            data-1500 = "transform: translate(-50%,-100%) rotate(0deg) scale(1)" 
+            data-2000 = "transform: translate(-50%,-50%) rotate(0deg) scale(1)"
+            data-2500 = "transform: translate(-50%,-50%) rotate(360deg) scale(3)"
+            data-3000 = "transform: translate(-50%,-50%) rotate(360deg) scale(1)"
+            >portfolio
+            </h1>
+        </section><!--//section-->
+        <section id="section2"></section><!--//section-->
+        <section id="section3"></section><!--//section-->
+        <section id="section4"></section><!--//section-->
+        <section id="section5"></section><!--//section-->
+        <section id="section6"></section><!--//section-->
+        <section id="section7"></section><!--//section-->
+    </section>
+    <script src="assets/js/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init();
+        window.addEventListener("scroll", () => {
+        let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop);
+        document.querySelector(".pageYOffset").textContent = pageYOffset;
+        })
+    </script>
+</body>
+</html>

@@ -20,7 +20,7 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
 
-    <title>Mouse-Effect06</title>
+    <title>Mouse-Effect07</title>
     <style>
         @font-face {
             font-family: 'DWImpactamin';
@@ -35,7 +35,9 @@
             font-weight: normal;
             font-style: normal;
         }
-
+        @font-face { font-family: 'MaplestoryOTFBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: '양진체'; src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: '국립박물관문화재단클래식B'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff'); font-weight: normal; font-style: normal; }
         * {
             margin: 0;
             padding: 0;
@@ -69,7 +71,7 @@
             top: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(54, 88, 94, 0.7);
+            background: rgba(47, 73, 94, 0.9);
             z-index: -1;
         }
 
@@ -161,9 +163,9 @@
 
         .contents p {
             max-width: 80vw;
-            font-size: 2.5vw;
-            line-height: 1.5;
-            font-family: 'Orbitron', sans-serif;
+            font-size: 10vw;
+            /* line-height: 1.5; */
+            font-family: '국립박물관문화재단클래식B','양진체';
             font-weight: 800;
 
         }
@@ -182,18 +184,18 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 30px;
-            height: 30px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
-            /* border: 3px solid #fff; */
-            background-color: rgba(255, 255, 255, 1);
-            mix-blend-mode: difference;
-            z-index: 20000;
+            background: url(img/10.jpg) no-repeat center center fixed;
+            background-size: cover; 
+            /* mix-blend-mode:hard-light; */
+            /* z-index: 20000; */
+            z-index: -1;
             user-select: none;
             pointer-events: none;
-            transform: scale(1);
-            transition:transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
-           
+            /* transform: scale(1);
+            transition:transform 0.3s ease-in-out, opacity 0.2s ease-in-out; */
         }
 
         .cursor.active {
@@ -283,10 +285,10 @@
 
 <body>
     <div class="info">
-        <h1>Mouse-Effect06</h1>
-        <p><span>glitch</span>효과</p>
+        <h1>Mouse-Effect07</h1>
+        <p><span></span></p>
         <ul>
-            <li>----------</li>
+            <li></li>
         </ul>
     </div>
     <div class="info2">
@@ -296,8 +298,8 @@
             <li><a href="mouse-effect3.html">mouse-effect03</a></li>
             <li><a href="mouse-effect04.html">mouse-effect04</a></li>
             <li><a href="mouse-effect05.html">mouse-effect05</a></li>
-            <li class="active"><a href="#">mouse-effect06</a></li>
-            <li><a href="mouse-effect07.html">mouse-effect07</a></li>
+            <li><a href="#">mouse-effect06</a></li>
+            <li class="active"><a href="#">mouse-effect07</a></li>
             <li><a href="mouse-effect08.html">mouse-effect08</a></li>
             <li><a href="mouse-effect09.html">mouse-effect09</a></li>
             <li><a href="mouse-effect10.html">mouse-effect10</a></li>
@@ -415,14 +417,7 @@ $(".close").click(function () {
     <div class="cursor-follower"></div>
 
     <div class="contents">
-        <p>All my wolves, begin to howl</p>
-        <p><span> Wake</span> me <span>up</span>, the time is now</p>
-        <p>Oh, can you hear the drumming?</p>
-        <p>Oh, there's a revolution coming</p>
-        <p>Wild things that <span>turn</span> me <span>on</span></p>
-        <p><span class="word">Drag</span> my dark <span class="word">into</span> the dawn</p>
-        <p>Oh, can you hear the drumming?</p>
-        <p>Oh, there's a revolution coming</p>
+        <p>webdiary</p>
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
@@ -430,49 +425,25 @@ $(".close").click(function () {
     <script src="assets/js/gsap.min.js"></script>
     <script>
         const word = document.querySelectorAll(".word");
+        const cursor = document.querySelector(".cursor");
+        let rect = cursor.getBoundingClientRect();
+        let width = cursor.offsetWidth;
+        let height = cursor.offsetHeight;
+        console.log(width);
+        console.log(height);
 
-        //익명함수
-        // const shadow = e =>{
-        //     const{x, y} = e;
-        //     const rect = word.getBoundingClientRect();
-        //     console.log("rect"+rect);
-        //     const mouseX = (x - rect.left - rect.width/2)/20;
-        //     const mouseY = (y - rect.left - rect.height/2)/20;
+        //jquery 원형마우스 움직이기
+        // $(document).mousemove(function(e){
+        //     x = e.pageX;
+        //     y = e.pageY;
 
-        //     // 안됨
-        //     // word.forEach(function(element){
-        //     //     element.style.textShadow = `${mouseX}px ${mouseX}px 0 rgba(255,255,255,0.3),
-        //     //                                 ${-mouseX}px ${mouseY}px 0 rgba(255,255,255,0.7),
-        //     //                                 ${mouseX}px ${-mouseY}px 0 rgba(255,255,255,0.5),
-        //     //                                 ${-mouseX}px ${-mouseY}px 0 rgba(255,255,255,0.6)`;
-        //     // })
+        //     gsap.to(cursor,0.4,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
+        // })
 
-        //     // word.style.textShadow = `${mouseX}px ${mouseX}px 0 rgba(255,255,255,0.3),
-        //     //                         ${-mouseX}px ${mouseY}px 0 rgba(255,255,255,0.7),
-        //     //                         ${mouseX}px ${-mouseY}px 0 rgba(255,255,255,0.5),
-        //     //                         ${-mouseX}px ${-mouseY}px 0 rgba(255,255,255,0.6)`;
-        //     // console.log(word.style.textShdow);
-        //     // document.querySelectorAll(".word").forEach(function(element){
-        //     //     element.style.textShadow = "10px 10px 0 rgba(255,255,255,0.3), -10px 10px 0 rgba(255,255,255,0.7), -10px -10px 0 rgba(255,255,255,0.5), 10px 10px 0 rgba(255,255,255,0.6)";
-        //     // })
-        // }
-        
-        window.addEventListener("mousemove", function(e){
-            document.querySelectorAll(".word").forEach(element =>{
-                const{x, y} = e;
-                const rect = element.getBoundingClientRect();
-                console.log("rect"+rect);
-                const mouseX = (x - rect.left - rect.width/2)/20;
-                const mouseY = (y - rect.left - rect.height/2)/20;
-                
-                element.style.textShadow = `${mouseX}px ${mouseX}px 0 rgba(255,255,255,0.3),
-                                            ${-mouseX}px ${mouseY}px 0 rgba(255,255,255,0.7),
-                                            ${mouseX}px ${-mouseY}px 0 rgba(255,255,255,0.5),
-                                            ${-mouseX}px ${-mouseY}px 0 rgba(255,255,255,0.6)`;
-               
-            })
+        //javascript 원형마우스 움직이기
+        document.addEventListener("mousemove",function(e){
+            gsap.to(cursor, 0.4,{left: e.pageX - (width/2), top: e.pageY - (height/2)});
         })
-        // window.addEventListener("mousemove",shadow);
 
         //modal 버튼, close버튼 클릭
         $(".btn").click(function () {
