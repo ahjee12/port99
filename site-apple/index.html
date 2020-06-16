@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="assets/css/reset.css">
   <style>
     
-    .container{max-width: 1000px; margin: 0 auto;}
+    .container{max-width: 375px; margin: 0 auto;}
 
     .row{position: relative; margin: 0 20px;}
 
@@ -55,32 +55,36 @@
     .banner .banner-title .bt-desc{font-size: 20px; color: #88888A; font-weight: 200; letter-spacing: -0.9px; padding: 0 0 12px 0;}
     .banner img{border-radius: 5px;}
  
-    #recentPlayList{padding: 12px 0 12px 0; border-bottom: 1px solid #E5E5E5;}
-    .recentPlayList h2{padding: 0 0 12px 0; font-size: 18px; font-weight: 600; letter-spacing: -0.9px;}
-    .recentPlayList .recentImg{display: flex; justify-content: space-between;}
-    .recentPlayList .recentImg col{}
-
-    #recentPlayList2{padding: 12px 0 12px 0; border-bottom: 1px solid #E5E5E5; }
-    .recentPlayList{position: relative;}
-    .recentPlayList h2{padding: 0 0 12px 0; font-size: 18px; font-weight: 600; letter-spacing: -0.9px;}
-    .recentPlayList .recentImg{display: flex; justify-content: space-between;}
-    .recentPlayList .recentImg .col{}
-    .recentPlayList .recentImg .col .box{position: relative;}
-    .recentPlayList .recentImg .col img{}
-    .recentPlayList .recentImg .col span{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff; width: 100%; text-align: center;}
-    .recentPlayList .recentImg .col p{font-size: 13px; letter-spacing: -0.4px; padding: 10px 0 0 0;}
-    .recentPlayList .recentImg .col em{font-size: 13px; letter-spacing: 0.1px;}
-    .recentPlayList .more{position: absolute; right: 0; top: 3px; font-size: 15px; color: #C43761;}
-
+    /*공통*/
     h2{padding: 0 0 12px 0; font-size: 18px; font-weight: 600; letter-spacing: -0.9px;}
     .recentImg{display: flex; justify-content: space-between;}
     .recentImg .col{}
     .recentImg .col .box{position: relative;}
     .recentImg .col .box img{}
-    .recentImg .col .box span{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff;}
+    .recentImg .col .box span{position: absolute; transform: translate(-50%, -50%); left: 0%; top: 50%; display: block;  color: #fff;}
     .recentImg .col p{font-size: 13px; letter-spacing: -0.4px; padding: 10px 0 0 0;}
     .recentImg .col em{font-size: 13px; letter-spacing: 0.1px;}
 
+     /*최근재생음악*/
+     #recentPlayList{padding: 12px 0 12px 0; border-bottom: 1px solid #E5E5E5;}
+    .recentPlayList h2{padding: 0 0 12px 0; font-size: 18px; font-weight: 600; letter-spacing: -0.9px;}
+    .recentPlayList .recentImg{display: flex; justify-content: space-between;}
+    .recentPlayList .recentImg col{}
+
+     /*최근재생음악2*/
+    #recentPlayList2{padding: 12px 0 12px 0; border-bottom: 1px solid #E5E5E5; }
+    .recentPlayList{position: relative;}
+    .recentPlayList h2{}
+    .recentPlayList .recentImg{}
+    .recentPlayList .recentImg .col{}
+    .recentPlayList .recentImg .col .box{}
+    .recentPlayList .recentImg .col img{}
+    .recentPlayList .recentImg .col span{}
+    .recentPlayList .recentImg .col p{}
+    .recentPlayList .recentImg .col em{}
+    .recentPlayList .more{position: absolute; right: 0; top: 3px; font-size: 15px; color: #C43761;}
+
+    /*A-List팝*/
     #AList{padding: 12px 0 12px 0; border-bottom: 1px solid #E5E5E5;}
     .AList{}
     .AList h2{}
@@ -88,22 +92,34 @@
     .AList .recentImg .col{}
     .AList .recentImg .col img{}
     .AList .recentImg .col .box{}
-    .AList .recentImg .col .P1{width: 160px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; float: left;}
-    .AList .recentImg .col .P2{width: 2px; float: left;}
+    /* .AList .recentImg .col .P1{width: 8.5vw; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; float: left;} */
+    /* .AList .recentImg .col .P2{width: 0.2vw; float: left;} */
     .AList .recentImg .col em{display: block;}
 
-    #playButton{padding: 12px 0 12px 0;}
+    #TopPlayButton{padding: 6px 0 6px 0; border-bottom: 1px solid #E5E5E5;}
     .playButton{}
     .topButton{display: flex; justify-content: space-between;}
     .topButton .tb-left{flex-basis: 50%;}
     .topButton .tb-left img{float: left; width: initial;}
-    .topButton .tb-left p{float: left;}
+    .topButton .tb-left p{float: left; padding: 15px 0 0 20px; display: block;}
+
     .topButton .tb-right{flex-basis: 50%;}
-    .topButton .tb-right .play{width: 22px; float: left;}
-    .topButton .tb-right .next{width: 32px; float: left;}
+    .topButton .tb-right .play{width: 22px; float: right; padding: 10px 20px 0 0;}
+    .topButton .tb-right .next{width: 33px; float: right; padding: 5px 0 0 0;}
 
+    #BottomPlayButton{padding: 6px 0 21px 0;}
+    .bottomButton{display: flex; justify-content: space-between; text-align: center; padding: 0 0px; font-size: 9px; font-weight: 500;}
+    .bottomButton .save{ flex-basis: 25%; padding: 0 15px 0 0;}
+    .bottomButton .save svg{width: 20px;}
+    .bottomButton .forYou{ flex-basis: 25%; padding: 0 15px 0 0;}
+    .bottomButton .forYou svg{width: 20px;}
+    .bottomButton .viewMusic{ flex-basis: 25%; padding: 0 12px;}
+    .bottomButton .viewMusic svg{width: 20px;}
+    .bottomButton .radio{flex-basis: 25%; padding: 0 0 0 15px;}
+    .bottomButton .radio svg{width: 20px; }
+    .bottomButton .search{ flex-basis: 25%; padding: 0 0 0 15px;}
+    .bottomButton .search svg{width: 20px;}
 
-    .bottomButton{}
   </style>
 </head>
 <body>
@@ -111,7 +127,7 @@
       <div class="container">
         <div class="row">
           <div class="heaer">
-            <time class="header-data">2020년 6월 15일 월요일</time>
+            <time class="header-data">2020년 6월 15일 월요일 by H.J</time>
             <h1 class="header-title">라디오</h1>
             <!-- <div class="header-id"><span>w</span></div> -->
           </div>
@@ -150,10 +166,16 @@
               <h2>최근 재생한 음악</h2>
               <div class="recentImg">
                 <div class="col">
+                  <div class="box">
                   <img src="assets/img/recent1.jpg" alt="최근 재생 음악1">
+                  <span>랜덤 사진입니다!!</span>
+                </div>
                 </div>
                 <div class="col">
+                  <div class="box">
                   <img src="assets/img/recent2.jpg" alt="최근 재생 음악2">
+                  <span>랜덤 사진입니다!!</span>
+                </div>
                 </div>
               </div>
             </div>
@@ -201,8 +223,8 @@
                     <img src="assets/img/alist1.jpg" alt="alist1">
                     <span>랜덤 사진입니다!!</span>
                   </div>
-                  <p class="P1">OMG (feat. Quavo 줄임표시------</p>
-                  <p class="P2">)</p>
+                  <p class="P1">OMG (feat. Quavo) - sin...)</p>
+                  <!-- <p class="P2">)</p> -->
                   <em>AJ Tracey</em>
                 </div>
                 <div class="col">
@@ -219,32 +241,56 @@
         </div>
       </section>
 
-      <footer id="playButton">
+      <footer id="TopPlayButton">
         <div class="container">
           <div class="row">
-            <div class="playButton">
               <div class="topButton">
-
                 <div class="tb-left">
                   <img src="assets/img/play1.jpg" alt="플레이 중인 이미지">
                   <p>Rina</p>
                 </div>
-               
                 <div class="tb-right">
-                  <div class="play">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg>
-                  </div>
+                  <!--float right하면 오른쪽에 있는 것이 먼저 나와야 함-->
                   <div class="next">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="forward" class="svg-inline--fa fa-forward fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M500.5 231.4l-192-160C287.9 54.3 256 68.6 256 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2zm-256 0l-192-160C31.9 54.3 0 68.6 0 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2z"></path></svg>
                   </div>
+                  <div class="play">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg>
+                  </div>
                 </div>
-                
               </div>
-              <div class="bottomButton">
+             
+         
+          </div><!--//row-->
+        </div><!--//container-->
+      </footer>
 
-              </div>
+      <footer id="BottomPlayButton">
+        <div class="container">
+         <div class="row">
+          <div class="bottomButton">
+            <div class="save">
+              <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="folder" class="svg-inline--fa fa-folder fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"></path></svg>
+              <p>보관함</p>
+            </div>
+            <div class="forYou">
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+              <p>For You</p>
+            </div>
+            <div class="viewMusic">
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="music" class="svg-inline--fa fa-music fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"></path></svg>
+              <p>둘러보기</p>
+            </div>
+            <div class="radio">
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="satellite-dish" class="svg-inline--fa fa-satellite-dish fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M305.44954,462.59c7.39157,7.29792,6.18829,20.09661-3.00038,25.00356-77.713,41.80281-176.72559,29.9105-242.34331-35.7082C-5.49624,386.28227-17.404,287.362,24.41381,209.554c4.89125-9.095,17.68975-10.29834,25.00318-3.00043L166.22872,323.36708l27.39411-27.39452c-.68759-2.60974-1.594-5.00071-1.594-7.81361a32.00407,32.00407,0,1,1,32.00407,32.00455c-2.79723,0-5.20378-.89075-7.79786-1.594l-27.40974,27.41015ZM511.9758,303.06732a16.10336,16.10336,0,0,1-16.002,17.00242H463.86031a15.96956,15.96956,0,0,1-15.89265-15.00213C440.46671,175.5492,336.45348,70.53427,207.03078,63.53328a15.84486,15.84486,0,0,1-15.00191-15.90852V16.02652A16.09389,16.09389,0,0,1,209.031.02425C372.25491,8.61922,503.47472,139.841,511.9758,303.06732Zm-96.01221-.29692a16.21093,16.21093,0,0,1-16.11142,17.29934H367.645a16.06862,16.06862,0,0,1-15.89265-14.70522c-6.90712-77.01094-68.118-138.91037-144.92467-145.22376a15.94,15.94,0,0,1-14.79876-15.89289V112.13393a16.134,16.134,0,0,1,17.29908-16.096C319.45132,104.5391,407.55627,192.64538,415.96359,302.7704Z"></path></svg>
+              <p>라디오</p>
+            </div>
+            <div class="search">
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>
+              <p>검색</p>
             </div>
           </div>
+         </div>
         </div>
       </footer>
 
