@@ -174,12 +174,13 @@
 <script src="js/jquery.min.js"></script>
 <script>
     sliderImg = $(".slider-img");
+    slide = $(".slide");
 
     function autoplay() {
         sliderImg.animate({
             left: -1200
         }, 400, function () {
-            $(".slide:first-child").appendTo(sliderImg);
+            slide.eq(0).appendTo(sliderImg);
             sliderImg.css("left", "");
         });
     }
