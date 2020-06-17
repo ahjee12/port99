@@ -20,18 +20,54 @@
         *{margin: 0; padding: 0;}
         #contents{}
         #contents> section{position: relative; height: 20vh;}
-        #contents> section h1{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 2vw; color: rgb(18, 114, 39); }
-        #section1{background-image: url(../assets/img/b.png); background-size: cover; width: 20vw;}
+        #contents> section h1{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 2vw; color: rgb(18, 114, 39);}
+        #contents section h1.noneAttach{color: rgb(18, 196, 94); font-size: 1.5vw;}
+        #section1{background-image: url(img/1.jpg); background-size: cover; width: 20vw;}
         #section2{background-image: url(img/2.jpg); background-size: cover;  background-attachment: fixed;}
         #section3{background-image: url(img/3.jpg); background-size: cover;  background-attachment: fixed;}
         #section4{background-image: url(img/4.jpg); background-size: cover;  background-attachment: fixed;}
         #section5{background-image: url(img/5.jpg); background-size: cover;  background-attachment: fixed;}
         #section6{background-image: url(img/6.jpg); background-size: cover;  background-attachment: fixed;}
+        
+        .info3 {
+            position: fixed;
+            top: 50%;
+            right: 1vw;
+            transform: translateY(-50%);
+            padding: 10px;
+            z-index: 1000;
+            background: rgb(255, 255, 255, 0.7);
+        }
+
+        .info3 ul li a {
+            color: #000;
+            font-size: 25px;
+        }
+        .info3 ul li.active a {
+            color: #dc6e25
+        }
     </style>
 </head>
 <body>
+    <div class="info3">
+        <ul>
+            <li><a href="parallax01.html">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="parallax09.html">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
+            <li><a href="parallax10.html">Parallax11</a></li>
+            <li><a href="parallax12.html">Parallax12</a></li>
+            <li class="active"><a href="#">Parallax13</a></li>
+        </ul>
+    </div>
     <div id="contents">
-        <section id="section1"><h1>background-attachment없는 경우</h1></section>
+        <section id="section1"><h1 class="noneAttach">background-attachment없는 경우 <em>(width: 20vw)</em></h1></section>
         <section id="section2"><h1>background-attachment</h1></section>
         <section id="section3"><h1>background-attachment</h1></section>
         <section id="section4"><h1>background-attachment</h1></section>
