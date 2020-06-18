@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,98 +15,138 @@
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="48x48">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="64x64">
     <link rel="icon" href="../assets/ico/favicon_circle_128.svg" sizes="128x128">
-    
-    <title>Memory Game</title>
+
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style1.css">
+
+    <title>Memory Game</title>
+
 </head>
+
 <body>
+    <div class="modal-button">
+        <a href="#" class="btn">script보기</a>
+    </div>
+    <div id="modal">
+        <div class="code-editor">
+
+            <span class="control"></span>
+            <span class="control"></span>
+            <span class="control"></span>
+            <pre class="line-numbers">
+<code class="language-markup">&lt;script&gt;
+
+&lt;/script&gt;
+
+</code></pre>
+        </div>
+        <a href="#" class="close">
+            <svg viewBox="0 0 24 24">
+                <path d="M14.1,12L22,4.1c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0L12,9.9L4.1,2C3.5,1.4,2.5,1.4,2,2C1.4,2.5,1.4,3.5,2,4.1
+        L9.9,12L2,19.9c-0.6,0.6-0.6,1.5,0,2.1c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l7.9-7.9l7.9,7.9c0.3,0.3,0.7,0.4,1.1,0.4
+        s0.8-0.1,1.1-0.4c0.6-0.6,0.6-1.5,0-2.1L14.1,12z" />
+            </svg>
+        </a>
+    </div>
     <div class="info">
         <button class="btn-sound"></button>
-        <audio id= "theme-song" src="assets/music/background.mp3" loop="loop" autoplay controls></audio>
+        <!-- <audio id= "theme-song" src="assets/music/background.mp3" loop="loop" autoplay controls></audio> -->
         <div class="score">
-            <div class="record turns">기회: <span>2</span></div>
+            <div class="record turns">기회: <span>3</span></div>
             <div class="record attemps">시도: <span>0</span></div>
             <div class="record victory">우승: <span>0</span></div>
         </div>
     </div>
+    <div class="success">
+        <!-- <div class="score">
+            <div class="record turns">기회: <span>2</span></div>
+            <div class="record attemps">시도: <span>0</span></div>
+            <div class="record victory">우승: <span>0</span></div>
+        </div> -->
+        <div class="msgBox">
+            <p class="message">good</p>
+        </div>
+        <button class="continue">Try again? <span>click here:D</span></button>
+    </div>
+    <!-- <button class="success">Try Again?</button> -->
     <main>
-        <div class="card" data-type ="img1" data-matched ="false">
+        <div class="card" data-type="img1" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 1.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img2" data-matched ="false">
+        <div class="card" data-type="img2" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 2.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img3" data-matched ="false">
+        <div class="card" data-type="img3" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 3.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img4" data-matched ="false">
+        <div class="card" data-type="img4" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 4.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img5" data-matched ="false">
+        <div class="card" data-type="img5" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 5.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img6" data-matched ="false">
+        <div class="card" data-type="img6" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 6.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img7" data-matched ="false">
+        <div class="card" data-type="img7" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 7.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img8" data-matched ="false">
+        <div class="card" data-type="img8" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 8.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img9" data-matched ="false">
+        <div class="card" data-type="img9" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 9.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img10" data-matched ="false">
+        <div class="card" data-type="img10" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 10.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img1" data-matched ="false">
+        <div class="card" data-type="img1" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 1.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img2" data-matched ="false">
+        <div class="card" data-type="img2" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 2.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img3" data-matched ="false">
+        <div class="card" data-type="img3" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 3.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img4" data-matched ="false">
+        <div class="card" data-type="img4" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 4.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img5" data-matched ="false">
+        <div class="card" data-type="img5" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 5.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img6" data-matched ="false">
+        <div class="card" data-type="img6" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 6.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img7" data-matched ="false">
+        <div class="card" data-type="img7" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 7.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img8" data-matched ="false">
+        <div class="card" data-type="img8" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 8.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img9" data-matched ="false">
+        <div class="card" data-type="img9" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 9.jpg" alt="카드뒷면"></div>
         </div>
-        <div class="card" data-type ="img10" data-matched ="false">
+        <div class="card" data-type="img10" data-matched="false">
             <div class="front"><img src="assets/img/background.jpg" alt="카드앞면"></div>
             <div class="back"><img src="assets/img/Group 10.jpg" alt="카드뒷면"></div>
         </div>
@@ -116,97 +157,221 @@
         //0
         const $board = $(".main");
         const $card = $(".card");
-        
+
         //1 
         const selectedClass = "is-selected";
         let card1, card2;
         const dataType = "data-type";
         const dataMatch = "data-matched";
         timeoutLength = 600;
-    
+
         //2
         const $btnSound = $(".btn-sound");
-        const playSoundClass ='is-playing';
+        const playSoundClass = 'is-playing';
         const $themeSongEl = $("#theme-song")[0];
 
-        let sound = ["assets/music/boink1.mp3","assets/music/boink2.mp3","assets/music/correct.mp3"],
-        soundMatch = new Audio(sound[0]),
-        soundNoMatch = new Audio(sound[1]),
-        soundSuccess = new Audio(sound[2]);
+        let sound = ['assets/music/boink1.mp3', 'assets/music/boink2.mp3', 'assets/music/correct.mp3'],
+            soundMatch = new Audio(sound[0]),
+            soundNoMatch = new Audio(sound[1]),
+            soundSuccess = new Audio(sound[2]);
+        console.log(soundMatch);
 
         //3
         const $turns = $(".turns span");
-        let turnsCount = 2;
+        let turnsCount = 3;
         const lastTurnClass = "last-turn";
 
         //4
+        let attempsCount = 0;
+        const $attemps = $(".attemps span");
 
+        //5
+        const $success = $(".success");
+        const visibleClass = "is-visible";
+        let victorysCount = 0;
+        const $victory = $(".victory");
+
+        //6
+        $btnContinue = $(".continue");
+
+        //7
+        let msg;
+        const $successMsg = $(".message");
+
+        //시작할 때 카드 섞기
+        shuffleCard();
 
         //2
-        $btnSound.on('click',function(){
+        $btnSound.on('click', function () {
             $(this).toggleClass(playSoundClass);
             console.log($(this).hasClass(playSoundClass));
-            if($(this).hasClass(playSoundClass)){
-                    $themeSongEl.play();
-            }else{
+            //'is-playing'클래스가 있는 경우에만 
+            if ($(this).hasClass(playSoundClass)) {
+                $themeSongEl.play();
+            } else {
                 $themeSongEl.pause();
             }
         });
 
-
         //1
-        $card.click(function(){
-
+        $card.click(function () {
             //뒤집기
-            if($(this).attr(dataMatch) == "false"){
-                $(this).addClass(selectedClass); 
-               
-            }//if
-            
-            //선택된 카드를 is-selected 클래스로 객체화함.
-            let selectedCards = $("."+selectedClass);
+            if ($(this).attr(dataMatch) == "false") {
+                $(this).addClass(selectedClass);
+            } //if
 
-            if(selectedCards.length ==2){
+            //선택된 카드를 is-selected 클래스로 객체화함.
+            let selectedCards = $("." + selectedClass);
+
+            if (selectedCards.length == 2) {
                 card1 = selectedCards.eq(0).attr(dataType);
                 card2 = selectedCards.eq(1).attr(dataType);
                 console.log(card1);
                 console.log(card2);
+
                 //클릭한 두 개의 카드가 똑같은 경우
-                if(card1 == card2){
-                selectedCards.attr(dataMatch,"true").removeClass(selectedClass);
-                if($btnSound.hasClass(playSoundClass)){
-                    //2
-                    soundMatch.play();
-                }
+                if (card1 == card2) {
+                    if ($btnSound.hasClass(playSoundClass)) {
+                        //2
+                        soundMatch.play();
+                    }
+                    //선택된 카드 속성 data-match를 true로 바꾸고 
+                    selectedCards.attr(dataMatch, "true").removeClass(selectedClass);
+                } else {
+                    //클릭한 두 개의 카드가 다른 경우
+                    if ($btnSound.hasClass(playSoundClass)) {
+                        //2
+                        soundNoMatch.play();
+                    }
+                    //setTimeout 헷갈린다!!!
+                    setTimeout(function () {
+                        //선택된 카드 속성 data-match를 건들이지 않고 "is-selected"클래스 없앰
+                        selectedCards.removeClass(selectedClass);
+                        //☆☆☆turnsCount가 0이 되기 직전 turnsCount가 1인 상태로 카드 2개 뒤집어서 틀리면
+                        turnsCount--;
+                        console.log("turnsCount" + turnsCount);
+                        $turns.text(turnsCount);
+                    }, timeoutLength);
+                    // console.log(turnsCount);
+                    //3
+                    // 
+                    if (turnsCount === 1) {
+                        console.log(turnsCount);
+                        setTimeout(function () {
+                            //turns 기회 클래스에 last-turn 클래스 넣어서 글자색 빨간색으로 변경
+                            $turns.addClass(lastTurnClass)
+                        }, timeoutLength);
+                    }
+                    if (turnsCount <= 0) {
+                        setTimeout(function () {
+                            //기회 초기화
+                            turnsCount = 3;
+                            $turns.remove(lastTurnClass).html(turnsCount);
+                            //카드 속성 data-match 모두 false로
+                            $card.attr(dataMatch, false);
+                            console.log("attempsCount" + attempsCount);
+                            //시도 +1
+                            attempsCount++;
+                            $attemps.text(attempsCount);
+                        }, timeoutLength);
+                    }
+                } //else
+            } //카드 2개 뽑았을 때if
 
-                }else{ 
-                //setTimeout 헷갈린다!!!
-                setTimeout(function(){
-                    selectedCards.removeClass(selectedClass);
-                    turnsCount --;0
-                    console.log(turnsCount);
-                    $turns.text(turnsCount);
-                },timeoutLength);
-                console.log(turnsCount);
-                //3
-                //카운드 기회 없을 때(주의)
-                if(turnsCount === 1){
-                    console.log(turnsCount);
-                    setTimeout(function(){
-                        $turns.addClass(lastTurnClass)
-                    },timeoutLength);
+            //5 완성!!
+            //dataMatch가 true이면서 그 갯수가 전체 카드 갯수와 같을 때
+            if ($("[" + dataMatch + "='true']").length == $card.length) {
+                setTimeout(() => {
+                    $success.addClass(visibleClass);
+                    victorysCount++;
+                    $victory.text(victorysCount);
+                }, timeoutLength);
+
+                switch (true) {
+                    case (attempsCount <= 2):
+                        msg = "excellent"
+                        break;
+                    case (attempsCount > 2 && attempsCount <= 4):
+                        msg = "great"
+                        break;
+                    case (attempsCount > 4 && attempsCount <= 6):
+                        msg = "good"
+                        break;
+                    case (attempsCount > 6 && attempsCount <= 8):
+                        msg = "not bad"
+                        break;
+                    case (attempsCount > 8):
+                        msg = "hummm..."
+                        break;
                 }
-                if(turnsCount <= 0 ){
-                    setTimeout(function(){
-                        $turns.remove(lastTurnClass).html(turnsCount);
-                        $card.attr(dataMatch,false);
-                    },timeoutLength);
-                }
+                $successMsg.text(msg);
+
+                //카드 초기화
+                setTimeout(() => {
+                    $card.attr(dataMatch, false);
+                }, 1200);
+            }//완성if
+        }) //click
+
+        //다시 게임
+        $btnContinue.on("click", function () {
+            //success 클래스 나타내기
+            $success.removeClass(visibleClass);
+            shuffleCard();
+            //기회 초기화
+            turnsCount = 3;
+            //turns 기회 클래스에 last-turn 클래스 넣어서 글자색 빨간색으로 변경
+            turns.removeClass(lastTurnClass).html(turnsCount);
+            //시도 초기화
+            attempsCount = 0;
+            $attemps.text(attempsCount);
+        })
+
+        //카드 섞기
+        function shuffleCard() {
+            let cards = $board.children();
+            console.log(cards.length);
+            // for(let i =0; i<cards.length; i++){
+            //     let arr = [];
+            //     let random = cards.splice(Math.floor(Math.random()*cards.length),1)[0];  //0~19
+            //     arr.push(random);
+            // }   
+            while (cards.length) {
+                $board.append(cards.splice(Math.floor(Math.random() * cards.length), 1)[0]);
+                console.log(Math.random() );
+                console.log("Math" + Math.floor(Math.random() * cards.length));
             }
-            }//if
-        })//click
+            $card.each(function (index) {
+                setTimeout(() => {
+                    $(this).addClass(selectedClass);
+                }, timeoutLength + 100 * index);
+            });
 
-      
+            setTimeout(() => {
+                $card.removeClass(selectedClass);
+            }, 5000);
+
+        }
+
+        //modal 버튼, close버튼 클릭
+        $(".btn").click(function () {
+            $("#modal").slideDown();
+            //animate에서는 transform 안 됨!! $(this).animate({"width": "100px"},200);
+            $(this).css({
+                "transform": "scale(1.2)"
+            });
+            setTimeout(function () {
+                $(".btn").css({
+                    "transform": "scale(1)"
+                });
+                //   console.log($(this));
+            }, 100);
+
+        })
+        $(".close").click(function () {
+            $("#modal").slideUp();
+        })
     </script>
 </body>
+
 </html>

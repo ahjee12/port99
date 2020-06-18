@@ -151,16 +151,14 @@
         </footer>
     </div>
     <!--The end of wrap-->
-    <script src="../assets/js/jquery.min_1.12.4.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
     <script>
         //네비게이션
         $("nav > ul > li> a").mouseover(function(){
             $(this).find(".submenu").stop().slideDown(300);
-
         })
         $("nav > ul > li> a").mouseout(function(){
             $(this).find(".submenu").stop().slideUp(300);
-
         })
 
         //currentIndex = 0; : 첫 번째 이미지 top: 0px
@@ -169,14 +167,12 @@
         //이미지 슬라이드(상하)
 
         var currentIndex = 0; //첫 번째 이미지
-
         setInterval(function(){
             if(currentIndex <2){
                 currentIndex++;
             }else{
                 currentIndex = 0;
             }
-            
             // var slidePosition = currentIndex*(-387)+"px";
             // $(".slideList").animate({top: slidePosition},400);
             //alert(slidePosition);
