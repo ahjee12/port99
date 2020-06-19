@@ -89,7 +89,7 @@
                                 <ul class="tab">
                                     <li class="active">
                                         <a href="#">롯데월드 소식 <em>|</em></a>
-                                        <ul class="tab-contents active">
+                                        <ul class="tab-contents">
                                             <div><a href="#">line1</a><span>2020.06.05</span></div>
                                             <div><a href="#">line2</a><span>2020.06.06</span></div>
                                             <div><a href="#">line3</a><span>2020.06.07</span></div>
@@ -173,6 +173,7 @@
 </body>
 <script src="js/jquery.min.js"></script>
 <script>
+    //슬라이드
     sliderImg = $(".slider-img");
     slide = $(".slide");
 
@@ -188,12 +189,7 @@
         autoplay();
     }, 3000);
 
-    // $(".mainmenu> li> a").hover(function () {
-    //     $(".submenu").stop().slideDown();
-    // }, function () {
-    //     $(".submenu").stop().slideUp();
-    // });
-
+    //네비게이션 메뉴
     $(".mainmenu> li").mouseover(function () {
         $(".submenu").stop().slideDown();
     })
@@ -201,28 +197,69 @@
         $(".submenu").stop().slideUp();
     })
 
-    // tabMenu = $(".tab-contents");
-    // tabMenu.hide();
-    // tabMenu.hasClass("active").show();
+    //탭메뉴
+    tabMenu = $(".tab");
+    tabList = tabMenu.children("li");
+    tabListTitle = tabList.children("a");
+    tabListContent = tabList.children("ul");
 
-    tabMenu = $(".news-list .col1")
-    tabMenuContent =  tabMenu.find(".tab-contents");
-    tabMenu.find(".tab-contents").hide();
+    console.log(tabMenu);
+    console.log(tabList);
+    console.log(tabListTitle);
+    console.log(tabListContent);
+
+    tabListContent.hide();
     tabMenu.find("li.active > .tab-contents").show();
-    
+
+    //Sol#2
     function show(){
         let target = $(this);
-        console.log(target);
-        tabMenu.find("ul>li>a").css({color:" #000"});
-        target.css({color: "#ccc"})
-        tabMenu.find("ul>li>a>em").css({color:" #000"});
-        // let index = target.index();
-        // tabMenu.find("li").removeClass("active");
-        // tabMenu.find("li> .tab-contents").
-        target.next().show().parent("li").addClass("active").siblings("li").removeClass("active").find(".tab-contents").hide();
-    }
-    tabMenu.find("ul>li>a").click(show);
+        console.log("target"+target);
+        //모든 a태그 검은색 
+        tabListTitle.css({color: "#000"});
+        //선택적 em태그 검은색으로 유지 (em 태그 포함한 a클릭 했을 때 색이 #ccc로 바뀌기 때문에...)
+        tabListTitle.find("em").css({color: "#000"});
+        //클릭한 a태그 
+        target.css({color: "#ccc"});
+      
+        //모든 tabList에 클래스 삭제
+        tabListContent.hide();
+        //클릭한 a태그 다음 요소 나타냄
+        target.next().show();
+        // .parent("li").addClass("active");
 
+        // //모든 tabList에 클래스 삭제 active css에서 설정했을 때
+        // tabList.removeClass("active");
+        // tabListContent.hide();
+        //  //클릭한 a태그 상위tabList에 클래스 추가
+        // target.next().show().parent("li").addClass("active");
+
+        //클릭한 a태그 상위tabList에 클래스 추가 웹 표준 준 수 안 했을 때
+        // let index = target.index();
+        // console.log("index:"+index);
+        // tabListContent.eq(index).show();
+        // console.log(tabListContent.eq(index));
+        // tabList.eq(index).addClass("active");
+
+        // target.next().show().parent("li").addClass("active").siblings("li").removeClass("active").find(".tab-contents").hide();
+    }
+    tabListTitle.click(show);
+
+    //Sol#1
+    // function show(){
+    //     let target = $(this);
+    //     console.log(target);
+    //     tabMenu.find("ul>li>a").css({color:" #000"});
+    //     target.css({color: "#ccc"})
+    //     tabMenu.find("ul>li>a>em").css({color:" #000"});
+    //     // let index = target.index();
+    //     // tabMenu.find("li").removeClass("active");
+    //     // tabMenu.find("li> .tab-contents").
+    //     target.next().show().parent("li").addClass("active").siblings("li").removeClass("active").find(".tab-contents").hide();
+    // }
+    // tabMenu.find("ul>li>a").click(show);
+
+    //팝업
     $(".col2-box").click(function(){
         $(".col2-box.popup").css({display: "block"});
         $(".col2-box.popup").click(function(){

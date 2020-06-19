@@ -20,7 +20,7 @@ header ul.mainmenu > li{
 header ul.mainmenu > li:hover{background-color: rgb(255, 255, 255);}
 header ul li a{display: block; height: 100%; display: flex; justify-content: center; align-items: center;}
 header ul li a:hover{}
-header ul li ul{position: relative; z-index: 1; width: 100%; top: 10px;}
+header ul li ul{position: relative; z-index: 1; width: 100%; top: 10px; display: none;}/*display none*/
 header ul li ul li{background-color: rgb(245, 38, 159); font-size: 23px; font-weight: bold;}
 header ul li ul li:hover{background-color: rgb(241, 243, 129);}
 header ul li ul a{ display: block;}
@@ -42,7 +42,7 @@ section.news .news-list .col1 .col1-box{border: 1px solid #000; height: 266.64px
 
 .news-list .col1 .col1-box ul{}
 .news-list .col1 .col1-box ul li{display: inline; padding-bottom: 10px;}
-.news-list .col1 .col1-box ul li a{  font-weight: bold; font-size: 1.5em; padding: 20px 0; }
+.news-list .col1 .col1-box ul li a{font-weight: bold; font-size: 1.5em; padding: 20px 0; }
 /* .news-list .col1 .col1-box ul li ul{ display: none;} */
 
 .news-list .col1 .col1-box ul li ul{

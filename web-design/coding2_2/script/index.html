@@ -14,7 +14,8 @@
                
                 <nav>
                     <ul class="clearfix">
-                        <li class="nav-intro"><a href="#">COOKIT소개</a>
+                        <li class="nav-intro">
+                            <a href="#">COOKIT소개</a>
                             <ul class="submenu menu1">
                                 <li><a href="#">sub-menu1</a></li>
                                 <li><a href="#">sub-menu1</a></li>
@@ -22,7 +23,8 @@
                                 <li><a href="#">sub-menu1</a></li>
                             </ul>
                         </li>
-                        <li class="nav-menu"><a href="#">COOKIT메뉴</a>
+                        <li class="nav-menu">
+                            <a href="#">COOKIT메뉴</a>
                             <ul  class="submenu menu2">
                                 <li><a href="#">sub-menu2</a></li>
                                 <li><a href="#">sub-menu2</a></li>
@@ -30,7 +32,8 @@
                                 <li><a href="#">sub-menu2</a></li>
                             </ul>
                         </li> 
-                        <li class="nav-review"><a href="#">리뷰</a>
+                        <li class="nav-review">
+                            <a href="#">리뷰</a>
                             <ul  class="submenu menu3">
                                 <li><a href="#">sub-menu3</a></li>
                                 <li><a href="#">sub-menu3</a></li>
@@ -38,7 +41,8 @@
                                 <li><a href="#">sub-menu3</a></li>
                             </ul>
                         </li>
-                        <li class="nav-event"><a href="#">이벤트</a>
+                        <li class="nav-event">
+                            <a href="#">이벤트</a>
                             <ul  class="submenu menu4">
                                 <li><a href="#">sub-menu4</a></li>
                                 <li><a href="#">sub-menu4</a></li>
@@ -46,7 +50,8 @@
                                 <li><a href="#">sub-menu4</a></li>
                             </ul>
                         </li>
-                        <li class="nav-my"><a href="#">MY 쿡킷</a>
+                        <li class="nav-my">
+                            <a href="#">MY 쿡킷</a>
                             <ul  class="submenu menu5">
                                 <li><a href="#">sub-menu5</a></li>
                                 <li><a href="#">sub-menu5</a></li>
@@ -154,10 +159,10 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script>
         //네비게이션
-        $("nav > ul > li> a").mouseover(function(){
+        $("nav > ul > li").mouseover(function(){
             $(this).find(".submenu").stop().slideDown(300);
         })
-        $("nav > ul > li> a").mouseout(function(){
+        $("nav > ul > li").mouseout(function(){
             $(this).find(".submenu").stop().slideUp(300);
         })
 
