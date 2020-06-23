@@ -160,7 +160,7 @@
         //     sliderImg.animate({left: currentIndex*(-1000)+"px"},400);
         // },3000)
 
-        //Slider04
+        //Slider04슬라이드
         setInterval(function(){
             sliderImg.animate({left:"-1000px"},400,function(){
                 // 첫 이미지를 마지막 이미지에 넣음
@@ -168,6 +168,19 @@
                 sliderImg.css("left","");
             });
         },3000);
+
+        //Slider04깜박임
+        // function flicker(){
+        //     sliderImg.animate({left:"-1000px"},0,function(){
+        //         // 첫 이미지를 마지막 이미지에 넣음
+        //         $(".slides:first-child").appendTo(sliderImg);
+        //         sliderImg.css("left","");
+        //     });
+        // }
+
+        // setInterval(flicker,500);
+
+
     </script>
 </body>
 </html>
