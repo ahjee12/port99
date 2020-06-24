@@ -1,0 +1,40 @@
+*{margin: 0; padding: 0;}
+.container{max-width: 375px; margin: 0 auto;}
+.row{margin: 0 6px;}
+.row2{margin: 0 17px;}
+
+#header{position: fixed; left: 0; top: 0; width: 100%; background: #fff; z-index: 2;
+}
+#header.active{border-bottom: 1px solid #c4c4c4; box-shadow: 1px 0px 6px 0px rgba(0,0,0,0.3);}
+.header{position: relative;}
+.header-title{font-size: 12px; color: #B9372B; letter-spacing: 3%; margin: 45px 0 0 0; }
+.header-univ{font-size: 22px; font-weight: bold; letter-spacing: 3%; margin: 0 0 12px 0;}
+.header-search svg{width: 20px; color: #B9372B; position: absolute; right: 50px; top: 23px;}
+.header-account svg{width: 20px; color: #B9372B; position: absolute; right: 0; top: 23px;}
+
+#info{margin: 112px 0 0 0;}
+#info .row2{
+    /* overflow: hidden; */
+}
+.info{
+    /* width: 987px;  */
+    /* display: flex;  */
+    /* position: relative; left: 10px; */
+}
+.info a .col{
+    max-width: 290px; height: 192px; border: 1px solid #c4c4c4;
+    border-radius: 7%;
+    padding: 25px 25px 25px 60px;
+    margin-right: 1%;
+    box-sizing: border-box;
+    position: absolute;
+    
+  
+}
+ 
+.info a .col i{ position: absolute; left: 25px; top: 25px; font-size: 25px;}
+.info a .col h2{font-size: 18px; font-weight: bold; letter-spacing: -4%;}
+.info a .col p{font-size: 12px; letter-spacing: 2.5%; color: #ACD6A8;}
+
+
+
