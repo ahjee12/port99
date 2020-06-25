@@ -159,8 +159,5 @@ function WhiteDog(){
 const whiteDog = new WhiteDog();
 whiteDog.bark();
 
-
-
-
 export default App;
 

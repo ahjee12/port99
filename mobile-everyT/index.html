@@ -66,28 +66,27 @@
             <div class="row">
                 <div class="row2">
                     <div class="info">
-                        <a href="#">
-                            <div class="col exam">
+                        <div class="col exam">
+                            <div class="box">
                                 <i class="far fa-calendar-alt"></i>
                                 <h2>기말고사</h2>
                                 <p>6월 22일(월)~6월 27일(토)</p>
                             </div>
-                        </a>
-                    
-                        <a href="#">
-                            <div class="col grade">
+                        </div>
+                        <div class="col grade">
+                            <div class="box">
                                 <i class="far fa-lightbulb"></i>
-                                <h2>초간단 학저 계산 방법</h2>
+                                <h2>초간단 학점 계산 방법</h2>
                                 <p>이번 학기 예상 학점 계산!</p>
                             </div>
-                        </a>
-                        <a href="#">
-                            <div class="col schedule">
+                        </div>
+                        <div class="col schedule">
+                            <div class="box">
                                 <i class="far fa-check-square"></i>
                                 <h2>오늘의 할일</h2>
                                 <p>6월 24일(수)</p>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,9 +114,113 @@
 
     <script src="assets/js/jquery.min.js"></script>
     <script>
-        const infoList = $(".info");
-        const infoFirstSlide = $(".info .col:first-child");
+        // const infoList = $(".info");
+        // const infoSlide = $(".info .col");
+        // const infoFirstSlide = $(".info .col:first-child");
         
+        // const totalWidth = infoList.width();
+        // console.log(totalWidth);
+
+        // const slider = document.querySelector(".info");
+        // const sliderEachItems = document.querySelectorAll(".info .col");
+        // const sliderFirstItem = document.querySelector(".info .col:first-child");
+        // const sliderLastItem = document.querySelector(".info .col:last-child");
+
+        // console.log(slider);
+        // console.log(sliderEachItems);
+        // console.log(sliderEachItems[1]);
+        // console.log(sliderEachItems[2]);
+        // console.log(sliderFirstItem);
+        // console.log(sliderLastItem);
+
+        // function slide(slider,sliderEachItems){
+        //     let posx1 = 0;
+        //     let posx2 = 0;
+        //     let posInitial = 100;
+        //     let posFinal = 100;
+        //     let threshold = 100;
+
+        //     slidesLength  = sliderEachItems.length;
+        //     console.log(slidesLength);
+        //     slideSize = sliderEachItems[0].offsetWidth;
+        //     console.log( slideSize);
+            
+        //     cloneFirst = sliderEachItems[0].cloneNode(true);
+        //     cloneLast = sliderEachItems[1].cloneNode(true);
+
+        //     let index = 0;
+        //     allowShift = true;
+
+        //     //clone first and last slide
+        //     sliderEachItems.appendChild(cloneFirst);
+        //     sliderEachItems.insertBefore(cloneLast,sliderEachItems[0]);
+
+        //     //mouse event
+        //     sliderEachItems.onmousedown = dragStart;
+
+        //     //touch
+
+        // }
+
+        // slide(slider,sliderEachItems)
+
+        const slideList = $(".info");
+        const slide = $(".info .col");
+        const firstSlide = $(".info .col:first-child");
+        
+        // const totalWidth = slideList.width();
+        // console.log(totalWidth);
+       
+        // let gridWidth = 375 - 6*2 - 17*2;
+        // console.log(gridWidth);
+
+        // let slideWidth = slide.outerWidth();
+        // console.log(slideWidth);
+
+        // let slideLength = slide.length;
+        // console.log(slideLength);
+
+        // let totalWidth = slideWidth*slideLength;
+        // console.log(totalWidth);
+
+        
+        // slideList.css('width',totalWidth);
+
+        // Draggable.create(slideList,{
+        //     type: 'x',
+        //     edgeResistance : 0.65,
+        //     bounds: {minX: -(totalWidth-gridWidth),maxX:0},
+        //     throwProps: true,
+        //     snap:{
+        //         x: function(endValue){
+        //             return Math.round(endValue /gridWidth)*gridWidth;
+        //         }
+        //     }
+        // })
+
+        // onDelay();
+        // let i = 0;
+        // function onDelay(){
+        //     if(i>slideLength){
+        //         gridWidth = 0;
+        //         i = 0;
+        //     }else{
+        //         gridWidth += slideWidth;
+        //         i++;
+        //     }
+
+            
+        // }
+
+
+
+
+
+
+
+        
+
+
 
     </script>
 </body>

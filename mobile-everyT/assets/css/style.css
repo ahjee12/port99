@@ -1,4 +1,9 @@
 *{margin: 0; padding: 0;}
+
+html{
+    font-size: .75151vw;
+}
+
 .container{max-width: 375px; margin: 0 auto;}
 .row{margin: 0 6px;}
 .row2{margin: 0 17px;}
@@ -14,32 +19,41 @@
 
 
 #info{margin: 112px 0 0 0;}
+/* #info .info,#info .container, #info .row{overflow: hidden;} */
 #info .row2{
     overflow: hidden;
 }
 .info{
-    width: 870px; height: 192px;
+    /* min-width: 900px; */
+    /* width: 70rem; */
+    /* width: ; */
+    width: 900px;
+    /* height: 192px; */
+    /* width: 20rem; */
     display: flex; 
    
     position: relative;
     /* left: -10px;  */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-.info a {
-    width: 290px; height: 192px; border: 1px solid #c4c4c4;
-    border-radius: 7%;
+.info .col {
+    padding-right: 8px;
+    /* display: flex; flex-direction: column; */
+    
+}
+.info .col .box{
+    width: 290px;
+    height: 192px;
     padding: 25px 25px 25px 60px;
-    margin-right: 1%;
+    border: 1px solid #c4c4c4;
+    border-radius: 7%;
     box-sizing: border-box;
     position: relative;
-    
-    display: flex; flex-direction: column;
-  
 }
  
-.info a .col i{ position: absolute; left: 25px; top: 25px; font-size: 25px;}
-.info a .col h2{font-size: 18px; font-weight: bold; letter-spacing: -4%;}
-.info a .col p{font-size: 12px; letter-spacing: 2.5%; color: #ACD6A8;}
+.info .col .box i{ position: absolute; left: 25px; top: 25px; font-size: 25px;}
+.info .col .box h2{font-size: 18px; font-weight: bold; letter-spacing: -4%;}
+.info .col .box p{font-size: 12px; letter-spacing: 2.5%; color: #ACD6A8;}
 
 
 
