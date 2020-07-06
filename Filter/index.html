@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,70 +8,271 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
 
-<form id="Filters" class="controls clearfix">
-  <fieldset>
-    <h4>Shapes</h4>
-    <div class="checkbox">
-      <input type="checkbox" value=".square"/>
-      <label>Square</label>
-    </div>
-      <div class="checkbox">
-      <input type="checkbox" value=".square"/>
-      <label>Circles</label>
-    </div>
-      <div class="checkbox">
-      <input type="checkbox" value=".square"/>
-      <label>Training</label>
-    </div>
-  </fieldset>
-  <fieldset>
-    <h4>Colors</h4>
-    <div class="checkbox">
-      <input type="checkbox" value=".white"/>
-      <label>White</label>
-    </div>
-      <div class="checkbox">
-      <input type="checkbox" value=".green"/>
-      <label>Green</label>
-    </div>
-      <div class="checkbox">
-      <input type="checkbox" value=".blue"/>
-      <label>Blue</label>
-    </div>
-  </fieldset>
-  <fieldset>
-    <h4>Sizes</h4>
-    <div class="checkbox">
-      <input type="checkbox" value=".small"/>
-      <label>Small</label>
-    </div>
-      <div class="checkbox">
-      <input type="checkbox" value=".large"/>
-      <label>Large</label>
-    </div>
-  </fieldset>
-  <button id="Reset">Clear Filters</button>
-</form>
+    <form id="Filters" class="controls clearfix">
+        <fieldset>
+            <h4>Shapes</h4>
+            <div class="checkbox">
+                <input type="checkbox" value=".square" />
+                <label>Square</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" value=".circle" />
+                <label>Circles</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" value=".triangle" />
+                <label>Triangle</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <h4>Colors</h4>
+            <div class="checkbox">
+                <input type="checkbox" value=".white" />
+                <label>White</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" value=".green" />
+                <label>Green</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" value=".blue" />
+                <label>Blue</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <h4>Sizes</h4>
+            <div class="checkbox">
+                <input type="checkbox" value=".small" />
+                <label>Small</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" value=".large" />
+                <label>Large</label>
+            </div>
+        </fieldset>
+        <button id="Reset">Clear Filters</button>
+    </form>
 
-<div id="container" class="container">
-  <div class="fail-message"><span>No items were found matching the selected filters</span></div>
-  <div class="mix"></div>
-  <div class="mix"></div>
-  <div class="mix"></div>
-  <div class="mix"></div>
-  <div class="mix"></div>
-  <div class="mix"></div>
-  <div class="mix"></div>
-  <div class="mix"></div>
-  <div class="mix"></div>
-  
-  <div class="gap"></div>
-  <div class="gap"></div>
-  <div class="gap"></div>
-  <div class="gap"></div>
-</div>
+    <div id="Container" class="container">
+        <div class="fail-message"><span>No items were found matching the selected filters</span></div>
+        <div class="box">
+            <div class="mix triangle white large"></div>
+        </div>
+        <div class="box">
+            <div class="mix square white small"></div>
+        </div>
+        <div class="box">
+            <div class="mix circle pink large"></div>
+        </div>
+        <div class="box">
+            <div class="mix triangle blue large"></div>
+        </div>
+        <div class="box">
+            <div class="mix square white large"></div>
+        </div>
+        <div class="box">
+            <div class="mix circle blue small"></div>
+        </div>
+        <div class="box">
+            <div class="mix triangle pink large"></div>
+        </div>
+        <div class="box">
+            <div class="mix square blue large"></div>
+        </div>
+        <div class="box">
+            <div class="mix circle white large"></div>
+        </div>
+        <div class="box">
+            <div class="mix triangle pink small"></div>
+        </div>
+        <div class="box">
+            <div class="mix triangle blue small"></div>
+        </div>
+        <div class="box">
+            <div class="mix circle white small"></div>
+        </div>
+        <div class="box">
+            <div class="mix circle pink small"></div>
+        </div>
+
+
+        <!-- <div class="box2 gap"></div>
+  <div class="box2 gap"></div>
+  <div class="box2 gap"></div>
+  <div class="box2 gap"></div>
+  <div class="box2 gap"></div>
+  <div class="box2 gap"></div>
+  <div class="box2 gap"></div>
+  <div class="box2 gap"></div> -->
+    </div>
 </body>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.mixitup.js"></script>
+<script>
+    // const checkboxFilter = {
+    //     $filter: null,
+    //     $reset: null,
+    //     groups: [],
+    //     outputArray: [],
+    //     outputString: '',
+
+    //     init: function(){
+    //         const self = this;
+    //         self.$filters = $('#Filters');
+    //         self.$reset = $('#Reset');
+    //         self.$container = $('#content');
+
+    //         self.$filters.find('fieldset').each(function(){
+    //             self.groups.push({
+    //                 $inputs: $(this).find('input'),
+    //                 active: [],
+    //                 tracker: false
+    //             })
+    //         })
+    //         self.bindHandlers();
+    //     },
+
+    //     bindHandlers: function(){
+    //         const self = this;
+
+    //         self.$filters.on('change',function(){
+    //             self.parseFilters();
+    //         })
+
+    //         self.$reset.on('click',function(e){
+    //             e.preventDefault();
+    //             self.$filters[0].reset();
+    //             self.parseFilters();
+    //         })
+    //     },
+
+    //     parseFilters: function(){
+    //         const self = this;
+
+    //         for(let i = 0, group; group = self.groups[i]; i++){
+    //             group.active = [];
+    //             group.$inputs.each(function(){
+    //                 $(this).is(':checked') && group.active.push(this.value);
+    //             })
+    //             group.active.length && (group.tracker = 0);
+    //         }
+
+    //         self.concatenate();
+    //     },
+
+    //     concatenate: function(){
+    //         const self = this,
+    //         cache  = '',
+    //         crawled = false,
+
+    //         checkTrackers = function(){
+    //             let done = 0;
+    //             for(let i = 0, group; group = self.groups[i]; i++){
+    //             (group.tracker === false) && done++;
+    //             }
+    //             return(done < self.groups.length);
+    //         }
+
+    //         crawl = function(){
+    //             for(let i = 0, group; group = self.groups[i]; i++){
+    //                 group.active[group.tracker] && (cache += group.active[group.tracker]);
+    //                 if(i ===self.groups.length - 1){
+    //                     self.outputArray.push(cache);
+    //                     cache = '';
+    //                     uopdateTrackers();
+    //                 }
+
+    //             }
+    //         },
+
+    //         uopdateTrackers = function(){
+    //             for(let i = self.group.length - 1; i > -1; i --){
+    //                 let group = self.groups[i];
+
+    //                 if(group.active[group.tracker + 1]){
+    //                     group.tracker ++;
+    //                     break;
+    //                 }else if(i> 0){
+    //                     group.tracker && (group.tracker = 0);
+    //                 }else{
+    //                     crawled = true;
+    //                 }
+    //             }
+    //         };
+
+    //         self.outputArray = []; //reset outpout array
+    //         do{
+    //             crawl();
+    //         }
+    //         while(!crawled && checkTrackers());
+
+    //         self.outputString = self.outputArray.join();
+    //         !self.outputString.length && (self.outputString = 'all');
+    //          //console.log(self.outputString); 
+
+    //          if(self.$container.mixItUp('isLoaded')){
+    //              self.$container.mixItUp('filter', self.outputString);
+    //          }
+
+    //     }//concatenate
+
+    // };//checkboxfilter
+
+    // $(function(){
+
+    //     checkboxFilter.init();
+
+    //     $('#content').mixItUp({
+    //         controls: {
+    //             enable: false
+    //         },
+    //         animation: {
+    //             easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+    //             duration: 600
+    //         }
+    //     });
+    // });
+
+    //다른 방법
+    inputBtn = $("input");
+    console.log(inputBtn);
+
+    inputBtn.click(function () {
+        const inputBtnValue = $(this).attr('value');
+        console.log(inputBtnValue);
+        console.log($(inputBtnValue));
+        const inputParentBox = $(inputBtnValue).parent('.box');
+        console.log(inputParentBox);
+        const inputBtnField = $(this).parent().parent('fieldset');
+        console.log(inputBtnField);
+        
+        // let 
+        // inputBtnField
+        // if(inputBtn )
+        if (inputParentBox.hasClass('pick') == false) {
+            //클릭하다 보면 hide 클래스 붙음
+            inputParentBox.removeClass('hide');
+            inputParentBox.addClass('pick');
+            $(".box").each(function () {
+                if ($(this).hasClass('pick') == false) {
+                    $(this).addClass('hide');
+                }
+            })
+        } else {
+            //클릭하다 보면 pick 클래스 붙음
+            inputParentBox.removeClass('pick');
+            inputParentBox.addClass('hide');
+        }
+
+
+
+    })
+</script>
+
 </html>
