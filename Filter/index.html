@@ -36,8 +36,8 @@
                 <label>White</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" value=".green" />
-                <label>Green</label>
+                <input type="checkbox" value=".orange" />
+                <label>Orange</label>
             </div>
             <div class="checkbox">
                 <input type="checkbox" value=".blue" />
@@ -67,7 +67,7 @@
             <div class="mix square white small"></div>
         </div>
         <div class="box">
-            <div class="mix circle pink large"></div>
+            <div class="mix circle orange large"></div>
         </div>
         <div class="box">
             <div class="mix triangle blue large"></div>
@@ -79,7 +79,7 @@
             <div class="mix circle blue small"></div>
         </div>
         <div class="box">
-            <div class="mix triangle pink large"></div>
+            <div class="mix triangle orange large"></div>
         </div>
         <div class="box">
             <div class="mix square blue large"></div>
@@ -88,7 +88,7 @@
             <div class="mix circle white large"></div>
         </div>
         <div class="box">
-            <div class="mix triangle pink small"></div>
+            <div class="mix triangle orange small"></div>
         </div>
         <div class="box">
             <div class="mix triangle blue small"></div>
@@ -97,7 +97,7 @@
             <div class="mix circle white small"></div>
         </div>
         <div class="box">
-            <div class="mix circle pink small"></div>
+            <div class="mix circle orange small"></div>
         </div>
 
 
@@ -243,16 +243,21 @@
     inputBtn = $("input");
     console.log(inputBtn);
 
+    let prevInputBtn = ''; 
+
     inputBtn.click(function () {
         const inputBtnValue = $(this).attr('value');
         console.log(inputBtnValue);
         console.log($(inputBtnValue));
         const inputParentBox = $(inputBtnValue).parent('.box');
         console.log(inputParentBox);
+
         const inputBtnField = $(this).parent().parent('fieldset');
         console.log(inputBtnField);
+        let prevInputBtnField = prevInputBtn.parent().parent('fieldset');
+        console.log(prevInputBtnField);
         
-        // let 
+
         // inputBtnField
         // if(inputBtn )
         if (inputParentBox.hasClass('pick') == false) {
@@ -270,7 +275,8 @@
             inputParentBox.addClass('hide');
         }
 
-
+        prevInputBtn = $(this);
+        console.log(prevInputBtn);
 
     })
 </script>

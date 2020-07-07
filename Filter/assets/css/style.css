@@ -176,17 +176,17 @@ button {
   background: none;
 }
 
-.container .mix.triangle.pink {
+.container .mix.triangle.orange {
   border-color: #ff4800;
   border-right-color: transparent;
   border-top-color: transparent;
 }
 
-.container .mix.square.pink {
+.container .mix.square.orange {
   background: #ff4800;
 }
 
-.container .mix.circle.pink {
+.container .mix.circle.orange {
   background: #ff4800;
 }
 
