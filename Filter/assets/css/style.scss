@@ -77,14 +77,8 @@ button{
     // justify-content: space-between;
     // align-items: center;
     // flex-wrap: wrap;;
-    position: relative;
+    // position: relative;
     overflow: hidden;
-}
-.fail-message span{
-    position: absolute; left: 50%; top: 40%; transform: translate(-50%,-50%);
-    font-size: 60px;
-    text-align: center;
-    width: 100%;
 }
 
 .container .box
@@ -101,17 +95,18 @@ button{
 
     transition: all 0.3s;
 }
-.container .box:nth-child(5n + 1)
+.container .box:nth-child(5n)
 {
    margin: 0 0 0 0;
 }
 
-.container box.hide{
+.container .box.hide{
     display: none;
     // width: 0%;
 }
-.container box.pick{
-    width: initial;
+.container .box.pick{
+    // width: initial;
+    display: flex;
 }
 
 .container .mix
@@ -142,4 +137,12 @@ button{
 .container .mix.square.small{width: 100px; height: 100px;}
 .container .mix.circle.small{width: 100px; height: 100px;}
 // .container .box.blue{ background: #45a6f5;}
+
+.fail-message span{
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    font-size: 60px;
+    text-align: center;
+    width: 100%;
+}
+
 

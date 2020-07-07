@@ -59,7 +59,6 @@
     </form>
 
     <div id="Container" class="container">
-        <div class="fail-message"><span>No items were found matching the selected filters</span></div>
         <div class="box">
             <div class="mix triangle white large"></div>
         </div>
@@ -110,6 +109,7 @@
   <div class="box2 gap"></div>
   <div class="box2 gap"></div> -->
     </div>
+    <div class="fail-message"><span>No items were found matching the selected filters</span></div>
 </body>
 
 <script src="assets/js/jquery.min.js"></script>
@@ -254,8 +254,7 @@
 
         const inputBtnField = $(this).parent().parent('fieldset');
         console.log(inputBtnField);
-        let prevInputBtnField = prevInputBtn.parent().parent('fieldset');
-        console.log(prevInputBtnField);
+       
         
 
         // inputBtnField
@@ -277,6 +276,8 @@
 
         prevInputBtn = $(this);
         console.log(prevInputBtn);
+        let prevInputBtnField = prevInputBtn.parent().parent('fieldset');
+        console.log(prevInputBtnField);
 
     })
 </script>
