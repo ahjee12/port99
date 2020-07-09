@@ -79,6 +79,7 @@ button{
     // flex-wrap: wrap;;
     // position: relative;
     overflow: hidden;
+    position: relative;
 }
 
 .container .box
@@ -86,14 +87,14 @@ button{
     // flex-basis: 19%; 
     float: left;
     width: 19.2%; margin: 0 1% 1% 0;
-    height: 200px; 
+    height: 20vh; 
     background: #d3d3d3;
     display: flex; 
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
 
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 .container .box:nth-child(5n)
 {
@@ -111,14 +112,14 @@ button{
 
 .container .mix
 { 
-    width: 150px; height: 150px; background: #fff; 
+    width:8vw; height: 8vw; background: #fff; 
     // box-sizing: border-box;
     // margin: 0 auto;
 }
 
 .container .mix.circle{border-radius: 50%;}
 .container .mix.triangle{
-    width: 0; height: 0; border: 75px solid #fff; 
+    width: 0; height: 0; border: 4vw solid #fff; 
     border-right-color: transparent;
     border-top-color: transparent; 
     background: none;
@@ -133,16 +134,23 @@ button{
 .container .mix.square.blue{ background: #64b9ff;}
 .container .mix.circle.blue{ background: #64b9ff;}
 
-.container .mix.triangle.small{border-width: 50px;}
-.container .mix.square.small{width: 100px; height: 100px;}
-.container .mix.circle.small{width: 100px; height: 100px;}
+.container .mix.triangle.small{border-width: 2.5vw;}
+.container .mix.square.small{width: 5vw; height: 5vw;}
+.container .mix.circle.small{width: 5vw; height: 5vw;}
 // .container .box.blue{ background: #45a6f5;}
 
-.fail-message span{
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-    font-size: 60px;
-    text-align: center;
-    width: 100%;
+// .fail-message span{
+//     position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+//     font-size: 60px;
+//     text-align: center;
+//     width: 100%;
+// }
+.container .noItem{
+    position: absolute; left: 50%; top: 30%; transform: translate(-50%,-50%);
+    font-size: 4vw;
+    width: 100%; text-align: center;
+    display: none;
 }
+
 
 
