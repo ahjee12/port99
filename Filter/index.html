@@ -122,158 +122,68 @@
 <script src="assets/js/jquery.min.js"></script>
 <!-- <script src="assets/js/jquery.mixitup.js"></script> -->
 <script>
-    // const checkboxFilter = {
-    //     $filter: null,
-    //     $reset: null,
-    //     groups: [],
-    //     outputArray: [],
-    //     outputString: '',
+    //다른 방법으로 직접 해보기!!! 히말라야 시에틀 걑으니라구;;
 
-    //     init: function(){
-    //         const self = this;
-    //         self.$filters = $('#Filters');
-    //         self.$reset = $('#Reset');
-    //         self.$container = $('#content');
 
-    //         self.$filters.find('fieldset').each(function(){
-    //             self.groups.push({
-    //                 $inputs: $(this).find('input'),
-    //                 active: [],
-    //                 tracker: false
-    //             })
-    //         })
-    //         self.bindHandlers();
-    //     },
-
-    //     bindHandlers: function(){
-    //         const self = this;
-
-    //         self.$filters.on('change',function(){
-    //             self.parseFilters();
-    //         })
-
-    //         self.$reset.on('click',function(e){
-    //             e.preventDefault();
-    //             self.$filters[0].reset();
-    //             self.parseFilters();
-    //         })
-    //     },
-
-    //     parseFilters: function(){
-    //         const self = this;
-
-    //         for(let i = 0, group; group = self.groups[i]; i++){
-    //             group.active = [];
-    //             group.$inputs.each(function(){
-    //                 $(this).is(':checked') && group.active.push(this.value);
-    //             })
-    //             group.active.length && (group.tracker = 0);
-    //         }
-
-    //         self.concatenate();
-    //     },
-
-    //     concatenate: function(){
-    //         const self = this,
-    //         cache  = '',
-    //         crawled = false,
-
-    //         checkTrackers = function(){
-    //             let done = 0;
-    //             for(let i = 0, group; group = self.groups[i]; i++){
-    //             (group.tracker === false) && done++;
-    //             }
-    //             return(done < self.groups.length);
-    //         }
-
-    //         crawl = function(){
-    //             for(let i = 0, group; group = self.groups[i]; i++){
-    //                 group.active[group.tracker] && (cache += group.active[group.tracker]);
-    //                 if(i ===self.groups.length - 1){
-    //                     self.outputArray.push(cache);
-    //                     cache = '';
-    //                     uopdateTrackers();
-    //                 }
-
-    //             }
-    //         },
-
-    //         uopdateTrackers = function(){
-    //             for(let i = self.group.length - 1; i > -1; i --){
-    //                 let group = self.groups[i];
-
-    //                 if(group.active[group.tracker + 1]){
-    //                     group.tracker ++;
-    //                     break;
-    //                 }else if(i> 0){
-    //                     group.tracker && (group.tracker = 0);
-    //                 }else{
-    //                     crawled = true;
-    //                 }
-    //             }
-    //         };
-
-    //         self.outputArray = []; //reset outpout array
-    //         do{
-    //             crawl();
-    //         }
-    //         while(!crawled && checkTrackers());
-
-    //         self.outputString = self.outputArray.join();
-    //         !self.outputString.length && (self.outputString = 'all');
-    //          //console.log(self.outputString); 
-
-    //          if(self.$container.mixItUp('isLoaded')){
-    //              self.$container.mixItUp('filter', self.outputString);
-    //          }
-
-    //     }//concatenate
-
-    // };//checkboxfilter
-
-    // $(function(){
-
-    //     checkboxFilter.init();
-
-    //     $('#content').mixItUp({
-    //         controls: {
-    //             enable: false
-    //         },
-    //         animation: {
-    //             easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-    //             duration: 600
-    //         }
-    //     });
-    // });
-
-    //다른 방법으로 직접 해보기!!!
     let inputBtn = $("input");
     console.log(inputBtn);
+    let inputBtnValue = '';
+    let inputContentBox = '';
+
+    //선택한 아이템 1도 없을 때 나오는 안내글
     noItem = $(".noItem");
 
     //클리어필터
     const clearFilterBtn = $("#reset");
+
     //필드셋
     let prevInputBtn = ''; 
+    let prevInputBtnField ='';
+    let count2 = 0;
+    let prevInputValue = '';
+    let previnputContentBox = '';
 
+
+
+
+    //input버튼 클릭했을 때☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★
     inputBtn.click(function () {
-        const inputBtnValue = $(this).attr('value');
+        inputBtnValue = $(this).attr('value');
         console.log(inputBtnValue);
+        inputContentBox = $(inputBtnValue).parent('.box');
         console.log($(inputBtnValue));
-        const inputParentBox = $(inputBtnValue).parent('.box');
-        console.log(inputParentBox);
+        console.log(inputContentBox);
 
         //지금 필드셋
         const inputBtnField = $(this).parent().parent('fieldset');
         console.log(inputBtnField);
-       
-        
+      
 
-     
-        if (inputParentBox.hasClass('pick') == false) {
+        console.log((prevInputBtnField != inputBtnField));
+        // if((prevInputBtnField != inputBtnField) && (count2 != 0)){
+        //     console.log(count2);
+        //     //이런 경우는 없을 거임.. 여러 도형 넣어서...
+        //     if(inputContentBox.child('div').hasClass(prevInputValue) == false){
+        //         //그래로 내려감
+        //     }else{
+                
+        //     }
+
+        // }
+
+      
+        if (inputContentBox.hasClass('pick') == false) {
             //클릭하다 보면 hide 클래스 붙음
-            inputParentBox.removeClass('hide');
-            inputParentBox.addClass('pick');
+            // $('.box').each(function(){
+            //     if($(this).child('div').hasClass(inputBtnValue) == false){
+            //         inputContentBox.removeClass('hide');
+            //         inputContentBox.addClass('pick');
+            //     }
+            // })
+             
+            // 클릭하다 보면 hide 클래스 붙음
+            inputContentBox.removeClass('hide');
+            inputContentBox.addClass('pick');
 
             $(".box").each(function () {
                 if ($(this).hasClass('pick') == false) {
@@ -283,25 +193,41 @@
             // if($(".box").hasClass("pick") == false){
             //     noItem.css({'display':'block'});
             // }
- 
-        } else {
+
+            } else {
+                 //pick이 붙어있을 때
+                if($('.box.pick').find('div').hasClass(inputBtnValue) == true){
+                    //     inputContentBox.each(function(){
+                    //         $(this).removeClass('pick');
+                    //         $(this).addClass('hide');
+                    // })
+                    $('.box.pick').each(function(){
+                        if($(this).hasClass(inputBtnValue) == false){
+                            $(this).removeClass('pick');
+                            $(this).addClass('hide');
+                        }
+                    })
+                }else{
+                    // 클릭하다 보면 pick 클래스 붙음
+                    inputContentBox.removeClass('pick');
+                    inputContentBox.addClass('hide');
+                }
+            
+
             //클릭하다 보면 pick 클래스 붙음
-            inputParentBox.removeClass('pick');
-            inputParentBox.addClass('hide');
+            // inputContentBox.removeClass('pick');
+            // inputContentBox.addClass('hide');
         }
 
         
         //이전 필드셋
         prevInputBtn = $(this);
         console.log(prevInputBtn);
-        let prevInputBtnField = prevInputBtn.parent().parent('fieldset');
+        prevInputBtnField = prevInputBtn.parent().parent('fieldset');
         console.log(prevInputBtnField);
-        if(prevInputBtn != inputBtnField){
-
-
-
-            
-        }
+        prevInputValue = prevInputBtn.attr('value');
+        previnputContentBox = $(prevInputValue).parent('.box');
+        count2 ++;
 
 
 
@@ -329,8 +255,6 @@
                 count ++;
             }
         })
-
-
         if(count == inputBtn.length){
         //  함수 불러도 됨  boxReset();
             $(".box").removeClass("hide");
@@ -344,12 +268,20 @@
                     $(this).css({'margin-right': '1%'});
                 }
             })
+            count2 = 0;
         }
 
 
-        //체크 했는데 pick 붙은 box없을 때
-
     })
+
+    function boxReset(){
+        //
+    }
+    function inputClicked(){
+        //
+    }
+
+
 
     clearFilterBtn.click(function(){
          //  함수 불러도 됨  boxReset();
@@ -364,6 +296,7 @@
                 $(this).css({'margin-right': '1%'});
             }
         })
+        count2 = 0;
     })
 
 
