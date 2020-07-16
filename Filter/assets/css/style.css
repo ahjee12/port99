@@ -148,6 +148,12 @@ button {
   display: flex;
 }
 
+.container .box.pick2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .container .mix {
   width: 8vw;
   height: 8vw;

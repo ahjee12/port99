@@ -107,14 +107,6 @@
 
         <span class="noItem">No items were found matching the selected filters</span>
 
-        <!-- <div class="box2 gap"></div>
-  <div class="box2 gap"></div>
-  <div class="box2 gap"></div>
-  <div class="box2 gap"></div>
-  <div class="box2 gap"></div>
-  <div class="box2 gap"></div>
-  <div class="box2 gap"></div>
-  <div class="box2 gap"></div> -->
     </div>
     <!-- <div class="fail-message"><span>No items were found matching the selected filters</span></div> -->
 </body>
@@ -123,7 +115,6 @@
 <!-- <script src="assets/js/jquery.mixitup.js"></script> -->
 <script>
     //다른 방법으로 직접 해보기!!! 히말라야 시에틀 ;;
-
 
     let inputBtn = $("input");
     console.log(inputBtn);
@@ -139,11 +130,10 @@
     //필드셋
     let prevInputBtn = ''; 
     let prevInputBtnField ='';
+    let prevInputBtnFieldIndex = '';
     let count2 = 0;
     let prevInputValue = '';
     let previnputContentBox = '';
-
-
 
 
     //input버튼 클릭했을 때☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★
@@ -155,23 +145,35 @@
         console.log(inputContentBox);
 
         //지금 필드셋
-        const inputBtnField = $(this).parent().parent('fieldset');
+        let inputBtnField = $(this).parent('div').parent('fieldset');
         console.log(inputBtnField);
+        let inputBtnFieldIndex = $(this).parent('div').parent('fieldset').index();
+        console.log(inputBtnFieldIndex);
       
-
-        console.log((prevInputBtnField != inputBtnField));
+        
+        // console.log((prevInputBtnField != inputBtnField));
         // if((prevInputBtnField != inputBtnField) && (count2 != 0)){
         //     console.log(count2);
         //     //이런 경우는 없을 거임.. 여러 도형 넣어서...
         //     if(inputContentBox.child('div').hasClass(prevInputValue) == false){
         //         //그래로 내려감
-        //     }else{
-                
+        //     }else{   
         //     }
-
         // }
 
-      
+        if(prevInputBtnField != inputBtnField && prevInputBtnField !=''){
+            count2++;
+            console.log(count2);
+            console.log(count2);
+
+        }
+        
+        console.log($('input:checked').attr('value'));
+        $('input:checked').attr('value');
+
+
+        //pick붙어있지 않을 때
+        console.log(inputContentBox.hasClass('pick') == false);
         if (inputContentBox.hasClass('pick') == false) {
             //클릭하다 보면 hide 클래스 붙음
             // $('.box').each(function(){
@@ -180,33 +182,53 @@
             //         inputContentBox.addClass('pick');
             //     }
             // })
-             
-            // 클릭하다 보면 hide 클래스 붙음
-            inputContentBox.removeClass('hide');
-            inputContentBox.addClass('pick');
+            // if($(inputBtnValue).parent(".box.pick").find('div')){
 
-            $(".box").each(function () {
-                if ($(this).hasClass('pick') == false) {
-                    $(this).addClass('hide');
-                }
-            })
+            // }
+
+            
+            // console.log(inputBtnField.siblings('fieldset'));
+            // inputBtnField.siblings();
+             // 클릭하다 보면 hide 클래스 붙음
+                inputContentBox.removeClass('hide');
+                inputContentBox.addClass('pick');
+                console.log($('.box.pick'));
+                $(".box").each(function () {
+                    if ($(this).hasClass('pick') == false) {
+                        $(this).addClass('hide');
+                    }
+                })
+            
             // if($(".box").hasClass("pick") == false){
             //     noItem.css({'display':'block'});
             // }
 
+            //pick붙어 있을 때
             } else {
+                console.log( $(inputBtnValue).parent(".box.pick").find('div'));
+                $(inputBtnValue).parent(".box.pick").find('div');
+                // console.log($('.box.pick').find('div'));
+                // console.log($('.box.pick').find('div').hasClass(inputBtnValue) == true);
                  //pick이 붙어있을 때
-                if($('.box.pick').find('div').hasClass(inputBtnValue) == true){
+                if($(inputBtnValue).parent(".box.pick").find('div')){
+                    console.log("여기");
                     //     inputContentBox.each(function(){
                     //         $(this).removeClass('pick');
                     //         $(this).addClass('hide');
                     // })
-                    $('.box.pick').each(function(){
-                        if($(this).hasClass(inputBtnValue) == false){
-                            $(this).removeClass('pick');
-                            $(this).addClass('hide');
-                        }
-                    })
+                    $(inputBtnValue).parent(".box.pick").addClass('pick2');
+                    // $(inputBtnValue).parent(".box.pick").find('div').addClass('pick');
+                    $('.box.pick').removeClass('pick');
+                    $('.box').addClass('hide');
+                    // $(inputBtnValue).parent(".box.pick2").removeClass('hide');
+                    $(inputBtnValue).parent(".box.pick2").removeClass('hide').addClass('pick').removeClass('pick2');
+                    // $('.box.pick').each(function(){
+                    //     if($(this).find('div') != $(inputBtnValue).parent(".box.pick").find('div')){
+                    //         $(this).removeClass('pick');
+                    //         $(this).addClass('hide');
+                    //     }
+
+                    // })
                 }else{
                     // 클릭하다 보면 pick 클래스 붙음
                     inputContentBox.removeClass('pick');
@@ -219,6 +241,57 @@
             // inputContentBox.addClass('hide');
         }
 
+
+        //백업
+        // if (inputContentBox.hasClass('pick') == false) {
+        //     //클릭하다 보면 hide 클래스 붙음
+        //     // $('.box').each(function(){
+        //     //     if($(this).child('div').hasClass(inputBtnValue) == false){
+        //     //         inputContentBox.removeClass('hide');
+        //     //         inputContentBox.addClass('pick');
+        //     //     }
+        //     // })
+             
+        //     // 클릭하다 보면 hide 클래스 붙음
+        //     inputContentBox.removeClass('hide');
+        //     inputContentBox.addClass('pick');
+
+        //     $(".box").each(function () {
+        //         if ($(this).hasClass('pick') == false) {
+        //             $(this).addClass('hide');
+        //         }
+        //     })
+        //     // if($(".box").hasClass("pick") == false){
+        //     //     noItem.css({'display':'block'});
+        //     // }
+
+        //     } else {
+        //         console.log($('.box.pick').find('div').hasClass(inputBtnValue) == true);
+        //          //pick이 붙어있을 때
+        //         if($('.box.pick').find('div').hasClass(inputBtnValue) == true){
+        //             console.log($('.box.pick').find('div').hasClass(inputBtnValue) == true);
+        //             //     inputContentBox.each(function(){
+        //             //         $(this).removeClass('pick');
+        //             //         $(this).addClass('hide');
+        //             // })
+        //             $('.box.pick').each(function(){
+        //                 if($(this).hasClass(inputBtnValue) == false){
+        //                     $(this).removeClass('pick');
+        //                     $(this).addClass('hide');
+        //                 }
+        //             })
+        //         }else{
+        //             // 클릭하다 보면 pick 클래스 붙음
+        //             inputContentBox.removeClass('pick');
+        //             inputContentBox.addClass('hide');
+        //         }
+            
+
+        //     //클릭하다 보면 pick 클래스 붙음
+        //     // inputContentBox.removeClass('pick');
+        //     // inputContentBox.addClass('hide');
+        // }
+
         
         //이전 필드셋
         prevInputBtn = $(this);
@@ -227,7 +300,6 @@
         console.log(prevInputBtnField);
         prevInputValue = prevInputBtn.attr('value');
         previnputContentBox = $(prevInputValue).parent('.box');
-        count2 ++;
 
 
 
@@ -256,8 +328,10 @@
             }
         })
         if(count == inputBtn.length){
-        //  함수 불러도 됨  boxReset();
+            //함수 불러도 됨  boxReset();
             $(".box").removeClass("hide");
+            //위에서 이미 pick 없앰
+            //$(".box").removeClass("pick");
 
             $('.box').each(function(){
                 let boxIndex = $(this).index();
@@ -286,6 +360,8 @@
     clearFilterBtn.click(function(){
          //  함수 불러도 됨  boxReset();
         $(".box").removeClass("hide");
+        //없는 이유는 
+        $(".box").removeClass("pick");
 
         $('.box').each(function(){
             let boxIndex = $(this).index();
