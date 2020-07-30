@@ -65,6 +65,27 @@
   font-family: 'ghanachoco';
   font-size: 2.85vw;
   color: #FDC60A;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(http://1.bp.blogspot.com/-s3Q_6B5LFNw/UsmEm-9GY-I/AAAAAAAAToY/eV7y7D3tvZ4/s1600/goldglitter.gif) repeat;
+  background: linear-gradient(transparent, transparent), url(http://1.bp.blogspot.com/-s3Q_6B5LFNw/UsmEm-9GY-I/AAAAAAAAToY/eV7y7D3tvZ4/s1600/goldglitter.gif) repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -ms-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .header-container h1 a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://data.whicdn.com/images/275602967/original.gif);
+  background: linear-gradient(transparent, transparent), url(https://data.whicdn.com/images/275602967/original.gif);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -ms-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .header .header-container .header-center-nav {
@@ -84,8 +105,35 @@
 
 .header .header-container .header-center-nav ul li a {
   font-size: 1.17vw;
-  padding: 0 20px;
   color: #FDC60A;
+}
+
+.header .header-container .header-center-nav ul li a span {
+  position: relative;
+  display: block;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.header .header-container .header-center-nav ul li a span:before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://data.whicdn.com/images/267317953/original.gif);
+  background-size: cover;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+  transition: -webkit-transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+  transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+  transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s, -webkit-transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+}
+
+.header .header-container .header-center-nav ul li a:hover span:before {
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
 }
 
 .header .header-container .header-right-nav {
@@ -98,6 +146,11 @@
 .header .header-container .header-right-nav .fa-github {
   font-size: 2vw;
   color: #FDC60A;
+}
+
+.main {
+  background: url(https://codepen.io/ahjee12/full/rNxEKeq);
+  padding: 2vw 0 0 0;
 }
 
 .main .main-container {

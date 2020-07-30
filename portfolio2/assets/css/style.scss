@@ -32,6 +32,27 @@
                 font-family: 'ghanachoco';
                 font-size: 2.85vw;
                 color: #FDC60A;
+               
+                background: linear-gradient(transparent, transparent), url(http://1.bp.blogspot.com/-s3Q_6B5LFNw/UsmEm-9GY-I/AAAAAAAAToY/eV7y7D3tvZ4/s1600/goldglitter.gif) repeat;
+                -webkit-background-clip: text;
+                 -webkit-text-fill-color: transparent;
+                 -moz-background-clip: text;
+                 -moz-text-fill-color: transparent;
+                 -ms-background-clip: text;
+                 -ms-text-fill-color: transparent;
+                 background-clip: text;
+                //  text-fill-color: transparent;
+                &:hover{
+                    background: linear-gradient(transparent, transparent), url(https://data.whicdn.com/images/275602967/original.gif);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -moz-background-clip: text;
+                    -moz-text-fill-color: transparent;
+                    -ms-background-clip: text;
+                    -ms-text-fill-color: transparent;
+                    background-clip: text;
+                    //  text-fill-color: transparent;
+                }
             }
         }
 
@@ -42,16 +63,41 @@
             ul{
                 li{
                     float: left;
-
                     // background: #FDC60A;
                     a{ 
                         font-size: 1.17vw;
-                        padding: 0 20px;
+                        
                         color: #FDC60A;
                         // font-family: 'paybooc-Medium';
-                    }
-                }
-            }
+                        
+                        span{
+                            position: relative;
+                            display: block;
+                            padding: 0 20px;
+                            overflow: hidden;
+                            // transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+                            &:before{
+                                content: '';
+                                position: absolute; left: -100%; top: 0; width: 100%; height: 100%; 
+                                // background: url(https://data.whicdn.com/images/307105405/original.gif);
+                                // background: url(https://media1.tenor.com/images/866f30792413dcb70ce06c91c1ad3f4e/tenor.gif?itemid=8692040);
+                                // background: url(https://i.pinimg.com/originals/94/ba/53/94ba53dc8a376c9727742a4fd56cf509.gif);
+                                // background: url(https://i.pinimg.com/originals/f4/52/a2/f452a2f4b634b3011e065da8eaf0a5c3.gif);
+                                // background: url(https://i.pinimg.com/originals/07/f7/27/07f72772fee4f51adcf8f9aa9fa1a8e0.gif);
+                                background: url(https://data.whicdn.com/images/267317953/original.gif);
+                                // background: #000;
+                                background-size: cover;
+                                z-index: -1;
+                                transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+                            }
+                        }
+                        &:hover span:before{
+                            transform: translate(100%,0);
+                        }
+                
+                    }//a
+                }//li
+            }//ul
         }
         .header-right-nav{
             flex-basis: 17.5%;
@@ -72,6 +118,8 @@
 }
 
 .main{
+    background: url(https://codepen.io/ahjee12/full/rNxEKeq);
+    padding: 2vw 0 0 0;
     .main-container{
         width: 100%;
         text-align: center;
