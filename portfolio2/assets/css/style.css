@@ -155,6 +155,50 @@
 
 .main .main-container {
   width: 100%;
-  text-align: center;
+}
+
+.main .main-container .land {
+  width: 1487px;
+  height: 1843px;
+  background: #ccc;
+  margin: 0 auto;
+  position: relative;
+  z-index: -1;
+}
+
+.main .main-container .land .home {
+  position: absolute;
+  left: 62.35%;
+  top: -100%;
+}
+
+.main .main-container .land .table {
+  position: absolute;
+  left: 64.75%;
+  top: -100%;
+}
+
+.main .main-container .land .hut {
+  position: absolute;
+  left: 42.18%;
+  top: -100%;
+}
+
+.main .main-container .land .road {
+  position: absolute;
+  left: 53.732%;
+  top: -100%;
+}
+
+.main .main-container .land .greenhouse {
+  position: absolute;
+  left: 19.12%;
+  top: -100%;
+}
+
+.main .main-container .land .nature {
+  position: absolute;
+  left: 18.7%;
+  top: 10.2%;
 }
 /*# sourceMappingURL=style.css.map */

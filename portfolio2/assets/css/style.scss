@@ -122,8 +122,42 @@
     padding: 2vw 0 0 0;
     .main-container{
         width: 100%;
-        text-align: center;
-        .land{}
+        // text-align: center;
+        // margin: 0 auto;
+        .land{ 
+            width: 1487px; height: 1843px;
+            background: #ccc;
+            margin: 0 auto;
+            position: relative;
+            z-index: -1;
+            .structure{
+                // position: absolute; left: 19.1%; top: 8.75%; 
+            }
+            .home{
+                position: absolute; left: 62.35%; top: -100%;
+                // position: absolute; left: 62.35%; top: 8.65%; 
+            }
+            .table{
+                 position: absolute; left: 64.75%; top: -100%;
+                // position: absolute; left: 64.75%; top: 13.25%;
+            }
+            .hut{
+                position: absolute; left: 42.18%; top: -100%;
+                // position: absolute; left: 42.18%; top: 20.15%;
+            }
+            .road{
+                position: absolute; left: 53.732%; top: -100%;
+                // position: absolute; left: 53.732%; top: 23.2%;
+            }
+            .greenhouse{
+                position: absolute; left: 19.12%; top:-100%;
+                // position: absolute; left: 19.12%; top: 36.855%;
+            }
+            .nature{
+                position: absolute; left: 18.7%; top: 10.2%;
+            }
+        }
+        
     }
 }
 
