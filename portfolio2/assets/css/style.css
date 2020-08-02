@@ -157,7 +157,7 @@
   width: 100%;
 }
 
-.main .main-container .land {
+.main .main-container .uiux-land {
   width: 1487px;
   height: 1843px;
   background: #ccc;
@@ -166,39 +166,257 @@
   z-index: -1;
 }
 
-.main .main-container .land .home {
+.main .main-container .uiux-land .land {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  opacity: 0;
+}
+
+.main .main-container .uiux-land .home {
   position: absolute;
   left: 62.35%;
-  top: -100%;
+  top: 8.65%;
+  -webkit-transform: translate(0, -200%) scale(1, 2);
+          transform: translate(0, -200%) scale(1, 2);
+  opacity: 0;
 }
 
-.main .main-container .land .table {
+.main .main-container .uiux-land .table {
   position: absolute;
   left: 64.75%;
-  top: -100%;
+  top: 13.25%;
+  -webkit-transform: translate(0, -200%) scale(1, 2);
+          transform: translate(0, -200%) scale(1, 2);
+  opacity: 0;
 }
 
-.main .main-container .land .hut {
+.main .main-container .uiux-land .hut {
   position: absolute;
   left: 42.18%;
-  top: -100%;
+  top: 20.15%;
+  -webkit-transform: translate(0, -200%) scale(1, 2);
+          transform: translate(0, -200%) scale(1, 2);
+  opacity: 0;
 }
 
-.main .main-container .land .road {
+.main .main-container .uiux-land .road {
   position: absolute;
   left: 53.732%;
-  top: -100%;
+  top: 23.2%;
+  -webkit-transform: translate(0, -200%) scale(1, 2);
+          transform: translate(0, -200%) scale(1, 2);
+  opacity: 0;
 }
 
-.main .main-container .land .greenhouse {
+.main .main-container .uiux-land .greenhouse {
   position: absolute;
   left: 19.12%;
-  top: -100%;
+  top: 36.855%;
+  -webkit-transform: translate(0, -200%) scale(1, 2);
+          transform: translate(0, -200%) scale(1, 2);
+  opacity: 0;
 }
 
-.main .main-container .land .nature {
+.main .main-container .uiux-land .nature {
   position: absolute;
-  left: 18.7%;
-  top: 10.2%;
+  left: 18.55%;
+  top: 10.1%;
+}
+
+.main .main-container .uiux-land .field {
+  position: absolute;
+  left: 40.45%;
+  top: 10.1%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 90%;
+          transform-origin: 50% 90%;
+  -webkit-animation: sway1 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .jujubeTomato {
+  position: absolute;
+  left: 40.05%;
+  top: 15.4%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .watermelon {
+  position: absolute;
+  left: 27.85%;
+  top: 13.55%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway2 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway2 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .sharon {
+  position: absolute;
+  left: 60.35%;
+  top: 18%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .appletree {
+  position: absolute;
+  left: 18.55%;
+  top: 13.22%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .rice {
+  position: absolute;
+  left: 76.1%;
+  top: 19.65%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .lavender {
+  position: absolute;
+  left: 25.97%;
+  top: 24.63%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .cosmos {
+  position: absolute;
+  left: 53.08%;
+  top: 36.09%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .chrysanthemum {
+  position: absolute;
+  left: 64.28%;
+  top: 36.25%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .sunflower {
+  position: absolute;
+  left: 51.07%;
+  top: 37.7%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .main-container .uiux-land .rosemose {
+  position: absolute;
+  left: 66.4%;
+  top: 37.95%;
+  -webkit-transform: scale(0.8, 0);
+          transform: scale(0.8, 0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+          animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+@-webkit-keyframes sway1 {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0) scale(1, 1);
+  }
+  100% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px) scale(1, 0.96);
+  }
+}
+
+@keyframes sway1 {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0) scale(1, 1);
+  }
+  100% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px) scale(1, 0.96);
+  }
+}
+
+@-webkit-keyframes sway2 {
+  0% {
+    -webkit-transform: rotateZ(0) translateX(0px) scale(1);
+    transform: rotateZ(0) translateX(0px) scale(1);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+  }
+  100% {
+    -webkit-transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
+    transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes sway2 {
+  0% {
+    -webkit-transform: rotateZ(0) translateX(0px) scale(1);
+    transform: rotateZ(0) translateX(0px) scale(1);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+  }
+  100% {
+    -webkit-transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
+    transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+  }
 }
 /*# sourceMappingURL=style.css.map */

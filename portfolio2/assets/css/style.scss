@@ -124,41 +124,136 @@
         width: 100%;
         // text-align: center;
         // margin: 0 auto;
-        .land{ 
+        .uiux-land{ 
             width: 1487px; height: 1843px;
             background: #ccc;
             margin: 0 auto;
             position: relative;
             z-index: -1;
+            .land{
+                transform: scale(0) ; transform-origin: 50% 0%; opacity: 0;
+            }
+            //건물
             .structure{
                 // position: absolute; left: 19.1%; top: 8.75%; 
             }
             .home{
-                position: absolute; left: 62.35%; top: -100%;
-                // position: absolute; left: 62.35%; top: 8.65%; 
+                // position: absolute; left: 62.35%; top: -100%;
+                position: absolute; left: 62.35%; top: 8.65%; 
+                transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             .table{
-                 position: absolute; left: 64.75%; top: -100%;
-                // position: absolute; left: 64.75%; top: 13.25%;
+                // position: absolute; left: 64.75%; top: -100%;
+                position: absolute; left: 64.75%; top: 13.25%;
+                transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             .hut{
-                position: absolute; left: 42.18%; top: -100%;
-                // position: absolute; left: 42.18%; top: 20.15%;
+                // position: absolute; left: 42.18%; top: -100%;
+                position: absolute; left: 42.18%; top: 20.15%;
+                transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             .road{
-                position: absolute; left: 53.732%; top: -100%;
-                // position: absolute; left: 53.732%; top: 23.2%;
+                // position: absolute; left: 53.732%; top: -100%;
+                position: absolute; left: 53.732%; top: 23.2%;
+                transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             .greenhouse{
-                position: absolute; left: 19.12%; top:-100%;
-                // position: absolute; left: 19.12%; top: 36.855%;
+                // position: absolute; left: 19.12%; top:-100%;
+                position: absolute; left: 19.12%; top: 36.855%;
+                transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
+            //자연
             .nature{
-                position: absolute; left: 18.7%; top: 10.2%;
+                position: absolute; left: 18.55%; top: 10.1%;
             }
-        }
-        
+            .field{
+                position: absolute; left: 40.45%; top: 10.1%;
+                transform: scale(0.8, 0); opacity: 0;  transform-origin: 50% 90%;
+                animation: sway1 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .jujubeTomato{
+                position: absolute; left: 40.05%; top: 15.4%;
+                transform: scale(0.8, 0);  opacity: 0;   transform-origin: 50% 80%;
+                animation: sway1 1.5s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .watermelon{
+                position: absolute; left: 27.85%; top: 13.55%;
+                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                animation: sway2 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .sharon{
+                position: absolute; left: 60.35%; top: 18%;
+                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                animation: sway1 1.5s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .appletree{
+                position: absolute; left: 18.55%; top: 13.22%;
+                transform: scale(0.8, 0); opacity: 0;  transform-origin: 50% 80%;
+                animation: sway1 1.5s 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .rice{
+                position: absolute; left: 76.1%; top: 19.65%;
+                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                animation: sway1 1.5s 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .lavender{
+                position: absolute; left: 25.97%; top: 24.63%;
+                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                animation: sway1 1.5s 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .cosmos{
+                position: absolute; left: 53.08%; top: 36.09%;
+                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .chrysanthemum{
+                position: absolute; left: 64.28%; top: 36.25%;
+                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .sunflower{
+                position: absolute; left: 51.07%; top: 37.7%;
+                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .rosemose{
+                position: absolute; left: 66.4%; top: 37.95%;
+                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+
+        }//uiux-land      
+    }//main-container
+}//main
+
+@keyframes sway1 {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0) scale(1, 1);
+    //   -webkit-transform-origin: bottom;
+    //   transform-origin: bottom;
     }
-}
+    100% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px) scale(1, 0.96);
+    //   -webkit-transform-origin: bottom;
+    //   transform-origin: bottom;
+    }
+  }
+
+  @keyframes sway2 {
+    0% {
+      -webkit-transform: rotateZ(0) translateX(0px) scale(1);
+      transform: rotateZ(0) translateX(0px) scale(1);
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+    }
+    100% {
+      -webkit-transform: rotateZ(3deg) translateX(3px) scale(0.96,0.96);
+      transform: rotateZ(3deg) translateX(3px) scale(0.96,0.96);
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+    }
+  }
 
 
