@@ -150,11 +150,10 @@
 
 .main {
   background: url(https://codepen.io/ahjee12/full/rNxEKeq);
-  padding: 2vw 0 0 0;
 }
 
 .main .main-container {
-  width: 100%;
+  padding: 2vw 0 2vw 0;
 }
 
 .main .main-container .uiux-land {
@@ -418,5 +417,44 @@
     -webkit-transform-origin: bottom;
     transform-origin: bottom;
   }
+}
+
+.section1 .section1-container {
+  width: 90vw;
+  height: 1000px;
+  margin: 0 auto;
+  background: #ffa3a3;
+}
+
+.section1 .section1-container .item-list1 {
+  margin: 0 10%;
+  height: 18vw;
+  background: #fffd83;
+}
+
+.section1 .section1-container .item-list1 .item-col {
+  float: left;
+  width: 25%;
+  height: 100%;
+  background: #9b9b9b;
+  border-left: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.section1 .section1-container .item-list2 {
+  height: 18vw;
+  background: #a3ffe8;
+  margin: 2vw 0 0 0;
+}
+
+.section1 .section1-container .item-list2 .item-col {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background: #727272;
+  border-left: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 /*# sourceMappingURL=style.css.map */

@@ -119,11 +119,12 @@
 
 .main{
     background: url(https://codepen.io/ahjee12/full/rNxEKeq);
-    padding: 2vw 0 0 0;
+    
     .main-container{
-        width: 100%;
+        // width: 100%;
         // text-align: center;
         // margin: 0 auto;
+        padding: 2vw 0 2vw 0;
         .uiux-land{ 
             width: 1487px; height: 1843px;
             background: #ccc;
@@ -256,4 +257,44 @@
     }
   }
 
+#contents{}
+#section1{}
+.section1{
+    .section1-container{
+        // width: 1700px; 
+        width: 90vw;
+        height: 1000px; 
+        margin: 0 auto;
+        background: rgb(255, 163, 163);
+        .item-list1{
+            margin: 0 10%; 
+            // height: 350px;
+            height: 18vw;
+            background: rgb(255, 253, 131);
+            .item-col{
+                float: left;
+                width: 25%; height: 100%;
+                background: rgb(155, 155, 155);
+                border-left: 1px solid #000;
+                box-sizing: border-box;
+                a{
 
+                }
+            }
+        }
+        .item-list2{
+           
+            // height: 350px;
+            height: 18vw;
+            background: rgb(163, 255, 232);
+            margin: 2vw 0 0 0;
+            .item-col{
+                float: left;
+                width: 20%; height: 100%;
+                background: rgb(114, 114, 114);
+                border-left: 1px solid #000;
+                box-sizing: border-box;
+            }
+        }
+    }
+}
