@@ -10,10 +10,6 @@ window.onload = function(){
 
 }
 
-function main(){
-    
-}
-
 function mainStart(){
     var tl = new TimelineMax();
     const land = $('.land');

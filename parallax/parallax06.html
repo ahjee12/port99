@@ -442,6 +442,9 @@ window.addEventListener("scroll", () => {
         </a>
     </div>
     <!--//modal-->
+    <div class="info">
+        <span>scrollTop(): <strong class="scrollTop">0</strong>px</span>
+    </div>
     <!-- <div class="info">
         <span>scrollTop(): <strong class="scrollTop">0</strong>px</span>
     </div>
@@ -463,8 +466,11 @@ window.addEventListener("scroll", () => {
             <li><a href="parallax03.html">Parallax03</a></li>
             <li><a href="parallax04.html">Parallax04</a></li>
             <li><a href="parallax05.html">Parallax05</a></li>
-            <li><a href="#">Parallax06</a></li>
+            <li class="active"><a href="#">Parallax06</a></li>
             <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="parallax09.html">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
         </ul>
     </div>
     <div class="info4">
@@ -564,6 +570,7 @@ window.addEventListener("scroll", () => {
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
+        
         //    //제이쿼리
         //    $(window).scroll(function () {
         //     let scrollTop = $(window).scrollTop() + $(window).height() / 2;
@@ -612,8 +619,18 @@ window.addEventListener("scroll", () => {
 
             document.querySelector(".scrollTop").textContent = pageYOffset;
             document.querySelectorAll(".content-item").forEach(elem => {
-                
+                console.log(elem.childNodes[0]);
+                console.log(elem.childNodes[1]);
+                console.log(elem.childNodes[2]);
+                console.log(elem.childNodes[3]);
+                console.log(elem.childNodes[4]);
+                console.log(elem.childNodes[5]);
+                console.log(elem.childNodes[6]);
+
                 let target = elem.childNodes[7];
+                let target2 = elem.childNodes[0];
+                let target3 = elem.childNodes[1];
+                let target4 = elem.childNodes[2];
                 
                 let offset = (pageYOffset - elem.offsetTop) * 0.2;
 
@@ -621,19 +638,21 @@ window.addEventListener("scroll", () => {
                 // console.log("offsettop : " + elem.offsetTop);
                 // console.log("offset" + (pageYOffset - elem.offsetTop)*0.2);
                 target.style.transform = "translateY(" + -offset + "px)";
+                target2.style.transform = "translateY(" + offset + "px)";
+                target3.style.transform = "translateY(" + offset + "px)";
+                target4.style.transform = "translateY(" + offset + "px)";
+
+
             });
         });
 
 
-
-
-
         //parallax06 다시연습
-        // // info2OffsetTop = $(".info2 span strong");
-        // // info2OffsetTop.each(function(i){
-        // //     sectionOffsetTop = $(".content-item").eq(i).offset().top;
-        // //     $(this).text(parseInt(sectionOffsetTop));
-        // // })
+        // info2OffsetTop = $(".info2 span strong");
+        // info2OffsetTop.each(function(i){
+        //     sectionOffsetTop = $(".content-item").eq(i).offset().top;
+        //     $(this).text(parseInt(sectionOffsetTop));
+        // })
 
         // window.addEventListener("scroll", () => {
         //     let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height / 2;
@@ -658,6 +677,8 @@ window.addEventListener("scroll", () => {
         //         }
         //     })
         // })
+
+
         //modal 버튼, close버튼 클릭
         $(".btn").click(function () {
             $("#modal").slideDown();
