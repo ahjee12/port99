@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'ghanachoco';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff") format("woff");
@@ -416,7 +417,12 @@
   }
 }
 
-.section1 .section1-container {
+/*콘텐츠 - 메뉴*/
+.menu-style {
+  margin: 0 0 2vw 0;
+}
+
+.menu-style .container {
   width: 90vw;
   height: 70vw;
   margin: 0 auto;
@@ -424,29 +430,29 @@
   background: #ffa3a3;
 }
 
-.section1 .section1-container .title {
+.menu-style .container .title {
   margin: 0 10% 5% 10%;
 }
 
-.section1 .section1-container .title .title-main {
+.menu-style .container .title .title-main {
   font-size: 3vw;
 }
 
-.section1 .section1-container .title .title-main strong {
+.menu-style .container .title .title-main strong {
   color: #FDC60A;
 }
 
-.section1 .section1-container .title .title-sub {
+.menu-style .container .title .title-sub {
   font-size: 1vw;
 }
 
-.section1 .section1-container .item-list1 {
+.menu-style .container .item-list1 {
   margin: 0 10%;
   height: 18vw;
   background: #fffd83;
 }
 
-.section1 .section1-container .item-list1 .item-col {
+.menu-style .container .item-list1 .item-col {
   float: left;
   width: 25%;
   height: 100%;
@@ -456,23 +462,7 @@
           box-sizing: border-box;
 }
 
-.section1 .section1-container .item-list2 {
-  height: 18vw;
-  background: #a3ffe8;
-  margin: 2vw 0 0 0;
-}
-
-.section1 .section1-container .item-list2 .item-col {
-  float: left;
-  width: 20%;
-  height: 100%;
-  background: #727272;
-  border-left: 1px solid #000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.item-thumbnail {
+.menu-style .container .item-list1 .item-col .item-thumbnail {
   display: block;
   width: 75%;
   height: 75%;
@@ -486,7 +476,7 @@
           transform: translate(-50%, -50%);
 }
 
-.item-thumbnail .item {
+.menu-style .container .item-list1 .item-col .item-thumbnail .item {
   width: 70%;
   height: 40%;
   position: absolute;
@@ -498,11 +488,11 @@
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.item-thumbnail .item img {
+.menu-style .container .item-list1 .item-col .item-thumbnail .item img {
   width: 100%;
 }
 
-.item-thumbnail .item-name {
+.menu-style .container .item-list1 .item-col .item-thumbnail .item-name {
   display: block;
   position: absolute;
   left: 0;
@@ -516,23 +506,265 @@
   transition: top 0.35s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.item-thumbnail .item-name.name2 {
+.menu-style .container .item-list1 .item-col .item-thumbnail .item-name.name2 {
   line-height: 2vw;
 }
 
-.item-thumbnail:hover {
+.menu-style .container .item-list1 .item-col .item-thumbnail:hover {
   background: white;
   -webkit-box-shadow: 0px 20px 30px 2px rgba(22, 95, 190, 0.15);
           box-shadow: 0px 20px 30px 2px rgba(22, 95, 190, 0.15);
 }
 
-.item-thumbnail:hover .item {
+.menu-style .container .item-list1 .item-col .item-thumbnail:hover .item {
   top: 42%;
 }
 
-.item-thumbnail:hover .item-name {
+.menu-style .container .item-list1 .item-col .item-thumbnail:hover .item-name {
   top: 63%;
   -webkit-transition-delay: 0.15s;
           transition-delay: 0.15s;
+}
+
+.menu-style .container .item-list2 {
+  height: 18vw;
+  background: #a3ffe8;
+  margin: 2vw 0 0 0;
+}
+
+.menu-style .container .item-list2 .item-col {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background: #727272;
+  border-left: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.menu-style .container .item-list2 .item-col .item-thumbnail {
+  display: block;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background: #FDC60A;
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.menu-style .container .item-list2 .item-col .item-thumbnail .item {
+  width: 70%;
+  height: 40%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu-style .container .item-list2 .item-col .item-thumbnail .item img {
+  width: 100%;
+}
+
+.menu-style .container .item-list2 .item-col .item-thumbnail .item-name {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 2vw;
+  font-size: 2vw;
+  font-weight: 700;
+  text-align: center;
+  -webkit-transition: top 0.35s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: top 0.35s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu-style .container .item-list2 .item-col .item-thumbnail .item-name.name2 {
+  line-height: 2vw;
+}
+
+.menu-style .container .item-list2 .item-col .item-thumbnail:hover {
+  background: white;
+  -webkit-box-shadow: 0px 20px 30px 2px rgba(22, 95, 190, 0.15);
+          box-shadow: 0px 20px 30px 2px rgba(22, 95, 190, 0.15);
+}
+
+.menu-style .container .item-list2 .item-col .item-thumbnail:hover .item {
+  top: 42%;
+}
+
+.menu-style .container .item-list2 .item-col .item-thumbnail:hover .item-name {
+  top: 63%;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+/*콘텐츠 - 애니메이션*/
+.animation-style {
+  margin: 0 0 2vw 0;
+}
+
+.animation-style .container {
+  width: 90vw;
+  height: 120vw;
+  margin: 0 auto;
+  padding: 10vw 0 0 0;
+  background: #dcffa3;
+}
+
+.animation-style .container .title {
+  margin: 0 10% 5% 10%;
+}
+
+.animation-style .container .title .title-main {
+  font-size: 3vw;
+}
+
+.animation-style .container .title .title-main strong {
+  color: #FDC60A;
+}
+
+.animation-style .container .title .title-sub {
+  font-size: 1vw;
+}
+
+.animation-style .container .title h4 {
+  font-size: 1.5vw;
+  font-weight: 700;
+  line-height: 3vw;
+}
+
+.animation-style .container .controls {
+  background: #cac2a9;
+}
+
+.animation-style .container .controls fieldset {
+  width: 6.2vw;
+  background: #FDC60A;
+  border-radius: 13%;
+  padding: 1vw;
+}
+
+.animation-style .container .controls fieldset .checkbox {
+  margin: 0 auto 0.5vw auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-style .container .controls fieldset .checkbox input[type="checkbox"] {
+  cursor: pointer;
+  float: left;
+  width: 1.5vw;
+  height: 1.5vw;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.animation-style .container .controls fieldset .checkbox label {
+  cursor: pointer;
+  float: left;
+  font-size: 1vw;
+  padding: 0 0.7vw 0 2vw;
+  vertical-align: top;
+}
+
+.animation-style .container .controls fieldset .checkbox label:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5vw;
+  height: 1.5vw;
+  background: #fff;
+  border-radius: 15%;
+  pointer-events: none;
+}
+
+.animation-style .container .controls fieldset .checkbox label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0.25vw;
+  top: 0.25vw;
+  width: 1vw;
+  height: 1vw;
+  background: black;
+  border-radius: 20%;
+  display: none;
+  pointer-events: none;
+}
+
+.animation-style .container .controls fieldset .checkbox input:checked ~ label:after {
+  display: block;
+}
+
+.animation-style .container .controls fieldset button {
+  cursor: pointer;
+  padding: 0.5vw;
+  border-radius: 15%;
+  font-size: 1vw;
+  font-weight: 500;
+  -webkit-box-shadow: 0 0.3vw 0.3vw 0.1vw #0099de;
+          box-shadow: 0 0.3vw 0.3vw 0.1vw #0099de;
+  outline: none;
+  border-color: #0099de;
+  background: #fff;
+}
+
+.animation-style .container .filter-container {
+  margin: 0 5%;
+  background: #9024b1;
+  overflow: hidden;
+}
+
+.animation-style .container .filter-container .box {
+  float: left;
+  width: 23.5%;
+  margin: 0 2% 2% 0;
+  height: 19.035vw;
+  background: #ff83d6;
+  border-radius: 15%;
+  border: 5px solid #FDC60A;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+.animation-style .container .filter-container .box .mix iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 15%;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.animation-style .container .filter-container .box:nth-child(4n) {
+  margin: 0 0 2% 0;
+}
+
+.animation-style .container .filter-container .box.hide {
+  display: none;
+}
+
+.animation-style .container .filter-container .box.pick {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

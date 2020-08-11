@@ -588,13 +588,14 @@
                 let offset3 = (scrollTop - $(this).offset().top) * 0.3;
                 let offset4 = (scrollTop - $(this).offset().top) * 0.4;
 
+                console.log(offset2);
                 $(this).find(".content-item-desc").css({ "transform": "translateY(" + -offset2 + "px)" });
                 $(this).find(".content-item-num").css({ "transform": "translateY(" + offset2 + "px)" });
                 $(this).find(".content-item-img").css({ "transform": "translateY(" + offset2 + "px)" });
             });
         });
 
-        // //자바스크립트
+        // //자바스크립트로 바꿈
         // window.addEventListener("scroll", () => {
         //     let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height / 2;
 

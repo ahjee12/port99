@@ -442,9 +442,9 @@ window.addEventListener("scroll", () => {
         </a>
     </div>
     <!--//modal-->
-    <div class="info">
-        <span>scrollTop(): <strong class="scrollTop">0</strong>px</span>
-    </div>
+    <!-- <div class="info2">
+        <span>pageYOffset(): <strong class="pageYOffset">0</strong>px</span>
+    </div> -->
     <!-- <div class="info">
         <span>scrollTop(): <strong class="scrollTop">0</strong>px</span>
     </div>
@@ -570,113 +570,43 @@ window.addEventListener("scroll", () => {
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
-        
-        //    //제이쿼리
-        //    $(window).scroll(function () {
-        //     let scrollTop = $(window).scrollTop() + $(window).height() / 2;
-        //     $(".scrollTop").text(scrollTop);
 
-        //     // let offset1 = (scrollTop - $("#section1").offset().top)
-        //     // let offset2 = (scrollTop - $("#section2").offset().top)
-        //     // let offset3 = (scrollTop - $("#section3").offset().top)
-        //     // let offset4 = (scrollTop - $("#section4").offset().top)
-        //     // let offset5 = (scrollTop - $("#section5").offset().top)
-        //     // let offset6 = (scrollTop - $("#section6").offset().top)
-        //     // let offset7 = (scrollTop - $("#section7").offset().top)
-        //     // let offset8 = (scrollTop - $("#section8").offset().top)
-        //     // let offset9 = (scrollTop - $("#section9").offset().top)
-
-        //     // $("#section1 .content-item-desc").css({ transform: "translateX("+ offset1+"px)" });
-        //     // $("#section2 .content-item-desc").css({ transform: "translateX("+ offset2+"px)" });
-        //     // $("#section3 .content-item-desc").css({ transform: "translateX("+ offset3+"px)" });
-        //     // $("#section4 .content-item-desc").css({ transform: "translateX("+ offset4+"px)" });
-        //     // $("#section5 .content-item-desc").css({ transform: "translateX("+ offset5+"px)" });
-        //     // $("#section6 .content-item-desc").css({ transform: "translateX("+ offset6+"px)" });
-        //     // $("#section7 .content-item-desc").css({ transform: "translateX("+ offset7+"px)" });
-        //     // $("#section8 .content-item-desc").css({ transform: "translateX("+ offset8+"px)" });
-        //     // $("#section9 .content-item-desc").css({ transform: "translateX("+ offset9+"px)" });
-
-        //     // for(let i=1; i<=9; i++){
-        //     //     let offset = (scrollTop - $("#section"+i).offset().top)
-        //     //     $("#section"+i+" .content-item-desc").css({transform : "translateX("+offset+"px)"});
-        //     // }
-
-        //     $(".content-item").each(function (){
-        //         let offset1 = (scrollTop - $(this).offset().top) * 0.1;
-        //         let offset2 = (scrollTop - $(this).offset().top) * 0.2;
-        //         let offset3 = (scrollTop - $(this).offset().top) * 0.3;
-        //         let offset4 = (scrollTop - $(this).offset().top) * 0.4;
-
-        //         $(this).find(".content-item-desc").css({ "transform": "translateY(" + -offset2 + "px)" });
-        //         $(this).find(".content-item-num").css({ "transform": "translateY(" + offset2 + "px)" });
-        //         $(this).find(".content-item-img").css({ "transform": "translateY(" + offset2 + "px)" });
-        //     });
-        // });
-
-        //자바스크립트
+        //parallax05를 자바스크립트로 바꿈
+       
         window.addEventListener("scroll", () => {
             let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height / 2;
+            let pageYOffset2 = (window.pageYOffset || document.documentElement.scrollTop);
+            // console.log(pageYOffset);
+            // document.querySelector(".pageYOffset").textContent = parseInt(pageYOffset);
+            document.querySelector("#wrap h1").style.transform = "translateX("+-pageYOffset2+"px)";
 
-            document.querySelector(".scrollTop").textContent = pageYOffset;
-            document.querySelectorAll(".content-item").forEach(elem => {
-                console.log(elem.childNodes[0]);
-                console.log(elem.childNodes[1]);
-                console.log(elem.childNodes[2]);
-                console.log(elem.childNodes[3]);
-                console.log(elem.childNodes[4]);
-                console.log(elem.childNodes[5]);
-                console.log(elem.childNodes[6]);
-
-                let target = elem.childNodes[7];
-                let target2 = elem.childNodes[0];
-                let target3 = elem.childNodes[1];
-                let target4 = elem.childNodes[2];
-                
-                let offset = (pageYOffset - elem.offsetTop) * 0.2;
-
-                // console.log("페이지 YOffset : " + pageYOffset);
-                // console.log("offsettop : " + elem.offsetTop);
-                // console.log("offset" + (pageYOffset - elem.offsetTop)*0.2);
-                target.style.transform = "translateY(" + -offset + "px)";
-                target2.style.transform = "translateY(" + offset + "px)";
-                target3.style.transform = "translateY(" + offset + "px)";
-                target4.style.transform = "translateY(" + offset + "px)";
-
-
-            });
-        });
-
-
-        //parallax06 다시연습
-        // info2OffsetTop = $(".info2 span strong");
-        // info2OffsetTop.each(function(i){
-        //     sectionOffsetTop = $(".content-item").eq(i).offset().top;
-        //     $(this).text(parseInt(sectionOffsetTop));
-        // })
-
-        // window.addEventListener("scroll", () => {
-        //     let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height / 2;
-        //     // console.log(pageYOffset);
-        //     document.querySelector(".pageYOffset").textContent = parseInt(pageYOffset);
-        //     let section = document.querySelectorAll(".content-item")
-        //     section.forEach(element => {
-        //         // console.log(pageYOffset);
-        //         // console.log("0번째"+element.childNodes[0]);
-        //         // console.log("1번째"+element.childNodes[1]);
-        //         // console.log("2번째"+element.childNodes[2]);
-        //         // console.log("3번째"+element.childNodes[3]);
-        //         // console.log("4번째"+element.childNodes[4]);
-        //         // console.log("5번째"+element.childNodes[5]);
-        //         // console.log("6번째"+element.childNodes[6]);
-        //         // console.log(element.childNodes);
-        //         let target = element.childNodes[7];
-        //         if (pageYOffset > this.pageYOffset) {
-        //             let offset = (pageYOffset - element.offsetTop) * 0.5;
-        //             console.log(offset);
-        //             target.style.transform = "translateY(" + offset + "px)";
-        //         }
-        //     })
-        // })
+            let section = document.querySelectorAll(".content-item");
+            section.forEach(element => {
+                console.log(pageYOffset);
+                // console.log(element.childNodes[0]);
+                // console.log(element.childNodes[1]);
+                // console.log(element.childNodes[2]);
+                // console.log(element.childNodes[3]);
+                // console.log(element.childNodes[4]);
+                // console.log(element.childNodes[5]);
+                // console.log(element.childNodes[6]);
+                // console.log(element.childNodes[7]);
+                console.log(element.childNodes);
+                let target = element.childNodes[7];
+                let targetTitle = element.childNodes[3];
+                let targetImg = element.childNodes[5];
+                let targetNum = element.childNodes[1];
+                if (pageYOffset > this.pageYOffset) {
+                    let offset = (pageYOffset - element.offsetTop) * 0.1;
+                    let offset2 = (pageYOffset - element.offsetTop) * 0.3;
+                    console.log(offset);
+                    target.style.transform = "translateY(" + -offset2 + "px)";
+                    targetTitle.style.transform = "translateY(" + -offset + "px)";
+                    targetImg.style.transform = "translateY(" + -offset + "px)";
+                    targetNum.style.transform = "translateY(" + offset + "px)";
+                }
+            })
+        })
 
 
         //modal 버튼, close버튼 클릭

@@ -5,6 +5,7 @@
 //     $(this).css({'display':'block'},{'left':0});
 // })
 
+// 메인
 window.onload = function(){
     mainStart();
 
