@@ -1,9 +1,8 @@
-
-// 메인
-window.onload = function(){
-    mainStart();
-}
-
+/* --------메인--------- */
+// window.onload = function(){
+//     mainStart();
+// }
+mainStart();
 function mainStart(){
     var tl = new TimelineMax();
     const land = $('.land');
@@ -47,13 +46,29 @@ function mainStart(){
     //   .to(field, {duration: 0.4, scale: 1, delay: -0.1})     
 }
 
-/*애니메이션*/
+/* --------애니메이션------------ */
+//input 버튼
 let inputBtn = $("input");
 console.log(inputBtn);
 let inputBtnValue = '';
-let inputContentBox = '';
+let boxCorrespondingToTheInput = '';
 
+//클리어 버튼
+const clearFilterBtn = $("#reset");
 
+inputBtn.click(function(){
+  inputBtnValue = $(this).attr('value');
+  console.log(inputBtnValue);
+  boxCorrespondingToTheInput = $(inputBtnValue).parent('.box');
+  console.log(boxCorrespondingToTheInput);
+  
+  //pick이 붙어있지 않을 때
+  if (boxCorrespondingToTheInput.hasClass('pick') == false) {
+
+  }else{
+    
+  }
+})
 
 
 
