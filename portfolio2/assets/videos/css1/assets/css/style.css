@@ -1,0 +1,31 @@
+/* No CSS *//*# sourceMappingURL=style.css.map */
+*{margin: 0; padding: 0;}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+  }
+  .radius{
+      position: absolute;left: 50%; top:50%;
+      transform: translate(-50%, -50%);
+      width: 60vw; height: 60vw;
+      background-color: #bca5e3;
+      box-sizing: border-box;
+      border-radius: 70% 80% 60% 90% / 70% 80% 50% 90%;
+      box-shadow:
+       inset 5vw 0 20vw #a174db,
+       inset -5vw 0 10vw #40245e,
+       inset -20vw 5vw 40vw #1b1648;
+       animation: move 10s infinite alternate ease-in-out
+
+  }
+  @keyframes move{
+    0% {border-radius: 70% 80% 70% 70% / 70% 80% 50% 80%; transform: translate(-50%,-50%) rotate(0deg);}
+     14% {border-radius: 50% 80% 60% 55% / 50% 80% 50% 70%;}
+     25% {border-radius: 70% 80% 70% 70% / 70% 80% 50% 80%;}
+     42% {border-radius: 70% 50% 60% 50% / 40% 50% 50% 40%;}
+     56% {border-radius: 59% 90% 99% 70% / 69% 60% 99% 80%; transform: translate(-50%, -50%) rotate(80deg)}
+     70% {border-radius: 80% 50% 60% 50% / 80% 50% 80% 50%;}
+     84% {border-radius: 90% 50% 60% 50% / 90% 50% 50% 40%;}
+    100% {border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; transform: translate(-50%, -50%) rotate(0deg)}
+  }

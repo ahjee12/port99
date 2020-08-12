@@ -1,14 +1,7 @@
-// headerMenu = $(".header-center-nav").find("ul li");
-// console.log(headerMenu);
-
-// headerMenu.hover(function(){
-//     $(this).css({'display':'block'},{'left':0});
-// })
 
 // 메인
 window.onload = function(){
     mainStart();
-
 }
 
 function mainStart(){
@@ -51,8 +44,18 @@ function mainStart(){
       .to(chrysanthemum, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
       .to(sunflower, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
       .to(rosemose, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
-    //   .to(field, {duration: 0.4, scale: 1, delay: -0.1})
-       
-
+    //   .to(field, {duration: 0.4, scale: 1, delay: -0.1})     
 }
+
+/*애니메이션*/
+let inputBtn = $("input");
+console.log(inputBtn);
+let inputBtnValue = '';
+let inputContentBox = '';
+
+
+
+
+
+
 

@@ -1,0 +1,36 @@
+/* No CSS *//*# sourceMappingURL=style.css.map */
+*{margin: 0; padding: 0;}
+
+body {
+    background: #fcdcdf;
+    width: 100%;
+    height: 100vh;
+  }
+  #animation {
+    background-image: url(https://tistory2.daumcdn.net/tistory/3108288/skin/images/steps.jpg);
+    width: 800px; height: 600px;
+    position: absolute; left: 50%; top: 50%;
+    margin-left: -400px; margin-top: -300px;
+    animation: ani 1s steps(16, start) infinite;
+  }
+  
+  #animation.btnStart {animation-play-state: running}
+  #animation.btnStop {animation-play-state: paused}
+  @keyframes ani {
+    0% {background-position: 0 0}
+    100% {background-position: -12800px 0}
+  }
+  .btn{
+    position: absolute; left: 10px; right: 10px;
+    z-index: 1000;
+  }
+  .btn a {
+    background: #99adcc; color: #fff;
+    padding: 8px 10px;
+    margin: 2px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  

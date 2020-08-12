@@ -1,0 +1,47 @@
+/* No CSS *//*# sourceMappingURL=style.css.map */
+*{margin: 0; padding: 0;}
+
+body {
+    width: 100vh;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(94,63,251,1) 6%, rgba(84,128,189,1) 54%, rgba(180,70,252,1) 100%);
+  }
+  .box {
+    width: 20vw; height: 20vw;
+  /*   background: #ccc; */
+    position: absolute; 
+    left: 0; top: 0; right: 0; bottom: 0;
+    margin: auto;
+  }
+  .box::before {
+    content:'';
+    width: 20vw; height:4vw;
+    background: #000;
+    opacity: 0.1;
+    position: absolute; top: 20vw; left: 0;
+    border-radius: 50%;
+    animation: shadow 0.58s linear infinite;
+  }
+  
+  @keyframes shadow {
+    0%,100% {transform: scale(1,1)}
+    50% {transform: scale(1.5,1)}
+  }
+  
+  .box::after {
+    content: '';
+    width: 20vw; height: 20vw;
+    background: #fdd245;
+    /*그림자랑 keyframe먼저 해보고 top값 조정*/
+    position: absolute; left: 0; top: -7vw;
+    border-radius: 5%;
+    animation: load 0.58s linear infinite;
+  }
+  
+  @keyframes load {
+    17% {border-bottom-right-radius: 5%}
+    25% {transform: translatey(5vw) rotate(22.5deg);}
+    50% {transform: translatey(10vw) scale(1, 0.9) rotate(45deg); border-bottom-right-radius: 40%;}
+    75%{transform:translatey(5vw) rotate(67.5deg);}
+    100%{transform: translate(0) rotate(90deg)}
+  }
