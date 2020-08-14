@@ -1,0 +1,88 @@
+@font-face { 
+    font-family: 'JSDongkang-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff') format('woff'); font-weight: normal; font-style: normal; }
+  
+  @mixin content($position: absolute, $content: ""){
+    content: $content;
+    position: $position;
+  }
+  
+  body {
+    height: 100vh;
+    background: #2f3238;
+    font-family: 'JSDongkang-Regular';
+  }
+  .hover-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    perspective: 1000px;
+    
+    .effect {
+      position: relative;
+      width: 50vw; height: 40vw; margin: 10px;
+      overflow: hidden;
+      img {
+        width: 100%; vertical-align: top;
+      }
+      .front {
+        width: 100%;
+        position: absolute; left: 0; top: 0; z-index: 10;
+      }
+      .back {
+        width: 100%;
+        position: absolute; left: 0; top: 0;
+      }
+      figcaption {
+        position: absolute; bottom: 0; left: 0;
+        background: rgba(0,0,0,0.4);
+        width: 100%; padding: 20px;
+        box-sizing: border-box;
+        color: #fff;
+        h3 {font-size: 5vw; padding-bottom: 1vw;}
+        p {font-size: 3vw;}
+      }
+    }
+  }
+  
+  
+  @media (max-width:800px){
+    .hover-wrap {flex-direction: column;}
+  }
+  
+  /*Mouse Effect7*/
+  .hover-wrap .effect.hover7 .front{
+    transform: rotatey(0);
+    transition: transform 0.6s ease;
+    backface-visibility: hidden;
+  }
+  .hover-wrap .effect.hover7:hover .front{
+    transform: rotatey(180deg);
+  }
+  
+  .hover-wrap .effect.hover7 .back {
+    transform: rotatey(-180deg);
+    transition: transform 0.6s ease;
+  }
+  .hover-wrap .effect.hover7:hover .back {
+    transform: rotatey(0deg);
+  }
+  
+  /*Mouse Effect8*/
+  .hover-wrap .effect.hover8 .front{
+    transform: rotatex(0);
+    transition: transform 0.6s ease;
+    backface-visibility: hidden;
+  }
+  .hover-wrap .effect.hover8:hover .front{
+    transform: rotatex(180deg);
+  }
+  
+  .hover-wrap .effect.hover8 .back {
+    transform: rotatex(-180deg);
+    transition: transform 0.6s ease;
+  }
+  .hover-wrap .effect.hover8:hover .back {
+    transform: rotatex(0deg);
+  }
+  

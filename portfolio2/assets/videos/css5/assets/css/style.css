@@ -1,7 +1,6 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
 *{margin: 0; padding: 0;}
-
-body {
+ 
+ body {
     width: 100vh;
     height: 100vh;
     background: radial-gradient(circle, rgba(94,63,251,1) 6%, rgba(84,128,189,1) 54%, rgba(180,70,252,1) 100%);

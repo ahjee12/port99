@@ -1,4 +1,4 @@
-/* --------메인--------- */
+/* -----------메인------------ */
 // window.onload = function(){
 //     mainStart();
 // }
@@ -46,6 +46,9 @@ function mainStart(){
     //   .to(field, {duration: 0.4, scale: 1, delay: -0.1})     
 }
 
+/* ------------메뉴------------ */
+
+
 /* --------애니메이션------------ */
 //input 버튼
 let inputBtn = $("input");
@@ -62,15 +65,73 @@ inputBtn.click(function(){
   boxCorrespondingToTheInput = $(inputBtnValue).parent('.box');
   console.log(boxCorrespondingToTheInput);
   
-  //pick이 붙어있지 않을 때
-  if (boxCorrespondingToTheInput.hasClass('pick') == false) {
+  //pick클래스가 붙어있지 않을 때(아무것도 붙어있지 않음 OR hide클래스 붙어있음)
+  if (boxCorrespondingToTheInput.hasClass('pick') == false){
+     // 이미 클릭돼서 hide 클래스 붙은 박스일 때는 hide클래스 제거, pick클래스 붙임
+     boxCorrespondingToTheInput.removeClass('hide');
+     boxCorrespondingToTheInput.addClass('pick');
+     console.log($('.box.pick'));
+     //클릭한 input에 해당하는 박스가 아닌 박스 중 pick클래스 붙은 박스가 아닐 경우만 hide클래스 붙임
+     $(".box").each(function () {
+         if ($(this).hasClass('pick') == false) {
+             $(this).addClass('hide');
+         }
+     })
 
+  //pick클래가 붙어있을 때
   }else{
-    
+    // 이미 클릭돼서 pick 클래스 붙은 박스일 때는 pick클래스 제거, hide클래스 붙임
+    boxCorrespondingToTheInput.removeClass('pick');
+    boxCorrespondingToTheInput.addClass('hide');
   }
+
+  //margin 조정
+  let boxPicked = $(".box.pick");
+  console.log(boxPicked);
+  boxPicked.each(function(i){
+      //index값은 html 순서대로 정해져 있어서 못 씀! pick클래스 붙은 박스(display block인 박스)끼리의 순서가 필요! 
+      // let index = $(this).index();
+      // console.log(index);
+      console.log(i);
+      if((i+1) % 4 == 0){
+          $(this).css({'margin-right': '0'});
+      }else{
+          $(this).css({'margin-right': '2%'});
+      }
+  })
+
+  //input 체크 원상 복귀될 때 (체크 모두 안 했을 때)
+  let count = 0;
+        //각 input의 체크여부 검사
+        inputBtn.each(function(){
+            console.log($(this).is(":checked"));
+            //체크 안 된 경우 count +1
+            if(!$(this).is(":checked")){
+                count ++;
+            }
+        })
+        // console.log(inputBtn.is(":checked").length);
+        //
+        if(count == inputBtn.length){
+          ResetAllBoxs()
+        }
 })
 
+clearFilterBtn.click(function(){
+  ResetAllBoxs()
+})
 
-
-
-
+function ResetAllBoxs(){
+  $(".box").removeClass("hide");
+  $(".box").removeClass("pick");
+ 
+  $('.box').each(function(){
+      let boxIndex = $(this).index();
+      console.log(boxIndex);
+      if((boxIndex+1) % 4 == 0){
+          $(this).css({'margin-right': '0'});
+      }else{
+          $(this).css({'margin-right': '2%'});
+      }
+  })
+}
