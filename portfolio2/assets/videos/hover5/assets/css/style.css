@@ -28,7 +28,7 @@ body {
   position: relative;
   width: 50vw;
   height: 40vw;
-  margin: 10px;
+  margin: 0.5vw;
   overflow: hidden;
   -webkit-perspective: 1000px;
           perspective: 1000px;
@@ -76,10 +76,12 @@ body {
 .hover-wrap .effect figcaption h3 {
   font-size: 3vw;
   padding-bottom: 0.4rem;
+  margin: 0.5vw;
 }
 
 .hover-wrap .effect figcaption p {
   font-size: 1vw;
+  margin: 0.5vw;
 }
 
 @media (max-width: 800px) {

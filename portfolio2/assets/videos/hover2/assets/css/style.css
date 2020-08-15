@@ -106,10 +106,12 @@ body .hover-wrap figcaption {
 body .hover-wrap figcaption h3 {
   font-size: 5vw;
   padding-bottom: 7px;
+  margin: 0.5vw;
 }
 
 body .hover-wrap figcaption p {
   font-size: 3vw;
+  margin: 0.5vw;
 }
 
 @media (max-width: 800px) {
@@ -220,6 +222,7 @@ body .hover-wrap figure:hover:last-child:after {
 .hover-wrap figcaption h3 {
   font-size: 22px;
   padding-bottom: 7px;
+  margin: 0.5vw;
 }
 
 .hover-wrap figcaption p {
