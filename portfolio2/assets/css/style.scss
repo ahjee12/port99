@@ -11,7 +11,8 @@
     // position: fixed;
 }
 .header{
-    position: fixed;
+    position: fixed; 
+    left: 0; top: 0;
     width: 100%;
     height: 4.55vw;
     border-radius: 0 0 20px 20px;
@@ -114,12 +115,15 @@
 /*메인*/
 #main{}
 .main{
-    position: relative;
+    // position: relative;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
     .container{
         // width: 100%;
         // text-align: center;
         // margin: 0 auto;
-        padding: 2vw 0 2vw 0;
+        padding: 4vw 0 2vw 0;
         .uiux-land{ 
             width: 1487px; height: 1843px;
             background: #ccc;
@@ -127,7 +131,7 @@
             position: relative;
             z-index: -1;
             .land{
-                transform: scale(0) ; transform-origin: 50% 0%; opacity: 0;
+                transform: scale(0.3) ; transform-origin: 50% 0%; opacity: 0;
             }
             //건물
             .structure{
@@ -263,7 +267,7 @@
     }
   }
 
-#contents{}
+#contents{position: relative; margin: 100vh 0 0 0;}
 
 /*콘텐츠 - 메뉴*/
 #page-group.menu{}
@@ -276,6 +280,8 @@
         margin: 0 auto;
         padding: 10vw 0 0 0;
         background: rgb(255, 163, 163);
+        border-top-left-radius: 15%;
+        border-top-right-radius: 15%;
         .title{
             margin: 0 10% 5% 10%; 
 
@@ -495,7 +501,7 @@
                 border: 0.3vw solid #FDC60A;
                 box-sizing: border-box;
                 position: relative;
-                .mix{
+                // .mix{
                     
                     iframe{
                         position: absolute; left: 0; top: 0;
@@ -509,7 +515,7 @@
                         // border: 5px solid #FDC60A;
                         
                     }
-                }
+                // }
 
             }
             .box:nth-child(4n){
@@ -544,7 +550,7 @@
             // box-sizing: border-box;
             .title-main{ 
                 font-size: 3vw;
-                strong{ color: #FDC60A;}
+                strong{color: #FDC60A;}
             }
             .title-sub{
                 font-size: 1vw;
@@ -601,4 +607,146 @@
     }
     
 }
+/*콘텐츠 - 패럴럭스*/
+#page-group.parallax{}
+.parallax-style{
+    margin: 0 0 2vw 0;
+    .container{
+        width: 100%;
+        height: 60vw;
+        padding: 10vw 0 0 0;
+        background: rgb(255, 186, 220);
+        .title{
+            text-align: center;
+            margin: 0 0 5vw 0;
+            .title-main{
+                font-size: 3vw;
+                strong{color: #FDC60A;}
+            }
+            .title-sub{
+                font-size: 1vw;
+            }
+        }
+        .item-list-parallax{
+            .swiper-container{
+            .swiper-wrapper{
+                .swiper-slide{
+                    // width: 31vw; 
+                    height: 38vw;
+                    background: #FDC60A;
+                    // margin: 0 1vw;
+                    // padding: 0 1vw;
+                    // margin: 0 1vw 0 0;
+                    border-radius: 13.5%; 
+                    .item-thumbnail{
+                        display: block;
+                        width: 100%; height: 100%; 
+                        background: rgb(183, 255, 168);
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 13.5%; 
+                        .item-hover{
+                            width: 100%; height: 100%;
+                            background: rgb(230, 204, 255);
+                            position: absolute; left: 0; top: 0;
+                            border-radius: 13.5%; 
+                            transform: translateX(100%);
+                            //아이템 오버에서 overflow hidden해줘야 title움직이는 거 안 보임!!
+                            overflow: hidden;
+                            transition: transform 0.65s cubic-bezier(0.76, 0.11, 0.24, 0.96) 0.1s;
+                            iframe{
+                                position: absolute; left: 0; top: 0;
+                                width: 250%; height: 250%;
+                                transform: scale(0.4); transform-origin: top left;
+                                border-radius: 13.5%; 
+                                border: 0;
+                                box-sizing: border-box;
+                            }
+                            .item-hover-title{
+                                position: absolute; left: 0; top: 30%;
+                                display: flex;  
+                                justify-content: flex-end;
+                                animation: 4s  item-hover-title linear infinite;
+                                overflow: hidden;
+                                h3{
+                                    // float: left;
+                                    width: 85vw;
+                                    font-size: 13vw; color: #FDC60A;
+                                    font-family: 'ghanachoco';
+                                    font-style: italic;
+                                    text-transform: uppercase;
+                                    span{ 
+                                        color: rgba(0, 159, 216, 1); 
+                                        padding:0 1.5vw 0 0;  
+                                        font-style: italic;
+                                        font-weight: bold;
+                                    }
+                                }   
+                            }
+                        }//item-hover
+                       
+                        .item{
+                            width: 100%; height: 100%; left: 0; top: 0;
+                            position: absolute;
+                            border-radius: 13.5%; 
+                            .circle{
+                                position: absolute; left: 50%; top: 30%;
+                                transform: translate(-50%,0);
+                                width: 6vw; height: 6vw; 
+                                border-radius: 50%; 
+                                background: url("../images/parallax/space1.jpg");
+                                transform-origin: 50% 100%;
+                                // transition: transform 1s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+                                // transition: transform 0.6s cubic-bezier(0.07, 1.15, 1, 1) 0s;
+                                transition: transform 0.6s cubic-bezier(0.76, 0.11, 0.24, 0.96) 0.1s;
+                            }
+                            h3{
+                                font-size: 20vw; color: #fff;
+                                position: absolute; left: 50%; top: 50%; 
+                                transform: translate(-53%,-55%);
+                                transform-origin: 50% 100%;
+                                transition: transform 0.6s cubic-bezier(0.76, 0.11, 0.24, 0.96) 0.1s;
+                            }
+                            
+                        }//item
+                        .item:hover .circle{
+                            transform: translate(-60%,-55%) rotate(-10deg) scale(1.2);
+                            transition: transform 0.7s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+                        }
+                        .item:hover h3{
+                            transform: translate(-53%,-55%) rotate(5deg);
+                            transition: transform 0.7s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0.05s;
+                        }
+                        
+                    }//item-thumnail
+                    .item-thumbnail:hover .item-hover{
+                        transform: translateX(0);
+                        transition: transform 0.7s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+ 
+                    }
+                }
+            }//.swiper-wrapper
+            .swiper-button-prev{
+                width: 10vw; height: 10vw;
+                transform: translateY(-50%);
+                .arrow{transform: rotate(180deg);}
+                .arrow:hover path{stroke: #fff;}
+            }
+            // .swiper-button-prev:hover .arrow g g path{fill: #fff;}
+            .swiper-button-next{
+                width: 10vw; height: 10vw; 
+                transform: translateY(-50%);
+                // background: url(../images/parallax/arrow.svg) no-repeat;
+                // background-size: contain;
+                // .arrow{}
+            }
+            .swiper-button-next:hover .arrow path{fill: #fff;}
+          }//.swiper-container
+        }
+    }
+}
 
+@keyframes item-hover-title {
+    0%{transform: translate(0, 0);}
+    100%{transform: translate(-50%,0);}
+}
