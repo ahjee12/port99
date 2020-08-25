@@ -85,6 +85,7 @@
         .info h1 {
             padding: 2vh 2vw 0vh;
             font-size: 3vw;
+            opacity: 0;
         }
 
         .info p {
@@ -119,7 +120,7 @@
         .info2 ul li {}
 
         .info2 ul li a {
-            font-size: 20px;
+            font-size: 1vw;
             font-weight: bold;
             color: rgb(255, 255, 255);
         }
@@ -231,10 +232,12 @@
         }
 
         .info4 a {
-            font-size: 50px;
+            /* font-size: 50px; */
+            font-size: 2.35vw;
             font-weight: bold;
-            background: rgb(251, 255, 0);
-            padding: 15px 20px;
+            background: #6493af;
+            /* padding: 15px 20px; */
+            padding: 0.7vw 0.95vw;
             border-radius: 5px;
             text-decoration: none;
             color: rgba(0, 0, 0, 0.7);
@@ -259,12 +262,14 @@
 
         #modal .close {
             position: absolute;
-            left: 50%; top: 10%; transform: translateX(-50%);
+            left: 50%;
+            top: 5%; 
+            transform: translateX(-50%);
+            width: 5vw; height: 5vw;
             /* right: -20px; */
             /* left: 80%; */
             /* z-index: -1000; */
             background: #000;
-            padding: 30px;
             border-radius: 50%;
         }
 
@@ -273,9 +278,10 @@
         }
 
         #modal .close svg {
-            width: 30px;
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%,-50%); 
+            width: 2vw;
             fill: #fff;
-            vertical-align: top;
         }
     </style>
 </head>
@@ -292,19 +298,19 @@
         <ul>
             <li><a href="mouse-effect01.html">mouse-effect01</a></li>
             <li><a href="mouse-effect02.html">mouse-effect02</a></li>
-            <li><a href="mouse-effect3.html">mouse-effect03</a></li>
+            <li><a href="mouse-effect03.html">mouse-effect03</a></li>
             <li><a href="mouse-effect04.html">mouse-effect04</a></li>
             <li><a href="mouse-effect05.html">mouse-effect05</a></li>
             <li><a href="mouse-effect05.html">mouse-effect06</a></li>
             <li><a href="mouse-effect07.html">mouse-effect07</a></li>
             <li class="active"><a href="mouse-effect08.html">mouse-effect08</a></li>
-            <li><a href="mouse-effect09.html">mouse-effect09</a></li>
-            <li><a href="mouse-effect10.html">mouse-effect10</a></li>
+            <!-- <li><a href="mouse-effect09.html">mouse-effect09</a></li>
+            <li><a href="mouse-effect10.html">mouse-effect10</a></li> -->
         </ul>
     </div>
 
     <div class="info4">
-        <a href="#" class="btn">script보기</a>
+        <a href="#" onclick="return false" class="btn">script보기</a>
     </div>
     <div id="modal">
         <div class="code-editor">
@@ -315,68 +321,19 @@
             <pre class="line-numbers">
                 <code class="language-markup">
 &lt;script&gt;
-//gsap 애니메이션으로 원형 커서 움직이기
-$(document).mousemove(function(e){
-    gsap.to(cursor,0.4,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
-    // gsap.to(follwer,0.8,{left :e.pageX-(follwer.width()/2), top:e.pageY - (follwer.height()/2)})    
-});
-// 출력용
-$(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
-    $(".pageX").text(e.pageX);  //이벤트 pageX값을 화면에 출력
-    $(".pageY").text(e.pageY);  //이벤트 pageX값을 화면에 출력
-});
+const spanSlow = $(".spanSlow");
+const spanFast = $(".spanFast");
 
-//javascript
-let body = document.querySelector("body, html");
-body.addEventListener("mousemove", function (event) {
-    document.querySelector(".clientX").textContent = event.clientX;
-    document.querySelector(".clientY").textContent = event.clientY;
-    document.querySelector(".offsetX").textContent = event.offsetX;
-    document.querySelector(".offsetY").textContent = event.offsetY;
-    document.querySelector(".pageX").textContent = event.pageX;
-    document.querySelector(".pageY").textContent = event.pageY;
-    document.querySelector(".screenX").textContent = event.screenX;
-    document.querySelector(".screenY").textContent = event.screenY;
+$(window).mousemove(mouseMove);
 
-    //jquery 원형 커서 움직이기
-    // $(".cursor").css({"left": event.clientX-$(".cursor").width()/2, "top": event.clientY-$(".cursor").height()/2});
+function mouseMove(e){
+    let speedSlow = (e.pageX -$(window).width()/2)*0.15;
+    let speedFast = (e.pageX -$(window).width()/2)*0.3;
 
-    //javascript 원형 커서 움직이기
-    // document.querySelector(".cursor").style.left = event.clientX -25 +"px";
-    // document.querySelector(".cursor").style.top = event.clientY -25 +"px";
-     //javascript #2 원형 커서 움직이기
-    // let x = event.clientX - 25 + "px";
-    // let y = event.clientY - 25 + "px";
-    // document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y + "";
+    spanSlow.css({"transform":"translateX("+speedSlow+"px)"});
+    spanFast.css({"transform":"translateX("+(-speedFast)+"px)"});
+}
 
-    //jquery 원형 커서에 active클래스 추가, 삭제
-    // $(".contents a").hover(function(){
-    //     // console.log("eeee");
-    //     $(".cursor").addClass("active");
-    // },function(){
-    //     $(".cursor").removeClass("active");
-    // });
-
-    //javascript 원형 커서에 active클래스 추가, 삭제
-    // document.querySelector(".contents a").addEventListener("mouseenter", ()=>{
-    //     document.querySelector(".cursor").classList.add("active");
-    // })
-    // document.querySelector(".contents a").addEventListener("mouseleave", ()=>{
-    //     document.querySelector(".cursor").classList.remove("active");
-    // })
-
-    //javescript#2 원형 커서에 active클래스 추가, 삭제 & 모든 a태그에 적용!!!
-    document.querySelectorAll("a").forEach(element => {
-        element.addEventListener("mouseenter", () => {
-            document.querySelector(".cursor").classList.add("active");
-            document.querySelector(".cursor-follower").classList.add("active");
-        })
-        element.addEventListener("mouseleave", () => {
-            document.querySelector(".cursor").classList.remove("active");
-            document.querySelector(".cursor-follower").classList.remove("active");
-        })
-    })
-})
 //modal 버튼, close버튼 클릭
 $(".btn").click(function () {
     $("#modal").slideDown();
@@ -387,7 +344,7 @@ $(".close").click(function () {
 &lt;/script&gt;
 </code></pre>
         </div>
-        <a href="#" class="close">
+        <a href="#" onclick="return false" class="close">
             <svg viewBox="0 0 24 24">
                 <path d="M14.1,12L22,4.1c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0L12,9.9L4.1,2C3.5,1.4,2.5,1.4,2,2C1.4,2.5,1.4,3.5,2,4.1
         L9.9,12L2,19.9c-0.6,0.6-0.6,1.5,0,2.1c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l7.9-7.9l7.9,7.9c0.3,0.3,0.7,0.4,1.1,0.4

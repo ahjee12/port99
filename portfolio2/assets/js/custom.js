@@ -151,3 +151,30 @@ var swiper = new Swiper('.item-list-parallax .swiper-container', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+/* -----------마우스 효과------------ */
+const slide = $('.slide');
+const slideBtn = $('.slide-btn');
+const containerOfDots = $('.slide-dots');
+
+let CountSlide = slide.length;
+let currentIndex = 0;
+let dotIndex = "";
+let duration = 1000;
+
+//slide left값 조정 && 각 sldie에 해당하는 닷버튼 생성
+slide.each(function(i){
+  $(this).css({left: i*100+'%'});
+  dotIndex += "<a href ='#' class='dot'><span>"+(i+1)+"</span></a>";
+  containerOfDots.html(dotIndex);
+})
+
+//slide움직이기
+function gotoSlide(num){
+
+}
+
+//slide prev, next버튼 클릭
+slideBtn.on('click','a',function(){
+
+})
