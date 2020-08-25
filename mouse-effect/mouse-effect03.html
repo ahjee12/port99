@@ -180,8 +180,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 1.5vw;
-            height: 1.5vw;
+            width: 2.5vw;
+            height: 2.5vw;
             border-radius: 50%;
             /* border: 3px solid #fff; */
             background-color: rgba(255, 255, 255, 1);
@@ -460,6 +460,15 @@ $(".close").click(function () {
     <script>
         const cursor = $(".cursor");
         const follwer = $(".cursor-follower");
+
+        $(window).resize(function(){
+            //gsap 애니메이션으로 원형 커서 움직이기
+            $(document).mousemove(function(e){
+                gsap.to(cursor,0.4,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
+                // gsap.to(follwer,0.8,{left :e.pageX-(follwer.width()/2), top:e.pageY - (follwer.height()/2)})    
+            });
+            // 출력용
+        })
 
         //gsap 애니메이션으로 원형 커서 움직이기
         $(document).mousemove(function(e){

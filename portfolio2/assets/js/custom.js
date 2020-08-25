@@ -153,28 +153,61 @@ var swiper = new Swiper('.item-list-parallax .swiper-container', {
 });
 
 /* -----------마우스 효과------------ */
+const slideWrap = $('.slide-wrap');
+const slideContainer = $('.slide-container');
 const slide = $('.slide');
 const slideBtn = $('.slide-btn');
 const containerOfDots = $('.slide-dots');
 
-let CountSlide = slide.length;
-let currentIndex = 0;
+
 let dotIndex = "";
 let duration = 1000;
 
-//slide left값 조정 && 각 sldie에 해당하는 닷버튼 생성
+//slide left값 조정 && 각 slide에 해당하는 닷버튼 생성
 slide.each(function(i){
-  $(this).css({left: i*100+'%'});
+  // $(this).css({left: i*100+'%'});
   dotIndex += "<a href ='#' class='dot'><span>"+(i+1)+"</span></a>";
   containerOfDots.html(dotIndex);
 })
 
-//slide움직이기
-function gotoSlide(num){
+let currentIndex = 0;
 
+//슬라이드 컨테이너 너비 구하기
+// let countSlide = slide.length;
+// let widthSlide = slideWrap.width();
+// let totalWidthSlide = widthSlide*countSlide;
+// slideContainer.css({width: totalWidthSlide});
+let countSlide = slide.length;
+let widthSlide = 80;
+let totalWidthSlide = (80*countSlide)+'vw';
+// slideContainer.css({width: totalWidthSlide});
+
+
+//슬라이드 이전, 다음 버튼 클릭할 때
+const btnPrev = $('.slide-btn.btn-prev');
+const btnNext = $('.slide-btn.btn-next');
+btnPrev.click(function(){
+  moveRight();
+})
+btnNext.click(function(){
+  moveLeft();
+})
+
+$('.slide:last-child').prependTo(slideContainer);
+//느린 것 같아 scss에 직접 지정함
+// slideContainer.css({transform: 'translateX('+ -widthSlide +'vw)'})
+// slideContainer.css({marginLeft: -widthSlide +'vw'})
+function moveRight(){
+  slideContainer.animate({left: widthSlide+'vw'}, 400, function(){
+    $('.slide:last-child').prependTo(slideContainer);
+    slideContainer.css({left: ''});
+  });
+}
+function moveLeft(){
+  slideContainer.animate({left: -widthSlide+'vw'}, 400, function(){
+    $('.slide:first-child').appendTo(slideContainer);
+    slideContainer.css({left: ''});
+  });
 }
 
-//slide prev, next버튼 클릭
-slideBtn.on('click','a',function(){
 
-})

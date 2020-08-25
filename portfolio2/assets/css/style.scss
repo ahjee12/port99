@@ -780,21 +780,26 @@
                 width: 80vw;
                 height: 45vw; 
                 margin: 0 auto;
-                background: rgb(61, 116, 53);
+                background: #FDC60A;
                 border-radius: 30px; 
+                overflow: hidden;
                 .slide-container{
-                    width: 100%;
+                    //scipt로 width
+                    width: 640vw;
+                    margin-left: -80vw;
                     height: 100%;
                     background: rgb(103, 109, 194);
-                    border-radius: 30px; 
+                    border-radius: 30px;
                     position: relative;
-                    overflow: hidden;
+                    
                     .slide{
-                        width: 100%;
-                        height: 100%;
+                        float: left;
+                        width: 80vw;
+                        height: 45vw; 
                         background: rgb(197, 214, 157);
                         border-radius: 30px; 
-                        position: absolute;
+                        //title, num && slide 위치
+                        position: relative;
                         .slide-img{
                             width: 100%;
                             height: 100%;

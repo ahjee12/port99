@@ -175,8 +175,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 50px;
-            height: 50px;
+            width: 4vw;
+            height: 4vw;
             border-radius: 50%;
             border: 3px solid #fff;
             background-color: rgba(255, 255, 255, 0.1);
@@ -476,9 +476,19 @@ $(".close").click(function () {
             //javascript
             // document.querySelector(".cursor").style.left = event.clientX -25 +"px";
             // document.querySelector(".cursor").style.top = event.clientY -25 +"px";
-
-            let x = event.clientX - 25 + "px";
-            let y = event.clientY - 25 + "px";
+            let cursor = document.querySelector(".cursor");
+            let widthCursor = cursor.offsetWidth;
+            let heightCursor = cursor.offsetHeight;
+            let x = event.clientX - widthCursor/2 + "px";
+            let y = event.clientY - heightCursor/2 + "px";
+            $(window).resize(function(){
+                cursor = document.querySelector(".cursor");
+                widthCursor = cursor.offsetWidth;
+                heightCursor = cursor.offsetHeight;
+                x = event.clientX - widthCursor/2 + "px";
+                y = event.clientY - heightCursor/2 + "px";
+                document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y + "";
+            })
             document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y + "";
 
             //jquery

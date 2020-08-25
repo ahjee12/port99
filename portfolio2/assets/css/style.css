@@ -1178,25 +1178,27 @@
   width: 80vw;
   height: 45vw;
   margin: 0 auto;
-  background: #3d7435;
+  background: #FDC60A;
   border-radius: 30px;
+  overflow: hidden;
 }
 
 .mouse-style .container .item-list-mouse .slide-wrap .slide-container {
-  width: 100%;
+  width: 640vw;
+  margin-left: -80vw;
   height: 100%;
   background: #676dc2;
   border-radius: 30px;
   position: relative;
-  overflow: hidden;
 }
 
 .mouse-style .container .item-list-mouse .slide-wrap .slide-container .slide {
-  width: 100%;
-  height: 100%;
+  float: left;
+  width: 80vw;
+  height: 45vw;
   background: #c5d69d;
   border-radius: 30px;
-  position: absolute;
+  position: relative;
 }
 
 .mouse-style .container .item-list-mouse .slide-wrap .slide-container .slide .slide-img {

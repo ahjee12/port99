@@ -456,6 +456,14 @@ $(".close").click(function () {
         const cursor = $(".cursor");
         const follwer = $(".cursor-follower");
 
+        $(window).resize(function(){
+             //gsap 애니메이션으로 원형 커서 움직이기
+            $(document).mousemove(function(e){
+                gsap.to(cursor,0.3,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
+                gsap.to(follwer,0.8,{left :e.pageX-(follwer.width()/2), top:e.pageY - (follwer.height()/2)})    
+            });
+        })
+
         //gsap 애니메이션으로 원형 커서 움직이기
         $(document).mousemove(function(e){
             gsap.to(cursor,0.3,{left :e.pageX -(cursor.width()/2), top:e.pageY - (cursor.height()/2)})    
