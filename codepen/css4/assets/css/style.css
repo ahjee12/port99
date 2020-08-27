@@ -1,0 +1,32 @@
+*{margin: 0; padding: 0;}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(251,104,63,1) 6%, rgba(189,177,84,1) 54%, rgba(252,164,70,1) 100%);
+    display: flex; justify-content: center; align-items: center;
+  }
+  .row {
+    display: flex;
+  }
+  .circle {
+    width: 5vw; height: 5vw; background: #fff;
+    border-radius: 50%;
+    margin: 1vw 3vw;
+    transform-origin: top center;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    0% {transform: scale(1.1) rotate(0)}
+    50% {transform: scale(0.2) rotate(180deg)}
+    100% {transform: scale(1.1) rotate(360deg)}
+  }
+  .row:nth-child(1) .circle {animation-delay: 100ms}
+  .row:nth-child(2) .circle {animation-delay: 200ms}
+  .row:nth-child(3) .circle {animation-delay: 300ms}
+  .row:nth-child(4) .circle {animation-delay: 400ms}
+  .row:nth-child(5) .circle {animation-delay: 500ms}
+  .row:nth-child(6) .circle {animation-delay: 600ms}
+  .row:nth-child(7) .circle {animation-delay: 700ms}
+  .row:nth-child(8) .circle {animation-delay: 800ms}
+  .row:nth-child(9) .circle {animation-delay: 900ms}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+    <div id="animation">
+ 
+    </div>
+    
+    <div class="btn">
+      <div class="btn">
+      <a href="#c" class="btnStart">Start</a>  
+      <a href="#c" class="btnStop">stop</a>
+    </div>
+    </div>
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script>
+  $(".btnStart").click(function(){
+  $("#animation").removeClass().addClass("btnStart")
+  })
+
+  $(".btnStop").click(function(){
+  $("#animation").removeClass().addClass("btnStop")
+  })
+</script>
+</html>

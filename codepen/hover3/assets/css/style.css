@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'JSDongkang-Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  background: #2f3238;
+  font-family: 'JSDongkang-Regular';
+}
+
+.hover-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.hover-wrap figure {
+  position: relative;
+  width: 50vw;
+  margin: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hover-wrap figure img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.hover-wrap figcaption {
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hover-wrap figcaption strong {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 15vw;
+  height: 15vw;
+  background: #000;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  font-size: 3vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 800px) {
+  .hover-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+/* Hover Effect5  */
+.hover-wrap figure:first-child img {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.hover-wrap figure:hover:first-child img {
+  opacity: 0.1;
+}
+
+.hover-wrap figure:first-child figcaption {
+  -webkit-transform: translatex(80%) rotate(180deg);
+          transform: translatex(80%) rotate(180deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.hover-wrap figure:hover:first-child figcaption {
+  -webkit-transform: translatex(0) rotate(0);
+          transform: translatex(0) rotate(0);
+}
+
+/* Hover Effect6  */
+.hover-wrap figure:last-child img {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.hover-wrap figure:hover:last-child img {
+  opacity: 0.1;
+}
+
+.hover-wrap figure:last-child figcaption {
+  -webkit-transform: translatex(-80%) rotate(-180deg);
+          transform: translatex(-80%) rotate(-180deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.hover-wrap figure:hover:last-child figcaption {
+  -webkit-transform: translatex(0) rotate(0);
+          transform: translatex(0) rotate(0);
+}
+/*# sourceMappingURL=style.css.map */

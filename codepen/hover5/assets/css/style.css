@@ -1,0 +1,161 @@
+@font-face {
+  font-family: 'JSDongkang-Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  background: #2f3238;
+  font-family: 'JSDongkang-Regular';
+}
+
+.hover-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.hover-wrap .effect {
+  position: relative;
+  width: 50vw;
+  height: 40vw;
+  margin: 0.5vw;
+  overflow: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.hover-wrap .effect img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.hover-wrap .effect .front {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.hover-wrap .effect .back {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.hover-wrap .effect figcaption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) translatez(100px);
+          transform: translate(-50%, -50%) translatez(100px);
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  color: #fff;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+.hover-wrap .effect figcaption h3 {
+  font-size: 3vw;
+  padding-bottom: 0.4rem;
+  margin: 0.5vw;
+}
+
+.hover-wrap .effect figcaption p {
+  font-size: 1vw;
+  margin: 0.5vw;
+}
+
+@media (max-width: 800px) {
+  .hover-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+/*Mouse Effect9*/
+.hover-wrap .effect.hover9 .front {
+  -webkit-transform: rotatey(0);
+          transform: rotatey(0);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.hover-wrap .effect.hover9:hover .front {
+  -webkit-transform: rotatey(180deg);
+          transform: rotatey(180deg);
+}
+
+.hover-wrap .effect.hover9 .back {
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.hover-wrap .effect.hover9:hover .back {
+  -webkit-transform: rotatey(0deg);
+          transform: rotatey(0deg);
+}
+
+/* Mouse hover10 */
+.hover-wrap .effect.hover10 .front {
+  -webkit-transform: rotatex(0);
+          transform: rotatex(0);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.hover-wrap .effect.hover10:hover .front {
+  -webkit-transform: rotatex(180deg);
+          transform: rotatex(180deg);
+}
+
+.hover-wrap .effect.hover10 .back {
+  -webkit-transform: rotatex(-180deg);
+          transform: rotatex(-180deg);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.hover-wrap .effect.hover10:hover .back {
+  -webkit-transform: rotatex(0deg);
+          transform: rotatex(0deg);
+}
+/*# sourceMappingURL=style.css.map */

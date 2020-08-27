@@ -1,0 +1,101 @@
+@font-face { 
+    font-family: 'JSDongkang-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff') format('woff'); font-weight: normal; font-style: normal; }
+  
+  @mixin content($position: absolute, $content: ""){
+    content: $content;
+    position: $position;
+  }
+  
+  body {
+    height: 100vh;
+    background: #2f3238;
+    font-family: 'JSDongkang-Regular';
+  }
+  .hover-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .effect {
+      position: relative;
+      width: 50vw; height: 40vw; margin: 0.5vw;
+      overflow: hidden;
+        perspective: 1000px;
+      img {
+        width: 100%; vertical-align: top;
+      }
+      .front {
+        width: 100%;
+        position: absolute; left: 0; top: 0; z-index:10;
+        transform-style: preserve-3d;
+      }
+      .back {
+        width: 100%;
+        position: absolute; left: 0; top: 0;
+        transform-style: preserve-3d;
+      }
+      figcaption {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%) translatez(100px);
+        background: rgba(0,0,0,0.5);
+        text-align: center;
+        backface-visibility: hidden;
+        color: #fff;
+        padding: 1rem;
+        white-space: nowrap;
+        h3 {
+          // font-size: 3rem; 
+          font-size: 3vw;
+          padding-bottom: 0.4rem;
+          margin: 0.5vw;
+        }
+        p{
+          font-size: 1vw;
+          margin: 0.5vw;
+          // font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  
+  
+  @media (max-width:800px){
+    .hover-wrap {flex-direction: column;}
+  }
+  
+  /*Mouse Effect9*/
+  .hover-wrap .effect.hover9 .front {
+    transform: rotatey(0);
+    transition: transform 1s;
+    backface-visibility: hidden;
+  }
+  
+  .hover-wrap .effect.hover9:hover .front {
+    transform: rotatey(180deg);
+  }
+  .hover-wrap .effect.hover9 .back {
+    transform: rotatey(-180deg);
+    transition: transform 1s;
+    backface-visibility: hidden;
+  }
+  .hover-wrap .effect.hover9:hover .back {
+    transform: rotatey(0deg);
+  }
+  
+  /* Mouse hover10 */
+  .hover-wrap .effect.hover10 .front {
+    transform: rotatex(0);
+    transition: transform 1s;
+    backface-visibility: hidden;
+  }
+  .hover-wrap .effect.hover10:hover .front {
+    transform: rotatex(180deg);
+  }
+  .hover-wrap .effect.hover10 .back {
+    transform: rotatex(-180deg);
+    transition: transform 1s;
+    backface-visibility: hidden;
+  }
+  .hover-wrap .effect.hover10:hover .back {
+    transform: rotatex(0deg);
+  }

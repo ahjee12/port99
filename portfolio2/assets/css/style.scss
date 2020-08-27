@@ -785,8 +785,8 @@
                 overflow: hidden;
                 .slide-container{
                     //scipt로 width
-                    width: 640vw;
-                    margin-left: -80vw;
+                    width: 800vw;
+                    // margin-left: -80vw;
                     height: 100%;
                     background: rgb(103, 109, 194);
                     border-radius: 30px;
@@ -821,8 +821,14 @@
                                 font-size: 2.5vw; 
                                 font-family: 'Poppins'; 
                                 font-weight: 700;
+                                color: #fff;
+                                overflow: hidden;
+                                display: flex;
                                 span{
-
+                                    opacity: 0;
+                                    transform-origin: bottom left;
+                                    transform: translate(20%, 100%);
+                                    transition: all 1s ease;
                                 }
                             }
                         }
@@ -832,11 +838,44 @@
                                 font-size: 2.5vw; 
                                 font-family: 'Poppins';
                                 font-weight: 700;
+                                opacity: 0;
+                                transition: opacity 0.1s 1s ease;
+                            }
+                            .currentIndex{
+                                padding: 0 2vw 0 0;
+                                position: relative;
+                                &::before{
+                                    content: ''; position: absolute; right: 20%; top: 50%; width: 0.45vw; height: 80%; 
+                                    background: #000; 
+                                    transform: translate(0,-50%) skewX(-15deg);
+                                }
+                            }
+
+                            &:before{
+                                content: '';  position: absolute; left: 0; top: 0%;
+                                // background: rgba(0, 159, 216, 1); 
+                                background: #6493af;
+                                width: 100%; height: 100%;
+                                border-radius: 5px;
+                                z-index: 1;
+                                transform: scaleX(0);
                             }
                         }
                     }//.slide
-                    .slide.active .slide-title h3 span{}
-                }
+                    .slide.slider-active .slide-title h3 span{
+                        opacity: 1; 
+                        transform: translate(0,0);
+                        transition: all 1s ease;
+                    }
+                    .slide.slider-active .slide-num{
+                        span{
+                            opacity: 1;
+                        }
+                        &:before{
+                            animation: slideNum 1s 0.5s ease;
+                        }
+                    }
+                }//.slide-container
             }
             .btn-prev{
                 width: 10vw; height: 10vw;
@@ -852,21 +891,38 @@
             .slide-dots{
                 width: 40vw; height: 2vw;
                 position: absolute; left: 50%; bottom: 0;
-                transform: translate(-50%,100%);
+                transform: translate(-50%,120%);
                 background: rgb(51, 106, 255);
                 display: flex; 
                 justify-content: space-between;
                 .dot{
                     width: 2vw; height: 2vw;
-                    border-radius: 50%;
-                    background: #FDC60A;
+                    border-radius: 30%;
+                    border: 0.2vw solid #000;
+                    // background: #FDC60A;
                     position: relative;
+                    box-sizing: border-box;
+                    background: #6493af;
+                    // box-shadow: 0 0 0.2vw 0.2vw inset #FDC60A;
                     span{
                         position: absolute; left: 50%; top: 50%;
                         transform: translate(-50%,-50%);
+                        font-size: 1vw;
+                        font-weight: 800;
                     }
                 }
-            }
+                .dot.dot-active{
+                    background: #FDC60A;
+                    // box-shadow: 0 0 0.2vw 0.2vw #FDC60A;
+                }
+            }//.slide-dots
+            
         }
     }
+}
+@keyframes slideNum{
+    0%{transform-origin: left; transform : scaleX(0);}
+    50%{transform-origin: left; transform : scaleX(1);}
+    51%{transform-origin: right; transform : scaleX(1);}
+    100%{transform-origin: right; transform : scaleX(0);}
 }

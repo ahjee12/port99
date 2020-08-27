@@ -1,0 +1,77 @@
+@font-face { font-family: 'BBTreeGB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+body{
+  height: 100vh;
+  background: #2f3238;
+  font-family: 'BBTreeGB'; 
+}
+.hover-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  figure{
+    width: 50vw;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    img{
+      width: 100%;
+      vertical-align: top;
+      /*display: block*/
+    }
+  }
+  
+  figcaption{
+    color:#fff;
+    position: absolute; left: 0px; bottom: 0px;
+    background: rgba(0,0,0,0.4);
+    width: 100%; padding: 20px;
+    box-sizing: border-box;
+     h3 {
+      font-size: 5vw;
+      padding-bottom: 7px;
+      margin: 0.5vw;
+    }
+    p {
+      font-size: 3vw;
+      margin: 0.5vw;
+    }
+  }
+}
+
+@media (max-width:800px){
+  .hover-wrap {flex-direction: column;}
+}
+
+/* Hover Effect01 */
+.hover-wrap figure:first-child figcaption {
+  opacity:0;
+  transition: opacity 0.3s ease-in-out;
+}
+.hover-wrap figure:first-child:hover figcaption {
+  opacity:1;
+}
+
+/* Hover Effect02 */
+.hover-wrap figure:last-child figcaption {
+  opacity:0;
+  bottom: -100px;
+  transition: all 0.33s ease;
+}
+.hover-wrap figure:last-child:hover figcaption {
+  opacity:1;
+  bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

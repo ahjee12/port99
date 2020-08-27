@@ -1,0 +1,30 @@
+*{margin: 0; padding: 0;}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image:radial-gradient(circle, rgba(63,251,187,1) 6%, rgba(84,189,157,1) 54%, rgba(197,252,70,1) 100%);
+  }
+  .loading {
+    width: 6vw; height: 60vw;
+  /*   background: #fff; */
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    animation: loading 2s ease 100;
+  }
+  .loading .circle1 {
+    display: block; width: 6vw; height: 6vw;
+    background: #fff;
+    border-radius: 50%;
+  }
+  .loading .circle2 {
+    display: block; width: 6vw; height: 6vw;
+    background: #fff;
+    border-radius: 50%; margin-top: 48vw;
+  }
+  
+  @keyframes loading {
+    0% {transform: translate(-50%, -50%) rotate(0deg)}
+    100% {transform: translate(-50%, -50%) rotate(360deg)}
+  }

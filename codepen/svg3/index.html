@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Galada&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <div id="wrap">
+      <svg class="svgWrap3" >
+        <!--pattern-->
+        <defs>
+        <pattern id="GPattern" x="0" y="0" width="4vw" height="4vw"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(35)" >
+            <animateTransform attributeType="xml"
+                attributeName="patternTransform"
+                type="rotate" 
+                from="35" 
+                to="395" 
+                begin="0"
+                dur="160s" repeatCount="indefinite"/>
+                <circle cx="2vw" cy="2vw" r="2vw" stroke="none" fill="yellow">
+                    <animate attributeName="r"
+                        type="xml"
+                        from="1" to="1"
+                        values="1; 2vw; 1"
+                        begin="0s" dur="2s"
+                        repeatCount="indefinite"/>
+                </circle>
+            </pattern>
+        </defs>
+    
+        <!-- Symbol -->
+        <symbol id="g-text">
+            <text class="aniText3"  text-anchor="middle" x="50%" y="50%" dy=".35em">
+                webdiary
+            </text>
+        </symbol> 
+    
+        <!-- use -->
+        <use id="g-usetag" xlink:href="#g-text" class="text2" style="fill: url(#GPattern)"></use>
+    </svg>
+    </div>
+    
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script></script>
+</html>

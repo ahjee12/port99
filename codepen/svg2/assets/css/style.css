@@ -1,0 +1,36 @@
+/* body{text-align:center;} */
+*{margin: 0; padding: 0;}
+
+#wrap{
+    width: 100vw; height: 100vh;
+  }
+  .svgWrap{
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    width: 100%; heigh: 100%;
+   
+  }
+  .aniText{
+    font-size: 12vw;
+  }
+  .copyText{
+    fill: none;
+    stroke: white;
+    stroke-width: 2px;
+    stroke-dashoffset: 7% 28%;
+    animation: stroke 9s infinite linear;
+  }
+  .copyText:nth-child(1) {stroke: #360756; stroke-dasharray: 7%;}
+  .copyText:nth-child(2) {stroke: #d61c59; stroke-dasharray: 14%;}
+  .copyText:nth-child(3) {stroke: #e7d84b; stroke-dasharray: 21%;}
+  .copyText:nth-child(4) {stroke: #efeac5; stroke-dasharray: 28%;}
+  .copyText:nth-child(5) {stroke: #1b8798; stroke-dasharray: 35%;}
+  
+  @keyframes stroke {
+    50% {
+      stroke-dashoffset: 35%; 
+      stroke-dasharray: 0 7.5%;
+    }
+  }
+  

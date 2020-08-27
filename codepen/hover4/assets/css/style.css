@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'JSDongkang-Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  background: #2f3238;
+  font-family: 'JSDongkang-Regular';
+}
+
+.hover-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.hover-wrap .effect {
+  position: relative;
+  width: 50vw;
+  height: 40vw;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.hover-wrap .effect img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.hover-wrap .effect .front {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  margin: 0;
+}
+
+.hover-wrap .effect .back {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+
+.hover-wrap .effect figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+}
+
+.hover-wrap .effect figcaption h3 {
+  font-size: 5vw;
+  margin: 0.5vw;
+  line-height: 5vw;
+}
+
+.hover-wrap .effect figcaption p {
+  font-size: 3vw;
+  margin: 0.5vw;
+}
+
+@media (max-width: 800px) {
+  .hover-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+/*Mouse Effect7*/
+.hover-wrap .effect.hover7 .front {
+  -webkit-transform: rotatey(0);
+          transform: rotatey(0);
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.hover-wrap .effect.hover7:hover .front {
+  -webkit-transform: rotatey(180deg);
+          transform: rotatey(180deg);
+}
+
+.hover-wrap .effect.hover7 .back {
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+.hover-wrap .effect.hover7:hover .back {
+  -webkit-transform: rotatey(0deg);
+          transform: rotatey(0deg);
+}
+
+/*Mouse Effect8*/
+.hover-wrap .effect.hover8 .front {
+  -webkit-transform: rotatex(0);
+          transform: rotatex(0);
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.hover-wrap .effect.hover8:hover .front {
+  -webkit-transform: rotatex(180deg);
+          transform: rotatex(180deg);
+}
+
+.hover-wrap .effect.hover8 .back {
+  -webkit-transform: rotatex(-180deg);
+          transform: rotatex(-180deg);
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+.hover-wrap .effect.hover8:hover .back {
+  -webkit-transform: rotatex(0deg);
+          transform: rotatex(0deg);
+}
+/*# sourceMappingURL=style.css.map */
