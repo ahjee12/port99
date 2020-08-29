@@ -1,3 +1,57 @@
+// var s = skrollr.init();
+// skrollr.init({
+//   smoothScrolling: false
+// });
+infoScrollTop = $(".info strong");
+$(window).scroll(function () {
+  const scrollTop = $(window).scrollTop();
+  infoScrollTop.text(parseInt(scrollTop));
+})
+/*---------------사이트---------------- */
+const pathStripes = $('.item-list-site svg path');
+console.log(pathStripes);
+const itemListSite =  $('.item-list-site');
+let OffsetTopItemListSite = parseInt(itemListSite.offset().top) ;
+console.log(OffsetTopItemListSite);
+let OffsetBottomItemListSite = parseInt(OffsetTopItemListSite + itemListSite.outerHeight());
+console.log(OffsetBottomItemListSite);
+let windowHeight = $(window).innerHeight();
+console.log(windowHeight);
+
+// $(window).resize(function(){
+//   let OffsetTopItemListSite = parseInt(itemListSite.offset().top) ;
+//   let OffsetBottomItemListSite = parseInt(OffsetTopItemListSite + itemListSite.outerHeight()) ;
+// })
+
+function scrollChanged(){
+  OffsetTopItemListSite = parseInt(itemListSite.offset().top);
+  for(var i = 0;i<pathStripes.length;i++){
+    console.log(state.scroll.top);
+    console.log(state.size.docY);
+    console.log(state.size.y);
+    pathStripes[i].style.strokeDashoffset = 12599*(1-((state.scroll.top-OffsetTopItemListSite)/(itemListSite.outerHeight() - state.size.y)*1.05));
+    console.log(pathStripes[i].style.strokeDashoffset);
+  }
+}
+
+const { watchViewport } = tornis;
+const { getViewportState } = tornis;
+
+const updateValues = ({ size, scroll, mouse, orientation }) => {
+  state = getViewportState();
+  if (scroll.changed) {
+    scrollChanged();
+  }
+};
+
+watchViewport(updateValues);
+//sol#2
+// pathStripes.attr('data-'+0,"stroke-dashoffset: "+12599)
+// pathStripes.attr('data-'+OffsetTopItemListSite,"stroke-dashoffset: "+12599)
+// pathStripes.attr('data-'+OffsetBottomItemListSite,"stroke-dashoffset: "+0)
+
+
+
 /* -----------메인------------ */
 // window.onload = function(){
 //     mainStart();
@@ -276,6 +330,8 @@ slide.each(function(){
     $(this).css({'transition-delay': (0.07*(i+1))+'s'});
   })
 })
+
+/*------------- 사이트 ----------------*/
 
 
 

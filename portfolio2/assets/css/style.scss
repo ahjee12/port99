@@ -10,6 +10,7 @@
 @font-face { font-family: 'paybooc-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'paybooc-ExtraBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
+
 #header{
     // position: fixed;
 }
@@ -115,6 +116,15 @@
         
     }
 }
+.info {
+    position: fixed; 
+    top: 5.5vw;
+    background: rgba(255, 255, 255, 1);
+    color: #000;
+    padding: 1vw;
+    font-size: 1vw;
+    z-index: 100;
+}
 /*메인*/
 #main{}
 .main{
@@ -122,6 +132,7 @@
     position: fixed;
     left: 0; top: 0;
     width: 100%;
+    z-index: -1;
     .container{
         // width: 100%;
         // text-align: center;
@@ -754,6 +765,7 @@
     100%{transform: translate(-50%,0);}
 }
 
+/*콘텐츠 - 마우스*/
 #page-group.mouse{}
 .mouse-style{
     margin: 0 0 2vw 0;
@@ -925,4 +937,41 @@
     50%{transform-origin: left; transform : scaleX(1);}
     51%{transform-origin: right; transform : scaleX(1);}
     100%{transform-origin: right; transform : scaleX(0);}
+}
+
+/*콘텐츠 - 사이트*/
+#page-group.site{}
+.site-style{
+    margin: 0 0 2vw 0;
+    .container{
+        width: 100%;
+        height: 470vw;
+        padding: 10vw 0 0 0;
+        background: rgb(184, 184, 184);
+        .title{
+            text-align: center;
+            margin: 0 0 5vw 0;
+            .title-main{
+                font-size: 3vw;
+                strong{color: #FDC60A;}
+            }
+            .title-sub{
+                font-size: 1vw;
+                color: rgb(54, 54, 54);
+            }
+        }
+        .item-list-site{
+            width: 100%; 
+            height: 450vw;
+            background: rgb(183, 255, 193);
+            svg{
+                width: 90vw;
+                margin: 0 0 0 5vw;
+                path {
+                    stroke-dasharray: 12600;
+                    stroke-dashoffset: 12600;
+                  }
+            }
+        }
+    }
 }
