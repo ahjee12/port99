@@ -271,7 +271,7 @@ button.swiper-pagination-bullet {
 .swiper-pagination-bullet-active {
   width: 18px;
   height: 18px;
-  border : 2px solid #fff;
+  border: 2px solid #fff;
   background:transparent;
   margin:0 10px 6px 10px !important;
   /* background: var(--swiper-pagination-color, var(--swiper-theme-color)); */
@@ -536,6 +536,6 @@ button.swiper-pagination-bullet {
           backface-visibility: hidden;
 }
 
-
+/* 슬라이드 제목 */
 .swiper-wrapper .swiper-slide h2{opacity: 0; transform: translate(-50%,80%); transition: all 0.84s 0.2s ease;}
 .swiper-wrapper .swiper-slide-active h2{opacity: 1; transform: translate(-50%,-50%);}

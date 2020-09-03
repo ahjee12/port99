@@ -8,49 +8,43 @@ $(window).scroll(function () {
   infoScrollTop.text(parseInt(scrollTop));
 })
 /*---------------사이트---------------- */
-const pathStripes = $('.item-list-site svg path');
-console.log(pathStripes);
-const itemListSite =  $('.item-list-site');
-let OffsetTopItemListSite = parseInt(itemListSite.offset().top) ;
-console.log(OffsetTopItemListSite);
-let OffsetBottomItemListSite = parseInt(OffsetTopItemListSite + itemListSite.outerHeight());
-console.log(OffsetBottomItemListSite);
-let windowHeight = $(window).innerHeight();
-console.log(windowHeight);
+// const pathStripes = $('.item-list-site svg path');
+// console.log(pathStripes);
+// const itemListSite =  $('.item-list-site');
+// let OffsetTopItemListSite = parseInt(itemListSite.offset().top) ;
+// console.log(OffsetTopItemListSite);
+// let OffsetBottomItemListSite = parseInt(OffsetTopItemListSite + itemListSite.outerHeight());
+// console.log(OffsetBottomItemListSite);
+// let windowHeight = $(window).innerHeight();
+// console.log(windowHeight);
 
-// $(window).resize(function(){
-//   let OffsetTopItemListSite = parseInt(itemListSite.offset().top) ;
-//   let OffsetBottomItemListSite = parseInt(OffsetTopItemListSite + itemListSite.outerHeight()) ;
-// })
+// function scrollChanged(){
+//   OffsetTopItemListSite = parseInt(itemListSite.offset().top);
+//   for(var i = 0;i<pathStripes.length;i++){
+//     console.log(state.scroll.top);
+//     console.log(state.size.docY);
+//     console.log(state.size.y);
+//     pathStripes[i].style.strokeDashoffset = 12599*(1-((state.scroll.top-OffsetTopItemListSite)/(itemListSite.outerHeight() - state.size.y)*1.05));
+//     console.log(pathStripes[i].style.strokeDashoffset);
+//   }
+// }
 
-function scrollChanged(){
-  OffsetTopItemListSite = parseInt(itemListSite.offset().top);
-  for(var i = 0;i<pathStripes.length;i++){
-    console.log(state.scroll.top);
-    console.log(state.size.docY);
-    console.log(state.size.y);
-    pathStripes[i].style.strokeDashoffset = 12599*(1-((state.scroll.top-OffsetTopItemListSite)/(itemListSite.outerHeight() - state.size.y)*1.05));
-    console.log(pathStripes[i].style.strokeDashoffset);
-  }
-}
+// const { watchViewport } = tornis;
+// const { getViewportState } = tornis;
 
-const { watchViewport } = tornis;
-const { getViewportState } = tornis;
+// const updateValues = ({ size, scroll, mouse, orientation }) => {
+//   state = getViewportState();
+//   if (scroll.changed) {
+//     scrollChanged();
+//   }
+// };
 
-const updateValues = ({ size, scroll, mouse, orientation }) => {
-  state = getViewportState();
-  if (scroll.changed) {
-    scrollChanged();
-  }
-};
+// watchViewport(updateValues);
 
-watchViewport(updateValues);
 //sol#2
 // pathStripes.attr('data-'+0,"stroke-dashoffset: "+12599)
 // pathStripes.attr('data-'+OffsetTopItemListSite,"stroke-dashoffset: "+12599)
 // pathStripes.attr('data-'+OffsetBottomItemListSite,"stroke-dashoffset: "+0)
-
-
 
 /* -----------메인------------ */
 // window.onload = function(){
@@ -207,11 +201,11 @@ var swiper = new Swiper('.item-list-parallax .swiper-container', {
 });
 
 /* -----------마우스 효과------------ */
-const slideWrap = $('.slide-wrap');
-const containerOfSlides = $('.slide-container');
-const slide = $('.slide');
-const slideBtn = $('.slide-btn');
-const containerOfDots = $('.slide-dots');
+const slideWrap = $('.item-list-mouse .slide-wrap');
+const containerOfSlides = $('.item-list-mouse .slide-container');
+const slide = $('.item-list-mouse .slide');
+const slideBtn = $('.item-list-mouse .slide-btn');
+const containerOfDots = $('.item-list-mouse .slide-dots');
 
 let dotIndex = "";
 let duration = 1000;
