@@ -35,6 +35,18 @@
   font-style: normal;
 }
 
+html::-webkit-scrollbar {
+  width: 20px;
+  height: 30px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fdc60a;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -1401,6 +1413,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #6493af;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0000), to(#0002)), radial-gradient(90% 15% at 50% 8%, #fff7 25%, #fff0 50%);
+  background-image: linear-gradient(180deg, #0000, #0002), radial-gradient(90% 15% at 50% 8%, #fff7 25%, #fff0 50%);
+  -webkit-box-shadow: 0 0.1vw 0 0.05vw #0007, 0 -0.15vw 0 0.05vw rgba(0, 0, 0, 0.3), 0 -0.15vw 0 0.08vw rgba(0, 0, 0, 0.3) inset, 0.1vw 0 0.05vw rgba(255, 255, 255, 0.7) inset, -0.1vw 0 0.05vw rgba(255, 255, 255, 0.7) inset;
+          box-shadow: 0 0.1vw 0 0.05vw #0007, 0 -0.15vw 0 0.05vw rgba(0, 0, 0, 0.3), 0 -0.15vw 0 0.08vw rgba(0, 0, 0, 0.3) inset, 0.1vw 0 0.05vw rgba(255, 255, 255, 0.7) inset, -0.1vw 0 0.05vw rgba(255, 255, 255, 0.7) inset;
 }
 
 .mouse-style .container .item-list-mouse .slide-dots .dot span {
@@ -1411,10 +1427,20 @@
           transform: translate(-50%, -50%);
   font-size: 1vw;
   font-weight: 800;
+  text-shadow: 0 0 0.2vw #ffff;
 }
 
 .mouse-style .container .item-list-mouse .slide-dots .dot.dot-active {
   background: #FDC60A;
+}
+
+.mouse-style .container .item-list-mouse .slide-dots .dot:hover {
+  -webkit-box-shadow: 0 -0.1vw 0 0.05vw rgba(0, 0, 0, 0.3), 0 -0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.3) inset, 0 0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.3) inset;
+          box-shadow: 0 -0.1vw 0 0.05vw rgba(0, 0, 0, 0.3), 0 -0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.3) inset, 0 0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.3) inset;
+}
+
+.mouse-style .container .item-list-mouse .slide-dots .dot:hover span {
+  font-size: 0.9vw;
 }
 
 @-webkit-keyframes slideNum {
@@ -1578,7 +1604,27 @@
   cursor: pointer;
 }
 
-.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide img {
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide .item-thumbnail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 43.5vw;
+  background: #96deff;
+  z-index: -1;
+  border-radius: 40px;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide .item-thumbnail .thumbnail-mobile {
+  width: 100%;
+}
+
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide .smartphone {
   width: 100%;
   -webkit-transition: -webkit-transform 0.25s ease-out;
   transition: -webkit-transform 0.25s ease-out;
@@ -1602,21 +1648,47 @@
   background: #fdc60a;
   -webkit-box-shadow: 0 0 1vw 0.9vw #fdc60a;
           box-shadow: 0 0 1vw 0.9vw #fdc60a;
+  -webkit-transition: width 0.25s ease-out;
+  transition: width 0.25s ease-out;
 }
 
-.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover img {
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover .item-thumbnail {
+  -webkit-transform: translateY(-0.95vw);
+          transform: translateY(-0.95vw);
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+}
+
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover .item-thumbnail .thumbnail-mobile {
+  -webkit-animation: thumbnail 4s  linear infinite;
+          animation: thumbnail 4s  linear infinite;
+}
+
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide.s2:hover .thumbnail-mobile {
+  -webkit-animation: thumbnail 10s  linear infinite;
+          animation: thumbnail 10s  linear infinite;
+}
+
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide.s3:hover .thumbnail-mobile {
+  -webkit-animation: thumbnail 6s  linear infinite;
+          animation: thumbnail 6s  linear infinite;
+}
+
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover .smartphone {
   -webkit-transform: translateY(-1vw);
           transform: translateY(-1vw);
-  -webkit-transition: -webkit-transform 0.4s ease-in;
-  transition: -webkit-transform 0.4s ease-in;
-  transition: transform 0.4s ease-in;
-  transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
 }
 
 .mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover::before {
   width: 50%;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: width 0.3s ease-in;
+  transition: width 0.3s ease-in;
 }
 
 .mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide.s1 {
@@ -1650,11 +1722,11 @@
 }
 
 .mobile-style .container .item-list-mobile .btn-prev {
-  width: 9vw;
-  height: 6vw;
+  width: 10vw;
+  height: 8vw;
   position: absolute;
-  left: 2%;
-  top: 50%;
+  left: 1%;
+  top: 40%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   z-index: 3;
@@ -1671,7 +1743,11 @@
   stroke: #000;
 }
 
-.mobile-style .container .item-list-mobile .btn-prev .arrow rect {
+.mobile-style .container .item-list-mobile .btn-prev .arrow .fixed-arrow-tail path {
+  stroke: #fdc60a;
+}
+
+.mobile-style .container .item-list-mobile .btn-prev .arrow .fixed-arrow-tail rect {
   stroke: #fdc60a;
 }
 
@@ -1680,21 +1756,21 @@
 }
 
 .mobile-style .container .item-list-mobile .btn-prev:hover .arrow .fixed-arrow {
-  -webkit-animation: fixed-arrow 1.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
-          animation: fixed-arrow 1.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+  -webkit-animation: fixed-arrow 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+          animation: fixed-arrow 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
 
 .mobile-style .container .item-list-mobile .btn-prev:hover .arrow .active-arrow {
-  -webkit-animation: active-arrow 1.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
-          animation: active-arrow 1.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+  -webkit-animation: active-arrow 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+          animation: active-arrow 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
 
 .mobile-style .container .item-list-mobile .btn-next {
-  width: 9vw;
-  height: 6vw;
+  width: 10vw;
+  height: 8vw;
   position: absolute;
-  right: 2%;
-  top: 50%;
+  right: 1%;
+  top: 40%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   z-index: 3;
@@ -1709,7 +1785,11 @@
   stroke: #000;
 }
 
-.mobile-style .container .item-list-mobile .btn-next .arrow rect {
+.mobile-style .container .item-list-mobile .btn-next .arrow .fixed-arrow-tail path {
+  stroke: #fdc60a;
+}
+
+.mobile-style .container .item-list-mobile .btn-next .arrow .fixed-arrow-tail rect {
   stroke: #fdc60a;
 }
 
@@ -1718,13 +1798,90 @@
 }
 
 .mobile-style .container .item-list-mobile .btn-next:hover .arrow .fixed-arrow {
-  -webkit-animation: fixed-arrow 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
-          animation: fixed-arrow 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+  -webkit-animation: fixed-arrow 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+          animation: fixed-arrow 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
 
 .mobile-style .container .item-list-mobile .btn-next:hover .arrow .active-arrow {
-  -webkit-animation: active-arrow 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
-          animation: active-arrow 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+  -webkit-animation: active-arrow 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+          animation: active-arrow 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+}
+
+.mobile-style .container .item-list-mobile .slide-dots {
+  width: 20vw;
+  height: 2vw;
+  background: #abd2ff;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mobile-style .container .item-list-mobile .slide-dots .dot {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 30%;
+  background: #000;
+  border: 0.2vw solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-style .container .item-list-mobile .slide-dots .dot span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1vw;
+  font-weight: 800;
+  text-shadow: 0 0 0.2vw  #ffff;
+  color: #fff;
+}
+
+.mobile-style .container .item-list-mobile .slide-dots .dot:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#fff0), color-stop(50%, #ffff), color-stop(55%, #fff4), to(#fff0));
+  background: linear-gradient(to right, #fff0 0%, #ffff 50%, #fff4 55%, #fff0 100%);
+  -webkit-filter: blur(0.1vw);
+          filter: blur(0.1vw);
+  -webkit-transform: translateX(-100%) skew(30deg, 0);
+          transform: translateX(-100%) skew(30deg, 0);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.mobile-style .container .item-list-mobile .slide-dots .dot.dot-active {
+  background: #FDC60A;
+}
+
+.mobile-style .container .item-list-mobile .slide-dots .dot:hover {
+  -webkit-box-shadow: 0.2vw 0.2vw 0.2vw 0 rgba(255, 255, 255, 0.3), -0.2vw -0.2vw 0.2vw 0 rgba(122, 122, 122, 0.2) inset, 0.2vw 0.2vw 0.2vw 0 rgba(255, 255, 255, 0.2) inset;
+          box-shadow: 0.2vw 0.2vw 0.2vw 0 rgba(255, 255, 255, 0.3), -0.2vw -0.2vw 0.2vw 0 rgba(122, 122, 122, 0.2) inset, 0.2vw 0.2vw 0.2vw 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.mobile-style .container .item-list-mobile .slide-dots .dot:hover:before {
+  -webkit-transform: translateX(100%) skew(30deg, 0);
+          transform: translateX(100%) skew(30deg, 0);
+}
+
+.mobile-style .container .item-list-mobile .slide-dots .dot:hover.dot-active {
+  -webkit-box-shadow: 0.2vw 0.2vw 0.2vw 0 rgba(255, 255, 255, 0.3), -0.2vw -0.2vw 0.2vw 0 rgba(255, 255, 255, 0.2) inset, 0.2vw 0.2vw 0.2vw 0 rgba(0, 0, 0, 0.2) inset;
+          box-shadow: 0.2vw 0.2vw 0.2vw 0 rgba(255, 255, 255, 0.3), -0.2vw -0.2vw 0.2vw 0 rgba(255, 255, 255, 0.2) inset, 0.2vw 0.2vw 0.2vw 0 rgba(0, 0, 0, 0.2) inset;
 }
 
 @-webkit-keyframes clipWave {
@@ -1824,6 +1981,28 @@
     -webkit-transform: translateX(3vw);
             transform: translateX(3vw);
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes thumbnail {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes thumbnail {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 /*# sourceMappingURL=style.css.map */

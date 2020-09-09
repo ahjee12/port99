@@ -208,9 +208,6 @@ const slideBtn = $('.item-list-mouse .slide-btn');
 const containerOfDots = $('.item-list-mouse .slide-dots');
 
 let dotIndex = "";
-let duration = 1000;
-
-let currentIndex = 0;
 
 //슬라이드 컨테이너 너비 구하기 (속도가 느림..scss에 바로 넣어버림...)
 // let countSlide = slide.length;
@@ -222,7 +219,6 @@ let widthSlide = 80;
 let totalWidthSlide = (80*countSlide)+'vw';
 // containerOfSlides.css({width: totalWidthSlide});
 
-//Solution #2
 //각 slide에 해당하는 닷버튼 생성 (중첩 if문 사용하기!!)
 slide.each(function(i){
   if(i == 0 || i == countSlide -1){
@@ -237,6 +233,7 @@ slide.each(function(i){
   containerOfDots.html(dotIndex);
 })
 
+//Solution #2
 //슬라이드 실행
 let dot = $('.dot');
 function runSlider(){
@@ -325,9 +322,25 @@ slide.each(function(){
   })
 })
 
-/*------------- 사이트 ----------------*/
+/*------------- 모바일----------------*/
+const slideWrapM = $('.item-list-mobile .slide-wrap');
+const containerOfSlidesM = $('.item-list-mobile .slide-container');
+const slideM = $('.item-list-mobile .slide');
+const slideBtnM = $('.item-list-mobile .slide-btn');
+const containerOfDotsM = $('.item-list-mobile .slide-dots');
 
+let dotIndexM = "";
+let countSlideM = slideM.length;
 
+// console.log(slideM);
+slideM.each(function(i){
+  if(i==0){
+    dotIndexM += "<a href ='#' onclick='return false' class='dot dot-active'><span>"+(i+1)+"</span></a>";
+  }else{
+    dotIndexM += "<a href ='#' onclick='return false' class='dot'><span>"+(i+1)+"</span></a>";
+  }
+ containerOfDotsM.html(dotIndexM);
+})
 
 
 

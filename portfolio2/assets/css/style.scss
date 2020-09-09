@@ -10,7 +10,18 @@
 @font-face { font-family: 'paybooc-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'paybooc-ExtraBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
-
+html::-webkit-scrollbar{
+    width: 20px; 
+    height: 30px;
+}
+html::-webkit-scrollbar-thumb{
+    // background: linear-gradient(180deg, rgba(253,198,10,1),#009fd8);
+    background:  rgba(253,198,10,1);
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+    // background: url('https://i.pinimg.com/originals/18/a9/ed/18a9ed1d385ae001a07f0384d58c1b44.gif');
+    // background-size: cover;
+}
 #header{
     // position: fixed;
 }
@@ -683,7 +694,7 @@
                                 animation: 4s  item-hover-title linear infinite;
                                 overflow: hidden;
                                 h3{
-                                    // float: left;
+                                    //float: left;
                                     width: 85vw;
                                     font-size: 13vw; color: #FDC60A;
                                     font-family: 'ghanachoco';
@@ -926,22 +937,32 @@
                     width: 2vw; height: 2vw;
                     border-radius: 30%;
                     border: 0.2vw solid #000;
-                    // background: #FDC60A;
+                    //숫자 위치
                     position: relative;
                     box-sizing: border-box;
                     background: #6493af;
-                    // box-shadow: 0 0 0.2vw 0.2vw inset #FDC60A;
+                    background-image: linear-gradient(180deg,#0000,#0002), radial-gradient(90% 15% at 50% 8%,#fff7 25%,#fff0 50%);
+                              //아래                      위                                    아래 안                                      왼 안                                             오른 안       
+                    box-shadow: 0 0.1vw 0 0.05vw #0007, 0 -0.15vw 0 0.05vw rgba(0,0,0,0.3), 0 -0.15vw 0 0.08vw rgba(0,0,0,0.3) inset, 0.1vw 0 0.05vw rgba(255, 255, 255, 0.7) inset, -0.1vw 0 0.05vw rgba(255, 255, 255, 0.7) inset;
                     span{
                         position: absolute; left: 50%; top: 50%;
                         transform: translate(-50%,-50%);
                         font-size: 1vw;
                         font-weight: 800;
+                        text-shadow: 0 0 0.2vw #ffff;
                     }
                 }
                 .dot.dot-active{
                     background: #FDC60A;
-                    // box-shadow: 0 0 0.2vw 0.2vw #FDC60A;
                 }
+                .dot:hover{
+                    box-shadow: 0 -0.1vw 0 0.05vw rgba(0,0,0,0.3), 0 -0.1vw 0.1vw 0.1vw rgba(0,0,0,0.3) inset, 0 0.1vw 0.1vw 0.1vw rgba(0,0,0,0.3) inset;
+                    span{
+                        font-size: 0.9vw;
+                    }
+                }
+                .dot:hover.dot-active{
+                } 
             }//.slide-dots
             
         }
@@ -1038,7 +1059,22 @@
                         transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
                         z-index: 1;    
                         cursor: pointer;
-                        img{
+                        .item-thumbnail{
+                            position: absolute; left: 0; top: 0;
+                            width: 100%; 
+                            // height: 97%;
+                            height: 43.5vw;
+                            background: rgb(150, 222, 255);
+                            z-index: -1;
+                            border-radius: 40px;
+                            overflow: hidden;
+                            transition: transform 0.25s ease-out;
+                            .thumbnail-mobile{
+                                width: 100%;
+                                // transition: all 0.5s ease-out;
+                            }
+                        }
+                        .smartphone{
                             width: 100%;
                             transition: transform 0.25s ease-out;
                         }
@@ -1052,18 +1088,32 @@
                             background: rgba(253,198,10,1);
                             // border: 1px solid rgba(253,198,10,0.9);
                             box-shadow: 0 0 1vw 0.9vw rgba(253,198,10,1);
-                        }
-                        &:hover{
-                            img{
-                                transform: translateY(-1vw);
-                                transition: transform 0.4s ease-in;
-                            }
-                            &::before{
-                                width: 50%;
-                                transition: all 0.4s;
-                            }
+                            transition: width 0.25s ease-out;
                         }
                     }
+                    //슬라이드에 오버
+                    .slide:hover .item-thumbnail{
+                        transform: translateY(-0.95vw);
+                        transition: transform 0.3s ease-in;
+                            .thumbnail-mobile{
+                                animation: thumbnail 4s  linear infinite;
+                            }
+                    }
+                    .slide.s2:hover .thumbnail-mobile{
+                        animation: thumbnail 10s  linear infinite;
+                    }
+                    .slide.s3:hover .thumbnail-mobile{
+                        animation: thumbnail 6s  linear infinite;
+                    }
+                    .slide:hover .smartphone{
+                        transform: translateY(-1vw);
+                        transition: transform 0.3s ease-in;
+                    }
+                    .slide:hover::before{
+                        width: 50%;
+                        transition: width 0.3s ease-in;
+                    }
+                    //각 슬라이드 위치
                     .slide.s1{
                         transform: translateX(-50%) scale(1) translate3d(0, 0, 0);
                         z-index: 2;
@@ -1087,8 +1137,8 @@
                 }
             }
             .btn-prev{
-                width: 9vw; height: 6vw;
-                position: absolute; left: 2%; top: 50%;
+                width: 10vw; height: 8vw;
+                position: absolute; left: 1%; top: 40%;
                 transform: translate(0,-50%);
                 z-index: 3;
                 .arrow{
@@ -1097,17 +1147,18 @@
                     path{
                         stroke: #000;
                     }
-                    rect{
-                        stroke: rgba(253,198,10,1);
+                    .fixed-arrow-tail{
+                        path{stroke: rgba(253,198,10,1);}
+                        rect{stroke: rgba(253,198,10,1);}
                     }
                 }
             }
             .btn-prev:hover .arrow path{ stroke: rgba(253,198,10,1);}
-            .btn-prev:hover .arrow .fixed-arrow{ animation: fixed-arrow 1.5s cubic-bezier(.2,1,.3,1) infinite; }
-            .btn-prev:hover .arrow .active-arrow{ animation: active-arrow 1.5s cubic-bezier(.2,1,.3,1) infinite;}
+            .btn-prev:hover .arrow .fixed-arrow{ animation: fixed-arrow 1s cubic-bezier(.2,1,.3,1) infinite; }
+            .btn-prev:hover .arrow .active-arrow{ animation: active-arrow 1s cubic-bezier(.2,1,.3,1) infinite; }
             .btn-next{
-                width: 9vw; height: 6vw;
-                position: absolute; right: 2%; top: 50%;
+                width: 10vw; height: 8vw;
+                position: absolute; right: 1%; top: 40%;
                 transform: translate(0,-50%);
                 z-index: 3;
                 .arrow{
@@ -1115,14 +1166,61 @@
                     path{
                         stroke: #000;
                     }
-                    rect{
-                        stroke: rgba(253,198,10,1);
+                    .fixed-arrow-tail{
+                        path{stroke: rgba(253,198,10,1);}
+                        rect{stroke: rgba(253,198,10,1);}
                     }
                 }
             }
             .btn-next:hover .arrow path{ stroke: rgba(253,198,10,1);}
-            .btn-next:hover .arrow .fixed-arrow{ animation: fixed-arrow 2.5s cubic-bezier(.2,1,.3,1) infinite; }
-            .btn-next:hover .arrow .active-arrow{ animation: active-arrow 2.5s cubic-bezier(.2,1,.3,1) infinite;}
+            .btn-next:hover .arrow .fixed-arrow{ animation: fixed-arrow 1s cubic-bezier(.2,1,.3,1) infinite; }
+            .btn-next:hover .arrow .active-arrow{ animation: active-arrow 1s cubic-bezier(.2,1,.3,1) infinite;}
+            .slide-dots{
+                width: 20vw; height: 2vw;
+                background: rgb(171, 210, 255);
+                position: absolute; right: 5%; bottom: 5%;
+                display: flex;
+                justify-content: space-between;
+                .dot{
+                    width: 2vw; height: 2vw;
+                    border-radius: 30%;
+                    background: #000;
+                    border: 0.2vw solid #000;
+                    box-sizing: border-box;
+                    //숫자 위치
+                    position: relative;
+                    overflow: hidden;
+                    span{
+                        position: absolute; left: 50%; top: 50%;
+                        transform: translate(-50%,-50%);
+                        font-size: 1vw;
+                        font-weight: 800;
+                        text-shadow: 0 0 0.2vw  #ffff;
+                        color: #fff;
+                    }
+                    &:before{
+                        content: ''; width: 100%; height: 100%; 
+                        position: absolute; left: 0; top: 0; 
+                        background: linear-gradient(to right, #fff0 0%, #ffff 50%, #fff4 55%,#fff0 100%);
+                        filter: blur(0.1vw);
+                        transform: translateX(-100%) skew(30deg, 0);
+                        transition: transform 0.5s ease;
+                    }
+                }
+                .dot.dot-active{
+                    background: #FDC60A;
+                    // span{color: #000;}
+                }
+                .dot:hover{
+                    box-shadow: 0.2vw 0.2vw 0.2vw 0 rgba(255,255,255,0.3), -0.2vw -0.2vw 0.2vw 0 rgba(122, 122, 122, 0.2) inset, 0.2vw 0.2vw 0.2vw 0 rgba(255, 255, 255, 0.2) inset;
+                }
+                .dot:hover:before{
+                    transform: translateX(100%) skew(30deg, 0);
+                }
+                .dot:hover.dot-active{
+                    box-shadow: 0.2vw 0.2vw 0.2vw 0 rgba(255,255,255,0.3), -0.2vw -0.2vw 0.2vw 0 rgba(255,255,255,0.2) inset, 0.2vw 0.2vw 0.2vw 0 rgba(0, 0, 0, 0.2) inset;
+                }
+            }
         }
     }
 }
@@ -1167,3 +1265,19 @@
 		opacity: 0;
 	}
 }
+
+@keyframes thumbnail{
+    0%{ transform: translateY(0);}
+    100%{transform: translateY(-100%);}
+}
+
+
+
+
+
+
+
+
+
+
+
