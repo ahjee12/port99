@@ -1662,18 +1662,23 @@ html::-webkit-scrollbar-thumb {
 }
 
 .mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover .item-thumbnail .thumbnail-mobile {
-  -webkit-animation: thumbnail 4s  linear infinite;
-          animation: thumbnail 4s  linear infinite;
+  -webkit-animation: thumbnail 3s linear infinite;
+          animation: thumbnail 3s linear infinite;
 }
 
-.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide.s2:hover .thumbnail-mobile {
-  -webkit-animation: thumbnail 10s  linear infinite;
-          animation: thumbnail 10s  linear infinite;
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover .item-thumbnail .thumbnail-mobile.music {
+  -webkit-animation: thumbnail 4s linear infinite;
+          animation: thumbnail 4s linear infinite;
 }
 
-.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide.s3:hover .thumbnail-mobile {
-  -webkit-animation: thumbnail 6s  linear infinite;
-          animation: thumbnail 6s  linear infinite;
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover .item-thumbnail .thumbnail-mobile.toss {
+  -webkit-animation: thumbnail 12s  linear infinite;
+          animation: thumbnail 12s  linear infinite;
+}
+
+.mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover .item-thumbnail .thumbnail-mobile.every {
+  -webkit-animation: thumbnail 8s  linear infinite;
+          animation: thumbnail 8s  linear infinite;
 }
 
 .mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide:hover .smartphone {

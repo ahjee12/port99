@@ -1096,14 +1096,17 @@ html::-webkit-scrollbar-thumb{
                         transform: translateY(-0.95vw);
                         transition: transform 0.3s ease-in;
                             .thumbnail-mobile{
-                                animation: thumbnail 4s  linear infinite;
+                                animation: thumbnail 3s linear infinite;
                             }
-                    }
-                    .slide.s2:hover .thumbnail-mobile{
-                        animation: thumbnail 10s  linear infinite;
-                    }
-                    .slide.s3:hover .thumbnail-mobile{
-                        animation: thumbnail 6s  linear infinite;
+                            .thumbnail-mobile.music{
+                                animation: thumbnail 4s linear infinite;
+                            }
+                            .thumbnail-mobile.toss{
+                                animation: thumbnail 12s  linear infinite;
+                            }
+                            .thumbnail-mobile.every{
+                                animation: thumbnail 8s  linear infinite;
+                            }
                     }
                     .slide:hover .smartphone{
                         transform: translateY(-1vw);

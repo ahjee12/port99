@@ -46,6 +46,8 @@ $(window).scroll(function () {
 // pathStripes.attr('data-'+OffsetTopItemListSite,"stroke-dashoffset: "+12599)
 // pathStripes.attr('data-'+OffsetBottomItemListSite,"stroke-dashoffset: "+0)
 
+
+
 /* -----------메인------------ */
 // window.onload = function(){
 //     mainStart();
@@ -235,7 +237,7 @@ slide.each(function(i){
 
 //Solution #2
 //슬라이드 실행
-let dot = $('.dot');
+let dot = $('.item-list-mouse .dot');
 function runSlider(){
   if(slide.hasClass('slider-active')){
     containerOfSlides.animate({
@@ -247,6 +249,7 @@ function runSlider(){
 }
 runSlider()
 
+//슬라이드 양 옆 next, prev버튼 클릭할 때
 slideBtn.on('click',function(){
   $(this).addClass('active').siblings().removeClass('active');
   if($(this).hasClass('btn-prev')){
@@ -325,14 +328,16 @@ slide.each(function(){
 /*------------- 모바일----------------*/
 const slideWrapM = $('.item-list-mobile .slide-wrap');
 const containerOfSlidesM = $('.item-list-mobile .slide-container');
-const slideM = $('.item-list-mobile .slide');
-const slideBtnM = $('.item-list-mobile .slide-btn');
+const slideM = $('.item-list-mobile .slide'); //cells
+const slideBtnM = $('.item-list-mobile .slide-btn'); //nav
 const containerOfDotsM = $('.item-list-mobile .slide-dots');
+let countSlideM = slideM.length;
+let selectedSlideIndex = 0;
 
 let dotIndexM = "";
-let countSlideM = slideM.length;
 
-// console.log(slideM);
+//각 슬라이드에 해당하는 dot버튼 생성
+//console.log(slideM);
 slideM.each(function(i){
   if(i==0){
     dotIndexM += "<a href ='#' onclick='return false' class='dot dot-active'><span>"+(i+1)+"</span></a>";
@@ -341,7 +346,46 @@ slideM.each(function(i){
   }
  containerOfDotsM.html(dotIndexM);
 })
+let dotM = $('.item-list-mobile .dot') //dots
 
+//selectItem 
+function selectItem(index){
+  selectedSlideIndex = index%countSlideM;
 
+  //버튼 클릭할 때 0부터 4까지만 나오도록 해서 if문 0보다 작을 때 없어도 됨
+  // if(selectedSlideIndex < 0){
+  //   selectedSlideIndex += countSlideM;
+  // }
+  slideM.each(function(i){
+    let offset = i-selectedSlideIndex;
+    if(offset < 0){
+      offset += countSlideM;
+    }
+    let index;
+    for(index = 0; index < countSlideM + 1; index++){
+      $(this).removeClass('s'+index).addClass('s'+(offset+1));
+    }
+  })
+  dotM.eq(index).addClass('dot-active').siblings().removeClass('dot-active');
+}
 
+//각 슬라이드(스마트폰) 클릭할 때
+slideM.click(function(){
+  selectItem($(this).index());
+});
 
+//슬라이드 양 옆 next, prev버튼 클릭할 때
+slideBtnM.click(function(){
+  const prevOrNext = $(this).hasClass('btn-prev')? -1:1;
+  const prevOrNextSlide = slideM.eq((selectedSlideIndex+prevOrNext)%countSlideM);
+  //prevOrNextSlide eq가 next클릭해서 마지막 슬라이드 나오면 4나오고 prev클릭해서 마지막 슬라이드 나오면 -1나옴
+  //index 따로 구해서 0부터 4까지만 대입할 수 있도록 하기
+  const prevOrNextSlideIndex = prevOrNextSlide.index();
+  selectItem(prevOrNextSlideIndex);
+})
+
+//닷버튼 클릭할 때
+dotM.click(function(e){
+  selectItem($(this).index());
+  // $(this).addClass('dot-active').siblings('div').removeClass('dot-active');
+})
