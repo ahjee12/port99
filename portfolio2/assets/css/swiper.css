@@ -250,8 +250,8 @@
   transform: scale(0.33);
 }
 .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+  width: 0.5vw;
+  height: 0.5vw;
   display: inline-block;
   border-radius: 100%;
   background: #fff;
@@ -270,9 +270,9 @@ button.swiper-pagination-bullet {
   cursor: pointer;
 }
 .swiper-pagination-bullet-active {
-  width: 18px;
-  height: 18px;
-  border : 2px solid #fff;
+  width: 1vw;
+  height: 1vw;
+  border : 0.3vw solid #fff;
   background:transparent;
   margin:0 10px 6px 10px !important;
   /* background: var(--swiper-pagination-color, var(--swiper-theme-color)); */

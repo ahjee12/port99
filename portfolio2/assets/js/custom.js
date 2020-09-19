@@ -41,6 +41,24 @@ $(window).scroll(function () {
 
 // watchViewport(updateValues);
 
+//아이패드 사이트 이름 글자를 하나씩 나눠서 div, span 태그에 넣기
+const site = $(".item-list-site .site");
+
+site.each(function(){
+  let text  = $(this).find('.site-name > h3').text();
+  let text2  = $(this).find('.site-name > h4').text();
+  let split = text.split("").join("</span></div><div class='spell'><span aria-hidden='true'>");
+  let split2 = text2.split("").join("</span></div><div class='spell'><span aria-hidden='true'>");
+  // let split = text.split("").join("</span><span aria-hidden='true'>");
+  console.log(split);
+  split = "<div class='spell'><span aira-hidden='true'>"+ split +"</span></div>";
+  split2 = "<div class='spell'><span aira-hidden='true'>"+ split2 +"</span></div>";
+  // split = "<span aira-hidden='true'>"+ split +"</span>";
+  $(this).find('.site-name > h3').html(split).attr("aria-label", text);
+  $(this).find('.site-name > h4').html(split2).attr("aria-label", text2);
+
+})
+
 //sol#2
 // pathStripes.attr('data-'+0,"stroke-dashoffset: "+12599)
 // pathStripes.attr('data-'+OffsetTopItemListSite,"stroke-dashoffset: "+12599)
@@ -75,7 +93,7 @@ function mainStart(){
     const sunflower= $('.sunflower');
     const rosemose= $('.rosemose');
 
-
+    // tl.to(land, {duration: 2, scale: 1, alpha: 1, ease: Elastic.easeOut.config(1, 0.9), delay: 0.15})
     tl.to(land, {duration: 2, scale: 1, alpha: 1, ease: Elastic.easeOut.config(1, 0.9), delay: 0.15})
       .to(home, {duration: 1.25 , y : 0 , scaleY: 1 , alpha: 1 , ease:Bounce.easeOut , delay: -1})
       .to(table, {duration: 1.25 , y : 0, scaleY: 1 , alpha: 1 , ease:Bounce.easeOut , delay: -1})
@@ -93,7 +111,26 @@ function mainStart(){
       .to(chrysanthemum, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
       .to(sunflower, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
       .to(rosemose, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
-    //   .to(field, {duration: 0.4, scale: 1, delay: -0.1})     
+
+
+    // tl.to(land, {duration: 2, scale: 1, alpha: 1, ease: Elastic.easeOut.config(1, 0.9), delay: 0.15})
+    //   .to(home, {duration: 1.25 , y : 0 , scaleY: 1 , alpha: 1 , ease:Bounce.easeOut , delay: -1})
+    //   .to(table, {duration: 1.25 , y : 0, scaleY: 1 , alpha: 1 , ease:Bounce.easeOut , delay: -1})
+    //   .to(hut, {duration: 1.25 , y : 0 ,  scaleY: 1 , alpha: 1 , ease:Bounce.easeOut, delay: -1})
+    //   .to(road, {duration: 1.25 , y : 0 , scaleY: 1 , alpha: 1 , ease:Bounce.easeOut, delay: -1})
+    //   .to(greenhouse, {duration: 1.25 , y : 0, scaleY: 1 , alpha: 1 , ease:Bounce.easeOut , delay: -1})
+    //   .to(field, {duration: 0.4, scale: 1, alpha: 1, delay: -0.6})
+    //   .to(jujubeTomato, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(watermelon, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(sharon, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(appletree, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(rice, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(lavender, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(cosmos, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(chrysanthemum, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(sunflower, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+    //   .to(rosemose, {duration: 0.4, scale: 1, alpha: 1, delay: -0.25})
+      
 }
 
 /* ------------메뉴------------ */
@@ -317,7 +354,8 @@ dot.on('click',function(){
 //슬라이드 요소 안에 제목 글씨를 하나씩 나눠서 span태그에 넣기
 slide.each(function(){
   let text = $(this).find('.slide-title > h3').text();
-  let split  = text.split("").join("</span><span aria-hidden='true'>");
+  let split = text.split("").join("</span><span aria-hidden='true'>");
+  console.log(split);
   split = "<span aria-hidden='true'>" + split + "</span>";
   $(this).find('.slide-title > h3').html(split).attr("aria-label", text);
   $(this).find('.slide-title > h3 > span').each(function(i){
@@ -389,3 +427,5 @@ dotM.click(function(e){
   selectItem($(this).index());
   // $(this).addClass('dot-active').siblings('div').removeClass('dot-active');
 })
+
+/*------------- 모바일----------------*/

@@ -41,7 +41,8 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #fdc60a;
+  background: url("../images/glitter/glitter_scrollbar.gif");
+  background-position: 10% 10%;
   border-radius: 30px;
   -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
           box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
@@ -177,7 +178,6 @@ html::-webkit-scrollbar-thumb {
 
 /*메인*/
 .main {
-  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -189,9 +189,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .main .container .uiux-land {
-  width: 1487px;
-  height: 1843px;
-  background: #ccc;
+  width: 75vw;
   margin: 0 auto;
   position: relative;
   z-index: -1;
@@ -200,15 +198,15 @@ html::-webkit-scrollbar-thumb {
 .main .container .uiux-land .land {
   -webkit-transform: scale(0.3);
           transform: scale(0.3);
-  -webkit-transform-origin: 50% 0%;
-          transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
   opacity: 0;
 }
 
 .main .container .uiux-land .home {
   position: absolute;
-  left: 62.35%;
-  top: 8.65%;
+  left: 61.5%;
+  top: 9%;
   -webkit-transform: translate(0, -200%) scale(1, 2);
           transform: translate(0, -200%) scale(1, 2);
   opacity: 0;
@@ -216,8 +214,8 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .table {
   position: absolute;
-  left: 64.75%;
-  top: 13.25%;
+  left: 65.5%;
+  top: 13.5%;
   -webkit-transform: translate(0, -200%) scale(1, 2);
           transform: translate(0, -200%) scale(1, 2);
   opacity: 0;
@@ -226,7 +224,7 @@ html::-webkit-scrollbar-thumb {
 .main .container .uiux-land .hut {
   position: absolute;
   left: 42.18%;
-  top: 20.15%;
+  top: 21%;
   -webkit-transform: translate(0, -200%) scale(1, 2);
           transform: translate(0, -200%) scale(1, 2);
   opacity: 0;
@@ -234,8 +232,8 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .road {
   position: absolute;
-  left: 53.732%;
-  top: 23.2%;
+  left: 53.7%;
+  top: 23.5%;
   -webkit-transform: translate(0, -200%) scale(1, 2);
           transform: translate(0, -200%) scale(1, 2);
   opacity: 0;
@@ -250,16 +248,10 @@ html::-webkit-scrollbar-thumb {
   opacity: 0;
 }
 
-.main .container .uiux-land .nature {
-  position: absolute;
-  left: 18.55%;
-  top: 10.1%;
-}
-
 .main .container .uiux-land .field {
   position: absolute;
-  left: 40.45%;
-  top: 10.1%;
+  left: 40.3%;
+  top: 10%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
   opacity: 0;
@@ -284,8 +276,8 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .watermelon {
   position: absolute;
-  left: 27.85%;
-  top: 13.55%;
+  left: 28%;
+  top: 14%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
   opacity: 0;
@@ -297,8 +289,8 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .sharon {
   position: absolute;
-  left: 60.35%;
-  top: 18%;
+  left: 60.39%;
+  top: 18.2%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
   opacity: 0;
@@ -311,7 +303,7 @@ html::-webkit-scrollbar-thumb {
 .main .container .uiux-land .appletree {
   position: absolute;
   left: 18.55%;
-  top: 13.22%;
+  top: 14%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
   opacity: 0;
@@ -324,7 +316,7 @@ html::-webkit-scrollbar-thumb {
 .main .container .uiux-land .rice {
   position: absolute;
   left: 76.1%;
-  top: 19.65%;
+  top: 20.5%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
   opacity: 0;
@@ -336,8 +328,8 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .lavender {
   position: absolute;
-  left: 25.97%;
-  top: 24.63%;
+  left: 26.5%;
+  top: 25.5%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
   opacity: 0;
@@ -349,8 +341,8 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .cosmos {
   position: absolute;
-  left: 53.08%;
-  top: 36.09%;
+  left: 53%;
+  top: 36.1%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
   opacity: 0;
@@ -362,7 +354,7 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .chrysanthemum {
   position: absolute;
-  left: 64.28%;
+  left: 64%;
   top: 36.25%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
@@ -375,8 +367,8 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .sunflower {
   position: absolute;
-  left: 51.07%;
-  top: 37.7%;
+  left: 51.3%;
+  top: 38.2%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
   opacity: 0;
@@ -480,7 +472,7 @@ html::-webkit-scrollbar-thumb {
 
 .menu-style .container {
   width: 90vw;
-  height: 70vw;
+  height: 80vw;
   margin: 0 auto;
   padding: 10vw 0 0 0;
   background: #ffa3a3;
@@ -671,7 +663,7 @@ html::-webkit-scrollbar-thumb {
 
 .animation-style .container {
   width: 90vw;
-  height: 120vw;
+  height: 130vw;
   margin: 0 auto;
   padding: 10vw 0 0 0;
   background: #dcffa3;
@@ -840,7 +832,7 @@ html::-webkit-scrollbar-thumb {
 
 .hover-style .container {
   width: 90vw;
-  height: 60vw;
+  height: 70vw;
   margin: 0 auto;
   padding: 10vw 0 0 0;
   background: #4df197;
@@ -943,7 +935,7 @@ html::-webkit-scrollbar-thumb {
 
 .parallax-style .container {
   width: 100%;
-  height: 60vw;
+  height: 80vw;
   padding: 10vw 0 0 0;
   background: #ffbadc;
 }
@@ -1179,7 +1171,7 @@ html::-webkit-scrollbar-thumb {
 
 .mouse-style .container {
   width: 100%;
-  height: 70vw;
+  height: 90vw;
   padding: 10vw 0 0 0;
   background: #bafaff;
 }
@@ -1531,6 +1523,7 @@ html::-webkit-scrollbar-thumb {
   width: 100%;
   height: 450vw;
   background: #b7ffc1;
+  position: relative;
 }
 
 .site-style .container .item-list-site svg {
@@ -1543,13 +1536,284 @@ html::-webkit-scrollbar-thumb {
   stroke-dashoffset: 0;
 }
 
+.site-style .container .item-list-site .site {
+  width: 22vw;
+  background: #ffe17d;
+  position: relative;
+}
+
+.site-style .container .item-list-site .site .site-name {
+  margin: 0 0 2vw 0;
+}
+
+.site-style .container .item-list-site .site .site-name h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.site-style .container .item-list-site .site .site-name h3 .spell {
+  width: 3vw;
+  height: 3vw;
+  background: #0099de;
+  position: relative;
+  border-radius: 30%;
+  -webkit-box-shadow: 0 -0.1vw 0.2vw #fdc60a, 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset;
+          box-shadow: 0 -0.1vw 0.2vw #fdc60a, 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset;
+}
+
+.site-style .container .item-list-site .site .site-name h3 .spell span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 2vw;
+  font-weight: 800;
+  font-family: 'ghanachoco';
+  color: #FDC60A;
+  text-shadow: 0 0 0.5vw #FDC60A, 0 0 1vw #FDC60A;
+  -webkit-animation: glow 5s linear infinite;
+          animation: glow 5s linear infinite;
+}
+
+.site-style .container .item-list-site .site img {
+  width: 100%;
+}
+
+.site-style .container .item-list-site .site .beam {
+  position: relative;
+  margin: 0 auto;
+  width: 7vw;
+  height: 7vw;
+  background: #7bfff4;
+  -webkit-perspective: 25vw;
+          perspective: 25vw;
+}
+
+.site-style .container .item-list-site .site .beam .shine {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, 0) scaleY(0.1) scaleX(0.8);
+          transform: translate(-50%, 0) scaleY(0.1) scaleX(0.8);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(253, 198, 10, 0)), to(rgba(253, 198, 10, 0.8)));
+  background: linear-gradient(to bottom, rgba(253, 198, 10, 0) 0%, rgba(253, 198, 10, 0.8) 100%);
+  -webkit-transition: -webkit-transform 0.7s ease;
+  transition: -webkit-transform 0.7s ease;
+  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, -webkit-transform 0.7s ease;
+}
+
+.site-style .container .item-list-site .site .beam .ground-tilter {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateX(30deg);
+          transform: rotateX(30deg);
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.site-style .container .item-list-site .site .beam .ground-tilter .ground {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: -webkit-box-shadow  0.7s ease;
+  transition: -webkit-box-shadow  0.7s ease;
+  transition: box-shadow  0.7s ease;
+  transition: box-shadow  0.7s ease, -webkit-box-shadow  0.7s ease;
+}
+
+.site-style .container .item-list-site .site.nongshim {
+  width: 28.5vw;
+  z-index: 0;
+}
+
+.site-style .container .item-list-site .site.nongshim .item {
+  width: 22vw;
+  display: block;
+  margin: 0 auto;
+  background: #f154ff;
+  position: relative;
+}
+
+.site-style .container .item-list-site .site.nongshim .item .item-thumbnail {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 93.4%;
+  background: #96deff;
+  border-radius: 5%;
+  overflow: hidden;
+}
+
+.site-style .container .item-list-site .site.nongshim .item .item-thumbnail .thumbnail-site {
+  width: 100%;
+}
+
+.site-style .container .item-list-site .site.nongshim .item .ipad {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.site-style .container .item-list-site .site.standard {
+  position: absolute;
+  left: 5%;
+  top: 19%;
+}
+
+.site-style .container .item-list-site .site.responsive {
+  position: absolute;
+  right: 20%;
+  top: 23%;
+}
+
+.site-style .container .item-list-site .site.nongshim.main {
+  position: absolute;
+  left: 66%;
+  top: 36.5%;
+}
+
+.site-style .container .item-list-site .site:hover img {
+  -webkit-animation: updown 1.8s linear infinite;
+          animation: updown 1.8s linear infinite;
+}
+
+.site-style .container .item-list-site .site:hover.nongshim .item-thumbnail {
+  -webkit-animation: updown 1.8s linear infinite;
+          animation: updown 1.8s linear infinite;
+}
+
+.site-style .container .item-list-site .site:hover.nongshim .item-thumbnail .thumbnail-site {
+  -webkit-animation: thumbnail 8s linear infinite;
+          animation: thumbnail 8s linear infinite;
+}
+
+.site-style .container .item-list-site .site:hover .beam .shine {
+  -webkit-transform: translate(-50%, -35%) scaleY(1.1) scaleX(1.1) rotateX(-55deg);
+          transform: translate(-50%, -35%) scaleY(1.1) scaleX(1.1) rotateX(-55deg);
+  -webkit-transition: -webkit-transform 0.7s ease;
+  transition: -webkit-transform 0.7s ease;
+  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, -webkit-transform 0.7s ease;
+}
+
+.site-style .container .item-list-site .site:hover .beam .ground-tilter {
+  -webkit-transform: scale(0.9) rotateX(65deg);
+          transform: scale(0.9) rotateX(65deg);
+}
+
+.site-style .container .item-list-site .site:hover .beam .ground {
+  -webkit-box-shadow: 0 0 0.5vw 0.5vw #FDC60A;
+          box-shadow: 0 0 0.5vw 0.5vw #FDC60A;
+  border: 0.3vw dashed #fff;
+  background: url(../images/site/lighting2.gif);
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+  -webkit-transition: -webkit-box-shadow  0.7s ease 0.15s;
+  transition: -webkit-box-shadow  0.7s ease 0.15s;
+  transition: box-shadow  0.7s ease 0.15s;
+  transition: box-shadow  0.7s ease 0.15s, -webkit-box-shadow  0.7s ease 0.15s;
+}
+
+@-webkit-keyframes glow {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  /*   50% { transform: rotateZ(180deg); } */
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  /*   50% { transform: rotateZ(180deg); } */
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes updown {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-0.8vw);
+            transform: translateY(-0.8vw);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes updown {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-0.8vw);
+            transform: translateY(-0.8vw);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .mobile-style {
   margin: 0 0 2vw 0;
 }
 
 .mobile-style .container {
   width: 100%;
-  height: 150vw;
+  height: 130vw;
   padding: 10vw 0 0 0;
   background: #edffd6;
   overflow: hidden;
@@ -1612,7 +1876,7 @@ html::-webkit-scrollbar-thumb {
   height: 43.5vw;
   background: #96deff;
   z-index: -1;
-  border-radius: 40px;
+  border-radius: 10%;
   overflow: hidden;
   -webkit-transition: -webkit-transform 0.25s ease-out;
   transition: -webkit-transform 0.25s ease-out;
@@ -2009,5 +2273,33 @@ html::-webkit-scrollbar-thumb {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
+}
+
+.contact-style {
+  margin: 0 0 2vw 0;
+}
+
+.contact-style .container {
+  width: 100%;
+  height: 300vw;
+  padding: 10vw 0 0 0;
+  background: #f0a3ff;
+}
+
+.contact-style .container .scroll-contact {
+  width: 100%;
+  height: 200vw;
+  background: #116111;
+}
+
+.contact-style .container .scroll-contact .scroll-container-contact {
+  width: 100%;
+  height: 100%;
+  background: #ff932f;
+}
+
+.contact-style .container .scroll-contact .scroll-container-contact svg {
+  font-size: 5vw;
+  font-family: 'ghanachoco';
 }
 /*# sourceMappingURL=style.css.map */

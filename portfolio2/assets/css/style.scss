@@ -16,7 +16,10 @@ html::-webkit-scrollbar{
 }
 html::-webkit-scrollbar-thumb{
     // background: linear-gradient(180deg, rgba(253,198,10,1),#009fd8);
-    background:  rgba(253,198,10,1);
+    // background-color:  rgba(253,198,10,1);
+    background: url('../images/glitter/glitter_scrollbar.gif');
+    // background-image: url('../images/glitter/glitter13.gif');
+    background-position: 10% 10%;
     border-radius: 30px;
     box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
     // background: url('https://i.pinimg.com/originals/18/a9/ed/18a9ed1d385ae001a07f0384d58c1b44.gif');
@@ -140,9 +143,9 @@ html::-webkit-scrollbar-thumb{
 #main{}
 .main{
     // position: relative;
-    position: fixed;
+    // position: fixed;
     left: 0; top: 0;
-    width: 100%;
+    width: 100%; 
     z-index: -1;
     .container{
         // width: 100%;
@@ -150,36 +153,36 @@ html::-webkit-scrollbar-thumb{
         // margin: 0 auto;
         padding: 4vw 0 2vw 0;
         .uiux-land{ 
-            width: 1487px; height: 1843px;
-            background: #ccc;
+            // width: 1487px; height: 1843px;
+            width: 75vw;
+            // background: #ccc;
             margin: 0 auto;
             position: relative;
             z-index: -1;
             .land{
-                transform: scale(0.3) ; transform-origin: 50% 0%; opacity: 0;
+                transform: scale(0.3) ; 
+                transform-origin: 50% 50%; 
+                opacity: 0;
             }
             //건물
-            .structure{
-                // position: absolute; left: 19.1%; top: 8.75%; 
-            }
             .home{
-                // position: absolute; left: 62.35%; top: -100%;
-                position: absolute; left: 62.35%; top: 8.65%; 
+                // position: absolute; left: 62.35%; top: 8.65%; 
+                position: absolute; left: 61.5%; top: 9%; 
                 transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             .table{
-                // position: absolute; left: 64.75%; top: -100%;
-                position: absolute; left: 64.75%; top: 13.25%;
+                // position: absolute; left: 64.75%; top: 13.25%;
+                position: absolute; left: 65.5%; top: 13.5%;
                 transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             .hut{
                 // position: absolute; left: 42.18%; top: -100%;
-                position: absolute; left: 42.18%; top: 20.15%;
+                position: absolute; left: 42.18%; top: 21%;
                 transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             .road{
-                // position: absolute; left: 53.732%; top: -100%;
-                position: absolute; left: 53.732%; top: 23.2%;
+                // position: absolute; left: 53.732%; top: 23.2%;
+                position: absolute; left: 53.7%; top: 23.5%;
                 transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             .greenhouse{
@@ -188,11 +191,8 @@ html::-webkit-scrollbar-thumb{
                 transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
             //자연
-            .nature{
-                position: absolute; left: 18.55%; top: 10.1%;
-            }
             .field{
-                position: absolute; left: 40.45%; top: 10.1%;
+                position: absolute; left: 40.3%; top: 10%;
                 transform: scale(0.8, 0); opacity: 0;  transform-origin: 50% 90%;
                 animation: sway1 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
@@ -202,42 +202,43 @@ html::-webkit-scrollbar-thumb{
                 animation: sway1 1.5s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .watermelon{
-                position: absolute; left: 27.85%; top: 13.55%;
+                position: absolute; left: 28%; top: 14%;
                 transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
                 animation: sway2 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .sharon{
-                position: absolute; left: 60.35%; top: 18%;
-                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                // position: absolute; left: 60.35%; top: 18%;
+                position: absolute; left: 60.39%; top: 18.2%;
+                transform: scale(0.8, 0); opacity: 0; transform-origin: 50% 80%;
                 animation: sway1 1.5s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .appletree{
-                position: absolute; left: 18.55%; top: 13.22%;
+                position: absolute; left: 18.55%; top: 14%;
                 transform: scale(0.8, 0); opacity: 0;  transform-origin: 50% 80%;
                 animation: sway1 1.5s 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .rice{
-                position: absolute; left: 76.1%; top: 19.65%;
+                position: absolute; left: 76.1%; top: 20.5%;
                 transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
                 animation: sway1 1.5s 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .lavender{
-                position: absolute; left: 25.97%; top: 24.63%;
+                position: absolute; left: 26.5%; top: 25.5%;
                 transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
                 animation: sway1 1.5s 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .cosmos{
-                position: absolute; left: 53.08%; top: 36.09%;
+                position: absolute; left: 53%; top: 36.1%;
                 transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
                 animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .chrysanthemum{
-                position: absolute; left: 64.28%; top: 36.25%;
+                position: absolute; left: 64%; top: 36.25%;
                 transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
                 animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .sunflower{
-                position: absolute; left: 51.07%; top: 37.7%;
+                position: absolute; left: 51.3%; top: 38.2%;
                 transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
                 animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
@@ -301,7 +302,7 @@ html::-webkit-scrollbar-thumb{
     .container{
         // width: 1700px; 
         width: 90vw;
-        height: 70vw; 
+        height: 80vw; 
         margin: 0 auto;
         padding: 10vw 0 0 0;
         background: rgb(255, 163, 163);
@@ -439,7 +440,7 @@ html::-webkit-scrollbar-thumb{
     margin: 0 0 2vw 0;
     .container{
         width: 90vw;
-        height: 120vw; 
+        height: 130vw; 
         margin: 0 auto;
         padding: 10vw 0 0 0;
         background: rgb(220, 255, 163);
@@ -565,7 +566,7 @@ html::-webkit-scrollbar-thumb{
     .container{
         width: 90vw;
         // height: 100vh;
-        height: 60vw; 
+        height: 70vw; 
         margin: 0 auto;
         padding: 10vw 0 0 0;
         background: rgb(77, 241, 151);
@@ -638,7 +639,7 @@ html::-webkit-scrollbar-thumb{
     margin: 0 0 2vw 0;
     .container{
         width: 100%;
-        height: 60vw;
+        height: 80vw;
         padding: 10vw 0 0 0;
         background: rgb(255, 186, 220);
         .title{
@@ -788,7 +789,7 @@ html::-webkit-scrollbar-thumb{
     margin: 0 0 2vw 0;
     .container{
         width: 100%;
-        height: 70vw;
+        height: 90vw;
         padding: 10vw 0 0 0;
         background: rgb(186, 250, 255);
         .title{
@@ -1000,6 +1001,8 @@ html::-webkit-scrollbar-thumb{
             width: 100%; 
             height: 450vw;
             background: rgb(183, 255, 193);
+            //아이패드 위치
+            position: relative;
             svg{
                 width: 90vw;
                 margin: 0 0 0 5vw;
@@ -1009,9 +1012,206 @@ html::-webkit-scrollbar-thumb{
                     stroke-dashoffset: 0;
                   }
             }
+            .site{
+                width: 22vw;
+                // height: 20vw;
+                background: #ffe17d;
+                //h4위치, 농심 site-name위치
+                position: relative;
+                .site-name{
+                    // width: ;
+                    margin: 0 0 2vw 0;
+                    h3{
+                        display: flex;
+                        justify-content: space-between;
+                        // align-items: center;
+                        .spell{
+                            //sol#1
+                            width: 3vw; height: 3vw;
+                            background: rgba(0,153,222,1);
+                            //sol#2 site-name넘어감
+                            // padding: 1vw; box-sizing: border-box;
+                            position: relative;
+                            border-radius: 30%;
+                            box-shadow: 0 -0.1vw 0.2vw rgba(253,198,10,1), 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset ;
+                            span{
+                                //sol#1
+                                position: absolute; left: 50%; top: 50%;
+                                transform: translate(-50%,-50%);
+                                font-size: 2vw;
+                                font-weight: 800;
+                                font-family: 'ghanachoco';
+                                color: #FDC60A;
+                                text-shadow: 0 0 0.5vw #FDC60A, 0 0 1vw #FDC60A;
+                                animation: glow 5s linear infinite;
+                            }
+                        }
+                    }
+                    //사이트 이름 두 줄일 때 
+                    // h4{
+                    //     position: absolute; right: -7vw; top: 0;
+                    //     display: flex;
+                    //     .spell{
+                    //         //sol#1
+                    //         width: 3vw; height: 3vw;
+                    //         background: rgba(0,153,222,1);
+                    //         //sol#2
+                    //         // padding: 1vw; box-sizing: border-box;
+                    //         position: relative;
+                    //         border-radius: 30%;
+                    //         box-shadow: 0 -0.1vw 0.2vw rgba(253,198,10,1), 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset ;
+                    //         span{
+                    //             //sol#1
+                    //             position: absolute; left: 50%; top: 50%;
+                    //             transform: translate(-50%,-50%);
+                    //             font-size: 2vw;
+                    //             font-weight: 800;
+                    //             font-family: 'ghanachoco';
+                    //             color: #FDC60A;
+                    //             text-shadow: 0 0 0.5vw #FDC60A, 0 0 1vw #FDC60A;
+                    //             animation: glow 5s linear infinite;
+                    //         }
+                    //     }
+                    // }
+                }
+                //사이트 이름 한 줄 따로 빼줄 때
+                // .site-name.nongshim{
+                //     position: absolute; top: -5vw;
+                // }
+                img{
+                    width: 100%;
+                }
+                .beam{
+                    position: relative; 
+                    // left: 50%;
+                    margin: 0 auto;
+                    width: 7vw; 
+                    height: 7vw;
+                    background: rgb(123, 255, 244);
+                    //perspective 작아질 수록 빔이 넓게 퍼짐
+                    perspective: 25vw;
+                    .shine{
+                        //left 0 대신 50%, translate한 이유: shine scaleX 줄였다가 오버하면 커져서 가운데 정렬 필요
+                        position: absolute; left: 50%; top: 0%;
+                        // transform-origin: center bottom;
+                        transform: translate(-50%,-50%);
+                        width: 100%; height: 100%;
+                        transform: translate(-50%,0) scaleY(0.1) scaleX(0.8);
+                        // background: linear-gradient(to bottom, rgba(253,198,10,0) 0%, rgba(253,198,10,0.8) 90%, rgba(253,198,10,0) 100%);
+                        background: linear-gradient(to bottom, rgba(253,198,10,0) 0%, rgba(253,198,10,0.8) 100%);
+                        transition: transform 0.7s ease;
+                    }
+                    .ground-tilter{
+                        width: 100%; height: 100%;
+                        transform: rotateX(30deg);
+                        transition: transform 1s ease;
+                        .ground{
+                            width: 100%; height: 100%;
+                            border-radius: 50%;   
+                            background: #fff;
+                           //오버땔 때 shine먼저 트랜지션, delay 0.2초 다음에 ground트랜지션
+                            // transition: box-shadow  0.7s ease 0.2s;
+                            transition: box-shadow  0.7s ease;
+                        }
+                    }
+                }
 
+                &.nongshim{
+                    width: 28.5vw;
+                    z-index: 0;
+                    .item{
+                        width: 22vw;
+                        display: block;
+                        margin: 0 auto;
+                        background: rgb(241, 84, 255);
+                        position: relative;
+                        //둥근 모서리 밖으로 안 보이게 컨테이너 필요함
+                        .item-thumbnail{
+                            position: absolute; left: 0; bottom: 0;
+                            width: 100%;
+                            height: 93.4%;
+                            background: rgb(150, 222, 255);
+                            border-radius: 5%;
+                            overflow: hidden;
+                            .thumbnail-site{
+                                width: 100%;
+                            }
+                        }
+                        .ipad{
+                            position: relative;
+                            width: 100%;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+            //각 사이트 위치
+            .site.standard{
+                position: absolute;
+                left: 5%; top: 19%;
+                
+            }
+            .site.responsive{
+                position: absolute;
+                // right: 11%; top: 36.5%;
+                right: 20%; top: 23%;
+            }
+            .site.nongshim.main{
+                position: absolute;
+                // left: 11%; top: 55%;
+                left:  66%; top: 36.5%;
+            }
+            //오버
+            .site:hover img{
+                animation: updown 1.8s linear infinite;
+            }
+            .site:hover.nongshim{
+                .item-thumbnail{
+                   animation: updown 1.8s linear infinite;
+                   .thumbnail-site{
+                     animation: thumbnail 8s linear infinite; 
+                   }
+                }
+            }
+            .site:hover .beam .shine{
+                transform: translate(-50%, -35%) scaleY(1.1) scaleX(1.1) rotateX(-55deg);
+                //오버할 때 ground먼저 트랜지션, delay 0.2초 다음에 shine트랜지션
+                // transition: transform 0.7s ease 0.2s; 
+                transition: transform 0.7s ease; 
+            }
+            .site:hover .beam .ground-tilter{
+                transform: scale(0.9) rotateX(65deg);
+            }
+            .site:hover .beam .ground{
+                box-shadow: 0 0 0.5vw 0.5vw #FDC60A;
+                border: 0.3vw dashed #fff;
+                background: url(../images/site/lighting2.gif);
+                // background: #fff;
+                background-size: cover;
+                box-sizing: border-box;
+                animation: spin 2s linear infinite;
+                transition: box-shadow  0.7s ease 0.15s;
+            }
         }
     }
+}
+@keyframes glow {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% { transform: rotateZ(0deg); }
+  /*   50% { transform: rotateZ(180deg); } */
+    100% { transform: rotateZ(360deg); }
+}
+@keyframes updown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-0.8vw); }
+    100% { transform: translateY(0); }
 }
 
 #page-group.mobile{}
@@ -1019,7 +1219,7 @@ html::-webkit-scrollbar-thumb{
     margin: 0 0 2vw 0;
     .container{
         width: 100%;
-        height: 150vw;
+        height: 130vw;
         padding: 10vw 0 0 0;
         background: rgb(237, 255, 214);
         overflow: hidden;
@@ -1040,8 +1240,10 @@ html::-webkit-scrollbar-thumb{
             }
         }
         .item-list-mobile{
+            //화살
             position: relative;
             .slide-wrap{
+                //여기 slide-wrap크기는 slide크기 정하는 기준 정도로만 쓰임
                 width: 50vw; 
                 height: 45vw;
                 margin: 10vw auto;
@@ -1066,7 +1268,7 @@ html::-webkit-scrollbar-thumb{
                             height: 43.5vw;
                             background: rgb(150, 222, 255);
                             z-index: -1;
-                            border-radius: 40px;
+                            border-radius: 10%;
                             overflow: hidden;
                             transition: transform 0.25s ease-out;
                             .thumbnail-mobile{
@@ -1272,6 +1474,32 @@ html::-webkit-scrollbar-thumb{
 @keyframes thumbnail{
     0%{ transform: translateY(0);}
     100%{transform: translateY(-100%);}
+}
+
+#page-group.contact{}
+.contact-style{
+    margin: 0 0 2vw 0;
+    .container{
+        width: 100%;
+        height: 300vw;
+        padding: 10vw 0 0 0;
+        background: rgb(240, 163, 255);
+        .scroll-contact{
+            width: 100%;
+            height: 200vw;
+            background: rgb(17, 97, 17);
+            .scroll-container-contact{
+                width: 100%; 
+                height: 100%;
+                background: rgb(255, 147, 47);
+                svg{
+                    font-size: 5vw;
+                    font-family: 'ghanachoco';
+                }
+                
+            }
+        }
+    }
 }
 
 
