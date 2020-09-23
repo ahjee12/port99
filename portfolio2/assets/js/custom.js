@@ -7,6 +7,46 @@ $(window).scroll(function () {
   const scrollTop = $(window).scrollTop();
   infoScrollTop.text(parseInt(scrollTop));
 })
+/*---------------헤더-네비게이션---------------- */
+const headerNav = $('.header-center-nav ul li');
+console.log(headerNav);
+
+//네비게이션 클릭할 때
+const pageGroup = $('#contents .page-group');
+console.log(pageGroup);
+
+const slideNav = $(".header-center-nav .slide");
+console.log(slideNav);
+
+headerNav.on('click',function(e){ 
+  e.preventDefault();
+  let index = $(this).index();
+  console.log(index);
+  let eachPage = pageGroup.eq(index-1);
+  console.log(eachPage);
+  let offset = eachPage.offset().top;
+  $('html, body').animate({scrollTop: offset},1200,'swing');
+
+  //클릭하는 경우
+  // let positionNav =  $(this).position();
+  // let width = $(this).outerWidth();
+  // slideNav.css({opacity: 1, left: +positionNav.left, width: width});
+})
+
+$(window).scroll(function(){
+  const scrollTop = $(window).scrollTop();
+  for(i=0; i<headerNav.length;i++){
+    // console.log(scrollTop);
+    // console.log(pageGroup.eq(i).offset().top);
+    if(scrollTop<parseInt(pageGroup.eq(0).offset().top)){
+      slideNav.css({opacity: 0});
+    }
+    if(scrollTop>=parseInt(pageGroup.eq(i).offset().top)){
+      slideNav.css({opacity: 1, left: +headerNav.eq(i).position().left, width: headerNav.eq(i).outerWidth()});
+    }
+  }//for문
+})
+
 /*---------------사이트---------------- */
 // const pathStripes = $('.item-list-site svg path');
 // console.log(pathStripes);
@@ -93,7 +133,7 @@ function mainStart(){
     const sunflower= $('.sunflower');
     const rosemose= $('.rosemose');
 
-    // tl.to(land, {duration: 2, scale: 1, alpha: 1, ease: Elastic.easeOut.config(1, 0.9), delay: 0.15})
+  
     tl.to(land, {duration: 2, scale: 1, alpha: 1, ease: Elastic.easeOut.config(1, 0.9), delay: 0.15})
       .to(home, {duration: 1.25 , y : 0 , scaleY: 1 , alpha: 1 , ease:Bounce.easeOut , delay: -1})
       .to(table, {duration: 1.25 , y : 0, scaleY: 1 , alpha: 1 , ease:Bounce.easeOut , delay: -1})

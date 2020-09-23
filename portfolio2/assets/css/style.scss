@@ -13,6 +13,7 @@
 html::-webkit-scrollbar{
     width: 20px; 
     height: 30px;
+    // box-sizing:border-box;
 }
 html::-webkit-scrollbar-thumb{
     // background: linear-gradient(180deg, rgba(253,198,10,1),#009fd8);
@@ -36,7 +37,7 @@ html::-webkit-scrollbar-thumb{
     border-radius: 0 0 20px 20px;
     border-bottom: 1px solid #222;
     z-index: 100;
-    .header-container{
+    .container{
         padding: 0 20px; 
         // background: #ccc;
         display: flex;
@@ -47,8 +48,7 @@ html::-webkit-scrollbar-thumb{
             flex-basis: 17.5%;
             margin: 0.45vw 0 0 0;
             // position: absolute; left: 20px; top: 0.45vw; 
-            a{
-                
+            a{  
                 font-family: 'ghanachoco';
                 font-size: 2.85vw;
                 color: #FDC60A;
@@ -81,6 +81,8 @@ html::-webkit-scrollbar-thumb{
             display: flex;
             justify-content: center;
             ul{
+                //slide위치
+                position: relative;
                 li{
                     float: left;
                     // background: #FDC60A;
@@ -115,6 +117,13 @@ html::-webkit-scrollbar-thumb{
                 
                     }//a
                 }//li
+                .slide{
+                    position: absolute; bottom: -0.5vw;
+                    display: inline-block;
+                    height: 0.3vw;
+                    background: #FDC60A;
+                    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
+                }
             }//ul
         }
         .header-right-nav{
@@ -142,23 +151,30 @@ html::-webkit-scrollbar-thumb{
 /*메인*/
 #main{}
 .main{
-    // position: relative;
-    // position: fixed;
-    left: 0; top: 0;
+    //각 svg 위치
+    position: relative;
     width: 100%; 
-    z-index: -1;
+    //메인 일러스트 고정할 때 1
+    // position: fixed;
+    // left: 0; top: 0;
+    // z-index: -1;
+    margin: 0 0 2vw 0;
     .container{
         // width: 100%;
         // text-align: center;
         // margin: 0 auto;
         padding: 4vw 0 2vw 0;
         .uiux-land{ 
+            //일반 크기
             // width: 1487px; height: 1843px;
+            //반응형 크기
             width: 75vw;
             // background: #ccc;
             margin: 0 auto;
+            //건물, 자연, 버튼 위치
             position: relative;
-            z-index: -1;
+            //메인 일러스트 고정할 때 2 인덱스 header> contents> main 순으로 정하기. 음수 쓰지 말고(?)
+            z-index: 0;
             .land{
                 transform: scale(0.3) ; 
                 transform-origin: 50% 50%; 
@@ -248,18 +264,267 @@ html::-webkit-scrollbar-thumb{
                 animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
 
+            //버튼
+            .container-button{
+                .button{
+                    width: 2.5vw; height: 2.5vw;
+                    // background: chartreuse;
+                    border-radius: 50%;
+                    background: url(../images/main/button/lighting.gif);
+                    opacity: 0.5;
+                    transition: all 0.4s ease;
+                    position: relative;
+                    .name-button{
+                        position: absolute; left: 50%; top: -150%;
+                        transform: translate(-20%,0);
+                        width: 10vw; height: 3vw;
+                        background: violet;
+                        h4{
+                            font-size: 3vw;
+                            font-family: 'ghanachoco';
+                            color: #000;
+                        }
+                    }
+                    .circle{
+                        position: absolute; left: 0%; top: 0%;
+                        //button에 배경 넣어서 circle-back은 없어도 됌..
+                        .circle-back{
+                            fill: transparent;
+                            // fill: rgba(253,198,10,0.5);
+                            // fill: rgba(255,255,255,0.7);
+                            // fill: rgba(0, 159, 216, 0.1);
+                            stroke: #000;
+                            transition: all 0.5s ease;
+
+                        }
+                        .circle-middle{
+                            fill: transparent;
+                            stroke: rgba(253,198,10,1);
+                            transition: all 0.5s ease;
+
+                        }
+                        .circle-front{
+                            fill: transparent;
+                            stroke: #000;
+                            stroke-dasharray: 320;
+                            stroke-dashoffset: 320;
+                            transition: all 0.5s ease;
+                            transform: rotate(-270deg);
+                            transform-origin: 50% 50%;
+
+                        }
+                    }
+                    .line-v{
+                        position: absolute; left: 50%; top: 50%;
+                        transform: translate(-50%,-50%);
+                        width: 0.15vw; height: 1vw;
+                        background: rgba(253,198,10,1);
+                        // background: rgba(0, 159, 216, 1);
+                        // background: rgba(0,0,0,1);
+                        transition: all 0.5s ease;
+
+
+                    }
+                    .line-h1{
+                        position: absolute; left: 50%; top: 50%;
+                        transform: translate(-95%,-50%);
+                        width: 0.5vw; height: 0.15vw;
+                        background: rgba(253,198,10,1);
+                        // background: rgba(0,0,0,1);
+
+                        transition: all 0.5s ease;
+
+                    }
+                    .line-h2{
+                        position: absolute; left: 50%; top: 50%;
+                        transform: translate(-5%,-50%);
+                        width: 0.5vw; height: 0.15vw;
+                        background: rgba(253,198,10,1);
+                        // background: rgba(0,0,0,1);
+
+                        transition: all 0.5s ease;
+
+                    }
+
+                    &:hover{
+                        opacity: 1;
+                        .circle{
+                            .circle-front{
+                                stroke-dashoffset: 0;
+                                transform: rotate(-90deg);
+                            }
+                        }
+                        .line-v{
+                            background: rgba(0,0,0,1);
+                            border-bottom-left-radius: 30%;
+                            border-bottom-right-radius: 30%;
+                        }
+                        .line-h1{
+                            top: 58%;
+                            // background: rgba(0,0,0,0.5);
+                            background: rgba(0,0,0,1);
+                            transform: translate(-95%,-50%) rotate(40deg);
+    
+                        }
+                        .line-h2{
+                            top: 58%;
+                            // background: rgba(0,0,0,0.5);
+                            background: rgba(0,0,0,1);
+                            transform: translate(-5%,-50%) rotate(-40deg);
+    
+                        }
+                    }
+                }
+                .button.button1{
+                    position: absolute; left: 48%; top: 13%;
+                }
+            }
+
         }//uiux-land      
     }//main-container
     .container-cloud-back{
-        position: absolute; left: 0; top: 0;
-        width: 100%; height: 100%; 
-        // background: #afafaf;
-        z-index: -2;
+        .cloud-back.cloud1{
+            position: absolute; left: 0; top: 2%;
+            width: 100%; height: 30%;
+            z-index: -2;
+            // background: #ffc9c9;
+            overflow: hidden;
+            // animation: cloudVerticalMove1 30s alternate infinite;
+            .container-cloud{
+                //container-clooud(클라우드 애니메이션 긴 요소) 위치
+                position: relative; right: 100%;
+                width: 200%; height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                // background: #ddffc9;
+                animation:  cloudHorizontalMove1 40s linear infinite;
+                .cloud{
+                    //클라우드img위치
+                    position: relative;
+                    width: 100%; height: 100%; 
+                    // background: #cbffb6;
+                    .img-cloud{
+                        position: absolute; left: 10%;
+                        height: 100%;
+                    }
+                }
+            }
+        }  
+        .cloud-back.cloud2{
+            position: absolute; left: 0; top: 10%;
+            width: 100%; height: 30%;
+            z-index: -2;
+            // background: #7dfdb2;
+            overflow: hidden;
+            // animation: cloudVerticalMove1 30s alternate infinite;
+            .container-cloud{
+                //container-clooud(클라우드 애니메이션 긴 요소) 위치
+                position: relative; right: 100%;
+                width: 200%; height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                // background: #ddffc9;
+                animation:  cloudHorizontalMove1 35s linear infinite;
+                .cloud{
+                    //클라우드img위치
+                    position: relative;
+                    width: 100%; height: 100%; 
+                    // background: #cbffb6;
+                    .img-cloud{
+                        position: absolute; left: 50%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        // .cloud3{
+        //     position: absolute; left: 0; top: 40%;
+        //     z-index: -2;
+        // }
+        .cloud-back.cloud3{
+            position: absolute; left: 0; top: 40%;
+            width: 100%; height: 30%;
+            z-index: -2;
+            // background: #7dfdb2;
+            overflow: hidden;
+            // animation: cloudVerticalMove1 30s alternate infinite;
+            .container-cloud{
+                //container-clooud(클라우드 애니메이션 긴 요소) 위치
+                position: relative; right: 100%;
+                width: 200%; height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                // background: #ddffc9;
+                animation: cloudHorizontalMove1 35s linear infinite;
+                .cloud{
+                    //클라우드img위치
+                    position: relative;
+                    width: 100%; height: 100%; 
+                    // background: #cbffb6;
+                    .img-cloud{
+                        position: absolute; left: 28%;
+                        height: 100%;
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
     }
     .container-cloud-front{
-        position: absolute; left: 0; top: 0;
-        width: 100%; height: 100%; 
-        // background: #c0c5d6;
+        .cloud-front.cloud4{
+            position: absolute; left: 0; bottom: -30%;
+            width: 100%; height: 40%;
+            // background: #7dfdb2;
+            overflow: hidden;
+            // animation: cloudVerticalMove1 30s alternate infinite;
+            .container-cloud{
+                //container-clooud(클라우드 애니메이션 긴 요소) 위치
+                position: relative; right: 100%;
+                width: 200%; height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                // background: #ddffc9;
+                // animation:  cloudHorizontalMove1 35s linear infinite;
+                .cloud{
+                    //클라우드img위치
+                    position: relative;
+                    width: 100%; height: 100%; 
+                    // background: #cbffb6;
+                    .img-cloud{
+                        position: absolute; left: 10%;
+                        height: 100%;
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+        .cloud-front.cloud5{
+            position: absolute; left: 0; bottom: -30%;
+            width: 100%; height: 30%;
+            // background: #7dfdb2;
+            overflow: hidden;
+            // animation: cloudVerticalMove1 30s alternate infinite;
+            .container-cloud{
+                //container-clooud(클라우드 애니메이션 긴 요소) 위치
+                position: relative; right: 100%;
+                width: 200%; height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                // background: #ddffc9;
+                // animation:  cloudHorizontalMove1 35s linear infinite;
+                .cloud{
+                    //클라우드img위치
+                    position: relative;
+                    width: 100%; height: 100%; 
+                    // background: #cbffb6;
+                    .img-cloud{
+                        position: absolute; left: 60%;
+                        height: 100%;
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
     }
 }//main
 
@@ -278,7 +543,7 @@ html::-webkit-scrollbar-thumb{
     }
   }
 
-  @keyframes sway2 {
+@keyframes sway2 {
     0% {
       -webkit-transform: rotateZ(0) translateX(0px) scale(1);
       transform: rotateZ(0) translateX(0px) scale(1);
@@ -292,11 +557,25 @@ html::-webkit-scrollbar-thumb{
       transform-origin: bottom;
     }
   }
-
-#contents{position: relative; margin: 100vh 0 0 0;}
+// @keyframes cloudVerticalMove1{
+//     0%{transform: translateY(0);}
+//     25%{transform: translateY(-30vw);}
+//     75%{transform: translateY(10vw);}
+//     100%{transform: translateY(0);}
+// }
+@keyframes cloudHorizontalMove1{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(50%);}
+}
+@keyframes cloudHorizontalMove2{
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(100%);}
+}
 
 /*콘텐츠 - 메뉴*/
-#page-group.menu{}
+#contents{position: relative; margin: 0 0 0 0;}
+
+/*콘텐츠 - 메뉴*/
 .menu-style{
     margin: 0 0 2vw 0;
     .container{
@@ -306,8 +585,8 @@ html::-webkit-scrollbar-thumb{
         margin: 0 auto;
         padding: 10vw 0 0 0;
         background: rgb(255, 163, 163);
-        border-top-left-radius: 15%;
-        border-top-right-radius: 15%;
+        // border-top-left-radius: 15%;
+        // border-top-right-radius: 15%;
         .title{
             margin: 0 10% 5% 10%; 
 
@@ -435,7 +714,6 @@ html::-webkit-scrollbar-thumb{
 }
 
 /*콘텐츠 - 애니메이션*/
-#page-group.animation{}
 .animation-style{
     margin: 0 0 2vw 0;
     .container{
@@ -560,7 +838,6 @@ html::-webkit-scrollbar-thumb{
 }
 
 /*콘텐츠 - 오버효과*/
-#page-group.hover{}
 .hover-style{
     margin: 0 0 2vw 0;
     .container{
@@ -633,8 +910,8 @@ html::-webkit-scrollbar-thumb{
     }
     
 }
+
 /*콘텐츠 - 패럴럭스*/
-#page-group.parallax{}
 .parallax-style{
     margin: 0 0 2vw 0;
     .container{
@@ -784,7 +1061,6 @@ html::-webkit-scrollbar-thumb{
 }
 
 /*콘텐츠 - 마우스*/
-#page-group.mouse{}
 .mouse-style{
     margin: 0 0 2vw 0;
     .container{
@@ -829,7 +1105,7 @@ html::-webkit-scrollbar-thumb{
                         height: 45vw; 
                         background: rgb(197, 214, 157);
                         border-radius: 30px; 
-                        //title, num && slide 위치
+                        //slide-title, slide-num, slide 위치
                         position: relative;
                         .slide-img{
                             width: 100%;
@@ -977,17 +1253,17 @@ html::-webkit-scrollbar-thumb{
 }
 
 /*콘텐츠 - 사이트*/
-#page-group.site{}
 .site-style{
     margin: 0 0 2vw 0;
     .container{
         width: 100%;
-        height: 470vw;
+        height: 490vw;
         padding: 10vw 0 0 0;
         background: rgb(184, 184, 184);
         .title{
             text-align: center;
-            margin: 0 0 5vw 0;
+            //마진 5vw -> 더 크게
+            margin: 0 0 20vw 0;
             .title-main{
                 font-size: 3vw;
                 strong{color: #FDC60A;}
@@ -1031,9 +1307,10 @@ html::-webkit-scrollbar-thumb{
                             background: rgba(0,153,222,1);
                             //sol#2 site-name넘어감
                             // padding: 1vw; box-sizing: border-box;
-                            position: relative;
                             border-radius: 30%;
                             box-shadow: 0 -0.1vw 0.2vw rgba(253,198,10,1), 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset ;
+                            //글자 위치
+                            position: relative;
                             span{
                                 //sol#1
                                 position: absolute; left: 50%; top: 50%;
@@ -1048,31 +1325,31 @@ html::-webkit-scrollbar-thumb{
                         }
                     }
                     //사이트 이름 두 줄일 때 
-                    // h4{
-                    //     position: absolute; right: -7vw; top: 0;
-                    //     display: flex;
-                    //     .spell{
-                    //         //sol#1
-                    //         width: 3vw; height: 3vw;
-                    //         background: rgba(0,153,222,1);
-                    //         //sol#2
-                    //         // padding: 1vw; box-sizing: border-box;
-                    //         position: relative;
-                    //         border-radius: 30%;
-                    //         box-shadow: 0 -0.1vw 0.2vw rgba(253,198,10,1), 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset ;
-                    //         span{
-                    //             //sol#1
-                    //             position: absolute; left: 50%; top: 50%;
-                    //             transform: translate(-50%,-50%);
-                    //             font-size: 2vw;
-                    //             font-weight: 800;
-                    //             font-family: 'ghanachoco';
-                    //             color: #FDC60A;
-                    //             text-shadow: 0 0 0.5vw #FDC60A, 0 0 1vw #FDC60A;
-                    //             animation: glow 5s linear infinite;
-                    //         }
-                    //     }
-                    // }
+                    h4{
+                        display: flex;
+                        .spell{
+                            //sol#1
+                            width: 3vw; height: 3vw;
+                            background: rgba(0,153,222,1);
+                            //sol#2
+                            // padding: 1vw; box-sizing: border-box;
+                            border-radius: 30%;
+                            box-shadow: 0 -0.1vw 0.2vw rgba(253,198,10,1), 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset ;
+                            //글자 위치
+                            position: relative;
+                            span{
+                                //sol#1
+                                position: absolute; left: 50%; top: 50%;
+                                transform: translate(-50%,-50%);
+                                font-size: 2vw;
+                                font-weight: 800;
+                                font-family: 'ghanachoco';
+                                color: #FDC60A;
+                                text-shadow: 0 0 0.5vw #FDC60A, 0 0 1vw #FDC60A;
+                                animation: glow 5s linear infinite;
+                            }
+                        }
+                    }
                 }
                 //사이트 이름 한 줄 따로 빼줄 때
                 // .site-name.nongshim{
@@ -1144,12 +1421,26 @@ html::-webkit-scrollbar-thumb{
                         }
                     }
                 }
+
+                &.php{
+                    width: 28.5vw;
+                    .site-name{
+                        h4{
+                            .spell{
+                                margin: 0 0.2vw 0 0;
+                                &:nth-child(1){
+                                    margin-left: 9.55vw;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
             }
             //각 사이트 위치
             .site.standard{
                 position: absolute;
                 left: 5%; top: 19%;
-                
             }
             .site.responsive{
                 position: absolute;
@@ -1159,7 +1450,21 @@ html::-webkit-scrollbar-thumb{
             .site.nongshim.main{
                 position: absolute;
                 // left: 11%; top: 55%;
-                left:  66%; top: 36.5%;
+                left:  66.5%; top: 36.5%;
+                // left:  70%; top: 31.8%;
+            }
+            .site.nongshim.intro{
+                position: absolute;
+                left: 26%; top: 40.5%;
+            }
+            .site.nongshim.cs{
+                position: absolute;
+                // left: 54%; top: 55%;
+                left: 13.5%; top: 53.2%;
+            }
+            .site.php{
+                position: absolute;
+                left: 60%; top: 65.5%;
             }
             //오버
             .site:hover img{
@@ -1171,6 +1476,11 @@ html::-webkit-scrollbar-thumb{
                    .thumbnail-site{
                      animation: thumbnail 8s linear infinite; 
                    }
+                }
+                &.main{
+                    .thumbnail-site{
+                        animation: thumbnail 13s linear infinite; 
+                      }
                 }
             }
             .site:hover .beam .shine{
@@ -1205,7 +1515,7 @@ html::-webkit-scrollbar-thumb{
 }
 @keyframes spin {
     0% { transform: rotateZ(0deg); }
-  /*   50% { transform: rotateZ(180deg); } */
+  /*  50% { transform: rotateZ(180deg); } */
     100% { transform: rotateZ(360deg); }
 }
 @keyframes updown {
@@ -1214,7 +1524,7 @@ html::-webkit-scrollbar-thumb{
     100% { transform: translateY(0); }
 }
 
-#page-group.mobile{}
+/*콘텐츠 - 모바일*/
 .mobile-style{
     margin: 0 0 2vw 0;
     .container{
@@ -1470,13 +1780,12 @@ html::-webkit-scrollbar-thumb{
 		opacity: 0;
 	}
 }
-
 @keyframes thumbnail{
-    0%{ transform: translateY(0);}
+    0%{transform: translateY(0);}
     100%{transform: translateY(-100%);}
 }
 
-#page-group.contact{}
+/*콘텐츠 - 모바일*/
 .contact-style{
     margin: 0 0 2vw 0;
     .container{
