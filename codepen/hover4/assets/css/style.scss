@@ -8,7 +8,7 @@
   
   body {
     height: 100vh;
-    background: #2f3238;
+    background: rgba(253,198,10,0.6);
     font-family: 'JSDongkang-Regular';
   }
   .hover-wrap {
@@ -20,8 +20,9 @@
     
     .effect {
       position: relative;
-      width: 50vw; height: 40vw; margin: 10px;
-      overflow: hidden;
+      width: 50vw; height: 36vw; margin: 0.5vw;
+      // overflow: hidden;
+      background: chartreuse;
       img {
         width: 100%; vertical-align: top;
       }

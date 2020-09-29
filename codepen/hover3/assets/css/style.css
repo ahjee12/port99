@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  background: #2f3238;
+  background: rgba(253, 198, 10, 0.6);
   font-family: 'JSDongkang-Regular';
 }
 
@@ -27,7 +27,7 @@ body {
 .hover-wrap figure {
   position: relative;
   width: 50vw;
-  margin: 10px;
+  margin: 0.5vw;
   overflow: hidden;
   background: #fff;
 }

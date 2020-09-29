@@ -8,7 +8,7 @@
   
   body {
     height: 100vh;
-    background: #2f3238;
+    background: rgba(253,198,10,1);
     font-family: 'JSDongkang-Regular';
   }
   .hover-wrap {
@@ -18,20 +18,20 @@
     height: 100vh;
     .effect {
       position: relative;
-      width: 50vw; height: 40vw; margin: 0.5vw;
-      overflow: hidden;
-        perspective: 1000px;
+      width: 50vw; height: 36vw; margin: 0.5vw;
+      // overflow: hidden;
+      perspective: 1000px;
       img {
         width: 100%; vertical-align: top;
       }
       .front {
         width: 100%;
-        position: absolute; left: 0; top: 0; z-index:10;
+        position: absolute; left: 0; top: 0; z-index:10;  margin: 0;
         transform-style: preserve-3d;
       }
       .back {
         width: 100%;
-        position: absolute; left: 0; top: 0;
+        position: absolute; left: 0; top: 0;  margin: 0;
         transform-style: preserve-3d;
       }
       figcaption {
@@ -43,6 +43,7 @@
         color: #fff;
         padding: 1rem;
         white-space: nowrap;
+        box-sizing: border-box;
         h3 {
           // font-size: 3rem; 
           font-size: 3vw;

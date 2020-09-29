@@ -48,6 +48,18 @@ html::-webkit-scrollbar-thumb {
           box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(100, 147, 175, 0.3);
+          box-shadow: inset 0 0 6px rgba(100, 147, 175, 0.3);
+}
+
+html::-webkit-scrollbar-button:single-button {
+  background-color: #fdc60a;
+  border-radius: 5px;
+  height: 20px;
+  width: 20px;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -267,9 +279,9 @@ html::-webkit-scrollbar-thumb {
   top: 10%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 90%;
           transform-origin: 50% 90%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -280,9 +292,9 @@ html::-webkit-scrollbar-thumb {
   top: 15.4%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -293,9 +305,9 @@ html::-webkit-scrollbar-thumb {
   top: 14%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway2 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway2 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -306,9 +318,9 @@ html::-webkit-scrollbar-thumb {
   top: 18.2%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -319,9 +331,9 @@ html::-webkit-scrollbar-thumb {
   top: 14%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -332,9 +344,9 @@ html::-webkit-scrollbar-thumb {
   top: 20.5%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -345,9 +357,9 @@ html::-webkit-scrollbar-thumb {
   top: 25.5%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -358,9 +370,9 @@ html::-webkit-scrollbar-thumb {
   top: 36.1%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -371,9 +383,9 @@ html::-webkit-scrollbar-thumb {
   top: 36.25%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -384,9 +396,9 @@ html::-webkit-scrollbar-thumb {
   top: 38.2%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
 }
@@ -397,62 +409,83 @@ html::-webkit-scrollbar-thumb {
   top: 37.95%;
   -webkit-transform: scale(0.8, 0);
           transform: scale(0.8, 0);
-  opacity: 0;
   -webkit-transform-origin: 50% 80%;
           transform-origin: 50% 80%;
+  opacity: 0;
   -webkit-animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
           animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+}
+
+.main .container .uiux-land .strawberry1 {
+  opacity: 0;
+  position: absolute;
+  left: 21.3%;
+  top: 37.4%;
+}
+
+.main .container .uiux-land .strawberry2 {
+  opacity: 0;
+  position: absolute;
+  left: 24.3%;
+  top: 38%;
+}
+
+.main .container .uiux-land .strawberry3 {
+  opacity: 0;
+  position: absolute;
+  left: 27.3%;
+  top: 38.6%;
+}
+
+.main .container .uiux-land .strawberry4 {
+  opacity: 0;
+  position: absolute;
+  left: 30.3%;
+  top: 39.2%;
 }
 
 .main .container .uiux-land .container-button .button {
   width: 2.5vw;
   height: 2.5vw;
-  border-radius: 50%;
-  background: url(../images/main/button/lighting.gif);
-  opacity: 0.5;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
   position: relative;
-}
-
-.main .container .uiux-land .container-button .button .name-button {
-  position: absolute;
-  left: 50%;
-  top: -150%;
-  -webkit-transform: translate(-20%, 0);
-          transform: translate(-20%, 0);
-  width: 10vw;
-  height: 3vw;
-  background: violet;
-}
-
-.main .container .uiux-land .container-button .button .name-button h4 {
-  font-size: 3vw;
-  font-family: 'ghanachoco';
-  color: #000;
+  opacity: 0;
 }
 
 .main .container .uiux-land .container-button .button .circle {
   position: absolute;
   left: 0%;
   top: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: url(../images/main/button/lighting.gif);
+  opacity: 0.5;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-.main .container .uiux-land .container-button .button .circle .circle-back {
+.main .container .uiux-land .container-button .button .circle-svg {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+}
+
+.main .container .uiux-land .container-button .button .circle-svg .circle-back {
   fill: transparent;
   stroke: #000;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.main .container .uiux-land .container-button .button .circle .circle-middle {
+.main .container .uiux-land .container-button .button .circle-svg .circle-middle {
   fill: transparent;
   stroke: #fdc60a;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.main .container .uiux-land .container-button .button .circle .circle-front {
+.main .container .uiux-land .container-button .button .circle-svg .circle-front {
   fill: transparent;
   stroke: #000;
   stroke-dasharray: 320;
@@ -474,8 +507,10 @@ html::-webkit-scrollbar-thumb {
   width: 0.15vw;
   height: 1vw;
   background: #fdc60a;
+  background: #6493af;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  opacity: 1;
 }
 
 .main .container .uiux-land .container-button .button .line-h1 {
@@ -487,8 +522,10 @@ html::-webkit-scrollbar-thumb {
   width: 0.5vw;
   height: 0.15vw;
   background: #fdc60a;
+  background: #6493af;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  opacity: 1;
 }
 
 .main .container .uiux-land .container-button .button .line-h2 {
@@ -499,16 +536,17 @@ html::-webkit-scrollbar-thumb {
           transform: translate(-5%, -50%);
   width: 0.5vw;
   height: 0.15vw;
-  background: #fdc60a;
+  background: #6493af;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-}
-
-.main .container .uiux-land .container-button .button:hover {
   opacity: 1;
 }
 
-.main .container .uiux-land .container-button .button:hover .circle .circle-front {
+.main .container .uiux-land .container-button .button:hover .circle {
+  opacity: 1;
+}
+
+.main .container .uiux-land .container-button .button:hover .circle-svg .circle-front {
   stroke-dashoffset: 0;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -536,8 +574,135 @@ html::-webkit-scrollbar-thumb {
 
 .main .container .uiux-land .container-button .button.button1 {
   position: absolute;
-  left: 48%;
+  left: 49%;
+  top: 15.5%;
+}
+
+.main .container .uiux-land .container-button .button.button2 {
+  position: absolute;
+  left: 35.5%;
+  top: 20.5%;
+}
+
+.main .container .uiux-land .container-button .button.button3 {
+  position: absolute;
+  left: 18.5%;
+  top: 18.5%;
+}
+
+.main .container .uiux-land .container-button .button.button4 {
+  position: absolute;
+  left: 49%;
+  top: 24%;
+}
+
+.main .container .uiux-land .container-button .button.button5 {
+  position: absolute;
+  left: 41%;
+  top: 33%;
+}
+
+.main .container .uiux-land .container-button .button.button6 {
+  position: absolute;
+  left: 38%;
+  top: 42%;
+}
+
+.main .container .uiux-land .container-button .button.button7 {
+  position: absolute;
+  left: 67.5%;
+  top: 35%;
+}
+
+.main .container .uiux-land .container-button .button.button8 {
+  position: absolute;
+  left: 62%;
+  top: 14.5%;
+}
+
+.main .container .uiux-land .container-button-name .name {
+  opacity: 0;
+}
+
+.main .container .uiux-land .container-button-name .name h4 {
+  font-size: 3vw;
+  font-family: 'ghanachoco';
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .container .uiux-land .container-button-name .name h4 span {
+  opacity: 0;
+}
+
+.main .container .uiux-land .container-button-name .name.active h4 span {
+  -webkit-animation: zoomInLeft 0.5s ease-in forwards;
+          animation: zoomInLeft 0.5s ease-in forwards;
+}
+
+.main .container .uiux-land .container-button-name .name:nth-child(1).active h4 span {
+  -webkit-animation: zoomInDown 0.5s ease-in forwards;
+          animation: zoomInDown 0.5s ease-in forwards;
+}
+
+.main .container .uiux-land .container-button-name .name:nth-child(7).active h4 span {
+  -webkit-animation: zoomInRight 0.5s ease-in forwards;
+          animation: zoomInRight 0.5s ease-in forwards;
+}
+
+.main .container .uiux-land .container-button-name .name:nth-child(8).active h4 span {
+  -webkit-animation: zoomInDown 0.5s ease-in forwards;
+          animation: zoomInDown 0.5s ease-in forwards;
+}
+
+.main .container .uiux-land .container-button-name .name.button1 {
+  position: absolute;
+  left: 44%;
+  top: 10%;
+}
+
+.main .container .uiux-land .container-button-name .name.button2 {
+  position: absolute;
+  left: 24%;
+  top: 14%;
+}
+
+.main .container .uiux-land .container-button-name .name.button3 {
+  position: absolute;
+  left: 13%;
   top: 13%;
+}
+
+.main .container .uiux-land .container-button-name .name.button4 {
+  position: absolute;
+  left: 41%;
+  top: 18%;
+}
+
+.main .container .uiux-land .container-button-name .name.button5 {
+  position: absolute;
+  left: 35%;
+  top: 27%;
+}
+
+.main .container .uiux-land .container-button-name .name.button6 {
+  position: absolute;
+  left: 35%;
+  top: 37%;
+}
+
+.main .container .uiux-land .container-button-name .name.button7 {
+  position: absolute;
+  left: 62%;
+  top: 29%;
+}
+
+.main .container .uiux-land .container-button-name .name.button8 {
+  position: absolute;
+  left: 56%;
+  top: 9%;
 }
 
 .main .container-cloud-back .cloud-back.cloud1 {
@@ -655,9 +820,9 @@ html::-webkit-scrollbar-thumb {
 .main .container-cloud-front .cloud-front.cloud4 {
   position: absolute;
   left: 0;
-  bottom: -30%;
+  bottom: -15%;
   width: 100%;
-  height: 40%;
+  height: 60%;
   overflow: hidden;
 }
 
@@ -672,6 +837,8 @@ html::-webkit-scrollbar-thumb {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-animation: cloudHorizontalMove1 45s linear infinite;
+          animation: cloudHorizontalMove1 45s linear infinite;
 }
 
 .main .container-cloud-front .cloud-front.cloud4 .container-cloud .cloud {
@@ -682,7 +849,7 @@ html::-webkit-scrollbar-thumb {
 
 .main .container-cloud-front .cloud-front.cloud4 .container-cloud .cloud .img-cloud {
   position: absolute;
-  left: 10%;
+  right: 0%;
   height: 100%;
   opacity: 0.9;
 }
@@ -690,9 +857,9 @@ html::-webkit-scrollbar-thumb {
 .main .container-cloud-front .cloud-front.cloud5 {
   position: absolute;
   left: 0;
-  bottom: -30%;
+  bottom: -5%;
   width: 100%;
-  height: 30%;
+  height: 20%;
   overflow: hidden;
 }
 
@@ -707,6 +874,8 @@ html::-webkit-scrollbar-thumb {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-animation: cloudHorizontalMove1 30s linear infinite;
+          animation: cloudHorizontalMove1 30s linear infinite;
 }
 
 .main .container-cloud-front .cloud-front.cloud5 .container-cloud .cloud {
@@ -716,6 +885,80 @@ html::-webkit-scrollbar-thumb {
 }
 
 .main .container-cloud-front .cloud-front.cloud5 .container-cloud .cloud .img-cloud {
+  position: absolute;
+  left: 10%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.main .container-cloud-front .cloud-front.cloud6 {
+  position: absolute;
+  left: 0;
+  bottom: -30%;
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+}
+
+.main .container-cloud-front .cloud-front.cloud6 .container-cloud {
+  position: relative;
+  right: 100%;
+  width: 200%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-animation: cloudHorizontalMove1 40s linear infinite;
+          animation: cloudHorizontalMove1 40s linear infinite;
+}
+
+.main .container-cloud-front .cloud-front.cloud6 .container-cloud .cloud {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main .container-cloud-front .cloud-front.cloud6 .container-cloud .cloud .img-cloud {
+  position: absolute;
+  left: 10%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.main .container-cloud-front .cloud-front.cloud7 {
+  position: absolute;
+  left: 0;
+  bottom: -30%;
+  width: 100%;
+  height: 30%;
+  overflow: hidden;
+}
+
+.main .container-cloud-front .cloud-front.cloud7 .container-cloud {
+  position: relative;
+  right: 100%;
+  width: 200%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-animation: cloudHorizontalMove1 29s linear infinite;
+          animation: cloudHorizontalMove1 29s linear infinite;
+}
+
+.main .container-cloud-front .cloud-front.cloud7 .container-cloud .cloud {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main .container-cloud-front .cloud-front.cloud7 .container-cloud .cloud .img-cloud {
   position: absolute;
   left: 60%;
   height: 100%;
@@ -747,30 +990,166 @@ html::-webkit-scrollbar-thumb {
 @-webkit-keyframes sway2 {
   0% {
     -webkit-transform: rotateZ(0) translateX(0px) scale(1);
-    transform: rotateZ(0) translateX(0px) scale(1);
-    -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+            transform: rotateZ(0) translateX(0px) scale(1);
   }
   100% {
     -webkit-transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
-    transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
-    -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+            transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
   }
 }
 
 @keyframes sway2 {
   0% {
     -webkit-transform: rotateZ(0) translateX(0px) scale(1);
-    transform: rotateZ(0) translateX(0px) scale(1);
-    -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+            transform: rotateZ(0) translateX(0px) scale(1);
   }
   100% {
     -webkit-transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
-    transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
-    -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+            transform: rotateZ(3deg) translateX(3px) scale(0.96, 0.96);
+  }
+}
+
+@-webkit-keyframes zoomInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-50vw, 0, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(-50vw, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(1vw, 0, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(1vw, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+@keyframes zoomInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-50vw, 0, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(-50vw, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(1vw, 0, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(1vw, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+@-webkit-keyframes zoomInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(50vw, 0, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(50vw, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-1vw, 0, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(-1vw, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+@keyframes zoomInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(50vw, 0, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(50vw, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-1vw, 0, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(-1vw, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+@-webkit-keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -15vw, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -15vw, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 5vw, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 5vw, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+@keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -15vw, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -15vw, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 5vw, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 5vw, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
 
@@ -1062,7 +1441,7 @@ html::-webkit-scrollbar-thumb {
 .animation-style .container .controls fieldset {
   width: 6.2vw;
   background: #FDC60A;
-  border-radius: 13%;
+  border-radius: 20px;
   padding: 1vw;
 }
 
@@ -1104,7 +1483,7 @@ html::-webkit-scrollbar-thumb {
   pointer-events: none;
 }
 
-.animation-style .container .controls fieldset .checkbox label:after {
+.animation-style .container .controls fieldset .checkbox label .dot {
   content: '';
   display: block;
   position: absolute;
@@ -1118,18 +1497,14 @@ html::-webkit-scrollbar-thumb {
   pointer-events: none;
 }
 
-.animation-style .container .controls fieldset .checkbox input:checked ~ label:after {
-  display: block;
-}
-
 .animation-style .container .controls fieldset button {
   cursor: pointer;
   padding: 0.5vw;
-  border-radius: 15%;
+  border-radius: 20px;
   font-size: 1vw;
   font-weight: 500;
-  -webkit-box-shadow: 0 0.3vw 0.3vw 0.1vw #0099de;
-          box-shadow: 0 0.3vw 0.3vw 0.1vw #0099de;
+  -webkit-box-shadow: 0 0 0.3vw 0.1vw #0099de;
+          box-shadow: 0 0 0.3vw 0.1vw #0099de;
   outline: none;
   border-color: #0099de;
   background: #fff;
@@ -1189,7 +1564,7 @@ html::-webkit-scrollbar-thumb {
 
 .hover-style .container {
   width: 90vw;
-  height: 70vw;
+  height: 300vw;
   margin: 0 auto;
   padding: 10vw 0 0 0;
   background: #4df197;
@@ -1212,6 +1587,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .hover-style .container .item-list {
+  width: 100%;
   height: 30vw;
   background: #a4cbff;
   position: relative;
@@ -1224,19 +1600,17 @@ html::-webkit-scrollbar-thumb {
   width: 50%;
   height: 100%;
   background: #ffd372;
-  overflow: hidden;
 }
 
-.hover-style .container .item-list .item-left .item-container {
+.hover-style .container .item-list .item-left .container-item-left {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: #000;
 }
 
-.hover-style .container .item-list .item-left .item-container iframe {
+.hover-style .container .item-list .item-left .container-item-left iframe {
   position: absolute;
   left: 0;
   top: 0;
@@ -1258,19 +1632,17 @@ html::-webkit-scrollbar-thumb {
   width: 50%;
   height: 100%;
   background: #ffb158;
-  overflow: hidden;
 }
 
-.hover-style .container .item-list .item-right .item-container {
+.hover-style .container .item-list .item-right .container-item-right {
   position: absolute;
   right: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: #000;
 }
 
-.hover-style .container .item-list .item-right .item-container iframe {
+.hover-style .container .item-list .item-right .container-item-right iframe {
   position: absolute;
   left: 0;
   top: 0;

@@ -26,6 +26,18 @@ html::-webkit-scrollbar-thumb{
     // background: url('https://i.pinimg.com/originals/18/a9/ed/18a9ed1d385ae001a07f0384d58c1b44.gif');
     // background-size: cover;
 }
+html::-webkit-scrollbar-track{  
+    // background-color: transparent;
+    box-shadow: inset 0 0 6px rgba(100, 147, 175,0.3); 
+}
+html::-webkit-scrollbar-button:single-button {
+    background-color:rgba(253,198,10,1);
+    // border-bottom-left-radius: 30px;
+    // border-bottom-right-radius: 30px;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    }
 #header{
     // position: fixed;
 }
@@ -206,62 +218,99 @@ html::-webkit-scrollbar-thumb{
                 position: absolute; left: 19.12%; top: 36.855%;
                 transform: translate(0, -200%) scale(1,2); opacity: 0;
             }
-            //자연
+            //자연 transform, animation 동시에 적용 안 됨!
             .field{
                 position: absolute; left: 40.3%; top: 10%;
-                transform: scale(0.8, 0); opacity: 0;  transform-origin: 50% 90%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 90%;
+                opacity: 0;
                 animation: sway1 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .jujubeTomato{
                 position: absolute; left: 40.05%; top: 15.4%;
-                transform: scale(0.8, 0);  opacity: 0;   transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .watermelon{
                 position: absolute; left: 28%; top: 14%;
-                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway2 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .sharon{
                 // position: absolute; left: 60.35%; top: 18%;
                 position: absolute; left: 60.39%; top: 18.2%;
-                transform: scale(0.8, 0); opacity: 0; transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .appletree{
                 position: absolute; left: 18.55%; top: 14%;
-                transform: scale(0.8, 0); opacity: 0;  transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .rice{
                 position: absolute; left: 76.1%; top: 20.5%;
-                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .lavender{
                 position: absolute; left: 26.5%; top: 25.5%;
-                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .cosmos{
                 position: absolute; left: 53%; top: 36.1%;
-                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .chrysanthemum{
                 position: absolute; left: 64%; top: 36.25%;
-                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                transform: scale(0.8, 0);  transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .sunflower{
                 position: absolute; left: 51.3%; top: 38.2%;
-                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
             }
             .rosemose{
                 position: absolute; left: 66.4%; top: 37.95%;
-                transform: scale(0.8, 0); opacity: 0;   transform-origin: 50% 80%;
+                transform: scale(0.8, 0);
+                transform-origin: 50% 80%;
+                opacity: 0;
                 animation: sway1 1.5s 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+            }
+            .strawberry1{
+                opacity: 0;   
+                position: absolute; left: 21.3%; top: 37.4%;
+            }
+            .strawberry2{
+                 opacity: 0;   
+                position: absolute; left: 24.3%; top: 38%;
+            }
+            .strawberry3{
+                 opacity: 0;   
+                position: absolute; left: 27.3%; top: 38.6%;
+            }
+            .strawberry4{
+                 opacity: 0;   
+                position: absolute; left: 30.3%; top: 39.2%;
             }
 
             //버튼
@@ -269,25 +318,21 @@ html::-webkit-scrollbar-thumb{
                 .button{
                     width: 2.5vw; height: 2.5vw;
                     // background: chartreuse;
-                    border-radius: 50%;
-                    background: url(../images/main/button/lighting.gif);
-                    opacity: 0.5;
-                    transition: all 0.4s ease;
+                    // border-radius: 50%;
                     position: relative;
-                    .name-button{
-                        position: absolute; left: 50%; top: -150%;
-                        transform: translate(-20%,0);
-                        width: 10vw; height: 3vw;
-                        background: violet;
-                        h4{
-                            font-size: 3vw;
-                            font-family: 'ghanachoco';
-                            color: #000;
-                        }
-                    }
+                    opacity: 0;
                     .circle{
                         position: absolute; left: 0%; top: 0%;
-                        //button에 배경 넣어서 circle-back은 없어도 됌..
+                        width: 100%; height: 100%;
+                        border-radius: 50%;
+                        background: url(../images/main/button/lighting.gif);
+                        opacity: 0.5;
+                        transition: all 0.4s ease;
+                    }
+                    .circle-svg{
+                        position: absolute; left: 0%; top: 0%;
+                        opacity: 1;
+                        //circle-svg의 sibling circle에 배경 넣어서 circle-back은 없어도 됌..
                         .circle-back{
                             fill: transparent;
                             // fill: rgba(253,198,10,0.5);
@@ -319,10 +364,11 @@ html::-webkit-scrollbar-thumb{
                         transform: translate(-50%,-50%);
                         width: 0.15vw; height: 1vw;
                         background: rgba(253,198,10,1);
-                        // background: rgba(0, 159, 216, 1);
+                        background: rgba(100, 147, 175,1);
                         // background: rgba(0,0,0,1);
                         transition: all 0.5s ease;
-
+                        //바깥이 opacity 0이면 1로 따로 설정해도 0됨.. 
+                        opacity: 1;
 
                     }
                     .line-h1{
@@ -330,25 +376,30 @@ html::-webkit-scrollbar-thumb{
                         transform: translate(-95%,-50%);
                         width: 0.5vw; height: 0.15vw;
                         background: rgba(253,198,10,1);
+                        background: rgba(100, 147, 175,1);
                         // background: rgba(0,0,0,1);
-
                         transition: all 0.5s ease;
+                        opacity: 1;
 
                     }
                     .line-h2{
                         position: absolute; left: 50%; top: 50%;
                         transform: translate(-5%,-50%);
                         width: 0.5vw; height: 0.15vw;
-                        background: rgba(253,198,10,1);
+                        // background: rgba(253,198,10,1);
+                        background: rgba(100, 147, 175,1);
                         // background: rgba(0,0,0,1);
 
                         transition: all 0.5s ease;
+                        opacity: 1;
 
                     }
 
                     &:hover{
-                        opacity: 1;
                         .circle{
+                            opacity: 1;
+                        }
+                        .circle-svg{
                             .circle-front{
                                 stroke-dashoffset: 0;
                                 transform: rotate(-90deg);
@@ -376,7 +427,97 @@ html::-webkit-scrollbar-thumb{
                     }
                 }
                 .button.button1{
-                    position: absolute; left: 48%; top: 13%;
+                    position: absolute; left: 49%; top: 15.5%;
+                }
+                .button.button2{
+                    position: absolute; left: 35.5%; top: 20.5%;
+                }
+                .button.button3{
+                    position: absolute; left: 18.5%; top: 18.5%;
+                }
+                .button.button4{
+                    position: absolute; left: 49%; top: 24%;
+                }
+                .button.button5{
+                    position: absolute; left: 41%; top: 33%;
+                }
+                .button.button6{
+                    position: absolute; left: 38%; top: 42%;
+                }
+                 .button.button7{
+                    position: absolute; left: 67.5%; top: 35%;
+                }
+                .button.button8{
+                    position: absolute; left: 62%; top: 14.5%;
+                }
+               
+            }
+            .container-button-name{
+                .name{
+                    // width: 10vw; height: 3vw;
+                    // background: violet;
+                    opacity: 0;
+                    h4{
+                        font-size: 3vw;
+                        font-family: 'ghanachoco';
+                        color: #000;
+                        display: flex;
+                        span{
+                            opacity: 0;
+                        }
+                    }
+                    &.active{
+                        h4{
+                            span{
+                               animation: zoomInLeft 0.5s ease-in forwards; 
+                            }
+                        }
+                    }
+                    &:nth-child(1).active{
+                        h4{
+                            span{
+                               animation: zoomInDown 0.5s ease-in forwards; 
+                            }
+                        }
+                    }
+                    &:nth-child(7).active{
+                        h4{
+                            span{
+                               animation: zoomInRight 0.5s ease-in forwards; 
+                            }
+                        }
+                    }
+                    &:nth-child(8).active{
+                        h4{
+                            span{
+                               animation: zoomInDown 0.5s ease-in forwards; 
+                            }
+                        }
+                    }
+                }
+                .name.button1{
+                    position: absolute; left: 44%; top: 10%;
+                }
+                .name.button2{
+                    position: absolute; left: 24%; top: 14%;
+                }
+                .name.button3{
+                    position: absolute; left: 13%; top: 13%;
+                }
+                .name.button4{
+                    position: absolute; left: 41%; top: 18%;
+                }
+                .name.button5{
+                    position: absolute; left: 35%; top: 27%;
+                }
+                .name.button6{
+                    position: absolute; left: 35%; top: 37%;
+                }
+                .name.button7{
+                    position: absolute; left: 62%; top: 29%;
+                }
+                .name.button8{
+                    position: absolute; left: 56%; top: 9%;
                 }
             }
 
@@ -437,10 +578,6 @@ html::-webkit-scrollbar-thumb{
                 }
             }
         }
-        // .cloud3{
-        //     position: absolute; left: 0; top: 40%;
-        //     z-index: -2;
-        // }
         .cloud-back.cloud3{
             position: absolute; left: 0; top: 40%;
             width: 100%; height: 30%;
@@ -472,8 +609,8 @@ html::-webkit-scrollbar-thumb{
     }
     .container-cloud-front{
         .cloud-front.cloud4{
-            position: absolute; left: 0; bottom: -30%;
-            width: 100%; height: 40%;
+            position: absolute; left: 0; bottom: -15%;
+            width: 100%; height: 60%;
             // background: #7dfdb2;
             overflow: hidden;
             // animation: cloudVerticalMove1 30s alternate infinite;
@@ -484,7 +621,34 @@ html::-webkit-scrollbar-thumb{
                 display: flex;
                 justify-content: flex-end;
                 // background: #ddffc9;
-                // animation:  cloudHorizontalMove1 35s linear infinite;
+                animation:  cloudHorizontalMove1 45s linear infinite;
+                .cloud{
+                    //클라우드img위치
+                    position: relative;
+                    width: 100%; height: 100%; 
+                    // background: #cbffb6;
+                    .img-cloud{
+                        position: absolute; right: 0%;
+                        height: 100%;
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+        .cloud-front.cloud5{
+            position: absolute; left: 0; bottom: -5%;
+            width: 100%; height: 20%;
+            // background: #7dfdb2;
+            overflow: hidden;
+            // animation: cloudVerticalMove1 30s alternate infinite;
+            .container-cloud{
+                //container-clooud(클라우드 애니메이션 긴 요소) 위치
+                position: relative; right: 100%;
+                width: 200%; height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                // background: #ddffc9;
+                animation:  cloudHorizontalMove1 30s linear infinite;
                 .cloud{
                     //클라우드img위치
                     position: relative;
@@ -498,7 +662,34 @@ html::-webkit-scrollbar-thumb{
                 }
             }
         }
-        .cloud-front.cloud5{
+        .cloud-front.cloud6{
+            position: absolute; left: 0; bottom: -30%;
+            width: 100%; height: 40%;
+            // background: #7dfdb2;
+            overflow: hidden;
+            // animation: cloudVerticalMove1 30s alternate infinite;
+            .container-cloud{
+                //container-clooud(클라우드 애니메이션 긴 요소) 위치
+                position: relative; right: 100%;
+                width: 200%; height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                // background: #ddffc9;
+                animation:  cloudHorizontalMove1 40s linear infinite;
+                .cloud{
+                    //클라우드img위치
+                    position: relative;
+                    width: 100%; height: 100%; 
+                    // background: #cbffb6;
+                    .img-cloud{
+                        position: absolute; left: 10%;
+                        height: 100%;
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+        .cloud-front.cloud7{
             position: absolute; left: 0; bottom: -30%;
             width: 100%; height: 30%;
             // background: #7dfdb2;
@@ -511,7 +702,7 @@ html::-webkit-scrollbar-thumb{
                 display: flex;
                 justify-content: flex-end;
                 // background: #ddffc9;
-                // animation:  cloudHorizontalMove1 35s linear infinite;
+                animation:  cloudHorizontalMove1 29s linear infinite;
                 .cloud{
                     //클라우드img위치
                     position: relative;
@@ -532,31 +723,82 @@ html::-webkit-scrollbar-thumb{
     0% {
       -webkit-transform: translateY(0);
       transform: translateY(0) scale(1, 1);
-    //   -webkit-transform-origin: bottom;
     //   transform-origin: bottom;
     }
     100% {
       -webkit-transform: translateY(5px);
       transform: translateY(5px) scale(1, 0.96);
-    //   -webkit-transform-origin: bottom;
     //   transform-origin: bottom;
     }
   }
 
 @keyframes sway2 {
     0% {
-      -webkit-transform: rotateZ(0) translateX(0px) scale(1);
       transform: rotateZ(0) translateX(0px) scale(1);
-      -webkit-transform-origin: bottom;
-      transform-origin: bottom;
+    //   transform-origin: bottom;
     }
     100% {
-      -webkit-transform: rotateZ(3deg) translateX(3px) scale(0.96,0.96);
       transform: rotateZ(3deg) translateX(3px) scale(0.96,0.96);
-      -webkit-transform-origin: bottom;
-      transform-origin: bottom;
+    //   transform-origin: bottom;
     }
   }
+@keyframes zoomInLeft {
+from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(-50vw, 0, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(1vw, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+100%{
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+}
+@keyframes zoomInRight {
+from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(50vw, 0, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-1vw, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+}
+@keyframes zoomInDown {
+from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -15vw, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 5vw, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+}
 // @keyframes cloudVerticalMove1{
 //     0%{transform: translateY(0);}
 //     25%{transform: translateY(-30vw);}
@@ -743,43 +985,44 @@ html::-webkit-scrollbar-thumb{
             fieldset{
                 width: 6.2vw;
                 background: #FDC60A;
-                border-radius: 13%;
+                border-radius: 20px;
                 padding: 1vw;
                 .checkbox{
                     margin: 0 auto 0.5vw auto;
                     position: relative;
                     overflow: hidden;
                     // cursor: pointer;
-                    input[type="checkbox"]{
-                        cursor: pointer;
-                        float: left;
-                        width: 1.5vw; height: 1.5vw;
-                        //2. input의 width값과 height값을 checkbox크기로 100%늘림. 그 면적 어디든 클릭하면 input작동하도록 해주는 것임!
-                        position: absolute; width: 100%; height: 100%;
-                        opacity: 0;
-                        // z-index: 2;
-                    }
-                    label{
-                        cursor: pointer; 
-                        float: left;
-                        font-size: 1vw;
-                        padding: 0 0.7vw 0 2vw;
-                        vertical-align: top;
-                        //1. label에 가상요소 준 이유: input을 opacity 0으로 하면 input의 가상요소도 opacity 0으로 돼서 사라져 버림!   
-                         &:before{content: ''; display: block; position: absolute; left: 0; top: 0; width: 1.5vw; height: 1.5vw; background: #fff; border-radius: 15%; pointer-events: none;}
-                         &:after{content: ''; display: block; position: absolute; left: 0.25vw; top: 0.25vw; width: 1vw; height: 1vw; background: rgba(0,0,0,1); border-radius: 20%; display: none; pointer-events: none;}
-                    }
-                    input:checked ~ label:after{
-                        display: block;
-                    }
+                        input[type="checkbox"]{
+                            cursor: pointer;
+                            float: left;
+                            width: 1.5vw; height: 1.5vw;
+                            // input의 width값과 height값을 checkbox크기로 100%늘림. 그 면적 어디든 클릭하면 input작동하도록 해주는 것임!
+                            position: absolute; width: 100%; height: 100%;
+                            opacity: 0;
+                            // z-index: 2;
+                        }
+                        label{
+                            cursor: pointer; 
+                            float: left;
+                            font-size: 1vw;
+                            padding: 0 0.7vw 0 2vw;
+                            vertical-align: top;
+                            // label에 가상요소 준 이유: input을 opacity 0으로 하면 input의 가상요소도 opacity 0으로 돼서 사라져 버림!   
+                                &:before{content: ''; display: block; position: absolute; left: 0; top: 0; width: 1.5vw; height: 1.5vw; background: #fff; border-radius: 15%; pointer-events: none;}
+                                // &:after{content: ''; display: block; position: absolute; left: 0.25vw; top: 0.25vw; width: 1vw; height: 1vw; background: rgba(0,0,0,1); border-radius: 20%; display: none; pointer-events: none;}
+                            .dot{content: ''; display: block; position: absolute; left: 0.25vw; top: 0.25vw; width: 1vw; height: 1vw; background: rgba(0,0,0,1); border-radius: 20%; display: none; pointer-events: none;}
+                        }
+                        // input:checked ~ label .dot{
+                        //     display: block;
+                        // }
                     }//.checkbox
                 button{
                     cursor: pointer;
                     padding: 0.5vw;
-                    border-radius: 15%;
+                    border-radius: 20px;
                     font-size: 1vw;
                     font-weight: 500;
-                    box-shadow: 0 0.3vw 0.3vw 0.1vw rgba(0,153,222,1);
+                    box-shadow: 0 0 0.3vw 0.1vw rgba(0,153,222,1);
                     outline: none;
                     border-color: rgba(0,153,222,1);
                     background: #fff;
@@ -843,7 +1086,7 @@ html::-webkit-scrollbar-thumb{
     .container{
         width: 90vw;
         // height: 100vh;
-        height: 70vw; 
+        height: 300vw; 
         margin: 0 auto;
         padding: 10vw 0 0 0;
         background: rgb(77, 241, 151);
@@ -860,21 +1103,26 @@ html::-webkit-scrollbar-thumb{
             }
         }
         .item-list{
+            width: 100%;
             height: 30vw;
             background: rgb(164, 203, 255);
             position: relative;
+            //position relative지우고 
+            //display: flex; flex-wrap: wrap 
             .item-left{
+                //flex일 경우 relative
                 position: absolute; left: 0; top: 0;
                 width: 50%; height: 100%;
                 background: rgb(255, 211, 114);
-                overflow: hidden;
-                .item-container{
+                // overflow: hidden;
+                .container-item-left{
                     position: absolute; 
                     left: 0; top: 0;
                     // left: 50%; top: 50%;
                     // transform: translate(-50%,-50%);
                     width: 100%; height: 100%;
-                    background: #000;
+                    // background: #000;
+                    // transition: transform 0s ease;
                     iframe{
                         position: absolute; left: 0; top: 0;
                         width: 200%; height: 200%;
@@ -885,18 +1133,19 @@ html::-webkit-scrollbar-thumb{
                 }
             }
             .item-right{
-                position: absolute; 
-                right:0; top: 0;
+                //flex일 경우 relative
+                position: absolute; right:0; top: 0;
                 width: 50%; height: 100%;
                 background: rgb(255, 177, 88);
-                overflow: hidden;
-                .item-container{
+                // overflow: hidden;
+                // transition: transform 0s ease;
+                .container-item-right{
                     position: absolute; 
                     right: 0; top: 0;
                     // left: 50%; top: 50%;
                     // transform: translate(-50%,-50%);
                     width: 100%; height: 100%;
-                    background: #000;
+                    // background: #000;
                     iframe{
                         position: absolute; left: 0; top: 0;
                         width: 200%; height: 200%;

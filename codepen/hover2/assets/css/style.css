@@ -7,170 +7,8 @@
 
 body {
   height: 100vh;
-  /* Hover Effect3 */
-  /* Hover Effect4 */
-  background: #2f3238;
+  background: rgba(253, 198, 10, 0.3);
   font-family: 'JSDongkang-Regular';
-}
-
-@font-face {
-  body {
-    font-family: 'JSDongkang-Regular';
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-}
-
-body body {
-  height: 100vh;
-  background: #2f3238;
-  font-family: 'JSDongkang-Regular';
-}
-
-body .hover-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100vh;
-}
-
-body .hover-wrap figure {
-  position: relative;
-  width: 50vw;
-  margin: 10px;
-  overflow: hidden;
-}
-
-body .hover-wrap figure img {
-  width: 100%;
-  vertical-align: top;
-}
-
-body .hover-wrap figure:first-child {
-  background: radial-gradient(circle, #ffe524 0%, #da652d 100%);
-}
-
-body .hover-wrap figure:last-child {
-  background: radial-gradient(circle, #f2ffdd 0%, #065b06 100%);
-}
-
-body .hover-wrap figure:before {
-  content: "";
-  position: absolute;
-  width: 10vw;
-  height: 0.5vw;
-  background: #fff;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-body .hover-wrap figure:after {
-  content: "";
-  position: absolute;
-  width: 0.5vw;
-  height: 10vw;
-  background: #fff;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-body .hover-wrap figcaption {
-  color: #fff;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  width: 100%;
-  padding: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body .hover-wrap figcaption h3 {
-  font-size: 5vw;
-  padding-bottom: 7px;
-  margin: 0.5vw;
-}
-
-body .hover-wrap figcaption p {
-  font-size: 3vw;
-  margin: 0.5vw;
-}
-
-@media (max-width: 800px) {
-  body .hover-wrap {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-body .hover-wrap figure:first-child img {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-body .hover-wrap figure:first-child:hover img {
-  opacity: 0.6;
-}
-
-body .hover-wrap figure:first-child:before {
-  left: -20%;
-}
-
-body .hover-wrap figure:hover:first-child:before {
-  left: 50%;
-}
-
-body .hover-wrap figure:first-child:after {
-  top: -20%;
-}
-
-body .hover-wrap figure:hover:first-child:after {
-  top: 50%;
-}
-
-body .hover-wrap figure:last-child img {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-body .hover-wrap figure:last-child:hover img {
-  opacity: 0.6;
-}
-
-body .hover-wrap figure:last-child:before {
-  left: 120%;
-}
-
-body .hover-wrap figure:hover:last-child:before {
-  left: 50%;
-}
-
-body .hover-wrap figure:last-child:after {
-  top: 120%;
-}
-
-body .hover-wrap figure:hover:last-child:after {
-  top: 50%;
 }
 
 .hover-wrap {
@@ -188,8 +26,8 @@ body .hover-wrap figure:hover:last-child:after {
 
 .hover-wrap figure {
   position: relative;
-  width: 400px;
-  margin: 10px;
+  width: 50vw;
+  margin: 0.5vw;
   overflow: hidden;
 }
 
@@ -199,12 +37,41 @@ body .hover-wrap figure:hover:last-child:after {
 }
 
 .hover-wrap figure:first-child {
-  background-image: linear-gradient(45deg, #874da2, #c43a30);
+  background: radial-gradient(circle, #ffe524 0%, #da652d 100%);
 }
 
 .hover-wrap figure:last-child {
-  background-image: -webkit-gradient(linear, left top, right top, from(#6a11cb), to(#2575fc));
-  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  background: radial-gradient(circle, #f2ffdd 0%, #065b06 100%);
+}
+
+.hover-wrap figure:before {
+  content: "";
+  position: absolute;
+  width: 10vw;
+  height: 0.5vw;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.hover-wrap figure:after {
+  content: "";
+  position: absolute;
+  width: 0.5vw;
+  height: 10vw;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .hover-wrap figcaption {
@@ -220,13 +87,14 @@ body .hover-wrap figure:hover:last-child:after {
 }
 
 .hover-wrap figcaption h3 {
-  font-size: 22px;
+  font-size: 5vw;
   padding-bottom: 7px;
   margin: 0.5vw;
 }
 
 .hover-wrap figcaption p {
-  font-size: 14px;
+  font-size: 3vw;
+  margin: 0.5vw;
 }
 
 @media (max-width: 800px) {
@@ -248,6 +116,22 @@ body .hover-wrap figure:hover:last-child:after {
   opacity: 0.6;
 }
 
+.hover-wrap figure:first-child:before {
+  left: -20%;
+}
+
+.hover-wrap figure:hover:first-child:before {
+  left: 50%;
+}
+
+.hover-wrap figure:first-child:after {
+  top: -20%;
+}
+
+.hover-wrap figure:hover:first-child:after {
+  top: 50%;
+}
+
 /* Hover Effect4 */
 .hover-wrap figure:last-child img {
   -webkit-transition: all 0.3s ease;
@@ -256,5 +140,21 @@ body .hover-wrap figure:hover:last-child:after {
 
 .hover-wrap figure:last-child:hover img {
   opacity: 0.6;
+}
+
+.hover-wrap figure:last-child:before {
+  left: 120%;
+}
+
+.hover-wrap figure:hover:last-child:before {
+  left: 50%;
+}
+
+.hover-wrap figure:last-child:after {
+  top: 120%;
+}
+
+.hover-wrap figure:hover:last-child:after {
+  top: 50%;
 }
 /*# sourceMappingURL=style.css.map */
