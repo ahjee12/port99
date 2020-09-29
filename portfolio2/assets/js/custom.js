@@ -469,7 +469,7 @@ let containerItemRight1Height =  parseInt(ContainerItemRight.eq(1).outerHeight()
 let offsetBottomContainerItemLeft1 = offsetTopContainerItemLeft1 + containerItemLeft1Height;
 let offsetBottomContainerItemRight1 = offsetTopContainerItemLeft1 + containerItemRight1Height;
 //-------------------------------------------------------------------------------------------
-
+//scroll함수에서 offset값은 resize되면 자동 바뀌지만 translate으로 움직인다고 바뀌지는 않음
 $(window).scroll(function(){
   let scrollTop = $(window).scrollTop();
   // console.log(scrollTop);
