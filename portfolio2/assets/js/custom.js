@@ -414,7 +414,7 @@ $(window).scroll(function(){
   let scrollTop = $(window).scrollTop();
   //사이즈 바뀌면 offsetTop값도 자동 바뀜
   let offsetTop = pageGroup.eq(1).offset().top;
-  console.log(offsetTop);
+  // console.log(offsetTop);
   //필터 컨테이너 기준
   // let offsetBottom = filterContainer.offset().top + filterContainer.outerHeight();
   //페이지 기준
@@ -476,7 +476,7 @@ $(window).scroll(function(){
   
   
 
-  //시작점1 (위치 이상할 때 있어서 확실하게 해줌)
+  //시작점1 (위치 이상할 때 있어서 확실하게 해줌, 끝까지 왜 안 갈까)
   if(scrollTop< offsetTopContainerItemLeft2){
     //왼쪽
     ContainerItemLeft.eq(1).css({transform:'translate(0,0)'});
@@ -501,12 +501,48 @@ $(window).scroll(function(){
   //끝점1 (위치 이상할 때 있어서 확실하게 해줌)
   if(scrollTop>offsetBottomContainerItemLeft2){
 
-    //스크롤2
+    //스크롤2 
     if(scrollTop>= offsetTopContainerItemRight1+(containerItemRight1Height*2) && scrollTop<= offsetBottomContainerItemRight1+(containerItemRight1Height*2)){
       //오른쪽
-      ContainerItemRight.eq(0).css({transform: "translate(0,"+(100*((scrollTop-offsetTopContainerItemRight1)/containerItemRight1Height))+200+"%)"});
-      
+       //0~600
+       let offsetDefference2_1 = scrollTop-(offsetTopContainerItemRight1+(containerItemRight1Height*2));
+      //  console.log(offsetDefference2_1);
+       //0~1
+       let offsetDefference2_2 = (scrollTop-(offsetTopContainerItemRight1+(containerItemRight1Height*2)))/containerItemLeft2Height;
+      //  console.log(offsetDefference2_2);
+       //0~100
+       let offsetDefference2_3 = 100*offsetDefference2_2;
+      //  console.log(offsetDefference2_3);
+       //200~300
+       let offsetDefference2_4 = offsetDefference2_3+200;
+      // console.log(offsetDefference2_4);
+      ContainerItemRight.eq(0).css({transform: "translate(0,"+offsetDefference2_4+"%)"});
+      if(scrollTop == offsetBottomContainerItemRight1+(containerItemRight1Height*2)){
+        ContainerItemRight.eq(0).css({transform:'translate(0,300%)'});
+      }
     }
+     //스크롤3 바로 
+    if(scrollTop> offsetBottomContainerItemRight1+(containerItemRight1Height*2)){
+      if(scrollTop> offsetTopContainerItemRight1+(containerItemRight1Height*3) && scrollTop<= offsetBottomContainerItemRight1+(containerItemRight1Height*3)){
+        //0~600
+        let offsetDefference3_1 = scrollTop-(offsetTopContainerItemRight1+(containerItemRight1Height*3));
+        // console.log(offsetDefference3_1);
+        //0~1
+        let offsetDefference3_2 = (scrollTop-(offsetTopContainerItemRight1+(containerItemRight1Height*3)))/containerItemLeft2Height;
+        // console.log(offsetDefference3_2);
+        //0~300
+        let offsetDefference3_3 = 300*offsetDefference3_2;
+        // console.log(offsetDefference3_3);
+        //100~400
+        let offsetDefference3_4 = offsetDefference3_3+100;
+        // console.log(offsetDefference3_4);
+        ContainerItemLeft.eq(0).css({transform: "translate(0,"+offsetDefference3_4+"%)"});
+      }
+      if(scrollTop> offsetBottomContainerItemRight1+(containerItemRight1Height*3)){
+        ContainerItemLeft.eq(0).css({transform: "translate(0,"+400+"%)"});
+      }
+    }
+
     if(scrollTop<offsetTopContainerItemRight1 +(containerItemRight1Height*2)){
       //왼쪽
       ContainerItemLeft.eq(1).css({transform:'translate(0,100%)'});
