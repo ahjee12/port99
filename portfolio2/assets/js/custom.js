@@ -801,7 +801,9 @@ dotM.click(function(e){
 })
 
 //타이틀 스크롤
+//offset기준
 const clipPath = $('.mobile-style .title-main svg');
+//move 요소
 const clipPathWaveShape = $('.mobile-style .title-main svg .clip');
 $(window).scroll(function(){
   let scrollTop = $(window).scrollTop();
@@ -827,3 +829,68 @@ $(window).scroll(function(){
 })
 
 /*------------- contact----------------*/
+//타이틀 스크롤
+//offset기준
+const titleContact = $('.contact-style .title-main svg');
+//move 요소
+const maskCloud = $('.contact-style .title-main svg .cloud1');
+const txtThank = $('.contact-style .title-main .text-thankyou');
+const txtContact = $('.contact-style .title-main .text-contact');
+
+//구름 위로
+$(window).scroll(function(){
+  let scrollTop = $(window).scrollTop();
+  let heightWindow  = $(window).height();
+  let offsetTop = titleContact.offset().top;
+  //주의 offsetTop 위쪽으로 올릴려면 윈도우 높이를 '빼줘야' 함
+  let newOffsetTop = offsetTop - (heightWindow/1.5);
+  // let newOffsetTop2 = offsetTop - (heightWindow/3);
+  let heighttitleContact = titleContact.outerHeight();
+  let newOffsetBottom = newOffsetTop + heighttitleContact;
+  // let newOffsetBottom2 = newOffsetTop2 + heighttitleContact;
+  //------------------------------------------------------------
+  if(scrollTop < newOffsetTop){
+    maskCloud.css({transform: "translateY(0)"});
+  }
+  if(scrollTop >= newOffsetTop && scrollTop <= newOffsetBottom){
+    //0~1
+    let parallax1_1 = (scrollTop-newOffsetTop)/heighttitleContact;
+    //0~50
+    let parallax1_2 = 50*parallax1_1;
+    maskCloud.css({transform: "translateY("+-parallax1_2+"%)"});
+  }
+  if(scrollTop > newOffsetBottom){
+    maskCloud.css({transform: "translateY(-50%)"});
+  }
+})
+
+//텍스트 아래로
+$(window).scroll(function(){
+  let scrollTop = $(window).scrollTop();
+  let heightWindow  = $(window).height();
+  let offsetTop = titleContact.offset().top;
+  //주의 offsetTop 위쪽으로 올릴려면 윈도우 높이를 '빼줘야' 함
+  // let newOffsetTop = offsetTop - (heightWindow/1.5);
+  //구름보다 늦게 움직이도록 offsetTop값을 조금만 위로 옮김
+  let newOffsetTop2 = offsetTop - (heightWindow/4);
+  let heighttitleContact = titleContact.outerHeight();
+  // let newOffsetBottom = newOffsetTop + heighttitleContact;
+  //bottom값을 줄여서(height값 줄이기) 빨리 정해진 위치로 가도록 함
+  let newOffsetBottom2 = newOffsetTop2 + heighttitleContact*0.8;
+  //------------------------------------------------------------
+  if(scrollTop < newOffsetTop2){
+    txtThank.css({transform: "translateY(0)"});
+    txtContact.css({transform: "translateY(0)"});
+  }
+  if(scrollTop >= newOffsetTop2 && scrollTop <= newOffsetBottom2){
+    let parallax2_1 = (scrollTop-newOffsetTop2)/(heighttitleContact*0.8);
+    //0~70
+    let parallax2_2 = 87*parallax2_1;
+    txtThank.css({transform: "translateY("+parallax2_2+"%)"});
+    txtContact.css({transform: "translateY("+parallax2_2+"%)"});
+  }
+  if(scrollTop > newOffsetBottom2){
+    txtThank.css({transform: "translateY(87%)"});
+    txtContact.css({transform: "translateY(87%)"});
+  }
+})

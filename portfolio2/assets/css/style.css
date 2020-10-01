@@ -817,6 +817,13 @@ html::-webkit-scrollbar-button:single-button {
   opacity: 0.9;
 }
 
+.main .container-cloud-front .cloud-front {
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+}
+
 .main .container-cloud-front .cloud-front.cloud4 {
   position: absolute;
   left: 0;
@@ -2631,6 +2638,10 @@ html::-webkit-scrollbar-button:single-button {
 .mobile-style .container .title .title-main svg .clip {
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
+  -webkit-transition: -webkit-transform 0.05s ease;
+  transition: -webkit-transform 0.05s ease;
+  transition: transform 0.05s ease;
+  transition: transform 0.05s ease, -webkit-transform 0.05s ease;
 }
 
 .mobile-style .container .item-list-mobile {
@@ -3072,7 +3083,7 @@ html::-webkit-scrollbar-button:single-button {
   }
 }
 
-/*콘텐츠 - 모바일*/
+/*콘텐츠 - contact*/
 .contact-style {
   margin: 0 0 2vw 0;
 }
@@ -3080,23 +3091,17 @@ html::-webkit-scrollbar-button:single-button {
 .contact-style .container {
   width: 100%;
   height: 300vw;
-  padding: 30vw 0 0 0;
+  padding: 20vw 0 0 0;
   background: #f0a3ff;
 }
 
-.contact-style .container .scroll-contact {
+.contact-style .container .title .title-main {
   width: 100%;
-  height: 200vw;
-  background: #116111;
-}
-
-.contact-style .container .scroll-contact .scroll-container-contact {
-  width: 100%;
-  height: 100%;
+  height: 80vw;
   background: #ff932f;
 }
 
-.contact-style .container .scroll-contact .scroll-container-contact svg {
+.contact-style .container .title .title-main svg {
   font-size: 5vw;
   font-family: 'ghanachoco';
 }

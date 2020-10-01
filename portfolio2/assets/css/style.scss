@@ -608,6 +608,7 @@ html::-webkit-scrollbar-button:single-button {
         }
     }
     .container-cloud-front{
+        .cloud-front{transition: transform 0.1s ease;}
         .cloud-front.cloud4{
             position: absolute; left: 0; bottom: -15%;
             width: 100%; height: 60%;
@@ -1797,6 +1798,7 @@ from {
                     .clip{
                         //animation: clipWave 10s infinite ease;
                         transform: scaleY(0);
+                        transition: transform 0.05s ease;
                     }
                 }
             }
@@ -2037,21 +2039,18 @@ from {
     100%{transform: translateY(-100%);}
 }
 
-/*콘텐츠 - 모바일*/
+/*콘텐츠 - contact*/
 .contact-style{
     margin: 0 0 2vw 0;
     .container{
         width: 100%;
         height: 300vw;
-        padding: 30vw 0 0 0;
+        padding: 20vw 0 0 0;
         background: rgb(240, 163, 255);
-        .scroll-contact{
-            width: 100%;
-            height: 200vw;
-            background: rgb(17, 97, 17);
-            .scroll-container-contact{
+        .title{
+            .title-main{
                 width: 100%; 
-                height: 100%;
+                height: 80vw;
                 background: rgb(255, 147, 47);
                 svg{
                     font-size: 5vw;
