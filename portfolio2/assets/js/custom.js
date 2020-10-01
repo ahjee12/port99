@@ -247,6 +247,51 @@ buttonsInTheLand.on('click',function(e){
   let offsetTop = pageGroup.eq(index).offset().top;
   $('html, body').animate({scrollTop: offsetTop},1200,'swing')
 })
+
+//구름 
+const cloudFront = $('.cloud-front');
+const cloudFront1 = $('.cloud-front').eq(0);
+const cloudFront2 = $('.cloud-front').eq(1);
+const cloudFront3 = $('.cloud-front').eq(2);
+const cloudFront4 = $('.cloud-front').eq(3);
+$(window).scroll(function(){
+  let scrollTop  = $(window).scrollTop();
+  let heightWindow = $(window).height();
+  // let scrollTop2  = $(window).scrollTop() ;
+  cloudFront.each(function(){
+    let index = $(this).index();
+    let offsetTop = $(this).offset().top;
+    let parallax = 0;
+    //규칙 없을 때
+    switch(index){
+      //처음에 마이너스 -> 스크롤탑하고 임의 오프셋탑하고 만날 때 0 -> 스크롤탑이 더 커지면서 플러스
+      case 0:
+        // parallax = (scrollTop - (offsetTop - (heightWindow)))*0.3;
+        // $(this).css({transform: "translate(0,"+-parallax+"px)"});
+        parallax = (scrollTop - (offsetTop - (heightWindow)))*0.02;
+        $(this).css({transform: "translate(0,"+-parallax+"%)"});
+        break;
+      case 1:
+        // parallax = (scrollTop - (offsetTop - (heightWindow)))*0.2;
+        // $(this).css({transform: "translate(0,"+-parallax+"px)"});
+        parallax = (scrollTop - (offsetTop - (heightWindow)))*0.05;
+        $(this).css({transform: "translate(0,"+-parallax+"%)"});
+        break;
+      case 2:
+        // parallax = (scrollTop - (offsetTop - (heightWindow)))*0.6;
+        // $(this).css({transform: "translate(0,"+-parallax+"px)"});
+        parallax = (scrollTop - (offsetTop - (heightWindow)))*0.08;
+        $(this).css({transform: "translate(0,"+-parallax+"%)"});
+        break;
+      case 3:
+        // parallax = (scrollTop - (offsetTop - (heightWindow)))*0.5;
+        // $(this).css({transform: "translate(0,"+-parallax+"px)"});
+        parallax = (scrollTop - (offsetTop - (heightWindow)))*0.06;
+        $(this).css({transform: "translate(0,"+-parallax+"%)"});
+        break;
+    }
+  })
+})
 /* ------------메뉴------------ */
 const dragAreaInTheMenu = $('.drag-menu');
 
@@ -432,6 +477,7 @@ $(window).scroll(function(){
 const itemListHover = $('.hover-style .item-list');
 const ContainerItemLeft = $('.hover-style .container-item-left');
 const ContainerItemRight = $('.hover-style .container-item-right');
+//스크롤 플러그인 작동 안 됨..;
 // pageGroupNumber3Scroll()
 // function pageGroupNumber3Scroll(){
 //   let offsetTop = pageGroup.eq(2).find('.container').offset().top;
@@ -443,38 +489,36 @@ const ContainerItemRight = $('.hover-style .container-item-right');
 //   ContainerItemRIght.eq(0).attr('data-'+parseInt(offsetTop),"transform: translate(100%,0)");
 // }
 
-// pathStripes.attr('data-'+0,"stroke-dashoffset: "+12599)
-// pathStripes.attr('data-'+OffsetTopItemListSite,"stroke-dashoffset: "+12599)
-// pathStripes.attr('data-'+OffsetBottomItemListSite,"stroke-dashoffset: "+0)
-//---------------------------------------------------------------------------------
-let offsetTopContainerItemLeft2 = parseInt(ContainerItemLeft.eq(2).offset().top);
-let offsetTopContainerItemRight2 = parseInt(ContainerItemRight.eq(2).offset().top);
-// console.log(offsetTopContainerItemLeft2);
+// //------------------------------------------------------------------------------------------
+// let offsetTopContainerItemLeft2 = parseInt(ContainerItemLeft.eq(2).offset().top);
+// let offsetTopContainerItemRight2 = parseInt(ContainerItemRight.eq(2).offset().top);
+// // console.log(offsetTopContainerItemLeft2);
 
-let containerItemLeft2Height =  parseInt(ContainerItemLeft.eq(2).outerHeight());
-let containerItemRight2Height =  parseInt(ContainerItemRight.eq(2).outerHeight());
+// let heightContainerItemLeft2 =  parseInt(ContainerItemLeft.eq(2).outerHeight());
+// let heightContainerItemRight2 =  parseInt(ContainerItemRight.eq(2).outerHeight());
 
-let offsetBottomContainerItemLeft2 = offsetTopContainerItemLeft2 + containerItemLeft2Height;
-let offsetBottomContainerItemRight2 = offsetTopContainerItemLeft2 + containerItemRight2Height;
-// console.log(offsetBottomContainerItemLeft2);
-// console.log((scrollTop-offsetTopContainerItemLeft2)/offsetBottomContainerItemLeft2);
-
-//---------------------------------------------------------------------------------
-let offsetTopContainerItemLeft1 = parseInt(ContainerItemLeft.eq(1).offset().top);
-let offsetTopContainerItemRight1 = parseInt(ContainerItemRight.eq(1).offset().top);
-
-let containerItemLeft1Height =  parseInt(ContainerItemLeft.eq(1).outerHeight());
-let containerItemRight1Height =  parseInt(ContainerItemRight.eq(1).outerHeight());
-
-let offsetBottomContainerItemLeft1 = offsetTopContainerItemLeft1 + containerItemLeft1Height;
-let offsetBottomContainerItemRight1 = offsetTopContainerItemLeft1 + containerItemRight1Height;
-//-------------------------------------------------------------------------------------------
+// let offsetBottomContainerItemLeft2 = offsetTopContainerItemLeft2 + heightContainerItemLeft2;
+// let offsetBottomContainerItemRight2 = offsetTopContainerItemLeft2 + heightContainerItemRight2;
+// // console.log(offsetBottomContainerItemLeft2);
+// // console.log((scrollTop-offsetTopContainerItemLeft2)/offsetBottomContainerItemLeft2);
+// //-------------------------------------------------------------------------------------------
 //scroll함수에서 offset값은 resize되면 자동 바뀌지만 translate으로 움직인다고 바뀌지는 않음
 $(window).scroll(function(){
   let scrollTop = $(window).scrollTop();
   // console.log(scrollTop);
-  
-  
+  //------------------------------------------------------------------------------------------
+  let offsetTopContainerItemLeft2 = parseInt(ContainerItemLeft.eq(2).offset().top);
+  let offsetTopContainerItemRight2 = parseInt(ContainerItemRight.eq(2).offset().top);
+  // console.log(offsetTopContainerItemLeft2);
+
+  let heightContainerItemLeft2 =  parseInt(ContainerItemLeft.eq(2).outerHeight());
+  let heightContainerItemRight2 =  parseInt(ContainerItemRight.eq(2).outerHeight());
+
+  let offsetBottomContainerItemLeft2 = offsetTopContainerItemLeft2 + heightContainerItemLeft2;
+  let offsetBottomContainerItemRight2 = offsetTopContainerItemLeft2 + heightContainerItemRight2;
+  // console.log(offsetBottomContainerItemLeft2);
+  // console.log((scrollTop-offsetTopContainerItemLeft2)/offsetBottomContainerItemLeft2);
+  //-------------------------------------------------------------------------------------------
 
   //시작점1 (위치 이상할 때 있어서 확실하게 해줌, 끝까지 왜 안 갈까)
   if(scrollTop< offsetTopContainerItemLeft2){
@@ -488,27 +532,24 @@ $(window).scroll(function(){
   //스크롤1 
   if(scrollTop>= offsetTopContainerItemLeft2 && scrollTop<= offsetBottomContainerItemLeft2){
     //왼쪽
-    ContainerItemLeft.eq(1).css({transform: "translate(0,"+100*((scrollTop-offsetTopContainerItemLeft2)/containerItemLeft2Height)+"%)"});
-    ContainerItemLeft.eq(0).css({transform: "translate(0,"+100*((scrollTop-offsetTopContainerItemLeft2)/containerItemLeft2Height)+"%)"});
+    ContainerItemLeft.eq(1).css({transform: "translate(0,"+100*((scrollTop-offsetTopContainerItemLeft2)/heightContainerItemLeft2)+"%)"});
+    ContainerItemLeft.eq(0).css({transform: "translate(0,"+100*((scrollTop-offsetTopContainerItemLeft2)/heightContainerItemLeft2)+"%)"});
     //오른쪽
-    ContainerItemRight.eq(1).css({transform: "translate(0,"+200*((scrollTop-offsetTopContainerItemLeft2)/containerItemLeft2Height)+"%)"});
-    ContainerItemRight.eq(0).css({transform: "translate(0,"+200*((scrollTop-offsetTopContainerItemLeft2)/containerItemLeft2Height)+"%)"});
+    ContainerItemRight.eq(1).css({transform: "translate(0,"+200*((scrollTop-offsetTopContainerItemLeft2)/heightContainerItemLeft2)+"%)"});
+    ContainerItemRight.eq(0).css({transform: "translate(0,"+200*((scrollTop-offsetTopContainerItemLeft2)/heightContainerItemLeft2)+"%)"});
 
-    // offsetTopContainerItemRight1 += (2*((scrollTop-offsetTopContainerItemLeft2)/containerItemLeft2Height))*containerItemLeft2Height ;
-    // console.log(offsetTopContainerItemRight1);
-    // offsetBottomContainerItemRight1 += (2*((scrollTop-offsetTopContainerItemLeft2)/containerItemLeft2Height))*containerItemLeft2Height ;
   }
-  //끝점1 (위치 이상할 때 있어서 확실하게 해줌)
+  //끝점1 (위치 이상할 때 있어서 확실하게 해줌, 끝까지 왜 안 갈까 ..)
   if(scrollTop>offsetBottomContainerItemLeft2){
 
     //스크롤2 
-    if(scrollTop>= offsetTopContainerItemRight1+(containerItemRight1Height*2) && scrollTop<= offsetBottomContainerItemRight1+(containerItemRight1Height*2)){
+    if(scrollTop>= offsetTopContainerItemRight2+(heightContainerItemRight2*2) && scrollTop<= offsetBottomContainerItemRight2+(heightContainerItemRight2*2)){
       //오른쪽
        //0~600
-       let offsetDefference2_1 = scrollTop-(offsetTopContainerItemRight1+(containerItemRight1Height*2));
+       let offsetDefference2_1 = scrollTop-(offsetTopContainerItemRight2+(heightContainerItemRight2*2));
       //  console.log(offsetDefference2_1);
        //0~1
-       let offsetDefference2_2 = (scrollTop-(offsetTopContainerItemRight1+(containerItemRight1Height*2)))/containerItemLeft2Height;
+       let offsetDefference2_2 =  offsetDefference2_1/heightContainerItemLeft2;
       //  console.log(offsetDefference2_2);
        //0~100
        let offsetDefference2_3 = 100*offsetDefference2_2;
@@ -517,18 +558,16 @@ $(window).scroll(function(){
        let offsetDefference2_4 = offsetDefference2_3+200;
       // console.log(offsetDefference2_4);
       ContainerItemRight.eq(0).css({transform: "translate(0,"+offsetDefference2_4+"%)"});
-      if(scrollTop == offsetBottomContainerItemRight1+(containerItemRight1Height*2)){
-        ContainerItemRight.eq(0).css({transform:'translate(0,300%)'});
-      }
     }
      //스크롤3 바로 
-    if(scrollTop> offsetBottomContainerItemRight1+(containerItemRight1Height*2)){
-      if(scrollTop> offsetTopContainerItemRight1+(containerItemRight1Height*3) && scrollTop<= offsetBottomContainerItemRight1+(containerItemRight1Height*3)){
+    if(scrollTop> offsetBottomContainerItemRight2+(heightContainerItemRight2*2)){
+      ContainerItemRight.eq(0).css({transform:'translate(0,300%)'});
+      if(scrollTop> offsetTopContainerItemRight2+(heightContainerItemRight2*3) && scrollTop<= offsetBottomContainerItemRight2+(heightContainerItemRight2*3)){
         //0~600
-        let offsetDefference3_1 = scrollTop-(offsetTopContainerItemRight1+(containerItemRight1Height*3));
+        let offsetDefference3_1 = scrollTop-(offsetTopContainerItemRight2+(heightContainerItemRight2*3));
         // console.log(offsetDefference3_1);
         //0~1
-        let offsetDefference3_2 = (scrollTop-(offsetTopContainerItemRight1+(containerItemRight1Height*3)))/containerItemLeft2Height;
+        let offsetDefference3_2 = offsetDefference3_1/heightContainerItemLeft2;
         // console.log(offsetDefference3_2);
         //0~300
         let offsetDefference3_3 = 300*offsetDefference3_2;
@@ -538,12 +577,12 @@ $(window).scroll(function(){
         // console.log(offsetDefference3_4);
         ContainerItemLeft.eq(0).css({transform: "translate(0,"+offsetDefference3_4+"%)"});
       }
-      if(scrollTop> offsetBottomContainerItemRight1+(containerItemRight1Height*3)){
+      if(scrollTop> offsetBottomContainerItemRight2+(heightContainerItemRight2*3)){
         ContainerItemLeft.eq(0).css({transform: "translate(0,"+400+"%)"});
       }
     }
 
-    if(scrollTop<offsetTopContainerItemRight1 +(containerItemRight1Height*2)){
+    if(scrollTop<offsetTopContainerItemRight2 +(heightContainerItemRight2*2)){
       //왼쪽
       ContainerItemLeft.eq(1).css({transform:'translate(0,100%)'});
       ContainerItemLeft.eq(0).css({transform:'translate(0,100%)'});
@@ -761,4 +800,30 @@ dotM.click(function(e){
   // $(this).addClass('dot-active').siblings('div').removeClass('dot-active');
 })
 
-/*------------- 모바일----------------*/
+//타이틀 스크롤
+const clipPath = $('.mobile-style .title-main svg');
+const clipPathWaveShape = $('.mobile-style .title-main svg .clip');
+$(window).scroll(function(){
+  let scrollTop = $(window).scrollTop();
+  let heightWindow  = $(window).height();
+  let offsetTop = clipPath.offset().top;
+  //주의 offsetTop 위쪽으로 올릴려면 윈도우 높이를 '빼줘야' 함
+  let newOffsetTop = offsetTop - (heightWindow/1.5);
+  let heightClipPath = clipPath.outerHeight();
+  let newOffsetBottom = newOffsetTop + heightClipPath;
+  if(scrollTop < newOffsetTop){
+    clipPathWaveShape.css({transform: "scaleY(0)"});
+  }
+  if(scrollTop >= newOffsetTop && scrollTop <= newOffsetBottom){
+    //0~1
+    let parallax1_1 = (scrollTop-newOffsetTop)/heightClipPath;
+    //0~1.5
+    let parallax1_2 = 1.5*parallax1_1;
+    clipPathWaveShape.css({transform: "scaleY("+parallax1_2+")"});
+  }
+  if(scrollTop > newOffsetBottom){
+    clipPathWaveShape.css({transform: "scaleY(1.5)"});
+  }
+})
+
+/*------------- contact----------------*/

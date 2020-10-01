@@ -1213,7 +1213,6 @@ html::-webkit-scrollbar-button:single-button {
   height: 80vw;
   margin: 0 auto;
   padding: 10vw 0 0 0;
-  background: #ffa3a3;
 }
 
 .menu-style .container .title {
@@ -1441,7 +1440,7 @@ html::-webkit-scrollbar-button:single-button {
 .animation-style .container .controls fieldset {
   width: 6.2vw;
   background: #FDC60A;
-  border-radius: 20px;
+  border-radius: 15%;
   padding: 1vw;
 }
 
@@ -1500,11 +1499,13 @@ html::-webkit-scrollbar-button:single-button {
 .animation-style .container .controls fieldset button {
   cursor: pointer;
   padding: 0.5vw;
-  border-radius: 20px;
+  border-radius: 15%;
   font-size: 1vw;
   font-weight: 500;
   -webkit-box-shadow: 0 0 0.3vw 0.1vw #0099de;
           box-shadow: 0 0 0.3vw 0.1vw #0099de;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: none;
   border-color: #0099de;
   background: #fff;
@@ -1564,7 +1565,7 @@ html::-webkit-scrollbar-button:single-button {
 
 .hover-style .container {
   width: 90vw;
-  height: 300vw;
+  height: 190vw;
   margin: 0 auto;
   padding: 10vw 0 0 0;
   background: #4df197;
@@ -2610,7 +2611,7 @@ html::-webkit-scrollbar-button:single-button {
 .mobile-style .container {
   width: 100%;
   height: 130vw;
-  padding: 10vw 0 0 0;
+  padding: 20vw 0 0 0;
   background: #edffd6;
   overflow: hidden;
 }
@@ -2618,7 +2619,7 @@ html::-webkit-scrollbar-button:single-button {
 .mobile-style .container .title .title-main {
   width: 100vw;
   height: 50vw;
-  background: #0c1533;
+  background: black;
   overflow: hidden;
 }
 
@@ -3079,7 +3080,7 @@ html::-webkit-scrollbar-button:single-button {
 .contact-style .container {
   width: 100%;
   height: 300vw;
-  padding: 10vw 0 0 0;
+  padding: 30vw 0 0 0;
   background: #f0a3ff;
 }
 
