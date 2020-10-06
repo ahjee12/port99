@@ -68,7 +68,18 @@
                 </div>
                 <!--//header-nav-->
                 <div class="header-right-nav">
-                    <a href=""><i class="fab fa-github"></i></a>
+                    <div class="burger-menu">
+                        <a class="burger" href="">
+                            <span class="line top-burger"></span>
+                            <span class="line middle-burger"></span>
+                            <span class="line bottom-burger"></span>
+                        </a>
+                        <a href="" class="burger-list"><i class="fab fa-github"></i></a>
+                        <a href="" class="burger-list"><i class="fab fa-figma"></i></a>
+                        <a href="" class="burger-list"><i class="fas fa-book"></i></a>
+                    </div>
+                    
+    
                 </div>
                
             </div>
@@ -299,8 +310,10 @@
                     <div class="container-button">
                         <a href="#" class="button button1">
                             <div class="circle"></div>
+                            <!--cy+cx = 109-->
                             <svg class="circle-svg" viewBox="0 0 109 109" xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                                 <g>
+                                  <!--cy, cx 는 각각 strokewidth + r + 0.5(적당히 정함)-->
                                   <circle class="circle-back" r="50" cy="54.5" cx="54.5" stroke-width="4"/>
                                   <circle class="circle-middle" r="50" cy="54.5" cx="54.5" stroke-width="4"/>
                                   <circle class="circle-front" r="50" cy="54.5" cx="54.5" stroke-width="4"/>
@@ -1359,6 +1372,7 @@
                                 </mask>
                                 
                                 <!-- <image class="sky" xlink:href="https://assets.codepen.io/721952/sky.jpg"  width="1200" height="590" /> -->
+                                <rect fill="#fff" width="100%" width="1200" height="800"/>
                                 <image class="mountBg" xlink:href="https://tistory2.daumcdn.net/tistory/3810122/skin/images/mountain_last4.png" width="1200" height="800"/>    
                                 <image class="mountMg" xlink:href="https://tistory1.daumcdn.net/tistory/3810122/skin/images/mountain_middle4.png" width="1200" height="800"/>    
                                 <image class="cloud2" xlink:href="https://tistory2.daumcdn.net/tistory/3810122/skin/images/cloud_middle.png" width="1200" height="800"/>    
@@ -1376,6 +1390,32 @@
                               </svg>
                         </div>
                     </div>
+                    <div class="envelope-wrap">
+                        <div class="envelope open">
+                            <!-- <div class="back-pocket"></div> -->
+                            <div class="front-flap"></div>
+                            <div class="back-flap"></div>
+                            <div class="front-pocket"></div>
+                            <div class="paper">
+                                <div class="line-top"></div>
+                                <div class="line-right"></div>
+                                <div class="line-bottom"></div>
+                                <div class="line-left"></div>
+                                <form class="email-form" method="post" action="https://script.google.com/macros/s/AKfycbxu3d9_gI5xVwGQT2MxZ1ID_Orue5KlDw_XwAoF6A/exec">
+                                    <input type="submit" value="Send" id="send" >
+                                    <fieldset class="form-elements">
+                                        <input type="text" name="name" id="name" placeholder="Name" required> 
+                                        <input type="text" name="email" id="email" placeholder="Email Address" required>
+                                        <textarea id="message" name="message" placeholder="Message(send누르면 정말 보내져요:D)" cols=20 rows=4 required></textarea>
+                                    </fieldset>
+                                    <div class="thankyou-message" style="display:none;">
+                                        <h3>연락 감사합니다</h3>
+                                        <p>Thanks for contacting me. I'll get back to you soon!</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <!--//contact-style-->
@@ -1389,11 +1429,10 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/swiper.min.js"></script>
-    <script src="assets/js/skrollr.min.js"></script>
     <script src="assets/js/tornis.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/form-submission-handler.js"></script>
 
     <script>
 

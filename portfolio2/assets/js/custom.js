@@ -1,7 +1,7 @@
-var s = skrollr.init();
-skrollr.init({
-  smoothScrolling: false
-});
+// var s = skrollr.init();
+// skrollr.init({
+//   smoothScrolling: false
+// });
 infoScrollTop = $(".info strong");
 $(window).scroll(function () {
   const scrollTop = $(window).scrollTop();
@@ -142,7 +142,7 @@ const buttonsInTheLand = $(".container-button .button");
 
 mainStart();
 function mainStart(){
-    var tl = new TimelineMax();
+    let tl = new TimelineMax();
 
     //transform translate(0.9,0)/ x: 0.9, y: 0-> x: 1, y: 1 적용하려면 scss animation 따로 클래스 만들어서 빼야 함..;
     tl.to(land, {duration: 2, scale: 1, alpha: 1, ease: Elastic.easeOut.config(1, 0.9), delay: 0.15})
@@ -436,7 +436,8 @@ function ResetAllBoxs(){
 }
 
 //필터 폼 
-gsap.registerPlugin(ScrollTrigger);
+//gsap 플러그인 ScrollTrigger 작동 안 함. 멤버만 사용할 수 있는 건지 모르겠음
+// gsap.registerPlugin(ScrollTrigger);
 //2번째 page-group에 왔을 때 
 // const pageGroup = $('#contents .page-group'); 헤더 네비에서 정의
 // const pageGroupNumber2 = $('.animation-style');
@@ -894,3 +895,57 @@ $(window).scroll(function(){
     txtContact.css({transform: "translateY(87%)"});
   }
 })
+
+//send버튼 클릭했을 때 
+const envelope = $('.contact-style .envelope-wrap .envelope');
+
+const frontFlap = $('.contact-style .envelope-wrap .front-flap');
+const backFlap = $('.contact-style .envelope-wrap .back-flap');
+const frontPocket = $('.contact-style .envelope-wrap .front-pocket');
+const paper = $('.contact-style .envelope-wrap .paper');
+
+
+const formContact = $('.contact-style .envelope-wrap .email-form');
+const inputTextEnvelope  = $('.email-form input[type="text"]');
+const textareaEnvelope  = $('.email-form textarea');
+
+
+formContact.submit(function(e){
+  e.preventDefault();
+  inputTextEnvelope.addClass('sending');
+  textareaEnvelope.addClass('sending');
+
+  let tl = new TimelineMax();
+
+  tl.to(paper, {duration: 1, y: '-110%' ,ease: "power4.out", delay: 0.5})
+    .to(frontPocket, {duration: 0.1, zIndex: 4 , delay: 0})
+    .to(paper, {duration: 1, y: 0 ,ease: "power4.out", delay: -0.1})
+    .to(paper, {duration: 0.1, zIndex: 1 , delay: 0}) //아니면 paper를 1로, pocket을 2, back front flap을 3으로 
+    .to(frontPocket, {duration: 0.1, zIndex: 2 , delay: -0.1})
+    .to(frontFlap, {duration: 0.1, zIndex: 3 , delay: -0.1})
+    .to(backFlap, {duration: 0.1, zIndex: 3 , delay: -0.1})
+    .to(frontFlap, {duration: 1, rotationZ: "-180deg" ,ease: "power4.out", delay: 0})
+    .to(backFlap, {duration: 1, rotationZ: "-180deg" ,ease: "power4.out", delay: -1})
+    .to(envelope, {duration: 1.5, left: "120%" ,ease: "power4.out", delay: 0})
+    
+    setTimeout(function(){
+      inputTextEnvelope.removeClass('sending');
+      textareaEnvelope.removeClass('sending');
+      inputTextEnvelope.val("");
+      textareaEnvelope.val("");
+      tl.reverse();
+    }, 5000)
+
+})
+
+// function rewindSubmitAnimation(){
+//   inputTextEnvelope.removeClass('sending');
+//   textareaEnvelope.removeClass('sending');
+//   inputTextEnvelope.val("");
+//   textareaEnvelope.val("");
+
+//   // let tl = new TimelineMax();
+//   // tl.to(envelope, {duration: 1.5, left: "120%" ,ease: "power4.out", delay: 0})
+
+//   tl.reverse();
+// }

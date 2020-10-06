@@ -55,7 +55,7 @@ html::-webkit-scrollbar-button:single-button {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        position: relative;
+        // position: relative;
         h1{
             flex-basis: 17.5%;
             margin: 0.45vw 0 0 0;
@@ -139,16 +139,95 @@ html::-webkit-scrollbar-button:single-button {
             }//ul
         }
         .header-right-nav{
-            flex-basis: 17.5%;
+            flex-basis: 17.5%; 
+            //높이 100%는 왜 안 될까!!!
+            height: 2.5vw;
             text-align: right;
             margin: 0.2vw 0 0 0;
-            .fa-github{
-                // position: absolute; right: 20px; top: 19px;
-                font-size: 2vw;
-                color: #FDC60A;
+            // .fa-github{
+            //     font-size: 2vw;
+            //     color: #FDC60A;
+            // }
+            position: relative;
+            .burger-menu{
+                width: 2.5vw; height: 15vw;
+                float: right;
+                background: cadetblue;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: absolute; right: 0; top: 0%;
+                .burger{
+                    width: 2.5vw; height: 2.5vw;
+                    background: #aaa;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .line{
+                        display: block;
+                        width: 100%; height: 0.4vw;
+                        background: #FDC60A;
+                        border-radius: 5px;
+                    }
+                    &.active{
+                        .line.top-burger{
+                            transform-origin: right center;
+                            animation: 0.7s topBurger cubic-bezier(0.87,0.07,0.17,0.93) forwards;
+                        }
+                        .line.middle-burger{
+                            transform-origin: center center;
+                            box-sizing: border-box;
+                            animation: 0.7s middleBurger cubic-bezier(0.87,0.07,0.17,0.93) forwards;
+                        }
+                        .line.bottom-burger{
+                            transform-origin: right center;
+                            animation: 0.7s bottomBurger cubic-bezier(0.87,0.07,0.17,0.93) forwards;
+                            
+                        }
+                    }
+                }
+                .burger-list{
+                    width: 2.5vw; height: 2.5vw;
+                    background: rgb(89, 134, 17);
+                    
+                }
             }
+            
+            
         }
         
+    }
+}
+
+@keyframes topBurger{
+    0%{transform: translate(0,0) rotate(0);}
+    //위로 살짝 튕기기
+    20%{transform: translate(0,0) rotate(15deg);}
+    //45도보다 더 아래로 튕기기/ 튕기면서 x는 왼쪽으로 조금 이동
+    70%{transform: translate(-10%,0) rotate(-60deg);}
+    //45도 정위치
+    70%{transform: translate(-10%, 5%) rotate(-45deg);}
+}
+@keyframes bottomBurger{
+    0%{transform: translate(0,0) rotate(0);}
+     //아래로로 살짝 튕기기
+    20%{transform: translate(0,0) rotate(-15deg);}
+    //45도보다 더 위로 튕기기/ 튕기면서 x는 왼쪽으로 조금 이동
+    70%{transform: translate(-10%,0) rotate(60deg);}
+    //45도 정위치
+    70%{transform: translate(-10%, 5%) rotate(45deg);}
+   }
+@keyframes middleBurger{
+    0%{transform: translate(0,0) rotate(0);}
+    70%{
+        transform: translate(-10%, 0);
+        width: 0.2vw; height: 0.2vw; 
+        border-radius: 50%; background: transparent; border: 0.2vw solid #FDC60A;
+    } 
+    100%{
+        transform: translate(-10%, 0); 
+        width: 100%; height: 100%; 
+        border-radius: 50%; background: transparent; border: 0.2vw solid #FDC60A;
     }
 }
 .info {
@@ -332,21 +411,19 @@ html::-webkit-scrollbar-button:single-button {
                     .circle-svg{
                         position: absolute; left: 0%; top: 0%;
                         opacity: 1;
-                        //circle-svg의 sibling circle에 배경 넣어서 circle-back은 없어도 됌..
+                        //circle-svg의 sibling인 circle에 배경 넣어서 circle-back은 없어도 됌..
                         .circle-back{
                             fill: transparent;
                             // fill: rgba(253,198,10,0.5);
                             // fill: rgba(255,255,255,0.7);
                             // fill: rgba(0, 159, 216, 0.1);
-                            stroke: #000;
+                            // stroke: #000;
                             transition: all 0.5s ease;
-
                         }
                         .circle-middle{
                             fill: transparent;
                             stroke: rgba(253,198,10,1);
                             transition: all 0.5s ease;
-
                         }
                         .circle-front{
                             fill: transparent;
@@ -354,9 +431,9 @@ html::-webkit-scrollbar-button:single-button {
                             stroke-dasharray: 320;
                             stroke-dashoffset: 320;
                             transition: all 0.5s ease;
+                            //시계 반대방향으로 2/3만큼 돌림
                             transform: rotate(-270deg);
                             transform-origin: 50% 50%;
-
                         }
                     }
                     .line-v{
@@ -2038,25 +2115,187 @@ from {
     0%{transform: translateY(0);}
     100%{transform: translateY(-100%);}
 }
-
+$envelope-width: 30vw;
+$envelope-height: 20vw;
+$envelope-radius: 10%;
+$paper-width: ($envelope-width - 5vw);
+$paper-height: ($envelope-height - 2vw);
+// $message-col: ($paper-width/);
 /*콘텐츠 - contact*/
 .contact-style{
     margin: 0 0 2vw 0;
     .container{
         width: 100%;
-        height: 300vw;
+        height: 1vw;
         padding: 20vw 0 0 0;
         background: rgb(240, 163, 255);
         .title{
             .title-main{
                 width: 100%; 
                 height: 80vw;
-                background: rgb(255, 147, 47);
+                // background: rgb(255, 147, 47);
+                background: rgba(253,198,10,1);
                 svg{
                     font-size: 5vw;
                     font-family: 'ghanachoco';
                 }
-                
+            }
+        }
+        .envelope-wrap{
+            width: 100%;
+            height: 55vw;
+            // background: rgba(100, 147, 175,1);
+            // background: rgb(255, 147, 47);
+            background: rgba(253,198,10,1);
+            overflow: hidden;
+            //편지 위치
+            position: relative;
+            .envelope{
+                position: absolute; left: 50%; top: 50%; 
+                transform: translate(-50%,-20%);
+                width: $envelope-width; height: $envelope-height;
+                background: rgba(253,198,10,1);
+                border-bottom-left-radius: $envelope-radius;
+                border-bottom-right-radius: $envelope-radius; 
+                box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.5) ;
+                .front-flap{
+                    position: absolute; left: 0%; top: 0%; 
+                    border-top: ($envelope-height / 2)+2vw solid rgb(81, 112, 131);
+                    border-right: ($envelope-width / 2) solid transparent;
+                    border-bottom: ($envelope-height / 2)-2vw solid transparent;
+                    border-left: ($envelope-width / 2) solid transparent;
+                    // transform: rotateX(180deg);
+                    transform: rotate3d(1, 0, 0, 180deg);
+                    transform-origin: top;
+                    z-index: 2;
+                }
+                .back-flap{
+                    position: absolute; left: 0%; top: 0%; 
+                    border-top: ($envelope-height / 2)+2vw solid rgba(253,198,10,1);
+                    border-right: ($envelope-width / 2) solid transparent;
+                    border-bottom: ($envelope-height / 2)-2vw solid transparent;
+                    border-left: ($envelope-width / 2) solid transparent;
+                    // transform: rotateX(180deg);
+                    transform: rotate3d(1, 0, 0, 180deg);
+                    transform-origin: top;
+                    z-index: 2;
+                }
+                .front-pocket{
+                    position: absolute; left: 0%; top: 0%; 
+                    border-left: ($envelope-width / 2) solid rgba(100, 147, 175,1);
+                    border-right: ($envelope-width / 2) solid rgba(100, 147, 175,1);
+                    border-bottom: ($envelope-height / 2)+0vw solid rgb(85, 126, 150);
+                    border-top: ($envelope-height / 2)-0vw solid transparent;
+                    border-bottom-left-radius: $envelope-radius;
+                    border-bottom-right-radius: $envelope-radius; 
+                    z-index: 1;
+
+                }
+                .paper{
+                    position: absolute; left: 50%; top: 50%; 
+                    transform: translate(-50%,-50%);
+                    width: $paper-width; height: $paper-height;
+                    background: rgba(255, 255, 255, 1);
+                    z-index: 3;
+                    .line-top{
+                        position: absolute; left: 0; top: 0; 
+                        width: 100%; height: 0.4vw;
+                        //그라데이션 없애기
+                        // background: repeating-linear-gradient(45deg, #336699, #336699 0.5vw, #fff 0.5vw, #fff 1vw, #990000 1vw, #990000 1.5vw, #fff 1.5vw, #fff 2vw);
+                        background: repeating-linear-gradient(45deg, #336699 0, #336699 0.8vw, #fff 0.8vw, #fff 1.6vw, #990000 1.6vw, #990000 2.4vw, #fff 2.4vw, #fff 3.2vw);
+                    }
+                    .line-bottom{
+                        position: absolute; left: 0; bottom: 0; 
+                        width: 100%; height: 0.4vw;
+                        background: repeating-linear-gradient(45deg, #336699 0, #336699 0.8vw, #fff 0.8vw, #fff 1.6vw, #990000 1.6vw, #990000 2.4vw, #fff 2.4vw, #fff 3.2vw);
+                    }
+                    .line-left{
+                        position: absolute; left: 0; bottom: 0; 
+                        width: 0.4vw; height: 100%;
+                        background: repeating-linear-gradient(45deg, #336699 0, #336699 0.8vw, #fff 0.8vw, #fff 1.6vw, #990000 1.6vw, #990000 2.4vw, #fff 2.4vw, #fff 3.2vw);
+                    }
+                    .line-right{
+                        position: absolute; right: 0; bottom: 0; 
+                        width: 0.4vw; height:100%;
+                        background: repeating-linear-gradient(45deg, #336699 0, #336699 0.8vw, #fff 0.8vw, #fff 1.6vw, #990000 1.6vw, #990000 2.4vw, #fff 2.4vw, #fff 3.2vw);
+                    }
+                    .email-form{
+                        // position: absolute; left: 0; top: 0;
+                        width: 100%; height: 100%;
+                        padding: 1vw;
+                        box-sizing: border-box;
+                        // background: burlywood;
+                        input[type="submit"]{
+                            position: absolute; right: 1vw; top: 1vw;
+                            width: 3vw; height: 4vw;
+                            background: rgb(253, 255, 231);
+                            border: 0.2vw dashed rgba(100, 147, 175,1);
+                            font-size: 0.8vw;
+
+                            &:hover {
+                                cursor:pointer;
+                            }
+                        }
+                        fieldset{
+                            display: flex; 
+                            flex-direction: column;
+                            justify-content: space-between;
+                            input[type="text"]{
+                                border: 1px solid rgba(0, 0, 0, 0.2);
+                                border-radius: 4px;
+                                display: block;
+                                padding: 1vw;
+                                box-sizing: border-box;
+                                font-size: 0.8vw;
+                                &:focus {
+                                    outline: 1px solid rgba(100, 147, 175,1);
+                                }
+                                &.sending{
+                                    border: none;
+                                    font-family: 'ghanachoco';
+                                    font-size: 0.5vw;
+                                    color: #000;
+                                }
+                            }
+                            #name{
+                                width: 50%; height: 2vw;
+                                // text-align: center;
+                                // line-height: 2vw;
+                            }
+                            #email{
+                                width: 70%; height: 2vw;
+                                margin: 0.5vw 0 0 0;
+                                // text-align: center;
+                                // line-height: 2vw;
+
+                            }
+                            #message{
+                                width: 100%; height: 10vw;
+                                margin: 1vw 0 0 0;
+                                border: 1px solid rgba(0, 0, 0, 0.2);
+                                border-radius: 4px;
+                                padding: 0.5vw;
+                                box-sizing: border-box;
+                                font-size: 0.8vw;
+                                // text-align: center;
+                                // line-height: 10vw;
+                                resize: none;
+                                &:focus {
+                                    outline: 1px solid rgba(100, 147, 175,1);
+                                }
+                                &.sending{
+                                    border: none;
+                                    font-family: 'ghanachoco';
+                                    font-size: 0.5vw;
+                                    color: #000;
+                                }
+                            }
+                        }
+                        .thankyou-message{
+
+                        }
+                    }
+                }
             }
         }
     }
