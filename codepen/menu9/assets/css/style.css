@@ -1,0 +1,67 @@
+@font-face { font-family: 'S-CoreDream-1Thin'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-7ExtraBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+
+/* header */
+#header {
+  position: fixed; left: 0; top: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.3);
+/*   transition: top 0.3s ease; */
+}
+
+#nav h1 {
+  color: #fff; font-size: 80px;
+  padding: 12px 8px 8px 8px;
+  font-family: abel;
+}
+
+/* dot */
+#dot {
+  position: fixed; right: 50px; top: 50%;
+  transform: translatey(-50%);
+}
+#dot li {
+  position: relative;
+  width: 100px; height: 100px; border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255,255,255,1);
+  margin: 8px;
+}
+#dot li a {
+  background: rgba(255,255,255,0.7);
+  width: 100%; height: 100%;
+  position: absolute; top: 0; left: 0;
+  border-radius: 50%;
+  transition: all 0.1s;
+}
+#dot li.active {box-shadow: 0 0 0 2px rgba(255,255,255,0);}
+#dot li.active a{transform: scale(0.4);}
+#dot li a em {display: none;}
+
+
+/* contents */
+#contents > div {
+  height: 100vh; 
+  display: flex; align-items: center; 
+  justify-content: center; 
+}
+#contents > div h2 {
+  font-size: 10vw; color: #fff; 
+  text-transform: uppercase;
+  font-family: 'S-CoreDream-1Thin';
+}
+#contents > div h2 strong {
+  font-family: 'S-CoreDream-6Bold';
+  font-style: italic;
+}
+
+/* section */
+#section1 {background:radial-gradient(ellipse farthest-corner at center bottom, #69d2fb 0%, #20438E 100%);}
+#section2 {background:radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%); }
+#section3 {background:radial-gradient(ellipse farthest-corner at center top, #ffee75, #ff8930);}
+#section4 {background:radial-gradient(ellipse farthest-corner at center bottom, #6beace, #2e9aa4);}
+#section5 {background:radial-gradient(ellipse farthest-corner at center top, #cbf49a, #1ea623);}
+#section6 {background:radial-gradient(ellipse farthest-corner at center top, #6CEBCF 0%, #38a7aa 100%);}

@@ -1169,10 +1169,10 @@ from {
                     border-radius: 15%;
                     font-size: 1vw;
                     font-weight: 500;
-                    box-shadow: 0 0 0.3vw 0.1vw rgba(0,153,222,1);
+                    box-shadow: 0 0 0.3vw 0.1vw rgba(100, 147, 175,1);
                     box-sizing: border-box;
                     outline: none;
-                    border-color: rgba(0,153,222,1);
+                    border-color: rgba(100, 147, 175,1);
                     background: #fff;
                     // border-color: -internal-light-dark(rgba(22, 95, 190, 0.5), rgb(195, 195, 195));
                 }//button
@@ -1197,7 +1197,6 @@ from {
                 box-sizing: border-box;
                 position: relative;
                 // .mix{
-                    
                     iframe{
                         position: absolute; left: 0; top: 0;
                         width: 200%; height: 200%;
@@ -1376,7 +1375,7 @@ from {
                                     font-style: italic;
                                     text-transform: uppercase;
                                     span{ 
-                                        color: rgba(0, 159, 216, 1); 
+                                        color: rgba(100, 147, 175,1); 
                                         padding:0 1.5vw 0 0;  
                                         font-style: italic;
                                         font-weight: bold;
@@ -1460,7 +1459,7 @@ from {
 /*콘텐츠 - 마우스*/
 .mouse-style{
     margin: 0 0 2vw 0;
-    .container{
+     .container{
         width: 100%;
         height: 90vw;
         padding: 10vw 0 0 0;
@@ -1557,7 +1556,7 @@ from {
 
                             &:before{
                                 content: '';  position: absolute; left: 0; top: 0%;
-                                // background: rgba(0, 159, 216, 1); 
+                                // background: rgba(100, 147, 175,1); 
                                 background: #6493af;
                                 width: 100%; height: 100%;
                                 border-radius: 5px;
@@ -1676,7 +1675,7 @@ from {
             background: rgb(183, 255, 193);
             //아이패드 위치
             position: relative;
-            svg{
+            .pipe{
                 width: 90vw;
                 margin: 0 0 0 5vw;
                 path {
@@ -1687,12 +1686,15 @@ from {
             }
             .site{
                 width: 22vw;
-                // height: 20vw;
+                //height: 20vw;
                 background: #ffe17d;
                 //h4위치, 농심 site-name위치
                 position: relative;
+                //active클래스 전
+                transition: all 0.5s ease;
+                transform: translateY(50%); 
+                opacity: 0;
                 .site-name{
-                    // width: ;
                     margin: 0 0 2vw 0;
                     h3{
                         display: flex;
@@ -1701,7 +1703,7 @@ from {
                         .spell{
                             //sol#1
                             width: 3vw; height: 3vw;
-                            background: rgba(0,153,222,1);
+                            background:  rgba(100, 147, 175,1);
                             //sol#2 site-name넘어감
                             // padding: 1vw; box-sizing: border-box;
                             border-radius: 30%;
@@ -1721,15 +1723,15 @@ from {
                             }
                         }
                     }
-                    //사이트 이름 두 줄일 때 
+                    //사이트 이름 두 번째 줄 
                     h4{
                         display: flex;
                         .spell{
                             //sol#1
                             width: 3vw; height: 3vw;
-                            background: rgba(0,153,222,1);
+                            background: rgba(100, 147, 175,1);
                             //sol#2
-                            // padding: 1vw; box-sizing: border-box;
+                            //padding: 1vw; box-sizing: border-box;
                             border-radius: 30%;
                             box-shadow: 0 -0.1vw 0.2vw rgba(253,198,10,1), 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset ;
                             //글자 위치
@@ -1757,7 +1759,7 @@ from {
                 }
                 .beam{
                     position: relative; 
-                    // left: 50%;
+                    //left: 50%;
                     margin: 0 auto;
                     width: 7vw; 
                     height: 7vw;
@@ -1767,14 +1769,13 @@ from {
                     .shine{
                         //left 0 대신 50%, translate한 이유: shine scaleX 줄였다가 오버하면 커져서 가운데 정렬 필요
                         position: absolute; left: 50%; top: 0%;
-                        // transform-origin: center bottom;
-                        transform: translate(-50%,-50%);
                         width: 100%; height: 100%;
                         transform: translate(-50%,0) scaleY(0.1) scaleX(0.8);
-                        // background: linear-gradient(to bottom, rgba(253,198,10,0) 0%, rgba(253,198,10,0.8) 90%, rgba(253,198,10,0) 100%);
+                        //background: linear-gradient(to bottom, rgba(253,198,10,0) 0%, rgba(253,198,10,0.8) 90%, rgba(253,198,10,0) 100%);
                         background: linear-gradient(to bottom, rgba(253,198,10,0) 0%, rgba(253,198,10,0.8) 100%);
                         transition: transform 0.7s ease;
                     }
+                    //ground-tilter랑 ground따로 한 이유: transform이랑 animation같이 못 씀!! tilter에 사다리꼴 transform, ground에  spin 애니메이션 
                     .ground-tilter{
                         width: 100%; height: 100%;
                         transform: rotateX(30deg);
@@ -1783,13 +1784,12 @@ from {
                             width: 100%; height: 100%;
                             border-radius: 50%;   
                             background: #fff;
-                           //오버땔 때 shine먼저 트랜지션, delay 0.2초 다음에 ground트랜지션
-                            // transition: box-shadow  0.7s ease 0.2s;
+                            //오버땔 때 shine먼저 트랜지션, delay 0.2초 다음에 ground트랜지션
+                            //transition: box-shadow  0.7s ease 0.2s;
                             transition: box-shadow  0.7s ease;
                         }
                     }
                 }
-
                 &.nongshim{
                     width: 28.5vw;
                     z-index: 0;
@@ -1818,7 +1818,6 @@ from {
                         }
                     }
                 }
-
                 &.php{
                     width: 28.5vw;
                     .site-name{
@@ -1833,7 +1832,13 @@ from {
                         }
                     }
                 }
+
+                //active클래스 붙을 때 
+                &.active{
+                    transform: translateY(0); opacity: 1;
+                }
             }
+
             //각 사이트 위치
             .site.standard{
                 position: absolute;
@@ -1863,6 +1868,7 @@ from {
                 position: absolute;
                 left: 60%; top: 65.5%;
             }
+
             //오버
             .site:hover img{
                 animation: updown 1.8s linear infinite;
@@ -1881,12 +1887,14 @@ from {
                 }
             }
             .site:hover .beam .shine{
+                //사다리꼴 뒤집힌 모양 - rotateX /  
                 transform: translate(-50%, -35%) scaleY(1.1) scaleX(1.1) rotateX(-55deg);
                 //오버할 때 ground먼저 트랜지션, delay 0.2초 다음에 shine트랜지션
-                // transition: transform 0.7s ease 0.2s; 
+                //transition: transform 0.7s ease 0.2s; 
                 transition: transform 0.7s ease; 
             }
             .site:hover .beam .ground-tilter{
+                //사다리꼴 모양 - rotateX
                 transform: scale(0.9) rotateX(65deg);
             }
             .site:hover .beam .ground{

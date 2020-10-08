@@ -1,0 +1,64 @@
+@font-face { font-family: 'S-CoreDream-1Thin'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-7ExtraBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+/* header */
+#header {
+  position: absolute; left: 0; bottom: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.3);
+}
+#header.on{
+  position: fixed; top: 0; bottom: auto;
+}
+#nav {
+  display: flex;
+  justify-content: space-between;
+}
+#nav h1 {
+  color: #fff; font-size: 80px;
+  padding: 12px 8px 8px 8px;
+  font-family: abel;
+}
+#nav li {
+  display: inline; 
+}
+#nav li a {
+  display: inline-block; padding: 24px 25px 20px 25px;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: abel;
+  color: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+#nav li.active a {color: #000; border-bottom: 4px solid #000;}
+
+/* contents */
+#contents > div {
+  height: 100vh; 
+  display: flex; align-items: center; 
+  justify-content: center; 
+}
+#contents > div h2 {
+  font-size: 10vw; color: #fff; 
+  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+}
+#contents > div h2 strong {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* section */
+#section1 {background:radial-gradient(ellipse farthest-corner at center bottom, #69d2fb 0%, #20438E 100%);}
+#section2 {background:radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%); }
+#section3 {background:radial-gradient(ellipse farthest-corner at center top, #ffee75, #ff8930);}
+#section4 {background:radial-gradient(ellipse farthest-corner at center bottom, #6beace, #2e9aa4);}
+#section5 {background:radial-gradient(ellipse farthest-corner at center top, #cbf49a, #1ea623);}
+#section6 {background:radial-gradient(ellipse farthest-corner at center top, #6CEBCF 0%, #38a7aa 100%);}

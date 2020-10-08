@@ -1,0 +1,64 @@
+body {
+  background: url(https://tistory4.daumcdn.net/tistory/3810122/skin/images/3.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Abel', sans-serif;
+  font-size: 30px;
+  line-height: 1.6em;
+}
+
+body:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 247, 148, 0.5)), color-stop(40%, rgba(255, 237, 237, 0.8)), to(rgba(109, 48, 125, 0.8)));
+  background: linear-gradient(90deg, rgba(255, 247, 148, 0.5) 0%, rgba(255, 237, 237, 0.8) 40%, rgba(109, 48, 125, 0.8) 100%);
+}
+
+#tab-menu {
+  width: 700px;
+  background: #b9a285;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 4px 4px 0 0;
+}
+
+#tab-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#tab-menu ul li {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+#tab-menu ul li a {
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  color: #fff;
+  text-align: center;
+}
+
+#tab-menu ul li div {
+  position: absolute;
+  left: 0;
+  top: 80px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+#tab-menu ul li.active a {
+  border-bottom: 3px solid #000;
+  color: #000;
+}
+/*# sourceMappingURL=style.css.map */

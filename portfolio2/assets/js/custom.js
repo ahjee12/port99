@@ -125,70 +125,6 @@ burgerMenuBtn.on('click',function(){
 // }
 
 /*--------------------------------------------- */
-/*--------------------사이트-------------------- */
-/*--------------------------------------------- */
-// const pathStripes = $('.item-list-site svg path');
-// console.log(pathStripes);
-// const itemListSite =  $('.item-list-site');
-// let OffsetTopItemListSite = parseInt(itemListSite.offset().top) ;
-// console.log(OffsetTopItemListSite);
-// let OffsetBottomItemListSite = parseInt(OffsetTopItemListSite + itemListSite.outerHeight());
-// console.log(OffsetBottomItemListSite);
-// let windowHeight = $(window).innerHeight();
-// console.log(windowHeight);
-
-// function scrollChangedInPageSite(){
-//   OffsetTopItemListSite = parseInt(itemListSite.offset().top);
-//   for(var i = 0;i<pathStripes.length;i++){
-//     console.log(state.scroll.top);
-//     console.log(state.size.docY);
-//     console.log(state.size.y);
-//     pathStripes[i].style.strokeDashoffset = 12599*(1-((state.scroll.top-OffsetTopItemListSite)/(itemListSite.outerHeight() - state.size.y)*1.05));
-//     console.log(pathStripes[i].style.strokeDashoffset);
-//   }
-// }
-
-// function scrollChangedInPageHover(){
-  
-// }
-
-// const { watchViewport } = tornis;
-// const { getViewportState } = tornis;
-
-// const updateValues = ({ size, scroll, mouse, orientation }) => {
-//   state = getViewportState();
-//   if (scroll.changed) {
-//     scrollChangedInPageSite();
-//   }
-// };
-
-// watchViewport(updateValues);
-
-//아이패드 사이트 이름 글자를 하나씩 나눠서 div, span 태그에 넣기
-const site = $(".item-list-site .site");
-
-site.each(function(){
-  let text  = $(this).find('.site-name > h3').text();
-  let text2  = $(this).find('.site-name > h4').text();
-  let split = text.split("").join("</span></div><div class='spell'><span aria-hidden='true'>");
-  let split2 = text2.split("").join("</span></div><div class='spell'><span aria-hidden='true'>");
-  // let split = text.split("").join("</span><span aria-hidden='true'>");
-  console.log(split);
-  split = "<div class='spell'><span aira-hidden='true'>"+ split +"</span></div>";
-  split2 = "<div class='spell'><span aira-hidden='true'>"+ split2 +"</span></div>";
-  // split = "<span aira-hidden='true'>"+ split +"</span>";
-  $(this).find('.site-name > h3').html(split).attr("aria-label", text);
-  $(this).find('.site-name > h4').html(split2).attr("aria-label", text2);
-
-})
-
-//sol#2
-// pathStripes.attr('data-'+0,"stroke-dashoffset: "+12599)
-// pathStripes.attr('data-'+OffsetTopItemListSite,"stroke-dashoffset: "+12599)
-// pathStripes.attr('data-'+OffsetBottomItemListSite,"stroke-dashoffset: "+0)
-
-
-/*--------------------------------------------- */
 /* -------------------메인--------------------- */
 /*-------------------------------------------- */
 
@@ -557,7 +493,9 @@ $(window).scroll(function(){
   }
 })
 
+/*------------------------- */
 /* --------오버------------ */
+/*------------------------- */
 const itemListHover = $('.hover-style .item-list');
 const ContainerItemLeft = $('.hover-style .container-item-left');
 const ContainerItemRight = $('.hover-style .container-item-right');
@@ -679,7 +617,10 @@ $(window).scroll(function(){
 
 
 })
-/* --------패럴럭스------------ */
+
+/*------------------------------- */
+/* ----------패럴럭스------------ */
+/*------------------------------- */
 var swiper = new Swiper('.item-list-parallax .swiper-container', {
   loop: true,
   slidesPerView: 3,
@@ -695,7 +636,9 @@ var swiper = new Swiper('.item-list-parallax .swiper-container', {
   },
 });
 
+/*---------------------------------- */
 /* -----------마우스 효과------------ */
+/*---------------------------------- */
 const slideWrap = $('.item-list-mouse .slide-wrap');
 const containerOfSlides = $('.item-list-mouse .slide-container');
 const slide = $('.item-list-mouse .slide');
@@ -819,7 +762,121 @@ slide.each(function(){
   })
 })
 
+/*--------------------------------------------- */
+/*--------------------사이트-------------------- */
+/*--------------------------------------------- */
+const pathStripes = $('.item-list-site svg path');
+console.log(pathStripes);
+const itemListSite =  $('.item-list-site');
+const eachSite =  $('.item-list-site .site');
+
+$(window).scroll(function(){
+  let heightWindow = $(window).innerHeight();
+  console.log(heightWindow);
+  let offsetTop = parseInt(itemListSite.offset().top);
+  console.log(offsetTop);
+  let newOffsetTop = offsetTop - (heightWindow/1.15);
+  let heightItemListSite = itemListSite.outerHeight()
+  let OffsetBottom = offsetTop + heightItemListSite;
+  console.log(OffsetBottom);
+  let newOffsetBottom = newOffsetTop + heightItemListSite
+ 
+  let scrollTop = $(this).scrollTop();
+  if(scrollTop < newOffsetTop){
+    pathStripes.css({ 'stroke-dashoffset': 12599});
+  }
+  if(scrollTop >= newOffsetTop && scrollTop <= newOffsetBottom){
+    //1.03은 좀 더 빨리 path가 나타나게 하려고 넣음/ 빨리 나타나야 내용물 보는 시간 더 길어짐
+    sda = 12600 *(1- ((scrollTop-newOffsetTop)/heightItemListSite)*1.03)
+    pathStripes.css({ 'stroke-dashoffset': sda});
+    if(sda<=10848){
+      eachSite.eq(0).addClass('active');
+      if(sda<=9455){
+        eachSite.eq(1).addClass('active');
+        if(sda<=8214){
+          eachSite.eq(2).addClass('active');
+          if(sda<=8214){
+            eachSite.eq(3).addClass('active');
+            if(sda<=7572){
+              eachSite.eq(4).addClass('active');
+              if(sda<=6105){
+                eachSite.eq(5).addClass('active');
+              }else{
+                eachSite.eq(5).removeClass('active');
+              }
+            }else{
+              eachSite.eq(4).removeClass('active');
+            }
+          }else{
+            eachSite.eq(3).removeClass('active');
+          }
+        }else{
+          eachSite.eq(2).removeClass('active');
+       }
+      }else{
+        eachSite.eq(1).removeClass('active');
+      }
+    }else{
+      eachSite.eq(0).removeClass('active');
+    }
+  }
+  if(scrollTop > newOffsetBottom){
+    pathStripes.css({ 'stroke-dashoffset': 0});
+  }
+  
+})
+//tornis.js씀 window scroll이랑 같은 거였음 
+// function scrollChangedInPageSite(){
+//   OffsetTopItemListSite = parseInt(itemListSite.offset().top);
+//   for(var i = 0;i<pathStripes.length;i++){
+//     console.log(state.scroll.top);
+//     console.log(state.size.docY);
+//     console.log(state.size.y);
+//     pathStripes[i].style.strokeDashoffset = 12599*(1-((state.scroll.top-OffsetTopItemListSite)/(itemListSite.outerHeight() - state.size.y)*1.05));
+//     console.log(pathStripes[i].style.strokeDashoffset);
+//   }
+// }
+
+// function scrollChangedInPageHover(){
+// }
+
+// const { watchViewport } = tornis;
+// const { getViewportState } = tornis;
+// const updateValues = ({ size, scroll, mouse, orientation }) => {
+//   state = getViewportState();
+//   if (scroll.changed) {
+//     scrollChangedInPageSite();
+//   }
+// };
+// watchViewport(updateValues);
+
+
+//아이패드 사이트 이름 글자를 하나씩 나눠서 div, span 태그에 넣기
+const site = $(".item-list-site .site");
+
+site.each(function(){
+  let text  = $(this).find('.site-name > h3').text();
+  let text2  = $(this).find('.site-name > h4').text();
+  let split = text.split("").join("</span></div><div class='spell'><span aria-hidden='true'>");
+  let split2 = text2.split("").join("</span></div><div class='spell'><span aria-hidden='true'>");
+  // let split = text.split("").join("</span><span aria-hidden='true'>");
+  console.log(split);
+  split = "<div class='spell'><span aira-hidden='true'>"+ split +"</span></div>";
+  split2 = "<div class='spell'><span aira-hidden='true'>"+ split2 +"</span></div>";
+  // split = "<span aira-hidden='true'>"+ split +"</span>";
+  $(this).find('.site-name > h3').html(split).attr("aria-label", text);
+  $(this).find('.site-name > h4').html(split2).attr("aria-label", text2);
+
+})
+
+//sol#2
+// pathStripes.attr('data-'+0,"stroke-dashoffset: "+12599)
+// pathStripes.attr('data-'+OffsetTopItemListSite,"stroke-dashoffset: "+12599)
+// pathStripes.attr('data-'+OffsetBottomItemListSite,"stroke-dashoffset: "+0)
+
+/*---------------------------------- */
 /*------------- 모바일----------------*/
+/*---------------------------------- */
 const slideWrapM = $('.item-list-mobile .slide-wrap');
 const containerOfSlidesM = $('.item-list-mobile .slide-container');
 const slideM = $('.item-list-mobile .slide'); //cells
@@ -912,7 +969,9 @@ $(window).scroll(function(){
   }
 })
 
+/*------------------------------------ */
 /*------------- contact----------------*/
+/*------------------------------------ */
 //타이틀 스크롤
 //offset기준
 const titleContact = $('.contact-style .title-main svg');

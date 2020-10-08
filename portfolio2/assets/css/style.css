@@ -1607,12 +1607,12 @@ html::-webkit-scrollbar-button:single-button {
   border-radius: 15%;
   font-size: 1vw;
   font-weight: 500;
-  -webkit-box-shadow: 0 0 0.3vw 0.1vw #0099de;
-          box-shadow: 0 0 0.3vw 0.1vw #0099de;
+  -webkit-box-shadow: 0 0 0.3vw 0.1vw #6493af;
+          box-shadow: 0 0 0.3vw 0.1vw #6493af;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
-  border-color: #0099de;
+  border-color: #6493af;
   background: #fff;
 }
 
@@ -1866,7 +1866,7 @@ html::-webkit-scrollbar-button:single-button {
 }
 
 .parallax-style .container .item-list-parallax .swiper-container .swiper-wrapper .swiper-slide .item-thumbnail .item-hover .item-hover-title h3 span {
-  color: #009fd8;
+  color: #6493af;
   padding: 0 1.5vw 0 0;
   font-style: italic;
   font-weight: bold;
@@ -2361,12 +2361,12 @@ html::-webkit-scrollbar-button:single-button {
   position: relative;
 }
 
-.site-style .container .item-list-site svg {
+.site-style .container .item-list-site .pipe {
   width: 90vw;
   margin: 0 0 0 5vw;
 }
 
-.site-style .container .item-list-site svg path {
+.site-style .container .item-list-site .pipe path {
   stroke-dasharray: 12600;
   stroke-dashoffset: 0;
 }
@@ -2375,6 +2375,11 @@ html::-webkit-scrollbar-button:single-button {
   width: 22vw;
   background: #ffe17d;
   position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  opacity: 0;
 }
 
 .site-style .container .item-list-site .site .site-name {
@@ -2393,7 +2398,7 @@ html::-webkit-scrollbar-button:single-button {
 .site-style .container .item-list-site .site .site-name h3 .spell {
   width: 3vw;
   height: 3vw;
-  background: #0099de;
+  background: #6493af;
   border-radius: 30%;
   -webkit-box-shadow: 0 -0.1vw 0.2vw #fdc60a, 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset;
           box-shadow: 0 -0.1vw 0.2vw #fdc60a, 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset;
@@ -2424,7 +2429,7 @@ html::-webkit-scrollbar-button:single-button {
 .site-style .container .item-list-site .site .site-name h4 .spell {
   width: 3vw;
   height: 3vw;
-  background: #0099de;
+  background: #6493af;
   border-radius: 30%;
   -webkit-box-shadow: 0 -0.1vw 0.2vw #fdc60a, 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset;
           box-shadow: 0 -0.1vw 0.2vw #fdc60a, 0 0.1vw 0.1vw rgba(0, 0, 0, 0.2), -0.1vw -0.1vw 0.3vw rgba(255, 255, 255, 0.5) inset, 0.1vw 0.1vw 0.3vw rgba(255, 255, 255, 0.8) inset;
@@ -2464,8 +2469,6 @@ html::-webkit-scrollbar-button:single-button {
   position: absolute;
   left: 50%;
   top: 0%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   -webkit-transform: translate(-50%, 0) scaleY(0.1) scaleX(0.8);
@@ -2544,6 +2547,12 @@ html::-webkit-scrollbar-button:single-button {
 
 .site-style .container .item-list-site .site.php .site-name h4 .spell:nth-child(1) {
   margin-left: 9.55vw;
+}
+
+.site-style .container .item-list-site .site.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
 }
 
 .site-style .container .item-list-site .site.standard {
