@@ -801,6 +801,11 @@ $(window).scroll(function(){
               eachSite.eq(4).addClass('active');
               if(sda<=6105){
                 eachSite.eq(5).addClass('active');
+                if(sda<=4352){
+                  eachSite.eq(6).addClass('active');
+                }else{
+                  eachSite.eq(6).removeClass('active');
+                }
               }else{
                 eachSite.eq(5).removeClass('active');
               }
