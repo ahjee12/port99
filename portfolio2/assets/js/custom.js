@@ -1,13 +1,12 @@
-// var s = skrollr.init();
-// skrollr.init({
-//   smoothScrolling: false
-// });
+
 infoScrollTop = $(".info strong");
 $(window).scroll(function () {
   const scrollTop = $(window).scrollTop();
   infoScrollTop.text(parseInt(scrollTop));
 })
+/*--------------------------------------------- */
 /*---------------헤더-네비게이션---------------- */
+/*--------------------------------------------- */
 const headerNav = $('.header-center-nav ul li');
 console.log(headerNav);
 
@@ -34,9 +33,10 @@ headerNav.on('click',function(e){
   // slideNav.css({opacity: 1, left: +positionNav.left, width: width});
 })
 
+//네비게이션 아래 슬라이드 막대기
 $(window).scroll(function(){
   let scrollTop = $(window).scrollTop();
-  //each문 headerNav.each(function(){})
+  //each문 headerNav.each(function(i){})
   for(i=0; i<headerNav.length;i++){
     // console.log(scrollTop);
     // console.log(pageGroup.eq(i).offset().top);
@@ -49,7 +49,84 @@ $(window).scroll(function(){
   }//for문
 })
 
-/*---------------사이트---------------- */
+//오른쪽 상단 버거메뉴 (gsap timeline 토글하는 법 써야 함)
+const burgerMenu = $('.burger-menu');
+const burgerMenuBtn = $('.burger-menu .button');
+
+const topButton = $('.burger-menu .button .line').eq(0);
+const middleButton = $('.burger-menu .button .line').eq(1);
+const bottomButton = $('.burger-menu .button .line').eq(2);
+
+const burgerMenuList1 = $('.burger-list').eq(0);
+const burgerMenuList2 = $('.burger-list').eq(1);
+const burgerMenuList3 = $('.burger-list').eq(2);
+
+// let tlTopBurger = new TimelineMax();
+// let tlMiddleBurger = new TimelineMax();
+// let tlBurgerList = new TimelineMax();
+let tlTopBurger = new TimelineMax();
+let tlMiddleBurger = new TimelineMax();
+let tlBurgerList = new TimelineMax();
+
+let topAndBottomR = tlTopBurger.to(topButton,{duration: 0.15, rotation: 15, delay: 0})
+                .to(bottomButton,{duration: 0.15, rotation: -15, delay: -0.15})
+                .to(topButton,{duration: 0.3, rotation: -60, x: '-0.35vw', delay: 0})
+                .to(bottomButton,{duration: 0.3, rotation: 60, x: '-0.35vw', delay: -0.3})
+                .to(topButton,{duration: 0.2, rotation: -45, y: '0.15vw', delay: 0})
+                .to(bottomButton,{duration: 0.2, rotation: 45, y: '-0.15vw', delay: -0.2}).reverse();
+
+let middleR = tlMiddleBurger.to(middleButton,{duration: 0.45, x: '-2.5vw', delay: 0})
+                  .to(middleButton,{duration: 0.2, opacity:0 , delay: 0}).reverse();
+                  
+let listR = tlBurgerList.to(burgerMenuList1,{duration: 0.65, scaleX: 1, y: 0, delay:0})
+                .to(burgerMenuList2,{duration: 0.65, scaleX: 1, y: 0, delay:-0.55})
+                .to(burgerMenuList3,{duration: 0.65, scaleX: 1, y: 0, delay:-0.45}).reverse();
+
+burgerMenuBtn.on('click',function(){
+  topAndBottomR.reversed(!topAndBottomR.reversed());
+  middleR.reversed(!middleR.reversed());
+  listR.reversed(!listR.reversed());
+  //click함수 안에서 timelineMax정의하고 if문 거치면 처음만 작동하는 이유: 
+  //처음 클릭할 땐 타임라인 그대로 작동 but> 두 번째 클릭하면 
+  // if(burgerMenu.hasClass('active') == false){
+  //   burgerMenu.addClass('active');
+  //   // burgerMenuF(tlTopBurger.play(0),tlMiddleBurger.play(0),tlBurgerList.play(0));
+  //   // top.play();
+  //   // middle.play();
+  //   // bottom.play();
+  //   // top;
+  //   // middle;
+  //   // bottom;
+  // }else{
+  //   burgerMenu.removeClass('active');
+  //   // burgerMenuF(tlTopBurger.reverse(0),tlMiddleBurger.reverse(0),tlBurgerList.reverse(0));
+  //   // top.reverse();
+  //   // middle.reverse();
+  //   // bottom.reverse();
+  // }
+})
+//함수 써도 문제임. 변수에 to로 움직였던 거 계속 저장됨! 한 번 클릭하면 잘 작동하는 것처럼 보이지만 
+//세 번째(?) 클릭할 때부터 바로 play 하는 게 아니라 play, reverse->다시 play함/ 그게 계속 쌓임
+// function burgerMenuF(){
+//   tlTopBurger.to(topButton,{duration: 0.15, rotation: 15, delay: 0})
+//         .to(bottomButton,{duration: 0.15, rotation: -15, delay: -0.15})
+//         .to(topButton,{duration: 0.3, rotation: -60, x: '-0.35vw', delay: 0})
+//         .to(bottomButton,{duration: 0.3, rotation: 60, x: '-0.35vw', delay: -0.3})
+//         .to(topButton,{duration: 0.2, rotation: -45, y: '0.15vw', delay: 0})
+//         .to(bottomButton,{duration: 0.2, rotation: 45, y: '-0.15vw', delay: -0.2})
+    
+
+//   tl1_2.to(middleButton,{duration: 0.45, x: '-2.5vw', delay: 0})
+//         .to(middleButton,{duration: 0.2, opacity:0 , delay: 0})  
+
+//   tl2.to(burgerMenuList1,{duration: 0.65, scaleX: 1, y: 0, delay:0})
+//      .to(burgerMenuList2,{duration: 0.65, scaleX: 1, y: 0, delay:-0.55})
+//      .to(burgerMenuList3,{duration: 0.65, scaleX: 1, y: 0, delay:-0.45})
+// }
+
+/*--------------------------------------------- */
+/*--------------------사이트-------------------- */
+/*--------------------------------------------- */
 // const pathStripes = $('.item-list-site svg path');
 // console.log(pathStripes);
 // const itemListSite =  $('.item-list-site');
@@ -111,8 +188,10 @@ site.each(function(){
 // pathStripes.attr('data-'+OffsetBottomItemListSite,"stroke-dashoffset: "+0)
 
 
+/*--------------------------------------------- */
+/* -------------------메인--------------------- */
+/*-------------------------------------------- */
 
-/* -----------메인------------ */
 // window.onload = function(){
 //     mainStart();
 // }
@@ -292,7 +371,10 @@ $(window).scroll(function(){
     }
   })
 })
-/* ------------메뉴------------ */
+
+/*----------------------------------- */
+/* ----------------메뉴-------------- */
+/*----------------------------------- */
 const dragAreaInTheMenu = $('.drag-menu');
 
 //hover만 하면 안 됨! 제자리로 안 돌아가 감
@@ -335,7 +417,9 @@ dragAreaInTheMenu.each(function(){
   });
 })
 
-/* --------애니메이션------------ */
+/*----------------------------------*/
+/*-----------애니메이션------------ */
+/*----------------------------------*/
 //input 버튼
 let inputBtn = $(".animation-style input");
 console.log(inputBtn);
@@ -436,24 +520,23 @@ function ResetAllBoxs(){
 }
 
 //필터 폼 
-//gsap 플러그인 ScrollTrigger 작동 안 함. 멤버만 사용할 수 있는 건지 모르겠음
+//gsap 플러그인 ScrollTrigger 작동 안 함. 유료(?) 멤버만 사용할 수 있는 건지 모르겠음
 // gsap.registerPlugin(ScrollTrigger);
 //2번째 page-group에 왔을 때 
 // const pageGroup = $('#contents .page-group'); 헤더 네비에서 정의
 // const pageGroupNumber2 = $('.animation-style');
-pageGroupNumbertwoStart();
-function pageGroupNumbertwoStart(){
-//  gsap.to('.controls',{
-//     scrollTrigger:{
-//       trigger: ".animation-style",
-//       start: "top bottom",
-//       end: "bottom top",
-//       markers: true
-//     },
-//     x: '100%'
-//   })
-
-}
+// pageGroupNumbertwoStart();
+// function pageGroupNumbertwoStart(){
+// //  gsap.to('.controls',{
+// //     scrollTrigger:{
+// //       trigger: ".animation-style",
+// //       start: "top bottom",
+// //       end: "bottom top",
+// //       markers: true
+// //     },
+// //     x: '100%'
+// //   })
+// }
 $(window).scroll(function(){
   const controller = $('.controls');
   const filterContainer =  $('.filter-container');

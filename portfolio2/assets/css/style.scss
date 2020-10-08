@@ -50,7 +50,9 @@ html::-webkit-scrollbar-button:single-button {
     border-bottom: 1px solid #222;
     z-index: 100;
     .container{
+        width: 100%; height: 100%;
         padding: 0 20px; 
+        box-sizing: border-box;
         // background: #ccc;
         display: flex;
         justify-content: space-between;
@@ -140,57 +142,107 @@ html::-webkit-scrollbar-button:single-button {
         }
         .header-right-nav{
             flex-basis: 17.5%; 
-            //높이 100%는 왜 안 될까!!!
+            //높이 100%는 container에 높이 있을 때 넣을 수 있음/ 
+            // height: 100%;
             height: 2.5vw;
             text-align: right;
-            margin: 0.2vw 0 0 0;
-            // .fa-github{
-            //     font-size: 2vw;
-            //     color: #FDC60A;
-            // }
+            // margin: 0.2vw 0 0 0;
             position: relative;
             .burger-menu{
-                width: 2.5vw; height: 15vw;
+                width: 2.5vw; height: calc(2.5vw*7);
                 float: right;
                 background: cadetblue;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 position: absolute; right: 0; top: 0%;
-                .burger{
+                .button{
                     width: 2.5vw; height: 2.5vw;
                     background: #aaa;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    z-index: 110;
                     .line{
                         display: block;
                         width: 100%; height: 0.4vw;
                         background: #FDC60A;
                         border-radius: 5px;
-                    }
-                    &.active{
-                        .line.top-burger{
+                        &.top-button{
                             transform-origin: right center;
-                            animation: 0.7s topBurger cubic-bezier(0.87,0.07,0.17,0.93) forwards;
                         }
-                        .line.middle-burger{
-                            transform-origin: center center;
-                            box-sizing: border-box;
-                            animation: 0.7s middleBurger cubic-bezier(0.87,0.07,0.17,0.93) forwards;
-                        }
-                        .line.bottom-burger{
+                        &.middle-button{
                             transform-origin: right center;
-                            animation: 0.7s bottomBurger cubic-bezier(0.87,0.07,0.17,0.93) forwards;
-                            
                         }
+                        &.bottom-button{
+                            transform-origin: right center;
+                        }  
                     }
                 }
                 .burger-list{
                     width: 2.5vw; height: 2.5vw;
-                    background: rgb(89, 134, 17);
-                    
+                    background: rgba(253,198,10,1);  
+                    border-radius: 50%;
+                    position: relative;
+                    //delay 없이 애니메이션할 때 
+                    // transform: scale(1,1);
+                    i{
+                        display: block;
+                        position: absolute; left: 50%; top: 50%;
+                        transform: translate(-50%,-50%);
+                        font-size: 2vw;
+                        &.fa-book{font-size: 1.6vw;}
+                    }
+                    &.list1{
+                        z-index: 109;
+                        //회전하면서 원위치 
+                        // transform: translate(0,calc(-2.5vw*2)) rotate(calc(90deg));
+                        transform: translate(0,calc(-2.5vw*2)) scale(0.6,1);
+                    }
+                    &.list2{
+                        z-index: 108;
+                        //회전하면서 원위치 
+                        // transform: translate(0,calc(-2.5vw*4)) rotate(calc(90deg*2));
+                        transform: translate(0,calc(-2.5vw*4)) scale(0.6,1);
+                    }
+                    &.list3{
+                        z-index: 107;
+                        //회전하면서 원위치 
+                        // transform: translate(0,calc(-2.5vw*6)) rotate(calc(90deg*3));
+                        transform: translate(0,calc(-2.5vw*6)) scale(0.6,1);
+                    }
                 }
+                //gsap안 쓰고 animation keyframe으로 움직이려면 반대로 움직이는 keyframe도 따로 만들어야 함!!
+                // &.active{
+                //     .button{    
+                //         .line{
+                //             &.top-button{
+                //                 height: 0.4vw;
+                //                 transform-origin: right center;
+                //                 animation: 0.6s topButton  forwards;
+                //             }
+                //             &.middle-button{
+                //                 transform-origin: left center;
+                //                 animation: 0.6s middleButton  forwards;
+                //             }
+                //             &.bottom-button{
+                //                 transform-origin: right center;
+                //                 animation: 0.6s bottomButton  forwards;
+                //             }  
+                //         }    
+                //     }
+                //     .burger-list{
+                //         &.list1{
+                //             animation: gooeyList 0.4s 0.8s cubic-bezier(0.33,0.33,0.33,1) forwards;
+                //         }
+                //         &.list2{
+                //             animation: gooeyList 0.4s 0.4s cubic-bezier(0.33,0.33,0.33,1) forwards;
+                //         }
+                //         &.list3{
+                //             animation: gooeyList 0.4s cubic-bezier(0.33,0.33,0.33,1) forwards;
+                //         }
+                //     }
+                // }
             }
             
             
@@ -199,37 +251,53 @@ html::-webkit-scrollbar-button:single-button {
     }
 }
 
-@keyframes topBurger{
-    0%{transform: translate(0,0) rotate(0);}
-    //위로 살짝 튕기기
-    20%{transform: translate(0,0) rotate(15deg);}
-    //45도보다 더 아래로 튕기기/ 튕기면서 x는 왼쪽으로 조금 이동
-    70%{transform: translate(-10%,0) rotate(-60deg);}
-    //45도 정위치
-    70%{transform: translate(-10%, 5%) rotate(-45deg);}
-}
-@keyframes bottomBurger{
-    0%{transform: translate(0,0) rotate(0);}
-     //아래로로 살짝 튕기기
-    20%{transform: translate(0,0) rotate(-15deg);}
-    //45도보다 더 위로 튕기기/ 튕기면서 x는 왼쪽으로 조금 이동
-    70%{transform: translate(-10%,0) rotate(60deg);}
-    //45도 정위치
-    70%{transform: translate(-10%, 5%) rotate(45deg);}
-   }
-@keyframes middleBurger{
-    0%{transform: translate(0,0) rotate(0);}
-    70%{
-        transform: translate(-10%, 0);
-        width: 0.2vw; height: 0.2vw; 
-        border-radius: 50%; background: transparent; border: 0.2vw solid #FDC60A;
-    } 
-    100%{
-        transform: translate(-10%, 0); 
-        width: 100%; height: 100%; 
-        border-radius: 50%; background: transparent; border: 0.2vw solid #FDC60A;
-    }
-}
+// @keyframes topButton{
+//     0%{transform: translate(0,0) rotate(0);}
+//     //위로 살짝 튕기기
+//     20%{transform: translate(0,0) rotate(15deg);}
+//     //45도보다 더 아래로 튕기기/ 튕기면서 x는 왼쪽으로 조금 이동
+//     70%{transform: translate(-0.35vw,0) rotate(-60deg);}
+//     //45도 정위치
+//     100%{transform: translate(-0.35vw,0.15vw) rotate(-45deg);}
+// }
+
+// @keyframes bottomButton{
+//     0%{transform: translate(0,0) rotate(0);}
+//     //아래로로 살짝 튕기기
+//     20%{transform: translate(0,0) rotate(-15deg);}
+//     //45도보다 더 위로 튕기기/ 튕기면서 x는 왼쪽으로 조금 이동
+//     70%{transform: translate(-0.35vw, 0) rotate(60deg);}
+//     //45도 정위치
+//     100%{transform: translate(-0.35vw,-0.15vw) rotate(45deg);}
+//    }
+
+// @keyframes middleButton{
+//     0%{transform: translate(0,0) ;}
+//     20%{
+//         transform: translate(-2.5vw, 0) ;
+//         opacity: 0; 
+//         //width는 transform origin상관 없음 게다가 상위요소가 spacebetween이라서 width커지면 나며지 라인 두께가 얇아짐!
+//         // width: 0vw; height: 0vw; 
+//         // border-radius: 50%; background: transparent; border: 0.2vw solid #FDC60A;
+//     } 
+//     100%{
+//         transform: translate(-2.5vw, 0) ; 
+//         opacity: 0; 
+//         // width: 3vw; height: 3vw; 
+//         // border-radius: 50%; background: transparent; border: 0.4vw solid #FDC60A;
+//     }
+// }
+
+// @keyframes gooeyList{
+//     70%{transform: translate(0,0) scale(0.6,1);}
+//     100%{transform: translate(0,0) scale(1,1);}
+// }
+
+// @keyframes gooeyListReversed{
+//     70%{transform: translate(0,0) scale(0.6,1);}
+//     100%{transform: translate(0,0) scale(1,1);}
+// }
+
 .info {
     position: fixed; 
     top: 5.5vw;
@@ -239,6 +307,7 @@ html::-webkit-scrollbar-button:single-button {
     font-size: 1vw;
     z-index: 100;
 }
+
 /*메인*/
 #main{}
 .main{
