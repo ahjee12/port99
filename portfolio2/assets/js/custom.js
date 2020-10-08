@@ -775,7 +775,7 @@ $(window).scroll(function(){
   console.log(heightWindow);
   let offsetTop = parseInt(itemListSite.offset().top);
   console.log(offsetTop);
-  let newOffsetTop = offsetTop - (heightWindow/1.15);
+  let newOffsetTop = offsetTop - (heightWindow/1.25);
   let heightItemListSite = itemListSite.outerHeight()
   let OffsetBottom = offsetTop + heightItemListSite;
   console.log(OffsetBottom);
@@ -787,25 +787,25 @@ $(window).scroll(function(){
   }
   if(scrollTop >= newOffsetTop && scrollTop <= newOffsetBottom){
     //1.03은 좀 더 빨리 path가 나타나게 하려고 넣음/ 빨리 나타나야 내용물 보는 시간 더 길어짐
-    sda = 12600 *(1- ((scrollTop-newOffsetTop)/heightItemListSite)*1.03)
+    sda = 12600 *(1- ((scrollTop-newOffsetTop)/(heightItemListSite)))
     pathStripes.css({ 'stroke-dashoffset': sda});
-    if(sda<=10848){
+    if(sda<=9790){
       eachSite.eq(0).addClass('active');
-      if(sda<=9455){
+      if(sda<=9487){
         eachSite.eq(1).addClass('active');
-        if(sda<=8214){
+        if(sda<=7880){
           eachSite.eq(2).addClass('active');
-          if(sda<=8214){
+          if(sda<=7230){
             eachSite.eq(3).addClass('active');
-            if(sda<=7572){
+            if(sda<=5760){
               eachSite.eq(4).addClass('active');
-              if(sda<=6105){
+              if(sda<=4353){
                 eachSite.eq(5).addClass('active');
-                if(sda<=4352){
-                  eachSite.eq(6).addClass('active');
-                }else{
-                  eachSite.eq(6).removeClass('active');
-                }
+                // if(sda<=4352){
+                //   eachSite.eq(6).addClass('active');
+                // }else{
+                //   eachSite.eq(6).removeClass('active');
+                // }
               }else{
                 eachSite.eq(5).removeClass('active');
               }
