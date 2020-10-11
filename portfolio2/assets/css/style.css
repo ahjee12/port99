@@ -36,8 +36,8 @@
 }
 
 html::-webkit-scrollbar {
-  width: 20px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -56,8 +56,8 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-button:single-button {
   background-color: #fdc60a;
   border-radius: 5px;
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
 }
 
 .header {
@@ -66,8 +66,6 @@ html::-webkit-scrollbar-button:single-button {
   top: 0;
   width: 100%;
   height: 4.55vw;
-  border-radius: 0 0 20px 20px;
-  border-bottom: 1px solid #222;
   z-index: 100;
 }
 
@@ -148,7 +146,7 @@ html::-webkit-scrollbar-button:single-button {
 .header .container .header-center-nav ul li a span {
   position: relative;
   display: block;
-  padding: 0 20px;
+  padding: 0 1vw;
   overflow: hidden;
 }
 
@@ -168,6 +166,22 @@ html::-webkit-scrollbar-button:single-button {
   transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s, -webkit-transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
 }
 
+.header .container .header-center-nav ul li a span .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  background: #6493af;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+  transition: -webkit-transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+  transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+  transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s, -webkit-transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+  z-index: -2;
+}
+
 .header .container .header-center-nav ul li a:hover span:before {
   -webkit-transform: translate(100%, 0);
           transform: translate(100%, 0);
@@ -178,7 +192,7 @@ html::-webkit-scrollbar-button:single-button {
   bottom: -0.5vw;
   display: inline-block;
   height: 0.3vw;
-  background: #FDC60A;
+  background: #6493af;
   -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
 }
@@ -195,7 +209,6 @@ html::-webkit-scrollbar-button:single-button {
   width: 2.5vw;
   height: calc(2.5vw*7);
   float: right;
-  background: cadetblue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,7 +227,6 @@ html::-webkit-scrollbar-button:single-button {
 .header .container .header-right-nav .burger-menu .button {
   width: 2.5vw;
   height: 2.5vw;
-  background: #aaa;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,17 +287,20 @@ html::-webkit-scrollbar-button:single-button {
 
 .header .container .header-right-nav .burger-menu .burger-list.list1 {
   z-index: 109;
+  opacity: 0;
   -webkit-transform: translate(0, calc(-2.5vw*2)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*2)) scale(0.6, 1);
 }
 
 .header .container .header-right-nav .burger-menu .burger-list.list2 {
+  opacity: 0;
   z-index: 108;
   -webkit-transform: translate(0, calc(-2.5vw*4)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*4)) scale(0.6, 1);
 }
 
 .header .container .header-right-nav .burger-menu .burger-list.list3 {
+  opacity: 0;
   z-index: 107;
   -webkit-transform: translate(0, calc(-2.5vw*6)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*6)) scale(0.6, 1);
@@ -1339,15 +1354,12 @@ html::-webkit-scrollbar-button:single-button {
 .menu-style .container .item-list1 {
   margin: 0 10%;
   height: 18vw;
-  background: #fffd83;
 }
 
 .menu-style .container .item-list1 .item-col {
   float: left;
   width: 25%;
   height: 100%;
-  background: #9b9b9b;
-  border-left: 1px solid #000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1418,7 +1430,6 @@ html::-webkit-scrollbar-button:single-button {
 
 .menu-style .container .item-list2 {
   height: 18vw;
-  background: #a3ffe8;
   margin: 2vw 0 0 0;
 }
 
@@ -1426,8 +1437,6 @@ html::-webkit-scrollbar-button:single-button {
   float: left;
   width: 20%;
   height: 100%;
-  background: #727272;
-  border-left: 1px solid #000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1506,7 +1515,6 @@ html::-webkit-scrollbar-button:single-button {
   height: 130vw;
   margin: 0 auto;
   padding: 10vw 0 0 0;
-  background: #dcffa3;
 }
 
 .animation-style .container .title {
@@ -1525,14 +1533,28 @@ html::-webkit-scrollbar-button:single-button {
   font-size: 1vw;
 }
 
-.animation-style .container .title h4 {
+.animation-style .container .title .title-slide-wrap {
+  width: 15vw;
+  height: 3vw;
+  overflow: hidden;
+}
+
+.animation-style .container .title .title-slide-wrap .title-slide-container {
+  width: 100%;
+  height: 6vw;
+  position: relative;
+}
+
+.animation-style .container .title .title-slide-wrap .title-slide-container p {
+  width: 100%;
+  height: 3vw;
   font-size: 1.5vw;
   font-weight: 700;
+  text-align: center;
   line-height: 3vw;
 }
 
 .animation-style .container .controls {
-  background: #cac2a9;
   width: 8.5vw;
   position: fixed;
   right: 0;
@@ -1618,7 +1640,6 @@ html::-webkit-scrollbar-button:single-button {
 
 .animation-style .container .filter-container {
   margin: 0 5%;
-  background: #9024b1;
   overflow: hidden;
 }
 
@@ -1627,7 +1648,7 @@ html::-webkit-scrollbar-button:single-button {
   width: 23.5%;
   margin: 0 2% 2% 0;
   height: 19.035vw;
-  background: #ff83d6;
+  background: #FDC60A;
   border-radius: 15%;
   border: 0.3vw solid #FDC60A;
   -webkit-box-sizing: border-box;
@@ -1663,6 +1684,24 @@ html::-webkit-scrollbar-button:single-button {
   display: block;
 }
 
+@-webkit-keyframes chooseType {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes chooseType {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /*콘텐츠 - 오버효과*/
 .hover-style {
   margin: 0 0 2vw 0;
@@ -1673,7 +1712,6 @@ html::-webkit-scrollbar-button:single-button {
   height: 190vw;
   margin: 0 auto;
   padding: 10vw 0 0 0;
-  background: #4df197;
 }
 
 .hover-style .container .title {
@@ -1772,7 +1810,6 @@ html::-webkit-scrollbar-button:single-button {
   width: 100%;
   height: 80vw;
   padding: 10vw 0 0 0;
-  background: #ffbadc;
 }
 
 .parallax-style .container .title {
@@ -1802,7 +1839,7 @@ html::-webkit-scrollbar-button:single-button {
   display: block;
   width: 100%;
   height: 100%;
-  background: #b7ffa8;
+  background: #FDC60A;
   position: relative;
   overflow: hidden;
   border-radius: 13.5%;
@@ -1811,7 +1848,7 @@ html::-webkit-scrollbar-button:single-button {
 .parallax-style .container .item-list-parallax .swiper-container .swiper-wrapper .swiper-slide .item-thumbnail .item-hover {
   width: 100%;
   height: 100%;
-  background: #e6ccff;
+  background: #6493af;
   position: absolute;
   left: 0;
   top: 0;
@@ -1890,7 +1927,6 @@ html::-webkit-scrollbar-button:single-button {
   width: 6vw;
   height: 6vw;
   border-radius: 50%;
-  background: url("../images/parallax/space1.jpg");
   -webkit-transform-origin: 50% 100%;
           transform-origin: 50% 100%;
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.76, 0.11, 0.24, 0.96) 0.1s;
@@ -1977,6 +2013,102 @@ html::-webkit-scrollbar-button:single-button {
   stroke: #fff;
 }
 
+.swiper-slide:nth-child(1) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space1.jpg);
+}
+
+.swiper-slide:nth-child(2) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space2.jpg);
+}
+
+.swiper-slide:nth-child(3) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space3.jpg);
+}
+
+.swiper-slide:nth-child(4) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space4.jpg);
+}
+
+.swiper-slide:nth-child(5) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space5.jpg);
+}
+
+.swiper-slide:nth-child(6) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space6.jpg);
+}
+
+.swiper-slide:nth-child(7) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space7.jpg);
+}
+
+.swiper-slide:nth-child(8) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space8.jpg);
+}
+
+.swiper-slide:nth-child(9) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space9.jpg);
+}
+
+.swiper-slide:nth-child(10) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space10.jpg);
+}
+
+.swiper-slide:nth-child(11) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space11.jpg);
+}
+
+.swiper-slide:nth-child(12) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space12.jpg);
+}
+
+.swiper-slide:nth-child(13) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space13.jpg);
+}
+
+.swiper-slide:nth-child(14) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space14.jpg);
+}
+
+.swiper-slide:nth-child(15) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space15.jpg);
+}
+
+.swiper-slide:nth-child(16) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space16.jpg);
+}
+
+.swiper-slide:nth-child(17) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space17.jpg);
+}
+
+.swiper-slide:nth-child(18) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space18.jpg);
+}
+
+.swiper-slide:nth-child(19) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space19.jpg);
+}
+
+.swiper-slide:nth-child(20) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space20.jpg);
+}
+
+.swiper-slide:nth-child(21) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space21.jpg);
+}
+
+.swiper-slide:nth-child(22) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space22.jpg);
+}
+
+.swiper-slide:nth-child(23) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space23.jpg);
+}
+
+.swiper-slide:nth-child(24) .item-thumbnail .item .circle {
+  background: url(../images/parallax/space24.jpg);
+}
+
 @-webkit-keyframes item-hover-title {
   0% {
     -webkit-transform: translate(0, 0);
@@ -2008,7 +2140,6 @@ html::-webkit-scrollbar-button:single-button {
   width: 100%;
   height: 90vw;
   padding: 10vw 0 0 0;
-  background: #bafaff;
 }
 
 .mouse-style .container .title {
@@ -2037,7 +2168,6 @@ html::-webkit-scrollbar-button:single-button {
   width: 80vw;
   height: 45vw;
   margin: 0 auto;
-  background: #FDC60A;
   border-radius: 30px;
   overflow: hidden;
 }
@@ -2045,7 +2175,6 @@ html::-webkit-scrollbar-button:single-button {
 .mouse-style .container .item-list-mouse .slide-wrap .slide-container {
   width: 800vw;
   height: 100%;
-  background: #676dc2;
   border-radius: 30px;
   position: relative;
 }
@@ -2054,7 +2183,6 @@ html::-webkit-scrollbar-button:single-button {
   float: left;
   width: 80vw;
   height: 45vw;
-  background: #c5d69d;
   border-radius: 30px;
   position: relative;
 }
@@ -2062,7 +2190,7 @@ html::-webkit-scrollbar-button:single-button {
 .mouse-style .container .item-list-mouse .slide-wrap .slide-container .slide .slide-img {
   width: 100%;
   height: 100%;
-  background: #005e24;
+  background: #FDC60A;
   border-radius: 30px;
   position: relative;
 }
@@ -2222,7 +2350,6 @@ html::-webkit-scrollbar-button:single-button {
   bottom: 0;
   -webkit-transform: translate(-50%, 120%);
           transform: translate(-50%, 120%);
-  background: #336aff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2331,9 +2458,8 @@ html::-webkit-scrollbar-button:single-button {
 
 .site-style .container {
   width: 100%;
-  height: 490vw;
+  height: 480vw;
   padding: 10vw 0 0 0;
-  background: #b8b8b8;
 }
 
 .site-style .container .title {
@@ -2351,13 +2477,12 @@ html::-webkit-scrollbar-button:single-button {
 
 .site-style .container .title .title-sub {
   font-size: 1vw;
-  color: #363636;
+  color: #050404;
 }
 
 .site-style .container .item-list-site {
   width: 100%;
   height: 450vw;
-  background: #b7ffc1;
   position: relative;
 }
 
@@ -2373,7 +2498,6 @@ html::-webkit-scrollbar-button:single-button {
 
 .site-style .container .item-list-site .site {
   width: 22vw;
-  background: #ffe17d;
   position: relative;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -2460,7 +2584,6 @@ html::-webkit-scrollbar-button:single-button {
   margin: 0 auto;
   width: 7vw;
   height: 7vw;
-  background: #7bfff4;
   -webkit-perspective: 25vw;
           perspective: 25vw;
 }
@@ -2512,7 +2635,6 @@ html::-webkit-scrollbar-button:single-button {
   width: 22vw;
   display: block;
   margin: 0 auto;
-  background: #f154ff;
   position: relative;
 }
 
@@ -2725,15 +2847,13 @@ html::-webkit-scrollbar-button:single-button {
 .mobile-style .container {
   width: 100%;
   height: 130vw;
-  padding: 20vw 0 0 0;
-  background: #edffd6;
+  padding: 10vw 0 0 0;
   overflow: hidden;
 }
 
 .mobile-style .container .title .title-main {
   width: 100vw;
   height: 50vw;
-  background: black;
   overflow: hidden;
 }
 
@@ -2759,7 +2879,6 @@ html::-webkit-scrollbar-button:single-button {
   width: 50vw;
   height: 45vw;
   margin: 10vw auto;
-  background: #f7ffae;
 }
 
 .mobile-style .container .item-list-mobile .slide-wrap .slide-container {
@@ -2774,7 +2893,6 @@ html::-webkit-scrollbar-button:single-button {
   position: absolute;
   left: 50%;
   top: 0;
-  background: #8affdc;
   -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
   transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
   transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
@@ -2789,7 +2907,6 @@ html::-webkit-scrollbar-button:single-button {
   top: 0;
   width: 100%;
   height: 43.5vw;
-  background: #96deff;
   z-index: -1;
   border-radius: 10%;
   overflow: hidden;
@@ -2994,7 +3111,6 @@ html::-webkit-scrollbar-button:single-button {
 .mobile-style .container .item-list-mobile .slide-dots {
   width: 20vw;
   height: 2vw;
-  background: #abd2ff;
   position: absolute;
   right: 5%;
   bottom: 5%;
@@ -3198,8 +3314,7 @@ html::-webkit-scrollbar-button:single-button {
 .contact-style .container {
   width: 100%;
   height: 1vw;
-  padding: 20vw 0 0 0;
-  background: #f0a3ff;
+  padding: 10vw 0 0 0;
 }
 
 .contact-style .container .title .title-main {

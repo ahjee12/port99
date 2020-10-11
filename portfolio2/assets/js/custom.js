@@ -1,9 +1,9 @@
 
-infoScrollTop = $(".info strong");
-$(window).scroll(function () {
-  const scrollTop = $(window).scrollTop();
-  infoScrollTop.text(parseInt(scrollTop));
-})
+// infoScrollTop = $(".info strong");
+// $(window).scroll(function () {
+//   const scrollTop = $(window).scrollTop();
+//   infoScrollTop.text(parseInt(scrollTop));
+// })
 /*--------------------------------------------- */
 /*---------------헤더-네비게이션---------------- */
 /*--------------------------------------------- */
@@ -33,21 +33,30 @@ headerNav.on('click',function(e){
   // slideNav.css({opacity: 1, left: +positionNav.left, width: width});
 })
 
-//네비게이션 아래 슬라이드 막대기
+const hearderNavBg = headerNav.find('a span .bg');
+console.log(hearderNavBg);
+//네비게이션 아래 슬라이드 막대기, span안에 bg클래스 아래로 내리기
 $(window).scroll(function(){
   let scrollTop = $(window).scrollTop();
   //each문 headerNav.each(function(i){})
   for(i=0; i<headerNav.length;i++){
     // console.log(scrollTop);
     // console.log(pageGroup.eq(i).offset().top);
+
     if(scrollTop<parseInt(pageGroup.eq(0).offset().top)){
       slideNav.css({opacity: 0});
+      hearderNavBg.css({transform: 'translateY(-100%)'});
     }
     if(scrollTop>=parseInt(pageGroup.eq(i).offset().top)){
+      hearderNavBg.css({transform: 'translateY(0)'});
       slideNav.css({opacity: 1, left: +headerNav.eq(i).position().left, width: headerNav.eq(i).outerWidth()});
     }
   }//for문
 })
+
+// $(window).resize(function(){
+
+// })
 
 //오른쪽 상단 버거메뉴 (gsap timeline 토글하는 법 써야 함)
 const burgerMenu = $('.burger-menu');
@@ -69,18 +78,18 @@ let tlMiddleBurger = new TimelineMax();
 let tlBurgerList = new TimelineMax();
 
 let topAndBottomR = tlTopBurger.to(topButton,{duration: 0.15, rotation: 15, delay: 0})
-                .to(bottomButton,{duration: 0.15, rotation: -15, delay: -0.15})
-                .to(topButton,{duration: 0.3, rotation: -60, x: '-0.35vw', delay: 0})
-                .to(bottomButton,{duration: 0.3, rotation: 60, x: '-0.35vw', delay: -0.3})
-                .to(topButton,{duration: 0.2, rotation: -45, y: '0.15vw', delay: 0})
-                .to(bottomButton,{duration: 0.2, rotation: 45, y: '-0.15vw', delay: -0.2}).reverse();
+                               .to(bottomButton,{duration: 0.15, rotation: -15, delay: -0.15})
+                               .to(topButton,{duration: 0.3, rotation: -60, x: '-0.35vw', delay: 0})
+                               .to(bottomButton,{duration: 0.3, rotation: 60, x: '-0.35vw', delay: -0.3})
+                               .to(topButton,{duration: 0.2, rotation: -45, y: '0.15vw', delay: 0})
+                               .to(bottomButton,{duration: 0.2, rotation: 45, y: '-0.15vw', delay: -0.2}).reverse();
 
 let middleR = tlMiddleBurger.to(middleButton,{duration: 0.45, x: '-2.5vw', delay: 0})
-                  .to(middleButton,{duration: 0.2, opacity:0 , delay: 0}).reverse();
+                            .to(middleButton,{duration: 0.2, opacity:0 , delay: 0}).reverse();
                   
-let listR = tlBurgerList.to(burgerMenuList1,{duration: 0.65, scaleX: 1, y: 0, delay:0})
-                .to(burgerMenuList2,{duration: 0.65, scaleX: 1, y: 0, delay:-0.55})
-                .to(burgerMenuList3,{duration: 0.65, scaleX: 1, y: 0, delay:-0.45}).reverse();
+let listR = tlBurgerList.to(burgerMenuList1,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:0})
+                        .to(burgerMenuList2,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:-0.55})
+                        .to(burgerMenuList3,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:-0.45}).reverse();
 
 burgerMenuBtn.on('click',function(){
   topAndBottomR.reversed(!topAndBottomR.reversed());
@@ -195,13 +204,13 @@ function strawberryAniStart(){
   let transitionOpa = 0.4;
   let sumTransitionOpa = 0;
   strawberry.each(function(){
-    //strawberry sibling에 딸기 아닌 요소가 있어서 index는 안 됨..
+    //strawberry sibling에 딸기 아닌 요소가 있어서 index는 안 됨..!
     //let index = $(this).index();
     let delay = i*0.3;
     sumDelay += delay;
+    sumTransitionOpa = i*transitionOpa;
     $(this).css({'opacity' : '1' , 'transition' : 'opacity '+transitionOpa+'s '+delay+'s ease'});
     i++;
-    sumTransitionOpa = i*transitionOpa;
   })
 
   setTimeout(function(){
@@ -218,9 +227,9 @@ function strawberryAniEnd(){
   strawberry.each(function(){
     let delay = i*0.3;
     sumDelay += delay;
-    $(this).css({'opacity' : '0' , 'transition' : 'opacity '+transitionOpa+'s '+delay+'s ease'});
-    i++;
     sumTransitionOpa = i*transitionOpa;
+    $(this).css({'opacity' : '0'});
+    i++;
   })
 
   setTimeout(function(){
@@ -349,20 +358,47 @@ dragAreaInTheMenu.each(function(){
       //각 dragArea 박스 정가운데를 마우스 위치 (0,0)으로 만들기 
       let newX2 = newX - $(this).width() / 2;
       let newY2 = newY - $(this).height() / 2;
-      tl.to(target,1,{ x: newX2 / $(this).width() * movementX, y: newY2 / $(this).height() * movementY , ease: Power2.easeOut});
+      tl.to(target,1, {x: newX2 / $(this).width() * movementX, y: newY2 / $(this).height() * movementY , ease: Power2.easeOut});
   });
 })
 
 /*----------------------------------*/
 /*-----------애니메이션------------ */
 /*----------------------------------*/
+
+//타이틀 슬라이드
+
+
+// let currentIndexAnime = 0;
+setInterval(function(){
+  titleAnime()
+},2000)
+
+function titleAnime(){
+  const containertitleAnime = $('.animation-style .title-slide-container');
+  let heightTitleAnime =  containertitleAnime.find('p').outerHeight();
+  console.log(heightTitleAnime);
+  // let lengthTitleAnime = containertitleAnime.find('p').length;
+  // console.log(lengthTitleAnime);
+  let firstTilte = containertitleAnime.find('p:first-child');
+
+
+  containertitleAnime.animate({top: -heightTitleAnime},700,function(){
+    containertitleAnime.find('p:first-child').appendTo(containertitleAnime);
+    containertitleAnime.css({top: ""});
+  })
+
+  
+  
+
+}
+
+
 //input 버튼
 let inputBtn = $(".animation-style input");
 console.log(inputBtn);
 let inputBtnValue = '';
 let boxCorrespondingToTheInput = '';
-
-
 
 inputBtn.click(function(){
   
@@ -766,19 +802,19 @@ slide.each(function(){
 /*--------------------사이트-------------------- */
 /*--------------------------------------------- */
 const pathStripes = $('.item-list-site svg path');
-console.log(pathStripes);
+// console.log(pathStripes);
 const itemListSite =  $('.item-list-site');
 const eachSite =  $('.item-list-site .site');
 
 $(window).scroll(function(){
   let heightWindow = $(window).innerHeight();
-  console.log(heightWindow);
+  // console.log(heightWindow);
   let offsetTop = parseInt(itemListSite.offset().top);
-  console.log(offsetTop);
+  // console.log(offsetTop);
   let newOffsetTop = offsetTop - (heightWindow/1.25);
   let heightItemListSite = itemListSite.outerHeight()
   let OffsetBottom = offsetTop + heightItemListSite;
-  console.log(OffsetBottom);
+  // console.log(OffsetBottom);
   let newOffsetBottom = newOffsetTop + heightItemListSite
  
   let scrollTop = $(this).scrollTop();

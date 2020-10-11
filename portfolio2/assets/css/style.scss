@@ -11,8 +11,8 @@
 @font-face { font-family: 'paybooc-ExtraBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 html::-webkit-scrollbar{
-    width: 20px; 
-    height: 30px;
+    width: 15px; 
+    height: 15px;
     // box-sizing:border-box;
 }
 html::-webkit-scrollbar-thumb{
@@ -35,8 +35,8 @@ html::-webkit-scrollbar-button:single-button {
     // border-bottom-left-radius: 30px;
     // border-bottom-right-radius: 30px;
     border-radius: 5px;
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     }
 #header{
     // position: fixed;
@@ -46,8 +46,8 @@ html::-webkit-scrollbar-button:single-button {
     left: 0; top: 0;
     width: 100%;
     height: 4.55vw;
-    border-radius: 0 0 20px 20px;
-    border-bottom: 1px solid #222;
+    // border-radius: 0 0 20px 20px;
+    // border-bottom: 1px solid #222;
     z-index: 100;
     .container{
         width: 100%; height: 100%;
@@ -107,7 +107,7 @@ html::-webkit-scrollbar-button:single-button {
                         span{
                             position: relative;
                             display: block;
-                            padding: 0 20px;
+                            padding: 0 1vw;
                             overflow: hidden;
                             // transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
                             &:before{
@@ -124,6 +124,13 @@ html::-webkit-scrollbar-button:single-button {
                                 z-index: -1;
                                 transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
                             }
+                            .bg{
+                                position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+                                transform: translateY(-100%);
+                                background: rgba(100, 147, 175,1); 
+                                transition: transform 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+                                z-index: -2;
+                            }
                         }
                         &:hover span:before{
                             transform: translate(100%,0);
@@ -135,7 +142,7 @@ html::-webkit-scrollbar-button:single-button {
                     position: absolute; bottom: -0.5vw;
                     display: inline-block;
                     height: 0.3vw;
-                    background: #FDC60A;
+                    background: rgba(100, 147, 175,1); 
                     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
                 }
             }//ul
@@ -151,14 +158,14 @@ html::-webkit-scrollbar-button:single-button {
             .burger-menu{
                 width: 2.5vw; height: calc(2.5vw*7);
                 float: right;
-                background: cadetblue;
+                // background: cadetblue;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 position: absolute; right: 0; top: 0%;
                 .button{
                     width: 2.5vw; height: 2.5vw;
-                    background: #aaa;
+                    // background: #aaa;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -195,17 +202,20 @@ html::-webkit-scrollbar-button:single-button {
                     }
                     &.list1{
                         z-index: 109;
+                        opacity: 0;
                         //회전하면서 원위치 
                         // transform: translate(0,calc(-2.5vw*2)) rotate(calc(90deg));
                         transform: translate(0,calc(-2.5vw*2)) scale(0.6,1);
                     }
                     &.list2{
+                        opacity: 0;
                         z-index: 108;
                         //회전하면서 원위치 
                         // transform: translate(0,calc(-2.5vw*4)) rotate(calc(90deg*2));
                         transform: translate(0,calc(-2.5vw*4)) scale(0.6,1);
                     }
                     &.list3{
+                        opacity: 0;
                         z-index: 107;
                         //회전하면서 원위치 
                         // transform: translate(0,calc(-2.5vw*6)) rotate(calc(90deg*3));
@@ -978,7 +988,6 @@ from {
         // border-top-right-radius: 15%;
         .title{
             margin: 0 10% 5% 10%; 
-
             .title-main{ 
                 font-size: 3vw;
                 strong{ color: #FDC60A;}
@@ -989,16 +998,14 @@ from {
         }
         .item-list1{
             margin: 0 10%; 
-            // height: 350px;
             height: 18vw;
-            background: rgb(255, 253, 131);
+            // background: rgb(255, 253, 131);
             .item-col{
                 float: left;
                 width: 25%; height: 100%;
-                background: rgb(155, 155, 155);
-                border-left: 1px solid #000;
+                // background: rgb(155, 155, 155);
+                // border-left: 1px solid #000;
                 box-sizing: border-box;
-                // padding: 2.5vw;
                 .item-thumbnail{
                     display: block;
                     width: 75%; height: 75%;
@@ -1046,15 +1053,14 @@ from {
         .item-list2{
             // height: 350px;
             height: 18vw;
-            background: rgb(163, 255, 232);
+            // background: rgb(163, 255, 232);
             margin: 2vw 0 0 0;
             .item-col{
                 float: left;
                 width: 20%; height: 100%;
-                background: rgb(114, 114, 114);
-                border-left: 1px solid #000;
+                // background: rgb(114, 114, 114);
+                // border-left: 1px solid #000;
                 box-sizing: border-box;
-                // padding: 2.5vw; 
                 .item-thumbnail{
                     display: block;
                     width: 75%; height: 75%;
@@ -1110,7 +1116,7 @@ from {
         height: 130vw; 
         margin: 0 auto;
         padding: 10vw 0 0 0;
-        background: rgb(220, 255, 163);
+        // background: rgb(220, 255, 163);
         .title{
             margin: 0 10% 5% 10%; 
             .title-main{ 
@@ -1120,10 +1126,26 @@ from {
             .title-sub{
                 font-size: 1vw;
             }
-            h4{font-size: 1.5vw; font-weight: 700; line-height: 3vw;}
+            .title-slide-wrap{
+                width: 15vw; height: 3vw;
+                // background: #6493af;
+                overflow: hidden;
+                .title-slide-container{
+                    width: 100%; height: 6vw;
+                    position: relative;
+                    // transition: all 0.7s ease;
+                    p{
+                        width: 100%; height: 3vw;
+                        font-size: 1.5vw; font-weight: 700; 
+                        text-align: center; line-height: 3vw; 
+                        // background: #990000;
+                        // animation: chooseType 0.9s ease infinite;
+                    }
+                }
+            } 
         }
         .controls{
-            background: #cac2a9; 
+            // background: #cac2a9; 
             width: 8.5vw;
             // padding: 0.5vw;
             position: fixed; right: 0; top: 50%; 
@@ -1181,22 +1203,17 @@ from {
         .filter-container{
             margin: 0 5%;
             // height: 10vw;
-            background: rgb(144, 36, 177); 
+            // background: rgb(144, 36, 177); 
             overflow: hidden;
-            // height: 82vw;
-            // position: relative;
             .box{
                 float: left;
                 width: 23.5%; margin: 0 2% 2% 0;
-                // height: 15.552vw;
                 height: 19.035vw;
-                // height: 8.748vw;
-                background: rgb(255, 131, 214);
+                background: #FDC60A;
                 border-radius: 15%;
                 border: 0.3vw solid #FDC60A;
                 box-sizing: border-box;
                 position: relative;
-                // .mix{
                     iframe{
                         position: absolute; left: 0; top: 0;
                         width: 200%; height: 200%;
@@ -1209,8 +1226,6 @@ from {
                         // border: 5px solid #FDC60A;
                         
                     }
-                // }
-
             }
             .box:nth-child(4n){
                 margin: 0 0 2% 0;
@@ -1226,6 +1241,10 @@ from {
         }
     }
 }
+@keyframes chooseType{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
 
 /*콘텐츠 - 오버효과*/
 .hover-style{
@@ -1236,7 +1255,7 @@ from {
         height: 190vw; 
         margin: 0 auto;
         padding: 10vw 0 0 0;
-        background: rgb(77, 241, 151);
+        // background: rgb(77, 241, 151);
         .title{
             margin: 0 10% 5% 10%; 
             // padding: 0 10% 5% 10%; 
@@ -1265,11 +1284,8 @@ from {
                 .container-item-left{
                     position: absolute; 
                     left: 0; top: 0;
-                    // left: 50%; top: 50%;
-                    // transform: translate(-50%,-50%);
                     width: 100%; height: 100%;
                     // background: #000;
-                    // transition: transform 0s ease;
                     iframe{
                         position: absolute; left: 0; top: 0;
                         width: 200%; height: 200%;
@@ -1289,8 +1305,6 @@ from {
                 .container-item-right{
                     position: absolute; 
                     right: 0; top: 0;
-                    // left: 50%; top: 50%;
-                    // transform: translate(-50%,-50%);
                     width: 100%; height: 100%;
                     // background: #000;
                     iframe{
@@ -1314,7 +1328,7 @@ from {
         width: 100%;
         height: 80vw;
         padding: 10vw 0 0 0;
-        background: rgb(255, 186, 220);
+        // background: rgb(255, 186, 220);
         .title{
             text-align: center;
             margin: 0 0 5vw 0;
@@ -1340,13 +1354,13 @@ from {
                     .item-thumbnail{
                         display: block;
                         width: 100%; height: 100%; 
-                        background: rgb(183, 255, 168);
+                        background: #FDC60A;
                         position: relative;
                         overflow: hidden;
                         border-radius: 13.5%; 
                         .item-hover{
                             width: 100%; height: 100%;
-                            background: rgb(230, 204, 255);
+                            background: rgba(100, 147, 175,1);
                             position: absolute; left: 0; top: 0;
                             border-radius: 13.5%; 
                             transform: translateX(100%);
@@ -1361,6 +1375,12 @@ from {
                                 border: 0;
                                 box-sizing: border-box;
                             }
+                            // .thumbnail{
+                            //     display: block;
+                            //     position: absolute; left: 0; top: 0;
+                            //     border-radius: 13.5%; 
+                            //     width: 100%;
+                            // }
                             .item-hover-title{
                                 position: absolute; left: 0; top: 30%;
                                 display: flex;  
@@ -1382,8 +1402,7 @@ from {
                                     }
                                 }   
                             }
-                        }//item-hover
-                       
+                        }//item-hover                     
                         .item{
                             width: 100%; height: 100%; left: 0; top: 0;
                             position: absolute;
@@ -1393,7 +1412,7 @@ from {
                                 transform: translate(-50%,0);
                                 width: 6vw; height: 6vw; 
                                 border-radius: 50%; 
-                                background: url("../images/parallax/space1.jpg");
+                                // background: url("../images/parallax/space1.jpg");
                                 transform-origin: 50% 100%;
                                 // transition: transform 1s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
                                 // transition: transform 0.6s cubic-bezier(0.07, 1.15, 1, 1) 0s;
@@ -1415,13 +1434,11 @@ from {
                         .item:hover h3{
                             transform: translate(-53%,-55%) rotate(5deg);
                             transition: transform 0.7s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0.05s;
-                        }
-                        
+                        } 
                     }//item-thumnail
                     .item-thumbnail:hover .item-hover{
                         transform: translateX(0);
                         transition: transform 0.7s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
- 
                     }
                 }
             }//.swiper-wrapper
@@ -1451,6 +1468,16 @@ from {
     }
 }
 
+@for $i from 1 through 24 {
+    .swiper-slide:nth-child(#{$i}){
+        .item-thumbnail{
+            .item{
+                .circle{background: url(../images/parallax/space#{$i}.jpg);}
+            }
+        }
+    }
+}
+
 @keyframes item-hover-title {
     0%{transform: translate(0, 0);}
     100%{transform: translate(-50%,0);}
@@ -1463,7 +1490,7 @@ from {
         width: 100%;
         height: 90vw;
         padding: 10vw 0 0 0;
-        background: rgb(186, 250, 255);
+        // background: rgb(186, 250, 255);
         .title{
             text-align: center;
             margin: 0 0 5vw 0;
@@ -1483,7 +1510,7 @@ from {
                 width: 80vw;
                 height: 45vw; 
                 margin: 0 auto;
-                background: #FDC60A;
+                // background: #FDC60A;
                 border-radius: 30px; 
                 overflow: hidden;
                 .slide-container{
@@ -1491,7 +1518,7 @@ from {
                     width: 800vw;
                     // margin-left: -80vw;
                     height: 100%;
-                    background: rgb(103, 109, 194);
+                    // background:#2f0afd;
                     border-radius: 30px;
                     //슬라이드 움직임
                     position: relative;
@@ -1499,14 +1526,14 @@ from {
                         float: left;
                         width: 80vw;
                         height: 45vw; 
-                        background: rgb(197, 214, 157);
+                        // background: rgb(197, 214, 157);
                         border-radius: 30px; 
                         //slide-title, slide-num, slide 위치
                         position: relative;
                         .slide-img{
                             width: 100%;
                             height: 100%;
-                            background: rgb(0, 94, 36);
+                            background: #FDC60A;
                             border-radius: 30px; 
                             position: relative;
                             iframe{
@@ -1603,7 +1630,7 @@ from {
                 width: 40vw; height: 2vw;
                 position: absolute; left: 50%; bottom: 0;
                 transform: translate(-50%,120%);
-                background: rgb(51, 106, 255);
+                // background: rgb(51, 106, 255);
                 display: flex; 
                 justify-content: space-between;
                 .dot{
@@ -1653,9 +1680,9 @@ from {
     margin: 0 0 2vw 0;
     .container{
         width: 100%;
-        height: 490vw;
+        height: 480vw;
         padding: 10vw 0 0 0;
-        background: rgb(184, 184, 184);
+        // background: rgb(184, 184, 184);
         .title{
             text-align: center;
             //마진 5vw -> 더 크게
@@ -1666,13 +1693,13 @@ from {
             }
             .title-sub{
                 font-size: 1vw;
-                color: rgb(54, 54, 54);
+                color: rgb(5, 4, 4);
             }
         }
         .item-list-site{
             width: 100%; 
             height: 450vw;
-            background: rgb(183, 255, 193);
+            // background: rgb(183, 255, 193);
             //아이패드 위치
             position: relative;
             .pipe{
@@ -1687,7 +1714,7 @@ from {
             .site{
                 width: 22vw;
                 //height: 20vw;
-                background: #ffe17d;
+                // background: #ffe17d;
                 //h4위치, 농심 site-name위치
                 position: relative;
                 //active클래스 전
@@ -1763,7 +1790,7 @@ from {
                     margin: 0 auto;
                     width: 7vw; 
                     height: 7vw;
-                    background: rgb(123, 255, 244);
+                    // background: rgb(123, 255, 244);
                     //perspective 작아질 수록 빔이 넓게 퍼짐
                     perspective: 25vw;
                     .shine{
@@ -1797,7 +1824,7 @@ from {
                         width: 22vw;
                         display: block;
                         margin: 0 auto;
-                        background: rgb(241, 84, 255);
+                        // background: rgb(241, 84, 255);
                         position: relative;
                         //둥근 모서리 밖으로 안 보이게 컨테이너 필요함
                         .item-thumbnail{
@@ -1935,8 +1962,8 @@ from {
     .container{
         width: 100%;
         height: 130vw;
-        padding: 20vw 0 0 0;
-        background: rgb(237, 255, 214);
+        padding: 10vw 0 0 0;
+        // background: rgb(237, 255, 214);
         overflow: hidden;
         .title{
             .title-main{
@@ -1944,7 +1971,7 @@ from {
                 height: 50vw;
                 // background: rgb(12, 21, 51);
                 // margin: 10vw 0 0 0;
-                background: rgba(0,0,0,1);
+                // background: rgba(0,0,0,1);
                 overflow: hidden;
                 svg{
                     width: 100%;
@@ -1965,7 +1992,7 @@ from {
                 width: 50vw; 
                 height: 45vw;
                 margin: 10vw auto;
-                background: rgb(247, 255, 174);
+                // background: rgb(247, 255, 174);
                 .slide-container{
                     position: relative;
                     width: 100%; 
@@ -1975,7 +2002,7 @@ from {
                         position: absolute; left: 50%; top: 0;
                         //slide에 transform넣으면, 각 슬라이드 transform속성이 먼저 적용되서 무시됨! 합쳐지지 않음...
                         // transform: translateX(-50%);
-                        background: rgb(138, 255, 220);
+                        // background: rgb(138, 255, 220);
                         transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
                         z-index: 1;    
                         cursor: pointer;
@@ -1984,7 +2011,7 @@ from {
                             width: 100%; 
                             // height: 97%;
                             height: 43.5vw;
-                            background: rgb(150, 222, 255);
+                            // background: rgb(150, 222, 255);
                             z-index: -1;
                             border-radius: 10%;
                             overflow: hidden;
@@ -2100,7 +2127,7 @@ from {
             .btn-next:hover .arrow .active-arrow{ animation: active-arrow 1s cubic-bezier(.2,1,.3,1) infinite;}
             .slide-dots{
                 width: 20vw; height: 2vw;
-                background: rgb(171, 210, 255);
+                // background: rgb(171, 210, 255);
                 position: absolute; right: 5%; bottom: 5%;
                 display: flex;
                 justify-content: space-between;
@@ -2204,8 +2231,8 @@ $paper-height: ($envelope-height - 2vw);
     .container{
         width: 100%;
         height: 1vw;
-        padding: 20vw 0 0 0;
-        background: rgb(240, 163, 255);
+        padding: 10vw 0 0 0;
+        // background: rgb(240, 163, 255);
         .title{
             .title-main{
                 width: 100%; 

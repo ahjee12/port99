@@ -1,3 +1,5 @@
+ul, li{list-style: none; margin: 0; padding: 0;}
+
 body{
       background: url(https://tistory4.daumcdn.net/tistory/3810122/skin/images/3.jpg) 
       no-repeat center center;
@@ -6,6 +8,7 @@ body{
       font-family: 'Abel', sans-serif;
       font-size: 30px;
       line-height: 1.6em;
+      padding: 0; margin: 0;
       &:before {
         content:'';
         position: absolute; left: 0; top: 0;
@@ -24,6 +27,7 @@ body{
         display: flex;
         li{
             flex-basis: 20%; 
+            list-style: none;
           a{
             text-decoration: none;
             padding: 15px 20px;

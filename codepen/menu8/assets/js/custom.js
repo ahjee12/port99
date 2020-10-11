@@ -1,12 +1,3 @@
-// $(window).scroll(function(){
-//   let wScroll = $(this).scrollTop();
-  
-//   if( wScroll > 200 ){
-//     $("#header").addClass("on");
-//   } else if( wScroll == 0) {
-//     $("#header").removeClass("on");
-//   }
-// });
 
 let wHeight = $(window).height(); //336 브라우저 높이
 // console.log(wHeight);
@@ -52,18 +43,5 @@ function hasScroll(){
   }
   lastScrollTop = wScroll
 }
-
-// if(wScroll < lastScrollTop){
-        // $("#header").removeClass("on");
-    //    }
- //  console.log(wScroll);
-     //  console.log(wHeight);
-     //  console.log(dHeight);
-    // if( wScroll + wHeight < dHeight ){
-    //    $("#header").removeClass("on");
-    //   console.log(wScroll);
-    //   console.log(wHeight);
-    //   console.log(dHeight);
-    // }
 
 

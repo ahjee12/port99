@@ -1,6 +1,9 @@
+ul, li{list-style: none; margin: 0; padding: 0;}
+
 body{
     height: 100vh;
     background: #3f51b5;
+    padding: 0; margin: 0; 
   }
   
   .ham-wrap{

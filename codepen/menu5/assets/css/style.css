@@ -1,3 +1,6 @@
+*{margin: 0; padding: 0;}
+ul, li{list-style: none; margin: 0; padding: 0;}
+
 .info2 {
     position: fixed; left: 100px; top: 150px;
     background-color: rgba(255,255,255,0.3);
@@ -6,6 +9,7 @@
     color: #fff;
     font-family: abel;
   }
+
   /* nav */
   header{
     position: fixed; left: 0; top: 0;
@@ -13,7 +17,6 @@
     background-color: rgba(255,255,255,0.3);
   }
   #nav {
-    
     display: flex;
     justify-content: space-between;
   }
@@ -41,10 +44,10 @@
   #nav li.active a{color:#000; border-bottom: 4px solid #000;}
   
   
-  
+  /*버거 메뉴*/
   .ham-wrap{
-    position: absolute; right: 0px; top: 30px;
-    transform: translate(-50%,-50%);
+    position: absolute; right: 0px; top: 50px;
+    /* transform: translate(-50%,-50%); */
     cursor: pointer;
     display: none;
   }
@@ -111,7 +114,6 @@
     text-transform: uppercase;
   }
   #contents > div h2 strong {font-weight: 700; font-style: italic;}
-  
   
   #section1 {background:radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%); }
   #section2 {background:radial-gradient(ellipse farthest-corner at center top, #cbf49a, #1ea623);}
