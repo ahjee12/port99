@@ -11,8 +11,8 @@
 @font-face { font-family: 'paybooc-ExtraBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 html::-webkit-scrollbar{
-    width: 15px; 
-    height: 15px;
+    width: 20px; 
+    height: 20px;
     // box-sizing:border-box;
 }
 html::-webkit-scrollbar-thumb{
@@ -35,8 +35,8 @@ html::-webkit-scrollbar-button:single-button {
     // border-bottom-left-radius: 30px;
     // border-bottom-right-radius: 30px;
     border-radius: 5px;
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     }
 #header{
     // position: fixed;
@@ -154,16 +154,14 @@ html::-webkit-scrollbar-button:single-button {
             height: 2.5vw;
             text-align: right;
             // margin: 0.2vw 0 0 0;
-            position: relative;
             .burger-menu{
-                width: 2.5vw; height: calc(2.5vw*7);
+                width: 2.5vw; height: 2.5vw;
                 float: right;
                 // background: cadetblue;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                position: absolute; right: 0; top: 0%;
+                //botton, burgerlistcontainer 위치
+                position: relative; 
                 .button{
+                    position: absolute; left: 0; top: 0;
                     width: 2.5vw; height: 2.5vw;
                     // background: #aaa;
                     display: flex;
@@ -186,73 +184,87 @@ html::-webkit-scrollbar-button:single-button {
                         }  
                     }
                 }
-                .burger-list{
-                    width: 2.5vw; height: 2.5vw;
-                    background: rgba(253,198,10,1);  
-                    border-radius: 50%;
-                    position: relative;
-                    //delay 없이 애니메이션할 때 
-                    // transform: scale(1,1);
-                    i{
-                        display: block;
-                        position: absolute; left: 50%; top: 50%;
-                        transform: translate(-50%,-50%);
-                        font-size: 2vw;
-                        &.fa-book{font-size: 1.6vw;}
+                .burger-list-container{
+                    position: absolute; left: 0; top: 0;
+                    width: 2.5vw; height: calc(2.5vw*7);
+                    // background: rgb(196, 46, 71);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    transform: scaleY(0);
+                    .emptylist{
+                        width: 2.5vw; height: 2.5vw;
                     }
-                    &.list1{
-                        z-index: 109;
-                        opacity: 0;
-                        //회전하면서 원위치 
-                        // transform: translate(0,calc(-2.5vw*2)) rotate(calc(90deg));
-                        transform: translate(0,calc(-2.5vw*2)) scale(0.6,1);
+                    .burger-list{
+                        width: 2.5vw; height: 2.5vw;
+                        background: rgba(253,198,10,1);  
+                        border-radius: 50%;
+                        //폰트어썸 아이콘 위치
+                        position: relative;
+                        //delay 없이 애니메이션할 때 
+                        // transform: scale(1,1);
+                        i{
+                            display: block;
+                            position: absolute; left: 50%; top: 50%;
+                            transform: translate(-50%,-50%);
+                            font-size: 2vw;
+                            &.fa-book{font-size: 1.6vw;}
+                        }
+                        &.list1{
+                            // opacity: 0;
+                            z-index: 109;
+                            //회전하면서 원위치 
+                            // transform: translate(0,calc(-2.5vw*2)) rotate(calc(90deg));
+                            transform: translate(0,calc(-2.5vw*2)) scale(0.6,1);
+                        }
+                        &.list2{
+                            // opacity: 0;
+                            z-index: 108;
+                            //회전하면서 원위치 
+                            // transform: translate(0,calc(-2.5vw*4)) rotate(calc(90deg*2));
+                            transform: translate(0,calc(-2.5vw*4)) scale(0.6,1);
+                        }
+                        &.list3{
+                            // opacity: 0;
+                            z-index: 107;
+                            //회전하면서 원위치 
+                            // transform: translate(0,calc(-2.5vw*6)) rotate(calc(90deg*3));
+                            transform: translate(0,calc(-2.5vw*6)) scale(0.6,1);
+                        }
                     }
-                    &.list2{
-                        opacity: 0;
-                        z-index: 108;
-                        //회전하면서 원위치 
-                        // transform: translate(0,calc(-2.5vw*4)) rotate(calc(90deg*2));
-                        transform: translate(0,calc(-2.5vw*4)) scale(0.6,1);
-                    }
-                    &.list3{
-                        opacity: 0;
-                        z-index: 107;
-                        //회전하면서 원위치 
-                        // transform: translate(0,calc(-2.5vw*6)) rotate(calc(90deg*3));
-                        transform: translate(0,calc(-2.5vw*6)) scale(0.6,1);
-                    }
+                    //gsap안 쓰고 animation keyframe으로 움직이려면 반대로 움직이는 keyframe도 따로 만들어야 함!!
+                    // &.active{
+                    //     .button{    
+                    //         .line{
+                    //             &.top-button{
+                    //                 height: 0.4vw;
+                    //                 transform-origin: right center;
+                    //                 animation: 0.6s topButton  forwards;
+                    //             }
+                    //             &.middle-button{
+                    //                 transform-origin: left center;
+                    //                 animation: 0.6s middleButton  forwards;
+                    //             }
+                    //             &.bottom-button{
+                    //                 transform-origin: right center;
+                    //                 animation: 0.6s bottomButton  forwards;
+                    //             }  
+                    //         }    
+                    //     }
+                    //     .burger-list{
+                    //         &.list1{
+                    //             animation: gooeyList 0.4s 0.8s cubic-bezier(0.33,0.33,0.33,1) forwards;
+                    //         }
+                    //         &.list2{
+                    //             animation: gooeyList 0.4s 0.4s cubic-bezier(0.33,0.33,0.33,1) forwards;
+                    //         }
+                    //         &.list3{
+                    //             animation: gooeyList 0.4s cubic-bezier(0.33,0.33,0.33,1) forwards;
+                    //         }
+                    //     }
+                    // }
                 }
-                //gsap안 쓰고 animation keyframe으로 움직이려면 반대로 움직이는 keyframe도 따로 만들어야 함!!
-                // &.active{
-                //     .button{    
-                //         .line{
-                //             &.top-button{
-                //                 height: 0.4vw;
-                //                 transform-origin: right center;
-                //                 animation: 0.6s topButton  forwards;
-                //             }
-                //             &.middle-button{
-                //                 transform-origin: left center;
-                //                 animation: 0.6s middleButton  forwards;
-                //             }
-                //             &.bottom-button{
-                //                 transform-origin: right center;
-                //                 animation: 0.6s bottomButton  forwards;
-                //             }  
-                //         }    
-                //     }
-                //     .burger-list{
-                //         &.list1{
-                //             animation: gooeyList 0.4s 0.8s cubic-bezier(0.33,0.33,0.33,1) forwards;
-                //         }
-                //         &.list2{
-                //             animation: gooeyList 0.4s 0.4s cubic-bezier(0.33,0.33,0.33,1) forwards;
-                //         }
-                //         &.list3{
-                //             animation: gooeyList 0.4s cubic-bezier(0.33,0.33,0.33,1) forwards;
-                //         }
-                //     }
-                // }
+                
             }
             
             
@@ -1375,12 +1387,12 @@ from {
                                 border: 0;
                                 box-sizing: border-box;
                             }
-                            // .thumbnail{
-                            //     display: block;
-                            //     position: absolute; left: 0; top: 0;
-                            //     border-radius: 13.5%; 
-                            //     width: 100%;
-                            // }
+                            .thumbnail{
+                                display: block;
+                                position: absolute; left: 0; top: 0;
+                                border-radius: 13.5%; 
+                                width: 100%;
+                            }
                             .item-hover-title{
                                 position: absolute; left: 0; top: 30%;
                                 display: flex;  

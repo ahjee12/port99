@@ -66,9 +66,11 @@ const topButton = $('.burger-menu .button .line').eq(0);
 const middleButton = $('.burger-menu .button .line').eq(1);
 const bottomButton = $('.burger-menu .button .line').eq(2);
 
-const burgerMenuList1 = $('.burger-list').eq(0);
-const burgerMenuList2 = $('.burger-list').eq(1);
-const burgerMenuList3 = $('.burger-list').eq(2);
+const burgerMenuListContainer = $('.burger-list-container');
+const burgerMenuList = $('.burger-list');
+const burgerMenuList1 = burgerMenuList.eq(0);
+const burgerMenuList2 = burgerMenuList.eq(1);
+const burgerMenuList3 = burgerMenuList.eq(2);
 
 // let tlTopBurger = new TimelineMax();
 // let tlMiddleBurger = new TimelineMax();
@@ -86,15 +88,21 @@ let topAndBottomR = tlTopBurger.to(topButton,{duration: 0.15, rotation: 15, dela
 
 let middleR = tlMiddleBurger.to(middleButton,{duration: 0.45, x: '-2.5vw', delay: 0})
                             .to(middleButton,{duration: 0.2, opacity:0 , delay: 0}).reverse();
-                  
-let listR = tlBurgerList.to(burgerMenuList1,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:0})
-                        .to(burgerMenuList2,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:-0.55})
-                        .to(burgerMenuList3,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:-0.45}).reverse();
+         
+// sol#1                          
+// let listR = tlBurgerList.to(burgerMenuListContainer,{duration: 0.01, scaleY: 1, delay: 0})
+//                         .to(burgerMenuList1,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:0})
+//                         .to(burgerMenuList2,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:-0.55})
+//                         .to(burgerMenuList3,{duration: 0.65, opacity: 1, scaleX: 1, y: 0, delay:-0.45}).reverse();
+// sol#2 display block, none하는 수준인 경우에도 duration 조금은 넣어야 함!                         
+let listR = tlBurgerList.to(burgerMenuListContainer,{duration: 0.01, scaleY: 1, delay: 0})
+                        .to(burgerMenuList,{stagger: 0.3, duration: 0.5, opacity: 1, scaleX: 1, y: 0}).reverse();
 
 burgerMenuBtn.on('click',function(){
   topAndBottomR.reversed(!topAndBottomR.reversed());
   middleR.reversed(!middleR.reversed());
   listR.reversed(!listR.reversed());
+
   //click함수 안에서 timelineMax정의하고 if문 거치면 처음만 작동하는 이유: 
   //처음 클릭할 땐 타임라인 그대로 작동 but> 두 번째 클릭하면 
   // if(burgerMenu.hasClass('active') == false){

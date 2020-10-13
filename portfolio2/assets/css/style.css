@@ -36,8 +36,8 @@
 }
 
 html::-webkit-scrollbar {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -56,8 +56,8 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-button:single-button {
   background-color: #fdc60a;
   border-radius: 5px;
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
 }
 
 .header {
@@ -202,29 +202,19 @@ html::-webkit-scrollbar-button:single-button {
       flex-basis: 17.5%;
   height: 2.5vw;
   text-align: right;
-  position: relative;
 }
 
 .header .container .header-right-nav .burger-menu {
   width: 2.5vw;
-  height: calc(2.5vw*7);
+  height: 2.5vw;
   float: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: absolute;
-  right: 0;
-  top: 0%;
+  position: relative;
 }
 
 .header .container .header-right-nav .burger-menu .button {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 2.5vw;
   height: 2.5vw;
   display: -webkit-box;
@@ -263,7 +253,32 @@ html::-webkit-scrollbar-button:single-button {
           transform-origin: right center;
 }
 
-.header .container .header-right-nav .burger-menu .burger-list {
+.header .container .header-right-nav .burger-menu .burger-list-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5vw;
+  height: calc(2.5vw*7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.header .container .header-right-nav .burger-menu .burger-list-container .emptylist {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+.header .container .header-right-nav .burger-menu .burger-list-container .burger-list {
   width: 2.5vw;
   height: 2.5vw;
   background: #fdc60a;
@@ -271,7 +286,7 @@ html::-webkit-scrollbar-button:single-button {
   position: relative;
 }
 
-.header .container .header-right-nav .burger-menu .burger-list i {
+.header .container .header-right-nav .burger-menu .burger-list-container .burger-list i {
   display: block;
   position: absolute;
   left: 50%;
@@ -281,26 +296,23 @@ html::-webkit-scrollbar-button:single-button {
   font-size: 2vw;
 }
 
-.header .container .header-right-nav .burger-menu .burger-list i.fa-book {
+.header .container .header-right-nav .burger-menu .burger-list-container .burger-list i.fa-book {
   font-size: 1.6vw;
 }
 
-.header .container .header-right-nav .burger-menu .burger-list.list1 {
+.header .container .header-right-nav .burger-menu .burger-list-container .burger-list.list1 {
   z-index: 109;
-  opacity: 0;
   -webkit-transform: translate(0, calc(-2.5vw*2)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*2)) scale(0.6, 1);
 }
 
-.header .container .header-right-nav .burger-menu .burger-list.list2 {
-  opacity: 0;
+.header .container .header-right-nav .burger-menu .burger-list-container .burger-list.list2 {
   z-index: 108;
   -webkit-transform: translate(0, calc(-2.5vw*4)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*4)) scale(0.6, 1);
 }
 
-.header .container .header-right-nav .burger-menu .burger-list.list3 {
-  opacity: 0;
+.header .container .header-right-nav .burger-menu .burger-list-container .burger-list.list3 {
   z-index: 107;
   -webkit-transform: translate(0, calc(-2.5vw*6)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*6)) scale(0.6, 1);
@@ -1876,6 +1888,15 @@ html::-webkit-scrollbar-button:single-button {
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.parallax-style .container .item-list-parallax .swiper-container .swiper-wrapper .swiper-slide .item-thumbnail .item-hover .thumbnail {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 13.5%;
+  width: 100%;
 }
 
 .parallax-style .container .item-list-parallax .swiper-container .swiper-wrapper .swiper-slide .item-thumbnail .item-hover .item-hover-title {
