@@ -227,7 +227,7 @@ html::-webkit-scrollbar-button:single-button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  z-index: 110;
+  z-index: 1;
 }
 
 .header .container .header-right-nav .burger-menu .button .line {
@@ -301,18 +301,21 @@ html::-webkit-scrollbar-button:single-button {
 }
 
 .header .container .header-right-nav .burger-menu .burger-list-container .burger-list.list1 {
+  opacity: 0;
   z-index: 109;
   -webkit-transform: translate(0, calc(-2.5vw*2)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*2)) scale(0.6, 1);
 }
 
 .header .container .header-right-nav .burger-menu .burger-list-container .burger-list.list2 {
+  opacity: 0;
   z-index: 108;
   -webkit-transform: translate(0, calc(-2.5vw*4)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*4)) scale(0.6, 1);
 }
 
 .header .container .header-right-nav .burger-menu .burger-list-container .burger-list.list3 {
+  opacity: 0;
   z-index: 107;
   -webkit-transform: translate(0, calc(-2.5vw*6)) scale(0.6, 1);
           transform: translate(0, calc(-2.5vw*6)) scale(0.6, 1);

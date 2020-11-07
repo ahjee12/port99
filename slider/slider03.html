@@ -155,6 +155,7 @@
         let currentIndex = 0;
         setInterval(function(){
             currentIndex < 4? currentIndex++: currentIndex =0;
+            console.log(currentIndex*-600);
             sliderImg.animate({top: currentIndex*-600+"px"},400); 
         }, 3000)
     </script>

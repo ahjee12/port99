@@ -72,19 +72,17 @@ const burgerMenuList1 = burgerMenuList.eq(0);
 const burgerMenuList2 = burgerMenuList.eq(1);
 const burgerMenuList3 = burgerMenuList.eq(2);
 
-// let tlTopBurger = new TimelineMax();
-// let tlMiddleBurger = new TimelineMax();
-// let tlBurgerList = new TimelineMax();
-let tlTopBurger = new TimelineMax();
+let tlTopAndBottomBurger = new TimelineMax();
 let tlMiddleBurger = new TimelineMax();
 let tlBurgerList = new TimelineMax();
 
-let topAndBottomR = tlTopBurger.to(topButton,{duration: 0.15, rotation: 15, delay: 0})
-                               .to(bottomButton,{duration: 0.15, rotation: -15, delay: -0.15})
-                               .to(topButton,{duration: 0.3, rotation: -60, x: '-0.35vw', delay: 0})
-                               .to(bottomButton,{duration: 0.3, rotation: 60, x: '-0.35vw', delay: -0.3})
-                               .to(topButton,{duration: 0.2, rotation: -45, y: '0.15vw', delay: 0})
-                               .to(bottomButton,{duration: 0.2, rotation: 45, y: '-0.15vw', delay: -0.2}).reverse();
+//각 timeline끝에 .reverse()붙여서 애니메이션 작동 전 상태를 애니메이션 작동 준비 상태로 정함
+let topAndBottomR = tlTopAndBottomBurger.to(topButton,{duration: 0.15, rotation: 15, delay: 0})
+                                        .to(bottomButton,{duration: 0.15, rotation: -15, delay: -0.15})
+                                        .to(topButton,{duration: 0.3, rotation: -60, x: '-0.35vw', delay: 0})
+                                        .to(bottomButton,{duration: 0.3, rotation: 60, x: '-0.35vw', delay: -0.3})
+                                        .to(topButton,{duration: 0.2, rotation: -45, y: '0.15vw', delay: 0})
+                                        .to(bottomButton,{duration: 0.2, rotation: 45, y: '-0.15vw', delay: -0.2}).reverse();
 
 let middleR = tlMiddleBurger.to(middleButton,{duration: 0.45, x: '-2.5vw', delay: 0})
                             .to(middleButton,{duration: 0.2, opacity:0 , delay: 0}).reverse();
@@ -104,10 +102,10 @@ burgerMenuBtn.on('click',function(){
   listR.reversed(!listR.reversed());
 
   //click함수 안에서 timelineMax정의하고 if문 거치면 처음만 작동하는 이유: 
-  //처음 클릭할 땐 타임라인 그대로 작동 but> 두 번째 클릭하면 
+  //처음 클릭할 땐 타임라인 그대로 작동 but> 두 번째 클릭하면 누적돼서 작동/ timelineMax를 외부에 정의해서 누적
   // if(burgerMenu.hasClass('active') == false){
   //   burgerMenu.addClass('active');
-  //   // burgerMenuF(tlTopBurger.play(0),tlMiddleBurger.play(0),tlBurgerList.play(0));
+  //   // burgerMenuF(tlTopAndBottomBurger.play(0),tlMiddleBurger.play(0),tlBurgerList.play(0));
   //   // top.play();
   //   // middle.play();
   //   // bottom.play();
@@ -116,7 +114,7 @@ burgerMenuBtn.on('click',function(){
   //   // bottom;
   // }else{
   //   burgerMenu.removeClass('active');
-  //   // burgerMenuF(tlTopBurger.reverse(0),tlMiddleBurger.reverse(0),tlBurgerList.reverse(0));
+  //   // burgerMenuF(tlTopAndBottomBurger.reverse(0),tlMiddleBurger.reverse(0),tlBurgerList.reverse(0));
   //   // top.reverse();
   //   // middle.reverse();
   //   // bottom.reverse();
@@ -125,7 +123,7 @@ burgerMenuBtn.on('click',function(){
 //함수 써도 문제임. 변수에 to로 움직였던 거 계속 저장됨! 한 번 클릭하면 잘 작동하는 것처럼 보이지만 
 //세 번째(?) 클릭할 때부터 바로 play 하는 게 아니라 play, reverse->다시 play함/ 그게 계속 쌓임
 // function burgerMenuF(){
-//   tlTopBurger.to(topButton,{duration: 0.15, rotation: 15, delay: 0})
+//   tlTopAndBottomBurger.to(topButton,{duration: 0.15, rotation: 15, delay: 0})
 //         .to(bottomButton,{duration: 0.15, rotation: -15, delay: -0.15})
 //         .to(topButton,{duration: 0.3, rotation: -60, x: '-0.35vw', delay: 0})
 //         .to(bottomButton,{duration: 0.3, rotation: 60, x: '-0.35vw', delay: -0.3})
@@ -210,13 +208,11 @@ function strawberryAniStart(){
   let i = 0;
   let sumDelay = 0;
   let transitionOpa = 0.4;
-  let sumTransitionOpa = 0;
   strawberry.each(function(){
     //strawberry sibling에 딸기 아닌 요소가 있어서 index는 안 됨..!
     //let index = $(this).index();
     let delay = i*0.3;
     sumDelay += delay;
-    sumTransitionOpa = i*transitionOpa;
     $(this).css({'opacity' : '1' , 'transition' : 'opacity '+transitionOpa+'s '+delay+'s ease'});
     i++;
   })
@@ -228,14 +224,7 @@ function strawberryAniStart(){
 
 //딸기 애니메이션 시작
 function strawberryAniEnd(){
-  let i = 0;
-  let sumDelay = 0;
-  let transitionOpa = 0.4;
-  let sumTransitionOpa = 0;
   strawberry.each(function(){
-    let delay = i*0.3;
-    sumDelay += delay;
-    sumTransitionOpa = i*transitionOpa;
     $(this).css({'opacity' : '0'});
     i++;
   })
@@ -723,10 +712,11 @@ function runSlider(){
     containerOfSlides.animate({
       left: (-80*($('.slider-active').index()))+'vw'
     },400);
-    //dot
+    //dot 처음 runslider() -> slider-active 클래스 있는 슬라이드 인덱스: 1 -> 인덱스 -1 해서 0 
     dot.eq($('.slider-active').index()-1).addClass('dot-active').siblings().removeClass('dot-active');
   }
 }
+//현재 slider-active 클래스 있는 슬라이드 인덱스: 1 -> -80vw 만큼 왼쪽으로 이동, 닷버튼 인덱스 0에 클래스 dot-active 붙이기
 runSlider()
 
 //슬라이드 양 옆 next, prev버튼 클릭할 때
@@ -734,7 +724,7 @@ slideBtn.on('click',function(){
   $(this).addClass('active').siblings().removeClass('active');
   if($(this).hasClass('btn-prev')){
     if($('.slider-active').prev().is(':first-of-type')){
-      $('.slider-active').prev().addClass('slider-active').siblings('div').removeClass('slider-active');
+      // $('.slider-active').prev().addClass('slider-active').siblings('div').removeClass('slider-active');
       //맨 뒤 slide 1번으로 바꿔치기
       containerOfSlides.css('left',(-80*(countSlide -1))+'vw');
       slide.last().prev().addClass('slider-active').siblings('div').removeClass('slider-active');
@@ -744,7 +734,7 @@ slideBtn.on('click',function(){
   }
   if($(this).hasClass('btn-next')){
     if($('.slider-active').next().is(':last-of-type')){
-      $('.slider-active').next().addClass('slider-active').siblings('div').removeClass('slider-active');
+      // $('.slider-active').next().addClass('slider-active').siblings('div').removeClass('slider-active');
       containerOfSlides.css('left',0);
       slide.first().next().addClass('slider-active').siblings('div').removeClass('slider-active');
     }else{
