@@ -2093,11 +2093,11 @@ from {
                     }
                     .slide.s4{
                         transform: translateX(-50%) scale(0.5) translate3d(-180%, -31%, 0);
-                        z-index: 0;
+                        z-index: 1;
                     }
                     .slide.s5{
                         transform: translateX(-50%) scale(0.7) translate3d(-240%, -10%, 0);
-                        z-index: 1;
+                        z-index: 2;
                     }
                 }
             }
