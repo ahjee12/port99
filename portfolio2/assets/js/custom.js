@@ -723,9 +723,10 @@ runSlider()
 slideBtn.on('click',function(){
   $(this).addClass('active').siblings().removeClass('active');
   if($(this).hasClass('btn-prev')){
+    //sol#2 $(this).index() == 0
     if($('.slider-active').prev().is(':first-of-type')){
       // $('.slider-active').prev().addClass('slider-active').siblings('div').removeClass('slider-active');
-      //맨 뒤 slide 1번으로 바꿔치기
+      //맨 마지막(=slide1번)으로 이동
       containerOfSlides.css('left',(-80*(countSlide -1))+'vw');
       slide.last().prev().addClass('slider-active').siblings('div').removeClass('slider-active');
     }else{
@@ -733,8 +734,10 @@ slideBtn.on('click',function(){
     }
   }
   if($(this).hasClass('btn-next')){
+    //sol#2 $(this).index() == slide.length -1
     if($('.slider-active').next().is(':last-of-type')){
       // $('.slider-active').next().addClass('slider-active').siblings('div').removeClass('slider-active');
+      //맨 처음(=slide8번)으로 이동
       containerOfSlides.css('left',0);
       slide.first().next().addClass('slider-active').siblings('div').removeClass('slider-active');
     }else{
