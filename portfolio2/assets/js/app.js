@@ -40,8 +40,11 @@ class sketch{
         this.wrapper = document.querySelector('#wrap');
         this.wrapper.prepend(canvas);
         this.canvas = document.querySelector('canvas');
-
+        this.canvas.style.position = 'absolute';
+        this.canvas.style.left = 0;
+        this.canvas.style.top = 0;
         // console.log(this.canvas); 
+        this.ctx = this.canvas.getContext('2d');
         //document.body.appendChild(this.canvas);
         
         this.width = document.body.clientWidth;
@@ -49,14 +52,12 @@ class sketch{
         
         this.canvas.width = this.width;
         this.canvas.height = this.height;
-        this.ctx = this.canvas.getContext('2d');
-
         // window.addEventListener('resize', this.resize.bind(this),false)
         // this.resize();
         //sol#2 resize되는 구역 이상함
         window.addEventListener('resize', () => {
-            this.ctx.canvas.width = document.body.clientWidth
-            this.ctx.canvas.height = document.body.clientHeight
+            this.ctx.canvas.width = document.body.clientWidth;
+            this.ctx.canvas.height = document.body.clientHeight;
             this.ctx.clearRect(0, 0, this.width, this.height);
             // this.raf();
             // this.mousemove();
@@ -72,7 +73,7 @@ class sketch{
         this.y = 0;
 
         this.colors =["#e154ed", "#63d62b", "#23b1b6", "ebbd3e","#000"];
-        loadImages(["assets/img/glitter1.png","assets/img/glitter2.png","assets/img/glitter3.png","assets/img/glitter4.png","assets/img/glitter5.png"],(images)=>{
+        loadImages(["assets/images/cursor/glitter1.png","assets/images/cursor/glitter2.png","assets/images/cursor/glitter3.png","assets/images/cursor/glitter4.png","assets/images/cursor/glitter5.png"],(images)=>{
             console.log(images);
             this.images = images;
             // console.log(images.length-1);
@@ -117,21 +118,19 @@ class sketch{
             let dy = y -this.y;
 
             //거리는 가운데일수록 작아지고 바깥일수록 커짐 
-            // let distCenter = Math.sqrt((x-this.width/2)**2+(y-this.height/2)**2);
-            // distCenter /= Math.sqrt((this.width/2)**2+(this.height/2)**2);
+            let distCenter = Math.sqrt((x-this.width/2)**2+(y-this.height/2)**2);
+            distCenter /= Math.sqrt((this.width/2)**2+(this.height/2)**2);
             //바깥일수록 작아지려면 1에서 자기 자신 빼기
-            // distCenter -= 1;
+            distCenter -= 1;
 
-        
-
+            
             
             for(let i = 0; i < 3; i++){
                 // let velx = Math.floor((Math.random()-0.5)*3 + dx/5);
                 // let vely = Math.floor((Math.random()-0.5)*3 + dy/5);
                 let velx = Math.floor((Math.random()-0.5)*3 );
                 let vely = Math.floor((Math.random()-0.5)*3 );
-                // this.particles.push(new Particle(this.randomImg(), x, y, this.randomColor(), velx, vely, distCenter*30,dx));      
-                this.particles.push(new Particle(this.randomImg(), x, y, this.randomColor(), velx, vely, 30,dx));      
+                this.particles.push(new Particle(this.randomImg(), x, y, this.randomColor(), velx, vely, distCenter*30,dx));      
             }
             // this.particles.push(new Particle(this.x, this.y, this.randomColor()));
             //기존 x저장

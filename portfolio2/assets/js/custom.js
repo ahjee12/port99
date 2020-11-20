@@ -226,7 +226,6 @@ function strawberryAniStart(){
 function strawberryAniEnd(){
   strawberry.each(function(){
     $(this).css({'opacity' : '0'});
-    i++;
   })
 
   setTimeout(function(){

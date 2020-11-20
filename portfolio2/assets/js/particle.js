@@ -58,8 +58,7 @@ export default class Particle{
         // ctx.rotate(this.rotation);
         // ctx.fillRect(this.x, this.y, this.size, this.size);
         // ctx.fillRect(0, 0, this.size, this.size);
-        ctx.drawImage(this.img, -this.size/2, -this.size/2, this.size, this.size);
-        // ctx.drawImage(this.img,0,0, this.size, this.size);
+        ctx.drawImage(this.img, -this.size/3, -this.size/3, this.size, this.size);
         ctx.restore()
     }
 }
