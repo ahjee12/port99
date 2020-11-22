@@ -72,7 +72,7 @@ html::-webkit-scrollbar-button:single-button {
 .header .container {
   width: 100%;
   height: 100%;
-  padding: 0 20px;
+  padding: 0 1vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -3037,13 +3037,13 @@ html::-webkit-scrollbar-button:single-button {
 .mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide.s4 {
   -webkit-transform: translateX(-50%) scale(0.5) translate3d(-180%, -31%, 0);
           transform: translateX(-50%) scale(0.5) translate3d(-180%, -31%, 0);
-  z-index: 0;
+  z-index: 1;
 }
 
 .mobile-style .container .item-list-mobile .slide-wrap .slide-container .slide.s5 {
   -webkit-transform: translateX(-50%) scale(0.7) translate3d(-240%, -10%, 0);
           transform: translateX(-50%) scale(0.7) translate3d(-240%, -10%, 0);
-  z-index: 1;
+  z-index: 2;
 }
 
 .mobile-style .container .item-list-mobile .btn-prev {
