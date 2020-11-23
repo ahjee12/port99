@@ -48,7 +48,7 @@ const FormSignUp = () => {
                                     >
                                     {btnValue(index)}
                                  {/* <div className="bg"></div> */}
-                                <input id={btnId(index)} type="radio" name="gender" value={btnValue(index)} onChange={handleChange} key={index} onClick={()=>{activeBtnToggle(index)}}/>
+                                <input id={btnId(index)} type="radio" name="gender" className="form-input" value={btnValue(index)} onChange={handleChange} key={index} onClick={()=>{activeBtnToggle(index)}}/>
                             </label> 
                         ))}
                         {errors.gender && <p>{errors.gender}</p>}
@@ -56,7 +56,7 @@ const FormSignUp = () => {
                         {/* {errors.gender && <p>{errors.gender}</p>} */}
                     <div className="form-input-container birthday">
                         <label htmlFor="birthday" className="form-label">생일</label>
-                        <input id="birthday" type="date" name="birthday" className="form-input-number" min="1900-01-01" max="2020-12-31" value={values.birthday} onChange={handleChange}/>
+                        <input id="birthday" type="date" name="birthday" className="form-input" min="1900-01-01" max="2020-12-31" value={values.birthday} onChange={handleChange}/>
                         {errors.birthday && <p>{errors.birthday}</p>}
                     </div>
                         {/* {errors.birthday && <p>{errors.birthday}</p>} */}
@@ -76,7 +76,7 @@ const FormSignUp = () => {
                         <label htmlFor="agreement" className="form-label">모든 약관 내용에 동의 합니다.</label>
                         <div className="toggle-btn-container">
                             <div className="checkbox-bg"></div>
-                            <input type="checkbox" className="checkbox-invisible" name="agreement" value="동의" onChange={handleChange}/>
+                            <input type="checkbox" className="form-input checkbox-invisible" name="agreement" value="동의" onChange={handleChange}/>
                             <div className="checkbox-circle"></div>
                         </div>
                         {errors.agreement && <p>{errors.agreement}</p>}

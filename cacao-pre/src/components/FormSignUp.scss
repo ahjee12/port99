@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                 label{
                     display: inline-block;
                 }
-                input{
+                input.form-input{
                     width: 100%; height: 6vh;
                     font-size: 1em;
                     border: 1px solid #e5e5e5;
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                         text-align: center;
                         position: relative;
                         border-radius: 10px;
-                        background: white;
+                        background: #fff;
                         border: 1px solid #e5e5e5;
                         box-sizing: border-box;
                         transition: 0.3s all ease;
@@ -67,6 +67,8 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                         }
                         &.active{
                             background: rgb(113, 158, 216);
+                            color: #fff;
+                            // border-color: rgb(113, 158, 216);
                         }
                     }
                     
@@ -78,19 +80,37 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                     }
                     input{
                         width: 80%;
+                        position: relative;
+                        &::-webkit-calendar-picker-indicator {
+                            content: ''; 
+                            position: absolute; left: 0; top: 0;
+                            width: 100%; height: 100%;
+                            padding: 0; margin: 0;
+                            // outline: none;
+                            cursor: pointer;
+                            // color: transparent; 
+                            background: none;
+                            outline: 0; 
+                            transition: 0.2s all ease;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            &:focus{
+                                border: 1px solid rgb(113, 158, 216);
+                            }
+                        }
                     }
                 }
-
                 &.phonenumber{
                     label{
                         width: 20%;
                         text-align: center;
                     }
-                    select{
+                    select.prephonenumber{
                         width: 17%; height: 6vh;
                         margin: 0 3% 0 0;
                         border-radius: 10px;
                         font-size: 1em;
+                        cursor: pointer;
                     }
                     input{
                         width: 37%;
@@ -101,7 +121,11 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                         border-radius: 15px;
                         cursor: pointer;
                         font-size: 1em;
-
+                        transition: 0.2s all ease;
+                        &:hover{
+                            background: #e5e5e5;
+                            color: #747474;
+                        }
                     }
                 }
                 &.agreement{
@@ -156,6 +180,11 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                     margin: 0 auto;
                     cursor: pointer;
                     font-size: 1em;
+                    transition: 0.2s all ease;
+                    &:hover{
+                        background: #e5e5e5;
+                        color: #747474;
+                    }
                 }
                 p{
                     background: chartreuse;
@@ -183,7 +212,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                     label{
                         font-size: 1em;
                     }
-                    input{
+                    input.form-input{
                         font-size: 1em;
                     }
                     p{
@@ -191,7 +220,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                     }
                     
                     &.phonenumber{
-                        select{
+                        select.prephonenumber{
                             font-size: 1em;
                         }
                         button{
@@ -280,7 +309,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                     label{
                         font-size: 0.9em;
                     }
-                    input{
+                    input.form-input{
                         font-size: 0.9em;
                     }
                     p{
@@ -288,7 +317,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                     }
                     
                     &.phonenumber{
-                        select{
+                        select.prephonenumber{
                             font-size: 0.9em;
                         }
                         button{
@@ -329,7 +358,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                     label{
                         font-size: 0.8em;
                     }
-                    input{
+                    input.form-input{
                         font-size: 0.8em;
                     }
                     p{
@@ -337,7 +366,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                     }
                     
                     &.phonenumber{
-                        select{
+                        select.prephonenumber{
                             font-size: 0.7em;
                         }
                         button{
