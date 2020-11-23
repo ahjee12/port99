@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/cacao-pre/static/css/main.07c40800.chunk.css",
+    "main.js": "/cacao-pre/static/js/main.85da467b.chunk.js",
+    "main.js.map": "/cacao-pre/static/js/main.85da467b.chunk.js.map",
+    "runtime-main.js": "/cacao-pre/static/js/runtime-main.7a98373a.js",
+    "runtime-main.js.map": "/cacao-pre/static/js/runtime-main.7a98373a.js.map",
+    "static/js/2.42ebe5e0.chunk.js": "/cacao-pre/static/js/2.42ebe5e0.chunk.js",
+    "static/js/2.42ebe5e0.chunk.js.map": "/cacao-pre/static/js/2.42ebe5e0.chunk.js.map",
+    "index.html": "/cacao-pre/index.html",
+    "static/css/main.07c40800.chunk.css.map": "/cacao-pre/static/css/main.07c40800.chunk.css.map",
+    "static/js/2.42ebe5e0.chunk.js.LICENSE.txt": "/cacao-pre/static/js/2.42ebe5e0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a98373a.js",
+    "static/js/2.42ebe5e0.chunk.js",
+    "static/css/main.07c40800.chunk.css",
+    "static/js/main.85da467b.chunk.js"
+  ]
+}
