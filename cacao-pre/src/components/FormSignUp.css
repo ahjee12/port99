@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-container {
-  max-width: 750px;
+  max-width: 768px;
   height: 100vh;
   background: #ffe812;
   margin: 0 auto;
@@ -168,13 +168,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-container .row .form .form-input-container.agreement label {
-  width: 70%;
+  width: 80%;
   line-height: 6vh;
 }
 
 .form-container .row .form .form-input-container.agreement .toggle-btn-container {
   background: #2ab12a;
-  width: 30%;
+  width: 20%;
   float: right;
   border-radius: 100px;
   border: 1px solid #e5e5e5;

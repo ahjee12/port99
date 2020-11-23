@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
 
 //폼
 .form-container{
-    max-width: 750px;
+    max-width: 768px;
     //스크롤하려면 container, row height값 없애기, 가입버튼 position 없애기, media input 높이 키우기
     height: 100vh;
     background:#ffe812;
@@ -129,13 +129,13 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 16px;}
                 &.agreement{
                     overflow: hidden;
                     label{
-                        width: 70%;
+                        width: 80%;
                         line-height: 6vh;
                     }
                     .toggle-btn-container{
                         // display: inline-block;
                         background: rgb(42, 177, 42);
-                        width: 30%;
+                        width: 20%;
                         //inlineblock에 vertical, flex, position, 
                         // vertical-align: middle;
                         float: right;

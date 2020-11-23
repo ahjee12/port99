@@ -4,16 +4,39 @@
 }
 
 .container.showMe {
-  max-width: 750px;
+  max-width: 768px;
+  margin: 0 auto;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+}
+
+.container.showMe .container.bg {
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+}
+
+.container.showMe .container.bg .bg {
+  width: 100%;
+}
+
+.container.showMe .container-header {
+  padding: 16% 0 0 0;
+}
+
+.container.showMe .container-header .topBar {
+  width: 100%;
+}
+
+.container.showMe .container-title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: 0 auto;
 }
 
-.container.showMe .bg {
-  position: absolute;
-  z-index: -1;
-}
-
-.container.showMe .container.header {
-  padding: 128px 0 0 0;
+@media (max-width: 600px) {
+  .container.showMe .container.header .topBar {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
