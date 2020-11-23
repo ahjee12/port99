@@ -1,35 +1,188 @@
-//쇼미더머니
+//리셋
 *{margin: 0; padding: 0;}
+
+//쇼미더머니
 .container.showMe{
     max-width: 768px; 
     margin: 0 auto;
-    // background: violet;
+    //요소 다 넣은 후 없애기
     // height: 1689px;
-    background-image: url('../img/bg.jpg');
+    background: url('../img/bg.jpg') left top;
     background-size: cover;
+    background-attachment: fixed;
+    position: relative;
     .container.bg{
         // max-width: 768px;
         // margin: 0 auto;
         // position: absolute;
         // z-index: -1;
-        background-image: url('../img/bg.jpg');
-        background-size: cover;
-        .bg{
-            width: 100%;
-        }
+        // background-image: url('../img/bg.jpg');
+        // background-size: cover;
+        // .bg{
+        //     width: 100%;
+        // }
     }
+    //sol#2 img자체에 %
     .container-header{
-        padding: 16% 0 0 0;
+        padding: 16.5% 0 0 0;
         .topBar{
             width: 100%;
         }
     }
     .container-title{
-        width: fit-content;
+        width: 100%;
         margin: 0 auto;
+        position: relative; top: -1.5%;
+        padding: 19.7% 0;
+        .drop{
+            position: absolute; left: 0; top: 0;
+            width: 100%;
+            opacity: 0.5;
+            animation: 2s dropThe alternate infinite;
+        }
+        .moneyOuter{
+            position: absolute; left: 0; top: 0;
+            width: 100%;
+        }
+        .money{
+            position: absolute; left: 0; top: 0;
+            width: 100%;
+            animation: 6s money-money alternate infinite;
+        }
+        .o{
+            position: absolute; left: 0; top: 0;
+            width: 100%;
+            animation: 6s money-O alternate infinite;
+        }
+        .transfer{
+            position: absolute; left: 0; top: 0;
+            width: 100%;
+        }
     }
 
+    
+
+    .container-onehundredmillion{
+        width: 100%;
+        padding: 0 0 6% 0;
+        .bgMoney{
+            width: 100%;
+        }
+    }
+    
+    .container-reward{
+        width: 100%;
+        padding: 0 0 7% 0;
+        .reward{
+            width: 100%;
+        }
+    }
+    .container-share{
+        width: 100%;
+        padding: 0 0 30% 0;
+        margin: 0 0 22% 0;
+        .share{
+            width: 100%;
+        }
+    }
+    //sol#2 translate으로만 많이 주기 다시
+    .container-bottomCoin{
+        width: 100%;
+        position: absolute; left: 0; bottom: 100%;
+        transition: 0.5s all cubic-bezier(0.4, 0, 0.22, 0.99);
+        .bottonCoin{
+            width: 100%;
+        }
+        &.active{
+            bottom: -1%;
+        }
+    }
+
+    .container-coin{
+        width: 100%;
+        position: absolute; left: 0; top: 0;
+        transform: translateY(-100%);
+        transition: 0.5s all cubic-bezier(0.4, 0, 0.22, 0.99);
+        .coin{
+            width: 100%;
+        }
+
+        &.active{
+            transform: translateY(0);
+        }
+    }
+
+    .container-mainButton{
+        width: 100%;
+        position: fixed; left: 0; bottom: 0;
+        z-index: 1;
+        .mainButton{
+            width: 100%;
+        }
+    }
+    .container-upperDoor{
+        width: 100%; 
+        position: fixed; left: 0; bottom: 100%;
+        z-index: 2;
+        .upperDoor{
+            width: 100%;
+        }
+        // &.active{
+        //     bottom: 49.5%
+        // }
+    }
+    .container-bottomDoor{
+        width: 100%;
+        position: fixed; left: 0; top: 100%;
+        z-index: 2;
+        .bottomDoor{
+            width: 100%;
+        }
+        // &.active{
+        //     top: 50%;
+        // }
+    }
+    .container-subButton{
+        width: 100%;
+        position: fixed; left: 0; bottom: 0;
+        z-index: 3;
+        transform: translateY(100%);
+        .subButton{
+            width: 100%;
+        }
+        // &.active{
+        //     transform: translateY(0%);
+        // }
+    }
+    
+
 }
+
+@keyframes dropThe{
+    0%{opacity: 1;}
+    100%{opacity: 0.5;}
+}
+@keyframes money-O{
+    0%{opacity: 1;}
+    50%{opacity: 1;}
+    51%{opacity: 0;}
+    53%{opacity: 1;}
+    54%{opacity: 0;}
+    56%{opacity: 1;}
+    100%{opacity: 1;}
+}
+@keyframes money-money{
+    0%{opacity: 1;}
+    10%{opacity: 0.7;}
+    30%{opacity: 1;}
+    50%{opacity: 0.7;}
+    60%{opacity: 1;}
+    70%{opacity: 0.7;}
+    80%{opacity: 1;}
+    100%{opacity: 1;}
+}
+
+
 
 @media(max-width: 600px){
     .container.showMe{

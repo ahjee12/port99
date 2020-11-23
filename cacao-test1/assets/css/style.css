@@ -6,21 +6,14 @@
 .container.showMe {
   max-width: 768px;
   margin: 0 auto;
-  background-image: url("../img/bg.jpg");
+  background: url("../img/bg.jpg") left top;
   background-size: cover;
-}
-
-.container.showMe .container.bg {
-  background-image: url("../img/bg.jpg");
-  background-size: cover;
-}
-
-.container.showMe .container.bg .bg {
-  width: 100%;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .container.showMe .container-header {
-  padding: 16% 0 0 0;
+  padding: 16.5% 0 0 0;
 }
 
 .container.showMe .container-header .topBar {
@@ -28,10 +21,288 @@
 }
 
 .container.showMe .container-title {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
+  position: relative;
+  top: -1.5%;
+  padding: 19.7% 0;
+}
+
+.container.showMe .container-title .drop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0.5;
+  -webkit-animation: 2s dropThe alternate infinite;
+          animation: 2s dropThe alternate infinite;
+}
+
+.container.showMe .container-title .moneyOuter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.container.showMe .container-title .money {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  -webkit-animation: 6s money-money alternate infinite;
+          animation: 6s money-money alternate infinite;
+}
+
+.container.showMe .container-title .o {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  -webkit-animation: 6s money-O alternate infinite;
+          animation: 6s money-O alternate infinite;
+}
+
+.container.showMe .container-title .transfer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.container.showMe .container-onehundredmillion {
+  width: 100%;
+  padding: 0 0 6% 0;
+}
+
+.container.showMe .container-onehundredmillion .bgMoney {
+  width: 100%;
+}
+
+.container.showMe .container-reward {
+  width: 100%;
+  padding: 0 0 7% 0;
+}
+
+.container.showMe .container-reward .reward {
+  width: 100%;
+}
+
+.container.showMe .container-share {
+  width: 100%;
+  padding: 0 0 30% 0;
+  margin: 0 0 22% 0;
+}
+
+.container.showMe .container-share .share {
+  width: 100%;
+}
+
+.container.showMe .container-bottomCoin {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  -webkit-transition: 0.5s all cubic-bezier(0.4, 0, 0.22, 0.99);
+  transition: 0.5s all cubic-bezier(0.4, 0, 0.22, 0.99);
+}
+
+.container.showMe .container-bottomCoin .bottonCoin {
+  width: 100%;
+}
+
+.container.showMe .container-bottomCoin.active {
+  bottom: -1%;
+}
+
+.container.showMe .container-coin {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: 0.5s all cubic-bezier(0.4, 0, 0.22, 0.99);
+  transition: 0.5s all cubic-bezier(0.4, 0, 0.22, 0.99);
+}
+
+.container.showMe .container-coin .coin {
+  width: 100%;
+}
+
+.container.showMe .container-coin.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.container.showMe .container-mainButton {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.container.showMe .container-mainButton .mainButton {
+  width: 100%;
+}
+
+.container.showMe .container-upperDoor {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 100%;
+  z-index: 2;
+}
+
+.container.showMe .container-upperDoor .upperDoor {
+  width: 100%;
+}
+
+.container.showMe .container-bottomDoor {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 100%;
+  z-index: 2;
+}
+
+.container.showMe .container-bottomDoor .bottomDoor {
+  width: 100%;
+}
+
+.container.showMe .container-subButton {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.container.showMe .container-subButton .subButton {
+  width: 100%;
+}
+
+@-webkit-keyframes dropThe {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes dropThe {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes money-O {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  53% {
+    opacity: 1;
+  }
+  54% {
+    opacity: 0;
+  }
+  56% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes money-O {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  53% {
+    opacity: 1;
+  }
+  54% {
+    opacity: 0;
+  }
+  56% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes money-money {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes money-money {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 600px) {
