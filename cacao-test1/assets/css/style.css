@@ -1,1 +1,19 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container.showMe {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.container.showMe .bg {
+  position: absolute;
+  z-index: -1;
+}
+
+.container.showMe .container.header {
+  padding: 128px 0 0 0;
+}
+/*# sourceMappingURL=style.css.map */

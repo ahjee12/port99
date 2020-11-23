@@ -1,0 +1,20 @@
+//쇼미더머니
+*{margin: 0; padding: 0;}
+.container.showMe{
+    max-width: 750px; 
+    margin: 0 auto;
+    // background: violet;
+    // max-height: 1689px;
+    // background-image: url(../img/bg.jpg);
+    // background-size: cover;
+    .bg{
+        // max-width: 750px;
+        position: absolute;
+        z-index: -1;
+    }
+    .container.header{
+        padding: 128px 0 0 0;
+        .topBar{}
+    }
+
+}
