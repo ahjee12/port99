@@ -116,6 +116,7 @@
         width: 100%;
         position: fixed; left: 0; bottom: 0;
         z-index: 1;
+        cursor: pointer;
         .mainButton{
             width: 100%;
         }
@@ -149,6 +150,7 @@
         transform: translateY(100%);
         .subButton{
             width: 100%;
+            cursor: pointer;
         }
         // &.active{
         //     transform: translateY(0%);
@@ -184,15 +186,3 @@
 
 
 
-@media(max-width: 600px){
-    .container.showMe{
-        .container.bg{
-        }
-        .container.header{
-            .topBar{
-                width: 100%;
-            }
-        }
-    
-    }
-}

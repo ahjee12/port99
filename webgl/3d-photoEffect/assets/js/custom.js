@@ -1,0 +1,1 @@
+let app = new PIXI.Application()

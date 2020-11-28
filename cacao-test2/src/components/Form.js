@@ -1,6 +1,5 @@
 import React from 'react'
 import FormSignUp from './FormSignUp'
-// import FormSignUp from './FormSignUp'
 
 const Form = () => {
     return (

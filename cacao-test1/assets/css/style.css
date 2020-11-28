@@ -141,6 +141,7 @@
   left: 0;
   bottom: 0;
   z-index: 1;
+  cursor: pointer;
 }
 
 .container.showMe .container-mainButton .mainButton {
@@ -183,6 +184,7 @@
 
 .container.showMe .container-subButton .subButton {
   width: 100%;
+  cursor: pointer;
 }
 
 @-webkit-keyframes dropThe {
@@ -302,12 +304,6 @@
   }
   100% {
     opacity: 1;
-  }
-}
-
-@media (max-width: 600px) {
-  .container.showMe .container.header .topBar {
-    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
