@@ -9,13 +9,14 @@ console.log(width);
 const render = data =>{
     
     const xScale = d3.scaleLinear()
-    .domain([0, d3.max(data, d=> d.number)])
-    console.log(xScale.domain());
+    .domain([0, d3.max(data, d => d.number)])
+    .range([0, width])
 
+    console.log(xScale.domain());
     //data join 1 enter 2 updat 3 exit
     svg.selectAll('rect').data(data)
        .enter().append('rect')
-       .attr('width', 300)
+       .attr('width', d => xScale(d.number))
        .attr('height', 300)
 }
 
