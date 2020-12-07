@@ -9,7 +9,7 @@ import Particle from './particle.js';
 // }
 function loadImages(paths, whenLoaded) {
     const imgs = [];
-    const imgO = []
+    const imgO = [];
     paths.forEach(function (path) {
         const img = new Image();
         img.onload = function () {
@@ -131,7 +131,7 @@ class sketch{
                 let velx = Math.floor((Math.random()-0.5)*3 );
                 let vely = Math.floor((Math.random()-0.5)*3 );
                 // this.particles.push(new Particle(this.randomImg(), x, y, this.randomColor(), velx, vely, distCenter*30,dx));      
-                this.particles.push(new Particle(this.randomImg(), x, y, this.randomColor(), velx, vely, 30,dx));      
+                this.particles.push(new Particle(this.randomImg(), x, y, this.randomColor(), velx, vely, 30, dx));      
             }
             // this.particles.push(new Particle(this.x, this.y, this.randomColor()));
             //기존 x저장
