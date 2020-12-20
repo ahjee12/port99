@@ -3,10 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>bar chart</title>
+    <link rel="stylesheet" href="assets/css/style2.css">
 </head>
 <body>
-    <svg></svg>
+    <svg class="svg1"></svg>
+    
+    <div class="container">
+        <select name="sortSvg2" id="sortSvg2">
+            <option class="sortSvg2-option" value="original">original</option>
+            <option class="sortSvg2-option" value="ascending">ascending</option>
+            <option class="sortSvg2-option" value="descending">descending</option>
+        </select>
+        <div class="container-barchart">
+            <svg class="svg2"></svg>
+            <svg class="svg3"></svg>
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+    <script> 
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyD8PN1mpyibY60lFuOACrG0KRDpltb7DMI",
+        authDomain: "udemy-d3-firebase-386b9.firebaseapp.com",
+        projectId: "udemy-d3-firebase-386b9",
+        storageBucket: "udemy-d3-firebase-386b9.appspot.com",
+        messagingSenderId: "452104169385",
+        appId: "1:452104169385:web:de3e424ad74e63e078c6b8",
+        measurementId: "G-MNDXMG0VCP"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    db.settings({timestampsInSnapshots: true})
+    firebase.analytics();
+    </script>
     <script src="assets/js/d3.v5.js"></script>
     <script src="assets/js/app2.js"></script>
     <!-- <script src="assets/js/data.csv"></script> -->

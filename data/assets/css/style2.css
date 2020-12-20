@@ -1,0 +1,20 @@
+body{
+    margin: 0px; padding: 0;
+}
+
+/* rect{
+    fill: 
+} */
+
+text{
+    font-size: 1.4em;
+}
+
+.container{
+    width: 100%;
+    
+}
+.container .container-barchart{
+    width: 600px;
+    margin: 0 auto;
+}
