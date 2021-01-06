@@ -1,0 +1,28 @@
+.nav{
+    background: #333;
+}
+button{
+    width: 100%; 
+    margin: 0 0 16px 0;
+    padding: 16px;
+    font-size: 1.6em;
+    background: #333;
+    color: #fff;
+    border: none; border-radius: 5px;
+    cursor: pointer;
+}
+button.active{
+    background: #00bfa5;
+}
+form span{
+    color: #00bfa5;
+}
+.x-axis path, .y-axis path,
+.x-axis line, .y-axis line{
+    stroke: #ccc;
+}
+
+.x-axis text, .y-axis text{
+    font-size: 1.7em;
+    color: #ccc;
+}

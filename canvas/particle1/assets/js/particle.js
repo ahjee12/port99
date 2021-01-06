@@ -26,8 +26,8 @@ export default class Particle{
 
     draw(ctx){
         this.x += this.velx;
-        this.y += this.vely+ this.grav;
-        this.grav +=0.01;
+        this.y += this.vely + this.grav;
+        this.grav += 0.01;
 
         //조금 덜 퍼지기
         this.velx *= 0.99;
