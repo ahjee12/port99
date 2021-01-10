@@ -4,7 +4,7 @@ const center = {x: (dims.width/2 + 5), y: (dims.height/2 + 5)};
 const svg = d3.select('.donut.canvas')
 .append('svg')
 .attr('width', dims.width + 150)
-.attr('height', dims.height + 150)
+.attr('height', dims.height + 50)
 
 console.log(svg)
 
@@ -61,6 +61,7 @@ const update = (data) => {
 
     //1. update color scale domain
     color.domain(data.map(d => d.name))
+  
 
     //update and call legend
     legendGroup.call(legend)
@@ -91,6 +92,7 @@ const update = (data) => {
     //☆ path data에 pie(data) 넣으면 (data는 array) arcPath에 endAngle, startAngle 생김?
     paths.enter()
         .append('path')
+        // .attr('transform', `translate(${center.x}, ${center.y})`) graph, paths 둘 중 하나에 적용하면 됨
         .attr('class', 'arc')
         //.attr('d', d => arcPath(d))대신
         //.attr('d', arcPath)
@@ -102,7 +104,7 @@ const update = (data) => {
         .attrTween('d', arcTweenEnter)
 
     const pathEvent = graph.selectAll('path')
-                            .on('mouseover', (d, i,n) => {
+                            .on('mouseover', (d, i, n) => {
                                 //arrow function안에서 this못 씀 this대신 n[i]
                                 tip.show(d, n[i])
                                 handleMouseOver(d, i, n) 
@@ -115,7 +117,70 @@ const update = (data) => {
 
 }
 
+const arcTweenEnter = (d) => {
+    //interpolate 삽입
+    let i = d3.interpolate(d.startAngle, d.endAngle)
+    // let i = d3.interpolate(d.endAngle, d.startAngle)
 
+    //0 ~ 1
+    return (t) => {
+        //endAngle을 계속 바꿔줘야 함 t = 0일 때 endAngle은 startAngle로 
+        d.endAngle = i(t)
+        // d.startAngle = i(t)
+        // console.log(d)
+        return arcPath(d)
+    }
+}
+
+const arcTweenExit = (d) => {
+    console.log(d)
+    //interpolate 삽입
+    let i = d3.interpolate(d.endAngle, d.startAngle)
+    // let i = d3.interpolate(d.startAngle, d.endAngle)
+
+    return (t) => {
+        d.endAngle = i(t)
+        // d.startAngle = i(t)
+        return arcPath(d)
+    }
+}
+
+
+//use function keyword to allow use of 'this'
+function arcTweenUpdate(d) {
+    // console.log(d)
+    // console.log(this._current)
+
+    //interpolate between the two objects whatever the current angles are and whatever the end angles are
+    let i = d3.interpolate(this._current, d);
+    //update the current prop with new updated data
+    //this._current = d = i(i)
+    this._current = i(1);
+
+    return (t) => {
+        // console.log(i(t))
+
+        return arcPath(i(t))
+    }
+}
+
+const handleMouseOver = (d, i, n) => {
+    // console.log(n[i])
+    // console.log(d)
+    d3.select(n[i])
+    .transition('changeSliceFill').duration(300)
+    .attr('fill', '#fff')
+}
+const handleMouseOut = (d, i, n) => {
+    d3.select(n[i])
+    .transition('changeSliceFill').duration(300)
+    .attr('fill', color(d.data.name))
+}
+const handleClick = (d) => {
+    // console.log(d)
+    const id = d.data.id;
+    db.collection('expenses').doc(id).delete()
+}
 
 let data = []
 db.collection('expenses').onSnapshot(res => {
@@ -146,71 +211,6 @@ db.collection('expenses').onSnapshot(res => {
     })
     update(data)
 })
-
-const arcTweenEnter = (d) => {
-    //interpolate 삽입
-    // let i = d3.interpolate(d.startAngle, d.endAngle)
-    let i = d3.interpolate(d.endAngle, d.startAngle)
-
-    //0 ~ 1
-    return (t) => {
-        //endAngle을 계속 바꿔줘야 함 t = 0일 때 endAngle은 startAngle로 
-        // d.endAngle = i(t)
-        d.startAngle = i(t)
-        // console.log(d)
-        return arcPath(d)
-    }
-}
-
-const arcTweenExit = (d) => {
-    console.log(d)
-    //interpolate 삽입
-    // let i = d3.interpolate(d.endAngle, d.startAngle)
-    let i = d3.interpolate(d.startAngle, d.endAngle)
-
-    return (t) => {
-        // d.endAngle = i(t)
-        d.startAngle = i(t)
-        return arcPath(d)
-    }
-}
-
-
-//use function keyword to allow use of 'this'
-const arcTweenUpdate = (d) => {
-    // console.log(d)
-    // console.log(this._current)
-
-    //interpolate between the two objects whatever the current angles are and whatever the end angles are
-    let i = d3.interpolate(this._current, d);
-    //update the current prop with new updated data
-    //this._current = d = i(i)
-    this._current = i(1);
-
-    return (t) => {
-        // console.log(i(t))
-
-        return arcPath(i(t))
-    }
-}
-
-const handleMouseOver = (d, i, n) =>{
-    // console.log(n[i])
-    // console.log(d)
-    d3.select(n[i])
-    .transition('changeSliceFill').duration(300)
-    .attr('fill', '#fff')
-}
-const handleMouseOut = (d, i, n) =>{
-    d3.select(n[i])
-    .transition('changeSliceFill').duration(300)
-    .attr('fill', color(d.data.name))
-}
-const handleClick = (d) => {
-    // console.log(d)
-    const id = d.data.id;
-    db.collection('expenses').doc(id).delete()
-}
 
 
 

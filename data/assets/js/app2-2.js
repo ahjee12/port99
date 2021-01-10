@@ -44,7 +44,9 @@ function graph4(){
 
     const update = (data) =>{
 
-        //1. update scales(domains) if they rely on our data
+        //1. update scales(domains) if they rely on our data -> 나열되어 있는 text값에 range범위를 나눠 순서대로 number값을 줌
+        // range범위 최대 / domain에 들어가는 text 총 개수 * 가중치(순서)
+        // 애초에 scaleOrdinal([#1,#2,#3])이고 text도 총 수도 3개면 range는 없어도 됨
         xScale.domain(data.map(d => d.name))
         yScale.domain([0, d3.max(data, d => d.orders)])
 
