@@ -32,7 +32,7 @@ form.addEventListener('submit', e => {
     //prevent default action
     e.preventDefault();
     const distance = parseInt(input.value)
-    const item ={
+    const item = {
         //es6 magic! 배열 요소이름 : 값 이 같으면 한 번만 적으면 자동 인식됨!!
         distance,
         activity,

@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hierarchy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/styleHierarchy.css">
 </head>
 <body>
+
+    <div class="pink section">
+        <h2 class="white-text center">Hyunji's Favortie</h2>
+    </div>
+    <div class="grey lighten-3 section grey-text" style="position: relative">
+        <p class="flow-text center">The Number</p>
+        <a href="#modal" class="btn-floating btn-large halfway-fab pink modal-trigger">
+            <i class="material-icons">add</i>
+        </a>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h4 class="pink-text center">내가 좋아하는 거</h4>
+            <form>
+                <div class="input-field">
+                    <input type="text" id="name" placeholder="Name">
+                </div>
+                <div class="input-field">
+                    <input type="text" id="parent" placeholder="Reports to...">
+                </div>
+                <div class="input-field">
+                    <input type="text" id="department" placeholder="Category">
+                </div>
+                <div class="input-field">
+                    <button class="btn pink white-text">추가하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="canvas"></div>
+    </div>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
@@ -34,6 +71,7 @@
     firebase.analytics();
     </script>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/js/d3.v5.js"></script>
     <script src="assets/js/graphH.js"></script>
     <script src="assets/js/indexH.js"></script>
