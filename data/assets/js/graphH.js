@@ -13,7 +13,26 @@ const graph = svg.append('g')
 //data strat
 const stratify = d3.stratify()
                     .id(d => d.name)
-                    .parentId()
+                    .parentId(d => d.parent);
+
+// console.log(stratify)
+
+const tree = d3.tree()
+                .size([dims.width, dims.height])
+                
+//update function
+const update = (data) => {
+    console.log(data)
+
+    //get updated foot Node
+    const rootNode = stratify(data)
+    console.log(rootNode)
+
+    const treeData = tree(rootNode)
+    console.log(treeData)
+
+
+}
 
 
 //data & firebase hook-up
@@ -44,7 +63,7 @@ db.collection('subjects').onSnapshot(res => {
                 break;
         }
     })
-    // update(data)
+    update(data)
 })
 
 
