@@ -1,3 +1,21 @@
+const dims = { height: 500, width: 1100 } 
+
+const svg = d3.select('.container .canvas')
+              .append('svg')
+              .attr('width', dims.width + 100)
+              .attr('height', dims.height + 100)
+
+console.log(svg)
+
+const graph = svg.append('g')
+                 .attr('transform', 'translate(50, 50)')
+
+//data strat
+const stratify = d3.stratify()
+                    .id(d => d.name)
+                    .parentId()
+
+
 //data & firebase hook-up
 let data = []
 db.collection('subjects').onSnapshot(res => {
@@ -28,3 +46,5 @@ db.collection('subjects').onSnapshot(res => {
     })
     // update(data)
 })
+
+
