@@ -2,10 +2,14 @@ const modal = document.querySelector('.modal');
 console.log(modal)
 M.Modal.init(modal);
 
-const form = document.querySelector('.modal form')
-const name = document.querySelector('.modal form #name')
-const parent = document.querySelector('.modal form #parent')
-const department = document.querySelector('.modal form #department')
+// const form = document.querySelector('.modal form')
+// const name = document.querySelector('.modal form #name')
+// const parent = document.querySelector('.modal form #parent')
+// const department = document.querySelector('.modal form #department')
+const form = document.querySelector('form');
+const name = document.querySelector('#name');
+const parent = document.querySelector('#parent');
+const department = document.querySelector('#department');
 
 console.log(form)
 console.log(name)

@@ -5,11 +5,12 @@ body{
     
 }
 main{
+    /* 최대 가능 너비, 이것보다 작아야 */
+    max-width: 900px;
+    margin: 0 auto; 
     display: flex; flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 100%; max-width: 900px;
-    margin: 0 auto; 
 }
 
 main .card{

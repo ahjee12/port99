@@ -52,10 +52,8 @@ const yDotLine = dotLineG.append('line')
 const update = (data) =>{
     console.log(data);
 
-    //같은 것만 뽑음
+    //같은 것만 뽑음 -> sort함
     data = data.filter(item => item.activity == activity);
-
-    //sort data based on date objects
     data.sort((a,b) => new Date(a.date) - new Date(b.date))
 
     //set scale domains
@@ -64,7 +62,7 @@ const update = (data) =>{
 
     console.log(yScale(800))
 
-    //update path data We need to pass it in as an array data자체가 array 0번이 됨
+    //☆ update path data We need to pass it in as an array data자체가 array 0번이 됨
     console.log([data]);
     path.data([data])
         .attr('fill', 'none')

@@ -15,24 +15,85 @@ const stratify = d3.stratify()
                     .id(d => d.name)
                     .parentId(d => d.parent);
 
-// console.log(stratify)
-
+console.log(stratify)
 const tree = d3.tree()
-                .size([dims.width, dims.height])
-                
-//update function
+               .size([dims.width, dims.height])
+
+//creat ordinal scale
+// const color = d3.scaleOrdinal(d3['schemeSet3'])
+const color = d3.scaleOrdinal(['#f4511e', '#e91e63', '#e53935', '9c27b0'])
+
+//update function  
 const update = (data) => {
-    console.log(data)
 
-    //get updated foot Node
-    const rootNode = stratify(data)
-    console.log(rootNode)
+    //remove current nodes
+    graph.selectAll('.node').remove()
+    graph.selectAll('.link').remove()
 
-    const treeData = tree(rootNode)
-    console.log(treeData)
+  console.log(data)
+
+  //get updated root Node data
+  const rootNode = stratify(data);
+  const treeData = tree(rootNode).descendants();
+  
+  console.log(rootNode)
+  console.log(treeData)
+
+  //get nodes selection and join data
+  const nodes = graph.selectAll('.node')
+                     .data(treeData)
+
+  console.log()
+  const treeDataLink = tree(rootNode).links();
+
+  //get link selection and join data
+  const links = graph.selectAll('.link')
+                     .data(treeDataLink)
+
+  console.log(links)
+
+  color.domain(data.map(d=>d.department))
+  console.log(data.map(d=>d.department))
+
+  //enter new links
+  links.enter()
+        .append('path')
+        .transition().duration(300)
+        .attr('class', 'link')
+        .attr('fill', 'none')
+        .attr('stroke', '#aaa')
+        .attr('stroke-width', 2)
+        .attr('d', d3.linkVertical().x(d=>d.x).y(d=>d.y))
+
+  //create enter node groups 각 노드를 x, y얼마큼 이동할 것인가가 중요함 그 계산을 tree()가 해줌
+  const enterNodes = nodes.enter()
+                          .append('g')
+                          .attr('class', 'node')
+                          //treeData로 전달함!
+                          //.attr('transform', d => `translate(${d.x , d.y})`)
+                          .attr('transform', d => `translate(${d.x}, ${d.y})`);
+
+  //append reacts to enter nodes
+  enterNodes.append('rect')
+            .attr('fill', d => color(d.data.department))
+            .attr('stroke', '#555')
+            .attr('stroke-width', 2)
+            .attr('height', 50)
+            .attr('width', d => d.data.name.length * 20)
+            
+            // .attr('transform', d => {
+            //     let x = d.data.name.length * 10
+            //     return `translate(${-x}, -25)`
+            // })
+            .attr('transform', d => `translate(${-d.data.name.length * 10}, -25)`)
+
+  enterNodes.append('text')
+            .attr('text-anchor', 'middle')
+            .attr('fill', 'white')
+            .text(d => d.data.name)
 
 
-}
+};
 
 
 //data & firebase hook-up
@@ -65,5 +126,6 @@ db.collection('subjects').onSnapshot(res => {
     })
     update(data)
 })
+
 
 

@@ -34,11 +34,10 @@
             <span class="control"></span>
             <span class="control"></span>
             <pre class="line-numbers">
-<code class="language-markup">&lt;script&gt;
+        <code class="language-markup">&lt;script&gt;
 
-&lt;/script&gt;
-
-</code></pre>
+        &lt;/script&gt;
+        </code></pre>
         </div>
         <a href="#" class="close">
             <svg viewBox="0 0 24 24">
@@ -50,7 +49,8 @@
     </div>
     <div class="info">
         <button class="btn-sound"></button>
-        <!-- <audio id= "theme-song" src="assets/music/background.mp3" loop="loop" autoplay controls></audio> -->
+        <!--오디오-->
+        <audio id= "theme-song" src="assets/music/background.mp3" loop="loop" autoplay controls></audio>
         <div class="score">
             <div class="record turns">기회: <span>3</span></div>
             <div class="record attemps">시도: <span>0</span></div>
@@ -169,11 +169,15 @@
         const $btnSound = $(".btn-sound");
         const playSoundClass = 'is-playing';
         const $themeSongEl = $("#theme-song")[0];
+        const themeSong = $("#theme-song");
+        console.log($themeSongEl)
+        console.log(themeSong)
 
         let sound = ['assets/music/boink1.mp3', 'assets/music/boink2.mp3', 'assets/music/correct.mp3'],
             soundMatch = new Audio(sound[0]),
             soundNoMatch = new Audio(sound[1]),
             soundSuccess = new Audio(sound[2]);
+         
         console.log(soundMatch);
 
         //3
