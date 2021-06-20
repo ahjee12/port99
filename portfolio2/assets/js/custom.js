@@ -337,14 +337,14 @@ const dragAreaInTheMenu = $('.drag-menu');
 dragAreaInTheMenu.each(function(){
   //오버 안 했을 때
   $(this).on('mouseleave', function(e) {
-    let tl = new TimelineMax();
+      let tl = new TimelineMax();
       let target = $(this).find('a');
       tl.to(target,1.8,{ x: 0, y: 0 , ease: Elastic.easeOut});
   });
 
   //오버했을 때
   $(this).on('mousemove', function(e) {
-    let tl = new TimelineMax();
+      let tl = new TimelineMax();
       let target = $(this).find('a');
       let movementX = $(this).width() /1.5;
       let movementY = $(this).height() /1.5;
